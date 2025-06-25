@@ -1,0 +1,226 @@
+{
+  "sites": {
+    "ao": {
+      "name": "AO Cookbook",
+      "baseUrl": "https://cookbook_ao.arweave.net",
+      "description": "Actor Oriented computer documentation and guides",
+      "pages": [
+        {
+          "url": "https://cookbook_ao.arweave.net/welcome/ao-core-introduction.html",
+          "title": "AO Core Introduction",
+          "category": "welcome",
+          "priority": 1,
+          "estimatedWords": 800,
+          "tags": ["introduction", "core", "overview"],
+          "description": "Essential introduction to AO concepts"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/installing-aos.html",
+          "title": "Installing AOS",
+          "category": "guides",
+          "priority": 2,
+          "estimatedWords": 600,
+          "tags": ["installation", "setup", "aos"],
+          "description": "Step-by-step AOS installation guide"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/intro.html",
+          "title": "AOS Introduction",
+          "category": "guides",
+          "priority": 2,
+          "estimatedWords": 1200,
+          "tags": ["aos", "introduction", "basics"],
+          "description": "Getting started with AOS"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/modules/index.html",
+          "title": "AOS Modules Overview",
+          "category": "guides",
+          "priority": 3,
+          "estimatedWords": 900,
+          "tags": ["modules", "aos", "architecture"],
+          "description": "Understanding AOS module system"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html",
+          "title": "AOS Blueprints",
+          "category": "guides",
+          "priority": 3,
+          "estimatedWords": 700,
+          "tags": ["blueprints", "templates", "aos"],
+          "description": "Pre-built AOS application templates"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/editor/index.html",
+          "title": "AOS Editor Guide",
+          "category": "guides",
+          "priority": 4,
+          "estimatedWords": 500,
+          "tags": ["editor", "development", "tools"],
+          "description": "Using the AOS development editor"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/ao.html",
+          "title": "AO Reference",
+          "category": "references",
+          "priority": 2,
+          "estimatedWords": 2000,
+          "tags": ["reference", "api", "specification"],
+          "description": "Complete AO API reference"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/aos.html",
+          "title": "AOS Reference",
+          "category": "references",
+          "priority": 2,
+          "estimatedWords": 1800,
+          "tags": ["reference", "aos", "api"],
+          "description": "Complete AOS API reference"
+        }
+      ]
+    },
+    "arweave": {
+      "name": "Arweave Cookbook",
+      "baseUrl": "https://cookbook.arweave.net",
+      "description": "Arweave development guides and references",
+      "pages": [
+        {
+          "url": "https://cookbook.arweave.net/getting-started/index.html",
+          "title": "Getting Started with Arweave",
+          "category": "getting-started",
+          "priority": 1,
+          "estimatedWords": 1000,
+          "tags": ["introduction", "getting-started", "basics"],
+          "description": "Essential first steps with Arweave"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/index.html",
+          "title": "Core Concepts",
+          "category": "concepts",
+          "priority": 1,
+          "estimatedWords": 1500,
+          "tags": ["concepts", "fundamentals", "theory"],
+          "description": "Understanding Arweave's core concepts"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/posting-transactions/index.html",
+          "title": "Posting Transactions",
+          "category": "guides",
+          "priority": 2,
+          "estimatedWords": 1200,
+          "tags": ["transactions", "posting", "guide"],
+          "description": "How to post transactions to Arweave"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/querying-arweave/index.html",
+          "title": "Querying Arweave",
+          "category": "guides",
+          "priority": 2,
+          "estimatedWords": 1400,
+          "tags": ["querying", "graphql", "search"],
+          "description": "Searching and querying Arweave data"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/smartweave/index.html",
+          "title": "SmartWeave Guide",
+          "category": "guides",
+          "priority": 3,
+          "estimatedWords": 1800,
+          "tags": ["smartweave", "contracts", "guide"],
+          "description": "Building SmartWeave contracts"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/bundling/index.html",
+          "title": "Data Bundling",
+          "category": "guides",
+          "priority": 3,
+          "estimatedWords": 900,
+          "tags": ["bundling", "optimization", "data"],
+          "description": "Efficient data bundling techniques"
+        },
+        {
+          "url": "https://cookbook.arweave.net/references/http-api.html",
+          "title": "HTTP API Reference",
+          "category": "references",
+          "priority": 2,
+          "estimatedWords": 2500,
+          "tags": ["api", "http", "reference"],
+          "description": "Complete HTTP API documentation"
+        }
+      ]
+    },
+    "hyperbeam": {
+      "name": "Hyperbeam",
+      "baseUrl": "https://hyperbeam.arweave.net",
+      "description": "Hyperbeam development framework documentation",
+      "pages": [
+        {
+          "url": "https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html",
+          "title": "What is Hyperbeam",
+          "category": "introduction",
+          "priority": 1,
+          "estimatedWords": 800,
+          "tags": ["introduction", "overview", "concepts"],
+          "description": "Introduction to Hyperbeam framework"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/getting-started/index.html",
+          "title": "Getting Started with Hyperbeam",
+          "category": "getting-started",
+          "priority": 1,
+          "estimatedWords": 1000,
+          "tags": ["getting-started", "setup", "tutorial"],
+          "description": "First steps with Hyperbeam"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/core-concepts/index.html",
+          "title": "Core Concepts",
+          "category": "concepts",
+          "priority": 2,
+          "estimatedWords": 1200,
+          "tags": ["concepts", "architecture", "theory"],
+          "description": "Understanding Hyperbeam's architecture"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/guides/deployment.html",
+          "title": "Deployment Guide",
+          "category": "guides",
+          "priority": 3,
+          "estimatedWords": 900,
+          "tags": ["deployment", "production", "guide"],
+          "description": "Deploying Hyperbeam applications"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/api/index.html",
+          "title": "API Reference",
+          "category": "references",
+          "priority": 2,
+          "estimatedWords": 1600,
+          "tags": ["api", "reference", "documentation"],
+          "description": "Complete Hyperbeam API reference"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-01-15T10:00:00.000Z",
+    "totalPages": 20,
+    "curatedBy": "permaweb-llms-builder",
+    "priorityLevels": {
+      "1": "Essential - Must-read foundational content",
+      "2": "Important - Core functionality and concepts",
+      "3": "Useful - Advanced features and guides",
+      "4": "Optional - Supplementary information",
+      "5": "Reference - Detailed technical specifications"
+    },
+    "categories": {
+      "welcome": "Introduction and welcome content",
+      "getting-started": "Initial setup and basic tutorials",
+      "concepts": "Fundamental concepts and theory",
+      "guides": "Step-by-step tutorials and how-tos",
+      "references": "Technical specifications and API docs",
+      "introduction": "Overview and introductory material"
+    }
+  }
+} 

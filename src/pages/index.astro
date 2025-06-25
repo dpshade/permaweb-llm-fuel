@@ -1,16 +1,762 @@
 ---
-
+// Main page for Permaweb LLMs Builder
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Interactive tool to select and curate Permaweb documentation into llms.txt format for AI training" />
+		<title>Permaweb LLMs Builder</title>
+		
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="/src/styles/theme.css" />
+		
+		<!-- Custom checkbox styling -->
+		<style>
+			input[type="checkbox"] {
+				appearance: none;
+				-webkit-appearance: none;
+				width: 18px;
+				height: 18px;
+				/* Use theme accent color for default border */
+				border: 2px solid var(--ao-accent-color);
+				border-radius: 4px;
+				background-color: white;
+				cursor: pointer;
+				position: relative;
+				transition: all 0.2s ease;
+			}
+
+			input[type="checkbox"]:checked {
+				background-color: var(--ao-accent-color);
+				border-color: var(--ao-accent-color);
+			}
+
+			input[type="checkbox"]:checked::after {
+				content: '✓';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+				font-size: 12px;
+				font-weight: bold;
+			}
+
+			input[type="checkbox"]:focus {
+				outline: 2px solid var(--ao-accent-color);
+				outline-offset: 2px;
+			}
+
+			input[type="checkbox"]:hover {
+				border-color: var(--ao-accent-color);
+			}
+
+			/* Dark theme adjustments */
+			[data-theme="dark"] input[type="checkbox"] {
+				/* Keep accent border in dark mode while using input background */
+				border-color: var(--ao-accent-color);
+				background-color: var(--ao-input-bg);
+			}
+
+			[data-theme="dark"] input[type="checkbox"]:hover {
+				border-color: var(--ao-accent-color);
+			}
+
+			/* Remove outdated selector for bolding page labels (handled inline) */
+		</style>
+		
+		<!-- Iframe compatibility headers -->
+		<meta http-equiv="X-Frame-Options" content="ALLOWALL" />
+		<meta http-equiv="Content-Security-Policy" content="frame-ancestors *;" />
 	</head>
+	
 	<body>
-		<h1>Astro</h1>
+		<!-- Theme Toggle Button -->
+		<button class="theme-toggle" aria-label="Toggle theme">
+			<svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<circle cx="12" cy="12" r="5"></circle>
+				<line x1="12" y1="1" x2="12" y2="3"></line>
+				<line x1="12" y1="21" x2="12" y2="23"></line>
+				<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+				<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+				<line x1="1" y1="12" x2="3" y2="12"></line>
+				<line x1="21" y1="12" x2="23" y2="12"></line>
+				<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+				<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+			</svg>
+			<svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+		</button>
+
+		<!-- Main Container -->
+		<div class="main-container">
+			<h1>Permaweb LLMs Builder</h1>
+			
+			<!-- Crawler Mode Toggle -->
+			<div class="crawler-mode-toggle" style="margin-bottom: 24px;">
+				<div style="display: flex; align-items: center; gap: 16px;">
+					<label style="display: flex; align-items: center; gap: 8px; font-weight: 500;">
+						<input type="radio" name="crawler-mode" value="static" checked>
+						Pre-crawled Index (Fast)
+					</label>
+					<label style="display: flex; align-items: center; gap: 8px; font-weight: 500;">
+						<input type="radio" name="crawler-mode" value="dynamic">
+						Live Crawling (Powered by HyperBEAM Relay)
+					</label>
+				</div>
+			</div>
+			
+			<!-- Documentation Tree -->
+			<div id="loading-message">
+				<h3>Loading Pre-crawled Documentation Index</h3>
+				<p>Loading curated documentation from the Permaweb ecosystem...</p>
+			</div>
+			<div id="docs-tree"></div>
+			
+			<!-- Progress Container -->
+			<div class="progress-container" id="progress-container" style="display: none;">
+				<div class="progress-bar">
+					<div class="progress-fill" id="progress-fill"></div>
+				</div>
+				<div class="progress-text" id="progress-text">Processing...</div>
+			</div>
+
+			<!-- Selection Counter -->
+			<div class="selection-counter">
+				<div class="selection-header" style="display: flex; align-items: center; gap: 8px; cursor: pointer;" onclick="toggleSelectionDetails()">
+					<strong id="selection-count">0</strong> pages selected
+					<svg id="selection-toggle" style="width: 12px; height: 12px; transition: transform 0.2s ease;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
+					</svg>
+				</div>
+				<div id="selection-details" style="display: none; margin-top: 12px; max-height: 200px; overflow-y: auto;">
+					<div id="selected-pages-list" style="font-size: 14px; color: var(--ao-secondary-text);"></div>
+				</div>
+			</div>
+			
+			<!-- Action Buttons -->
+			<div class="action-buttons">
+				<button class="btn btn-primary" id="generate-btn" disabled>
+					Generate llms.txt
+				</button>
+				<button class="btn" id="select-all-btn">
+					Select All
+				</button>
+				<button class="btn" id="clear-all-btn">
+					Clear All
+				</button>
+			</div>
+			
+
+		</div>
+
+		<!-- Main JavaScript -->
+		<script type="module">
+			import { initializeAllTheme } from '/src/utils/theme.js';
+			import { batchFetchAndClean, generateLLMsTxt, downloadFile } from '/src/utils/defuddle-fetch.js';
+			
+			// Dynamic crawler imports (lazy loaded)
+			let dynamicCrawlerModule = null;
+			
+			// Initialize theme system
+			initializeAllTheme();
+			
+			// State management
+			let docsIndex = null;
+			let displayTree = null;
+			let selectedPages = new Set();
+			let allPages = [];
+			let currentMode = 'static';
+			
+			// DOM elements
+			const docsTree = document.getElementById('docs-tree');
+			const loadingMessage = document.getElementById('loading-message');
+			const selectionCount = document.getElementById('selection-count');
+			const generateBtn = document.getElementById('generate-btn');
+			const selectAllBtn = document.getElementById('select-all-btn');
+			const clearAllBtn = document.getElementById('clear-all-btn');
+			const progressContainer = document.getElementById('progress-container');
+			const progressFill = document.getElementById('progress-fill');
+			const progressText = document.getElementById('progress-text');
+			const selectionDetails = document.getElementById('selection-details');
+			const selectionToggle = document.getElementById('selection-toggle');
+			const selectedPagesList = document.getElementById('selected-pages-list');
+			
+			// Crawler mode toggle
+			const crawlerModeRadios = document.querySelectorAll('input[name="crawler-mode"]');
+			
+			// Initialize the application
+			async function initialize() {
+				// Set up mode toggle listeners
+				crawlerModeRadios.forEach(radio => {
+					radio.addEventListener('change', (e) => {
+						if (e.target.checked) {
+							switchCrawlerMode(e.target.value);
+						}
+					});
+				});
+				
+				// Load static index by default
+				await loadStaticIndex();
+			}
+			
+			// Switch between crawler modes
+			async function switchCrawlerMode(mode) {
+				if (mode === currentMode) return;
+				
+				currentMode = mode;
+				selectedPages.clear();
+				updateSelectionCount();
+				
+				if (mode === 'static') {
+					await loadStaticIndex();
+				} else {
+					await loadDynamicCrawler();
+						}
+					}
+			
+			// Load static pre-crawled index
+			async function loadStaticIndex() {
+				try {
+					updateLoadingMessage('Loading Pre-crawled Documentation Index', 'Loading curated documentation from the Permaweb ecosystem...');
+					
+					// Fetch the static docs index
+					const response = await fetch('/src/data/docs-index.json');
+					if (!response.ok) {
+						throw new Error(`Failed to load docs index: ${response.status}`);
+			}
+			
+					docsIndex = await response.json();
+					
+					// Process the index into display format
+					displayTree = processStaticIndex(docsIndex);
+					allPages = extractAllPages(docsIndex);
+					
+					// Render the tree
+					renderDocumentationTree();
+					
+					// Hide loading message
+					loadingMessage.style.display = 'none';
+					
+					console.log(`Loaded static index: ${allPages.length} total pages from ${Object.keys(docsIndex).length} sites`);
+					
+				} catch (error) {
+					console.error('Failed to load static index:', error);
+					showError(`Failed to load documentation index: ${error.message}`);
+							}
+			}
+			
+			// Load dynamic crawler
+			async function loadDynamicCrawler() {
+				try {
+					updateLoadingMessage('🕷️ Initializing Dynamic Documentation Discovery', 'Loading dynamic crawler powered by HyperBEAM relay...');
+						
+					// Lazy load dynamic crawler module
+					if (!dynamicCrawlerModule) {
+						dynamicCrawlerModule = await import('/src/utils/dynamic/dynamic-crawler.js');
+					}
+					
+					// Start dynamic crawling with detailed progress
+					await startDynamicCrawling();
+					
+				} catch (error) {
+					console.error('Failed to load dynamic crawler:', error);
+					showError(`Failed to initialize dynamic crawler: ${error.message}`);
+				}
+			}
+			
+			// Process static index into display format
+			function processStaticIndex(index) {
+				const processed = {};
+				
+				for (const [siteKey, siteData] of Object.entries(index)) {
+					processed[siteKey] = {
+						name: siteData.name,
+						baseUrl: siteData.baseUrl,
+						tree: siteData.tree,
+						pages: siteData.pages,
+						crawledAt: siteData.crawledAt
+					};
+				}
+				
+				return processed;
+			}
+			
+			// Extract all pages from index
+			function extractAllPages(index) {
+				const pages = [];
+				
+				for (const [siteKey, siteData] of Object.entries(index)) {
+					for (const page of siteData.pages) {
+						pages.push({
+							...page,
+							siteKey,
+							priority: 2, // Default priority for static pages
+							estimatedWords: 500 // Default estimate
+						});
+				}
+				}
+				
+				return pages;
+			}
+			
+			// Render documentation tree - clean file explorer style
+			function renderDocumentationTree() {
+				if (!displayTree) return;
+				
+				const totalPages = allPages.length;
+				const siteCount = Object.keys(displayTree).length;
+				
+				const treeHtml = `
+					<div style="margin-bottom: 16px; font-size: 14px; color: var(--ao-secondary-text);">
+						${totalPages} pages from ${siteCount} sites
+					</div>
+					<div id="tree-root" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
+						${Object.entries(displayTree).map(([siteKey, siteData]) => {
+							return `
+								<div>
+									<div style="display: flex; align-items: center; margin-bottom: 4px;">
+										<div style="width: 24px; flex-shrink: 0;">
+											<input type="checkbox" id="site-${siteKey}" class="site-checkbox" data-site="${siteKey}" onclick="event.stopPropagation()">
+										</div>
+										<div style="display: flex; align-items: center; gap: 6px; padding: 4px 0; cursor: pointer; font-weight: 500; flex-grow: 1;" onclick="toggleNode('site-${siteKey}')">
+											<svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+												<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+											</svg>
+											<label style="cursor: pointer; font-size: 14px;">${siteData.name}</label>
+											<svg class="tree-toggle" id="toggle-site-${siteKey}" style="width: 12px; height: 12px; transition: transform 0.2s ease; margin-left: auto;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
+											</svg>
+										</div>
+									</div>
+									<div id="site-${siteKey}-children" style="display: none;">
+										${renderSiteTree(siteData.tree, siteKey, 1)}
+									</div>
+								</div>
+							`;
+						}).join('')}
+					</div>
+				`;
+				
+				docsTree.innerHTML = treeHtml;
+				
+				// Add event listeners
+				addTreeEventListeners();
+				updateSelectionCount();
+			}
+			
+			function renderSiteTree(tree, siteKey, level = 0) {
+				return tree.map(node => {
+					const nodeId = `node-${siteKey}-${node.path.join('-')}`;
+					const hasChildren = node.children && node.children.length > 0;
+					const hasPages = node.pages && node.pages.length > 0;
+					const isExpandable = hasChildren || hasPages;
+
+					const nestingLines = Array.from({length: level}, (_, i) => 
+						`<div style="position: absolute; left: ${11 + i * 20}px; top: 0; bottom: 0; width: 1px; background: var(--ao-border-color); opacity: 0.4;"></div>`
+					).join('');
+
+					let html = `<div>`;
+					if (isExpandable) {
+						html += `
+							<div style="display: flex; align-items: center; margin-bottom: 4px;">
+								<div style="width: 24px; flex-shrink: 0;">
+									<input type="checkbox" id="${nodeId}" class="category-checkbox" data-site="${siteKey}" data-path="${node.path.join('/')}" onclick="event.stopPropagation()">
+								</div>
+								<div style="position: relative; padding-left: ${level * 20}px; display: flex; align-items: center; gap: 6px; padding-top: 2px; padding-bottom: 2px; cursor: pointer; flex-grow: 1;" onclick="toggleNode('${nodeId}')">
+									${nestingLines}
+									
+									<label style="cursor: pointer; font-size: 14px; flex: 1; z-index: 1;">${node.name}</label>
+									<svg class="tree-toggle" id="toggle-${nodeId}" style="width: 12px; height: 12px; transition: transform 0.2s ease; margin-left: auto; z-index: 1;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
+									</svg>
+								</div>
+						</div>
+					`;
+					}
+					
+					if (isExpandable) {
+						html += `<div id="${nodeId}-children" style="display: none;">`;
+						if (hasPages) {
+							html += node.pages.map(page => renderPageNode(page, siteKey, level + 1)).join('');
+						}
+						if (hasChildren) {
+							html += renderSiteTree(node.children, siteKey, level + 1);
+						}
+						html += `</div>`;
+					}
+					
+					html += `</div>`;
+					return html;
+				}).join('');
+			}
+			
+			function renderPageNode(page, siteKey, level = 0) {
+				const pageId = `page-${siteKey}-${page.url.replace(/[^a-zA-Z0-9]/g, '-')}`;
+
+				const nestingLines = Array.from({length: level}, (_, i) => 
+					`<div style="position: absolute; left: ${11 + i * 20}px; top: 0; bottom: 0; width: 1px; background: var(--ao-border-color); opacity: 0.4;"></div>`
+				).join('');
+				
+				return `
+					<div style="display: flex; align-items: center; margin-bottom: 4px;">
+						<div style="width: 24px; flex-shrink: 0;">
+							<input type="checkbox" id="${pageId}" class="page-checkbox" data-url="${page.url}" data-site="${siteKey}" onclick="event.stopPropagation()">
+						</div>
+						<div style="position: relative; padding-left: ${level * 20}px; display: flex; align-items: center; gap: 6px; padding-top: 2px; padding-bottom: 2px; cursor: pointer; flex-grow: 1;" onclick="togglePageSelection('${pageId}')">
+							${nestingLines}
+							<label style="cursor: pointer; font-size: 14px; font-weight: bold; flex: 1; pointer-events: none; z-index: 1;">${page.title}</label>
+						</div>
+					</div>
+				`;
+			}
+			
+			// Global function for toggling tree nodes
+			window.toggleNode = function(nodeId) {
+				const children = document.getElementById(nodeId + '-children');
+				const toggle = document.getElementById('toggle-' + nodeId);
+				if (children && toggle) {
+					const isExpanded = children.style.display !== 'none';
+					children.style.display = isExpanded ? 'none' : 'block';
+					toggle.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(90deg)';
+				}
+			};
+
+			// Recursive expand/collapse function
+			function expandAllChildren(nodeId) {
+				const children = document.getElementById(nodeId + '-children');
+				const toggle = document.getElementById('toggle-' + nodeId);
+				
+				if (children && toggle) {
+					children.style.display = 'block';
+					toggle.style.transform = 'rotate(90deg)';
+					
+					// Find all child nodes and expand them recursively
+					const childNodes = children.querySelectorAll('[id$="-children"]');
+					childNodes.forEach(child => {
+						const childId = child.id.replace('-children', '');
+						expandAllChildren(childId);
+					});
+				}
+			}
+
+			function collapseAllChildren(nodeId) {
+				const children = document.getElementById(nodeId + '-children');
+				const toggle = document.getElementById('toggle-' + nodeId);
+				
+				if (children && toggle) {
+					children.style.display = 'none';
+					toggle.style.transform = 'rotate(0deg)';
+					
+					// Find all child nodes and collapse them recursively
+					const childNodes = children.querySelectorAll('[id$="-children"]');
+					childNodes.forEach(child => {
+						const childId = child.id.replace('-children', '');
+						collapseAllChildren(childId);
+					});
+				}
+			}
+
+			// Global function for toggling page selection
+			window.togglePageSelection = function(pageId) {
+				const checkbox = document.getElementById(pageId);
+				if (checkbox) {
+					checkbox.checked = !checkbox.checked;
+					// Trigger the change event to update selection
+					checkbox.dispatchEvent(new Event('change'));
+				}
+			};
+			
+			// Global function for toggling selection details
+			window.toggleSelectionDetails = function() {
+				const isExpanded = selectionDetails.style.display !== 'none';
+				selectionDetails.style.display = isExpanded ? 'none' : 'block';
+				selectionToggle.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(90deg)';
+			};
+			
+			// Add event listeners to tree
+			function addTreeEventListeners() {
+				
+				// Site checkboxes
+				document.querySelectorAll('.site-checkbox').forEach(checkbox => {
+					checkbox.addEventListener('change', (e) => {
+						const siteKey = e.target.dataset.site;
+						const isChecked = e.target.checked;
+						
+						// Toggle all pages in this site
+						document.querySelectorAll(`input[data-site="${siteKey}"].page-checkbox`).forEach(pageCheckbox => {
+							pageCheckbox.checked = isChecked;
+							handlePageSelection(pageCheckbox, isChecked);
+						});
+						
+						// Toggle all category checkboxes in this site
+						document.querySelectorAll(`input[data-site="${siteKey}"].category-checkbox`).forEach(catCheckbox => {
+							catCheckbox.checked = isChecked;
+						});
+						
+						// Recursively expand/collapse based on selection
+						if (isChecked) {
+							expandAllChildren(`site-${siteKey}`);
+						} else {
+							collapseAllChildren(`site-${siteKey}`);
+						}
+					});
+				});
+				
+				// Category checkboxes
+				document.querySelectorAll('.category-checkbox').forEach(checkbox => {
+					checkbox.addEventListener('change', (e) => {
+						const siteKey = e.target.dataset.site;
+						const path = e.target.dataset.path;
+						const isChecked = e.target.checked;
+						const nodeId = `node-${siteKey}-${path.replace(/\//g, '-')}`;
+						
+						// Find all pages under this path
+						const siteData = displayTree[siteKey];
+						const pages = findPagesInPath(siteData.tree, path.split('/'));
+						
+						pages.forEach(page => {
+							const pageCheckbox = document.querySelector(`input[data-url="${page.url}"]`);
+							if (pageCheckbox) {
+								pageCheckbox.checked = isChecked;
+								handlePageSelection(pageCheckbox, isChecked);
+							}
+						});
+						
+						// Recursively expand/collapse based on selection
+						if (isChecked) {
+							expandAllChildren(nodeId);
+						} else {
+							collapseAllChildren(nodeId);
+						}
+					});
+				});
+				
+				// Page checkboxes
+				document.querySelectorAll('.page-checkbox').forEach(checkbox => {
+					checkbox.addEventListener('change', (e) => {
+						handlePageSelection(e.target, e.target.checked);
+					});
+				});
+			}
+			
+			// Find all pages in a given path
+			function findPagesInPath(tree, pathSegments) {
+				const pages = [];
+				
+				function traverse(nodes, currentPath) {
+					for (const node of nodes) {
+						const matchesPath = pathSegments.every((segment, index) => 
+							node.path[index] === segment
+						);
+						
+						if (matchesPath) {
+							if (node.pages) {
+								pages.push(...node.pages);
+							}
+							if (node.children) {
+								traverse(node.children, [...currentPath, node.name]);
+				}
+						} else if (node.children) {
+							traverse(node.children, [...currentPath, node.name]);
+					}
+					}
+				}
+				
+				traverse(tree, []);
+				return pages;
+			}
+			
+			// Handle page selection
+			function handlePageSelection(checkbox, isChecked) {
+				const url = checkbox.dataset.url;
+				
+				if (isChecked) {
+					selectedPages.add(url);
+				} else {
+					selectedPages.delete(url);
+				}
+				
+				updateSelectionCount();
+			}
+			
+			// Update selection count
+			function updateSelectionCount() {
+				selectionCount.textContent = selectedPages.size;
+				generateBtn.disabled = selectedPages.size === 0;
+				updateSelectedPagesList();
+			}
+			
+			// Update the selected pages list with full paths
+			function updateSelectedPagesList() {
+				if (selectedPages.size === 0) {
+					selectedPagesList.innerHTML = '<em>No pages selected</em>';
+					return;
+				}
+				
+				const selectedPagesData = [];
+				
+				// Collect data for selected pages
+				selectedPages.forEach(url => {
+					const page = allPages.find(p => p.url === url);
+					if (page) {
+						const siteData = displayTree[page.siteKey];
+						const fullPath = getPageFullPath(page, siteData);
+						selectedPagesData.push({
+							title: page.title,
+							url: page.url,
+							siteName: siteData.name,
+							fullPath: fullPath
+						});
+					}
+				});
+				
+				// Sort by site name then by path
+				selectedPagesData.sort((a, b) => {
+					if (a.siteName !== b.siteName) {
+						return a.siteName.localeCompare(b.siteName);
+					}
+					return a.fullPath.localeCompare(b.fullPath);
+				});
+				
+				// Generate HTML
+				const listHtml = selectedPagesData.map(page => `
+					<div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--ao-border-color);">
+						<div style="font-weight: 500; color: var(--ao-text-color);">${page.title}</div>
+						<div style="font-size: 12px; color: var(--ao-secondary-text); margin-top: 2px;">
+							${page.siteName} → ${page.fullPath}
+						</div>
+					</div>
+				`).join('');
+				
+				selectedPagesList.innerHTML = listHtml;
+			}
+			
+			// Get full path for a page within a site
+			function getPageFullPath(page, siteData) {
+				// Find the page in the tree structure to get its path
+				let fullPath = '';
+				
+				function findPagePath(tree, targetUrl, currentPath = []) {
+					for (const node of tree) {
+						const nodePath = [...currentPath, node.name];
+						
+						// Check if this node has the page
+						if (node.pages) {
+							const foundPage = node.pages.find(p => p.url === targetUrl);
+							if (foundPage) {
+								return nodePath.join(' / ');
+							}
+						}
+						
+						// Recursively check children
+						if (node.children) {
+							const childResult = findPagePath(node.children, targetUrl, nodePath);
+							if (childResult) {
+								return childResult;
+							}
+						}
+					}
+					return null;
+				}
+				
+				fullPath = findPagePath(siteData.tree, page.url);
+				return fullPath || 'Root';
+			}
+			
+			// Update loading message
+			function updateLoadingMessage(title, description) {
+				const loadingHeader = loadingMessage.querySelector('.loading-header h3');
+				const loadingDesc = loadingMessage.querySelector('.loading-header p');
+				
+				if (loadingHeader) loadingHeader.textContent = title;
+				if (loadingDesc) loadingDesc.textContent = description;
+				
+				loadingMessage.style.display = 'block';
+			}
+			
+			// Show error message
+			function showError(message) {
+				docsTree.innerHTML = `
+					<div style="padding: 32px; text-align: center; color: var(--ao-error-color, #dc3545);">
+						<h3>❌ Error</h3>
+						<p>${message}</p>
+						<button class="btn" onclick="location.reload()">Retry</button>
+					</div>
+				`;
+			}
+			
+			// Dynamic crawling implementation (placeholder)
+			async function startDynamicCrawling() {
+				// This would implement the dynamic crawling logic
+				// For now, show a message about dynamic crawling
+				updateLoadingMessage('🕷️ Dynamic Crawling', 'This feature uses HyperBEAM relay for real-time crawling...');
+				
+					setTimeout(() => {
+					showError('Dynamic crawling is being implemented. Please use pre-crawled mode for now.');
+				}, 2000);
+			}
+			
+			// Action button handlers
+			selectAllBtn.addEventListener('click', () => {
+				document.querySelectorAll('.page-checkbox').forEach(checkbox => {
+					if (!checkbox.checked) {
+					checkbox.checked = true;
+						handlePageSelection(checkbox, true);
+					}
+				});
+			});
+			
+			clearAllBtn.addEventListener('click', () => {
+				document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+					checkbox.checked = false;
+				});
+				selectedPages.clear();
+				updateSelectionCount();
+			});
+			
+			generateBtn.addEventListener('click', async () => {
+				if (selectedPages.size === 0) return;
+				
+				try {
+					// Show progress
+					progressContainer.style.display = 'block';
+					progressText.textContent = `Fetching ${selectedPages.size} pages...`;
+					
+					const selectedUrls = Array.from(selectedPages);
+					const cleanedPages = await batchFetchAndClean(selectedUrls, (progress) => {
+						const percent = Math.round((progress.completed / progress.total) * 100);
+						progressFill.style.width = `${percent}%`;
+						progressText.textContent = `Processing: ${progress.completed}/${progress.total} (${percent}%)`;
+					});
+					
+					// Generate LLMs.txt
+					progressText.textContent = 'Generating llms.txt...';
+					const llmsTxt = generateLLMsTxt(cleanedPages);
+					
+					// Download
+					const timestamp = new Date().toISOString().split('T')[0];
+					downloadFile(llmsTxt, `permaweb-docs-${timestamp}.llms.txt`, 'text/plain');
+				
+					// Hide progress
+					progressContainer.style.display = 'none';
+					
+				} catch (error) {
+					console.error('Generation failed:', error);
+					progressText.textContent = `Error: ${error.message}`;
+					setTimeout(() => {
+						progressContainer.style.display = 'none';
+					}, 3000);
+											}
+			});
+											
+			// Initialize the application
+			initialize();
+		</script>
 	</body>
 </html>
