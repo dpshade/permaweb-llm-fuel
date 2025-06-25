@@ -52,7 +52,7 @@
   --ao-tag-text: #e0e0e0;
   --ao-button-bg: #242424;
   --ao-button-text: #ffffff;
-  --ao-accent-color: #34d399;
+  --ao-accent-color: #008000;
   --ao-secondary-text: #a0a0a0;
   --ao-section-bg: #1a1a1a;
   --ao-section-color: #ffffff;
@@ -187,6 +187,36 @@ h1 {
 .docs-tree input[type="checkbox"] {
   width: 16px;
   height: 16px;
+  accent-color: var(--ao-accent-color);
+}
+
+/* Target checkboxes by their specific classes and ID */
+.site-checkbox,
+.category-checkbox,
+.page-checkbox {
+  accent-color: var(--ao-accent-color);
+}
+
+#docs-tree input[type="checkbox"] {
+  accent-color: var(--ao-accent-color);
+}
+
+/* Radio button styling */
+.docs-tree input[type="radio"] {
+  accent-color: var(--ao-accent-color);
+}
+
+.site-radio,
+.category-radio,
+.page-radio {
+  accent-color: var(--ao-accent-color);
+}
+
+#docs-tree input[type="radio"] {
+  accent-color: var(--ao-accent-color);
+}
+
+input[type="radio"] {
   accent-color: var(--ao-accent-color);
 }
 
