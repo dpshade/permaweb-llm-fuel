@@ -23,11 +23,11 @@ import '../styles/theme.css';
 				height: 18px;
 				/* Use theme accent color for default border */
 				border: 2px solid var(--ao-accent-color);
-				border-radius: 4px;
+				border-radius: var(--border-radius);
 				background-color: white;
 				cursor: pointer;
 				position: relative;
-				transition: all 0.2s ease;
+				transition: all 0.15s ease;
 			}
 
 			input[type="checkbox"]:checked {
@@ -88,6 +88,30 @@ import '../styles/theme.css';
 				border-color: var(--ao-accent-color);
 			}
 
+			/* Select All button styling */
+			#select-all-btn {
+				background-color: transparent !important;
+				border-color: var(--ao-border-color) !important;
+				color: var(--ao-text-color) !important;
+			}
+
+			#select-all-btn:hover {
+				background-color: var(--ao-hover-bg) !important;
+				color: var(--ao-text-color) !important;
+			}
+
+			/* Clear All button styling */
+			#clear-all-btn {
+				background-color: transparent !important;
+				border-color: var(--ao-border-color) !important;
+				color: var(--ao-text-color) !important;
+			}
+
+			#clear-all-btn:hover {
+				background-color: var(--ao-hover-bg) !important;
+				color: var(--ao-text-color) !important;
+			}
+
 			/* Remove outdated selector for bolding page labels (handled inline) */
 
 			/* Pulse animation for skeleton loading */
@@ -115,6 +139,21 @@ import '../styles/theme.css';
 				opacity: 0.6;
 				cursor: not-allowed;
 			}
+
+			.main-container {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			.main-content {
+				flex: 1 1 auto;
+			}
+
+			.bottom-controls {
+				margin-top: 24px;
+			}
+
 		</style>
 
 		<!-- Note: X-Frame-Options and CSP are configured in astro.config.mjs as HTTP headers -->
@@ -152,152 +191,154 @@ import '../styles/theme.css';
 
 		<!-- Main Container -->
 		<div class="main-container">
-			<h1>Permaweb LLMs Builder</h1>
-
-			<!-- Documentation Tree -->
-			<div id="loading-message" style="display: none;">
-				<h3>Loading Documentation Index</h3>
-				<p>
-					Loading curated documentation from the Permaweb ecosystem...
+			<div class="main-content">
+				<h1 style="margin-bottom: 0;">Permaweb LLMs Builder</h1>
+				<p style="color: #888; font-size: 13px; line-height: 1.5; margin-top: 8px; margin-bottom: 32px; max-width: 600px;">
+					All these docs have been collected throughout the permaweb. Feel free to select which ones to fuel your LLM.
 				</p>
-			</div>
-			<div id="docs-tree">
-				<!-- Optimistic UI - shows immediately -->
-				<div id="optimistic-tree">
-					<div style="margin-bottom: 16px; font-size: 14px; color: var(--ao-secondary-text);">
-						Loading documentation from the Permaweb ecosystem...
-					</div>
-					<div id="tree-root" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
-						<!-- Skeleton structure -->
-						<div style="margin-bottom: 8px;">
-							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.6;">
-								<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-								</svg>
-								<div style="height: 20px; width: 120px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<div style="height: 16px; width: 60px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
-							</div>
-							<div style="margin-left: 24px;">
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 200px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								</div>
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 160px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								</div>
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 180px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								</div>
-							</div>
-						</div>
-						<div style="margin-bottom: 8px;">
-							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.5;">
-								<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-								</svg>
-								<div style="height: 20px; width: 140px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<div style="height: 16px; width: 50px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
-							</div>
-							<div style="margin-left: 24px;">
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 220px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								</div>
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 150px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								</div>
-							</div>
-						</div>
-						<div style="margin-bottom: 8px;">
-							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.4;">
-								<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-								</svg>
-								<div style="height: 20px; width: 100px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<div style="height: 16px; width: 70px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
-							</div>
-							<div style="margin-left: 24px;">
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.2;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 190px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
-			<!-- Progress Container -->
-			<div
-				class="progress-container"
-				id="progress-container"
-				style="display: none;"
-			>
-				<div class="progress-bar">
-					<div class="progress-fill" id="progress-fill"></div>
+				<!-- Documentation Tree -->
+				<div id="loading-message" style="display: none;">
+					<h3>Loading Documentation Index</h3>
+					<p>
+						Loading curated documentation from the Permaweb ecosystem...
+					</p>
 				</div>
-				<div class="progress-text" id="progress-text">
-					Processing...
+				<div id="docs-tree">
+					<!-- Optimistic UI - shows immediately -->
+					<div id="optimistic-tree">
+						<div style="margin-bottom: 16px; font-size: 14px; color: var(--ao-secondary-text);">
+							Loading documentation from the Permaweb ecosystem...
+						</div>
+						<div id="tree-root" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
+							<!-- Skeleton structure -->
+							<div style="margin-bottom: 8px;">
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.6;">
+									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+										<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+									</svg>
+									<div style="height: 20px; width: 120px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<div style="height: 16px; width: 60px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+								</div>
+								<div style="margin-left: 24px;">
+									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
+										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+										<div style="height: 16px; width: 200px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									</div>
+									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
+										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+										<div style="height: 16px; width: 160px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									</div>
+									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
+										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+										<div style="height: 16px; width: 180px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									</div>
+								</div>
+							</div>
+							<div style="margin-bottom: 8px;">
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.5;">
+									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+										<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+									</svg>
+									<div style="height: 20px; width: 140px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<div style="height: 16px; width: 50px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+								</div>
+								<div style="margin-left: 24px;">
+									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
+										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+										<div style="height: 16px; width: 220px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									</div>
+									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
+										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+										<div style="height: 16px; width: 150px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									</div>
+								</div>
+							</div>
+							<div style="margin-bottom: 8px;">
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.4;">
+									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+										<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+									</svg>
+									<div style="height: 20px; width: 100px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<div style="height: 16px; width: 70px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+								</div>
+								<div style="margin-left: 24px;">
+									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.2;">
+										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+										<div style="height: 16px; width: 190px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<!-- Selection Counter -->
-			<div class="selection-counter">
-				<div
-					class="selection-header"
-					style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: space-between;"
-					onclick="toggleSelectionDetails()"
-				>
-					<div style="display: flex; align-items: center; gap: 8px;">
-						<strong id="selection-count">0</strong> pages selected
-						<svg
-							id="selection-toggle"
-							style="width: 12px; height: 12px; transition: transform 0.2s ease;"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
+			<div class="bottom-controls">
+				<div class="progress-container" id="progress-container" style="display: none;">
+					<div class="progress-bar">
+						<div class="progress-fill" id="progress-fill"></div>
+					</div>
+					<div class="progress-text" id="progress-text">
+						Processing...
+					</div>
+				</div>
+				<div class="selection-counter">
+					<div
+						class="selection-header"
+						style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: space-between;"
+						onclick="toggleSelectionDetails()"
+					>
+						<div style="display: flex; align-items: center; gap: 8px;">
+							<strong id="selection-count">0</strong> pages selected
+							<svg
+								id="selection-toggle"
+								style="width: 12px; height: 12px; transition: transform 0.15s ease;"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z"
+									fill="#666"></path>
+							</svg>
+						</div>
+						<div
+							id="estimated-chars"
+							style="font-style: italic; font-size: 12px; color: var(--ao-secondary-text);"
 						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z"
-								fill="#666"></path>
+						</div>
+					</div>
+					<div
+						id="selection-details"
+						class="selection-details"
+					>
+						<div
+							id="selected-pages-list"
+							style="font-size: 14px; color: var(--ao-secondary-text);"
+						>
+						</div>
+					</div>
+				</div>
+				<div class="action-buttons">
+					<button class="btn btn-primary" id="generate-btn" disabled>
+						<svg class="globe-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+							<path d="M2 12h20" stroke="currentColor" stroke-width="1.5"/>
+							<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="1.5"/>
 						</svg>
-					</div>
-					<div
-						id="estimated-chars"
-						style="font-style: italic; font-size: 12px; color: var(--ao-secondary-text);"
-					>
-					</div>
+						Generate llms.txt
+					</button>
+					<button class="btn" id="select-all-btn"> Select All </button>
+					<button class="btn" id="clear-all-btn"> Clear All </button>
 				</div>
-				<div
-					id="selection-details"
-					style="display: none; margin-top: 12px; max-height: 200px; overflow-y: auto;"
-				>
-					<div
-						id="selected-pages-list"
-						style="font-size: 14px; color: var(--ao-secondary-text);"
-					>
-					</div>
-				</div>
-			</div>
-
-			<!-- Action Buttons -->
-			<div class="action-buttons">
-				<button class="btn btn-primary" id="generate-btn" disabled>
-												Generate llms.txt
-				</button>
-				<button class="btn" id="select-all-btn"> Select All </button>
-				<button class="btn" id="clear-all-btn"> Clear All </button>
 			</div>
 		</div>
 
@@ -486,12 +527,12 @@ import '../styles/theme.css';
 				const optimisticTree = document.getElementById('optimistic-tree');
 				if (optimisticTree) {
 					optimisticTree.style.opacity = '0';
-					optimisticTree.style.transition = 'opacity 0.3s ease';
+					optimisticTree.style.transition = 'opacity 0.15s ease';
 					
 					setTimeout(() => {
 						docsTree.innerHTML = treeHtml;
 						docsTree.style.opacity = '0';
-						docsTree.style.transition = 'opacity 0.3s ease';
+						docsTree.style.transition = 'opacity 0.15s ease';
 						requestAnimationFrame(() => {
 							docsTree.style.opacity = '1';
 							// Add event listeners after DOM is fully rendered and visible
@@ -545,12 +586,12 @@ import '../styles/theme.css';
 									</svg>
 									<label style="cursor: pointer; font-weight: 500; font-size: 15px; color: var(--ao-text-color); pointer-events: none;">${siteData.siteName}</label>
 									<span style="font-size: 12px; color: var(--ao-secondary-text);">${sitePageCount} pages</span>
-									<svg class="tree-toggle" id="toggle-site-${siteKey}" style="width: 12px; height: 12px; transition: transform 0.2s ease; margin-left: auto;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<svg class="tree-toggle" id="toggle-site-${siteKey}" style="width: 12px; height: 12px; transition: transform 0.15s ease; margin-left: auto; transform: rotate(0deg);" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
 									</svg>
 								</div>
 							</div>
-							<div id="site-${siteKey}-children" style="display: none;">
+							<div id="site-${siteKey}-children" class="site-children">
 					`;
 
 						// Site pages with breadcrumb paths
@@ -591,18 +632,25 @@ import '../styles/theme.css';
 				const children = document.getElementById(nodeId + "-children");
 				const toggle = document.getElementById("toggle-" + nodeId);
 				if (children && toggle) {
-					const isExpanded = children.style.display !== "none";
-					children.style.display = isExpanded ? "none" : "block";
-					toggle.style.transform = isExpanded
-						? "rotate(0deg)"
-						: "rotate(90deg)";
+					const isExpanded = children.classList.contains("expanded");
+					if (isExpanded) {
+						children.classList.remove("expanded");
+						toggle.style.transform = "rotate(0deg)";
+					} else {
+						children.classList.add("expanded");
+						toggle.style.transform = "rotate(90deg)";
+					}
 				}
 			};
 
 			// Global function for toggling selection details
 			window.toggleSelectionDetails = function () {
-				const isExpanded = selectionDetails.style.display !== "none";
-				selectionDetails.style.display = isExpanded ? "none" : "block";
+				const isExpanded = selectionDetails.classList.contains("expanded");
+				if (isExpanded) {
+					selectionDetails.classList.remove("expanded");
+				} else {
+					selectionDetails.classList.add("expanded");
+				}
 				selectionToggle.style.transform = isExpanded
 					? "rotate(0deg)"
 					: "rotate(90deg)";
@@ -610,6 +658,17 @@ import '../styles/theme.css';
 
 			// Add event listeners to tree
 			function addTreeEventListeners() {
+				// Force CSS to be applied by triggering a reflow
+				setTimeout(() => {
+					const siteChildren = document.querySelectorAll('.site-children');
+					siteChildren.forEach(el => {
+						// Force a reflow to ensure CSS is applied
+						el.offsetHeight;
+						console.log('Site children element:', el);
+						console.log('Computed max-height:', window.getComputedStyle(el).maxHeight);
+					});
+				}, 100);
+
 				// Site checkboxes
 				document
 					.querySelectorAll(".site-checkbox")
