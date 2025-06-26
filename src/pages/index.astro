@@ -421,13 +421,16 @@
 								? page.breadcrumbs.join(' / ') 
 								: 'Root';
 							
+							const specificTitle = generateSpecificTitle(page);
 							html += `
 								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; padding: 2px 0; margin-left: 24px;">
 									<input type="checkbox" id="${pageId}" class="page-checkbox" data-url="${page.url}" data-site="${page.siteKey}">
-									<label for="${pageId}" style="cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ao-text-color);">${page.title}</label>
-									<span style="font-size: 12px; color: var(--ao-secondary-text); margin-left: 8px;">
+									<label for="${pageId}" style="cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ao-text-color);">${specificTitle}</label>
+									<a href="${page.url}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; color: var(--ao-secondary-text); margin-left: 8px; text-decoration: none; cursor: pointer;" 
+									   onmouseover="this.style.textDecoration='underline'" 
+									   onmouseout="this.style.textDecoration='none'">
 										${breadcrumbPath}
-									</span>
+									</a>
 								</div>
 							`;
 						});
@@ -514,6 +517,80 @@
 				updateSelectionCount();
 			}
 
+			// Generate defuddle title (stripped, no spaces, no #, no MD, just raw text)
+			function generateDefuddleTitle(title) {
+				if (!title) return 'Untitled';
+				
+				let cleaned = title;
+				
+				// Remove common site suffixes like " | Cookbook", " | Documentation", etc.
+				cleaned = cleaned.replace(/\s*[|\-–—]\s*(Cookbook|Documentation|Docs|Guide|Tutorial|Help|Support|Home|Index|Main|Page)\s*$/i, '');
+				
+				// Remove leading/trailing whitespace
+				cleaned = cleaned.trim();
+				
+				// Remove markdown formatting
+				cleaned = cleaned.replace(/[#*_`]/g, '');
+				
+				// Clean up extra whitespace
+				cleaned = cleaned.replace(/\s+/g, ' ').trim();
+				
+				return cleaned || 'Untitled';
+			}
+
+			// Generate more specific title using breadcrumbs and context
+			function generateSpecificTitle(page) {
+				if (!page) return 'Untitled';
+				
+				// Start with defuddle title as baseline
+				const defuddleTitle = generateDefuddleTitle(page.title);
+				
+				// If no breadcrumbs or just filename, return defuddle title
+				if (!page.breadcrumbs || page.breadcrumbs.length === 0) {
+					return defuddleTitle;
+				}
+				
+				// Extract meaningful breadcrumb context (ignore file extensions and generic terms)
+				const meaningfulCrumbs = page.breadcrumbs
+					.filter(crumb => {
+						// Remove file extensions and generic terms
+						const cleaned = crumb.replace(/\.(html?|php|aspx?)$/i, '').toLowerCase();
+						return cleaned !== 'index' && 
+							   cleaned !== 'main' && 
+							   cleaned !== 'home' && 
+							   cleaned !== 'default' &&
+							   cleaned.length > 1;
+					})
+					.map(crumb => {
+						// Clean and format breadcrumb
+						let formatted = crumb.replace(/\.(html?|php|aspx?)$/i, '');
+						formatted = formatted.replace(/[-_]/g, ' ');
+						return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+					});
+				
+				// If we have meaningful breadcrumbs, try to create a more specific title
+				if (meaningfulCrumbs.length > 0) {
+					const context = meaningfulCrumbs.join(' / ');
+					
+					// Check if the defuddle title already contains the context
+					const titleLower = defuddleTitle.toLowerCase();
+					const contextLower = context.toLowerCase();
+					
+					// If title already includes the context, just return defuddle title
+					if (titleLower.includes(contextLower) || contextLower.includes(titleLower)) {
+						return defuddleTitle;
+					}
+					
+					// Create contextual title - but keep it concise
+					// Only add context if it's not too long and adds value
+					if (context.length < 30 && meaningfulCrumbs.length <= 2) {
+						return `${defuddleTitle} (${context})`;
+					}
+				}
+				
+				return defuddleTitle;
+			}
+
 			// Update selection count
 			function updateSelectionCount() {
 				const selectedCount = selectedPages.size;
@@ -569,7 +646,7 @@
 							: 'Root';
 						
 						selectedPagesData.push({
-							title: page.title,
+							title: generateSpecificTitle(page),
 							url: page.url,
 							siteName: page.siteName,
 							breadcrumbPath: breadcrumbPath,
@@ -592,7 +669,9 @@
 					<div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--ao-border-color);">
 						<div style="font-weight: 500; color: var(--ao-text-color);">${page.title}</div>
 						<div style="font-size: 12px; color: var(--ao-secondary-text); margin-top: 2px;">
-							${page.siteName} → ${page.breadcrumbPath}
+							${page.siteName} → <a href="${page.url}" target="_blank" rel="noopener noreferrer" style="color: var(--ao-secondary-text); text-decoration: none;" 
+							onmouseover="this.style.textDecoration='underline'" 
+							onmouseout="this.style.textDecoration='none'">${page.breadcrumbPath}</a>
 						</div>
 					</div>
 				`,
