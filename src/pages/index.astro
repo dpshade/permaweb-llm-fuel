@@ -57,6 +57,23 @@
 				border-color: var(--ao-accent-color);
 			}
 
+			input[type="checkbox"]:indeterminate {
+				background-color: var(--ao-accent-color);
+				border-color: var(--ao-accent-color);
+			}
+
+			input[type="checkbox"]:indeterminate::after {
+				content: "−";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 1;
+			}
+
 			/* Dark theme adjustments */
 			[data-theme="dark"] input[type="checkbox"] {
 				/* Keep accent border in dark mode while using input background */
@@ -65,6 +82,11 @@
 			}
 
 			[data-theme="dark"] input[type="checkbox"]:hover {
+				border-color: var(--ao-accent-color);
+			}
+
+			[data-theme="dark"] input[type="checkbox"]:indeterminate {
+				background-color: var(--ao-accent-color);
 				border-color: var(--ao-accent-color);
 			}
 
@@ -515,6 +537,31 @@
 				}
 
 				updateSelectionCount();
+				updateSiteCheckboxes();
+			}
+
+			// Update site checkboxes based on their page selections
+			function updateSiteCheckboxes() {
+				document.querySelectorAll(".site-checkbox").forEach((siteCheckbox) => {
+					const siteKey = siteCheckbox.dataset.site;
+					const sitePageCheckboxes = document.querySelectorAll(
+						`input[data-site="${siteKey}"].page-checkbox`
+					);
+					
+					const checkedPages = Array.from(sitePageCheckboxes).filter(cb => cb.checked);
+					
+					// Update site checkbox state
+					if (checkedPages.length === 0) {
+						siteCheckbox.checked = false;
+						siteCheckbox.indeterminate = false;
+					} else if (checkedPages.length === sitePageCheckboxes.length) {
+						siteCheckbox.checked = true;
+						siteCheckbox.indeterminate = false;
+					} else {
+						siteCheckbox.checked = false;
+						siteCheckbox.indeterminate = true;
+					}
+				});
 			}
 
 			// Generate defuddle title (stripped, no spaces, no #, no MD, just raw text)
@@ -538,6 +585,12 @@
 				return cleaned || 'Untitled';
 			}
 
+			// Truncate text with ellipsis
+			function truncateText(text, maxLength = 55) {
+				if (!text || text.length <= maxLength) return text;
+				return text.substring(0, maxLength - 3) + '...';
+			}
+
 			// Generate more specific title using breadcrumbs and context
 			function generateSpecificTitle(page) {
 				if (!page) return 'Untitled';
@@ -545,9 +598,9 @@
 				// Start with defuddle title as baseline
 				const defuddleTitle = generateDefuddleTitle(page.title);
 				
-				// If no breadcrumbs or just filename, return defuddle title
+				// If no breadcrumbs or just filename, return truncated defuddle title
 				if (!page.breadcrumbs || page.breadcrumbs.length === 0) {
-					return defuddleTitle;
+					return truncateText(defuddleTitle);
 				}
 				
 				// Extract meaningful breadcrumb context (ignore file extensions and generic terms)
@@ -576,19 +629,20 @@
 					const titleLower = defuddleTitle.toLowerCase();
 					const contextLower = context.toLowerCase();
 					
-					// If title already includes the context, just return defuddle title
+					// If title already includes the context, just return truncated defuddle title
 					if (titleLower.includes(contextLower) || contextLower.includes(titleLower)) {
-						return defuddleTitle;
+						return truncateText(defuddleTitle);
 					}
 					
 					// Create contextual title - but keep it concise
 					// Only add context if it's not too long and adds value
 					if (context.length < 30 && meaningfulCrumbs.length <= 2) {
-						return `${defuddleTitle} (${context})`;
+						const fullTitle = `${defuddleTitle} (${context})`;
+						return truncateText(fullTitle);
 					}
 				}
 				
-				return defuddleTitle;
+				return truncateText(defuddleTitle);
 			}
 
 			// Update selection count
@@ -709,24 +763,48 @@
 
 			// Action button handlers
 			selectAllBtn.addEventListener("click", () => {
-				document
-					.querySelectorAll(".page-checkbox")
-					.forEach((checkbox) => {
-						if (!checkbox.checked) {
-							checkbox.checked = true;
-							handlePageSelection(checkbox, true);
-						}
+				// First, update all checkboxes immediately for instant visual feedback
+				const pageCheckboxes = document.querySelectorAll(".page-checkbox");
+				const siteCheckboxes = document.querySelectorAll(".site-checkbox");
+				
+				// Update page checkboxes visually first
+				pageCheckboxes.forEach((checkbox) => {
+					checkbox.checked = true;
+				});
+				
+				// Update site checkboxes visually first
+				siteCheckboxes.forEach((checkbox) => {
+					checkbox.checked = true;
+					checkbox.indeterminate = false;
+				});
+				
+				// Then batch update the data structures
+				requestAnimationFrame(() => {
+					// Clear and rebuild selectedPages set efficiently
+					selectedPages.clear();
+					pageCheckboxes.forEach((checkbox) => {
+						selectedPages.add(checkbox.dataset.url);
 					});
+					
+					// Update counts once at the end
+					updateSelectionCount();
+				});
 			});
 
 			clearAllBtn.addEventListener("click", () => {
+				// Update UI immediately for instant visual feedback
 				document
 					.querySelectorAll('input[type="checkbox"]')
 					.forEach((checkbox) => {
 						checkbox.checked = false;
+						checkbox.indeterminate = false;
 					});
-				selectedPages.clear();
-				updateSelectionCount();
+				
+				// Then batch update the data structures
+				requestAnimationFrame(() => {
+					selectedPages.clear();
+					updateSelectionCount();
+				});
 			});
 
 			generateBtn.addEventListener("click", async () => {
@@ -740,12 +818,12 @@
 					const selectedUrls = Array.from(selectedPages);
 					const cleanedPages = await batchFetchAndClean(
 						selectedUrls,
-						(progress) => {
+						(completed, total, currentUrl) => {
 							const percent = Math.round(
-								(progress.completed / progress.total) * 100,
+								(completed / total) * 100,
 							);
 							progressFill.style.width = `${percent}%`;
-							progressText.textContent = `Processing: ${progress.completed}/${progress.total} (${percent}%)`;
+							progressText.textContent = `Processing: ${completed}/${total} (${percent}%)`;
 						},
 					);
 
