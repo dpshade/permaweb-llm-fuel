@@ -117,12 +117,7 @@ import '../styles/theme.css';
 			}
 		</style>
 
-		<!-- Iframe compatibility headers -->
-		<meta http-equiv="X-Frame-Options" content="ALLOWALL" />
-		<meta
-			http-equiv="Content-Security-Policy"
-			content="frame-ancestors *;"
-		/>
+		<!-- Note: X-Frame-Options and CSP are configured in astro.config.mjs as HTTP headers -->
 	</head>
 
 	<body>
@@ -307,7 +302,7 @@ import '../styles/theme.css';
 		</div>
 
 		<!-- Main JavaScript -->
-		<script type="module">
+		<script>
 			import { initializeAllTheme } from "../utils/theme.js";
 			import {
 				batchFetchAndClean,
