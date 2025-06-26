@@ -36,6 +36,7 @@
 
 ### Code Quality
 - [x] **Modern ES Modules** - ✅ Using modern import/export syntax throughout
+- [ ] **🔤 Content Stripping Refinement (HIGH)** - Fix overly aggressive text cleaning that removes legitimate underscores, code formatting, and technical syntax that should be preserved in documentation
 - [ ] **Comprehensive Error Handling** - Add detailed error categorization and recovery strategies
 - [ ] **Unit Test Coverage** - Expand test coverage for crawler functions and edge cases
 - [ ] **TypeScript Migration** - Convert crawler modules to TypeScript for better type safety
