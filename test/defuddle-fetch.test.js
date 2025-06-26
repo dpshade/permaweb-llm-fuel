@@ -140,6 +140,49 @@ describe('defuddle-fetch', () => {
       expect(result).toContain('[First Document with Spaces & Special-Characters!](#first-document-with-spaces-special-characters-)');
       expect(result).toContain('[Second-Document](#second-document)');
     });
+
+    it('should handle batch result objects from optimized processing', () => {
+      const batchResult = {
+        results: [
+          {
+            title: 'Test Document 1',
+            content: 'Content from batch processing',
+            url: 'https://example.com/batch1',
+            wordCount: 4
+          },
+          {
+            title: 'Test Document 2',
+            content: 'More content from batch',
+            url: 'https://example.com/batch2',
+            wordCount: 4
+          }
+        ],
+        summary: {
+          total: 2,
+          successful: 2,
+          failed: 0
+        }
+      };
+
+      const result = generateLLMsTxt(batchResult);
+      
+      expect(result).toContain('# Permaweb Documentation Collection');
+      expect(result).toContain('Total Documents: 2');
+      expect(result).toContain('Total Words: 8');
+      expect(result).toContain('# Test Document 1');
+      expect(result).toContain('# Test Document 2');
+      expect(result).toContain('Content from batch processing');
+    });
+
+    it('should handle invalid input gracefully', () => {
+      const result1 = generateLLMsTxt(null);
+      const result2 = generateLLMsTxt(undefined);
+      const result3 = generateLLMsTxt({ invalid: 'object' });
+      
+      expect(result1).toContain('Total Documents: 0');
+      expect(result2).toContain('Total Documents: 0');
+      expect(result3).toContain('Total Documents: 0');
+    });
   });
 
   describe('downloadFile', () => {

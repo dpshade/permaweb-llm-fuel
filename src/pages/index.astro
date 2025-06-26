@@ -1,5 +1,6 @@
 ---
 // Main page for Permaweb LLMs Builder
+import '../styles/theme.css';
 ---
 
 <html lang="en">
@@ -12,9 +13,6 @@
 			content="Interactive tool to select and curate Permaweb documentation into llms.txt format for AI training"
 		/>
 		<title>Permaweb LLMs Builder</title>
-
-		<!-- Theme CSS -->
-		<link rel="stylesheet" href="/src/styles/theme.css" />
 
 		<!-- Custom checkbox styling -->
 		<style>
@@ -91,6 +89,16 @@
 			}
 
 			/* Remove outdated selector for bolding page labels (handled inline) */
+
+			/* Pulse animation for skeleton loading */
+			@keyframes pulse {
+				0%, 100% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0.5;
+				}
+			}
 		</style>
 
 		<!-- Iframe compatibility headers -->
@@ -136,13 +144,86 @@
 			<h1>Permaweb LLMs Builder</h1>
 
 			<!-- Documentation Tree -->
-			<div id="loading-message">
+			<div id="loading-message" style="display: none;">
 				<h3>Loading Documentation Index</h3>
 				<p>
 					Loading curated documentation from the Permaweb ecosystem...
 				</p>
 			</div>
-			<div id="docs-tree"></div>
+			<div id="docs-tree">
+				<!-- Optimistic UI - shows immediately -->
+				<div id="optimistic-tree">
+					<div style="margin-bottom: 16px; font-size: 14px; color: var(--ao-secondary-text);">
+						Loading documentation from the Permaweb ecosystem...
+					</div>
+					<div id="tree-root" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
+						<!-- Skeleton structure -->
+						<div style="margin-bottom: 8px;">
+							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.6;">
+								<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+								</svg>
+								<div style="height: 20px; width: 120px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<div style="height: 16px; width: 60px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+							</div>
+							<div style="margin-left: 24px;">
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
+									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<div style="height: 16px; width: 200px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								</div>
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
+									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<div style="height: 16px; width: 160px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								</div>
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
+									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<div style="height: 16px; width: 180px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								</div>
+							</div>
+						</div>
+						<div style="margin-bottom: 8px;">
+							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.5;">
+								<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+								</svg>
+								<div style="height: 20px; width: 140px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<div style="height: 16px; width: 50px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+							</div>
+							<div style="margin-left: 24px;">
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
+									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<div style="height: 16px; width: 220px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								</div>
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
+									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<div style="height: 16px; width: 150px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								</div>
+							</div>
+						</div>
+						<div style="margin-bottom: 8px;">
+							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.4;">
+								<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+								</svg>
+								<div style="height: 20px; width: 100px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<div style="height: 16px; width: 70px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+							</div>
+							<div style="margin-left: 24px;">
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.2;">
+									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+									<div style="height: 16px; width: 190px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<!-- Progress Container -->
 			<div
@@ -300,8 +381,7 @@
 					// Render the tree
 					renderDocumentationTree();
 
-					// Hide loading message
-					loadingMessage.style.display = "none";
+					// Loading message is already hidden by default with optimistic UI
 
 					console.log(
 						`Loaded documentation index: ${allPages.length} total pages from ${Object.keys(docsIndex).length} sites`,
@@ -390,10 +470,33 @@
 					</div>
 				`;
 
-				docsTree.innerHTML = treeHtml;
-
-				// Add event listeners
-				addTreeEventListeners();
+				// Smooth transition from optimistic to real content
+				const optimisticTree = document.getElementById('optimistic-tree');
+				if (optimisticTree) {
+					optimisticTree.style.opacity = '0';
+					optimisticTree.style.transition = 'opacity 0.3s ease';
+					
+					setTimeout(() => {
+						docsTree.innerHTML = treeHtml;
+						docsTree.style.opacity = '0';
+						docsTree.style.transition = 'opacity 0.3s ease';
+						requestAnimationFrame(() => {
+							docsTree.style.opacity = '1';
+							// Add event listeners after DOM is fully rendered and visible
+							addTreeEventListeners();
+						});
+					}, 300);
+				} else {
+					docsTree.innerHTML = treeHtml;
+					// Add event listeners immediately when no transition
+					addTreeEventListeners();
+				}
+				
+				// Select all pages by default
+				allPages.forEach(page => {
+					selectedPages.add(page.url);
+				});
+				
 				updateSelectionCount();
 			}
 
@@ -421,17 +524,19 @@
 						// Site header with expand/collapse
 						let html = `
 						<div style="margin-bottom: 8px;">
-							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;" onclick="toggleNode('site-${siteKey}')">
-								<input type="checkbox" id="site-${siteKey}" class="site-checkbox" data-site="${siteKey}" onclick="event.stopPropagation()">
-								<svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-								</svg>
-								<label style="cursor: pointer; font-weight: 500; font-size: 15px; color: var(--ao-text-color); pointer-events: none;">${siteData.siteName}</label>
-								<span style="font-size: 12px; color: var(--ao-secondary-text);">${sitePageCount} pages</span>
-								<svg class="tree-toggle" id="toggle-site-${siteKey}" style="width: 12px; height: 12px; transition: transform 0.2s ease; margin-left: auto;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
-								</svg>
+							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+								<input type="checkbox" id="site-${siteKey}" class="site-checkbox" data-site="${siteKey}" checked>
+								<div style="display: flex; align-items: center; gap: 8px; cursor: pointer; flex: 1;" onclick="toggleNode('site-${siteKey}')">
+									<svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+										<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+									</svg>
+									<label style="cursor: pointer; font-weight: 500; font-size: 15px; color: var(--ao-text-color); pointer-events: none;">${siteData.siteName}</label>
+									<span style="font-size: 12px; color: var(--ao-secondary-text);">${sitePageCount} pages</span>
+									<svg class="tree-toggle" id="toggle-site-${siteKey}" style="width: 12px; height: 12px; transition: transform 0.2s ease; margin-left: auto;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
+									</svg>
+								</div>
 							</div>
 							<div id="site-${siteKey}-children" style="display: none;">
 					`;
@@ -446,7 +551,7 @@
 							const specificTitle = generateSpecificTitle(page);
 							html += `
 								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; padding: 2px 0; margin-left: 24px;">
-									<input type="checkbox" id="${pageId}" class="page-checkbox" data-url="${page.url}" data-site="${page.siteKey}">
+									<input type="checkbox" id="${pageId}" class="page-checkbox" data-url="${page.url}" data-site="${page.siteKey}" checked>
 									<label for="${pageId}" style="cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ao-text-color);">${specificTitle}</label>
 									<a href="${page.url}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; color: var(--ao-secondary-text); margin-left: 8px; text-decoration: none; cursor: pointer;" 
 									   onmouseover="this.style.textDecoration='underline'" 
@@ -502,17 +607,24 @@
 							const isChecked = e.target.checked;
 
 							// Toggle all pages in this site
-							document
-								.querySelectorAll(
-									`input[data-site="${siteKey}"].page-checkbox`,
-								)
-								.forEach((pageCheckbox) => {
-									pageCheckbox.checked = isChecked;
-									handlePageSelection(
-										pageCheckbox,
-										isChecked,
-									);
-								});
+							const sitePageCheckboxes = document.querySelectorAll(
+								`input[data-site="${siteKey}"].page-checkbox`,
+							);
+							
+							sitePageCheckboxes.forEach((pageCheckbox) => {
+								pageCheckbox.checked = isChecked;
+								const url = pageCheckbox.dataset.url;
+								
+								// Update selectedPages set directly
+								if (isChecked) {
+									selectedPages.add(url);
+								} else {
+									selectedPages.delete(url);
+								}
+							});
+							
+							// Update UI once after all changes
+							updateSelectionCount();
 						});
 					});
 
@@ -737,17 +849,16 @@
 
 
 
-			// Update loading message
+			// Update loading message (optimistic UI shows instead)
 			function updateLoadingMessage(title, description) {
-				const loadingHeader =
-					loadingMessage.querySelector(".loading-header h3");
-				const loadingDesc =
-					loadingMessage.querySelector(".loading-header p");
-
-				if (loadingHeader) loadingHeader.textContent = title;
-				if (loadingDesc) loadingDesc.textContent = description;
-
-				loadingMessage.style.display = "block";
+				// With optimistic UI, we just update the skeleton message
+				const optimisticMessage = document.querySelector('#optimistic-tree > div:first-child');
+				if (optimisticMessage) {
+					optimisticMessage.textContent = description;
+				}
+				
+				// Keep the old loading message hidden since we show optimistic UI
+				console.log(`Loading: ${title} - ${description}`);
 			}
 
 			// Show error message
@@ -816,19 +927,43 @@
 					progressText.textContent = `Fetching ${selectedPages.size} pages...`;
 
 					const selectedUrls = Array.from(selectedPages);
-					const cleanedPages = await batchFetchAndClean(
-						selectedUrls,
-						(completed, total, currentUrl) => {
-							const percent = Math.round(
-								(completed / total) * 100,
-							);
+					
+					// Use the enhanced batch processing with optimized parallel processing
+					const batchResult = await batchFetchAndClean(selectedUrls, {
+						concurrency: 5,
+						qualityThreshold: 0.3,
+						useOptimizedBatch: true,
+						onProgress: (completed, total, currentUrl, qualityScore) => {
+							const percent = Math.round((completed / total) * 100);
 							progressFill.style.width = `${percent}%`;
-							progressText.textContent = `Processing: ${completed}/${total} (${percent}%)`;
+							
+							// Enhanced progress text with quality info
+							if (qualityScore !== undefined) {
+								progressText.textContent = `Processing: ${completed}/${total} (${percent}%)`;
+							} else {
+								progressText.textContent = `Processing: ${completed}/${total} (${percent}%)`;
+							}
 						},
-					);
+						onError: (url, error) => {
+							console.warn(`Failed to process ${url}:`, error.message);
+						},
+						onQualityFilter: (url, score, reason) => {
+							console.log(`Filtered low-quality content from ${url}: ${reason} (Score: ${score.toFixed(2)})`);
+						}
+					});
+
+					// Extract results array from batch result
+					const cleanedPages = batchResult.results || batchResult;
+
+					// Show processing summary
+					if (batchResult.summary) {
+						const { total, successful, failed } = batchResult.summary;
+						progressText.textContent = `Processed ${successful}/${total} pages successfully. Generating document...`;
+					} else {
+						progressText.textContent = "Generating llms.txt...";
+					}
 
 					// Generate LLMs.txt
-					progressText.textContent = "Generating llms.txt...";
 					const llmsTxt = generateLLMsTxt(cleanedPages);
 
 					// Download
@@ -839,14 +974,22 @@
 						"text/plain",
 					);
 
-					// Hide progress
-					progressContainer.style.display = "none";
+					// Hide progress with success message
+					if (batchResult.summary) {
+						const { successful, failed } = batchResult.summary;
+						progressText.textContent = `Generated document with ${successful} pages${failed > 0 ? ` (${failed} failed)` : ''}`;
+						setTimeout(() => {
+							progressContainer.style.display = "none";
+						}, 2000);
+					} else {
+						progressContainer.style.display = "none";
+					}
 				} catch (error) {
 					console.error("Generation failed:", error);
-					progressText.textContent = `Error: ${error.message}`;
+					progressText.textContent = `❌ Error: ${error.message}`;
 					setTimeout(() => {
 						progressContainer.style.display = "none";
-					}, 3000);
+					}, 5000);
 				}
 			});
 

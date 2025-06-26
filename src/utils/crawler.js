@@ -86,10 +86,10 @@ async function initializeWayfinder() {
             console.log(`🔍 Verification: ${((event.processedBytes / event.totalBytes) * 100).toFixed(1)}%`);
           },
           onVerificationSucceeded: (event) => {
-            console.log(`✅ Verified: ${event.txId}`);
+            console.log(`Verified: ${event.txId}`);
           },
           onVerificationFailed: (event) => {
-            console.warn(`⚠️ Verification failed: ${event.error.message}`);
+            console.warn(`Verification failed: ${event.error.message}`);
           },
         },
       },
@@ -1520,7 +1520,7 @@ export async function crawlSite(siteKey, options = {}) {
         console.log(`🌐 No ArNS mapping found for ${hostname}, using original URL`);
       }
     } catch (error) {
-      console.warn(`⚠️ Wayfinder gateway resolution failed, using original URL:`, error.message);
+      console.warn(`Wayfinder gateway resolution failed, using original URL:`, error.message);
       // Continue with original URL - this is not a fatal error
     }
   } else {
