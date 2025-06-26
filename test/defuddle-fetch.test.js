@@ -1,5 +1,5 @@
 import { expect, it, describe } from 'vitest';
-import { generateLLMsTxt, downloadFile } from '../src/utils/defuddle-fetch.js';
+import { generateLLMsTxt, downloadFile, openContentInNewTab } from '../src/utils/defuddle-fetch.js';
 
 describe('defuddle-fetch', () => {
   describe('generateLLMsTxt', () => {
@@ -190,6 +190,14 @@ describe('defuddle-fetch', () => {
     // In a real browser environment, we would test that the download is triggered
     it('should be a function', () => {
       expect(typeof downloadFile).toBe('function');
+    });
+  });
+
+  describe('openContentInNewTab', () => {
+    // Note: This requires browser APIs (window.open, Blob, URL)
+    // In a real test environment, we would mock these browser APIs
+    it('should be a function', () => {
+      expect(typeof openContentInNewTab).toBe('function');
     });
   });
 });

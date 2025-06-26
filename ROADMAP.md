@@ -96,6 +96,7 @@
 - [ ] **Pattern Testing Tools** - Tools to test and validate URL patterns and selectors
 - [ ] **Dry Run Capabilities** - Preview crawl results before full execution
 - [ ] **Custom Site Addition** - Interface to add new documentation sites to crawl
+- [ ] **Text File Viewer** - Display text files in browser instead of forcing downloads for better user experience
 
 ## 🔄 DevOps & Deployment
 

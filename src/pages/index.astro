@@ -99,6 +99,22 @@ import '../styles/theme.css';
 					opacity: 0.5;
 				}
 			}
+
+			/* Generating state styles */
+			.btn.generating {
+				opacity: 0.6;
+				cursor: wait;
+			}
+
+			input[type="checkbox"]:disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+
+			button:disabled {
+				opacity: 0.6;
+				cursor: not-allowed;
+			}
 		</style>
 
 		<!-- Iframe compatibility headers -->
@@ -283,7 +299,7 @@ import '../styles/theme.css';
 			<!-- Action Buttons -->
 			<div class="action-buttons">
 				<button class="btn btn-primary" id="generate-btn" disabled>
-					Generate llms.txt
+												Generate llms.txt
 				</button>
 				<button class="btn" id="select-all-btn"> Select All </button>
 				<button class="btn" id="clear-all-btn"> Clear All </button>
@@ -297,6 +313,7 @@ import '../styles/theme.css';
 				batchFetchAndClean,
 				generateLLMsTxt,
 				downloadFile,
+				openContentInNewTab,
 			} from "/src/utils/defuddle-fetch.js";
 
 
@@ -757,6 +774,31 @@ import '../styles/theme.css';
 				return truncateText(defuddleTitle);
 			}
 
+			// Function to enable/disable UI elements during generation
+			function setUIEnabled(enabled) {
+				// Disable/enable generate button
+				generateBtn.disabled = !enabled || selectedPages.size === 0;
+				
+				// Disable/enable select all and clear all buttons
+				selectAllBtn.disabled = !enabled;
+				clearAllBtn.disabled = !enabled;
+				
+				// Disable/enable all checkboxes
+				const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+				allCheckboxes.forEach(checkbox => {
+					checkbox.disabled = !enabled;
+				});
+				
+				// Update visual state
+				if (enabled) {
+					generateBtn.classList.remove('generating');
+					generateBtn.textContent = 'Generate llms.txt';
+				} else {
+					generateBtn.classList.add('generating');
+					generateBtn.textContent = 'Generating...';
+				}
+			}
+
 			// Update selection count
 			function updateSelectionCount() {
 				const selectedCount = selectedPages.size;
@@ -922,6 +964,9 @@ import '../styles/theme.css';
 				if (selectedPages.size === 0) return;
 
 				try {
+					// Disable UI elements during generation
+					setUIEnabled(false);
+
 					// Show progress
 					progressContainer.style.display = "block";
 					progressText.textContent = `Fetching ${selectedPages.size} pages...`;
@@ -966,27 +1011,38 @@ import '../styles/theme.css';
 					// Generate LLMs.txt
 					const llmsTxt = generateLLMsTxt(cleanedPages);
 
-					// Download
+					// Open content in new tab
 					const timestamp = new Date().toISOString().split("T")[0];
-					downloadFile(
-						llmsTxt,
-						`permaweb-docs-${timestamp}.llms.txt`,
-						"text/plain",
-					);
+					const filename = `permaweb-docs-${timestamp}.llms.txt`;
+					
+					try {
+						// Open in new tab to view raw content
+						openContentInNewTab(llmsTxt, filename);
+						
+						progressText.textContent = `Document generated successfully! Opening in new tab...`;
+					} catch (error) {
+						console.error('Failed to open in new tab, falling back to download:', error);
+						// Fallback to download if new tab fails (e.g., popup blocked)
+						downloadFile(llmsTxt, filename, "text/plain");
+						progressText.textContent = `Document downloaded (popup blocked)`;
+					}
 
 					// Hide progress with success message
 					if (batchResult.summary) {
 						const { successful, failed } = batchResult.summary;
 						progressText.textContent = `Generated document with ${successful} pages${failed > 0 ? ` (${failed} failed)` : ''}`;
+						setUIEnabled(true); // Re-enable UI immediately after success
 						setTimeout(() => {
 							progressContainer.style.display = "none";
-						}, 2000);
+						}, 1500);
 					} else {
 						progressContainer.style.display = "none";
+						setUIEnabled(true); // Re-enable UI after success
 					}
 				} catch (error) {
 					console.error("Generation failed:", error);
 					progressText.textContent = `❌ Error: ${error.message}`;
+					setUIEnabled(true); // Re-enable UI after error
 					setTimeout(() => {
 						progressContainer.style.display = "none";
 					}, 5000);

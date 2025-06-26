@@ -405,3 +405,31 @@ export function downloadFile(content, filename = 'llms.txt', mimeType = 'text/pl
   
   URL.revokeObjectURL(url);
 }
+
+/**
+ * Open content in a new tab as raw text (client-side solution for static sites)
+ * @param {string} content - The content to display
+ * @param {string} filename - The filename for the content
+ */
+export function openContentInNewTab(content, filename = 'llms.txt') {
+  // Create a blob with the content
+  const blob = new Blob([content], { type: 'text/plain; charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  
+  // Open in new tab
+  const newWindow = window.open(url, '_blank');
+  
+  if (newWindow) {
+    // Set a title for the new window/tab
+    newWindow.document.title = filename;
+    
+    // Clean up the blob URL after a short delay
+    setTimeout(() => {
+      URL.revokeObjectURL(url);
+    }, 1000);
+  } else {
+    // If popup blocked, clean up immediately and throw error
+    URL.revokeObjectURL(url);
+    throw new Error('Popup blocked - please allow popups for this site');
+  }
+}
