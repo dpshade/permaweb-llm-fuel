@@ -74,23 +74,28 @@
   "hyperbeam": {
     "name": "Hyperbeam",
     "baseUrl": "https://hyperbeam.arweave.net",
-    "maxDepth": 3,
-    "maxPages": 75,
+    "maxDepth": 4,
+    "maxPages": 100,
     "selectors": {
-      "title": "h1, title, .page-title, .doc-title",
-      "navigation": "nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a",
-      "content": "main, .content, article, .markdown-body, .doc-content, .page-content, .documentation"
+      "title": "h1, title, .page-title, .doc-title, .md-header__topic, .md-content h1",
+      "navigation": ".md-nav__link, .md-sidebar a, .md-nav a, .md-tabs__link, nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a",
+      "content": ".md-content__inner, .md-typeset, main, .content, article, .markdown-body, .doc-content, .page-content, .documentation"
     },
     "excludePatterns": [
       "/\\/api\\//",
       "/\\.(pdf|zip|tar|gz)$/",
       "/mailto:/",
-      "/#$/"
+      "/#$/",
+      "/\\?.*search/"
     ],
     "seedUrls": [
+      "/build/introduction/what-is-hyperbeam.html",
+      "/build/introduction/what-is-ao-core.html",
       "/build/",
       "/run/",
-      "/learn/",
+      "/run/running-a-hyperbeam-node.html",
+      "/run/joining-running-a-router.html",
+      "/run/reference/faq.html",
       "/docs/"
     ]
   }

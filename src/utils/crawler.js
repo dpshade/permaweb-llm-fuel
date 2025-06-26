@@ -3,24 +3,21 @@
  * Discovers pages by following links and analyzing site structures
  */
 
+import { JSDOM } from 'jsdom';
+import { promises as fs } from 'fs';
+import { resolve } from 'path';
 import Defuddle from 'defuddle';
 
-// Dynamic import for Node.js environment
-let JSDOM;
-if (typeof window === 'undefined') {
-  JSDOM = (await import('jsdom')).JSDOM;
-}
-
 // Cache for loaded configuration
-let CRAWL_CONFIGS = null;
+let crawlConfigs = null;
 
 /**
  * Load crawl configuration from JSON file
  * @returns {Promise<Object>} Crawl configurations
  */
 async function loadCrawlConfigs() {
-  if (CRAWL_CONFIGS) {
-    return CRAWL_CONFIGS;
+  if (crawlConfigs) {
+    return crawlConfigs;
   }
 
   try {
@@ -44,9 +41,9 @@ async function loadCrawlConfigs() {
     const rawConfigs = JSON.parse(configJson);
     
     // Convert string regex patterns back to RegExp objects
-    CRAWL_CONFIGS = {};
+    crawlConfigs = {};
     for (const [key, config] of Object.entries(rawConfigs)) {
-      CRAWL_CONFIGS[key] = {
+      crawlConfigs[key] = {
         ...config,
         excludePatterns: config.excludePatterns.map(pattern => {
           // Remove the leading and trailing slashes and flags
@@ -59,12 +56,12 @@ async function loadCrawlConfigs() {
       };
     }
 
-    return CRAWL_CONFIGS;
+    return crawlConfigs;
   } catch (error) {
     console.error('Failed to load crawl configuration:', error);
     // Fallback to empty config
-    CRAWL_CONFIGS = {};
-    return CRAWL_CONFIGS;
+    crawlConfigs = {};
+    return crawlConfigs;
   }
 }
 
@@ -309,44 +306,48 @@ function hasNavigationContext(doc, link) {
  * @param {Object} config - Site configuration
  * @returns {string[]} Array of discovered URLs
  */
-function extractLinks(doc, baseUrl, config) {
+function extractLinks(doc, baseUrl, config, currentPageUrl = null) {
   const links = new Set();
+  const resolveBase = currentPageUrl || baseUrl;
   
-  // Try navigation selectors first (more targeted)
-  const navSelectors = config.selectors.navigation.split(',').map(s => s.trim());
-  
-  for (const selector of navSelectors) {
+  // Combine all selectors into one array for simplicity
+  const allSelectors = [
+    ...config.selectors.navigation.split(','),
+    ...config.selectors.content.split(',')
+  ].map(s => s.trim()).filter(s => s.length > 0);
+
+  for (const selector of allSelectors) {
     try {
-      const navLinks = doc.querySelectorAll(selector);
-      navLinks.forEach(link => {
+      const elements = doc.querySelectorAll(selector);
+      elements.forEach(link => {
         const href = link.getAttribute('href');
         if (href) {
-          const absoluteUrl = resolveUrl(href, baseUrl);
+          const absoluteUrl = resolveUrl(href, resolveBase);
           if (absoluteUrl && isValidUrl(absoluteUrl, baseUrl, config)) {
             links.add(absoluteUrl);
           }
         }
       });
     } catch (e) {
-      // Selector might not be valid for this page
+      console.warn(`Selector failed: ${selector}`, e);
     }
   }
   
-  // If we didn't find many nav links, fall back to all links
-  if (links.size < 3) {
-    const allLinks = doc.querySelectorAll('a[href]');
-    allLinks.forEach(link => {
+  // Fallback if selectors find very few links
+  if (links.size < 5) {
+    const fallbackLinks = doc.querySelectorAll('a[href]');
+    fallbackLinks.forEach(link => {
       const href = link.getAttribute('href');
       if (href) {
-        const absoluteUrl = resolveUrl(href, baseUrl);
+        const absoluteUrl = resolveUrl(href, resolveBase);
         if (absoluteUrl && isValidUrl(absoluteUrl, baseUrl, config)) {
           links.add(absoluteUrl);
         }
       }
     });
   }
-  
-  return Array.from(links);
+
+  return [...links];
 }
 
 /**
@@ -421,12 +422,31 @@ function isValidUrl(url, baseUrl, config) {
       return false;
     }
     
-    // Must look like a documentation page
-    return (
-      path.endsWith('/') || 
-
-      path.length >= 1 // Accept any non-root path that passed other filters
+    // Enhanced validation for documentation pages
+    const isDocumentationUrl = (
+      path.endsWith('/') ||
+      path.endsWith('.html') ||
+      path.endsWith('.md') ||
+      path.includes('/docs/') ||
+      path.includes('/build/') ||
+      path.includes('/guides/') ||
+      path.includes('/tutorials/') ||
+      path.includes('/reference/') ||
+      path.includes('/api/') ||
+      path.includes('/concepts/') ||
+      path.includes('/getting-started/') ||
+      // Accept paths that look like documentation sections
+      /\/[a-zA-Z0-9-_]+\/$/.test(path) ||
+      // Accept paths with common documentation patterns
+      /\/(introduction|overview|quickstart|installation|setup|configuration|advanced|examples|troubleshooting|faq|glossary)/i.test(path)
     );
+    
+    // For HyperBEAM specifically, accept any path that passed the exclusion filters
+    if (baseUrl.includes('hyperbeam.arweave.net')) {
+      return path.length > 1;
+    }
+    
+    return isDocumentationUrl;
     
   } catch (error) {
     return false;
@@ -496,6 +516,68 @@ function extractPageMetadata(doc, url, config) {
     estimatedWords = result.wordCount || 0;
     description = result.description || '';
     author = result.author || '';
+    
+    // Extract title
+    const titleSelectors = config.selectors.title.split(',').map(s => s.trim());
+    
+    // Enhanced title extraction for Material Design docs
+    const enhancedTitleSelectors = [
+      '.md-header__topic .md-ellipsis', // Material Design header topic
+      '.md-content h1', // Main content heading
+      '.md-nav__link--active', // Active navigation item
+      ...titleSelectors
+    ];
+    
+    for (const selector of enhancedTitleSelectors) {
+      try {
+        const element = doc.querySelector(selector);
+        if (element && element.textContent.trim()) {
+          const titleText = element.textContent.trim();
+          // Skip generic titles
+          if (!isGenericTitle(titleText)) {
+            title = titleText;
+            break;
+          }
+        }
+      } catch (e) {
+        // Skip invalid selectors
+      }
+    }
+    
+    // Enhanced content extraction for Material Design docs
+    const enhancedContentSelectors = [
+      '.md-content__inner .md-typeset', // Material Design main content
+      '.md-content article',
+      ...config.selectors.content.split(',').map(s => s.trim())
+    ];
+    
+    let bestContent = '';
+    let maxWords = 0;
+    
+    for (const selector of enhancedContentSelectors) {
+      try {
+        const element = doc.querySelector(selector.trim());
+        if (element) {
+          const content = element.textContent || '';
+          const wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
+          if (wordCount > maxWords) {
+            maxWords = wordCount;
+            bestContent = content;
+          }
+        }
+      } catch (e) {
+        // Skip invalid selectors
+      }
+    }
+    
+    if (maxWords > 0) {
+      estimatedWords = maxWords;
+      // Try to extract a description from the content
+      const sentences = bestContent.split(/[.!?]+/).filter(s => s.trim().length > 20);
+      if (sentences.length > 0) {
+        description = sentences[0].trim().substring(0, 200) + '...';
+      }
+    }
     
   } catch (defuddleError) {
     // Fallback to manual extraction if Defuddle fails
@@ -694,7 +776,7 @@ async function discoverEntryPoints(baseUrl, config) {
       const rootDoc = await fetchPage(baseUrl);
       if (rootDoc) {
         // Extract navigation links
-        const navLinks = extractLinks(rootDoc, baseUrl, config);
+        const navLinks = extractLinks(rootDoc, baseUrl, config, baseUrl);
         
         // Score and filter navigation links
         for (const link of navLinks) {
@@ -937,22 +1019,31 @@ function generateTitleFromUrl(url) {
 /**
  * Crawl a single site dynamically
  * @param {string} siteKey - Site identifier
- * @param {Function} progressCallback - Progress callback (current, total, url)
+ * @param {Object} options - Options object with callbacks and limits
  * @returns {Promise<Object>} Crawl results
  */
-export async function crawlSite(siteKey, progressCallback = () => {}) {
+export async function crawlSite(siteKey, options = {}) {
   const configs = await loadCrawlConfigs();
   const config = configs[siteKey];
   if (!config) {
     throw new Error(`Unknown site: ${siteKey}`);
   }
   
+  const {
+    maxDepth = config.maxDepth,
+    maxPages = config.maxPages,
+    onProgress = () => {},
+    onError = () => {}
+  } = options;
+  
   const visited = new Set();
+  const seen = new Set(); // Active deduplication during crawling
   const pages = [];
-  const queue = [];
+  const stack = []; // Use stack for DFS instead of queue for BFS
   const errors = [];
   
-  console.log(`Starting discovery phase for ${config.name}...`);
+  console.log(`🚀 Starting crawl of ${config.name}`);
+  console.log(`📊 Limits: ${maxDepth} depth, ${maxPages} pages`);
   
   // Discover entry points dynamically
   const discoveredPaths = await discoverEntryPoints(config.baseUrl, config);
@@ -962,38 +1053,42 @@ export async function crawlSite(siteKey, progressCallback = () => {}) {
     discoveredPaths.push('/');
   }
   
-  // Initialize queue with discovered entry points (limit to prevent overwhelming)
-  const entryPointsToUse = discoveredPaths.slice(0, Math.min(10, discoveredPaths.length));
-  console.log(`Using ${entryPointsToUse.length} entry points:`, entryPointsToUse);
+  // Initialize stack with discovered entry points (DFS order - last in, first out)
+  const entryPointsToUse = discoveredPaths.slice(0, Math.min(6, discoveredPaths.length));
+  console.log(`🌱 Seeds: ${entryPointsToUse.length}`);
   
-  for (const entryPoint of entryPointsToUse) {
+  for (const entryPoint of entryPointsToUse.reverse()) { // Reverse for proper DFS order
     const url = config.baseUrl + (entryPoint.startsWith('/') ? entryPoint : '/' + entryPoint);
-    queue.push({ url, depth: 0 });
+    if (!seen.has(url)) {
+      stack.push({ url, depth: 0 });
+      seen.add(url);
+    }
   }
   
-  console.log(`Starting dynamic crawl of ${config.name}...`);
+  console.log(`Starting DFS crawl of ${config.name}...`);
   
-  while (queue.length > 0 && pages.length < config.maxPages) {
-    const { url, depth } = queue.shift();
+  while (stack.length > 0 && pages.length < maxPages) {
+    const { url, depth } = stack.pop(); // DFS: pop from end
     
-    if (visited.has(url) || depth > config.maxDepth) {
+    if (visited.has(url) || depth > maxDepth) {
       continue;
     }
     
     visited.add(url);
-    progressCallback(pages.length + 1, config.maxPages, url);
+    onProgress(pages.length + 1, maxPages, url);
     
     try {
       const doc = await fetchPage(url);
       if (!doc) {
-        errors.push({ url, error: 'Failed to fetch page' });
+        const error = 'Failed to fetch page';
+        errors.push({ url, error });
+        onError(url, error);
         continue;
       }
       
       // Extract page metadata
       const pageData = extractPageMetadata(doc, url, config);
       if (!pageData) {
-        // Page was rejected by quality filters
         console.warn(`Page rejected by quality filters: ${url}`);
         continue;
       }
@@ -1005,87 +1100,78 @@ export async function crawlSite(siteKey, progressCallback = () => {}) {
         depth
       });
       
-      // Extract links for horizontal navigation (same depth) and deeper exploration
-      if (pages.length < config.maxPages) {
-        const links = extractLinks(doc, config.baseUrl, config);
+      // Extract links and discover sister pages (only if we have capacity)
+      if (pages.length < maxPages && depth < maxDepth) {
+        const links = extractLinks(doc, config.baseUrl, config, url);
         
-        // Separate navigation links (likely same depth) from content links (likely deeper)
-        const { navigationLinks, contentLinks } = categorizeLinks(doc, links, config);
+        // Auto-discover sister pages for deepest pages (DFS naturally prioritizes deeper pages)
+        let sisterUrls = [];
+        if (depth >= 1) { // Only discover sister pages for non-root pages
+          sisterUrls = await discoverSisterPages(doc, url, links, config);
+          const validSisterUrls = await validateSisterPages(sisterUrls);
+          sisterUrls = validSisterUrls;
+        }
         
-        // Add navigation links at same depth (higher priority)
-        for (const link of navigationLinks.slice(0, 8)) {
-          if (!visited.has(link)) {
-            queue.unshift({ url: link, depth }); // Use unshift for higher priority
-            console.log(`➜ Found sibling navigation: ${link}`);
+        // Combine regular links with sister pages
+        const allLinks = [...links, ...sisterUrls];
+        
+        // Add new links to stack (DFS: deeper first, with active deduplication)
+        const newLinks = [];
+        for (const link of allLinks) {
+          if (!seen.has(link)) {
+            seen.add(link);
+            newLinks.push({ url: link, depth: depth + 1 });
           }
         }
         
-        // Add content links at next depth level if not at max depth
-        if (depth < config.maxDepth) {
-          for (const link of contentLinks.slice(0, 5)) {
-            if (!visited.has(link)) {
-              queue.push({ url: link, depth: depth + 1 });
-            }
-          }
+        // Add to stack in reverse order so first discovered gets processed first
+        for (const linkData of newLinks.reverse()) {
+          stack.push(linkData);
         }
+        
+        console.log(`📄 ${url} -> ${links.length} links + ${sisterUrls.length} sister pages (${newLinks.length} new)`);
       }
       
-      // Small delay to be respectful
-      await new Promise(resolve => setTimeout(resolve, 300));
+      // Small delay to be respectful (reduced for efficiency)
+      await new Promise(resolve => setTimeout(resolve, 100));
       
     } catch (error) {
       console.error(`Error crawling ${url}:`, error);
-      errors.push({ url, error: error.message });
+      const errorMsg = error.message;
+      errors.push({ url, error: errorMsg });
+      onError(url, errorMsg);
     }
   }
   
-  console.log(`Crawled ${pages.length} pages from ${config.name}`);
+  console.log(`✅ Crawl complete: ${pages.length} pages, ${errors.length} errors`);
+  console.log(`📊 Deduplication: ${seen.size} URLs seen, ${visited.size} visited`);
   
-  // Filter and deduplicate pages with improved quality thresholds
-  const filteredPages = [];
-  const seenContent = new Set();
-  const seenTitles = new Set();
+  // Simplified filtering - less aggressive since we have better deduplication
+  const filteredPages = pages.filter(page => {
+    // Basic quality check only
+    if (page.estimatedWords < 30) {
+      console.warn(`Filtering very low content: ${page.url} (${page.estimatedWords} words)`);
+      return false;
+    }
+    return true;
+  });
   
-  for (const page of pages) {
-    // Skip if content is too similar (basic deduplication)
-    const contentHash = page.description?.slice(0, 100) || page.title;
-    if (seenContent.has(contentHash)) {
-      console.warn(`Duplicate content detected, skipping: ${page.url}`);
-      continue;
-    }
-    
-    // Skip if title is too generic and we already have similar titles
-    if (seenTitles.has(page.title) && page.estimatedWords < 200) {
-      console.warn(`Duplicate title with low content, skipping: ${page.url}`);
-      continue;
-    }
-    
-    // Enhanced quality filtering - reduced threshold for better discovery
-    if (page.estimatedWords < 50) {
-      console.warn(`Filtering low-quality page (${page.estimatedWords} words): ${page.url}`);
-      continue;
-    }
-
-    // Check for common problematic word counts that indicate boilerplate
-    const problematicCounts = [72, 148, 50, 75]; // Common boilerplate word counts
-    if (problematicCounts.includes(page.estimatedWords)) {
-      console.warn(`Filtering likely boilerplate page (${page.estimatedWords} words): ${page.url}`);
-      continue;
-    }
-    
-    seenContent.add(contentHash);
-    seenTitles.add(page.title);
-    filteredPages.push(page);
-  }
-  
-  console.log(`Filtered to ${filteredPages.length} quality pages from ${config.name}`);
+  console.log(`📋 Final result: ${filteredPages.length} quality pages`);
   
   return {
     siteKey,
     name: config.name,
     baseUrl: config.baseUrl,
+    results: filteredPages,
     pages: filteredPages,
     errors,
+    stats: {
+      totalPages: filteredPages.length,
+      totalErrors: errors.length,
+      maxDepthReached: Math.max(...filteredPages.map(p => p.depth), 0),
+      urlsSeen: seen.size,
+      urlsVisited: visited.size
+    },
     crawledAt: new Date().toISOString()
   };
 }
@@ -1217,4 +1303,131 @@ if (typeof window === 'undefined') {
   if (isMainModule) {
     runCrawl().catch(console.error);
   }
+}
+
+function inferPattern(filenames) {
+  if (filenames.length < 2) return null;
+  
+  let prefix = '';
+  for (let i = 0; i < filenames[0].length; i++) {
+    const char = filenames[0][i];
+    if (filenames.every(name => name[i] === char)) {
+      prefix += char;
+    } else {
+      break;
+    }
+  }
+  
+  let suffix = '';
+  for (let i = 1; i <= filenames[0].length; i++) {
+    const char = filenames[0][filenames[0].length - i];
+    if (filenames.every(name => name[name.length - i] === char)) {
+      suffix = char + suffix;
+    } else {
+      break;
+    }
+  }
+  
+  // Basic sanity check for a valid pattern
+  if (prefix.length + suffix.length >= filenames[0].length) {
+    return null;
+  }
+  
+  return { prefix, suffix };
+}
+
+function extractVocabulary(doc, config) {
+  const content = extractTextContent(doc, config);
+  const stopWords = new Set(['and', 'or', 'the', 'a', 'an', 'in', 'is', 'it', 'of', 'for', 'on', 'to', 'with', 'as', 'by', 'that', 'this', 'how', 'what', 'when', 'where', 'why']);
+  
+  return [...new Set(
+    content
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, ' ')
+      .split(/\s+/)
+      .filter(word => word.length > 2 && !stopWords.has(word))
+  )];
+}
+
+function extractTextContent(doc, config) {
+  // Try content selectors first
+  const contentSelectors = config.selectors.content.split(',').map(s => s.trim());
+  
+  for (const selector of contentSelectors) {
+    try {
+      const element = doc.querySelector(selector);
+      if (element) {
+        return element.textContent.trim();
+      }
+    } catch (e) {
+      // Skip invalid selectors
+    }
+  }
+  
+  // Fallback to body content
+  return doc.body?.textContent?.trim() || '';
+}
+
+async function discoverSisterPages(doc, currentUrl, existingLinks, config) {
+  const discovered = new Set();
+  const urlObj = new URL(currentUrl);
+  const currentDir = urlObj.href.substring(0, urlObj.href.lastIndexOf('/') + 1);
+
+  // Only look for sister pages in the same directory
+  const peerLinks = existingLinks.filter(link => link.startsWith(currentDir));
+  if (peerLinks.length < 2) return []; // Need at least 2 peer links to infer pattern
+
+  const peerFilenames = peerLinks.map(link => link.substring(link.lastIndexOf('/') + 1));
+  const pattern = inferPattern(peerFilenames);
+
+  if (!pattern) return []; // No clear pattern found
+  
+  // Get vocabulary from page content (limit to avoid too many candidates)
+  const vocabulary = extractVocabulary(doc, config).slice(0, 20); // Limit to top 20 words
+  
+  // Generate candidate URLs based on pattern and vocabulary
+  for (const word of vocabulary) {
+    const candidateFilename = `${pattern.prefix}${word}${pattern.suffix}`;
+    const candidateUrl = `${currentDir}${candidateFilename}`;
+    
+    // Only add if not already in existing links and looks reasonable
+    if (!existingLinks.includes(candidateUrl) && word.length >= 3 && word.length <= 15) {
+      discovered.add(candidateUrl);
+    }
+  }
+  
+  return [...discovered].slice(0, 10); // Limit to top 10 candidates
+}
+
+// Enhanced sister page validation
+async function validateSisterPages(sisterUrls, maxConcurrent = 5) {
+  const validUrls = [];
+  
+  // Process in batches to avoid overwhelming the server
+  for (let i = 0; i < sisterUrls.length; i += maxConcurrent) {
+    const batch = sisterUrls.slice(i, i + maxConcurrent);
+    const results = await Promise.allSettled(
+      batch.map(async url => {
+        try {
+          const response = await fetch(url, {
+            method: 'HEAD',
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (compatible; PermawebLLMsBuilder/1.0)'
+            }
+          });
+          return response.ok ? url : null;
+        } catch {
+          return null;
+        }
+      })
+    );
+    
+    results.forEach(result => {
+      if (result.status === 'fulfilled' && result.value) {
+        validUrls.push(result.value);
+      }
+    });
+  }
+  
+  return validUrls;
 } 
