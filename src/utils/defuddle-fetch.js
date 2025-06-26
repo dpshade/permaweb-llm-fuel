@@ -11,9 +11,9 @@ import { optimizedBatchExtraction } from './batch-processor.js';
  */
 function stripHTML(text) {
   if (!text) return '';
-  
+
   let cleanText = text;
-  
+
   // Environment-agnostic HTML stripping
   if (typeof document !== 'undefined' && document.createElement) {
     // Browser environment - use DOM
@@ -30,7 +30,7 @@ function stripHTML(text) {
       // Handle self-closing tags
       .replace(/<[^>]*\/>/g, '');
   }
-  
+
   // Universal HTML entity decoding and cleanup
   cleanText = cleanText
     // Common HTML entities
@@ -83,7 +83,7 @@ function stripHTML(text) {
     .replace(/\s+/g, ' ')
     .replace(/\n\s*\n\s*\n+/g, '\n\n')
     .trim();
-  
+
   return cleanText;
 }
 
@@ -110,20 +110,20 @@ export async function fetchAndClean(url, options = {}) {
         'User-Agent': 'Mozilla/5.0 (compatible; PermawebLLMsBuilder/1.0)'
       }
     });
-    
+
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
-    
+
     const html = await response.text();
-    
+
     // Parse HTML into a document
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
-    
+
     let cleanContent;
     let result = {};
-    
+
     if (useEnhancedExtraction) {
       // Use enhanced extraction with LLM optimizations
       const rawContent = enhancedDefuddleExtraction(html, {
@@ -134,10 +134,10 @@ export async function fetchAndClean(url, options = {}) {
         markdown: true,
         debug: false
       });
-      
+
       // CRITICAL: Strip HTML from enhanced extraction output
       cleanContent = stripHTML(rawContent);
-      
+
       // Extract metadata using standard Defuddle
       const defuddle = new Defuddle(doc, {
         debug: false,
@@ -154,27 +154,27 @@ export async function fetchAndClean(url, options = {}) {
         removeExactSelectors: true,
         removePartialSelectors: true
       });
-      
+
       result = defuddle.parse();
       cleanContent = stripHTML(result.content || '');
     }
-    
+
     // Strip any remaining HTML from metadata fields
     const cleanTitle = stripHTML(result.title || 'Untitled');
     const cleanAuthor = stripHTML(result.author || '');
     const cleanDescription = stripHTML(result.description || '');
-    
+
     // Basic content validation
     if (cleanContent.split(/\s+/).length < 50) {
       throw new Error(`Content too short: ${cleanContent.split(/\s+/).length} words`);
     }
-    
+
     // Check for 404 indicators in content
-    if (cleanContent && cleanContent.toLowerCase().includes('404') && 
-        cleanContent.toLowerCase().includes('not found')) {
+    if (cleanContent && cleanContent.toLowerCase().includes('404') &&
+      cleanContent.toLowerCase().includes('not found')) {
       throw new Error('404 page detected');
     }
-    
+
     const extractedContent = {
       title: cleanTitle,
       content: cleanContent,
@@ -186,40 +186,40 @@ export async function fetchAndClean(url, options = {}) {
       domain: result.domain || new URL(url).hostname,
       parseTime: result.parseTime || 0
     };
-    
+
     // Assess content quality if requested
     if (assessQuality) {
       const qualityAssessment = assessContentQuality(cleanContent, {
         minLength: 100,
         requireTechnical: false
       });
-      
+
       extractedContent.qualityScore = qualityAssessment.overallScore;
       extractedContent.qualityLevel = qualityAssessment.qualityLevel;
       extractedContent.qualityDetails = qualityAssessment.details;
       extractedContent.qualityReason = qualityAssessment.reason;
-      
+
       // Filter by quality threshold
       if (qualityAssessment.overallScore < minQualityScore) {
         throw new Error(`Content quality ${qualityAssessment.overallScore.toFixed(2)} below threshold ${minQualityScore}`);
       }
     }
-    
+
     return extractedContent;
-    
+
   } catch (error) {
     console.error(`Failed to fetch and clean ${url}:`, error);
-    
+
     // Fallback to simple content extraction if enhanced extraction fails
     try {
       const response = await fetch(url, { signal });
       const html = await response.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      
+
       const title = stripHTML(doc.querySelector('title')?.textContent || 'Untitled');
       const content = stripHTML(doc.body?.textContent || '');
-      
+
       const fallbackResult = {
         title: title,
         content: content,
@@ -231,16 +231,16 @@ export async function fetchAndClean(url, options = {}) {
         domain: new URL(url).hostname,
         parseTime: 0
       };
-      
+
       if (assessQuality) {
         const qualityAssessment = assessContentQuality(content);
         fallbackResult.qualityScore = qualityAssessment.overallScore;
         fallbackResult.qualityLevel = qualityAssessment.qualityLevel;
         fallbackResult.qualityReason = 'Fallback extraction';
       }
-      
+
       return fallbackResult;
-      
+
     } catch (fallbackError) {
       return {
         title: 'Error loading page',
@@ -268,9 +268,9 @@ export async function fetchAndClean(url, options = {}) {
  */
 export async function batchFetchAndClean(urls, options = {}) {
   const {
-    onProgress = () => {},
-    onError = () => {},
-    onQualityFilter = () => {},
+    onProgress = () => { },
+    onError = () => { },
+    onQualityFilter = () => { },
     concurrency = 5,
     qualityThreshold = 0.3,
     useOptimizedBatch = true,
@@ -294,21 +294,21 @@ export async function batchFetchAndClean(urls, options = {}) {
   // Fallback to sequential processing
   const results = [];
   const total = urls.length;
-  
+
   for (let i = 0; i < urls.length; i++) {
     const url = urls[i];
     onProgress(i + 1, total, url);
-    
+
     try {
       const result = await fetchAndClean(url, fetchOptions);
-      
+
       // Apply quality threshold if specified
       if (!qualityThreshold || (result.qualityScore || 1) >= qualityThreshold) {
         results.push(result);
       } else {
         onQualityFilter(url, result.qualityScore, result.qualityReason);
       }
-      
+
       // Small delay to avoid overwhelming the server
       if (i < urls.length - 1) {
         await new Promise(resolve => setTimeout(resolve, 200));
@@ -316,7 +316,7 @@ export async function batchFetchAndClean(urls, options = {}) {
     } catch (error) {
       console.error(`Batch processing failed for ${url}:`, error);
       onError(url, error);
-      
+
       if (includeFailures) {
         results.push({
           title: 'Processing Error',
@@ -335,7 +335,7 @@ export async function batchFetchAndClean(urls, options = {}) {
       }
     }
   }
-  
+
   return {
     results,
     summary: {
@@ -359,7 +359,7 @@ export function generateLLMsTxt(documents, options = {}) {
     customHeader = '',
     separator = '\n\n---\n\n'
   } = options;
-  
+
   // Handle both array input and batch result object
   let documentsArray;
   if (Array.isArray(documents)) {
@@ -373,20 +373,20 @@ export function generateLLMsTxt(documents, options = {}) {
     console.error('Invalid documents parameter:', documents);
     documentsArray = [];
   }
-  
+
   let content = '';
-  
+
   // Add custom header if provided
   if (customHeader) {
     content += `${customHeader}\n\n`;
   }
-  
+
   // Add metadata section
   if (includeMetadata) {
     const totalWords = documentsArray.reduce((sum, doc) => sum + (doc.wordCount || 0), 0);
     const generatedAt = new Date().toISOString();
     const totalParseTime = documentsArray.reduce((sum, doc) => sum + (doc.parseTime || 0), 0);
-    
+
     content += `# Permaweb Documentation Collection\n\n`;
     content += `Generated: ${generatedAt}\n`;
     content += `Total Documents: ${documentsArray.length}\n`;
@@ -395,7 +395,7 @@ export function generateLLMsTxt(documents, options = {}) {
     content += `Source: Permaweb LLMs Builder\n`;
     content += `Extracted with: Defuddle v0.6.4\n\n`;
   }
-  
+
   // Add table of contents
   if (includeToc && documentsArray.length > 1) {
     content += `## Table of Contents\n\n`;
@@ -406,23 +406,23 @@ export function generateLLMsTxt(documents, options = {}) {
     });
     content += `\n`;
   }
-  
+
   // Add documents
   documentsArray.forEach((doc, index) => {
     if (index > 0) {
       content += separator;
     }
-    
+
     // CRITICAL: Sanitize all content before adding to LLM output
     const cleanTitle = stripHTML(doc.title || 'Untitled');
     const cleanAuthor = stripHTML(doc.author || '');
     const cleanDescription = stripHTML(doc.description || '');
     const cleanContent = stripHTML(doc.content || '');
-    
+
     content += `# ${cleanTitle}\n\n`;
-    
+
     if (includeMetadata) {
-      content += `**Source:** ${doc.url}\n`;
+      content += `Source: ${doc.url}\n`;
       if (cleanAuthor) content += `Author: ${cleanAuthor}\n`;
       if (doc.published) content += `Published: ${doc.published}\n`;
       if (cleanDescription) content += `Description: ${cleanDescription}\n`;
@@ -431,14 +431,14 @@ export function generateLLMsTxt(documents, options = {}) {
       if (doc.parseTime > 0) content += `Parse Time: ${doc.parseTime}ms\n`;
       content += `\n`;
     }
-    
+
     content += cleanContent;
-    
+
     if (!cleanContent.endsWith('\n')) {
       content += '\n';
     }
   });
-  
+
   return content;
 }
 
@@ -451,16 +451,16 @@ export function generateLLMsTxt(documents, options = {}) {
 export function downloadFile(content, filename = 'llms.txt', mimeType = 'text/plain') {
   const blob = new Blob([content], { type: mimeType });
   const url = URL.createObjectURL(blob);
-  
+
   const a = document.createElement('a');
   a.href = url;
   a.download = filename;
   a.style.display = 'none';
-  
+
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-  
+
   URL.revokeObjectURL(url);
 }
 
@@ -473,14 +473,14 @@ export function openContentInNewTab(content, filename = 'llms.txt') {
   // Create a blob with the content
   const blob = new Blob([content], { type: 'text/plain; charset=utf-8' });
   const url = URL.createObjectURL(blob);
-  
+
   // Open in new tab
   const newWindow = window.open(url, '_blank');
-  
+
   if (newWindow) {
     // Set a title for the new window/tab
     newWindow.document.title = filename;
-    
+
     // Clean up the blob URL after a short delay
     setTimeout(() => {
       URL.revokeObjectURL(url);

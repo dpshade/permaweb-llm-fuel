@@ -89,14 +89,14 @@ The tool is designed to be iframe-compatible with extensive customization option
 
 ### URL Parameters
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `hide-header` | boolean | Hide the main header | `hide-header=true` |
-| `translucent` | number | Background opacity (0-1) | `translucent=0.9` |
-| `bg-color` | hex | Background color | `bg-color=%23ffffff` |
-| `text-color` | hex | Text color | `text-color=%23000000` |
-| `accent-color` | hex | Accent/link color | `accent-color=%2329a879` |
-| `border-color` | hex | Border color | `border-color=%23000000` |
+| Parameter      | Type    | Description              | Example                  |
+| -------------- | ------- | ------------------------ | ------------------------ |
+| `hide-header`  | boolean | Hide the main header     | `hide-header=true`       |
+| `translucent`  | number  | Background opacity (0-1) | `translucent=0.9`        |
+| `bg-color`     | hex     | Background color         | `bg-color=%23ffffff`     |
+| `text-color`   | hex     | Text color               | `text-color=%23000000`   |
+| `accent-color` | hex     | Accent/link color        | `accent-color=%2329a879` |
+| `border-color` | hex     | Border color             | `border-color=%23000000` |
 
 ## 🏗️ Architecture
 
@@ -144,21 +144,14 @@ permaweb-llms-builder/
 - [ ] Export formats beyond llms.txt (JSON, CSV, etc.)
 - [ ] Content deduplication and similarity detection
 
-### Phase 4: User Experience 📋
-- [ ] Save and load selection presets
-- [ ] Drag-and-drop reordering of selected content
-- [ ] Real-time word count and estimated processing time
-- [ ] Progress persistence across sessions
-- [ ] Keyboard shortcuts for power users
-
-### Phase 5: Integration & Deployment 📋
+### Phase 4: Integration & Deployment 📋
 - [ ] GitHub Actions for automated crawling
 - [ ] API endpoints for programmatic access
 - [ ] Docker containerization
 - [ ] Arweave deployment integration
 - [ ] CDN optimization for global access
 
-### Phase 6: Analytics & Optimization 📋
+### Phase 5: Analytics & Optimization 📋
 - [ ] Content quality scoring
 - [ ] Usage analytics and popular selections
 - [ ] Performance monitoring and optimization
@@ -218,8 +211,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Related Projects
 
-- [Permaweb Glossary](https://github.com/permaweb/glossary) - Searchable glossary of Permaweb terms
-- [Doc Selector Component](https://github.com/your-org/doc-selector-component) - Reusable documentation selector
+- [Permaweb Glossary](https://github.com/dpshade/permaweb-glossary) - Searchable glossary of Permaweb terms
+- [Doc Selector Component](https://github.com/dpshade/permaweb-docs-selector) - Reusable documentation selector
 - [AO Cookbook](https://cookbook_ao.arweave.net) - AO development documentation
 - [Arweave Cookbook](https://cookbook.arweave.net) - Arweave development documentation
 

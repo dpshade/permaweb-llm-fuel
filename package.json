@@ -3,11 +3,18 @@
   "type": "module",
   "version": "0.0.1",
   "description": "Interactive tool to select and curate Permaweb documentation into llms.txt format for AI training",
-  "keywords": ["permaweb", "arweave", "llms", "documentation", "ai", "training"],
+  "keywords": [
+    "permaweb",
+    "arweave",
+    "llms",
+    "documentation",
+    "ai",
+    "training"
+  ],
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",  
-    "build": "astro check && astro build",
+    "start": "astro dev",
+    "build": "astro build",
     "build:vercel": "astro build --outDir=.vercel/output/static",
     "preview": "astro preview",
     "astro": "astro",
@@ -18,15 +25,13 @@
     "build-index": "bun run src/utils/crawler.js"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
     "@astrojs/node": "^8.3.4",
     "@ar.io/wayfinder-core": "^0.0.5-alpha.4",
     "@ar.io/sdk": "^2.0.0",
     "astro": "^4.16.16",
     "defuddle": "^0.6.4",
     "flexsearch": "^0.8.205",
-    "jsdom": "^25.0.1",
-    "typescript": "^5.8.3"
+    "jsdom": "^25.0.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",

@@ -1,6 +1,6 @@
 ---
 // Main page for Permaweb LLMs Builder
-import '../styles/theme.css';
+import "../styles/theme.css";
 ---
 
 <html lang="en">
@@ -92,7 +92,8 @@ import '../styles/theme.css';
 
 			/* Pulse animation for skeleton loading */
 			@keyframes pulse {
-				0%, 100% {
+				0%,
+				100% {
 					opacity: 1;
 				}
 				50% {
@@ -164,71 +165,196 @@ import '../styles/theme.css';
 			<div id="docs-tree">
 				<!-- Optimistic UI - shows immediately -->
 				<div id="optimistic-tree">
-					<div style="margin-bottom: 16px; font-size: 14px; color: var(--ao-secondary-text);">
+					<div
+						style="margin-bottom: 16px; font-size: 14px; color: var(--ao-secondary-text);"
+					>
 						Loading documentation from the Permaweb ecosystem...
 					</div>
-					<div id="tree-root" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
+					<div
+						id="tree-root"
+						style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;"
+					>
 						<!-- Skeleton structure -->
 						<div style="margin-bottom: 8px;">
-							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.6;">
-								<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+							<div
+								style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.6;"
+							>
+								<div
+									style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+								>
+								</div>
+								<svg
+									style="width: 16px; height: 16px; opacity: 0.5;"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<circle
+										cx="12"
+										cy="12"
+										r="10"
+										stroke="#666"
+										stroke-width="2"></circle>
+									<path
+										d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+										stroke="#666"
+										stroke-width="2"></path>
 								</svg>
-								<div style="height: 20px; width: 120px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<div style="height: 16px; width: 60px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+								<div
+									style="height: 20px; width: 120px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+								>
+								</div>
+								<div
+									style="height: 16px; width: 60px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"
+								>
+								</div>
 							</div>
 							<div style="margin-left: 24px;">
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 200px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<div
+									style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;"
+								>
+									<div
+										style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
+									<div
+										style="height: 16px; width: 200px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
 								</div>
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 160px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<div
+									style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;"
+								>
+									<div
+										style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
+									<div
+										style="height: 16px; width: 160px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
 								</div>
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 180px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<div
+									style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;"
+								>
+									<div
+										style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
+									<div
+										style="height: 16px; width: 180px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div style="margin-bottom: 8px;">
-							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.5;">
-								<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+							<div
+								style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.5;"
+							>
+								<div
+									style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+								>
+								</div>
+								<svg
+									style="width: 16px; height: 16px; opacity: 0.5;"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<circle
+										cx="12"
+										cy="12"
+										r="10"
+										stroke="#666"
+										stroke-width="2"></circle>
+									<path
+										d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+										stroke="#666"
+										stroke-width="2"></path>
 								</svg>
-								<div style="height: 20px; width: 140px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<div style="height: 16px; width: 50px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+								<div
+									style="height: 20px; width: 140px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+								>
+								</div>
+								<div
+									style="height: 16px; width: 50px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"
+								>
+								</div>
 							</div>
 							<div style="margin-left: 24px;">
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 220px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<div
+									style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;"
+								>
+									<div
+										style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
+									<div
+										style="height: 16px; width: 220px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
 								</div>
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 150px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<div
+									style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;"
+								>
+									<div
+										style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
+									<div
+										style="height: 16px; width: 150px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div style="margin-bottom: 8px;">
-							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.4;">
-								<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+							<div
+								style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.4;"
+							>
+								<div
+									style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+								>
+								</div>
+								<svg
+									style="width: 16px; height: 16px; opacity: 0.5;"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<circle
+										cx="12"
+										cy="12"
+										r="10"
+										stroke="#666"
+										stroke-width="2"></circle>
+									<path
+										d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+										stroke="#666"
+										stroke-width="2"></path>
 								</svg>
-								<div style="height: 20px; width: 100px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-								<div style="height: 16px; width: 70px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+								<div
+									style="height: 20px; width: 100px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+								>
+								</div>
+								<div
+									style="height: 16px; width: 70px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"
+								>
+								</div>
 							</div>
 							<div style="margin-left: 24px;">
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.2;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 190px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
+								<div
+									style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.2;"
+								>
+									<div
+										style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
+									<div
+										style="height: 16px; width: 190px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"
+									>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -294,7 +420,7 @@ import '../styles/theme.css';
 			<!-- Action Buttons -->
 			<div class="action-buttons">
 				<button class="btn btn-primary" id="generate-btn" disabled>
-												Generate llms.txt
+					Generate llms.txt
 				</button>
 				<button class="btn" id="select-all-btn"> Select All </button>
 				<button class="btn" id="clear-all-btn"> Clear All </button>
@@ -310,8 +436,6 @@ import '../styles/theme.css';
 				downloadFile,
 				openContentInNewTab,
 			} from "../utils/defuddle-fetch.js";
-
-
 
 			// Initialize theme system
 			initializeAllTheme();
@@ -357,22 +481,30 @@ import '../styles/theme.css';
 					let response;
 					try {
 						// TODO: Replace with your actual Vercel JSON project URL
-						const vercelJsonUrl = "https://permaweb-docs-index.vercel.app/docs-index.json";
+						const vercelJsonUrl =
+							"https://permaweb-docs-index.vercel.app/docs-index.json";
 						response = await fetch(vercelJsonUrl);
-						
+
 						if (!response.ok) {
-							throw new Error(`Vercel endpoint failed: ${response.status}`);
+							throw new Error(
+								`Vercel endpoint failed: ${response.status}`,
+							);
 						}
-						
-						console.log("Successfully loaded from Vercel JSON endpoint");
+
+						console.log(
+							"Successfully loaded from Vercel JSON endpoint",
+						);
 					} catch (vercelError) {
-						console.warn("Vercel endpoint failed, trying local fallback:", vercelError.message);
-						
+						console.warn(
+							"Vercel endpoint failed, trying local fallback:",
+							vercelError.message,
+						);
+
 						updateLoadingMessage(
 							"Loading Documentation Index",
 							"Vercel endpoint unavailable, loading local index...",
 						);
-						
+
 						// Fallback to local static index
 						response = await fetch("/docs-index.json");
 						if (!response.ok) {
@@ -380,7 +512,7 @@ import '../styles/theme.css';
 								`Local index also failed: ${response.status}`,
 							);
 						}
-						
+
 						console.log("Loaded from local fallback");
 					}
 
@@ -406,16 +538,14 @@ import '../styles/theme.css';
 				}
 			}
 
-
-
 			// Process index into display format
 			function processIndex(index) {
 				const processed = {};
 
 				for (const [siteKey, siteData] of Object.entries(index)) {
 					// Skip metadata entries
-					if (siteKey === '_metadata') continue;
-					
+					if (siteKey === "_metadata") continue;
+
 					processed[siteKey] = {
 						name: siteData.name,
 						description: siteData.description,
@@ -433,14 +563,18 @@ import '../styles/theme.css';
 
 				for (const [siteKey, siteData] of Object.entries(index)) {
 					// Skip metadata entries
-					if (siteKey === '_metadata') continue;
-					
+					if (siteKey === "_metadata") continue;
+
 					// Use the flat pages array directly from the JSON structure
 					if (siteData.pages && Array.isArray(siteData.pages)) {
 						for (const page of siteData.pages) {
 							// Use existing estimatedWords or calculate from title
-							const estimatedWords = page.estimatedWords || Math.max(300, page.title.length * 15);
-							const estimatedChars = Math.round(estimatedWords * 5.5);
+							const estimatedWords =
+								page.estimatedWords ||
+								Math.max(300, page.title.length * 15);
+							const estimatedChars = Math.round(
+								estimatedWords * 5.5,
+							);
 
 							pages.push({
 								...page,
@@ -468,8 +602,12 @@ import '../styles/theme.css';
 					if (a.siteName !== b.siteName) {
 						return a.siteName.localeCompare(b.siteName);
 					}
-					const pathA = a.breadcrumbs ? a.breadcrumbs.join(' / ') : '';
-					const pathB = b.breadcrumbs ? b.breadcrumbs.join(' / ') : '';
+					const pathA = a.breadcrumbs
+						? a.breadcrumbs.join(" / ")
+						: "";
+					const pathB = b.breadcrumbs
+						? b.breadcrumbs.join(" / ")
+						: "";
 					return pathA.localeCompare(pathB);
 				});
 
@@ -483,17 +621,18 @@ import '../styles/theme.css';
 				`;
 
 				// Smooth transition from optimistic to real content
-				const optimisticTree = document.getElementById('optimistic-tree');
+				const optimisticTree =
+					document.getElementById("optimistic-tree");
 				if (optimisticTree) {
-					optimisticTree.style.opacity = '0';
-					optimisticTree.style.transition = 'opacity 0.3s ease';
-					
+					optimisticTree.style.opacity = "0";
+					optimisticTree.style.transition = "opacity 0.3s ease";
+
 					setTimeout(() => {
 						docsTree.innerHTML = treeHtml;
-						docsTree.style.opacity = '0';
-						docsTree.style.transition = 'opacity 0.3s ease';
+						docsTree.style.opacity = "0";
+						docsTree.style.transition = "opacity 0.3s ease";
 						requestAnimationFrame(() => {
-							docsTree.style.opacity = '1';
+							docsTree.style.opacity = "1";
 							// Add event listeners after DOM is fully rendered and visible
 							addTreeEventListeners();
 						});
@@ -503,16 +642,14 @@ import '../styles/theme.css';
 					// Add event listeners immediately when no transition
 					addTreeEventListeners();
 				}
-				
+
 				// Select all pages by default
-				allPages.forEach(page => {
+				allPages.forEach((page) => {
 					selectedPages.add(page.url);
 				});
-				
+
 				updateSelectionCount();
 			}
-
-
 
 			// Render sites with their pages grouped together
 			function renderSitesWithPages(sortedPages) {
@@ -556,10 +693,11 @@ import '../styles/theme.css';
 						// Site pages with breadcrumb paths
 						siteData.pages.forEach((page) => {
 							const pageId = `page-${page.siteKey}-${page.url.replace(/[^a-zA-Z0-9]/g, "-")}`;
-							const breadcrumbPath = page.breadcrumbs && page.breadcrumbs.length > 0 
-								? page.breadcrumbs.join(' / ') 
-								: 'Root';
-							
+							const breadcrumbPath =
+								page.breadcrumbs && page.breadcrumbs.length > 0
+									? page.breadcrumbs.join(" / ")
+									: "Root";
+
 							const specificTitle = generateSpecificTitle(page);
 							html += `
 								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; padding: 2px 0; margin-left: 24px;">
@@ -619,14 +757,15 @@ import '../styles/theme.css';
 							const isChecked = e.target.checked;
 
 							// Toggle all pages in this site
-							const sitePageCheckboxes = document.querySelectorAll(
-								`input[data-site="${siteKey}"].page-checkbox`,
-							);
-							
+							const sitePageCheckboxes =
+								document.querySelectorAll(
+									`input[data-site="${siteKey}"].page-checkbox`,
+								);
+
 							sitePageCheckboxes.forEach((pageCheckbox) => {
 								pageCheckbox.checked = isChecked;
 								const url = pageCheckbox.dataset.url;
-								
+
 								// Update selectedPages set directly
 								if (isChecked) {
 									selectedPages.add(url);
@@ -634,7 +773,7 @@ import '../styles/theme.css';
 									selectedPages.delete(url);
 								}
 							});
-							
+
 							// Update UI once after all changes
 							updateSelectionCount();
 						});
@@ -666,98 +805,120 @@ import '../styles/theme.css';
 
 			// Update site checkboxes based on their page selections
 			function updateSiteCheckboxes() {
-				document.querySelectorAll(".site-checkbox").forEach((siteCheckbox) => {
-					const siteKey = siteCheckbox.dataset.site;
-					const sitePageCheckboxes = document.querySelectorAll(
-						`input[data-site="${siteKey}"].page-checkbox`
-					);
-					
-					const checkedPages = Array.from(sitePageCheckboxes).filter(cb => cb.checked);
-					
-					// Update site checkbox state
-					if (checkedPages.length === 0) {
-						siteCheckbox.checked = false;
-						siteCheckbox.indeterminate = false;
-					} else if (checkedPages.length === sitePageCheckboxes.length) {
-						siteCheckbox.checked = true;
-						siteCheckbox.indeterminate = false;
-					} else {
-						siteCheckbox.checked = false;
-						siteCheckbox.indeterminate = true;
-					}
-				});
+				document
+					.querySelectorAll(".site-checkbox")
+					.forEach((siteCheckbox) => {
+						const siteKey = siteCheckbox.dataset.site;
+						const sitePageCheckboxes = document.querySelectorAll(
+							`input[data-site="${siteKey}"].page-checkbox`,
+						);
+
+						const checkedPages = Array.from(
+							sitePageCheckboxes,
+						).filter((cb) => cb.checked);
+
+						// Update site checkbox state
+						if (checkedPages.length === 0) {
+							siteCheckbox.checked = false;
+							siteCheckbox.indeterminate = false;
+						} else if (
+							checkedPages.length === sitePageCheckboxes.length
+						) {
+							siteCheckbox.checked = true;
+							siteCheckbox.indeterminate = false;
+						} else {
+							siteCheckbox.checked = false;
+							siteCheckbox.indeterminate = true;
+						}
+					});
 			}
 
 			// Generate defuddle title (stripped, no spaces, no #, no MD, just raw text)
 			function generateDefuddleTitle(title) {
-				if (!title) return 'Untitled';
-				
+				if (!title) return "Untitled";
+
 				let cleaned = title;
-				
+
 				// Remove common site suffixes like " | Cookbook", " | Documentation", etc.
-				cleaned = cleaned.replace(/\s*[|\-–—]\s*(Cookbook|Documentation|Docs|Guide|Tutorial|Help|Support|Home|Index|Main|Page)\s*$/i, '');
-				
+				cleaned = cleaned.replace(
+					/\s*[|\-–—]\s*(Cookbook|Documentation|Docs|Guide|Tutorial|Help|Support|Home|Index|Main|Page)\s*$/i,
+					"",
+				);
+
 				// Remove leading/trailing whitespace
 				cleaned = cleaned.trim();
-				
+
 				// Remove markdown formatting
-				cleaned = cleaned.replace(/[#*_`]/g, '');
-				
+				cleaned = cleaned.replace(/[#*_`]/g, "");
+
 				// Clean up extra whitespace
-				cleaned = cleaned.replace(/\s+/g, ' ').trim();
-				
-				return cleaned || 'Untitled';
+				cleaned = cleaned.replace(/\s+/g, " ").trim();
+
+				return cleaned || "Untitled";
 			}
 
 			// Truncate text with ellipsis
 			function truncateText(text, maxLength = 55) {
 				if (!text || text.length <= maxLength) return text;
-				return text.substring(0, maxLength - 3) + '...';
+				return text.substring(0, maxLength - 3) + "...";
 			}
 
 			// Generate more specific title using breadcrumbs and context
 			function generateSpecificTitle(page) {
-				if (!page) return 'Untitled';
-				
+				if (!page) return "Untitled";
+
 				// Start with defuddle title as baseline
 				const defuddleTitle = generateDefuddleTitle(page.title);
-				
+
 				// If no breadcrumbs or just filename, return truncated defuddle title
 				if (!page.breadcrumbs || page.breadcrumbs.length === 0) {
 					return truncateText(defuddleTitle);
 				}
-				
+
 				// Extract meaningful breadcrumb context (ignore file extensions and generic terms)
 				const meaningfulCrumbs = page.breadcrumbs
-					.filter(crumb => {
+					.filter((crumb) => {
 						// Remove file extensions and generic terms
-						const cleaned = crumb.replace(/\.(html?|php|aspx?)$/i, '').toLowerCase();
-						return cleaned !== 'index' && 
-							   cleaned !== 'main' && 
-							   cleaned !== 'home' && 
-							   cleaned !== 'default' &&
-							   cleaned.length > 1;
+						const cleaned = crumb
+							.replace(/\.(html?|php|aspx?)$/i, "")
+							.toLowerCase();
+						return (
+							cleaned !== "index" &&
+							cleaned !== "main" &&
+							cleaned !== "home" &&
+							cleaned !== "default" &&
+							cleaned.length > 1
+						);
 					})
-					.map(crumb => {
+					.map((crumb) => {
 						// Clean and format breadcrumb
-						let formatted = crumb.replace(/\.(html?|php|aspx?)$/i, '');
-						formatted = formatted.replace(/[-_]/g, ' ');
-						return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+						let formatted = crumb.replace(
+							/\.(html?|php|aspx?)$/i,
+							"",
+						);
+						formatted = formatted.replace(/[-_]/g, " ");
+						return (
+							formatted.charAt(0).toUpperCase() +
+							formatted.slice(1)
+						);
 					});
-				
+
 				// If we have meaningful breadcrumbs, try to create a more specific title
 				if (meaningfulCrumbs.length > 0) {
-					const context = meaningfulCrumbs.join(' / ');
-					
+					const context = meaningfulCrumbs.join(" / ");
+
 					// Check if the defuddle title already contains the context
 					const titleLower = defuddleTitle.toLowerCase();
 					const contextLower = context.toLowerCase();
-					
+
 					// If title already includes the context, just return truncated defuddle title
-					if (titleLower.includes(contextLower) || contextLower.includes(titleLower)) {
+					if (
+						titleLower.includes(contextLower) ||
+						contextLower.includes(titleLower)
+					) {
 						return truncateText(defuddleTitle);
 					}
-					
+
 					// Create contextual title - but keep it concise
 					// Only add context if it's not too long and adds value
 					if (context.length < 30 && meaningfulCrumbs.length <= 2) {
@@ -765,7 +926,7 @@ import '../styles/theme.css';
 						return truncateText(fullTitle);
 					}
 				}
-				
+
 				return truncateText(defuddleTitle);
 			}
 
@@ -773,24 +934,26 @@ import '../styles/theme.css';
 			function setUIEnabled(enabled) {
 				// Disable/enable generate button
 				generateBtn.disabled = !enabled || selectedPages.size === 0;
-				
+
 				// Disable/enable select all and clear all buttons
 				selectAllBtn.disabled = !enabled;
 				clearAllBtn.disabled = !enabled;
-				
+
 				// Disable/enable all checkboxes
-				const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-				allCheckboxes.forEach(checkbox => {
+				const allCheckboxes = document.querySelectorAll(
+					'input[type="checkbox"]',
+				);
+				allCheckboxes.forEach((checkbox) => {
 					checkbox.disabled = !enabled;
 				});
-				
+
 				// Update visual state
 				if (enabled) {
-					generateBtn.classList.remove('generating');
-					generateBtn.textContent = 'Generate llms.txt';
+					generateBtn.classList.remove("generating");
+					generateBtn.textContent = "Generate llms.txt";
 				} else {
-					generateBtn.classList.add('generating');
-					generateBtn.textContent = 'Generating...';
+					generateBtn.classList.add("generating");
+					generateBtn.textContent = "Generating...";
 				}
 			}
 
@@ -844,10 +1007,11 @@ import '../styles/theme.css';
 				selectedPages.forEach((url) => {
 					const page = allPages.find((p) => p.url === url);
 					if (page) {
-						const breadcrumbPath = page.breadcrumbs && page.breadcrumbs.length > 0 
-							? page.breadcrumbs.join(' / ') 
-							: 'Root';
-						
+						const breadcrumbPath =
+							page.breadcrumbs && page.breadcrumbs.length > 0
+								? page.breadcrumbs.join(" / ")
+								: "Root";
+
 						selectedPagesData.push({
 							title: generateSpecificTitle(page),
 							url: page.url,
@@ -884,16 +1048,16 @@ import '../styles/theme.css';
 				selectedPagesList.innerHTML = listHtml;
 			}
 
-
-
 			// Update loading message (optimistic UI shows instead)
 			function updateLoadingMessage(title, description) {
 				// With optimistic UI, we just update the skeleton message
-				const optimisticMessage = document.querySelector('#optimistic-tree > div:first-child');
+				const optimisticMessage = document.querySelector(
+					"#optimistic-tree > div:first-child",
+				);
 				if (optimisticMessage) {
 					optimisticMessage.textContent = description;
 				}
-				
+
 				// Keep the old loading message hidden since we show optimistic UI
 				console.log(`Loading: ${title} - ${description}`);
 			}
@@ -912,20 +1076,22 @@ import '../styles/theme.css';
 			// Action button handlers
 			selectAllBtn.addEventListener("click", () => {
 				// First, update all checkboxes immediately for instant visual feedback
-				const pageCheckboxes = document.querySelectorAll(".page-checkbox");
-				const siteCheckboxes = document.querySelectorAll(".site-checkbox");
-				
+				const pageCheckboxes =
+					document.querySelectorAll(".page-checkbox");
+				const siteCheckboxes =
+					document.querySelectorAll(".site-checkbox");
+
 				// Update page checkboxes visually first
 				pageCheckboxes.forEach((checkbox) => {
 					checkbox.checked = true;
 				});
-				
+
 				// Update site checkboxes visually first
 				siteCheckboxes.forEach((checkbox) => {
 					checkbox.checked = true;
 					checkbox.indeterminate = false;
 				});
-				
+
 				// Then batch update the data structures
 				requestAnimationFrame(() => {
 					// Clear and rebuild selectedPages set efficiently
@@ -933,7 +1099,7 @@ import '../styles/theme.css';
 					pageCheckboxes.forEach((checkbox) => {
 						selectedPages.add(checkbox.dataset.url);
 					});
-					
+
 					// Update counts once at the end
 					updateSelectionCount();
 				});
@@ -947,7 +1113,7 @@ import '../styles/theme.css';
 						checkbox.checked = false;
 						checkbox.indeterminate = false;
 					});
-				
+
 				// Then batch update the data structures
 				requestAnimationFrame(() => {
 					selectedPages.clear();
@@ -967,16 +1133,23 @@ import '../styles/theme.css';
 					progressText.textContent = `Fetching ${selectedPages.size} pages...`;
 
 					const selectedUrls = Array.from(selectedPages);
-					
+
 					// Use the enhanced batch processing with optimized parallel processing
 					const batchResult = await batchFetchAndClean(selectedUrls, {
 						concurrency: 5,
 						qualityThreshold: 0.3,
 						useOptimizedBatch: true,
-						onProgress: (completed, total, currentUrl, qualityScore) => {
-							const percent = Math.round((completed / total) * 100);
+						onProgress: (
+							completed,
+							total,
+							currentUrl,
+							qualityScore,
+						) => {
+							const percent = Math.round(
+								(completed / total) * 100,
+							);
 							progressFill.style.width = `${percent}%`;
-							
+
 							// Enhanced progress text with quality info
 							if (qualityScore !== undefined) {
 								progressText.textContent = `Processing: ${completed}/${total} (${percent}%)`;
@@ -985,11 +1158,16 @@ import '../styles/theme.css';
 							}
 						},
 						onError: (url, error) => {
-							console.warn(`Failed to process ${url}:`, error.message);
+							console.warn(
+								`Failed to process ${url}:`,
+								error.message,
+							);
 						},
 						onQualityFilter: (url, score, reason) => {
-							console.log(`Filtered low-quality content from ${url}: ${reason} (Score: ${score.toFixed(2)})`);
-						}
+							console.log(
+								`Filtered low-quality content from ${url}: ${reason} (Score: ${score.toFixed(2)})`,
+							);
+						},
 					});
 
 					// Extract results array from batch result
@@ -997,7 +1175,8 @@ import '../styles/theme.css';
 
 					// Show processing summary
 					if (batchResult.summary) {
-						const { total, successful, failed } = batchResult.summary;
+						const { total, successful, failed } =
+							batchResult.summary;
 						progressText.textContent = `Processed ${successful}/${total} pages successfully. Generating document...`;
 					} else {
 						progressText.textContent = "Generating llms.txt...";
@@ -1009,14 +1188,17 @@ import '../styles/theme.css';
 					// Open content in new tab
 					const timestamp = new Date().toISOString().split("T")[0];
 					const filename = `permaweb-docs-${timestamp}.llms.txt`;
-					
+
 					try {
 						// Open in new tab to view raw content
 						openContentInNewTab(llmsTxt, filename);
-						
+
 						progressText.textContent = `Document generated successfully! Opening in new tab...`;
 					} catch (error) {
-						console.error('Failed to open in new tab, falling back to download:', error);
+						console.error(
+							"Failed to open in new tab, falling back to download:",
+							error,
+						);
 						// Fallback to download if new tab fails (e.g., popup blocked)
 						downloadFile(llmsTxt, filename, "text/plain");
 						progressText.textContent = `Document downloaded (popup blocked)`;
@@ -1025,7 +1207,7 @@ import '../styles/theme.css';
 					// Hide progress with success message
 					if (batchResult.summary) {
 						const { successful, failed } = batchResult.summary;
-						progressText.textContent = `Generated document with ${successful} pages${failed > 0 ? ` (${failed} failed)` : ''}`;
+						progressText.textContent = `Generated document with ${successful} pages${failed > 0 ? ` (${failed} failed)` : ""}`;
 						setUIEnabled(true); // Re-enable UI immediately after success
 						setTimeout(() => {
 							progressContainer.style.display = "none";
