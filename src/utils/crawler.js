@@ -11,106 +11,62 @@ if (typeof window === 'undefined') {
   JSDOM = (await import('jsdom')).JSDOM;
 }
 
-// Site configurations with crawling parameters
-const CRAWL_CONFIGS = {
-  ao: {
-    name: 'AO Cookbook',
-    baseUrl: 'https://cookbook_ao.arweave.net',
-    maxDepth: 4,
-    maxPages: 100,
-    selectors: {
-      title: 'h1, title, .page-title, .doc-title',
-      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a',
-      content: 'main, .content, article, .markdown-body, .doc-content, .page-content, .documentation'
-    },
-    excludePatterns: [
-      /\/api\//,
-      /\.(pdf|zip|tar|gz)$/,
-      /mailto:/,
-      /#$/
-    ],
-    // Add specific seed URLs we know exist
-    seedUrls: [
-      '/welcome/ao-core-introduction.html',
-      '/guides/',
-      '/concepts/',
-      '/tutorials/',
-      '/references/'
-    ]
-  },
-  ario: {
-    name: 'AR-IO Network',
-    baseUrl: 'https://docs.arweave.net',
-    maxDepth: 4,
-    maxPages: 100,
-    selectors: {
-      title: 'h1, title, .page-title, .doc-title',
-      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a',
-      content: 'main, .content, article, .markdown-body, .doc-content, .page-content, .documentation'
-    },
-    excludePatterns: [
-      /\/api\//,
-      /\.(pdf|zip|tar|gz)$/,
-      /mailto:/,
-      /#$/
-    ],
-    // Add specific AR-IO SDK paths
-    seedUrls: [
-      '/ar-io-sdk/getting-started',
-      '/ar-io-sdk/',
-      '/gateways/',
-      '/observers/',
-      '/developers/',
-      '/guides/'
-    ]
-  },
-  arweave: {
-    name: 'Arweave Cookbook',
-    baseUrl: 'https://cookbook.arweave.net',
-    maxDepth: 4,
-    maxPages: 100,
-    selectors: {
-      title: 'h1, title, .page-title, .doc-title',
-      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a',
-      content: 'main, .content, article, .markdown-body, .doc-content, .page-content, .documentation'
-    },
-    excludePatterns: [
-      /\/api\//,
-      /\.(pdf|zip|tar|gz)$/,
-      /mailto:/,
-      /#$/
-    ],
-    seedUrls: [
-      '/getting-started/',
-      '/guides/',
-      '/concepts/',
-      '/references/'
-    ]
-  },
-  hyperbeam: {
-    name: 'Hyperbeam',
-    baseUrl: 'https://hyperbeam.arweave.net',
-    maxDepth: 3,
-    maxPages: 75,
-    selectors: {
-      title: 'h1, title, .page-title, .doc-title',
-      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a',
-      content: 'main, .content, article, .markdown-body, .doc-content, .page-content, .documentation'
-    },
-    excludePatterns: [
-      /\/api\//,
-      /\.(pdf|zip|tar|gz)$/,
-      /mailto:/,
-      /#$/
-    ],
-    seedUrls: [
-      '/build/',
-      '/run/',
-      '/learn/',
-      '/docs/'
-    ]
+// Cache for loaded configuration
+let CRAWL_CONFIGS = null;
+
+/**
+ * Load crawl configuration from JSON file
+ * @returns {Promise<Object>} Crawl configurations
+ */
+async function loadCrawlConfigs() {
+  if (CRAWL_CONFIGS) {
+    return CRAWL_CONFIGS;
   }
-};
+
+  try {
+    let configJson;
+    
+    if (typeof window === 'undefined') {
+      // Node.js environment - read from file system
+      const { readFileSync } = await import('fs');
+      const { resolve } = await import('path');
+      const configPath = resolve(process.cwd(), 'public/crawl-config.json');
+      configJson = readFileSync(configPath, 'utf8');
+    } else {
+      // Browser environment - fetch from public path
+      const response = await fetch('/crawl-config.json');
+      if (!response.ok) {
+        throw new Error(`Failed to load crawl config: ${response.status}`);
+      }
+      configJson = await response.text();
+    }
+
+    const rawConfigs = JSON.parse(configJson);
+    
+    // Convert string regex patterns back to RegExp objects
+    CRAWL_CONFIGS = {};
+    for (const [key, config] of Object.entries(rawConfigs)) {
+      CRAWL_CONFIGS[key] = {
+        ...config,
+        excludePatterns: config.excludePatterns.map(pattern => {
+          // Remove the leading and trailing slashes and flags
+          const match = pattern.match(/^\/(.+)\/([gimuy]*)$/);
+          if (match) {
+            return new RegExp(match[1], match[2]);
+          }
+          return new RegExp(pattern);
+        })
+      };
+    }
+
+    return CRAWL_CONFIGS;
+  } catch (error) {
+    console.error('Failed to load crawl configuration:', error);
+    // Fallback to empty config
+    CRAWL_CONFIGS = {};
+    return CRAWL_CONFIGS;
+  }
+}
 
 /**
  * Fetch and parse HTML content using HyperBEAM relay to bypass CORS
@@ -985,7 +941,8 @@ function generateTitleFromUrl(url) {
  * @returns {Promise<Object>} Crawl results
  */
 export async function crawlSite(siteKey, progressCallback = () => {}) {
-  const config = CRAWL_CONFIGS[siteKey];
+  const configs = await loadCrawlConfigs();
+  const config = configs[siteKey];
   if (!config) {
     throw new Error(`Unknown site: ${siteKey}`);
   }
@@ -1139,8 +1096,9 @@ export async function crawlSite(siteKey, progressCallback = () => {}) {
  * @returns {Promise<Object>} All crawl results
  */
 export async function crawlAllSites(progressCallback = () => {}) {
+  const configs = await loadCrawlConfigs();
   const results = {};
-  const siteKeys = Object.keys(CRAWL_CONFIGS);
+  const siteKeys = Object.keys(configs);
   
   for (let i = 0; i < siteKeys.length; i++) {
     const siteKey = siteKeys[i];
@@ -1153,7 +1111,7 @@ export async function crawlAllSites(progressCallback = () => {}) {
       console.error(`Failed to crawl ${siteKey}:`, error);
       results[siteKey] = {
         siteKey,
-        name: CRAWL_CONFIGS[siteKey].name,
+        name: configs[siteKey].name,
         error: error.message,
         pages: [],
         errors: [{ error: error.message }]
@@ -1202,10 +1160,10 @@ export function buildDisplayTree(crawlResults) {
 
 /**
  * Get all crawl configurations
- * @returns {Object} All site configurations
+ * @returns {Promise<Object>} All site configurations
  */
-export function getCrawlConfigs() {
-  return CRAWL_CONFIGS;
+export async function getCrawlConfigs() {
+  return await loadCrawlConfigs();
 }
 
 /**

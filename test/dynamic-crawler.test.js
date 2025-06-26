@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { getCrawlConfigs, buildDisplayTree } from '../src/utils/dynamic/dynamic-crawler.js';
+import { getCrawlConfigs, buildDisplayTree } from '../src/utils/crawler.js';
 
 // Mock fetch for testing
 global.fetch = vi.fn();
@@ -16,8 +16,8 @@ describe('Dynamic Crawler', () => {
   });
 
   describe('getCrawlConfigs', () => {
-    it('should return all site configurations', () => {
-      const configs = getCrawlConfigs();
+    it('should return all site configurations', async () => {
+      const configs = await getCrawlConfigs();
       
       expect(configs).toHaveProperty('ao');
       expect(configs).toHaveProperty('arweave');
@@ -30,8 +30,8 @@ describe('Dynamic Crawler', () => {
       expect(configs.ao).toHaveProperty('selectors');
     });
 
-    it('should have valid selectors for each site', () => {
-      const configs = getCrawlConfigs();
+    it('should have valid selectors for each site', async () => {
+      const configs = await getCrawlConfigs();
       
       Object.values(configs).forEach(config => {
         expect(config.selectors).toHaveProperty('title');
@@ -44,8 +44,8 @@ describe('Dynamic Crawler', () => {
       });
     });
 
-    it('should have reasonable crawl limits', () => {
-      const configs = getCrawlConfigs();
+    it('should have reasonable crawl limits', async () => {
+      const configs = await getCrawlConfigs();
       
       Object.values(configs).forEach(config => {
         expect(config.maxDepth).toBeGreaterThan(0);
@@ -133,7 +133,7 @@ describe('Dynamic Crawler', () => {
     it('should validate URLs correctly', async () => {
       // This would test the isValidUrl function if it were exported
       // For now, we test through the configs
-      const configs = getCrawlConfigs();
+      const configs = await getCrawlConfigs();
       
       Object.values(configs).forEach(config => {
         expect(Array.isArray(config.excludePatterns)).toBe(true);
@@ -144,8 +144,8 @@ describe('Dynamic Crawler', () => {
       });
     });
 
-    it('should have valid base URLs', () => {
-      const configs = getCrawlConfigs();
+    it('should have valid base URLs', async () => {
+      const configs = await getCrawlConfigs();
       
       Object.values(configs).forEach(config => {
         expect(() => new URL(config.baseUrl)).not.toThrow();
@@ -155,8 +155,8 @@ describe('Dynamic Crawler', () => {
   });
 
   describe('Page metadata extraction', () => {
-    it('should have valid selectors for each site', () => {
-      const configs = getCrawlConfigs();
+    it('should have valid selectors for each site', async () => {
+      const configs = await getCrawlConfigs();
       
       Object.values(configs).forEach(config => {
         expect(config.selectors).toHaveProperty('title');
