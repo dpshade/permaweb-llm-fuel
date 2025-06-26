@@ -16,69 +16,98 @@ const CRAWL_CONFIGS = {
   ao: {
     name: 'AO Cookbook',
     baseUrl: 'https://cookbook_ao.arweave.net',
-    maxDepth: 3,
-    maxPages: 50,
+    maxDepth: 4,
+    maxPages: 100,
     selectors: {
-      title: 'h1, title',
-      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a',
-      content: 'main, .content, article, .markdown-body'
+      title: 'h1, title, .page-title, .doc-title',
+      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a',
+      content: 'main, .content, article, .markdown-body, .doc-content, .page-content, .documentation'
     },
     excludePatterns: [
       /\/api\//,
       /\.(pdf|zip|tar|gz)$/,
       /mailto:/,
-      /#/
+      /#$/
+    ],
+    // Add specific seed URLs we know exist
+    seedUrls: [
+      '/welcome/ao-core-introduction.html',
+      '/guides/',
+      '/concepts/',
+      '/tutorials/',
+      '/references/'
     ]
   },
   ario: {
-    name: 'ARIO',
+    name: 'AR-IO Network',
     baseUrl: 'https://docs.arweave.net',
-    maxDepth: 3,
-    maxPages: 50,
+    maxDepth: 4,
+    maxPages: 100,
     selectors: {
-      title: 'h1, title',
-      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a',
-      content: 'main, .content, article, .markdown-body'
+      title: 'h1, title, .page-title, .doc-title',
+      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a',
+      content: 'main, .content, article, .markdown-body, .doc-content, .page-content, .documentation'
     },
     excludePatterns: [
       /\/api\//,
       /\.(pdf|zip|tar|gz)$/,
       /mailto:/,
-      /#/
+      /#$/
+    ],
+    // Add specific AR-IO SDK paths
+    seedUrls: [
+      '/ar-io-sdk/getting-started',
+      '/ar-io-sdk/',
+      '/gateways/',
+      '/observers/',
+      '/developers/',
+      '/guides/'
     ]
   },
   arweave: {
     name: 'Arweave Cookbook',
     baseUrl: 'https://cookbook.arweave.net',
-    maxDepth: 3,
-    maxPages: 50,
+    maxDepth: 4,
+    maxPages: 100,
     selectors: {
-      title: 'h1, title',
-      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a',
-      content: 'main, .content, article, .markdown-body'
+      title: 'h1, title, .page-title, .doc-title',
+      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a',
+      content: 'main, .content, article, .markdown-body, .doc-content, .page-content, .documentation'
     },
     excludePatterns: [
       /\/api\//,
       /\.(pdf|zip|tar|gz)$/,
       /mailto:/,
-      /#/
+      /#$/
+    ],
+    seedUrls: [
+      '/getting-started/',
+      '/guides/',
+      '/concepts/',
+      '/references/'
     ]
   },
   hyperbeam: {
     name: 'Hyperbeam',
     baseUrl: 'https://hyperbeam.arweave.net',
-    maxDepth: 2,
-    maxPages: 30,
+    maxDepth: 3,
+    maxPages: 75,
     selectors: {
-      title: 'h1, title',
-      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a',
-      content: 'main, .content, article, .markdown-body'
+      title: 'h1, title, .page-title, .doc-title',
+      navigation: 'nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a',
+      content: 'main, .content, article, .markdown-body, .doc-content, .page-content, .documentation'
     },
     excludePatterns: [
       /\/api\//,
       /\.(pdf|zip|tar|gz)$/,
       /mailto:/,
-      /#/
+      /#$/
+    ],
+    seedUrls: [
+      '/build/',
+      '/run/',
+      '/learn/',
+      '/docs/'
     ]
   }
 };
@@ -365,19 +394,24 @@ function extractLinks(doc, baseUrl, config) {
 }
 
 /**
- * Resolve relative URLs to absolute URLs
+ * Resolve relative URLs to absolute URLs and strip fragment identifiers
  * @param {string} href - URL to resolve
  * @param {string} baseUrl - Base URL
- * @returns {string|null} Resolved absolute URL or null
+ * @returns {string|null} Resolved absolute URL without fragment or null
  */
 function resolveUrl(href, baseUrl) {
   try {
     if (href.startsWith('http')) {
-      return href;
+      const url = new URL(href);
+      // Strip fragment identifier to avoid duplicates
+      url.hash = '';
+      return url.toString();
     }
     
     const base = new URL(baseUrl);
     const resolved = new URL(href, base);
+    // Strip fragment identifier to avoid duplicates
+    resolved.hash = '';
     return resolved.toString();
   } catch (error) {
     return null;
@@ -466,8 +500,8 @@ function extractPageMetadata(doc, url, config) {
     
     const result = defuddle.parse();
     
-    // Enhanced content quality filtering
-    if (result.wordCount < 100) {
+    // Enhanced content quality filtering - reduced threshold
+    if (result.wordCount < 50) {
       console.warn(`Low word count (${result.wordCount}) for ${url}`);
       throw new Error('Low word count, using fallback');
     }
@@ -546,62 +580,77 @@ function extractPageMetadata(doc, url, config) {
     }
 
     // If we still don't have enough content after fallback, reject the page
-    if (estimatedWords < 100) {
+    if (estimatedWords < 50) {
       console.warn(`Insufficient content after fallback extraction (${estimatedWords} words): ${url}`);
       return null;
     }
   }
   
   // Final quality check - ensure we have substantial content
-  if (estimatedWords < 100) {
+  if (estimatedWords < 50) {
     console.warn(`Final quality check failed (${estimatedWords} words): ${url}`);
     return null;
   }
   
-  // Determine category and priority from URL path
+  // Clean the title first
+  const cleanedTitle = cleanTitle(title, url, config.name);
+  
+  // Determine category and priority from URL path and title
   const urlObj = new URL(url);
   const pathParts = urlObj.pathname.split('/').filter(Boolean);
+  const fullPath = pathParts.join('/').toLowerCase();
+  const titleLower = cleanedTitle.toLowerCase();
   
   let category = 'general';
   let priority = 3;
   
-  if (pathParts.length > 0) {
+  // Check all path parts and title for categorization keywords
+  const allText = fullPath + ' ' + titleLower;
+  
+  if (allText.includes('welcome') || allText.includes('intro') || allText.includes('overview')) {
+    category = 'introduction';
+    priority = 1;
+  } else if (allText.includes('getting-started') || allText.includes('get-started') || allText.includes('start') || allText.includes('install')) {
+    category = 'getting-started';
+    priority = 1;
+  } else if (allText.includes('concept') || allText.includes('fundamental') || allText.includes('core') || allText.includes('basic')) {
+    category = 'concepts';
+    priority = 2;
+  } else if (allText.includes('guide') || allText.includes('tutorial') || allText.includes('how-to') || allText.includes('walk')) {
+    category = 'guides';
+    priority = 2;
+  } else if (allText.includes('reference') || allText.includes('api') || allText.includes('spec') || allText.includes('docs')) {
+    category = 'references';
+    priority = 3;
+  } else if (allText.includes('example') || allText.includes('demo') || allText.includes('sample')) {
+    category = 'examples';
+    priority = 2;
+  } else if (allText.includes('troubleshoot') || allText.includes('faq') || allText.includes('help')) {
+    category = 'troubleshooting';
+    priority = 3;
+  } else if (allText.includes('deploy') || allText.includes('build') || allText.includes('setup')) {
+    category = 'deployment';
+    priority = 2;
+  } else if (pathParts.length > 0) {
+    // Use the first meaningful path segment as category
     const firstPart = pathParts[0].toLowerCase();
-    
-    // Categorize based on URL structure
-    if (firstPart.includes('welcome') || firstPart.includes('intro')) {
-      category = 'introduction';
-      priority = 1;
-    } else if (firstPart.includes('start') || firstPart.includes('getting')) {
-      category = 'getting-started';
-      priority = 1;
-    } else if (firstPart.includes('concept') || firstPart.includes('fundamental')) {
-      category = 'concepts';
-      priority = 2;
-    } else if (firstPart.includes('guide') || firstPart.includes('tutorial')) {
-      category = 'guides';
-      priority = 2;
-    } else if (firstPart.includes('reference') || firstPart.includes('api')) {
-      category = 'references';
-      priority = 3;
+    if (firstPart.length > 2 && firstPart !== 'docs' && firstPart !== 'documentation') {
+      category = firstPart.replace(/-/g, ' ');
     }
   }
   
   // Generate tags from URL and title
   const tags = [];
-  const allText = (title + ' ' + urlObj.pathname).toLowerCase();
+  const tagText = (title + ' ' + urlObj.pathname).toLowerCase();
   
-  if (allText.includes('install')) tags.push('installation');
-  if (allText.includes('setup')) tags.push('setup');
-  if (allText.includes('config')) tags.push('configuration');
-  if (allText.includes('api')) tags.push('api');
-  if (allText.includes('tutorial')) tags.push('tutorial');
-  if (allText.includes('example')) tags.push('examples');
-  if (allText.includes('deploy')) tags.push('deployment');
-  if (allText.includes('test')) tags.push('testing');
-  
-  // Clean the title before returning
-  const cleanedTitle = cleanTitle(title, url, config.name);
+  if (tagText.includes('install')) tags.push('installation');
+  if (tagText.includes('setup')) tags.push('setup');
+  if (tagText.includes('config')) tags.push('configuration');
+  if (tagText.includes('api')) tags.push('api');
+  if (tagText.includes('tutorial')) tags.push('tutorial');
+  if (tagText.includes('example')) tags.push('examples');
+  if (tagText.includes('deploy')) tags.push('deployment');
+  if (tagText.includes('test')) tags.push('testing');
   
   return {
     url,
@@ -626,6 +675,38 @@ async function discoverEntryPoints(baseUrl, config) {
   console.log(`Discovering entry points for ${baseUrl}...`);
   
   const discoveredPaths = new Set();
+  
+  // Start with seed URLs if provided
+  if (config.seedUrls && config.seedUrls.length > 0) {
+    console.log(`Testing ${config.seedUrls.length} seed URLs...`);
+    for (const seedUrl of config.seedUrls) {
+      const testUrl = baseUrl + (seedUrl.startsWith('/') ? seedUrl : '/' + seedUrl);
+      try {
+        const doc = await fetchPage(testUrl);
+        if (doc) {
+          // Additional validation - make sure the page has actual content
+          const contentElements = doc.querySelectorAll('main, article, .content, .markdown-body, .doc-content, .page-content, p, h1, h2, h3, h4, h5, h6');
+          const actualContent = Array.from(contentElements).map(el => el.textContent || '').join(' ').trim();
+          
+          if (actualContent.length > 50) { // Lower threshold for seed URLs
+            discoveredPaths.add(seedUrl);
+            console.log(`✓ Seed URL found: ${seedUrl}`);
+          } else {
+            console.warn(`✗ Rejected seed URL ${seedUrl}: insufficient content (${actualContent.length} chars)`);
+          }
+        } else {
+          console.warn(`✗ Seed URL failed to fetch: ${seedUrl}`);
+        }
+      } catch (error) {
+        console.warn(`✗ Seed URL ${seedUrl} error:`, error.message);
+      }
+      
+      // Small delay to be respectful during discovery
+      await new Promise(resolve => setTimeout(resolve, 150));
+    }
+  }
+  
+  // Then try common documentation patterns
   const commonPatterns = [
     '/', // Always start with root
     '/docs',
@@ -644,22 +725,26 @@ async function discoverEntryPoints(baseUrl, config) {
     '/examples', '/demos',
     '/help', '/support',
     '/faq', '/troubleshooting'
-    // Removed '/api', '/api-docs' as they often lead to 404s
   ];
 
-  // First, try common documentation patterns
+  console.log(`Testing ${commonPatterns.length} common patterns...`);
   for (const pattern of commonPatterns) {
+    // Skip if we already found this pattern in seed URLs
+    if (discoveredPaths.has(pattern)) {
+      continue;
+    }
+    
     const testUrl = baseUrl + pattern;
     try {
       const doc = await fetchPage(testUrl);
       if (doc) {
         // Additional validation - make sure the page has actual content
-        const contentElements = doc.querySelectorAll('main, article, .content, .markdown-body, p, h1, h2, h3, h4, h5, h6');
+        const contentElements = doc.querySelectorAll('main, article, .content, .markdown-body, .doc-content, .page-content, p, h1, h2, h3, h4, h5, h6');
         const actualContent = Array.from(contentElements).map(el => el.textContent || '').join(' ').trim();
         
         if (actualContent.length > 100) { // Ensure there's substantial content
           discoveredPaths.add(pattern);
-          console.log(`✓ Found: ${pattern}`);
+          console.log(`✓ Found common pattern: ${pattern}`);
         } else {
           console.warn(`✗ Rejected ${pattern}: insufficient content`);
         }
@@ -1043,8 +1128,8 @@ export async function crawlSite(siteKey, progressCallback = () => {}) {
       continue;
     }
     
-    // Enhanced quality filtering - higher threshold and more specific checks
-    if (page.estimatedWords < 100) {
+    // Enhanced quality filtering - reduced threshold for better discovery
+    if (page.estimatedWords < 50) {
       console.warn(`Filtering low-quality page (${page.estimatedWords} words): ${page.url}`);
       continue;
     }
