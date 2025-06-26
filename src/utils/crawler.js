@@ -595,49 +595,24 @@ function extractPageMetadata(doc, url, config) {
   // Clean the title first
   const cleanedTitle = cleanTitle(title, url, config.name);
   
-  // Determine category and priority from URL path and title
+  // Extract URL path parts for breadcrumbs and priority
   const urlObj = new URL(url);
   const pathParts = urlObj.pathname.split('/').filter(Boolean);
   const fullPath = pathParts.join('/').toLowerCase();
   const titleLower = cleanedTitle.toLowerCase();
   
-  let category = 'general';
+  // Determine priority from URL path and title
   let priority = 3;
-  
-  // Check all path parts and title for categorization keywords
   const allText = fullPath + ' ' + titleLower;
   
-  if (allText.includes('welcome') || allText.includes('intro') || allText.includes('overview')) {
-    category = 'introduction';
+  if (allText.includes('welcome') || allText.includes('intro') || allText.includes('overview') || allText.includes('getting-started')) {
     priority = 1;
-  } else if (allText.includes('getting-started') || allText.includes('get-started') || allText.includes('start') || allText.includes('install')) {
-    category = 'getting-started';
-    priority = 1;
-  } else if (allText.includes('concept') || allText.includes('fundamental') || allText.includes('core') || allText.includes('basic')) {
-    category = 'concepts';
+  } else if (allText.includes('guide') || allText.includes('tutorial') || allText.includes('concept') || allText.includes('how-to')) {
     priority = 2;
-  } else if (allText.includes('guide') || allText.includes('tutorial') || allText.includes('how-to') || allText.includes('walk')) {
-    category = 'guides';
-    priority = 2;
-  } else if (allText.includes('reference') || allText.includes('api') || allText.includes('spec') || allText.includes('docs')) {
-    category = 'references';
-    priority = 3;
-  } else if (allText.includes('example') || allText.includes('demo') || allText.includes('sample')) {
-    category = 'examples';
-    priority = 2;
-  } else if (allText.includes('troubleshoot') || allText.includes('faq') || allText.includes('help')) {
-    category = 'troubleshooting';
-    priority = 3;
-  } else if (allText.includes('deploy') || allText.includes('build') || allText.includes('setup')) {
-    category = 'deployment';
-    priority = 2;
-  } else if (pathParts.length > 0) {
-    // Use the first meaningful path segment as category
-    const firstPart = pathParts[0].toLowerCase();
-    if (firstPart.length > 2 && firstPart !== 'docs' && firstPart !== 'documentation') {
-      category = firstPart.replace(/-/g, ' ');
-    }
   }
+  
+  // Calculate depth based on path parts
+  const depth = pathParts.length;
   
   // Generate tags from URL and title
   const tags = [];
@@ -655,13 +630,13 @@ function extractPageMetadata(doc, url, config) {
   return {
     url,
     title: cleanedTitle,
-    category,
     priority,
     estimatedWords, // Use actual word count, not minimum
     tags,
     description: description || `${cleanedTitle} - Documentation page`,
     author,
-    breadcrumbs: pathParts
+    breadcrumbs: pathParts,
+    depth: depth
   };
 }
 
@@ -1192,7 +1167,7 @@ export async function crawlAllSites(progressCallback = () => {}) {
 /**
  * Build display tree from crawled pages
  * @param {Object} crawlResults - Results from crawlAllSites
- * @returns {Object} Display tree structure
+ * @returns {Object} Display tree structure optimized for breadcrumb display
  */
 export function buildDisplayTree(crawlResults) {
   const tree = {};
@@ -1202,31 +1177,24 @@ export function buildDisplayTree(crawlResults) {
       tree[siteKey] = {
         name: siteData.name,
         error: siteData.error,
-        categories: {},
         pages: []
       };
       continue;
     }
     
+    // Sort pages by breadcrumb path for better organization
+    const sortedPages = siteData.pages.sort((a, b) => {
+      const pathA = a.breadcrumbs ? a.breadcrumbs.join('/') : '';
+      const pathB = b.breadcrumbs ? b.breadcrumbs.join('/') : '';
+      return pathA.localeCompare(pathB);
+    });
+    
     tree[siteKey] = {
       name: siteData.name,
       description: `${siteData.pages.length} pages discovered`,
-      categories: {},
-      pages: siteData.pages
+      pages: sortedPages,
+      crawledAt: siteData.crawledAt
     };
-    
-    // Group pages by category
-    for (const page of siteData.pages) {
-      if (!tree[siteKey].categories[page.category]) {
-        tree[siteKey].categories[page.category] = {
-          name: page.category,
-          description: `${page.category} documentation`,
-          pages: []
-        };
-      }
-      
-      tree[siteKey].categories[page.category].pages.push(page);
-    }
   }
   
   return tree;

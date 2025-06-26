@@ -7,12 +7,15 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Interactive tool to select and curate Permaweb documentation into llms.txt format for AI training" />
+		<meta
+			name="description"
+			content="Interactive tool to select and curate Permaweb documentation into llms.txt format for AI training"
+		/>
 		<title>Permaweb LLMs Builder</title>
-		
+
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="/src/styles/theme.css" />
-		
+
 		<!-- Custom checkbox styling -->
 		<style>
 			input[type="checkbox"] {
@@ -35,7 +38,7 @@
 			}
 
 			input[type="checkbox"]:checked::after {
-				content: '✓';
+				content: "✓";
 				position: absolute;
 				top: 50%;
 				left: 50%;
@@ -67,16 +70,24 @@
 
 			/* Remove outdated selector for bolding page labels (handled inline) */
 		</style>
-		
+
 		<!-- Iframe compatibility headers -->
 		<meta http-equiv="X-Frame-Options" content="ALLOWALL" />
-		<meta http-equiv="Content-Security-Policy" content="frame-ancestors *;" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="frame-ancestors *;"
+		/>
 	</head>
-	
+
 	<body>
 		<!-- Theme Toggle Button -->
 		<button class="theme-toggle" aria-label="Toggle theme">
-			<svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<svg
+				class="sun-icon"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+			>
 				<circle cx="12" cy="12" r="5"></circle>
 				<line x1="12" y1="1" x2="12" y2="3"></line>
 				<line x1="12" y1="21" x2="12" y2="23"></line>
@@ -87,653 +98,525 @@
 				<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
 				<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
 			</svg>
-			<svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			<svg
+				class="moon-icon"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+			>
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+				></path>
 			</svg>
 		</button>
 
 		<!-- Main Container -->
 		<div class="main-container">
 			<h1>Permaweb LLMs Builder</h1>
+
 			<!-- Documentation Tree -->
 			<div id="loading-message">
-				<div class="loading-header">
-					<h3>Loading Pre-crawled Documentation Index</h3>
-					<p>Loading curated documentation from the Permaweb ecosystem...</p>
-				</div>
-				<div id="crawl-progress-bar" style="display: none; margin-top: 16px;">
-					<div style="background: var(--ao-border-color); height: 8px; border-radius: 4px; overflow: hidden;">
-						<div id="crawl-progress-fill" style="background: var(--ao-primary-color); height: 100%; width: 0%; transition: width 0.3s ease;"></div>
-					</div>
-					<div id="crawl-progress-text" style="font-size: 12px; color: var(--ao-secondary-text); margin-top: 4px; text-align: center;"></div>
-				</div>
+				<h3>Loading Documentation Index</h3>
+				<p>
+					Loading curated documentation from the Permaweb ecosystem...
+				</p>
 			</div>
 			<div id="docs-tree"></div>
-			
+
 			<!-- Progress Container -->
-			<div class="progress-container" id="progress-container" style="display: none;">
+			<div
+				class="progress-container"
+				id="progress-container"
+				style="display: none;"
+			>
 				<div class="progress-bar">
 					<div class="progress-fill" id="progress-fill"></div>
 				</div>
-				<div class="progress-text" id="progress-text">Processing...</div>
+				<div class="progress-text" id="progress-text">
+					Processing...
+				</div>
 			</div>
 
 			<!-- Selection Counter -->
 			<div class="selection-counter">
-				<div class="selection-header" style="display: flex; align-items: center; gap: 8px; cursor: pointer;" onclick="toggleSelectionDetails()">
-					<strong id="selection-count">0</strong> pages selected
-					<svg id="selection-toggle" style="width: 12px; height: 12px; transition: transform 0.2s ease;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
-					</svg>
+				<div
+					class="selection-header"
+					style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: space-between;"
+					onclick="toggleSelectionDetails()"
+				>
+					<div style="display: flex; align-items: center; gap: 8px;">
+						<strong id="selection-count">0</strong> pages selected
+						<svg
+							id="selection-toggle"
+							style="width: 12px; height: 12px; transition: transform 0.2s ease;"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z"
+								fill="#666"></path>
+						</svg>
+					</div>
+					<div
+						id="estimated-chars"
+						style="font-style: italic; font-size: 12px; color: var(--ao-secondary-text);"
+					>
+					</div>
 				</div>
-				<div id="selection-details" style="display: none; margin-top: 12px; max-height: 200px; overflow-y: auto;">
-					<div id="selected-pages-list" style="font-size: 14px; color: var(--ao-secondary-text);"></div>
+				<div
+					id="selection-details"
+					style="display: none; margin-top: 12px; max-height: 200px; overflow-y: auto;"
+				>
+					<div
+						id="selected-pages-list"
+						style="font-size: 14px; color: var(--ao-secondary-text);"
+					>
+					</div>
 				</div>
 			</div>
-			
+
 			<!-- Action Buttons -->
 			<div class="action-buttons">
 				<button class="btn btn-primary" id="generate-btn" disabled>
 					Generate llms.txt
 				</button>
-				<button class="btn" id="select-all-btn">
-					Select All
-				</button>
-				<button class="btn" id="clear-all-btn">
-					Clear All
-				</button>
+				<button class="btn" id="select-all-btn"> Select All </button>
+				<button class="btn" id="clear-all-btn"> Clear All </button>
 			</div>
-			
-
 		</div>
 
 		<!-- Main JavaScript -->
 		<script type="module">
-			import { initializeAllTheme } from '/src/utils/theme.js';
-			import { batchFetchAndClean, generateLLMsTxt, downloadFile } from '/src/utils/defuddle-fetch.js';
-			
-			// Dynamic crawler imports (lazy loaded)
-			let dynamicCrawlerModule = null;
-			
+			import { initializeAllTheme } from "/src/utils/theme.js";
+			import {
+				batchFetchAndClean,
+				generateLLMsTxt,
+				downloadFile,
+			} from "/src/utils/defuddle-fetch.js";
+
+
+
 			// Initialize theme system
 			initializeAllTheme();
-			
+
 			// State management
 			let docsIndex = null;
 			let displayTree = null;
 			let selectedPages = new Set();
 			let allPages = [];
-			let currentMode = 'static';
-			
+
 			// DOM elements
-			const docsTree = document.getElementById('docs-tree');
-			const loadingMessage = document.getElementById('loading-message');
-			const selectionCount = document.getElementById('selection-count');
-			const generateBtn = document.getElementById('generate-btn');
-			const selectAllBtn = document.getElementById('select-all-btn');
-			const clearAllBtn = document.getElementById('clear-all-btn');
-			const progressContainer = document.getElementById('progress-container');
-			const progressFill = document.getElementById('progress-fill');
-			const progressText = document.getElementById('progress-text');
-			const crawlProgressBar = document.getElementById('crawl-progress-bar');
-			const crawlProgressFill = document.getElementById('crawl-progress-fill');
-			const crawlProgressText = document.getElementById('crawl-progress-text');
-			const selectionDetails = document.getElementById('selection-details');
-			const selectionToggle = document.getElementById('selection-toggle');
-			const selectedPagesList = document.getElementById('selected-pages-list');
-			
-			// Crawler mode toggle
-			const crawlerModeRadios = document.querySelectorAll('input[name="crawler-mode"]');
-			
+			const docsTree = document.getElementById("docs-tree");
+			const loadingMessage = document.getElementById("loading-message");
+			const selectionCount = document.getElementById("selection-count");
+			const generateBtn = document.getElementById("generate-btn");
+			const selectAllBtn = document.getElementById("select-all-btn");
+			const clearAllBtn = document.getElementById("clear-all-btn");
+			const progressContainer =
+				document.getElementById("progress-container");
+			const progressFill = document.getElementById("progress-fill");
+			const progressText = document.getElementById("progress-text");
+			const selectionDetails =
+				document.getElementById("selection-details");
+			const selectionToggle = document.getElementById("selection-toggle");
+			const selectedPagesList = document.getElementById(
+				"selected-pages-list",
+			);
+
 			// Initialize the application
 			async function initialize() {
-				// Set up mode toggle listeners
-				crawlerModeRadios.forEach(radio => {
-					radio.addEventListener('change', (e) => {
-						if (e.target.checked) {
-							switchCrawlerMode(e.target.value);
-						}
-					});
-				});
-				
-				// Try to load from Vercel first, fallback to static index
-				const vercelSuccess = await loadFromVercel();
-				if (!vercelSuccess) {
-					console.log('Vercel failed, loading static index...');
-					await loadStaticIndex();
-				}
+				await loadDocumentationIndex();
 			}
-			
-			// Switch between crawler modes
-			async function switchCrawlerMode(mode) {
-				if (mode === currentMode) return;
-				
-				currentMode = mode;
-				selectedPages.clear();
-				updateSelectionCount();
-				
-				if (mode === 'static') {
-					await loadStaticIndex();
-				} else {
-					await loadDynamicCrawler();
-						}
-					}
-			
-			// Load static pre-crawled index
-			async function loadStaticIndex() {
+
+			// Load documentation index with Vercel primary and local fallback
+			async function loadDocumentationIndex() {
 				try {
-					updateLoadingMessage('Loading Pre-crawled Documentation Index', 'Loading curated documentation from the Permaweb ecosystem...');
-					
-					// Fetch the static docs index
-					const response = await fetch('/src/data/docs-index.json');
-					if (!response.ok) {
-						throw new Error(`Failed to load docs index: ${response.status}`);
-			}
-			
-					docsIndex = await response.json();
-					
-					// Process the index into display format
-					displayTree = processStaticIndex(docsIndex);
-					allPages = extractAllPages(docsIndex);
-					
-					// Show and render the tree
-					docsTree.style.display = 'block';
-					renderDocumentationTree();
-					
-					// Hide loading message and progress bar
-					loadingMessage.style.display = 'none';
-					crawlProgressBar.style.display = 'none';
-					
-					console.log(`Loaded static index: ${allPages.length} total pages from ${Object.keys(docsIndex).length} sites`);
-					
-				} catch (error) {
-					console.error('Failed to load static index:', error);
-					showError(`Failed to load documentation index: ${error.message}`);
-							}
-			}
-			
-			// Load dynamic crawler
-			async function loadDynamicCrawler() {
-				try {
-					// Hide any existing tree content during dynamic crawling
-					docsTree.style.display = 'none';
-					
-					updateLoadingMessage(' Initializing Dynamic Documentation Discovery', 'Loading dynamic crawler powered by HyperBEAM relay...');
+					updateLoadingMessage(
+						"Loading Documentation Index",
+						"Fetching latest documentation from Vercel endpoint...",
+					);
+
+					// Try loading from Vercel JSON endpoint first
+					let response;
+					try {
+						// TODO: Replace with your actual Vercel JSON project URL
+						const vercelJsonUrl = "https://permaweb-docs-index.vercel.app/docs-index.json";
+						response = await fetch(vercelJsonUrl);
 						
-					// Lazy load dynamic crawler module
-					if (!dynamicCrawlerModule) {
-						dynamicCrawlerModule = await import('/src/utils/crawler.js');
+						if (!response.ok) {
+							throw new Error(`Vercel endpoint failed: ${response.status}`);
+						}
+						
+						console.log("Successfully loaded from Vercel JSON endpoint");
+					} catch (vercelError) {
+						console.warn("Vercel endpoint failed, trying local fallback:", vercelError.message);
+						
+						updateLoadingMessage(
+							"Loading Documentation Index",
+							"Vercel endpoint unavailable, loading local index...",
+						);
+						
+						// Fallback to local static index
+						response = await fetch("/docs-index.json");
+						if (!response.ok) {
+							throw new Error(
+								`Local index also failed: ${response.status}`,
+							);
+						}
+						
+						console.log("Loaded from local fallback");
 					}
-					
-					// Start dynamic crawling with detailed progress
-					await startDynamicCrawling();
-					
+
+					docsIndex = await response.json();
+
+					// Process the index into display format
+					displayTree = processIndex(docsIndex);
+					allPages = extractAllPages(docsIndex);
+
+					// Render the tree
+					renderDocumentationTree();
+
+					// Hide loading message
+					loadingMessage.style.display = "none";
+
+					console.log(
+						`Loaded documentation index: ${allPages.length} total pages from ${Object.keys(docsIndex).length} sites`,
+					);
 				} catch (error) {
-					console.error('Failed to load dynamic crawler:', error);
-					showError(`Failed to initialize dynamic crawler: ${error.message}`);
-					// Show tree again if there's an error
-					docsTree.style.display = 'block';
+					console.error("Failed to load documentation index:", error);
+					showError(
+						`Failed to load documentation index: ${error.message}`,
+					);
 				}
 			}
-			
-			// Process static index into display format
-			function processStaticIndex(index) {
+
+
+
+			// Process index into display format
+			function processIndex(index) {
 				const processed = {};
-				
+
 				for (const [siteKey, siteData] of Object.entries(index)) {
+					// Skip metadata entries
+					if (siteKey === '_metadata') continue;
+					
 					processed[siteKey] = {
 						name: siteData.name,
-						baseUrl: siteData.baseUrl,
-						tree: siteData.tree || createTreeFromPages(siteData.pages),
-						pages: siteData.pages,
-						crawledAt: siteData.crawledAt
+						description: siteData.description,
+						pages: siteData.pages || [],
+						crawledAt: siteData.crawledAt,
 					};
 				}
-				
+
 				return processed;
 			}
-			
-			// Create tree structure from flat page list (for dynamic results)
-			function createTreeFromPages(pages) {
-				if (!pages || pages.length === 0) return [];
-				
-				const tree = [];
-				const categoryMap = {};
-				
-				// Group pages by category
-				pages.forEach(page => {
-					const category = page.category || 'general';
-					if (!categoryMap[category]) {
-						categoryMap[category] = {
-							name: category.charAt(0).toUpperCase() + category.slice(1),
-							path: [category],
-							pages: []
-						};
-					}
-					categoryMap[category].pages.push(page);
-				});
-				
-				// Convert to tree structure
-				Object.values(categoryMap).forEach(categoryNode => {
-					tree.push(categoryNode);
-				});
-				
-				return tree;
-			}
-			
-			// Extract all pages from static index
+
+			// Extract all pages from index
 			function extractAllPages(index) {
 				const pages = [];
-				
+
 				for (const [siteKey, siteData] of Object.entries(index)) {
-					for (const page of siteData.pages) {
-						pages.push({
-							...page,
-							siteKey,
-							priority: 2, // Default priority for static pages
-							estimatedWords: 500 // Default estimate
-						});
-				}
-				}
-				
-				return pages;
-			}
-			
-			// Extract all pages from dynamic crawl results
-			function extractAllPagesFromDynamic(crawlResults) {
-				const pages = [];
-				
-				for (const [siteKey, siteData] of Object.entries(crawlResults)) {
-					if (siteData.pages) {
+					// Skip metadata entries
+					if (siteKey === '_metadata') continue;
+					
+					// Use the flat pages array directly from the JSON structure
+					if (siteData.pages && Array.isArray(siteData.pages)) {
 						for (const page of siteData.pages) {
+							// Use existing estimatedWords or calculate from title
+							const estimatedWords = page.estimatedWords || Math.max(300, page.title.length * 15);
+							const estimatedChars = Math.round(estimatedWords * 5.5);
+
 							pages.push({
 								...page,
 								siteKey,
-								// Dynamic pages already have priority, estimatedWords, etc.
+								siteName: siteData.name,
+								estimatedWords: estimatedWords,
+								estimatedChars: estimatedChars,
 							});
 						}
 					}
 				}
-				
+
 				return pages;
 			}
-			
-			// Render documentation tree - clean file explorer style
+
+			// Render documentation tree - flat list with breadcrumb paths
 			function renderDocumentationTree() {
-				if (!displayTree) return;
-				
+				if (!allPages.length) return;
+
 				const totalPages = allPages.length;
 				const siteCount = Object.keys(displayTree).length;
-				
+
+				// Sort pages by site name, then by breadcrumb path
+				const sortedPages = [...allPages].sort((a, b) => {
+					if (a.siteName !== b.siteName) {
+						return a.siteName.localeCompare(b.siteName);
+					}
+					const pathA = a.breadcrumbs ? a.breadcrumbs.join(' / ') : '';
+					const pathB = b.breadcrumbs ? b.breadcrumbs.join(' / ') : '';
+					return pathA.localeCompare(pathB);
+				});
+
 				const treeHtml = `
 					<div style="margin-bottom: 16px; font-size: 14px; color: var(--ao-secondary-text);">
 						${totalPages} pages from ${siteCount} sites
 					</div>
 					<div id="tree-root" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
-						${Object.entries(displayTree).map(([siteKey, siteData]) => {
-							return `
-								<div>
-									<div style="display: flex; align-items: center; margin-bottom: 4px;">
-										<div style="width: 24px; flex-shrink: 0;">
-											<input type="checkbox" id="site-${siteKey}" class="site-checkbox" data-site="${siteKey}" onclick="event.stopPropagation()">
-										</div>
-										<div style="display: flex; align-items: center; gap: 6px; padding: 4px 0; cursor: pointer; font-weight: 500; flex-grow: 1;" onclick="toggleNode('site-${siteKey}')">
-											<svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-												<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-											</svg>
-											<label style="cursor: pointer; font-size: 14px;">${siteData.name}</label>
-											<svg class="tree-toggle" id="toggle-site-${siteKey}" style="width: 12px; height: 12px; transition: transform 0.2s ease; margin-left: auto;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
-											</svg>
-										</div>
-									</div>
-									<div id="site-${siteKey}-children" style="display: none;">
-										${renderSiteTree(siteData.tree, siteKey, 1)}
-									</div>
-								</div>
-							`;
-						}).join('')}
+						${renderSitesWithPages(sortedPages)}
 					</div>
 				`;
-				
+
 				docsTree.innerHTML = treeHtml;
-				
+
 				// Add event listeners
 				addTreeEventListeners();
 				updateSelectionCount();
 			}
-			
-			function renderSiteTree(tree, siteKey, level = 0) {
-				return tree.map(node => {
-					const nodeId = `node-${siteKey}-${node.path.join('-')}`;
-					const hasChildren = node.children && node.children.length > 0;
-					const hasPages = node.pages && node.pages.length > 0;
-					const isExpandable = hasChildren || hasPages;
 
-					const nestingLines = Array.from({length: level}, (_, i) => 
-						`<div style="position: absolute; left: ${11 + i * 20}px; top: 0; bottom: 0; width: 1px; background: var(--ao-border-color); opacity: 0.4;"></div>`
-					).join('');
 
-					let html = `<div>`;
-					if (isExpandable) {
-						html += `
-							<div style="display: flex; align-items: center; margin-bottom: 4px;">
-								<div style="width: 24px; flex-shrink: 0;">
-									<input type="checkbox" id="${nodeId}" class="category-checkbox" data-site="${siteKey}" data-path="${node.path.join('/')}" onclick="event.stopPropagation()">
-								</div>
-								<div style="position: relative; padding-left: ${level * 20}px; display: flex; align-items: center; gap: 6px; padding-top: 2px; padding-bottom: 2px; cursor: pointer; flex-grow: 1;" onclick="toggleNode('${nodeId}')">
-									${nestingLines}
-									
-									<label style="cursor: pointer; font-size: 14px; flex: 1; z-index: 1;">${node.name}</label>
-									<svg class="tree-toggle" id="toggle-${nodeId}" style="width: 12px; height: 12px; transition: transform 0.2s ease; margin-left: auto; z-index: 1;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
-									</svg>
-								</div>
-						</div>
+
+			// Render sites with their pages grouped together
+			function renderSitesWithPages(sortedPages) {
+				// Group pages by site
+				const pagesBySite = {};
+				sortedPages.forEach((page) => {
+					if (!pagesBySite[page.siteKey]) {
+						pagesBySite[page.siteKey] = {
+							siteName: page.siteName,
+							pages: [],
+						};
+					}
+					pagesBySite[page.siteKey].pages.push(page);
+				});
+
+				// Render each site with its pages
+				return Object.entries(pagesBySite)
+					.map(([siteKey, siteData]) => {
+						const sitePageCount = siteData.pages.length;
+
+						// Site header with expand/collapse
+						let html = `
+						<div style="margin-bottom: 8px;">
+							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;" onclick="toggleNode('site-${siteKey}')">
+								<input type="checkbox" id="site-${siteKey}" class="site-checkbox" data-site="${siteKey}" onclick="event.stopPropagation()">
+								<svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+								</svg>
+								<label style="cursor: pointer; font-weight: 500; font-size: 15px; color: var(--ao-text-color); pointer-events: none;">${siteData.siteName}</label>
+								<span style="font-size: 12px; color: var(--ao-secondary-text);">${sitePageCount} pages</span>
+								<svg class="tree-toggle" id="toggle-site-${siteKey}" style="width: 12px; height: 12px; transition: transform 0.2s ease; margin-left: auto;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
+								</svg>
+							</div>
+							<div id="site-${siteKey}-children" style="display: none;">
 					`;
-					}
-					
-					if (isExpandable) {
-						html += `<div id="${nodeId}-children" style="display: none;">`;
-						if (hasPages) {
-							html += node.pages.map(page => renderPageNode(page, siteKey, level + 1)).join('');
-						}
-						if (hasChildren) {
-							html += renderSiteTree(node.children, siteKey, level + 1);
-						}
-						html += `</div>`;
-					}
-					
-					html += `</div>`;
-					return html;
-				}).join('');
-			}
-			
-			function renderPageNode(page, siteKey, level = 0) {
-				const pageId = `page-${siteKey}-${page.url.replace(/[^a-zA-Z0-9]/g, '-')}`;
 
-				const nestingLines = Array.from({length: level}, (_, i) => 
-					`<div style="position: absolute; left: ${11 + i * 20}px; top: 0; bottom: 0; width: 1px; background: var(--ao-border-color); opacity: 0.4;"></div>`
-				).join('');
-				
-				return `
-					<div style="display: flex; align-items: center; margin-bottom: 4px;">
-						<div style="width: 24px; flex-shrink: 0;">
-							<input type="checkbox" id="${pageId}" class="page-checkbox" data-url="${page.url}" data-site="${siteKey}" onclick="event.stopPropagation()">
+						// Site pages with breadcrumb paths
+						siteData.pages.forEach((page) => {
+							const pageId = `page-${page.siteKey}-${page.url.replace(/[^a-zA-Z0-9]/g, "-")}`;
+							const breadcrumbPath = page.breadcrumbs && page.breadcrumbs.length > 0 
+								? page.breadcrumbs.join(' / ') 
+								: 'Root';
+							
+							html += `
+								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; padding: 2px 0; margin-left: 24px;">
+									<input type="checkbox" id="${pageId}" class="page-checkbox" data-url="${page.url}" data-site="${page.siteKey}">
+									<label for="${pageId}" style="cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ao-text-color);">${page.title}</label>
+									<span style="font-size: 12px; color: var(--ao-secondary-text); margin-left: 8px;">
+										${breadcrumbPath}
+									</span>
+								</div>
+							`;
+						});
+
+						// Close the collapsible section and add spacing
+						html += `
+							</div>
 						</div>
-						<div style="position: relative; padding-left: ${level * 20}px; display: flex; align-items: center; gap: 6px; padding-top: 2px; padding-bottom: 2px; cursor: pointer; flex-grow: 1;" onclick="togglePageSelection('${pageId}')">
-							${nestingLines}
-							<label style="cursor: pointer; font-size: 14px; font-weight: bold; flex: 1; pointer-events: none; z-index: 1;">${page.title}</label>
-						</div>
-					</div>
-				`;
+						<div style="margin-bottom: 16px;"></div>
+					`;
+
+						return html;
+					})
+					.join("");
 			}
-			
+
 			// Global function for toggling tree nodes
-			window.toggleNode = function(nodeId) {
-				const children = document.getElementById(nodeId + '-children');
-				const toggle = document.getElementById('toggle-' + nodeId);
+			window.toggleNode = function (nodeId) {
+				const children = document.getElementById(nodeId + "-children");
+				const toggle = document.getElementById("toggle-" + nodeId);
 				if (children && toggle) {
-					const isExpanded = children.style.display !== 'none';
-					children.style.display = isExpanded ? 'none' : 'block';
-					toggle.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(90deg)';
+					const isExpanded = children.style.display !== "none";
+					children.style.display = isExpanded ? "none" : "block";
+					toggle.style.transform = isExpanded
+						? "rotate(0deg)"
+						: "rotate(90deg)";
 				}
 			};
 
-			// Recursive expand/collapse function
-			function expandAllChildren(nodeId) {
-				const children = document.getElementById(nodeId + '-children');
-				const toggle = document.getElementById('toggle-' + nodeId);
-				
-				if (children && toggle) {
-					children.style.display = 'block';
-					toggle.style.transform = 'rotate(90deg)';
-					
-					// Find all child nodes and expand them recursively
-					const childNodes = children.querySelectorAll('[id$="-children"]');
-					childNodes.forEach(child => {
-						const childId = child.id.replace('-children', '');
-						expandAllChildren(childId);
-					});
-				}
-			}
-
-			function collapseAllChildren(nodeId) {
-				const children = document.getElementById(nodeId + '-children');
-				const toggle = document.getElementById('toggle-' + nodeId);
-				
-				if (children && toggle) {
-					children.style.display = 'none';
-					toggle.style.transform = 'rotate(0deg)';
-					
-					// Find all child nodes and collapse them recursively
-					const childNodes = children.querySelectorAll('[id$="-children"]');
-					childNodes.forEach(child => {
-						const childId = child.id.replace('-children', '');
-						collapseAllChildren(childId);
-					});
-				}
-			}
-
-			// Global function for toggling page selection
-			window.togglePageSelection = function(pageId) {
-				const checkbox = document.getElementById(pageId);
-				if (checkbox) {
-					checkbox.checked = !checkbox.checked;
-					// Trigger the change event to update selection
-					checkbox.dispatchEvent(new Event('change'));
-				}
-			};
-			
 			// Global function for toggling selection details
-			window.toggleSelectionDetails = function() {
-				const isExpanded = selectionDetails.style.display !== 'none';
-				selectionDetails.style.display = isExpanded ? 'none' : 'block';
-				selectionToggle.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(90deg)';
+			window.toggleSelectionDetails = function () {
+				const isExpanded = selectionDetails.style.display !== "none";
+				selectionDetails.style.display = isExpanded ? "none" : "block";
+				selectionToggle.style.transform = isExpanded
+					? "rotate(0deg)"
+					: "rotate(90deg)";
 			};
-			
+
 			// Add event listeners to tree
 			function addTreeEventListeners() {
-				
 				// Site checkboxes
-				document.querySelectorAll('.site-checkbox').forEach(checkbox => {
-					checkbox.addEventListener('change', (e) => {
-						const siteKey = e.target.dataset.site;
-						const isChecked = e.target.checked;
-						
-						// Toggle all pages in this site
-						document.querySelectorAll(`input[data-site="${siteKey}"].page-checkbox`).forEach(pageCheckbox => {
-							pageCheckbox.checked = isChecked;
-							handlePageSelection(pageCheckbox, isChecked);
+				document
+					.querySelectorAll(".site-checkbox")
+					.forEach((checkbox) => {
+						checkbox.addEventListener("change", (e) => {
+							const siteKey = e.target.dataset.site;
+							const isChecked = e.target.checked;
+
+							// Toggle all pages in this site
+							document
+								.querySelectorAll(
+									`input[data-site="${siteKey}"].page-checkbox`,
+								)
+								.forEach((pageCheckbox) => {
+									pageCheckbox.checked = isChecked;
+									handlePageSelection(
+										pageCheckbox,
+										isChecked,
+									);
+								});
 						});
-						
-						// Toggle all category checkboxes in this site
-						document.querySelectorAll(`input[data-site="${siteKey}"].category-checkbox`).forEach(catCheckbox => {
-							catCheckbox.checked = isChecked;
-						});
-						
-						// Recursively expand/collapse based on selection
-						if (isChecked) {
-							expandAllChildren(`site-${siteKey}`);
-						} else {
-							collapseAllChildren(`site-${siteKey}`);
-						}
 					});
-				});
-				
-				// Category checkboxes
-				document.querySelectorAll('.category-checkbox').forEach(checkbox => {
-					checkbox.addEventListener('change', (e) => {
-						const siteKey = e.target.dataset.site;
-						const path = e.target.dataset.path;
-						const isChecked = e.target.checked;
-						const nodeId = `node-${siteKey}-${path.replace(/\//g, '-')}`;
-						
-						// Find all pages under this path
-						const siteData = displayTree[siteKey];
-						const pages = findPagesInPath(siteData.tree, path.split('/'));
-						
-						pages.forEach(page => {
-							const pageCheckbox = document.querySelector(`input[data-url="${page.url}"]`);
-							if (pageCheckbox) {
-								pageCheckbox.checked = isChecked;
-								handlePageSelection(pageCheckbox, isChecked);
-							}
-						});
-						
-						// Recursively expand/collapse based on selection
-						if (isChecked) {
-							expandAllChildren(nodeId);
-						} else {
-							collapseAllChildren(nodeId);
-						}
-					});
-				});
-				
+
 				// Page checkboxes
-				document.querySelectorAll('.page-checkbox').forEach(checkbox => {
-					checkbox.addEventListener('change', (e) => {
-						handlePageSelection(e.target, e.target.checked);
+				document
+					.querySelectorAll(".page-checkbox")
+					.forEach((checkbox) => {
+						checkbox.addEventListener("change", (e) => {
+							handlePageSelection(e.target, e.target.checked);
+						});
 					});
-				});
 			}
-			
-			// Find all pages in a given path
-			function findPagesInPath(tree, pathSegments) {
-				const pages = [];
-				
-				function traverse(nodes, currentPath) {
-					for (const node of nodes) {
-						const matchesPath = pathSegments.every((segment, index) => 
-							node.path[index] === segment
-						);
-						
-						if (matchesPath) {
-							if (node.pages) {
-								pages.push(...node.pages);
-							}
-							if (node.children) {
-								traverse(node.children, [...currentPath, node.name]);
-				}
-						} else if (node.children) {
-							traverse(node.children, [...currentPath, node.name]);
-					}
-					}
-				}
-				
-				traverse(tree, []);
-				return pages;
-			}
-			
+
 			// Handle page selection
 			function handlePageSelection(checkbox, isChecked) {
 				const url = checkbox.dataset.url;
-				
+
 				if (isChecked) {
 					selectedPages.add(url);
 				} else {
 					selectedPages.delete(url);
 				}
-				
+
 				updateSelectionCount();
 			}
-			
+
 			// Update selection count
 			function updateSelectionCount() {
-				selectionCount.textContent = selectedPages.size;
-				generateBtn.disabled = selectedPages.size === 0;
+				const selectedCount = selectedPages.size;
+				const estimatedCharsElement =
+					document.getElementById("estimated-chars");
+
+				// Update the basic count
+				selectionCount.textContent = selectedCount.toString();
+
+				// Calculate total estimated characters for selected pages
+				let totalEstimatedChars = 0;
+				selectedPages.forEach((url) => {
+					const page = allPages.find((p) => p.url === url);
+					if (page && page.estimatedChars) {
+						totalEstimatedChars += page.estimatedChars;
+					}
+				});
+
+				// Format the character count for display
+				const formatChars = (chars) => {
+					if (chars < 1000) return `${chars} chars`;
+					if (chars < 1000000)
+						return `${(chars / 1000).toFixed(1)}K chars`;
+					return `${(chars / 1000000).toFixed(1)}M chars`;
+				};
+
+				// Update estimated characters display
+				if (selectedCount === 0 || totalEstimatedChars === 0) {
+					estimatedCharsElement.textContent = "";
+				} else {
+					estimatedCharsElement.textContent = `≈${formatChars(totalEstimatedChars)}`;
+				}
+
+				generateBtn.disabled = selectedCount === 0;
 				updateSelectedPagesList();
 			}
-			
-			// Update the selected pages list with full paths
+
+			// Update the selected pages list with breadcrumb paths
 			function updateSelectedPagesList() {
 				if (selectedPages.size === 0) {
-					selectedPagesList.innerHTML = '<em>No pages selected</em>';
+					selectedPagesList.innerHTML = "<em>No pages selected</em>";
 					return;
 				}
-				
+
 				const selectedPagesData = [];
-				
+
 				// Collect data for selected pages
-				selectedPages.forEach(url => {
-					const page = allPages.find(p => p.url === url);
+				selectedPages.forEach((url) => {
+					const page = allPages.find((p) => p.url === url);
 					if (page) {
-						const siteData = displayTree[page.siteKey];
-						const fullPath = getPageFullPath(page, siteData);
+						const breadcrumbPath = page.breadcrumbs && page.breadcrumbs.length > 0 
+							? page.breadcrumbs.join(' / ') 
+							: 'Root';
+						
 						selectedPagesData.push({
 							title: page.title,
 							url: page.url,
-							siteName: siteData.name,
-							fullPath: fullPath
+							siteName: page.siteName,
+							breadcrumbPath: breadcrumbPath,
 						});
 					}
 				});
-				
-				// Sort by site name then by path
+
+				// Sort by site name then by breadcrumb path
 				selectedPagesData.sort((a, b) => {
 					if (a.siteName !== b.siteName) {
 						return a.siteName.localeCompare(b.siteName);
 					}
-					return a.fullPath.localeCompare(b.fullPath);
+					return a.breadcrumbPath.localeCompare(b.breadcrumbPath);
 				});
-				
+
 				// Generate HTML
-				const listHtml = selectedPagesData.map(page => `
+				const listHtml = selectedPagesData
+					.map(
+						(page) => `
 					<div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--ao-border-color);">
 						<div style="font-weight: 500; color: var(--ao-text-color);">${page.title}</div>
 						<div style="font-size: 12px; color: var(--ao-secondary-text); margin-top: 2px;">
-							${page.siteName} → ${page.fullPath}
+							${page.siteName} → ${page.breadcrumbPath}
 						</div>
 					</div>
-				`).join('');
-				
+				`,
+					)
+					.join("");
+
 				selectedPagesList.innerHTML = listHtml;
 			}
-			
-			// Get full path for a page within a site
-			function getPageFullPath(page, siteData) {
-				// Find the page in the tree structure to get its path
-				let fullPath = '';
-				
-				function findPagePath(tree, targetUrl, currentPath = []) {
-					for (const node of tree) {
-						const nodePath = [...currentPath, node.name];
-						
-						// Check if this node has the page
-						if (node.pages) {
-							const foundPage = node.pages.find(p => p.url === targetUrl);
-							if (foundPage) {
-								return nodePath.join(' / ');
-							}
-						}
-						
-						// Recursively check children
-						if (node.children) {
-							const childResult = findPagePath(node.children, targetUrl, nodePath);
-							if (childResult) {
-								return childResult;
-							}
-						}
-					}
-					return null;
-				}
-				
-				fullPath = findPagePath(siteData.tree, page.url);
-				return fullPath || 'Root';
-			}
-			
+
+
+
 			// Update loading message
 			function updateLoadingMessage(title, description) {
-				const loadingHeader = loadingMessage.querySelector('.loading-header h3');
-				const loadingDesc = loadingMessage.querySelector('.loading-header p');
-				
+				const loadingHeader =
+					loadingMessage.querySelector(".loading-header h3");
+				const loadingDesc =
+					loadingMessage.querySelector(".loading-header p");
+
 				if (loadingHeader) loadingHeader.textContent = title;
 				if (loadingDesc) loadingDesc.textContent = description;
-				
-				loadingMessage.style.display = 'block';
+
+				loadingMessage.style.display = "block";
 			}
-			
+
 			// Show error message
 			function showError(message) {
 				docsTree.innerHTML = `
@@ -744,259 +627,72 @@
 					</div>
 				`;
 			}
-			
-			// Load pre-crawled data from Vercel
-			async function loadFromVercel() {
-				try {
-					updateLoadingMessage('Loading Documentation', 'Fetching pre-crawled data from Vercel...');
-					
-					// Load from production Vercel URL
-					const response = await fetch('https://permaweb-docs-index.vercel.app/docs-index.json');
-					if (!response.ok) {
-						throw new Error(`HTTP ${response.status}`);
-					}
-					
-					const data = await response.json();
-					
-					// Extract metadata
-					const metadata = data._metadata;
-					if (metadata) {
-						console.log(`📊 Loaded: ${metadata.totalSites} sites, ${metadata.totalPages} pages`);
-						console.log(`🕒 Last crawled: ${new Date(metadata.crawledAt).toLocaleString()}`);
-						delete data._metadata;
-					}
-					
-					// Convert to expected format
-					displayTree = {};
-					allPages = [];
-					
-					for (const [siteKey, siteData] of Object.entries(data)) {
-						if (siteData.error) continue;
-						
-						displayTree[siteKey] = {
-							name: siteData.name,
-							description: siteData.description,
-							tree: createTreeFromPages(siteData.pages || []),
-							pages: siteData.pages || [],
-							crawledAt: siteData.crawledAt
-						};
-						
-						allPages.push(...(siteData.pages || []));
-					}
-					
-					// Show and render the tree
-					docsTree.style.display = 'block';
-					renderDocumentationTree();
-					
-					// Hide loading message
-					loadingMessage.style.display = 'none';
-					crawlProgressBar.style.display = 'none';
-					
-					console.log(`Loaded from Vercel: ${allPages.length} total pages from ${Object.keys(data).length} sites`);
-					
-					return true;
-				} catch (error) {
-					console.warn('Failed to load from Vercel:', error);
-					return false;
-				}
-			}
 
-			// Fallback to dynamic crawling if ArNS fails
-			async function startDynamicCrawling() {
-				try {
-					// Get all configured sites
-					const configs = dynamicCrawlerModule.getCrawlConfigs();
-					const siteKeys = Object.keys(configs);
-					
-					// Initialize progress tracking
-					const progressState = {
-						currentSite: '',
-						siteIndex: 0,
-						totalSites: siteKeys.length,
-						currentPageInSite: 0,
-						totalPagesInSite: 0,
-						totalPagesFound: 0,
-						startTime: Date.now(),
-						phase: 'initializing'
-					};
-					
-					// Enhanced progress display
-					function updateDetailedProgress() {
-						const elapsed = (Date.now() - progressState.startTime) / 1000;
-						const elapsedMin = Math.floor(elapsed / 60);
-						const elapsedSec = Math.floor(elapsed % 60);
-						
-						let title, description, progressPercent = 0;
-						
-						if (progressState.phase === 'discovery') {
-							title = `🔍 Discovery Phase (${progressState.siteIndex}/${progressState.totalSites})`;
-							description = `Finding entry points for ${progressState.currentSite}... (${elapsedMin}:${elapsedSec.toString().padStart(2, '0')})`;
-							progressPercent = (progressState.siteIndex / progressState.totalSites) * 20; // Discovery is ~20% of total
-						} else if (progressState.phase === 'crawling') {
-							const siteProgress = progressState.totalPagesInSite > 0 ? 
-								`${progressState.currentPageInSite}/${progressState.totalPagesInSite}` : 
-								`${progressState.currentPageInSite}`;
-							
-							const overallProgress = `Site ${progressState.siteIndex}/${progressState.totalSites}`;
-							const estimatedTotal = progressState.totalPagesFound + (progressState.totalSites - progressState.siteIndex) * 30; // Rough estimate
-							
-							title = ` Crawling ${progressState.currentSite} (${overallProgress})`;
-							description = `Pages: ${siteProgress} | Total found: ${progressState.totalPagesFound} | Est. ~${estimatedTotal} | Time: ${elapsedMin}:${elapsedSec.toString().padStart(2, '0')}`;
-							
-							// Calculate progress: 20% for discovery + 70% for crawling
-							const siteProgressPercent = progressState.totalPagesInSite > 0 ? 
-								(progressState.currentPageInSite / progressState.totalPagesInSite) : 0.5;
-							const overallSiteProgress = ((progressState.siteIndex - 1) + siteProgressPercent) / progressState.totalSites;
-							progressPercent = 20 + (overallSiteProgress * 70);
-						} else if (progressState.phase === 'processing') {
-							title = `⚡ Processing Results`;
-							description = `Building tree structure from ${progressState.totalPagesFound} discovered pages...`;
-							progressPercent = 95; // Almost done
-						}
-						
-						updateLoadingMessage(title, description);
-						
-						// Show and update progress bar
-						crawlProgressBar.style.display = 'block';
-						crawlProgressFill.style.width = `${Math.min(100, Math.max(0, progressPercent))}%`;
-						crawlProgressText.textContent = `${Math.round(progressPercent)}% complete`;
-					}
-					
-					updateDetailedProgress();
-					
-					// Track completed sites for better progress estimation
-					const completedSites = new Set();
-					
-					// Crawl all sites with enhanced progress tracking
-					const crawlResults = await dynamicCrawlerModule.crawlAllSites((siteKey, current, total, url) => {
-						// Update progress state
-						progressState.currentSite = configs[siteKey].name;
-						progressState.siteIndex = siteKeys.indexOf(siteKey) + 1;
-						progressState.currentPageInSite = current;
-						progressState.totalPagesInSite = total;
-						
-						// Determine phase based on progress
-						if (current === 1 && total === 0) {
-							progressState.phase = 'discovery';
-						} else {
-							progressState.phase = 'crawling';
-						}
-						
-						// Estimate total pages found (can't access crawlResults here, so estimate)
-						progressState.totalPagesFound = (completedSites.size * 35) + current; // Rough estimate
-						
-						updateDetailedProgress();
-						
-						// Mark site as completed when we reach max pages
-						if (current >= total && total > 0) {
-							completedSites.add(siteKey);
+			// Action button handlers
+			selectAllBtn.addEventListener("click", () => {
+				document
+					.querySelectorAll(".page-checkbox")
+					.forEach((checkbox) => {
+						if (!checkbox.checked) {
+							checkbox.checked = true;
+							handlePageSelection(checkbox, true);
 						}
 					});
-					
-					// Processing phase
-					progressState.phase = 'processing';
-					updateDetailedProgress();
-					
-					// Build display tree from results
-					const builtTree = dynamicCrawlerModule.buildDisplayTree(crawlResults);
-					
-					// Convert to the format expected by the UI
-					displayTree = {};
-					for (const [siteKey, siteData] of Object.entries(builtTree)) {
-						displayTree[siteKey] = {
-							name: siteData.name,
-							description: siteData.description,
-							tree: createTreeFromPages(siteData.pages),
-							pages: siteData.pages,
-							crawledAt: new Date().toISOString()
-						};
-					}
-					
-					allPages = extractAllPagesFromDynamic(crawlResults);
-					
-					// Final success message
-					const finalElapsed = (Date.now() - progressState.startTime) / 1000;
-					const finalMin = Math.floor(finalElapsed / 60);
-					const finalSec = Math.floor(finalElapsed % 60);
-					
-					updateLoadingMessage(
-						`✅ Crawl Complete!`, 
-						`Found ${allPages.length} quality pages from ${siteKeys.length} sites in ${finalMin}:${finalSec.toString().padStart(2, '0')}`
-					);
-					
-					// Show 100% completion
-					crawlProgressFill.style.width = '100%';
-					crawlProgressText.textContent = '100% complete';
-					
-					// Brief delay to show completion message
-					setTimeout(() => {
-						loadingMessage.style.display = 'none';
-						crawlProgressBar.style.display = 'none';
-						docsTree.style.display = 'block';
-						renderDocumentationTree();
-					}, 1500);
-					
-					console.log(`Dynamic crawl completed: ${allPages.length} pages from ${siteKeys.length} sites in ${finalElapsed.toFixed(1)}s`);
-					
-				} catch (error) {
-					console.error('Dynamic crawling failed:', error);
-					showError(`Dynamic crawling failed: ${error.message}`);
-				}
-			}
-			
-			// Action button handlers
-			selectAllBtn.addEventListener('click', () => {
-				document.querySelectorAll('.page-checkbox').forEach(checkbox => {
-					if (!checkbox.checked) {
-					checkbox.checked = true;
-						handlePageSelection(checkbox, true);
-					}
-				});
 			});
-			
-			clearAllBtn.addEventListener('click', () => {
-				document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-					checkbox.checked = false;
-				});
+
+			clearAllBtn.addEventListener("click", () => {
+				document
+					.querySelectorAll('input[type="checkbox"]')
+					.forEach((checkbox) => {
+						checkbox.checked = false;
+					});
 				selectedPages.clear();
 				updateSelectionCount();
 			});
-			
-			generateBtn.addEventListener('click', async () => {
+
+			generateBtn.addEventListener("click", async () => {
 				if (selectedPages.size === 0) return;
-				
+
 				try {
 					// Show progress
-					progressContainer.style.display = 'block';
+					progressContainer.style.display = "block";
 					progressText.textContent = `Fetching ${selectedPages.size} pages...`;
-					
+
 					const selectedUrls = Array.from(selectedPages);
-					const cleanedPages = await batchFetchAndClean(selectedUrls, (progress) => {
-						const percent = Math.round((progress.completed / progress.total) * 100);
-						progressFill.style.width = `${percent}%`;
-						progressText.textContent = `Processing: ${progress.completed}/${progress.total} (${percent}%)`;
-					});
-					
+					const cleanedPages = await batchFetchAndClean(
+						selectedUrls,
+						(progress) => {
+							const percent = Math.round(
+								(progress.completed / progress.total) * 100,
+							);
+							progressFill.style.width = `${percent}%`;
+							progressText.textContent = `Processing: ${progress.completed}/${progress.total} (${percent}%)`;
+						},
+					);
+
 					// Generate LLMs.txt
-					progressText.textContent = 'Generating llms.txt...';
+					progressText.textContent = "Generating llms.txt...";
 					const llmsTxt = generateLLMsTxt(cleanedPages);
-					
+
 					// Download
-					const timestamp = new Date().toISOString().split('T')[0];
-					downloadFile(llmsTxt, `permaweb-docs-${timestamp}.llms.txt`, 'text/plain');
-				
+					const timestamp = new Date().toISOString().split("T")[0];
+					downloadFile(
+						llmsTxt,
+						`permaweb-docs-${timestamp}.llms.txt`,
+						"text/plain",
+					);
+
 					// Hide progress
-					progressContainer.style.display = 'none';
-					
+					progressContainer.style.display = "none";
 				} catch (error) {
-					console.error('Generation failed:', error);
+					console.error("Generation failed:", error);
 					progressText.textContent = `Error: ${error.message}`;
 					setTimeout(() => {
-						progressContainer.style.display = 'none';
+						progressContainer.style.display = "none";
 					}, 3000);
-											}
+				}
 			});
-											
+
 			// Initialize the application
 			initialize();
 		</script>
