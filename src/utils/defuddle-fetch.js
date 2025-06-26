@@ -1,4 +1,4 @@
-import { Defuddle } from 'defuddle';
+import Defuddle from 'defuddle';
 
 /**
  * Fetches a URL and extracts clean content using Defuddle (browser version)
@@ -29,10 +29,23 @@ export async function fetchAndClean(url) {
     const defuddle = new Defuddle(doc, {
       debug: false,
       markdown: true,
-      url: url
+      url: url,
+      removeExactSelectors: true,
+      removePartialSelectors: true
     });
     
     const result = defuddle.parse();
+    
+    // Validate content quality
+    if (result.wordCount < 50) {
+      throw new Error(`Content too short: ${result.wordCount} words`);
+    }
+    
+    // Check for 404 indicators in content
+    if (result.content && result.content.toLowerCase().includes('404') && 
+        result.content.toLowerCase().includes('not found')) {
+      throw new Error('404 page detected');
+    }
     
     return {
       title: result.title || 'Untitled',

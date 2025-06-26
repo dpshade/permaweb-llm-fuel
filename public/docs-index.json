@@ -1,0 +1,862 @@
+{
+  "ao": {
+    "name": "AO Cookbook",
+    "description": "0 pages discovered",
+    "categories": {},
+    "pages": []
+  },
+  "ario": {
+    "name": "ARIO",
+    "description": "20 pages discovered",
+    "categories": {
+      "general": {
+        "name": "general",
+        "description": "general documentation",
+        "pages": [
+          {
+            "url": "https://docs.arweave.net/",
+            "title": "AR.IO Documentation",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 141,
+            "tags": [],
+            "description": "Welcome to the Permaweb - AR.IO ecosystem documentation for products and protocols sustaining access to digital permanence",
+            "author": "",
+            "breadcrumbs": [],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/arns",
+            "title": "Arweave Name System (ArNS)",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 1711,
+            "tags": [],
+            "description": "ArNS is a censorship-resistant naming system stored on Arweave, powered by ARIO tokens, enabled through AR.IO gateway domains, and used to connect friendly domain names to permaweb apps, web pages, data, and identities.",
+            "author": "",
+            "breadcrumbs": [
+              "arns"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/staking",
+            "title": "Staking",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 534,
+            "tags": [],
+            "description": "Staking tokens within the AR.IO Network serves a dual primary purpose: it signifies a public commitment by gateway operators and qualifies them and their delegates for reward distributions.",
+            "author": "",
+            "breadcrumbs": [
+              "staking"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/token",
+            "title": "The ARIO Token",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 251,
+            "tags": [],
+            "description": "Learn about the ARIO token - the multifunction AO Computer based token that powers the AR.IO Network and its suite of permanent cloud applications",
+            "author": "",
+            "breadcrumbs": [
+              "token"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/ario-contract",
+            "title": "AR.IO Smart Contract",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 300,
+            "tags": [],
+            "description": "Overview of the AR.IO smart contract, protocol balance, and cross-chain signature support",
+            "author": "",
+            "breadcrumbs": [
+              "ario-contract"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/network-composition",
+            "title": "AR.IO Network Composition",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 265,
+            "tags": [],
+            "description": "Overview of the AR.IO Network composition and the permanent cloud infrastructure including storage, compute, and services layers",
+            "author": "",
+            "breadcrumbs": [
+              "network-composition"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/gateways",
+            "title": "Gateway Architecture",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 650,
+            "tags": [],
+            "description": "Gateways are the workhorses of the AR.IO Network. Their primary role is to act as a bridge between the Arweave network and the outside world.",
+            "author": "",
+            "breadcrumbs": [
+              "gateways"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/gateways/observer",
+            "title": "Observation and Incentives",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 1721,
+            "tags": [],
+            "description": "The Observation and Incentive Protocol is designed to maintain and enhance the operational integrity of gateways on the AR.IO Network through a combination of incentivizing gateways for good performance and tasking those gateways to fulfill the role of \"observers\".",
+            "author": "",
+            "breadcrumbs": [
+              "gateways",
+              "observer"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/gateways/gateway-network",
+            "title": "Gateway Network",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 651,
+            "tags": [],
+            "description": "The AR.IO Network consists of AR.IO gateway nodes, which are identified by their registered Arweave wallet addresses and either their IP addresses or hostnames, as stored in the network's smart contract Gateway Address Registry (GAR).",
+            "author": "",
+            "breadcrumbs": [
+              "gateways",
+              "gateway-network"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          }
+        ]
+      },
+      "concepts": {
+        "name": "concepts",
+        "description": "concepts documentation",
+        "pages": [
+          {
+            "url": "https://docs.arweave.net/concepts/wayfinder",
+            "title": "Wayfinder Protocol",
+            "category": "concepts",
+            "priority": 2,
+            "estimatedWords": 1106,
+            "tags": [],
+            "description": "Learn about the Wayfinder Protocol - a URI scheme for translating Arweave content requests into user-friendly ar:// URLs",
+            "author": "",
+            "breadcrumbs": [
+              "concepts",
+              "wayfinder"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/concepts/normalized-addresses",
+            "title": "Normalized Addresses",
+            "category": "concepts",
+            "priority": 2,
+            "estimatedWords": 618,
+            "tags": [],
+            "description": "Learn about normalized addresses - how different blockchain wallet addresses are standardized into Arweave-compatible format",
+            "author": "",
+            "breadcrumbs": [
+              "concepts",
+              "normalized-addresses"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/concepts/manifests",
+            "title": "Manifests",
+            "category": "concepts",
+            "priority": 2,
+            "estimatedWords": 733,
+            "tags": [],
+            "description": "Manifest that sh*t!",
+            "author": "",
+            "breadcrumbs": [
+              "concepts",
+              "manifests"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          }
+        ]
+      },
+      "introduction": {
+        "name": "introduction",
+        "description": "introduction documentation",
+        "pages": [
+          {
+            "url": "https://docs.arweave.net/introduction",
+            "title": "Introduction",
+            "category": "introduction",
+            "priority": 1,
+            "estimatedWords": 591,
+            "tags": [],
+            "description": "Introduction to AR.IO - the world's first permanent cloud network providing infrastructure for timeless, tamper-proof, and universally accessible data",
+            "author": "",
+            "breadcrumbs": [
+              "introduction"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          }
+        ]
+      },
+      "guides": {
+        "name": "guides",
+        "description": "guides documentation",
+        "pages": [
+          {
+            "url": "https://docs.arweave.net/guides",
+            "title": "Quick Start Guides",
+            "category": "guides",
+            "priority": 2,
+            "estimatedWords": 104,
+            "tags": [],
+            "description": "Quick Start Guides - Documentation page",
+            "author": "",
+            "breadcrumbs": [
+              "guides"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/guides/uploading-to-arweave",
+            "title": "Uploading to Arweave Guide",
+            "category": "guides",
+            "priority": 2,
+            "estimatedWords": 341,
+            "tags": [],
+            "description": "Learn how to upload data to Arweave using the Turbo SDK, including authentication, purchasing credits, and file uploads.",
+            "author": "",
+            "breadcrumbs": [
+              "guides",
+              "uploading-to-arweave"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/guides/ants-on-bazar",
+            "title": "ANTs on Bazar",
+            "category": "guides",
+            "priority": 2,
+            "estimatedWords": 529,
+            "tags": [],
+            "description": "User guide for setting up ArNS name ANTs to be traded on the Bazar marketplace.",
+            "author": "",
+            "breadcrumbs": [
+              "guides",
+              "ants-on-bazar"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/guides/primary-names",
+            "title": "Managing Primary Names",
+            "category": "guides",
+            "priority": 2,
+            "estimatedWords": 716,
+            "tags": [],
+            "description": "Learn how to request, approve, and manage primary names for ANTs",
+            "author": "",
+            "breadcrumbs": [
+              "guides",
+              "primary-names"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/guides/managing-undernames",
+            "title": "Managing Undernames",
+            "category": "guides",
+            "priority": 2,
+            "estimatedWords": 302,
+            "tags": [],
+            "description": "Quick guide for managing ArNS undernames using the AR.IO SDK.",
+            "author": "",
+            "breadcrumbs": [
+              "guides",
+              "managing-undernames"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/guides/gql",
+            "title": "AR.IO Docs",
+            "category": "guides",
+            "priority": 2,
+            "estimatedWords": 1295,
+            "tags": [],
+            "description": "AR.IO is a decentralized compute network that makes the permaweb more accessible.",
+            "author": "",
+            "breadcrumbs": [
+              "guides",
+              "gql"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          },
+          {
+            "url": "https://docs.arweave.net/guides/testnet",
+            "title": "ARIO Network Testnet",
+            "category": "guides",
+            "priority": 2,
+            "estimatedWords": 885,
+            "tags": [
+              "testing"
+            ],
+            "description": "Guide for connecting to the ARIO Network Testnet",
+            "author": "",
+            "breadcrumbs": [
+              "guides",
+              "testnet"
+            ],
+            "siteKey": "ario",
+            "siteName": "ARIO",
+            "depth": 0
+          }
+        ]
+      }
+    },
+    "pages": [
+      {
+        "url": "https://docs.arweave.net/",
+        "title": "AR.IO Documentation",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 141,
+        "tags": [],
+        "description": "Welcome to the Permaweb - AR.IO ecosystem documentation for products and protocols sustaining access to digital permanence",
+        "author": "",
+        "breadcrumbs": [],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/concepts/wayfinder",
+        "title": "Wayfinder Protocol",
+        "category": "concepts",
+        "priority": 2,
+        "estimatedWords": 1106,
+        "tags": [],
+        "description": "Learn about the Wayfinder Protocol - a URI scheme for translating Arweave content requests into user-friendly ar:// URLs",
+        "author": "",
+        "breadcrumbs": [
+          "concepts",
+          "wayfinder"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/concepts/normalized-addresses",
+        "title": "Normalized Addresses",
+        "category": "concepts",
+        "priority": 2,
+        "estimatedWords": 618,
+        "tags": [],
+        "description": "Learn about normalized addresses - how different blockchain wallet addresses are standardized into Arweave-compatible format",
+        "author": "",
+        "breadcrumbs": [
+          "concepts",
+          "normalized-addresses"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/concepts/manifests",
+        "title": "Manifests",
+        "category": "concepts",
+        "priority": 2,
+        "estimatedWords": 733,
+        "tags": [],
+        "description": "Manifest that sh*t!",
+        "author": "",
+        "breadcrumbs": [
+          "concepts",
+          "manifests"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/arns",
+        "title": "Arweave Name System (ArNS)",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 1711,
+        "tags": [],
+        "description": "ArNS is a censorship-resistant naming system stored on Arweave, powered by ARIO tokens, enabled through AR.IO gateway domains, and used to connect friendly domain names to permaweb apps, web pages, data, and identities.",
+        "author": "",
+        "breadcrumbs": [
+          "arns"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/staking",
+        "title": "Staking",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 534,
+        "tags": [],
+        "description": "Staking tokens within the AR.IO Network serves a dual primary purpose: it signifies a public commitment by gateway operators and qualifies them and their delegates for reward distributions.",
+        "author": "",
+        "breadcrumbs": [
+          "staking"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/token",
+        "title": "The ARIO Token",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 251,
+        "tags": [],
+        "description": "Learn about the ARIO token - the multifunction AO Computer based token that powers the AR.IO Network and its suite of permanent cloud applications",
+        "author": "",
+        "breadcrumbs": [
+          "token"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/ario-contract",
+        "title": "AR.IO Smart Contract",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 300,
+        "tags": [],
+        "description": "Overview of the AR.IO smart contract, protocol balance, and cross-chain signature support",
+        "author": "",
+        "breadcrumbs": [
+          "ario-contract"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/network-composition",
+        "title": "AR.IO Network Composition",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 265,
+        "tags": [],
+        "description": "Overview of the AR.IO Network composition and the permanent cloud infrastructure including storage, compute, and services layers",
+        "author": "",
+        "breadcrumbs": [
+          "network-composition"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/introduction",
+        "title": "Introduction",
+        "category": "introduction",
+        "priority": 1,
+        "estimatedWords": 591,
+        "tags": [],
+        "description": "Introduction to AR.IO - the world's first permanent cloud network providing infrastructure for timeless, tamper-proof, and universally accessible data",
+        "author": "",
+        "breadcrumbs": [
+          "introduction"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/gateways",
+        "title": "Gateway Architecture",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 650,
+        "tags": [],
+        "description": "Gateways are the workhorses of the AR.IO Network. Their primary role is to act as a bridge between the Arweave network and the outside world.",
+        "author": "",
+        "breadcrumbs": [
+          "gateways"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/guides",
+        "title": "Quick Start Guides",
+        "category": "guides",
+        "priority": 2,
+        "estimatedWords": 104,
+        "tags": [],
+        "description": "Quick Start Guides - Documentation page",
+        "author": "",
+        "breadcrumbs": [
+          "guides"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/guides/uploading-to-arweave",
+        "title": "Uploading to Arweave Guide",
+        "category": "guides",
+        "priority": 2,
+        "estimatedWords": 341,
+        "tags": [],
+        "description": "Learn how to upload data to Arweave using the Turbo SDK, including authentication, purchasing credits, and file uploads.",
+        "author": "",
+        "breadcrumbs": [
+          "guides",
+          "uploading-to-arweave"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/guides/ants-on-bazar",
+        "title": "ANTs on Bazar",
+        "category": "guides",
+        "priority": 2,
+        "estimatedWords": 529,
+        "tags": [],
+        "description": "User guide for setting up ArNS name ANTs to be traded on the Bazar marketplace.",
+        "author": "",
+        "breadcrumbs": [
+          "guides",
+          "ants-on-bazar"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/guides/primary-names",
+        "title": "Managing Primary Names",
+        "category": "guides",
+        "priority": 2,
+        "estimatedWords": 716,
+        "tags": [],
+        "description": "Learn how to request, approve, and manage primary names for ANTs",
+        "author": "",
+        "breadcrumbs": [
+          "guides",
+          "primary-names"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/guides/managing-undernames",
+        "title": "Managing Undernames",
+        "category": "guides",
+        "priority": 2,
+        "estimatedWords": 302,
+        "tags": [],
+        "description": "Quick guide for managing ArNS undernames using the AR.IO SDK.",
+        "author": "",
+        "breadcrumbs": [
+          "guides",
+          "managing-undernames"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/guides/gql",
+        "title": "AR.IO Docs",
+        "category": "guides",
+        "priority": 2,
+        "estimatedWords": 1295,
+        "tags": [],
+        "description": "AR.IO is a decentralized compute network that makes the permaweb more accessible.",
+        "author": "",
+        "breadcrumbs": [
+          "guides",
+          "gql"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/guides/testnet",
+        "title": "ARIO Network Testnet",
+        "category": "guides",
+        "priority": 2,
+        "estimatedWords": 885,
+        "tags": [
+          "testing"
+        ],
+        "description": "Guide for connecting to the ARIO Network Testnet",
+        "author": "",
+        "breadcrumbs": [
+          "guides",
+          "testnet"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/gateways/observer",
+        "title": "Observation and Incentives",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 1721,
+        "tags": [],
+        "description": "The Observation and Incentive Protocol is designed to maintain and enhance the operational integrity of gateways on the AR.IO Network through a combination of incentivizing gateways for good performance and tasking those gateways to fulfill the role of \"observers\".",
+        "author": "",
+        "breadcrumbs": [
+          "gateways",
+          "observer"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      },
+      {
+        "url": "https://docs.arweave.net/gateways/gateway-network",
+        "title": "Gateway Network",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 651,
+        "tags": [],
+        "description": "The AR.IO Network consists of AR.IO gateway nodes, which are identified by their registered Arweave wallet addresses and either their IP addresses or hostnames, as stored in the network's smart contract Gateway Address Registry (GAR).",
+        "author": "",
+        "breadcrumbs": [
+          "gateways",
+          "gateway-network"
+        ],
+        "siteKey": "ario",
+        "siteName": "ARIO",
+        "depth": 0
+      }
+    ]
+  },
+  "arweave": {
+    "name": "Arweave Cookbook",
+    "description": "1 pages discovered",
+    "categories": {
+      "general": {
+        "name": "general",
+        "description": "general documentation",
+        "pages": [
+          {
+            "url": "https://cookbook.arweave.net/",
+            "title": "Cooking with the Permaweb | Cooking with the Permaweb",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 224,
+            "tags": [],
+            "description": "A collection of little developer guides to build on the permaweb",
+            "author": "",
+            "breadcrumbs": [],
+            "siteKey": "arweave",
+            "siteName": "Arweave Cookbook",
+            "depth": 0
+          }
+        ]
+      }
+    },
+    "pages": [
+      {
+        "url": "https://cookbook.arweave.net/",
+        "title": "Cooking with the Permaweb | Cooking with the Permaweb",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 224,
+        "tags": [],
+        "description": "A collection of little developer guides to build on the permaweb",
+        "author": "",
+        "breadcrumbs": [],
+        "siteKey": "arweave",
+        "siteName": "Arweave Cookbook",
+        "depth": 0
+      }
+    ]
+  },
+  "hyperbeam": {
+    "name": "Hyperbeam",
+    "description": "3 pages discovered",
+    "categories": {
+      "general": {
+        "name": "general",
+        "description": "general documentation",
+        "pages": [
+          {
+            "url": "https://hyperbeam.arweave.net/",
+            "title": "HyperBEAM",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 154,
+            "tags": [],
+            "description": "HyperBEAM - Documentation page",
+            "author": "",
+            "breadcrumbs": [],
+            "siteKey": "hyperbeam",
+            "siteName": "Hyperbeam",
+            "depth": 0
+          },
+          {
+            "url": "https://hyperbeam.arweave.net/run/running-a-hyperbeam-node.html",
+            "title": "Running a HyperBEAM Node",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 844,
+            "tags": [],
+            "description": "Running a HyperBEAM Node - Documentation page",
+            "author": "",
+            "breadcrumbs": [
+              "run",
+              "running-a-hyperbeam-node.html"
+            ],
+            "siteKey": "hyperbeam",
+            "siteName": "Hyperbeam",
+            "depth": 0
+          },
+          {
+            "url": "https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html",
+            "title": "Intro to HyperBEAM",
+            "category": "general",
+            "priority": 3,
+            "estimatedWords": 304,
+            "tags": [],
+            "description": "Intro to HyperBEAM - Documentation page",
+            "author": "",
+            "breadcrumbs": [
+              "build",
+              "introduction",
+              "what-is-hyperbeam.html"
+            ],
+            "siteKey": "hyperbeam",
+            "siteName": "Hyperbeam",
+            "depth": 0
+          }
+        ]
+      }
+    },
+    "pages": [
+      {
+        "url": "https://hyperbeam.arweave.net/",
+        "title": "HyperBEAM",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 154,
+        "tags": [],
+        "description": "HyperBEAM - Documentation page",
+        "author": "",
+        "breadcrumbs": [],
+        "siteKey": "hyperbeam",
+        "siteName": "Hyperbeam",
+        "depth": 0
+      },
+      {
+        "url": "https://hyperbeam.arweave.net/run/running-a-hyperbeam-node.html",
+        "title": "Running a HyperBEAM Node",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 844,
+        "tags": [],
+        "description": "Running a HyperBEAM Node - Documentation page",
+        "author": "",
+        "breadcrumbs": [
+          "run",
+          "running-a-hyperbeam-node.html"
+        ],
+        "siteKey": "hyperbeam",
+        "siteName": "Hyperbeam",
+        "depth": 0
+      },
+      {
+        "url": "https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html",
+        "title": "Intro to HyperBEAM",
+        "category": "general",
+        "priority": 3,
+        "estimatedWords": 304,
+        "tags": [],
+        "description": "Intro to HyperBEAM - Documentation page",
+        "author": "",
+        "breadcrumbs": [
+          "build",
+          "introduction",
+          "what-is-hyperbeam.html"
+        ],
+        "siteKey": "hyperbeam",
+        "siteName": "Hyperbeam",
+        "depth": 0
+      }
+    ]
+  },
+  "_metadata": {
+    "crawledAt": "2025-06-26T15:21:09.134Z",
+    "version": "1.0",
+    "totalSites": 4,
+    "totalPages": 24
+  }
+}

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { getCrawlConfigs, buildDisplayTree } from '../src/utils/dynamic-crawler.js';
+import { getCrawlConfigs, buildDisplayTree } from '../src/utils/dynamic/dynamic-crawler.js';
 
 // Mock fetch for testing
 global.fetch = vi.fn();
@@ -25,22 +25,22 @@ describe('Dynamic Crawler', () => {
       
       expect(configs.ao).toHaveProperty('name', 'AO Cookbook');
       expect(configs.ao).toHaveProperty('baseUrl', 'https://cookbook_ao.arweave.net');
-      expect(configs.ao).toHaveProperty('entryPoints');
       expect(configs.ao).toHaveProperty('maxDepth');
       expect(configs.ao).toHaveProperty('maxPages');
+      expect(configs.ao).toHaveProperty('selectors');
     });
 
-    it('should have valid entry points for each site', () => {
+    it('should have valid selectors for each site', () => {
       const configs = getCrawlConfigs();
       
       Object.values(configs).forEach(config => {
-        expect(Array.isArray(config.entryPoints)).toBe(true);
-        expect(config.entryPoints.length).toBeGreaterThan(0);
+        expect(config.selectors).toHaveProperty('title');
+        expect(config.selectors).toHaveProperty('navigation');
+        expect(config.selectors).toHaveProperty('content');
         
-        config.entryPoints.forEach(entryPoint => {
-          expect(typeof entryPoint).toBe('string');
-          expect(entryPoint.startsWith('/')).toBe(true);
-        });
+        expect(typeof config.selectors.title).toBe('string');
+        expect(typeof config.selectors.navigation).toBe('string');
+        expect(typeof config.selectors.content).toBe('string');
       });
     });
 

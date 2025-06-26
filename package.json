@@ -6,15 +6,16 @@
   "keywords": ["permaweb", "arweave", "llms", "documentation", "ai", "training"],
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "astro dev",  
     "build": "astro check && astro build",
+    "build:vercel": "astro check && astro build --outDir=.vercel/output/static",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "crawl": "bun run src/utils/static-crawler.js",
-    "crawl:static": "bun run src/utils/static-crawler.js",
-    "build-index": "bun run src/utils/static-crawler.js"
+    "crawl": "bun run src/utils/crawler.js",
+    "crawl:static": "bun run src/utils/crawler.js",
+    "build-index": "bun run src/utils/crawler.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
