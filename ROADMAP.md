@@ -6,6 +6,8 @@
 - [x] **Automated Sister Page Discovery** - ✅ Implemented intelligent pattern recognition and content-driven discovery
 - [x] **DFS with Active Deduplication** - ✅ Optimized crawling performance with stack-based traversal and `seen` set
 - [x] **Generalizable Architecture** - ✅ Zero-configuration system that adapts to different site structures
+- [ ] **🛡️ HTML Parsing Security (CRITICAL)** - Fix JSDOM script execution vulnerability by setting `runScripts: "outside-only"` to prevent malicious JavaScript execution from crawled pages  
+- [ ] **🔒 Content-Size & Memory Safety (HIGH)** - Implement content size limits (5MB max) and streaming decompression to prevent memory exhaustion from large responses or compression bombs
 - [ ] **Site-Specific Optimizations** - Fine-tune crawler behavior for HyperBEAM, AO Cookbook, Arweave Cookbook, and AR-IO Network
 - [ ] **Content Quality Filtering** - Improve detection and filtering of low-quality/duplicate content
 - [ ] **Rate Limiting & Respectful Crawling** - Implement adaptive rate limiting based on site response times

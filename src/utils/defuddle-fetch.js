@@ -1,6 +1,42 @@
 import Defuddle from 'defuddle';
 
 /**
+ * Strip HTML tags and decode HTML entities from text content
+ * @param {string} text - Text that may contain HTML
+ * @returns {string} Clean text without HTML
+ */
+function stripHTML(text) {
+  if (!text) return '';
+  
+  // Create a temporary DOM element to decode HTML entities and strip tags
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = text;
+  
+  // Get text content (strips all HTML tags)
+  let cleanText = tempDiv.textContent || tempDiv.innerText || '';
+  
+  // Additional cleanup for common HTML entities that might remain
+  cleanText = cleanText
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;/g, "'")
+    .replace(/&#x2F;/g, '/')
+    .replace(/&#(\d+);/g, (match, dec) => String.fromCharCode(dec))
+    .replace(/&#x([0-9A-F]+);/gi, (match, hex) => String.fromCharCode(parseInt(hex, 16)));
+  
+  // Clean up excessive whitespace
+  cleanText = cleanText
+    .replace(/\s+/g, ' ')
+    .replace(/\n\s*\n\s*\n/g, '\n\n')
+    .trim();
+  
+  return cleanText;
+}
+
+/**
  * Fetches a URL and extracts clean content using Defuddle (browser version)
  * @param {string} url - The URL to fetch and clean
  * @returns {Promise<{title: string, content: string, url: string, wordCount: number}>}
@@ -28,7 +64,7 @@ export async function fetchAndClean(url) {
     // Use Defuddle to extract clean content
     const defuddle = new Defuddle(doc, {
       debug: false,
-      markdown: true,
+      markdown: true, // Set to false to get plain text instead of markdown
       url: url,
       removeExactSelectors: true,
       removePartialSelectors: true
@@ -36,25 +72,31 @@ export async function fetchAndClean(url) {
     
     const result = defuddle.parse();
     
+    // Strip any remaining HTML from all text fields
+    const cleanTitle = stripHTML(result.title || 'Untitled');
+    const cleanContent = stripHTML(result.content || '');
+    const cleanAuthor = stripHTML(result.author || '');
+    const cleanDescription = stripHTML(result.description || '');
+    
     // Validate content quality
-    if (result.wordCount < 50) {
-      throw new Error(`Content too short: ${result.wordCount} words`);
+    if (cleanContent.split(/\s+/).length < 50) {
+      throw new Error(`Content too short: ${cleanContent.split(/\s+/).length} words`);
     }
     
     // Check for 404 indicators in content
-    if (result.content && result.content.toLowerCase().includes('404') && 
-        result.content.toLowerCase().includes('not found')) {
+    if (cleanContent && cleanContent.toLowerCase().includes('404') && 
+        cleanContent.toLowerCase().includes('not found')) {
       throw new Error('404 page detected');
     }
     
     return {
-      title: result.title || 'Untitled',
-      content: result.content || '',
+      title: cleanTitle,
+      content: cleanContent,
       url: url,
-      wordCount: result.wordCount || 0,
-      author: result.author || '',
+      wordCount: cleanContent.split(/\s+/).filter(word => word.length > 0).length,
+      author: cleanAuthor,
       published: result.published || '',
-      description: result.description || '',
+      description: cleanDescription,
       domain: result.domain || '',
       parseTime: result.parseTime || 0
     };
@@ -68,14 +110,14 @@ export async function fetchAndClean(url) {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
       
-      const title = doc.querySelector('title')?.textContent || 'Untitled';
-      const content = doc.body?.textContent || '';
+      const title = stripHTML(doc.querySelector('title')?.textContent || 'Untitled');
+      const content = stripHTML(doc.body?.textContent || '');
       
       return {
-        title: title.trim(),
-        content: content.trim(),
+        title: title,
+        content: content,
         url: url,
-        wordCount: content.trim().split(/\s+/).length,
+        wordCount: content.split(/\s+/).filter(word => word.length > 0).length,
         author: '',
         published: '',
         description: '',

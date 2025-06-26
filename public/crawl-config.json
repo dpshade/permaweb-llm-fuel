@@ -13,7 +13,9 @@
       "/\\/api\\//",
       "/\\.(pdf|zip|tar|gz)$/",
       "/mailto:/",
-      "/#$/"
+      "/#$/",
+      "/ja/",
+      "/zh/"
     ],
     "seedUrls": [
       "/welcome/ao-core-introduction.html",
@@ -25,7 +27,7 @@
   },
   "ario": {
     "name": "AR-IO Network",
-    "baseUrl": "https://docs.arweave.net",
+    "baseUrl": "https://docs.ar.io",
     "maxDepth": 4,
     "maxPages": 100,
     "selectors": {
@@ -42,7 +44,8 @@
     "seedUrls": [
       "/ar-io-sdk/getting-started",
       "/ar-io-sdk/",
-      "/gateways/",
+      "/gateways/linux-setup",
+      "/guides/permaweb-deploy",
       "/observers/",
       "/developers/",
       "/guides/"

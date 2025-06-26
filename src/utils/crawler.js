@@ -1,6 +1,7 @@
 /**
  * Dynamic browser-based crawler for Permaweb documentation sites
  * Discovers pages by following links and analyzing site structures
+ * Enhanced with Wayfinder SDK for respectful gateway load balancing
  */
 
 import { JSDOM } from 'jsdom';
@@ -8,8 +9,147 @@ import { promises as fs } from 'fs';
 import { resolve } from 'path';
 import Defuddle from 'defuddle';
 
+// Wayfinder SDK imports - conditional for browser/node compatibility
+let Wayfinder, NetworkGatewaysProvider, SimpleCacheGatewaysProvider, 
+    FastestPingRoutingStrategy, RoundRobinRoutingStrategy, 
+    HashVerificationStrategy, ARIO;
+
+try {
+  if (typeof window === 'undefined') {
+    // Node.js environment
+    const wayfinderModule = await import('@ar.io/wayfinder-core');
+    const arioModule = await import('@ar.io/sdk');
+    
+    ({ Wayfinder, NetworkGatewaysProvider, SimpleCacheGatewaysProvider, 
+       FastestPingRoutingStrategy, RoundRobinRoutingStrategy, 
+       HashVerificationStrategy } = wayfinderModule);
+    
+    // Fix ARIO import
+    const { IO } = arioModule;
+    ARIO = IO;
+  }
+} catch (error) {
+  console.warn('Wayfinder SDK not available, falling back to direct fetch:', error.message);
+}
+
 // Cache for loaded configuration
 let crawlConfigs = null;
+let wayfinderInstance = null;
+
+/**
+ * Initialize Wayfinder instance for respectful crawling
+ * @returns {Promise<Object|null>} Wayfinder instance or null if not available
+ */
+async function initializeWayfinder() {
+  if (wayfinderInstance || !Wayfinder) {
+    return wayfinderInstance;
+  }
+
+  try {
+    wayfinderInstance = new Wayfinder({
+      // Cache top 10 gateways by operator stake for 1 hour
+      gatewaysProvider: new SimpleCacheGatewaysProvider({
+        ttlSeconds: 60 * 60, // 1 hour cache
+        gatewaysProvider: new NetworkGatewaysProvider({
+          ario: ARIO.init(),
+          sortBy: 'operatorStake',
+          sortOrder: 'desc',
+          limit: 10,
+        }),
+      }),
+      // Use the fastest pinging strategy for best performance
+      routingSettings: {
+        strategy: new FastestPingRoutingStrategy({
+          timeoutMs: 2000, // 2-second timeout for pings
+        }),
+        events: {
+          onRoutingStarted: (event) => {
+            console.log(`🔄 Routing request: ${event.originalUrl}`);
+          },
+          onRoutingSkipped: (event) => {
+            console.log(`⏭️ Routing skipped: ${event.reason}`);
+          },
+          onRoutingSucceeded: (event) => {
+            console.log(`✅ Routed to: ${event.targetGateway}`);
+          },
+        },
+      },
+      // Enable verification for data integrity
+      verificationSettings: {
+        enabled: false, // Disable for regular web content
+        strategy: new HashVerificationStrategy({
+          trustedGateways: ['https://permagate.io', 'https://arweave.net'],
+        }),
+        strict: false, // Don't fail on verification errors for web content
+        events: {
+          onVerificationProgress: (event) => {
+            console.log(`🔍 Verification: ${((event.processedBytes / event.totalBytes) * 100).toFixed(1)}%`);
+          },
+          onVerificationSucceeded: (event) => {
+            console.log(`✅ Verified: ${event.txId}`);
+          },
+          onVerificationFailed: (event) => {
+            console.warn(`⚠️ Verification failed: ${event.error.message}`);
+          },
+        },
+      },
+      // Enable telemetry for monitoring
+      telemetrySettings: {
+        enabled: true,
+        sampleRate: 0.1, // 10% sample rate
+      },
+    });
+
+    console.log('🚀 Wayfinder initialized for respectful crawling');
+    return wayfinderInstance;
+  } catch (error) {
+    console.warn('Failed to initialize Wayfinder:', error.message);
+    wayfinderInstance = null;
+    return null;
+  }
+}
+
+/**
+ * Rate limiter for respectful crawling
+ */
+class RateLimiter {
+  constructor(requestsPerSecond = 2, burstSize = 5) {
+    this.requestsPerSecond = requestsPerSecond;
+    this.burstSize = burstSize;
+    this.tokens = burstSize;
+    this.lastRefill = Date.now();
+    this.queue = [];
+  }
+
+  async acquire() {
+    return new Promise((resolve) => {
+      const now = Date.now();
+      const timePassed = (now - this.lastRefill) / 1000;
+      
+      // Refill tokens based on time passed
+      this.tokens = Math.min(
+        this.burstSize,
+        this.tokens + timePassed * this.requestsPerSecond
+      );
+      this.lastRefill = now;
+
+      if (this.tokens >= 1) {
+        this.tokens -= 1;
+        resolve();
+      } else {
+        // Calculate wait time for next token
+        const waitTime = (1 - this.tokens) / this.requestsPerSecond * 1000;
+        setTimeout(() => {
+          this.tokens = Math.max(0, this.tokens - 1);
+          resolve();
+        }, waitTime);
+      }
+    });
+  }
+}
+
+// Global rate limiter - 2 requests per second with burst of 5
+const rateLimiter = new RateLimiter(2, 5);
 
 /**
  * Load crawl configuration from JSON file
@@ -66,62 +206,97 @@ async function loadCrawlConfigs() {
 }
 
 /**
- * Fetch and parse HTML content using HyperBEAM relay to bypass CORS
+ * Enhanced fetch with Wayfinder support and rate limiting
  * @param {string} url - URL to fetch
+ * @param {Object} options - Fetch options
  * @returns {Promise<Document|null>} Parsed DOM document or null if failed
  */
-async function fetchPage(url) {
+async function fetchPage(url, options = {}) {
+  // Apply rate limiting
+  await rateLimiter.acquire();
+  
   try {
-    // Try direct fetch first
+    const wayfinder = await initializeWayfinder();
     let response;
     let html;
     
-    try {
-      response = await fetch(url, {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (compatible; PermawebLLMsBuilder/1.0)',
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-        },
-        mode: 'cors'
-      });
-      
-      if (response.ok) {
+    // Check if this is an ar:// URL that should use Wayfinder
+    if (url.startsWith('ar://') && wayfinder) {
+      console.log(`🌐 Using Wayfinder for ar:// URL: ${url}`);
+      try {
+        response = await wayfinder.request(url);
         html = await response.text();
-      } else {
-        console.warn(`HTTP ${response.status} for ${url}`);
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      } catch (wayfinderError) {
+        console.warn(`Wayfinder failed for ${url}:`, wayfinderError.message);
+        throw wayfinderError;
       }
-      
-    } catch (corsError) {
-      // If CORS fails, use HyperBEAM relay service
-      console.warn(`CORS failed for ${url}, using HyperBEAM relay...`);
-      
-      const relayUrl = `https://router-1.forward.computer/~relay@1.0/call?relay-path=${encodeURIComponent(url)}&relay-method=GET`;
-      
-      response = await fetch(relayUrl, {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (compatible; PermawebLLMsBuilder/1.0)',
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    } else {
+      // Regular HTTP/HTTPS URL - try direct fetch first, then fallback
+      try {
+        response = await fetch(url, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (compatible; PermawebLLMsBuilder/1.0; +https://permaweb-llms.ar.io)',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+          },
+          mode: 'cors',
+          signal: AbortSignal.timeout(15000), // 15 second timeout
+          ...options
+        });
+        
+        if (response.ok) {
+          html = await response.text();
+        } else {
+          console.warn(`HTTP ${response.status} for ${url}`);
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
-      });
-      
-      if (!response.ok) {
-        console.warn(`Relay HTTP ${response.status} for ${url}`);
-        throw new Error(`Relay failed with HTTP ${response.status}: ${response.statusText}`);
+        
+      } catch (corsError) {
+        // If CORS fails, use HyperBEAM relay service with rate limiting
+        console.warn(`CORS failed for ${url}, using HyperBEAM relay...`);
+        
+        // Additional delay for relay usage to be extra respectful
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        const relayUrl = `https://router-1.forward.computer/~relay@1.0/call?relay-path=${encodeURIComponent(url)}&relay-method=GET`;
+        
+        response = await fetch(relayUrl, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (compatible; PermawebLLMsBuilder/1.0; +https://permaweb-llms.ar.io)',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+          },
+          signal: AbortSignal.timeout(20000), // 20 second timeout for relay
+        });
+        
+        if (!response.ok) {
+          console.warn(`Relay HTTP ${response.status} for ${url}`);
+          throw new Error(`Relay failed with HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        html = await response.text();
       }
-      
-      html = await response.text();
     }
 
-    // Enhanced 404 detection
-    if (html.includes('404') && (html.includes('not found') || html.includes('Not Found') || html.includes('NOT FOUND'))) {
+    // Enhanced 404 detection with more patterns
+    const is404Content = 
+      (html.includes('404') && (
+        html.includes('not found') || 
+        html.includes('Not Found') || 
+        html.includes('NOT FOUND') ||
+        html.includes('Page not found') ||
+        html.includes('File not found')
+      )) ||
+      html.includes('404s suck!') || 
+      html.includes('Our vision is an internet with no more 404s') ||
+      html.includes('This page could not be found') ||
+      html.includes('The requested URL was not found');
+
+    if (is404Content) {
       console.warn(`404 page detected: ${url}`);
-      return null;
-    }
-
-    // Check for modern 404 pages with specific content
-    if (html.includes('404s suck!') || html.includes('Our vision is an internet with no more 404s')) {
-      console.warn(`Modern 404 page detected: ${url}`);
       return null;
     }
 
@@ -137,16 +312,27 @@ async function fetchPage(url) {
       doc = parser.parseFromString(html, 'text/html');
     }
     
-    // Additional 404 check in parsed content
+    // Enhanced content quality validation
     const bodyText = doc.body?.textContent?.toLowerCase() || '';
-    if (bodyText.includes('404') && bodyText.includes('not found')) {
+    const title = doc.title?.toLowerCase() || '';
+    
+    // Check for explicit 404 indicators
+    const is404Page = (
+      title.includes('404') ||
+      title.includes('not found') ||
+      title.includes('page not found') ||
+      (bodyText.includes('404') && (
+        bodyText.includes('not found') ||
+        bodyText.includes('page not found') ||
+        bodyText.includes('does not exist') ||
+        bodyText.includes('could not be found')
+      )) ||
+      bodyText.includes('404s suck') ||
+      bodyText.includes('vision is an internet with no more 404s')
+    );
+    
+    if (is404Page) {
       console.warn(`404 content detected: ${url}`);
-      return null;
-    }
-
-    // Check for modern 404 page content
-    if (bodyText.includes('404s suck') || bodyText.includes('vision is an internet with no more 404s')) {
-      console.warn(`Modern 404 page content detected: ${url}`);
       return null;
     }
 
@@ -159,6 +345,24 @@ async function fetchPage(url) {
     // If the page is mostly JavaScript and has very little actual content, skip it
     if (scriptContent.length > actualContent.length * 3 && actualContent.length < 200) {
       console.warn(`JavaScript-heavy page with minimal content detected: ${url}`);
+      return null;
+    }
+
+    // Additional bot detection patterns
+    const botDetectionPatterns = [
+      'please enable javascript',
+      'javascript is required',
+      'this site requires javascript',
+      'enable javascript in your browser',
+      'you need to enable javascript'
+    ];
+
+    const isJSRequired = botDetectionPatterns.some(pattern => 
+      bodyText.includes(pattern.toLowerCase())
+    );
+
+    if (isJSRequired && actualContent.length < 500) {
+      console.warn(`JavaScript-required page with minimal content: ${url}`);
       return null;
     }
     
@@ -310,18 +514,30 @@ function extractLinks(doc, baseUrl, config, currentPageUrl = null) {
   const links = new Set();
   const resolveBase = currentPageUrl || baseUrl;
   
-  // Combine all selectors into one array for simplicity
-  const allSelectors = [
-    ...config.selectors.navigation.split(','),
-    ...config.selectors.content.split(',')
-  ].map(s => s.trim()).filter(s => s.length > 0);
+  // ONLY extract actual <a> tags with href attributes
+  // Do not use content selectors as they may capture non-link text
+  const linkSelectors = [
+    'a[href]',  // Basic anchor links
+    'nav a[href]', // Navigation links
+    '.sidebar a[href]', // Sidebar links
+    '.nav a[href]', // Nav menu links
+    '.toc a[href]', // Table of contents links
+    '.menu a[href]', // Menu links
+    '.docs-nav a[href]', // Documentation navigation
+    '.page-nav a[href]', // Page navigation
+    '.content-nav a[href]', // Content navigation
+    '.left-sidebar a[href]', // Left sidebar
+    '.right-sidebar a[href]', // Right sidebar
+    '.navigation a[href]', // Navigation containers
+    '.doc-nav a[href]' // Document navigation
+  ];
 
-  for (const selector of allSelectors) {
+  for (const selector of linkSelectors) {
     try {
       const elements = doc.querySelectorAll(selector);
       elements.forEach(link => {
         const href = link.getAttribute('href');
-        if (href) {
+        if (href && href.trim()) {
           const absoluteUrl = resolveUrl(href, resolveBase);
           if (absoluteUrl && isValidUrl(absoluteUrl, baseUrl, config)) {
             links.add(absoluteUrl);
@@ -333,12 +549,12 @@ function extractLinks(doc, baseUrl, config, currentPageUrl = null) {
     }
   }
   
-  // Fallback if selectors find very few links
+  // Fallback: only look for actual <a> tags, not arbitrary content
   if (links.size < 5) {
     const fallbackLinks = doc.querySelectorAll('a[href]');
     fallbackLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (href) {
+      if (href && href.trim()) {
         const absoluteUrl = resolveUrl(href, resolveBase);
         if (absoluteUrl && isValidUrl(absoluteUrl, baseUrl, config)) {
           links.add(absoluteUrl);
@@ -422,11 +638,14 @@ function isValidUrl(url, baseUrl, config) {
       return false;
     }
     
-    // Enhanced validation for documentation pages
+    // More restrictive validation for documentation pages
     const isDocumentationUrl = (
+      // Allow directory paths
       path.endsWith('/') ||
+      // Allow standard documentation file extensions
       path.endsWith('.html') ||
       path.endsWith('.md') ||
+      // Allow known documentation directories
       path.includes('/docs/') ||
       path.includes('/build/') ||
       path.includes('/guides/') ||
@@ -435,16 +654,10 @@ function isValidUrl(url, baseUrl, config) {
       path.includes('/api/') ||
       path.includes('/concepts/') ||
       path.includes('/getting-started/') ||
-      // Accept paths that look like documentation sections
-      /\/[a-zA-Z0-9-_]+\/$/.test(path) ||
-      // Accept paths with common documentation patterns
-      /\/(introduction|overview|quickstart|installation|setup|configuration|advanced|examples|troubleshooting|faq|glossary)/i.test(path)
+      path.includes('/welcome/') ||
+      path.includes('/introduction/') ||
+      path.includes('/run/')
     );
-    
-    // For HyperBEAM specifically, accept any path that passed the exclusion filters
-    if (baseUrl.includes('hyperbeam.arweave.net')) {
-      return path.length > 1;
-    }
     
     return isDocumentationUrl;
     
@@ -679,217 +892,433 @@ function extractPageMetadata(doc, url, config) {
 }
 
 /**
- * Discover potential entry points for a site by analyzing navigation and common patterns
+ * Discover entry points using navigation-based approach starting from seed URLs
  * @param {string} baseUrl - Base URL of the site
  * @param {Object} config - Site configuration
  * @returns {Promise<string[]>} Array of discovered entry points
  */
 async function discoverEntryPoints(baseUrl, config) {
-  console.log(`Discovering entry points for ${baseUrl}...`);
+  console.log(`🧭 Navigation-based discovery for ${baseUrl}...`);
   
   const discoveredPaths = new Set();
+  const navigationHierarchy = new Map(); // Track navigation relationships
   
-  // Start with seed URLs if provided
-  if (config.seedUrls && config.seedUrls.length > 0) {
-    console.log(`Testing ${config.seedUrls.length} seed URLs...`);
-    for (const seedUrl of config.seedUrls) {
-      const testUrl = baseUrl + (seedUrl.startsWith('/') ? seedUrl : '/' + seedUrl);
-      try {
-        const doc = await fetchPage(testUrl);
-        if (doc) {
-          // Additional validation - make sure the page has actual content
-          const contentElements = doc.querySelectorAll('main, article, .content, .markdown-body, .doc-content, .page-content, p, h1, h2, h3, h4, h5, h6');
-          const actualContent = Array.from(contentElements).map(el => el.textContent || '').join(' ').trim();
-          
-          if (actualContent.length > 50) { // Lower threshold for seed URLs
-            discoveredPaths.add(seedUrl);
-            console.log(`✓ Seed URL found: ${seedUrl}`);
-          } else {
-            console.warn(`✗ Rejected seed URL ${seedUrl}: insufficient content (${actualContent.length} chars)`);
-          }
-        } else {
-          console.warn(`✗ Seed URL failed to fetch: ${seedUrl}`);
-        }
-      } catch (error) {
-        console.warn(`✗ Seed URL ${seedUrl} error:`, error.message);
-      }
-      
-      // Small delay to be respectful during discovery
-      await new Promise(resolve => setTimeout(resolve, 150));
-    }
+  // Phase 1: Validate and analyze seed URLs
+  if (!config.seedUrls || config.seedUrls.length === 0) {
+    console.warn('No seed URLs provided, falling back to root discovery');
+    return await fallbackDiscovery(baseUrl, config);
   }
-  
-  // Then try common documentation patterns
-  const commonPatterns = [
-    '/', // Always start with root
-    '/docs',
-    '/documentation', 
-    '/guide', '/guides',
-    '/tutorial', '/tutorials',
-    '/getting-started', '/get-started', '/start',
-    '/reference', '/references', '/ref',
-    '/developers', '/dev',
-    '/concepts', '/fundamentals',
-    '/learn', '/learning',
-    '/build', '/building',
-    '/run', '/running',
-    '/setup', '/install', '/installation',
-    '/welcome', '/intro', '/introduction',
-    '/examples', '/demos',
-    '/help', '/support',
-    '/faq', '/troubleshooting'
-  ];
 
-  console.log(`Testing ${commonPatterns.length} common patterns...`);
-  for (const pattern of commonPatterns) {
-    // Skip if we already found this pattern in seed URLs
-    if (discoveredPaths.has(pattern)) {
-      continue;
-    }
-    
-    const testUrl = baseUrl + pattern;
+  console.log(`🌱 Analyzing ${config.seedUrls.length} seed URLs...`);
+  const validSeedPages = new Map(); // URL -> parsed document
+  
+  for (const seedUrl of config.seedUrls) {
+    const fullUrl = baseUrl + (seedUrl.startsWith('/') ? seedUrl : '/' + seedUrl);
     try {
-      const doc = await fetchPage(testUrl);
-      if (doc) {
-        // Additional validation - make sure the page has actual content
-        const contentElements = doc.querySelectorAll('main, article, .content, .markdown-body, .doc-content, .page-content, p, h1, h2, h3, h4, h5, h6');
-        const actualContent = Array.from(contentElements).map(el => el.textContent || '').join(' ').trim();
-        
-        if (actualContent.length > 100) { // Ensure there's substantial content
-          discoveredPaths.add(pattern);
-          console.log(`✓ Found common pattern: ${pattern}`);
-        } else {
-          console.warn(`✗ Rejected ${pattern}: insufficient content`);
-        }
+      const doc = await fetchPage(fullUrl);
+      if (doc && hasValidContent(doc)) {
+        discoveredPaths.add(seedUrl);
+        validSeedPages.set(seedUrl, doc);
+        console.log(`✓ Valid seed: ${seedUrl}`);
+      } else {
+        console.warn(`✗ Invalid seed: ${seedUrl}`);
       }
     } catch (error) {
-      // Pattern doesn't exist, continue
+      console.warn(`✗ Seed error ${seedUrl}:`, error.message);
     }
     
-    // Small delay to be respectful during discovery
     await new Promise(resolve => setTimeout(resolve, 100));
   }
 
-  // If we found the root, analyze it for navigation links
-  if (discoveredPaths.has('/')) {
-    try {
-      const rootDoc = await fetchPage(baseUrl);
-      if (rootDoc) {
-        // Extract navigation links
-        const navLinks = extractLinks(rootDoc, baseUrl, config, baseUrl);
-        
-        // Score and filter navigation links
-        for (const link of navLinks) {
-          const path = new URL(link).pathname;
-          const score = scoreDocumentationPath(path);
-          
-          if (score > 0.3) { // Only include paths with decent documentation potential
-            // Additional validation for navigation links
-            try {
-              const linkDoc = await fetchPage(link);
-              if (linkDoc) {
-                const contentElements = linkDoc.querySelectorAll('main, article, .content, .markdown-body, p, h1, h2, h3, h4, h5, h6');
-                const actualContent = Array.from(contentElements).map(el => el.textContent || '').join(' ').trim();
-                
-                if (actualContent.length > 100) {
-                  discoveredPaths.add(path);
-                  console.log(`✓ Navigation link: ${path} (score: ${score.toFixed(2)})`);
-                } else {
-                  console.warn(`✗ Rejected navigation link ${path}: insufficient content`);
-                }
-              }
-            } catch (error) {
-              console.warn(`Failed to validate navigation link ${path}:`, error.message);
-            }
-          }
-        }
-      }
-    } catch (error) {
-      console.warn('Failed to analyze root page for navigation:', error.message);
-    }
+  if (validSeedPages.size === 0) {
+    console.warn('No valid seed URLs found, falling back to root discovery');
+    return await fallbackDiscovery(baseUrl, config);
   }
 
-  // Check for sitemap.xml
-  try {
-    const sitemapUrl = baseUrl + '/sitemap.xml';
-    const response = await fetch(sitemapUrl);
-    if (response.ok) {
-      const sitemapText = await response.text();
-      const parser = new DOMParser();
-      const sitemapDoc = parser.parseFromString(sitemapText, 'application/xml');
-      
-      const urls = sitemapDoc.querySelectorAll('url loc');
-      for (const urlElement of urls) {
-        const fullUrl = urlElement.textContent;
-        if (fullUrl && fullUrl.startsWith(baseUrl)) {
-          const path = new URL(fullUrl).pathname;
-          const score = scoreDocumentationPath(path);
-          if (score > 0.4) {
-            discoveredPaths.add(path);
-            console.log(`✓ Sitemap: ${path} (score: ${score.toFixed(2)})`);
-          }
-        }
-      }
-    }
-  } catch (error) {
-    // No sitemap or failed to parse, continue
+  // Phase 2: Extract navigation structure from valid seed pages
+  console.log(`🗺️ Mapping navigation structure from ${validSeedPages.size} seed pages...`);
+  const navigationContext = await analyzeNavigationStructure(validSeedPages, baseUrl, config);
+  
+  // Phase 3: Discover sibling pages through navigation
+  console.log(`🔗 Discovering siblings through navigation...`);
+  const siblingPages = await discoverNavigationSiblings(navigationContext, baseUrl, config);
+  
+  for (const siblingPath of siblingPages) {
+    discoveredPaths.add(siblingPath);
+  }
+
+  // Phase 4: Discover parent and child pages
+  console.log(`👨‍👩‍👧‍👦 Discovering parent-child relationships...`);
+  const familyPages = await discoverFamilyPages(navigationContext, baseUrl, config);
+  
+  for (const familyPath of familyPages) {
+    discoveredPaths.add(familyPath);
   }
 
   const paths = Array.from(discoveredPaths);
-  console.log(`Discovered ${paths.length} potential entry points`);
+  console.log(`🎯 Navigation discovery complete: ${paths.length} entry points`);
   
-  // Sort by documentation score (most promising first)
-  return paths.sort((a, b) => scoreDocumentationPath(b) - scoreDocumentationPath(a));
+  // Sort by navigation importance rather than arbitrary scoring
+  return sortByNavigationImportance(paths, navigationContext);
 }
 
 /**
- * Score a URL path based on how likely it is to contain documentation
- * @param {string} path - URL path to score
- * @returns {number} Score from 0 (unlikely) to 1 (very likely)
+ * Check if a document has valid content worth crawling
  */
-function scoreDocumentationPath(path) {
-  if (!path || path === '/') return 0.8; // Root is usually important
+function hasValidContent(doc) {
+  const contentElements = doc.querySelectorAll(
+    'main, article, .content, .markdown-body, .doc-content, .page-content, p, h1, h2, h3, h4, h5, h6'
+  );
+  const actualContent = Array.from(contentElements)
+    .map(el => el.textContent || '')
+    .join(' ')
+    .trim();
   
-  const pathLower = path.toLowerCase();
-  let score = 0;
-  
-  // High-value documentation keywords
-  const highValue = ['docs', 'documentation', 'guide', 'tutorial', 'getting-started', 'reference', 'api'];
-  const mediumValue = ['learn', 'build', 'concepts', 'fundamentals', 'examples', 'help'];
-  const lowValue = ['about', 'intro', 'welcome', 'setup', 'install', 'faq'];
-  
-  // Check for high-value keywords
-  for (const keyword of highValue) {
-    if (pathLower.includes(keyword)) {
-      score += 0.3;
+  return actualContent.length > 50;
+}
+
+/**
+ * Analyze navigation structure from seed pages
+ */
+async function analyzeNavigationStructure(validSeedPages, baseUrl, config) {
+  const navigationContext = {
+    primaryNavLinks: new Set(),
+    sidebarLinks: new Set(),
+    breadcrumbPaths: new Map(),
+    sectionMappings: new Map(),
+    seedUrls: new Set(validSeedPages.keys())
+  };
+
+  for (const [seedPath, doc] of validSeedPages) {
+    // Extract primary navigation
+    const primaryNav = extractPrimaryNavigation(doc, baseUrl, config);
+    primaryNav.forEach(link => navigationContext.primaryNavLinks.add(link));
+
+    // Extract sidebar navigation  
+    const sidebarNav = extractSidebarNavigation(doc, baseUrl, config);
+    sidebarNav.forEach(link => navigationContext.sidebarLinks.add(link));
+
+    // Extract breadcrumbs for hierarchy understanding
+    const breadcrumbs = extractBreadcrumbs(doc, baseUrl);
+    if (breadcrumbs.length > 0) {
+      navigationContext.breadcrumbPaths.set(seedPath, breadcrumbs);
+    }
+
+    // Determine section context for this seed
+    const section = inferSectionFromPath(seedPath) || inferSectionFromNavigation(doc, seedPath);
+    if (section) {
+      if (!navigationContext.sectionMappings.has(section)) {
+        navigationContext.sectionMappings.set(section, new Set());
+      }
+      navigationContext.sectionMappings.get(section).add(seedPath);
     }
   }
+
+  return navigationContext;
+}
+
+/**
+ * Extract primary navigation links
+ */
+function extractPrimaryNavigation(doc, baseUrl, config) {
+  const links = new Set();
   
-  // Check for medium-value keywords  
-  for (const keyword of mediumValue) {
-    if (pathLower.includes(keyword)) {
-      score += 0.2;
+  // Primary navigation selectors in order of preference
+  const primaryNavSelectors = [
+    'nav[role="navigation"]:first-of-type a[href]',
+    '.navbar-nav a[href]',
+    '.main-nav a[href]', 
+    '.primary-nav a[href]',
+    'header nav a[href]',
+    '.md-tabs a[href]', // Material Design
+    'nav:first-of-type a[href]'
+  ];
+
+  for (const selector of primaryNavSelectors) {
+    try {
+      const navElements = doc.querySelectorAll(selector);
+      if (navElements.length > 0) {
+        navElements.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href) {
+            const absoluteUrl = resolveUrl(href, baseUrl);
+            if (absoluteUrl && isValidUrl(absoluteUrl, baseUrl, config)) {
+              links.add(new URL(absoluteUrl).pathname);
+            }
+          }
+        });
+        break; // Use first successful selector
+      }
+    } catch (e) {
+      // Skip invalid selectors
     }
   }
+
+  return links;
+}
+
+/**
+ * Extract sidebar navigation links
+ */
+function extractSidebarNavigation(doc, baseUrl, config) {
+  const links = new Set();
   
-  // Check for low-value keywords
-  for (const keyword of lowValue) {
-    if (pathLower.includes(keyword)) {
-      score += 0.1;
+  const sidebarSelectors = [
+    '.sidebar nav a[href]',
+    '.docs-sidebar a[href]',
+    '.toc a[href]',
+    '.md-nav a[href]', // Material Design
+    '.left-sidebar a[href]',
+    '.doc-nav a[href]',
+    '.side-nav a[href]'
+  ];
+
+  for (const selector of sidebarSelectors) {
+    try {
+      const sidebarElements = doc.querySelectorAll(selector);
+      sidebarElements.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href) {
+          const absoluteUrl = resolveUrl(href, baseUrl);
+          if (absoluteUrl && isValidUrl(absoluteUrl, baseUrl, config)) {
+            links.add(new URL(absoluteUrl).pathname);
+          }
+        }
+      });
+    } catch (e) {
+      // Skip invalid selectors
     }
   }
+
+  return links;
+}
+
+/**
+ * Extract breadcrumb navigation for hierarchy understanding
+ */
+function extractBreadcrumbs(doc, baseUrl) {
+  const breadcrumbs = [];
   
-  // Penalize very long or complex paths
-  const depth = path.split('/').length - 1;
-  if (depth > 3) score -= 0.1;
-  if (depth > 5) score -= 0.2;
-  
-  // Boost shorter, cleaner paths
-  if (depth === 1 && pathLower.match(/^\/[a-z-]+$/)) {
-    score += 0.1;
+  const breadcrumbSelectors = [
+    '.breadcrumb a[href]',
+    '.breadcrumbs a[href]',
+    '[role="breadcrumb"] a[href]',
+    '.md-nav__list--primary a[href]' // Material Design
+  ];
+
+  for (const selector of breadcrumbSelectors) {
+    try {
+      const breadcrumbElements = doc.querySelectorAll(selector);
+      if (breadcrumbElements.length > 0) {
+        breadcrumbElements.forEach(link => {
+          const href = link.getAttribute('href');
+          const text = link.textContent?.trim();
+          if (href && text) {
+            const absoluteUrl = resolveUrl(href, baseUrl);
+            if (absoluteUrl) {
+              breadcrumbs.push({
+                path: new URL(absoluteUrl).pathname,
+                title: text
+              });
+            }
+          }
+        });
+        break; // Use first successful breadcrumb trail
+      }
+    } catch (e) {
+      // Skip invalid selectors
+    }
   }
+
+  return breadcrumbs;
+}
+
+/**
+ * Infer section from URL path
+ */
+function inferSectionFromPath(path) {
+  const pathParts = path.split('/').filter(Boolean);
+  if (pathParts.length > 0) {
+    return pathParts[0]; // First path segment as section
+  }
+  return null;
+}
+
+/**
+ * Infer section from navigation context
+ */
+function inferSectionFromNavigation(doc, currentPath) {
+  // Look for active navigation items or current section indicators
+  const activeSelectors = [
+    '.nav-link.active',
+    '.current',
+    '.md-nav__link--active',
+    '[aria-current="page"]'
+  ];
+
+  for (const selector of activeSelectors) {
+    try {
+      const activeElement = doc.querySelector(selector);
+      if (activeElement) {
+        const href = activeElement.getAttribute('href');
+        if (href) {
+          const section = inferSectionFromPath(href);
+          if (section) return section;
+        }
+      }
+    } catch (e) {
+      // Skip invalid selectors
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Discover sibling pages through navigation analysis
+ */
+async function discoverNavigationSiblings(navigationContext, baseUrl, config) {
+  const siblings = new Set();
+
+  // Find siblings from same-section navigation
+  for (const [section, seedPaths] of navigationContext.sectionMappings) {
+    console.log(`🔍 Finding siblings in section: ${section}`);
+    
+    // Get all navigation links that share this section
+    const sectionLinks = new Set();
+    
+    // Check primary nav for section siblings
+    for (const navLink of navigationContext.primaryNavLinks) {
+      if (inferSectionFromPath(navLink) === section) {
+        sectionLinks.add(navLink);
+      }
+    }
+    
+    // Check sidebar nav for section siblings
+    for (const navLink of navigationContext.sidebarLinks) {
+      if (inferSectionFromPath(navLink) === section) {
+        sectionLinks.add(navLink);
+      }
+    }
+
+    // Validate sibling links
+    for (const siblingPath of sectionLinks) {
+      if (!navigationContext.seedUrls.has(siblingPath)) {
+        const fullUrl = baseUrl + siblingPath;
+        try {
+          const doc = await fetchPage(fullUrl);
+          if (doc && hasValidContent(doc)) {
+            siblings.add(siblingPath);
+            console.log(`✓ Found sibling: ${siblingPath}`);
+          }
+        } catch (error) {
+          console.warn(`✗ Sibling validation failed: ${siblingPath}`);
+        }
+        
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+    }
+  }
+
+  return siblings;
+}
+
+/**
+ * Discover parent and child pages through hierarchy analysis
+ */
+async function discoverFamilyPages(navigationContext, baseUrl, config) {
+  const familyPages = new Set();
+
+  // Use breadcrumbs to find parent pages
+  for (const [seedPath, breadcrumbs] of navigationContext.breadcrumbPaths) {
+    for (const breadcrumb of breadcrumbs) {
+      if (!navigationContext.seedUrls.has(breadcrumb.path)) {
+        const fullUrl = baseUrl + breadcrumb.path;
+        try {
+          const doc = await fetchPage(fullUrl);
+          if (doc && hasValidContent(doc)) {
+            familyPages.add(breadcrumb.path);
+            console.log(`✓ Found parent: ${breadcrumb.path}`);
+          }
+        } catch (error) {
+          console.warn(`✗ Parent validation failed: ${breadcrumb.path}`);
+        }
+        
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+    }
+  }
+
+  return familyPages;
+}
+
+/**
+ * Sort paths by navigation importance
+ */
+function sortByNavigationImportance(paths, navigationContext) {
+  return paths.sort((a, b) => {
+    let scoreA = 0;
+    let scoreB = 0;
+
+    // Seed URLs get highest priority
+    if (navigationContext.seedUrls.has(a)) scoreA += 10;
+    if (navigationContext.seedUrls.has(b)) scoreB += 10;
+
+    // Primary navigation gets high priority
+    if (navigationContext.primaryNavLinks.has(a)) scoreA += 5;
+    if (navigationContext.primaryNavLinks.has(b)) scoreB += 5;
+
+    // Sidebar navigation gets medium priority
+    if (navigationContext.sidebarLinks.has(a)) scoreA += 3;
+    if (navigationContext.sidebarLinks.has(b)) scoreB += 3;
+
+    // Shorter paths get slight priority (likely more important)
+    scoreA += (5 - a.split('/').length);
+    scoreB += (5 - b.split('/').length);
+
+    return scoreB - scoreA;
+  });
+}
+
+/**
+ * Fallback discovery when no seed URLs are available
+ */
+async function fallbackDiscovery(baseUrl, config) {
+  console.log('🔄 Fallback: discovering from root page');
+  const discoveredPaths = new Set();
   
-  return Math.max(0, Math.min(1, score));
+  // Try root page first
+  try {
+    const rootDoc = await fetchPage(baseUrl);
+    if (rootDoc && hasValidContent(rootDoc)) {
+      discoveredPaths.add('/');
+      
+      // Extract navigation from root
+      const primaryNav = extractPrimaryNavigation(rootDoc, baseUrl, config);
+      const sidebarNav = extractSidebarNavigation(rootDoc, baseUrl, config);
+      
+      // Validate up to 5 navigation links
+      const navLinks = [...primaryNav, ...sidebarNav].slice(0, 5);
+      for (const navPath of navLinks) {
+        const fullUrl = baseUrl + navPath;
+        try {
+          const doc = await fetchPage(fullUrl);
+          if (doc && hasValidContent(doc)) {
+            discoveredPaths.add(navPath);
+            console.log(`✓ Navigation fallback: ${navPath}`);
+          }
+        } catch (error) {
+          console.warn(`✗ Navigation fallback failed: ${navPath}`);
+        }
+        
+        await new Promise(resolve => setTimeout(resolve, 150));
+      }
+    }
+  } catch (error) {
+    console.error('Root page fallback failed:', error.message);
+  }
+
+  return Array.from(discoveredPaths);
 }
 
 /**
@@ -1017,7 +1446,7 @@ function generateTitleFromUrl(url) {
 }
 
 /**
- * Crawl a single site dynamically
+ * Crawl a single site dynamically with enhanced telemetry and monitoring
  * @param {string} siteKey - Site identifier
  * @param {Object} options - Options object with callbacks and limits
  * @returns {Promise<Object>} Crawl results
@@ -1041,12 +1470,65 @@ export async function crawlSite(siteKey, options = {}) {
   const pages = [];
   const stack = []; // Use stack for DFS instead of queue for BFS
   const errors = [];
+  const telemetry = {
+    startTime: Date.now(),
+    requestCount: 0,
+    bytesDownloaded: 0,
+    averageResponseTime: 0,
+    gatewayUsage: new Map(),
+    errorsByType: new Map(),
+  };
   
   console.log(`🚀 Starting crawl of ${config.name}`);
   console.log(`📊 Limits: ${maxDepth} depth, ${maxPages} pages`);
+  console.log(`🎯 Rate limit: 2 req/sec with burst of 5`);
+  
+  // Initialize Wayfinder for this crawl session
+  const wayfinder = await initializeWayfinder();
+  let resolvedBaseUrl = config.baseUrl;
+
+  // Try to find a faster gateway using Wayfinder if available
+  if (wayfinder && config.baseUrl.startsWith('https://')) {
+    try {
+      // Extract the likely ArNS name from the hostname
+      const hostname = new URL(config.baseUrl).hostname;
+      let arnsName = null;
+      
+      // Map known hostnames to their ArNS names
+      const hostnameToArns = {
+        'cookbook_ao.arweave.net': 'ao-cookbook',
+        'cookbook.arweave.net': 'arweave-cookbook', 
+        'docs.ar.io': 'docs-ar-io',
+        'hyperbeam.arweave.net': 'hyperbeam'
+      };
+      
+      arnsName = hostnameToArns[hostname];
+      
+      if (arnsName) {
+        console.log(`🔍 Attempting to find faster gateway for ar://${arnsName}...`);
+        const fullResolvedUrl = await wayfinder.resolveUrl({ originalUrl: `ar://${arnsName}` });
+        const fasterGateway = new URL(fullResolvedUrl).origin;
+        
+        // Only switch if we got a different gateway
+        if (fasterGateway !== new URL(config.baseUrl).origin) {
+          resolvedBaseUrl = fasterGateway;
+          console.log(`🚀 Using faster gateway: ${resolvedBaseUrl} (was ${config.baseUrl})`);
+        } else {
+          console.log(`✅ Current gateway is already optimal: ${config.baseUrl}`);
+        }
+      } else {
+        console.log(`🌐 No ArNS mapping found for ${hostname}, using original URL`);
+      }
+    } catch (error) {
+      console.warn(`⚠️ Wayfinder gateway resolution failed, using original URL:`, error.message);
+      // Continue with original URL - this is not a fatal error
+    }
+  } else {
+    console.log(`🌐 Using configured baseUrl: ${resolvedBaseUrl}`);
+  }
   
   // Discover entry points dynamically
-  const discoveredPaths = await discoverEntryPoints(config.baseUrl, config);
+  const discoveredPaths = await discoverEntryPoints(resolvedBaseUrl, config);
   
   if (discoveredPaths.length === 0) {
     console.warn(`No entry points discovered for ${config.name}, falling back to root`);
@@ -1058,7 +1540,7 @@ export async function crawlSite(siteKey, options = {}) {
   console.log(`🌱 Seeds: ${entryPointsToUse.length}`);
   
   for (const entryPoint of entryPointsToUse.reverse()) { // Reverse for proper DFS order
-    const url = config.baseUrl + (entryPoint.startsWith('/') ? entryPoint : '/' + entryPoint);
+    const url = resolvedBaseUrl + (entryPoint.startsWith('/') ? entryPoint : '/' + entryPoint);
     if (!seen.has(url)) {
       stack.push({ url, depth: 0 });
       seen.add(url);
@@ -1078,10 +1560,22 @@ export async function crawlSite(siteKey, options = {}) {
     onProgress(pages.length + 1, maxPages, url);
     
     try {
+      const requestStart = Date.now();
       const doc = await fetchPage(url);
+      const requestTime = Date.now() - requestStart;
+      
+      // Update telemetry
+      telemetry.requestCount++;
+      telemetry.averageResponseTime = (
+        (telemetry.averageResponseTime * (telemetry.requestCount - 1) + requestTime) / 
+        telemetry.requestCount
+      );
+      
       if (!doc) {
         const error = 'Failed to fetch page';
-        errors.push({ url, error });
+        errors.push({ url, error, depth, timestamp: new Date().toISOString() });
+        telemetry.errorsByType.set('fetch_failed', 
+          (telemetry.errorsByType.get('fetch_failed') || 0) + 1);
         onError(url, error);
         continue;
       }
@@ -1090,6 +1584,8 @@ export async function crawlSite(siteKey, options = {}) {
       const pageData = extractPageMetadata(doc, url, config);
       if (!pageData) {
         console.warn(`Page rejected by quality filters: ${url}`);
+        telemetry.errorsByType.set('quality_rejected', 
+          (telemetry.errorsByType.get('quality_rejected') || 0) + 1);
         continue;
       }
       
@@ -1097,20 +1593,24 @@ export async function crawlSite(siteKey, options = {}) {
         ...pageData,
         siteKey,
         siteName: config.name,
-        depth
+        depth,
+        crawledAt: new Date().toISOString(),
+        crawlStats: {
+          responseTime: requestTime,
+          depth: depth
+        }
       });
+      
+      console.log(`📄 [${pages.length}/${maxPages}] ${pageData.title} (${pageData.estimatedWords} words, ${requestTime}ms)`);
       
       // Extract links and discover sister pages (only if we have capacity)
       if (pages.length < maxPages && depth < maxDepth) {
-        const links = extractLinks(doc, config.baseUrl, config, url);
+        const links = extractLinks(doc, resolvedBaseUrl, config, url);
         
-        // Auto-discover sister pages for deepest pages (DFS naturally prioritizes deeper pages)
+        // Sister page discovery disabled to prevent false 404s
         let sisterUrls = [];
-        if (depth >= 1) { // Only discover sister pages for non-root pages
-          sisterUrls = await discoverSisterPages(doc, url, links, config);
-          const validSisterUrls = await validateSisterPages(sisterUrls);
-          sisterUrls = validSisterUrls;
-        }
+        // Note: Sister page discovery was generating hundreds of invalid URLs
+        // from arbitrary vocabulary words, causing performance issues
         
         // Combine regular links with sister pages
         const allLinks = [...links, ...sisterUrls];
@@ -1129,22 +1629,45 @@ export async function crawlSite(siteKey, options = {}) {
           stack.push(linkData);
         }
         
-        console.log(`📄 ${url} -> ${links.length} links + ${sisterUrls.length} sister pages (${newLinks.length} new)`);
+        console.log(`🔗 Found ${links.length} links -> ${newLinks.length} new URLs to crawl`);
       }
       
-      // Small delay to be respectful (reduced for efficiency)
-      await new Promise(resolve => setTimeout(resolve, 100));
+      // Rate limiting is now handled by the RateLimiter class in fetchPage
       
     } catch (error) {
-      console.error(`Error crawling ${url}:`, error);
+      console.error(`❌ Error crawling ${url}:`, error.message);
       const errorMsg = error.message;
-      errors.push({ url, error: errorMsg });
+      const errorType = error.name || 'unknown_error';
+      
+      errors.push({ 
+        url, 
+        error: errorMsg, 
+        errorType,
+        depth, 
+        timestamp: new Date().toISOString() 
+      });
+      
+      telemetry.errorsByType.set(errorType, 
+        (telemetry.errorsByType.get(errorType) || 0) + 1);
+      
       onError(url, errorMsg);
     }
   }
   
+  const crawlDuration = Date.now() - telemetry.startTime;
+  
   console.log(`✅ Crawl complete: ${pages.length} pages, ${errors.length} errors`);
   console.log(`📊 Deduplication: ${seen.size} URLs seen, ${visited.size} visited`);
+  console.log(`⏱️ Duration: ${(crawlDuration / 1000).toFixed(1)}s, Avg response: ${telemetry.averageResponseTime.toFixed(0)}ms`);
+  console.log(`📈 Rate: ${(telemetry.requestCount / (crawlDuration / 1000)).toFixed(2)} req/sec`);
+  
+  // Log error breakdown
+  if (telemetry.errorsByType.size > 0) {
+    console.log(`❌ Error breakdown:`);
+    for (const [type, count] of telemetry.errorsByType.entries()) {
+      console.log(`   - ${type}: ${count}`);
+    }
+  }
   
   // Simplified filtering - less aggressive since we have better deduplication
   const filteredPages = pages.filter(page => {
@@ -1170,7 +1693,20 @@ export async function crawlSite(siteKey, options = {}) {
       totalErrors: errors.length,
       maxDepthReached: Math.max(...filteredPages.map(p => p.depth), 0),
       urlsSeen: seen.size,
-      urlsVisited: visited.size
+      urlsVisited: visited.size,
+      crawlDuration,
+      averageResponseTime: telemetry.averageResponseTime,
+      requestRate: telemetry.requestCount / (crawlDuration / 1000),
+      errorsByType: Object.fromEntries(telemetry.errorsByType)
+    },
+    telemetry: {
+      startTime: new Date(telemetry.startTime).toISOString(),
+      endTime: new Date().toISOString(),
+      duration: crawlDuration,
+      requestCount: telemetry.requestCount,
+      averageResponseTime: telemetry.averageResponseTime,
+      requestRate: telemetry.requestCount / (crawlDuration / 1000),
+      errorsByType: Object.fromEntries(telemetry.errorsByType)
     },
     crawledAt: new Date().toISOString()
   };
@@ -1369,65 +1905,16 @@ function extractTextContent(doc, config) {
 }
 
 async function discoverSisterPages(doc, currentUrl, existingLinks, config) {
-  const discovered = new Set();
-  const urlObj = new URL(currentUrl);
-  const currentDir = urlObj.href.substring(0, urlObj.href.lastIndexOf('/') + 1);
-
-  // Only look for sister pages in the same directory
-  const peerLinks = existingLinks.filter(link => link.startsWith(currentDir));
-  if (peerLinks.length < 2) return []; // Need at least 2 peer links to infer pattern
-
-  const peerFilenames = peerLinks.map(link => link.substring(link.lastIndexOf('/') + 1));
-  const pattern = inferPattern(peerFilenames);
-
-  if (!pattern) return []; // No clear pattern found
+  // Disable sister page discovery to eliminate false 404s
+  // This was generating hundreds of invalid URLs by combining arbitrary vocabulary
+  // with filename patterns, causing massive performance issues
   
-  // Get vocabulary from page content (limit to avoid too many candidates)
-  const vocabulary = extractVocabulary(doc, config).slice(0, 20); // Limit to top 20 words
-  
-  // Generate candidate URLs based on pattern and vocabulary
-  for (const word of vocabulary) {
-    const candidateFilename = `${pattern.prefix}${word}${pattern.suffix}`;
-    const candidateUrl = `${currentDir}${candidateFilename}`;
-    
-    // Only add if not already in existing links and looks reasonable
-    if (!existingLinks.includes(candidateUrl) && word.length >= 3 && word.length <= 15) {
-      discovered.add(candidateUrl);
-    }
-  }
-  
-  return [...discovered].slice(0, 10); // Limit to top 10 candidates
+  console.log(`Sister page discovery disabled for: ${currentUrl}`);
+  return [];
 }
 
-// Enhanced sister page validation
+// Sister page validation no longer needed since discovery is disabled
 async function validateSisterPages(sisterUrls, maxConcurrent = 5) {
-  const validUrls = [];
-  
-  // Process in batches to avoid overwhelming the server
-  for (let i = 0; i < sisterUrls.length; i += maxConcurrent) {
-    const batch = sisterUrls.slice(i, i + maxConcurrent);
-    const results = await Promise.allSettled(
-      batch.map(async url => {
-        try {
-          const response = await fetch(url, {
-            method: 'HEAD',
-            headers: {
-              'User-Agent': 'Mozilla/5.0 (compatible; PermawebLLMsBuilder/1.0)'
-            }
-          });
-          return response.ok ? url : null;
-        } catch {
-          return null;
-        }
-      })
-    );
-    
-    results.forEach(result => {
-      if (result.status === 'fulfilled' && result.value) {
-        validUrls.push(result.value);
-      }
-    });
-  }
-  
-  return validUrls;
+  // Sister page discovery is disabled, so this always returns empty array
+  return [];
 } 
