@@ -5,21 +5,35 @@ import { optimizedBatchExtraction } from './batch-processor.js';
 
 /**
  * Strip HTML tags and decode HTML entities from text content
+ * Works in both browser and Node.js environments
  * @param {string} text - Text that may contain HTML
  * @returns {string} Clean text without HTML
  */
 function stripHTML(text) {
   if (!text) return '';
   
-  // Create a temporary DOM element to decode HTML entities and strip tags
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = text;
+  let cleanText = text;
   
-  // Get text content (strips all HTML tags)
-  let cleanText = tempDiv.textContent || tempDiv.innerText || '';
+  // Environment-agnostic HTML stripping
+  if (typeof document !== 'undefined' && document.createElement) {
+    // Browser environment - use DOM
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = text;
+    cleanText = tempDiv.textContent || tempDiv.innerText || '';
+  } else {
+    // Node.js environment - use regex-based stripping
+    cleanText = text
+      // Remove HTML tags
+      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+      .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+      .replace(/<[^>]*>/g, '')
+      // Handle self-closing tags
+      .replace(/<[^>]*\/>/g, '');
+  }
   
-  // Additional cleanup for common HTML entities that might remain
+  // Universal HTML entity decoding and cleanup
   cleanText = cleanText
+    // Common HTML entities
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -27,13 +41,47 @@ function stripHTML(text) {
     .replace(/&quot;/g, '"')
     .replace(/&#x27;/g, "'")
     .replace(/&#x2F;/g, '/')
-    .replace(/&#(\d+);/g, (match, dec) => String.fromCharCode(dec))
-    .replace(/&#x([0-9A-F]+);/gi, (match, hex) => String.fromCharCode(parseInt(hex, 16)));
-  
-  // Clean up excessive whitespace
-  cleanText = cleanText
+    .replace(/&apos;/g, "'")
+    .replace(/&hellip;/g, '...')
+    .replace(/&mdash;/g, '—')
+    .replace(/&ndash;/g, '–')
+    .replace(/&rsquo;/g, "'")
+    .replace(/&lsquo;/g, "'")
+    .replace(/&rdquo;/g, '"')
+    .replace(/&ldquo;/g, '"')
+    // Numeric HTML entities
+    .replace(/&#(\d+);/g, (match, dec) => {
+      try {
+        return String.fromCharCode(parseInt(dec, 10));
+      } catch (e) {
+        return ' ';
+      }
+    })
+    .replace(/&#x([0-9A-F]+);/gi, (match, hex) => {
+      try {
+        return String.fromCharCode(parseInt(hex, 16));
+      } catch (e) {
+        return ' ';
+      }
+    })
+    // Clean any remaining HTML-like patterns
+    .replace(/&[a-zA-Z0-9#]+;/g, ' ')
+    // Strip Markdown formatting
+    .replace(/\*\*([^*]+)\*\*/g, '$1')  // **bold** -> bold
+    .replace(/__([^_]+)__/g, '$1')      // __bold__ -> bold
+    .replace(/\*([^*]+)\*/g, '$1')      // *italic* -> italic
+    .replace(/_([^_]+)_/g, '$1')        // _italic_ -> italic
+    .replace(/`([^`]+)`/g, '$1')        // `code` -> code
+    .replace(/~~([^~]+)~~/g, '$1')      // ~~strikethrough~~ -> strikethrough
+    .replace(/^#{1,6}\s+/gm, '')        // # Headers -> Headers
+    .replace(/^\s*[-*+]\s+/gm, '')      // - List items -> List items
+    .replace(/^\s*\d+\.\s+/gm, '')      // 1. Numbered lists -> Numbered lists
+    .replace(/^\s*>\s+/gm, '')          // > Blockquotes -> Blockquotes
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // [link text](url) -> link text
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1') // ![alt text](image) -> alt text
+    // Clean up whitespace
     .replace(/\s+/g, ' ')
-    .replace(/\n\s*\n\s*\n/g, '\n\n')
+    .replace(/\n\s*\n\s*\n+/g, '\n\n')
     .trim();
   
   return cleanText;
@@ -78,7 +126,7 @@ export async function fetchAndClean(url, options = {}) {
     
     if (useEnhancedExtraction) {
       // Use enhanced extraction with LLM optimizations
-      cleanContent = enhancedDefuddleExtraction(html, {
+      const rawContent = enhancedDefuddleExtraction(html, {
         defuddleInstance: Defuddle,
         url: url,
         removeExactSelectors: true,
@@ -87,10 +135,13 @@ export async function fetchAndClean(url, options = {}) {
         debug: false
       });
       
+      // CRITICAL: Strip HTML from enhanced extraction output
+      cleanContent = stripHTML(rawContent);
+      
       // Extract metadata using standard Defuddle
       const defuddle = new Defuddle(doc, {
         debug: false,
-        markdown: true,
+        markdown: false,
         url: url
       });
       result = defuddle.parse();
@@ -98,7 +149,7 @@ export async function fetchAndClean(url, options = {}) {
       // Use standard Defuddle extraction
       const defuddle = new Defuddle(doc, {
         debug: false,
-        markdown: true,
+        markdown: false,
         url: url,
         removeExactSelectors: true,
         removePartialSelectors: true
@@ -349,8 +400,9 @@ export function generateLLMsTxt(documents, options = {}) {
   if (includeToc && documentsArray.length > 1) {
     content += `## Table of Contents\n\n`;
     documentsArray.forEach((doc, index) => {
-      const anchor = doc.title.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
-      content += `${index + 1}. [${doc.title}](#${anchor})\n`;
+      const cleanTitle = stripHTML(doc.title || 'Untitled');
+      const anchor = cleanTitle.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
+      content += `${index + 1}. [${cleanTitle}](#${anchor})\n`;
     });
     content += `\n`;
   }
@@ -361,22 +413,28 @@ export function generateLLMsTxt(documents, options = {}) {
       content += separator;
     }
     
-    content += `# ${doc.title}\n\n`;
+    // CRITICAL: Sanitize all content before adding to LLM output
+    const cleanTitle = stripHTML(doc.title || 'Untitled');
+    const cleanAuthor = stripHTML(doc.author || '');
+    const cleanDescription = stripHTML(doc.description || '');
+    const cleanContent = stripHTML(doc.content || '');
+    
+    content += `# ${cleanTitle}\n\n`;
     
     if (includeMetadata) {
       content += `**Source:** ${doc.url}\n`;
-      if (doc.author) content += `**Author:** ${doc.author}\n`;
-      if (doc.published) content += `**Published:** ${doc.published}\n`;
-      if (doc.description) content += `**Description:** ${doc.description}\n`;
-      if (doc.domain) content += `**Domain:** ${doc.domain}\n`;
-      content += `**Word Count:** ${doc.wordCount.toLocaleString()}\n`;
-      if (doc.parseTime > 0) content += `**Parse Time:** ${doc.parseTime}ms\n`;
+      if (cleanAuthor) content += `Author: ${cleanAuthor}\n`;
+      if (doc.published) content += `Published: ${doc.published}\n`;
+      if (cleanDescription) content += `Description: ${cleanDescription}\n`;
+      if (doc.domain) content += `Domain: ${doc.domain}\n`;
+      content += `Word Count: ${doc.wordCount.toLocaleString()}\n`;
+      if (doc.parseTime > 0) content += `Parse Time: ${doc.parseTime}ms\n`;
       content += `\n`;
     }
     
-    content += doc.content;
+    content += cleanContent;
     
-    if (!doc.content.endsWith('\n')) {
+    if (!cleanContent.endsWith('\n')) {
       content += '\n';
     }
   });

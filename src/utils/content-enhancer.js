@@ -191,13 +191,30 @@ export function enhancedDefuddleExtraction(html, options = {}) {
     defuddleResult = defuddleResult.content || '';
   } catch (error) {
     console.warn('Enhanced extraction fallback:', error.message);
-    // Fallback to basic text extraction
+    // Fallback to basic text extraction with HTML stripping
     if (typeof html === 'string') {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      defuddleResult = doc.body?.textContent || html;
+      let rawText = html;
+      
+      // Try DOM parsing if available, otherwise use regex
+      if (typeof DOMParser !== 'undefined') {
+        try {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          rawText = doc.body?.textContent || html;
+        } catch (domError) {
+          console.warn('DOM parsing failed, using regex fallback');
+        }
+      }
+      
+      // Strip any remaining HTML tags using regex fallback
+      defuddleResult = rawText
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+        .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+        .replace(/<[^>]*>/g, '')
+        .replace(/&[^;]+;/g, ' ');
     } else {
-      defuddleResult = html.textContent || '';
+      let rawText = html.textContent || '';
+      defuddleResult = rawText.replace(/<[^>]*>/g, '').replace(/&[^;]+;/g, ' ');
     }
   }
   
