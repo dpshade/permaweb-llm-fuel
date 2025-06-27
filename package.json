@@ -21,6 +21,12 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "crawl": "bun run src/utils/crawler.js",
+    "crawl:all": "bun run src/utils/crawler.js",
+    "crawl:list": "echo 'Available sites:' && cat public/crawl-config.json | bun -e 'console.log(Object.keys(JSON.parse(await Bun.stdin.text())).map(k => `  - bun run crawl:${k}`).join(\"\\n\"))'",
+    "crawl:hyperbeam": "bun run src/utils/crawler.js hyperbeam",
+    "crawl:ao": "bun run src/utils/crawler.js ao",
+    "crawl:ario": "bun run src/utils/crawler.js ario",
+    "crawl:arweave": "bun run src/utils/crawler.js arweave",
     "crawl:static": "bun run src/utils/crawler.js",
     "build-index": "bun run src/utils/crawler.js"
   },

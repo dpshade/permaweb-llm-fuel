@@ -5,25 +5,17 @@
     "maxDepth": 4,
     "maxPages": 100,
     "selectors": {
-      "title": "h1, title, .page-title, .doc-title, .md-header__topic, .md-content h1",
-      "navigation": ".md-nav__link, .md-sidebar a, .md-nav a, .md-tabs__link, nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a",
-      "content": ".md-content__inner, .md-typeset, main, .content, article, .markdown-body, .doc-content, .page-content, .documentation"
+      "title": "h1, title",
+      "content": "main, .content, article"
     },
     "excludePatterns": [
-      "/\\/api\\//",
       "/\\.(pdf|zip|tar|gz)$/",
-      "/mailto:/",
-      "/#$/",
-      "/\\?.*search/"
+      "/mailto:/"
     ],
     "seedUrls": [
       "/build/introduction/what-is-hyperbeam.html",
-      "/build/introduction/what-is-ao-core.html",
       "/build/",
       "/run/",
-      "/run/running-a-hyperbeam-node.html",
-      "/run/joining-running-a-router.html",
-      "/run/reference/faq.html",
       "/docs/"
     ]
   },
@@ -33,15 +25,12 @@
     "maxDepth": 4,
     "maxPages": 100,
     "selectors": {
-      "title": "h1, title, .page-title, .doc-title",
-      "navigation": "nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a",
-      "content": "main, .content, article, .markdown-body, .doc-content, .page-content, .documentation"
+      "title": "h1, title",
+      "content": "main, .content, article"
     },
     "excludePatterns": [
-      "/\\/api\\//",
       "/\\.(pdf|zip|tar|gz)$/",
       "/mailto:/",
-      "/#$/",
       "/ja/",
       "/zh/"
     ],
@@ -59,23 +48,17 @@
     "maxDepth": 4,
     "maxPages": 100,
     "selectors": {
-      "title": "h1, title, .page-title, .doc-title",
-      "navigation": "nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a",
-      "content": "main, .content, article, .markdown-body, .doc-content, .page-content, .documentation"
+      "title": "h1, title",
+      "content": "main, .content, article"
     },
     "excludePatterns": [
-      "/\\/api\\//",
       "/\\.(pdf|zip|tar|gz)$/",
-      "/mailto:/",
-      "/#$/"
+      "/mailto:/"
     ],
     "seedUrls": [
       "/ar-io-sdk/getting-started",
-      "/ar-io-sdk/",
       "/gateways/linux-setup",
       "/guides/permaweb-deploy",
-      "/observers/",
-      "/developers/",
       "/guides/"
     ]
   },
@@ -85,15 +68,12 @@
     "maxDepth": 4,
     "maxPages": 100,
     "selectors": {
-      "title": "h1, title, .page-title, .doc-title",
-      "navigation": "nav a, .sidebar a, .nav a, .toc a, .menu a, .docs-nav a, .page-nav a, .content-nav a, .left-sidebar a, .right-sidebar a, .navigation a, .doc-nav a",
-      "content": "main, .content, article, .markdown-body, .doc-content, .page-content, .documentation"
+      "title": "h1, title",
+      "content": "main, .content, article"
     },
     "excludePatterns": [
-      "/\\/api\\//",
       "/\\.(pdf|zip|tar|gz)$/",
-      "/mailto:/",
-      "/#$/"
+      "/mailto:/"
     ],
     "seedUrls": [
       "/getting-started/",
