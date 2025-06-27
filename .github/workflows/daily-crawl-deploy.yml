@@ -23,7 +23,7 @@ jobs:
         run: bun install --frozen-lockfile
         
       - name: Run crawl (force reindex)
-        run: bun run crawl:force
+        run: bun run crawl --force-reindex
         
       - name: Verify output
         run: |
