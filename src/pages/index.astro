@@ -377,33 +377,56 @@ import "../styles/theme.css";
 				}
 			}
 
-			// Load documentation index with Vercel primary and local fallback
+			// Load documentation index with environment-aware source selection
 			async function loadDocumentationIndex() {
 				try {
 					updateLoadingMessage(
 						"Loading Documentation Index",
-						"Fetching latest documentation index from ArNS...",
+						"Fetching latest documentation index...",
 					);
 
 					let response;
+					let indexSource = "local";
+					
+					// Determine the best source for the index
+					const isProduction = window.location.hostname === 'permaweb-llms-builder.ar.io' || 
+					                    window.location.hostname === 'permaweb-llms-builder-a6bermwrm-dpshade22s-projects.vercel.app';
+					
 					try {
-						// Load from dedicated index ArNS undername (JSON only)
-						const indexJsonUrl =
-							"https://index_permaweb-llms-builder.ar.io/docs-index.json";
-						response = await fetch(indexJsonUrl);
+						if (isProduction) {
+							// For production, try ArNS first, fallback to Vercel-deployed copy
+							try {
+								const indexJsonUrl = "https://index_permaweb-llms-builder.ar.io/docs-index.json";
+								response = await fetch(indexJsonUrl);
+								
+								if (response.ok) {
+									indexSource = "ArNS";
+									console.log("Successfully loaded from ArNS index endpoint");
+								} else {
+									throw new Error(`ArNS endpoint returned ${response.status}`);
+								}
+							} catch (arnsError) {
+								console.warn("ArNS index endpoint failed, falling back to Vercel:", arnsError.message);
+								// Fallback to Vercel-deployed copy
+								response = await fetch("/docs-index.json");
+								indexSource = "Vercel (ArNS fallback)";
+							}
+						} else {
+							// For previews, development, and other environments, use Vercel-deployed copy
+							response = await fetch("/docs-index.json");
+							indexSource = "Vercel";
+						}
 
 						if (!response.ok) {
 							throw new Error(
-								`Index endpoint failed: ${response.status}`,
+								`Index loading failed: ${response.status} from ${indexSource}`,
 							);
 						}
 
-						console.log(
-							"Successfully loaded from ArNS index endpoint",
-						);
+						console.log(`Successfully loaded documentation index from ${indexSource}`);
 					} catch (indexError) {
 						console.error(
-							"ArNS index endpoint failed:",
+							"Failed to load documentation index:",
 							indexError.message,
 						);
 

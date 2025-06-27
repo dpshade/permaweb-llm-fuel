@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "bun run clean && astro build && bun run scripts/post-build.js",
-    "build:vercel": "bun run clean && astro build --outdir=.vercel/output/static && bun run scripts/post-build.js",
+    "build:vercel": "bun run clean && VERCEL_BUILD=true astro build && bun run scripts/post-build.js",
     "preview": "astro preview",
     "preview:local": "bun run preview-server.js",
     "test": "vitest run",

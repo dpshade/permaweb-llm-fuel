@@ -20,6 +20,51 @@ if (!fs.existsSync(buildDir)) {
 
 console.log(`📁 Processing build directory: ${buildDir}`);
 
+// Run crawler in CI/Vercel environment to generate docs index
+const isCI = process.env.CI === 'true' || 
+             process.env.VERCEL === '1' || 
+             process.env.GITHUB_ACTIONS === 'true' ||
+             process.env.VERCEL_BUILD === 'true';
+
+if (isCI) {
+  console.log('🕷️  Running crawler to generate docs index...');
+  try {
+    // Run crawler with production settings
+    execSync('NODE_ENV=production bun run src/utils/crawler.js', { 
+      stdio: 'inherit',
+      cwd: process.cwd()
+    });
+    console.log('   ✓ Docs index generated successfully');
+    
+    // Copy docs index to build directory if it was generated in project root
+    const tempIndexPath = path.join(process.cwd(), 'temp-docs-index.json');
+    const publicIndexPath = path.join(process.cwd(), 'public/docs-index.json');
+    const buildIndexPath = path.join(buildDir, 'docs-index.json');
+    
+    // Try to copy from temp location first, then public
+    let indexCopied = false;
+    for (const sourcePath of [publicIndexPath, tempIndexPath]) {
+      if (fs.existsSync(sourcePath)) {
+        fs.copyFileSync(sourcePath, buildIndexPath);
+        console.log(`   ✓ Copied docs index to build directory from ${path.basename(sourcePath)}`);
+        indexCopied = true;
+        break;
+      }
+    }
+    
+    if (!indexCopied) {
+      console.warn('   ⚠️  No docs index found to copy to build directory');
+    }
+    
+  } catch (error) {
+    console.error('   ❌ Failed to run crawler:', error.message);
+    // Don't fail the build if crawler fails - the site should still deploy
+    console.warn('   ⚠️  Continuing build without updated docs index');
+  }
+} else {
+  console.log('📝 Skipping crawler (not in CI environment)');
+}
+
 // Clean up system files
 try {
   execSync(`find ${buildDir} -name ".DS_Store" -delete`, { stdio: 'ignore' });
