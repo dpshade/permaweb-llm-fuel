@@ -25,7 +25,12 @@ const log = {
   success: (msg) => console.log(`${colors.green}SUCCESS${colors.reset} ${msg}`),
   warn: (msg) => console.warn(`${colors.yellow}WARN${colors.reset} ${msg}`),
   error: (msg) => console.error(`${colors.red}ERROR${colors.reset} ${msg}`),
-  discovery: (msg) => console.log(`${colors.magenta}DISCOVERY${colors.reset} ${msg}`)
+  discovery: (msg) => console.log(`${colors.magenta}DISCOVERY${colors.reset} ${msg}`),
+  debug: (msg) => {
+    if (process.env.DEBUG_CRAWL || process.argv.includes('--debug')) {
+      console.log(`${colors.cyan}DEBUG${colors.reset} ${msg}`);
+    }
+  }
 };
 
 // Cache for loaded configuration
@@ -314,31 +319,65 @@ async function extractPageMetadata(doc, url, config) {
   // Try Defuddle first for better content extraction
   let content = '';
   let estimatedWords = 0;
+  let defuddleSuccess = false;
   
   try {
-    const defuddleResult = await Defuddle.extract(doc.documentElement.outerHTML);
-    if (defuddleResult && defuddleResult.textContent) {
-      content = defuddleResult.textContent.replace(/\s+/g, ' ').trim();
+    // Create Defuddle instance with the document
+    const defuddle = new Defuddle(doc, {
+      cleanConditionally: true,
+      removeUnlikelyRoles: true,
+      removeEmptyTextNodes: true,
+      removeUselessElements: true
+    });
+    
+    const defuddleResult = defuddle.parse();
+    if (defuddleResult && defuddleResult.content) {
+      content = defuddleResult.content.replace(/\s+/g, ' ').trim();
       estimatedWords = content.split(/\s+/).filter(word => word.length > 0).length;
+      defuddleSuccess = true;
+      
+      // Log successful Defuddle extractions for debugging
+      if (estimatedWords >= 50) {
+        log.debug(`Defuddle extracted ${estimatedWords} words from ${url}`);
+      }
     }
   } catch (error) {
-    // Fallback to manual extraction
+    log.debug(`Defuddle error for ${url}: ${error.message}`);
   }
   
-  // Fallback to manual content extraction if Defuddle fails
-  if (estimatedWords < 50) {
-    log.warn(`Defuddle failed for ${url}, using fallback extraction:`);
+  // Fallback to manual content extraction if Defuddle fails or extracts too little
+  if (estimatedWords < 20) { // Reduced threshold from 50 to 20
+    if (defuddleSuccess && estimatedWords > 0) {
+      log.debug(`Defuddle extracted only ${estimatedWords} words for ${url}, supplementing with manual extraction`);
+    } else {
+      log.warn(`Defuddle failed for ${url}, using fallback extraction`);
+    }
+    
     const contentSelectors = config.selectors.content.split(',').map(s => s.trim());
+    let manualContent = '';
+    
     for (const selector of contentSelectors) {
       const element = doc.querySelector(selector);
       if (element) {
-        content = element.textContent || '';
+        manualContent = element.textContent || '';
         break;
       }
     }
     
-    content = content.replace(/\s+/g, ' ').trim();
-    estimatedWords = content.split(/\s+/).filter(word => word.length > 0).length;
+    manualContent = manualContent.replace(/\s+/g, ' ').trim();
+    const manualWords = manualContent.split(/\s+/).filter(word => word.length > 0).length;
+    
+    // Use the better extraction (Defuddle vs manual)
+    if (manualWords > estimatedWords) {
+      content = manualContent;
+      estimatedWords = manualWords;
+      log.debug(`Manual extraction provided ${manualWords} words (better than Defuddle's ${estimatedWords})`);
+    } else if (estimatedWords > 0) {
+      log.debug(`Keeping Defuddle content (${estimatedWords} words vs manual ${manualWords})`);
+    } else {
+      content = manualContent;
+      estimatedWords = manualWords;
+    }
   }
   
   // Check if this is a 404 page
