@@ -88,29 +88,7 @@ import "../styles/theme.css";
 				border-color: var(--ao-accent-color);
 			}
 
-			/* Select All button styling */
-			#select-all-btn {
-				background-color: transparent !important;
-				border-color: var(--ao-border-color) !important;
-				color: var(--ao-text-color) !important;
-			}
-
-			#select-all-btn:hover {
-				background-color: var(--ao-hover-bg) !important;
-				color: var(--ao-text-color) !important;
-			}
-
-			/* Clear All button styling */
-			#clear-all-btn {
-				background-color: transparent !important;
-				border-color: var(--ao-border-color) !important;
-				color: var(--ao-text-color) !important;
-			}
-
-			#clear-all-btn:hover {
-				background-color: var(--ao-hover-bg) !important;
-				color: var(--ao-text-color) !important;
-			}
+			/* Select All and Clear All buttons use btn-transparent class */
 
 			/* Remove outdated selector for bolding page labels (handled inline) */
 
@@ -152,7 +130,7 @@ import "../styles/theme.css";
 			}
 
 			.bottom-controls {
-				margin-top: 24px;
+				margin-top: 16px;
 			}
 
 		</style>
@@ -194,7 +172,7 @@ import "../styles/theme.css";
 		<div class="main-container">
 			<div class="main-content">
 				<h1 style="margin-bottom: 0;">Permaweb LLMs Builder</h1>
-				<p style="color: #888; font-size: 13px; line-height: 1.5; margin-top: 8px; margin-bottom: 32px; max-width: 600px;">
+				<p class="text-secondary" style="font-size: 13px; line-height: 1.5; margin-top: 8px; margin-bottom: 16px; max-width: 600px;">
 					All these docs have been collected throughout the permaweb. Feel free to select which ones to fuel your LLM.
 				</p>
 
@@ -207,75 +185,75 @@ import "../styles/theme.css";
 				</div>
 				<div id="docs-tree">
 					<!-- Optimistic UI - shows immediately -->
-					<div id="optimistic-tree">
-						<div style="margin-bottom: 16px; font-size: 14px; color: var(--ao-secondary-text);">
-							Loading documentation from the Permaweb ecosystem...
+									<div id="optimistic-tree">
+					<div class="loading-description">
+						Loading documentation from the Permaweb ecosystem...
+					</div>
+					<div id="tree-root" class="tree-font">
+						<!-- Skeleton structure -->
+						<div class="mb-8">
+							<div class="flex-center-gap skeleton-opacity-60">
+								<div class="skeleton-base skeleton-checkbox"></div>
+								<svg class="world-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+								</svg>
+								<div class="skeleton-base skeleton-text-md"></div>
+								<div class="skeleton-base skeleton-text-sm ml-8"></div>
+							</div>
+							<div class="ml-24">
+								<div class="skeleton-row skeleton-opacity-40">
+									<div class="skeleton-base skeleton-checkbox"></div>
+									<div class="skeleton-base skeleton-text-lg"></div>
+								</div>
+								<div class="skeleton-row skeleton-opacity-40">
+									<div class="skeleton-base skeleton-checkbox"></div>
+									<div class="skeleton-base" style="height: 16px; width: 160px;"></div>
+								</div>
+								<div class="skeleton-row skeleton-opacity-40">
+									<div class="skeleton-base skeleton-checkbox"></div>
+									<div class="skeleton-base skeleton-text-xl"></div>
+								</div>
+							</div>
 						</div>
-						<div id="tree-root" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
-							<!-- Skeleton structure -->
-							<div style="margin-bottom: 8px;">
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.6;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-										<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-									</svg>
-									<div style="height: 20px; width: 120px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 60px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
+													<div class="mb-8">
+							<div class="skeleton-site-row skeleton-opacity-40">
+								<div class="skeleton-base skeleton-checkbox"></div>
+								<svg class="world-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+								</svg>
+								<div class="skeleton-base" style="height: 20px; width: 140px;"></div>
+								<div class="skeleton-base skeleton-text-sm ml-8"></div>
+							</div>
+							<div class="ml-24">
+								<div class="skeleton-row skeleton-opacity-30">
+									<div class="skeleton-base skeleton-checkbox"></div>
+									<div class="skeleton-base" style="height: 16px; width: 220px;"></div>
 								</div>
-								<div style="margin-left: 24px;">
-									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
-										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-										<div style="height: 16px; width: 200px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									</div>
-									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
-										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-										<div style="height: 16px; width: 160px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									</div>
-									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.4;">
-										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-										<div style="height: 16px; width: 180px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									</div>
+								<div class="skeleton-row skeleton-opacity-30">
+									<div class="skeleton-base skeleton-checkbox"></div>
+									<div class="skeleton-base" style="height: 16px; width: 150px;"></div>
 								</div>
 							</div>
-							<div style="margin-bottom: 8px;">
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.5;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-										<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-									</svg>
-									<div style="height: 20px; width: 140px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 50px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
-								</div>
-								<div style="margin-left: 24px;">
-									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
-										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-										<div style="height: 16px; width: 220px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									</div>
-									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.3;">
-										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-										<div style="height: 16px; width: 150px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									</div>
+						</div>
+													<div class="mb-8">
+							<div class="skeleton-site-row skeleton-opacity-20">
+								<div class="skeleton-base skeleton-checkbox"></div>
+								<svg class="world-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
+									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
+								</svg>
+								<div class="skeleton-base" style="height: 20px; width: 100px;"></div>
+								<div class="skeleton-base" style="height: 16px; width: 70px; margin-left: 8px;"></div>
+							</div>
+							<div class="ml-24">
+								<div class="skeleton-row skeleton-opacity-20">
+									<div class="skeleton-base skeleton-checkbox"></div>
+									<div class="skeleton-base" style="height: 16px; width: 190px;"></div>
 								</div>
 							</div>
-							<div style="margin-bottom: 8px;">
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; opacity: 0.4;">
-									<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<svg style="width: 16px; height: 16px; opacity: 0.5;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-										<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-									</svg>
-									<div style="height: 20px; width: 100px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									<div style="height: 16px; width: 70px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px;"></div>
-								</div>
-								<div style="margin-left: 24px;">
-									<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; opacity: 0.2;">
-										<div style="width: 18px; height: 18px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-										<div style="height: 16px; width: 190px; background-color: var(--ao-category-bg); border-radius: 4px; animation: pulse 2s infinite;"></div>
-									</div>
-								</div>
-							</div>
+						</div>
 						</div>
 					</div>
 				</div>
@@ -292,14 +270,13 @@ import "../styles/theme.css";
 				<div class="selection-counter">
 					<div
 						class="selection-header"
-						style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: space-between;"
 						onclick="toggleSelectionDetails()"
 					>
-						<div style="display: flex; align-items: center; gap: 8px;">
+						<div class="flex-center-gap">
 							<strong id="selection-count">0</strong> pages selected
 							<svg
 								id="selection-toggle"
-								style="width: 12px; height: 12px; transition: transform 0.15s ease;"
+								class="icon-12 icon-transition"
 								viewBox="0 0 24 24"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
@@ -313,7 +290,7 @@ import "../styles/theme.css";
 						</div>
 						<div
 							id="estimated-chars"
-							style="font-style: italic; font-size: 12px; color: var(--ao-secondary-text);"
+							class="selection-estimated-chars"
 						>
 						</div>
 					</div>
@@ -323,7 +300,7 @@ import "../styles/theme.css";
 					>
 						<div
 							id="selected-pages-list"
-							style="font-size: 14px; color: var(--ao-secondary-text);"
+							class="text-medium text-secondary"
 						>
 						</div>
 					</div>
@@ -337,8 +314,8 @@ import "../styles/theme.css";
 						</svg>
 						Generate llms.txt
 					</button>
-					<button class="btn" id="select-all-btn"> Select All </button>
-					<button class="btn" id="clear-all-btn"> Clear All </button>
+					<button class="btn btn-transparent" id="select-all-btn"> Select All </button>
+					<button class="btn btn-transparent" id="clear-all-btn"> Clear All </button>
 				</div>
 			</div>
 		</div>
@@ -528,10 +505,10 @@ import "../styles/theme.css";
 				});
 
 				const treeHtml = `
-					<div style="margin-bottom: 16px; font-size: 14px; color: var(--ao-secondary-text);">
+					<div class="docs-summary">
 						${totalPages} pages from ${siteCount} sites
 					</div>
-					<div id="tree-root" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
+					<div id="tree-root" class="tree-font">
 						${renderSitesWithPages(sortedPages)}
 					</div>
 				`;
@@ -588,17 +565,17 @@ import "../styles/theme.css";
 
 						// Site header with expand/collapse
 						let html = `
-						<div style="margin-bottom: 8px;">
-							<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+						<div class="mb-8">
+							<div class="tree-site-header">
 								<input type="checkbox" id="site-${siteKey}" class="site-checkbox" data-site="${siteKey}" checked>
-								<div style="display: flex; align-items: center; gap: 8px; cursor: pointer; flex: 1;" onclick="toggleNode('site-${siteKey}')">
-									<svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<div class="tree-site-content flex-center-gap" onclick="toggleNode('site-${siteKey}')">
+									<svg class="world-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
 										<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
 									</svg>
-									<label style="cursor: pointer; font-weight: 500; font-size: 15px; color: var(--ao-text-color); pointer-events: none;">${siteData.siteName}</label>
-									<span style="font-size: 12px; color: var(--ao-secondary-text);">${sitePageCount} pages</span>
-									<svg class="tree-toggle" id="toggle-site-${siteKey}" style="width: 12px; height: 12px; transition: transform 0.15s ease; margin-left: auto; transform: rotate(0deg);" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<label class="tree-site-label">${siteData.siteName}</label>
+									<span class="tree-site-count">${sitePageCount} pages</span>
+									<svg class="tree-toggle icon-12 icon-transition" id="toggle-site-${siteKey}" style="margin-left: auto; transform: rotate(0deg);" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9394 12.0001L8.46973 6.53039L9.53039 5.46973L16.0607 12.0001L9.53039 18.5304L8.46973 17.4697L13.9394 12.0001Z" fill="#666"/>
 									</svg>
 								</div>
@@ -616,10 +593,10 @@ import "../styles/theme.css";
 
 							const specificTitle = generateSpecificTitle(page);
 							html += `
-								<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; padding: 2px 0; margin-left: 24px;">
+								<div class="tree-page-item">
 									<input type="checkbox" id="${pageId}" class="page-checkbox" data-url="${page.url}" data-site="${page.siteKey}" checked>
-									<label for="${pageId}" style="cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ao-text-color);">${specificTitle}</label>
-									<a href="${page.url}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; color: var(--ao-secondary-text); margin-left: 8px; text-decoration: none; cursor: pointer;" 
+									<label for="${pageId}" class="tree-page-label">${specificTitle}</label>
+									<a href="${page.url}" target="_blank" rel="noopener noreferrer" class="tree-page-link" 
 									   onmouseover="this.style.textDecoration='underline'" 
 									   onmouseout="this.style.textDecoration='none'">
 										${breadcrumbPath}
@@ -632,7 +609,7 @@ import "../styles/theme.css";
 						html += `
 							</div>
 						</div>
-						<div style="margin-bottom: 16px;"></div>
+						<div class="mb-16"></div>
 					`;
 
 						return html;
@@ -640,16 +617,30 @@ import "../styles/theme.css";
 					.join("");
 			}
 
-			// Global function for toggling tree nodes
+			// Global function for toggling tree nodes (accordion-style: only one open at a time)
 			window.toggleNode = function (nodeId) {
 				const children = document.getElementById(nodeId + "-children");
 				const toggle = document.getElementById("toggle-" + nodeId);
 				if (children && toggle) {
 					const isExpanded = children.classList.contains("expanded");
+					
 					if (isExpanded) {
+						// Collapse the currently expanded site
 						children.classList.remove("expanded");
 						toggle.style.transform = "rotate(0deg)";
 					} else {
+						// First, collapse all other expanded sites
+						document.querySelectorAll('.site-children.expanded').forEach(expandedChild => {
+							const siteId = expandedChild.id.replace('-children', '');
+							const expandedToggle = document.getElementById("toggle-" + siteId);
+							
+							expandedChild.classList.remove("expanded");
+							if (expandedToggle) {
+								expandedToggle.style.transform = "rotate(0deg)";
+							}
+						});
+						
+						// Then expand the clicked site
 						children.classList.add("expanded");
 						toggle.style.transform = "rotate(90deg)";
 					}
@@ -671,16 +662,6 @@ import "../styles/theme.css";
 
 			// Add event listeners to tree
 			function addTreeEventListeners() {
-				// Force CSS to be applied by triggering a reflow
-				setTimeout(() => {
-					const siteChildren = document.querySelectorAll('.site-children');
-					siteChildren.forEach(el => {
-						// Force a reflow to ensure CSS is applied
-						el.offsetHeight;
-						console.log('Site children element:', el);
-						console.log('Computed max-height:', window.getComputedStyle(el).maxHeight);
-					});
-				}, 100);
 
 				// Site checkboxes
 				document
@@ -967,10 +948,10 @@ import "../styles/theme.css";
 				const listHtml = selectedPagesData
 					.map(
 						(page) => `
-					<div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--ao-border-color);">
-						<div style="font-weight: 500; color: var(--ao-text-color);">${page.title}</div>
-						<div style="font-size: 12px; color: var(--ao-secondary-text); margin-top: 2px;">
-							${page.siteName} → <a href="${page.url}" target="_blank" rel="noopener noreferrer" style="color: var(--ao-secondary-text); text-decoration: none;" 
+					<div class="selection-page-item">
+						<div class="selection-page-title">${page.title}</div>
+						<div class="selection-page-meta">
+							${page.siteName} → <a href="${page.url}" target="_blank" rel="noopener noreferrer" class="selection-page-link" 
 							onmouseover="this.style.textDecoration='underline'" 
 							onmouseout="this.style.textDecoration='none'">${page.breadcrumbPath}</a>
 						</div>
