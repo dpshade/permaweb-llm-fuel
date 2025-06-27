@@ -174,7 +174,7 @@ async function fetchPage(url, options = {}) {
 /**
  * Extract all links from a page with simple filtering
  */
-function extractLinks(doc, baseUrl, config) {
+function extractLinks(doc, currentPageUrl, baseUrl, config) {
   const links = [];
   const allLinks = doc.querySelectorAll('a[href]');
   
@@ -182,7 +182,8 @@ function extractLinks(doc, baseUrl, config) {
     const href = link.getAttribute('href');
     if (!href) continue;
     
-    const resolvedUrl = resolveUrl(href, baseUrl);
+    // Use current page URL as base for resolving relative paths
+    const resolvedUrl = resolveUrl(href, currentPageUrl);
     if (isValidUrl(resolvedUrl, baseUrl, config)) {
       links.push(resolvedUrl);
     }
@@ -341,32 +342,21 @@ async function discoverSiblings(baseUrl, config) {
     
     log.success(`Valid seed: ${seedPath}`);
     
-    // Find all internal links
-    const allLinks = doc.querySelectorAll('a[href]');
-    const sectionLinks = new Set();
-    
-    for (const link of allLinks) {
-      const href = link.getAttribute('href');
-      if (!href) continue;
-      
-      // Skip external links, anchors, files
-      if (href.startsWith('http') || href.startsWith('#') || 
-          href.includes('mailto:') || href.includes('#') ||
-          href.match(/\.(pdf|zip|tar|gz)$/)) {
-        continue;
-      }
-      
-      // Normalize path
-      const path = href.startsWith('/') ? href : '/' + href;
-      sectionLinks.add(path);
-    }
+    // Extract all valid links using the same logic as main crawler
+    const links = extractLinks(doc, seedUrl, config.baseUrl, config);
     
     // Group links by section (first path segment)
     const seedSection = seedPath.split('/').filter(Boolean)[0];
-    for (const path of sectionLinks) {
-      const pathSection = path.split('/').filter(Boolean)[0];
-      if (pathSection === seedSection) {
-        discovered.add(path);
+    for (const link of links) {
+      try {
+        const linkUrl = new URL(link);
+        const linkPath = linkUrl.pathname;
+        const pathSection = linkPath.split('/').filter(Boolean)[0];
+        if (pathSection === seedSection) {
+          discovered.add(linkPath);
+        }
+      } catch {
+        // Skip invalid URLs
       }
     }
   }
@@ -479,6 +469,17 @@ export async function crawlSite(siteKey, options = {}) {
         continue;
       }
       
+      // Generate breadcrumbs from URL path
+      const urlObj = new URL(pageData.url);
+      const pathParts = urlObj.pathname.split('/').filter(Boolean);
+      const breadcrumbs = pathParts.map(part => 
+        part.replace(/[-_]/g, ' ')
+            .replace(/\.(html?|php|aspx?)$/i, '')
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ')
+      );
+
       // Only store metadata, not content (content fetched dynamically for llms.txt)
       pages.push({
         url: pageData.url,
@@ -486,6 +487,7 @@ export async function crawlSite(siteKey, options = {}) {
         description: pageData.content ? pageData.content.substring(0, 200) + '...' : '',
         estimatedWords: pageData.estimatedWords,
         lastModified: pageData.lastModified,
+        breadcrumbs,
         siteKey,
         siteName: config.name,
         depth,
@@ -496,7 +498,7 @@ export async function crawlSite(siteKey, options = {}) {
       
       // Extract links for next level
       if (pages.length < maxPages && depth < maxDepth) {
-        const links = extractLinks(doc, config.baseUrl, config);
+        const links = extractLinks(doc, url, config.baseUrl, config);
         
         const newLinks = [];
         for (const link of links) {

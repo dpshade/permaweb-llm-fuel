@@ -436,7 +436,7 @@ import "../styles/theme.css";
 					// Loading message is already hidden by default with optimistic UI
 
 					console.log(
-						`Loaded documentation index: ${allPages.length} total pages from ${Object.keys(docsIndex).length} sites`,
+						`Loaded documentation index: ${allPages.length} total pages from ${Object.keys(docsIndex.sites || docsIndex).length} sites`,
 					);
 				} catch (error) {
 					console.error("Failed to load documentation index:", error);
@@ -450,9 +450,12 @@ import "../styles/theme.css";
 			function processIndex(index) {
 				const processed = {};
 
-				for (const [siteKey, siteData] of Object.entries(index)) {
+				// Handle the new structure with sites object
+				const sites = index.sites || index;
+
+				for (const [siteKey, siteData] of Object.entries(sites)) {
 					// Skip metadata entries
-					if (siteKey === "_metadata") continue;
+					if (siteKey === "_metadata" || siteKey === "generated") continue;
 
 					processed[siteKey] = {
 						name: siteData.name,
@@ -469,9 +472,12 @@ import "../styles/theme.css";
 			function extractAllPages(index) {
 				const pages = [];
 
-				for (const [siteKey, siteData] of Object.entries(index)) {
+				// Handle the new structure with sites object
+				const sites = index.sites || index;
+
+				for (const [siteKey, siteData] of Object.entries(sites)) {
 					// Skip metadata entries
-					if (siteKey === "_metadata") continue;
+					if (siteKey === "_metadata" || siteKey === "generated") continue;
 
 					// Use the flat pages array directly from the JSON structure
 					if (siteData.pages && Array.isArray(siteData.pages)) {
