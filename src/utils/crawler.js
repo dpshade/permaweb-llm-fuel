@@ -479,8 +479,13 @@ export async function crawlSite(siteKey, options = {}) {
         continue;
       }
       
+      // Only store metadata, not content (content fetched dynamically for llms.txt)
       pages.push({
-        ...pageData,
+        url: pageData.url,
+        title: pageData.title,
+        description: pageData.content ? pageData.content.substring(0, 200) + '...' : '',
+        estimatedWords: pageData.estimatedWords,
+        lastModified: pageData.lastModified,
         siteKey,
         siteName: config.name,
         depth,
