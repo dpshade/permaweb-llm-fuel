@@ -610,8 +610,11 @@ export async function runCrawl(specificSiteKey = null, options = {}) {
 
 // CLI support
 if (import.meta.main) {
-  const siteKey = process.argv[2];
-  const forceReindex = process.argv.includes('--force-reindex') || process.argv.includes('--force');
+  const args = process.argv.slice(2);
+  const forceReindex = args.includes('--force-reindex') || args.includes('--force');
+  
+  // Filter out flags to get the site key
+  const siteKey = args.find(arg => !arg.startsWith('--'));
   
   try {
     await runCrawl(siteKey, { forceReindex });
