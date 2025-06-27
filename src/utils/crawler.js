@@ -198,8 +198,20 @@ async function fetchPage(url, options = {}) {
       return null;
     }
 
-    const html = await response.text();
-    const dom = new JSDOM(html, { url });
+    const contentType = response.headers.get('content-type') || '';
+    const content = await response.text();
+
+    // Handle plain text files
+    if (contentType.includes('text/plain') || url.endsWith('.txt')) {
+      return {
+        isPlainText: true,
+        textContent: content,
+        url: url
+      };
+    }
+
+    // Handle HTML content
+    const dom = new JSDOM(content, { url });
     return dom.window.document;
   } catch (error) {
     log.error(`Fetch failed for ${url}: ${error.message}`);
@@ -298,9 +310,37 @@ function is404Page(doc, title, content) {
 }
 
 /**
- * Extract page content and metadata using Defuddle
+ * Extract page content and metadata using Defuddle or plain text processing
  */
 async function extractPageMetadata(doc, url, config) {
+  // Handle plain text files
+  if (doc && doc.isPlainText) {
+    const content = doc.textContent.replace(/\s+/g, ' ').trim();
+    const estimatedWords = content.split(/\s+/).filter(word => word.length > 0).length;
+    
+    // Generate title from URL or content for plain text files
+    let title = generateTitleFromUrl(url);
+    
+    // For glossary files, try to extract a better title from content
+    if (url.includes('glossary') && content.length > 0) {
+      const firstLine = content.split('\n')[0];
+      if (firstLine && firstLine.length < 100) {
+        title = firstLine.trim();
+      } else {
+        title = 'Permaweb Glossary';
+      }
+    }
+    
+    return {
+      url,
+      title: cleanTitle(title),
+      content,
+      estimatedWords,
+      lastModified: new Date().toISOString()
+    };
+  }
+  
+  // Handle HTML documents
   // Extract title
   let title = '';
   const titleSelectors = config.selectors.title.split(',').map(s => s.trim());
@@ -519,6 +559,87 @@ export async function crawlSite(siteKey, options = {}) {
       seen.add(page.url);
     }
 
+  }
+  
+  // Handle single-file sites (like text files)
+  if (config.type === 'single-file' && config.fileUrl) {
+    log.info(`Processing single file: ${config.fileUrl}`);
+    
+    // Skip if already exists and not force reindex
+    if (!forceReindex && existingUrls.has(config.fileUrl)) {
+      log.info(`Single file already exists in index, skipping`);
+      return {
+        pages: existingPages,
+        errors: [],
+        telemetry: {
+          duration: 0,
+          requestCount: 0,
+          averageResponseTime: 0,
+          pagesPerSecond: 0
+        }
+      };
+    }
+    
+    try {
+      onProgress(1, 1, config.fileUrl);
+      
+      const requestStart = Date.now();
+      const doc = await fetchPage(config.fileUrl);
+      const requestTime = Date.now() - requestStart;
+      
+      if (!doc) {
+        throw new Error('Failed to fetch file');
+      }
+      
+      const pageData = await extractPageMetadata(doc, config.fileUrl, config);
+      if (!pageData) {
+        throw new Error('Failed to extract content from file');
+      }
+      
+      // Generate minimal breadcrumbs for single file
+      const breadcrumbs = [config.name];
+      
+      const singlePage = {
+        url: pageData.url,
+        title: pageData.title,
+        description: pageData.content ? pageData.content.substring(0, 200) + '...' : '',
+        estimatedWords: pageData.estimatedWords,
+        lastModified: pageData.lastModified,
+        breadcrumbs,
+        siteKey,
+        siteName: config.name,
+        depth: 0,
+        crawledAt: new Date().toISOString()
+      };
+      
+      log.success(`Single file processed: ${pageData.title} (${pageData.estimatedWords} words, ${requestTime}ms)`);
+      
+      const crawlDuration = Date.now() - requestStart;
+      
+      return {
+        pages: [singlePage],
+        errors: [],
+        telemetry: {
+          duration: crawlDuration,
+          requestCount: 1,
+          averageResponseTime: requestTime,
+          pagesPerSecond: 1 / (crawlDuration / 1000)
+        }
+      };
+      
+    } catch (error) {
+      log.error(`Failed to process single file: ${error.message}`);
+      return {
+        pages: [],
+        errors: [{ url: config.fileUrl, error: error.message, depth: 0 }],
+        telemetry: {
+          duration: Date.now() - startTime,
+          requestCount: 1,
+          averageResponseTime: 0,
+          pagesPerSecond: 0
+        }
+      };
+    }
   }
   
   // Discover entry points
@@ -790,11 +911,8 @@ if (import.meta.main) {
   // Filter out flags to get the site key
   const siteKey = args.find(arg => !arg.startsWith('--'));
   
-  // Show help if no arguments and no site key
-  if (args.length === 0 || (!siteKey && !forceReindex)) {
-    await showHelp();
-    process.exit(0);
-  }
+  // Show help only if explicitly requested
+  // If no arguments provided, crawl all sites (as documented in help)
   
   try {
     await runCrawl(siteKey, { forceReindex });

@@ -84,5 +84,21 @@
       "/references/index.html",
       "/kit/index.html"
     ]
+  },
+  "permaweb-glossary": {
+    "name": "Permaweb Glossary",
+    "baseUrl": "https://glossary.arweave.net",
+    "maxDepth": 1,
+    "maxPages": 1,
+    "type": "single-file",
+    "fileUrl": "https://glossary.arweave.net/glossary.txt",
+    "selectors": {
+      "title": "title",
+      "content": "body"
+    },
+    "excludePatterns": [],
+    "seedUrls": [
+      "/glossary.txt"
+    ]
   }
 } 
