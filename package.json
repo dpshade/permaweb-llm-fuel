@@ -28,7 +28,12 @@
     "crawl:ario": "bun run src/utils/crawler.js ario",
     "crawl:arweave": "bun run src/utils/crawler.js arweave",
     "crawl:static": "bun run src/utils/crawler.js",
-    "build-index": "bun run src/utils/crawler.js"
+    "build-index": "bun run src/utils/crawler.js",
+    "crawl:force": "bun run src/utils/crawler.js --force-reindex",
+    "crawl:force:hyperbeam": "bun run src/utils/crawler.js hyperbeam --force-reindex",
+    "crawl:force:ao": "bun run src/utils/crawler.js ao --force-reindex",
+    "crawl:force:ario": "bun run src/utils/crawler.js ario --force-reindex",
+    "crawl:force:arweave": "bun run src/utils/crawler.js arweave --force-reindex"
   },
   "dependencies": {
     "@astrojs/node": "^8.3.4",

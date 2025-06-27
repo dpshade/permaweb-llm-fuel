@@ -73,6 +73,35 @@ class RateLimiter {
 const rateLimiter = new RateLimiter(2, 5);
 
 /**
+ * Load existing docs index to avoid re-crawling pages
+ */
+async function loadExistingIndex() {
+  try {
+    const { readFileSync } = await import('fs');
+    const { resolve } = await import('path');
+    const indexPath = resolve(process.cwd(), 'public/docs-index.json');
+    const indexJson = readFileSync(indexPath, 'utf8');
+    const indexData = JSON.parse(indexJson);
+    
+    // Create a Set of all existing URLs for fast lookup
+    const existingUrls = new Set();
+    for (const siteData of Object.values(indexData.sites || {})) {
+      for (const page of siteData.pages || []) {
+        existingUrls.add(page.url);
+      }
+    }
+    
+    return { indexData, existingUrls };
+  } catch (error) {
+    // If no existing index, return empty data
+    return { 
+      indexData: { generated: new Date().toISOString(), sites: {} }, 
+      existingUrls: new Set() 
+    };
+  }
+}
+
+/**
  * Load crawl configuration from JSON file
  */
 async function loadCrawlConfigs() {
@@ -362,21 +391,38 @@ export async function crawlSite(siteKey, options = {}) {
     maxDepth = config.maxDepth,
     maxPages = config.maxPages,
     onProgress = () => {},
-    onError = () => {}
+    onError = () => {},
+    forceReindex = false
   } = options;
+  
+  // Load existing index to avoid re-crawling (unless force reindex)
+  const { indexData, existingUrls } = await loadExistingIndex();
+  const existingPages = forceReindex ? [] : (indexData.sites[siteKey]?.pages || []);
   
   const visited = new Set();
   const seen = new Set();
-  const pages = [];
+  const pages = [...existingPages]; // Start with existing pages (empty if force reindex)
   const stack = [];
   const errors = [];
   const startTime = Date.now();
   let requestCount = 0;
   let totalResponseTime = 0;
+  let skippedCount = 0;
   
   log.info(`Starting crawl of ${config.name}`);
   log.info(`Limits: ${maxDepth} depth, ${maxPages} pages`);
   log.info(`Rate limit: 2 req/sec with burst of 5`);
+  
+  if (forceReindex) {
+    log.info(`Force reindex enabled - will crawl all pages from scratch`);
+  } else if (existingPages.length > 0) {
+    log.info(`Found ${existingPages.length} existing pages, will skip already crawled URLs`);
+    // Mark existing URLs as seen to avoid re-crawling
+    for (const page of existingPages) {
+      seen.add(page.url);
+    }
+
+  }
   
   // Discover entry points
   const discoveredPaths = await discoverSiblings(config.baseUrl, config);
@@ -401,6 +447,12 @@ export async function crawlSite(siteKey, options = {}) {
     const { url, depth } = stack.pop();
     
     if (visited.has(url) || depth > maxDepth) {
+      continue;
+    }
+    
+    // Skip if URL already exists in index (unless force reindex)
+    if (!forceReindex && existingUrls.has(url)) {
+      skippedCount++;
       continue;
     }
     
@@ -465,16 +517,21 @@ export async function crawlSite(siteKey, options = {}) {
   
   const crawlDuration = Date.now() - startTime;
   const avgResponseTime = requestCount > 0 ? totalResponseTime / requestCount : 0;
+  const newPagesCount = pages.length - existingPages.length;
   
-  log.success(`Crawl complete: ${pages.length} pages, ${errors.length} errors`);
+  log.success(`Crawl complete: ${pages.length} pages (${newPagesCount} new, ${existingPages.length} existing), ${errors.length} errors`);
   log.info(`Duration: ${(crawlDuration / 1000).toFixed(1)}s, Avg response: ${avgResponseTime.toFixed(0)}ms`);
   log.info(`Rate: ${(requestCount / (crawlDuration / 1000)).toFixed(2)} req/sec`);
+  
+  if (skippedCount > 0) {
+    log.info(`Skipped ${skippedCount} already indexed URLs`);
+  }
   
   if (errors.length > 0) {
     log.error(`Errors: ${errors.length}`);
   }
   
-  log.success(`Final result: ${pages.length} quality pages`);
+  log.success(`Final result: ${pages.length} total pages (${newPagesCount} newly crawled)`);
   
   return {
     pages,
@@ -491,11 +548,16 @@ export async function crawlSite(siteKey, options = {}) {
 /**
  * Run crawl for all sites or specific site
  */
-export async function runCrawl(specificSiteKey = null) {
+export async function runCrawl(specificSiteKey = null, options = {}) {
   const configs = await loadCrawlConfigs();
   const results = {};
+  const { forceReindex = false } = options;
   
   const sitesToCrawl = specificSiteKey ? [specificSiteKey] : Object.keys(configs);
+  
+  if (forceReindex) {
+    log.info(`Running with force reindex - all sites will be crawled from scratch`);
+  }
   
   for (const siteKey of sitesToCrawl) {
     if (!configs[siteKey]) {
@@ -505,7 +567,7 @@ export async function runCrawl(specificSiteKey = null) {
     
     try {
       log.info(`Starting crawl for site: ${siteKey}...`);
-      const result = await crawlSite(siteKey);
+      const result = await crawlSite(siteKey, { forceReindex });
       results[siteKey] = result;
       log.success(`Crawl for ${siteKey} completed successfully!`);
       log.info(`Total pages: ${result.pages.length}`);
@@ -549,8 +611,10 @@ export async function runCrawl(specificSiteKey = null) {
 // CLI support
 if (import.meta.main) {
   const siteKey = process.argv[2];
+  const forceReindex = process.argv.includes('--force-reindex') || process.argv.includes('--force');
+  
   try {
-    await runCrawl(siteKey);
+    await runCrawl(siteKey, { forceReindex });
   } catch (error) {
     log.error(`Crawl failed: ${error.message}`);
     process.exit(1);

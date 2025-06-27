@@ -76,10 +76,11 @@
       "/mailto:/"
     ],
     "seedUrls": [
-      "/getting-started/",
-      "/guides/",
-      "/concepts/",
-      "/references/"
+      "/getting-started/index.html",
+      "/guides/index.html",
+      "/concepts/index.html",
+      "/references/index.html",
+      "/kit/index.html"
     ]
   }
 } 
