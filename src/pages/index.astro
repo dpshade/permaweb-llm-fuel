@@ -683,6 +683,12 @@ import "../styles/theme.css";
 							}
 						});
 						
+						// Also collapse the selection details if it's expanded
+						if (selectionDetails.classList.contains("expanded")) {
+							selectionDetails.classList.remove("expanded");
+							selectionToggle.style.transform = "rotate(0deg)";
+						}
+						
 						// Then expand the clicked site
 						children.classList.add("expanded");
 						toggle.style.transform = "rotate(90deg)";
@@ -696,6 +702,17 @@ import "../styles/theme.css";
 				if (isExpanded) {
 					selectionDetails.classList.remove("expanded");
 				} else {
+					// When expanding selection details, collapse all expanded sites
+					document.querySelectorAll('.site-children.expanded').forEach(expandedChild => {
+						const siteId = expandedChild.id.replace('-children', '');
+						const expandedToggle = document.getElementById("toggle-" + siteId);
+						
+						expandedChild.classList.remove("expanded");
+						if (expandedToggle) {
+							expandedToggle.style.transform = "rotate(0deg)";
+						}
+					});
+					
 					selectionDetails.classList.add("expanded");
 				}
 				selectionToggle.style.transform = isExpanded
