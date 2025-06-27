@@ -385,32 +385,32 @@ import "../styles/theme.css";
 						"Fetching latest documentation from Vercel endpoint...",
 					);
 
-					// Try loading from Vercel JSON endpoint first
+					// Try loading from ArNS index endpoint first  
 					let response;
 					try {
-						// TODO: Replace with your actual Vercel JSON project URL
-						const vercelJsonUrl =
-							"https://permaweb-docs-index.vercel.app/docs-index.json";
-						response = await fetch(vercelJsonUrl);
+						// Load from dedicated index ArNS undername (JSON only)
+						const indexJsonUrl =
+							"https://index_permaweb-llms-builder.ar.io/docs-index.json";
+						response = await fetch(indexJsonUrl);
 
 						if (!response.ok) {
 							throw new Error(
-								`Vercel endpoint failed: ${response.status}`,
+								`Index endpoint failed: ${response.status}`,
 							);
 						}
 
 						console.log(
-							"Successfully loaded from Vercel JSON endpoint",
+							"Successfully loaded from ArNS index endpoint",
 						);
-					} catch (vercelError) {
+					} catch (indexError) {
 						console.warn(
-							"Vercel endpoint failed, trying local fallback:",
-							vercelError.message,
+							"ArNS index endpoint failed, trying local fallback:",
+							indexError.message,
 						);
 
 						updateLoadingMessage(
 							"Loading Documentation Index",
-							"Vercel endpoint unavailable, loading local index...",
+							"ArNS index endpoint unavailable, loading local index...",
 						);
 
 						// Fallback to local static index

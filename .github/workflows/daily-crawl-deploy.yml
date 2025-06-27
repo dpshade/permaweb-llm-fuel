@@ -1,4 +1,4 @@
-name: 📅 Daily Documentation Crawl & Deploy
+name: 📅 Daily Documentation Index Update
 
 on:
   schedule:
@@ -10,13 +10,13 @@ defaults:
     shell: bash
 
 jobs:
-  crawl-and-deploy:
+  update-documentation-index:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    # Prevent multiple crawl operations from running simultaneously
+    # Prevent multiple index update operations from running simultaneously
     concurrency:
-      group: daily-crawl
+      group: daily-index-update
       cancel-in-progress: false
     
     steps:
@@ -44,6 +44,8 @@ jobs:
           echo "🕷️ Starting documentation crawl..."
           bun run crawl --force-reindex
           echo "✅ Crawl completed successfully!"
+        env:
+          NODE_ENV: production
         
       - name: ✅ Verify crawl output
         run: |
@@ -65,37 +67,31 @@ jobs:
           
           echo "✅ Crawl output validation passed!"
           
-      - name: 🔨 Build project with updated content
-        id: build_artifacts
-        run: |
-          echo "🚀 Building project with fresh crawl data..."
-          bun run build
+
           
-          # Add .nojekyll for proper static hosting
-          touch dist/.nojekyll
-          
-          echo "📊 Build summary with updated content:"
-          du -sh dist/
-          echo "Total files: $(find dist -type f | wc -l)"
-          echo "Index file included: $([ -f 'dist/docs-index.json' ] && echo 'Yes' || echo 'No')"
-        env:
-          NODE_ENV: production
-          
-      - name: 🚀 Deploy index to ArNS (Dedicated Index Undername)
+      - name: 🚀 Deploy index to ArNS (JSON Only)
         id: deploy_index_arns
         run: |
-          echo "📊 Deploying crawled index to dedicated ArNS undername..."
+          echo "📊 Deploying crawled index JSON to dedicated ArNS undername..."
           
-          # Verify build artifacts exist
-          if [ ! -d "dist" ]; then
-            echo "❌ Build artifacts not found"
+          # Verify crawl output exists
+          if [ ! -f "public/docs-index.json" ]; then
+            echo "❌ Crawl index file not found"
             exit 1
           fi
+          
+          # Create deployment folder with only the JSON file
+          mkdir -p index-deploy
+          cp public/docs-index.json index-deploy/
+          
+          echo "📊 Index deployment contents:"
+          ls -la index-deploy/
+          du -h index-deploy/docs-index.json
           
           npx permaweb-deploy \
             --undername=index \
             --ant-process=${{ secrets.ANT_PROCESS }} \
-            --deploy-folder=dist \
+            --deploy-folder=index-deploy \
             --verbose
           
           echo "deployment_url=https://index_permaweb-llms-builder.ar.io" >> $GITHUB_OUTPUT
@@ -103,25 +99,17 @@ jobs:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           ANT_PROCESS: ${{ secrets.ANT_PROCESS }}
           
-      - name: 🚀 Deploy index to Vercel (Fast Access Mirror)
-        id: deploy_index_vercel
-        run: |
-          echo "🌐 Deploying crawled index to Vercel for fast access..."
-          bun run deploy:preview
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
           
       - name: 📝 Report crawl & deployment summary
         run: |
-          echo "## 📊 Daily Crawl & Index Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 📊 Daily Documentation Index Update" >> $GITHUB_STEP_SUMMARY
           echo "- **Timestamp**: $(date)" >> $GITHUB_STEP_SUMMARY
           echo "- **Index file size**: $(du -h public/docs-index.json | cut -f1)" >> $GITHUB_STEP_SUMMARY
           echo "- **Total entries**: $(wc -l < public/docs-index.json)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Build artifacts**: $(find dist -type f | wc -l) files" >> $GITHUB_STEP_SUMMARY
-          echo "- **Index (ArNS)**: ✅ ${{ steps.deploy_index_arns.outputs.deployment_url }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Index (Vercel)**: ✅ Fast mirror deployed" >> $GITHUB_STEP_SUMMARY
+          echo "- **JSON deployment**: $(du -h index-deploy/docs-index.json | cut -f1)" >> $GITHUB_STEP_SUMMARY
+          echo "- **JSON endpoint**: ✅ ${{ steps.deploy_index_arns.outputs.deployment_url }}/docs-index.json" >> $GITHUB_STEP_SUMMARY
           
           echo ""
-          echo "🎉 Daily index update complete!"
-          echo "Index ArNS: ${{ steps.deploy_index_arns.outputs.deployment_url }}"
-          echo "Index access: ${{ steps.deploy_index_arns.outputs.deployment_url }}/docs-index.json" 
+          echo "🎉 Daily documentation index update complete!"
+          echo "JSON endpoint: ${{ steps.deploy_index_arns.outputs.deployment_url }}/docs-index.json" 

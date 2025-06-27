@@ -41,8 +41,8 @@ open http://localhost:4321
 ```bash
 # Development
 bun run dev              # Start development server
-bun run preview          # Preview production build
-bun run preview:local    # Preview with local server
+bun run preview          # Preview production build locally
+bun run preview:local    # Preview with custom server
 
 # Building
 bun run build            # Build for production
@@ -52,25 +52,24 @@ bun run clean            # Clean build artifacts
 # Testing
 bun run test             # Run tests once
 bun run test:watch       # Run tests in watch mode
-bun run test:ui          # Run tests with UI
-bun run test:coverage    # Run tests with coverage
+# Add --ui or --coverage flags as needed:
+# bun run test --ui       # Run tests with UI
+# bun run test --coverage # Run tests with coverage
 
 # Linting & Validation
 bun run lint             # Run Astro linter
 bun run validate         # Run tests + lint + build
 
 # Documentation Crawling
-bun run crawl            # Crawl all configured sites
-bun run crawl:list       # List available crawl targets
-bun run crawl:force      # Force reindex all sites
-bun run crawl:hyperbeam  # Crawl specific site
-bun run crawl:ao         # Crawl AO documentation
-bun run crawl:ario       # Crawl AR.IO documentation
-bun run crawl:arweave    # Crawl Arweave documentation
+bun run crawl            # Show help and crawl all sites (pretty JSON)
+bun run crawl:prod       # Crawl all sites (minified JSON for production)
+bun run crawl <site>     # Crawl specific site (hyperbeam, ao, ario, arweave)
+bun run crawl --force    # Force reindex all sites
+bun run crawl <site> --force  # Force reindex specific site
 
-# Deployment
-bun run deploy           # Deploy to production
-bun run deploy:preview   # Deploy to preview environment
+# Deployment (via GitHub Actions)
+bun run deploy:preview   # Deploy to preview (push to preview branch)
+bun run deploy:prod      # Deploy to production (push to main branch)
 ```
 
 ## 🚀 CI/CD Pipeline

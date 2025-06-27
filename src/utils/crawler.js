@@ -646,19 +646,74 @@ export async function runCrawl(specificSiteKey = null, options = {}) {
     }
   }
   
-  await fs.writeFile(outputPath, JSON.stringify(indexData, null, 2));
-  log.info(`Output: ${outputPath}`);
+  // Use minified JSON in production or when MINIFY_INDEX env var is set
+  const shouldMinify = process.env.NODE_ENV === 'production' || process.env.MINIFY_INDEX === 'true';
+  const jsonOutput = shouldMinify 
+    ? JSON.stringify(indexData)
+    : JSON.stringify(indexData, null, 2);
+  
+  await fs.writeFile(outputPath, jsonOutput);
+  
+  // Log size info
+  const fileSize = (jsonOutput.length / 1024).toFixed(1);
+  const formatType = shouldMinify ? 'minified' : 'pretty-printed';
+  log.info(`Output: ${outputPath} (${fileSize}KB, ${formatType})`);
   
   return results;
+}
+
+/**
+ * Show help information
+ */
+async function showHelp() {
+  const configs = await loadCrawlConfigs();
+  const sites = Object.keys(configs);
+  
+  console.log(`
+${colors.blue}Permaweb Documentation Crawler${colors.reset}
+
+${colors.green}Usage:${colors.reset}
+  bun run crawl [site] [options]
+
+${colors.green}Sites:${colors.reset}
+${sites.map(site => `  ${colors.cyan}${site}${colors.reset} - ${configs[site].name}`).join('\n')}
+
+${colors.green}Options:${colors.reset}
+  ${colors.yellow}--force, --force-reindex${colors.reset}  Force reindex all pages (ignore cache)
+  ${colors.yellow}--help, -h${colors.reset}               Show this help message
+
+${colors.green}Examples:${colors.reset}
+  bun run crawl                    # Crawl all sites (pretty JSON)
+  bun run crawl:prod               # Crawl all sites (minified JSON)
+  bun run crawl hyperbeam          # Crawl only Hyperbeam docs
+  bun run crawl ao --force         # Force reindex AO docs
+
+${colors.green}Production Mode:${colors.reset}
+  Set NODE_ENV=production or MINIFY_INDEX=true to save minified JSON
+  Saves ~26% storage space for deployment pipelines
+`);
 }
 
 // CLI support
 if (import.meta.main) {
   const args = process.argv.slice(2);
+  
+  // Check for help flag
+  if (args.includes('--help') || args.includes('-h')) {
+    await showHelp();
+    process.exit(0);
+  }
+  
   const forceReindex = args.includes('--force-reindex') || args.includes('--force');
   
   // Filter out flags to get the site key
   const siteKey = args.find(arg => !arg.startsWith('--'));
+  
+  // Show help if no arguments and no site key
+  if (args.length === 0 || (!siteKey && !forceReindex)) {
+    await showHelp();
+    process.exit(0);
+  }
   
   try {
     await runCrawl(siteKey, { forceReindex });
