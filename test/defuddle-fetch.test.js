@@ -35,11 +35,11 @@ describe('defuddle-fetch', () => {
       expect(result).toContain('## Table of Contents');
       expect(result).toContain('# First Document');
       expect(result).toContain('# Second Document');
-      expect(result).toContain('**Author:** Test Author');
-      expect(result).toContain('**Source:** https://example.com/doc1');
-      expect(result).toContain('**Domain:** example.com');
-      expect(result).toContain('**Word Count:** 6');
-      expect(result).toContain('**Parse Time:** 150ms');
+      expect(result).toContain('Author: Test Author');
+      expect(result).toContain('Source: https://example.com/doc1');
+      expect(result).toContain('Domain: example.com');
+      expect(result).toContain('Word Count: 6');
+      expect(result).toContain('Parse Time: 150ms');
     });
 
     it('should handle empty document list', () => {
@@ -111,12 +111,12 @@ describe('defuddle-fetch', () => {
       const result = generateLLMsTxt(mockDocuments);
       
       expect(result).toContain('# Minimal Document');
-      expect(result).toContain('**Source:** https://example.com/minimal');
-      expect(result).toContain('**Word Count:** 3');
-      expect(result).not.toContain('**Author:**');
-      expect(result).not.toContain('**Published:**');
-      expect(result).not.toContain('**Domain:**');
-      expect(result).not.toContain('**Parse Time:**');
+      expect(result).toContain('Source: https://example.com/minimal');
+      expect(result).toContain('Word Count: 3');
+      expect(result).not.toContain('Author:');
+      expect(result).not.toContain('Published:');
+      expect(result).not.toContain('Domain:');
+      expect(result).not.toContain('Parse Time:');
     });
 
     it('should create proper anchor links in table of contents', () => {

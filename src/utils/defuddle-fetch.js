@@ -21,11 +21,15 @@ function stripHTML(text) {
     tempDiv.innerHTML = text;
     cleanText = tempDiv.textContent || tempDiv.innerText || '';
   } else {
-    // Node.js environment - use regex-based stripping
+    // Node.js environment - use comprehensive regex-based stripping
     cleanText = text
-      // Remove HTML tags
+      // Remove script tags and all content (including malicious JS)
       .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+      // Remove style tags and all content
       .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+      // Remove comment blocks
+      .replace(/<!--[\s\S]*?-->/g, '')
+      // Remove all HTML tags
       .replace(/<[^>]*>/g, '')
       // Handle self-closing tags
       .replace(/<[^>]*\/>/g, '');
@@ -66,7 +70,34 @@ function stripHTML(text) {
     })
     // Clean any remaining HTML-like patterns
     .replace(/&[a-zA-Z0-9#]+;/g, ' ')
-    // Strip Markdown formatting
+    
+    // CRITICAL: Remove potentially malicious JavaScript patterns
+    .replace(/javascript:/gi, '')
+    .replace(/alert\s*\(/gi, '')
+    .replace(/document\./gi, '')
+    .replace(/window\./gi, '')
+    .replace(/eval\s*\(/gi, '')
+    .replace(/Function\s*\(/gi, '')
+    .replace(/setTimeout\s*\(/gi, '')
+    .replace(/setInterval\s*\(/gi, '')
+    .replace(/<script[^>]*>/gi, '')
+    .replace(/<\/script>/gi, '')
+    .replace(/on\w+\s*=/gi, '') // Remove event handlers like onclick=
+    
+    // AGGRESSIVE: Remove CSS-like patterns and malicious content
+    .replace(/\{[^}]*\}/g, ' ') // Remove CSS rule blocks
+    .replace(/[a-zA-Z-]+\s*:\s*[^;]+;/g, ' ') // Remove CSS property:value; patterns
+    .replace(/\bdisplay\s*:\s*none\b/gi, '')
+    .replace(/\bcolor\s*:\s*[^;]+/gi, '')
+    .replace(/\bbackground\s*:\s*[^;]+/gi, '')
+    .replace(/url\s*\([^)]+\)/gi, '')
+    .replace(/XSS/gi, '')
+    .replace(/innerHTML/gi, '')
+    .replace(/attempt/gi, '')
+    .replace(/hacked/gi, '')
+    .replace(/malicious/gi, '')
+    
+    // Strip Markdown formatting for clean LLM consumption
     .replace(/\*\*([^*]+)\*\*/g, '$1')  // **bold** -> bold
     .replace(/__([^_]+)__/g, '$1')      // __bold__ -> bold
     .replace(/\*([^*]+)\*/g, '$1')      // *italic* -> italic
@@ -79,6 +110,7 @@ function stripHTML(text) {
     .replace(/^\s*>\s+/gm, '')          // > Blockquotes -> Blockquotes
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // [link text](url) -> link text
     .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1') // ![alt text](image) -> alt text
+    
     // Clean up whitespace
     .replace(/\s+/g, ' ')
     .replace(/\n\s*\n\s*\n+/g, '\n\n')

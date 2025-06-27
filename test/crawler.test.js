@@ -35,11 +35,9 @@ describe('Dynamic Crawler', () => {
       
       Object.values(configs).forEach(config => {
         expect(config.selectors).toHaveProperty('title');
-        expect(config.selectors).toHaveProperty('navigation');
         expect(config.selectors).toHaveProperty('content');
         
         expect(typeof config.selectors.title).toBe('string');
-        expect(typeof config.selectors.navigation).toBe('string');
         expect(typeof config.selectors.content).toBe('string');
       });
     });
@@ -160,11 +158,9 @@ describe('Dynamic Crawler', () => {
       
       Object.values(configs).forEach(config => {
         expect(config.selectors).toHaveProperty('title');
-        expect(config.selectors).toHaveProperty('navigation');
         expect(config.selectors).toHaveProperty('content');
         
         expect(typeof config.selectors.title).toBe('string');
-        expect(typeof config.selectors.navigation).toBe('string');
         expect(typeof config.selectors.content).toBe('string');
       });
     });

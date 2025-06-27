@@ -14,19 +14,29 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
-    "build:vercel": "astro build --outDir=.vercel/output/static",
+    "build": "bun run build:clean && astro build && bun run build:post-process",
+    "build:clean": "rm -rf dist .vercel/output",
+    "build:vercel": "bun run build:clean && astro build --outdir=.vercel/output/static && bun run build:post-process",
+    "build:post-process": "bun run scripts/post-build.js",
     "preview": "astro preview",
+    "preview:local": "bun run preview-server.js",
     "astro": "astro",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "clean": "rm -rf dist .vercel/output node_modules/.cache",
     "crawl": "bun run src/utils/crawler.js",
     "crawl:list": "echo 'Available sites:' && cat public/crawl-config.json | bun -e 'console.log(Object.keys(JSON.parse(await Bun.stdin.text())).map(k => `  - bun run crawl:${k}`).join(\"\\n\"))'",
     "crawl:hyperbeam": "bun run src/utils/crawler.js hyperbeam",
     "crawl:ao": "bun run src/utils/crawler.js ao",
     "crawl:ario": "bun run src/utils/crawler.js ario",
     "crawl:arweave": "bun run src/utils/crawler.js arweave",
-    "crawl:force": "bun run src/utils/crawler.js --force-reindex"
+    "crawl:force": "bun run src/utils/crawler.js --force-reindex",
+    "deploy:preview": "./scripts/deploy-preview.sh",
+    "deploy:prod": "./scripts/deploy-prod.sh",
+    "lint": "astro check",
+    "validate": "bun run test && bun run lint && bun run build"
   },
   "dependencies": {
     "@astrojs/node": "^8.3.4",
@@ -35,10 +45,16 @@
     "astro": "^4.16.16",
     "defuddle": "^0.6.4",
     "flexsearch": "^0.8.205",
-    "jsdom": "^25.0.1"
+    "jsdom": "^25.0.1",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "permaweb-deploy": "^1.1.10"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
   }
 }

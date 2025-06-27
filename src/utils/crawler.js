@@ -666,4 +666,46 @@ if (import.meta.main) {
     log.error(`Crawl failed: ${error.message}`);
     process.exit(1);
   }
+}
+
+/**
+ * Export getCrawlConfigs as alias for loadCrawlConfigs for testing
+ */
+export const getCrawlConfigs = loadCrawlConfigs;
+
+/**
+ * Build display tree from crawl results for UI display
+ * @param {Object} crawlResults - Results from crawl operations
+ * @returns {Object} Structured tree for display
+ */
+export function buildDisplayTree(crawlResults) {
+  const tree = {};
+  
+  for (const [siteKey, siteData] of Object.entries(crawlResults)) {
+    tree[siteKey] = {
+      siteKey,
+      name: siteData.name || siteKey,
+      pages: siteData.pages || [],
+      categories: {},
+      error: siteData.error || null
+    };
+    
+    // Group pages by category
+    if (siteData.pages && Array.isArray(siteData.pages)) {
+      for (const page of siteData.pages) {
+        const category = page.category || 'general';
+        
+        if (!tree[siteKey].categories[category]) {
+          tree[siteKey].categories[category] = {
+            name: category,
+            pages: []
+          };
+        }
+        
+        tree[siteKey].categories[category].pages.push(page);
+      }
+    }
+  }
+  
+  return tree;
 } 

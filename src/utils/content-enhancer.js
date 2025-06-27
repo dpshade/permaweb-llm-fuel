@@ -15,11 +15,13 @@ function normalizeWhitespace(content) {
     // Normalize line endings
     .replace(/\r\n/g, '\n')
     .replace(/\r/g, '\n')
-    // Preserve paragraph breaks (double newlines)
-    .replace(/\n\s*\n\s*\n+/g, '\n\n')
     // Remove trailing whitespace from lines
     .replace(/[ \t]+$/gm, '')
-    // Clean up excessive spaces but preserve indentation
+    // Remove leading whitespace from lines except those starting with 4+ spaces (code blocks)
+    .replace(/^[ \t]+(?![ \t]{3})/gm, '')
+    // Preserve paragraph breaks (double newlines) - collapse multiple newlines to double
+    .replace(/\n{3,}/g, '\n\n')
+    // Clean up excessive spaces within lines
     .replace(/[ \t]+/g, ' ')
     // Remove leading whitespace from start of content
     .replace(/^\s+/, '')
@@ -57,20 +59,24 @@ function preserveCodeBlocks(content) {
     const isCodeLine = /^    \S/.test(line); // 4+ spaces followed by non-whitespace
     
     if (isCodeLine && !inCodeBlock) {
-      // Starting a code block
+      // Starting a code block - add spacing before if previous line isn't empty
       inCodeBlock = true;
-      processedLines.push(''); // Add spacing before code block
+      if (processedLines.length > 0 && processedLines[processedLines.length - 1].trim() !== '') {
+        processedLines.push(''); // Add spacing before code block
+      }
+      processedLines.push(line);
     } else if (!isCodeLine && inCodeBlock) {
       // Ending a code block
       inCodeBlock = false;
-      processedLines.push(line);
       if (line.trim() !== '') {
         processedLines.push(''); // Add spacing after code block
+        processedLines.push(line);
+      } else {
+        processedLines.push(line);
       }
-      continue;
+    } else {
+      processedLines.push(line);
     }
-    
-    processedLines.push(line);
   }
   
   return processedLines.join('\n');
@@ -218,6 +224,9 @@ export function enhancedDefuddleExtraction(html, options = {}) {
     }
   }
   
+  // Strip HTML from the result to ensure clean output
+  defuddleResult = stripHTML(defuddleResult);
+  
   // Apply post-processing pipeline for LLM optimization
   let content = defuddleResult;
   
@@ -230,6 +239,27 @@ export function enhancedDefuddleExtraction(html, options = {}) {
 }
 
 /**
+ * Simple HTML stripping function for content enhancement
+ * @param {string} text - Text that may contain HTML
+ * @returns {string} Clean text without HTML
+ */
+function stripHTML(text) {
+  if (!text) return '';
+  
+  return text
+    // Remove script and style content
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+    // Remove HTML tags
+    .replace(/<[^>]*>/g, '')
+    // Remove HTML entities
+    .replace(/&[a-zA-Z0-9#]+;/g, ' ')
+    // Clean up whitespace
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
  * Preserve document structure while cleaning content
  * @param {string} content - Content to structure
  * @returns {string} Structured content
@@ -238,8 +268,10 @@ export function preserveDocumentStructure(content) {
   if (!content) return '';
   
   return content
-    // Normalize headers (remove trailing spaces)
+    // Normalize headers (remove trailing spaces and ensure proper spacing after)
     .replace(/^(#{1,6})\s+(.+?)(\s*)$/gm, '$1 $2')
+    // Add spacing after headers
+    .replace(/^(#{1,6}\s+.+)$/gm, '$1\n')
     // Isolate code blocks with proper spacing
     .replace(/```[\s\S]*?```/g, (match) => `\n${match}\n`)
     // Normalize paragraph spacing

@@ -1,54 +1,142 @@
-name: Daily Crawl and Deploy
+name: 📅 Daily Documentation Crawl & Deploy
 
 on:
   schedule:
     - cron: '0 2 * * *'  # Daily at 2 AM UTC
   workflow_dispatch:  # Manual trigger
-  push:
-    branches: [master]
-    paths: ['src/utils/**', '.github/workflows/**']
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   crawl-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    # Prevent multiple crawl operations from running simultaneously
+    concurrency:
+      group: daily-crawl
+      cancel-in-progress: false
     
     steps:
-      - uses: actions/checkout@v4
+      - name: ⬇️ Checkout code
+        uses: actions/checkout@v4
         
-      - uses: oven-sh/setup-bun@v2
+      - name: 🧅 Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
           
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: bun install --frozen-lockfile
         
-      - name: Run crawl (force reindex)
-        run: bun run crawl --force-reindex
+      - name: 👀 Environment info
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "SHA:        ${{ github.sha }}"
+          echo "Bun ver:    $(bun --version)"
+          echo "Node ver:   $(node --version)"
+          echo "Crawl time: $(date)"
         
-      - name: Verify output
+      - name: 🕷️ Run documentation crawl
+        run: |
+          echo "🕷️ Starting documentation crawl..."
+          bun run crawl --force-reindex
+          echo "✅ Crawl completed successfully!"
+        
+      - name: ✅ Verify crawl output
         run: |
           if [ ! -f "public/docs-index.json" ]; then
-            echo "❌ Crawl failed - no output file"
+            echo "❌ Crawl failed - no output file generated"
             exit 1
           fi
-          echo "✅ Crawl succeeded"
-          ls -la public/docs-index.json
           
-      # TODO: Re-enable ArNS deployment later
-      # - name: Deploy to ArNS
-      #   run: |
-      #     npx permaweb-deploy \
-      #       --arns-name=permaweb-docs-index \
-      #       --ant-process=${{ secrets.ANT_PROCESS }} \
-      #       --deploy-folder=public
-      #   env:
-      #     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          echo "📊 Crawl statistics:"
+          echo "   File size: $(du -h public/docs-index.json | cut -f1)"
+          echo "   Line count: $(wc -l < public/docs-index.json)"
+          echo "   Last modified: $(date -r public/docs-index.json)"
           
-      - name: Deploy JSON to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_JSON_PROJECT_ID }}
-          vercel-args: '--prod'
-          working-directory: 'public' 
+          # Basic JSON validation
+          if ! bun -e "JSON.parse(await Bun.file('public/docs-index.json').text())"; then
+            echo "❌ Generated JSON is invalid"
+            exit 1
+          fi
+          
+          echo "✅ Crawl output validation passed!"
+          
+      - name: 🔨 Build project with updated content
+        id: build_artifacts
+        run: |
+          echo "🚀 Building project with fresh crawl data..."
+          bun run build
+          
+          # Add .nojekyll for proper static hosting
+          touch dist/.nojekyll
+          
+          echo "📊 Build summary with updated content:"
+          du -sh dist/
+          echo "Total files: $(find dist -type f | wc -l)"
+          echo "Index file included: $([ -f 'dist/docs-index.json' ] && echo 'Yes' || echo 'No')"
+        env:
+          NODE_ENV: production
+          
+      - name: 🚀 Deploy to preview (ArNS undername)
+        id: deploy_preview
+        run: |
+          echo "🔍 Deploying fresh content to preview environment..."
+          
+          # Verify build artifacts exist
+          if [ ! -d "dist" ]; then
+            echo "❌ Build artifacts not found"
+            exit 1
+          fi
+          
+          npx permaweb-deploy \
+            --undername=preview \
+            --ant-process=${{ secrets.ANT_PROCESS }} \
+            --deploy-folder=dist \
+            --verbose
+          
+          echo "deployment_url=https://preview_llms-builder.ar.io" >> $GITHUB_OUTPUT
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          ANT_PROCESS: ${{ secrets.ANT_PROCESS }}
+          
+      - name: 🚀 Deploy to Vercel (Fast Preview Mirror)
+        run: |
+          echo "🌐 Deploying to Vercel for fast preview access..."
+          bun run deploy:preview
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          
+      - name: 📡 Deploy to production (Main ArNS)
+        id: deploy_production
+        run: |
+          echo "📡 Deploying fresh content to production..."
+          
+          npx permaweb-deploy \
+            --ant-process=${{ secrets.ANT_PROCESS }} \
+            --deploy-folder=dist \
+            --verbose
+          
+          echo "deployment_url=https://permaweb-llms-builder.ar.io" >> $GITHUB_OUTPUT
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          ANT_PROCESS: ${{ secrets.ANT_PROCESS }}
+          
+      - name: 📈 Report crawl & deployment summary
+        run: |
+          echo "## 📊 Daily Crawl & Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp**: $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Index file size**: $(du -h public/docs-index.json | cut -f1)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total entries**: $(wc -l < public/docs-index.json)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build artifacts**: $(find dist -type f | wc -l) files" >> $GITHUB_STEP_SUMMARY
+          echo "- **Preview**: ✅ ${{ steps.deploy_preview.outputs.deployment_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Preview (Vercel)**: ✅ Fast mirror deployed" >> $GITHUB_STEP_SUMMARY
+          echo "- **Production**: ✅ ${{ steps.deploy_production.outputs.deployment_url }}" >> $GITHUB_STEP_SUMMARY
+          
+          echo ""
+          echo "🎉 Daily content update complete!"
+          echo "Preview: ${{ steps.deploy_preview.outputs.deployment_url }}"
+          echo "Production: ${{ steps.deploy_production.outputs.deployment_url }}" 
