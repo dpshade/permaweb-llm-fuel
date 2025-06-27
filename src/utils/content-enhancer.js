@@ -184,9 +184,9 @@ export function enhancedDefuddleExtraction(html, options = {}) {
       throw new Error('Defuddle not available');
     }
     
-    // Parse HTML if it's a string
+    // Parse HTML if it's a string, but only if DOMParser is available
     let doc = html;
-    if (typeof html === 'string') {
+    if (typeof html === 'string' && typeof DOMParser !== 'undefined') {
       const parser = new DOMParser();
       doc = parser.parseFromString(html, 'text/html');
     }

@@ -48,8 +48,15 @@ describe('Dynamic Crawler', () => {
       Object.values(configs).forEach(config => {
         expect(config.maxDepth).toBeGreaterThan(0);
         expect(config.maxDepth).toBeLessThanOrEqual(5);
-        expect(config.maxPages).toBeGreaterThan(10);
-        expect(config.maxPages).toBeLessThanOrEqual(100);
+        
+        // Single-file configurations can have maxPages = 1
+        if (config.type === 'single-file') {
+          expect(config.maxPages).toBeGreaterThan(0);
+          expect(config.maxPages).toBeLessThanOrEqual(1);
+        } else {
+          expect(config.maxPages).toBeGreaterThan(10);
+          expect(config.maxPages).toBeLessThanOrEqual(100);
+        }
       });
     });
   });
