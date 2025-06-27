@@ -81,10 +81,10 @@ jobs:
         env:
           NODE_ENV: production
           
-      - name: 🚀 Deploy to preview (ArNS undername)
-        id: deploy_preview
+      - name: 🚀 Deploy index to ArNS (Dedicated Index Undername)
+        id: deploy_index_arns
         run: |
-          echo "🔍 Deploying fresh content to preview environment..."
+          echo "📊 Deploying crawled index to dedicated ArNS undername..."
           
           # Verify build artifacts exist
           if [ ! -d "dist" ]; then
@@ -93,50 +93,35 @@ jobs:
           fi
           
           npx permaweb-deploy \
-            --undername=preview \
+            --undername=index \
             --ant-process=${{ secrets.ANT_PROCESS }} \
             --deploy-folder=dist \
             --verbose
           
-          echo "deployment_url=https://preview_llms-builder.ar.io" >> $GITHUB_OUTPUT
+          echo "deployment_url=https://index_permaweb-llms-builder.ar.io" >> $GITHUB_OUTPUT
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           ANT_PROCESS: ${{ secrets.ANT_PROCESS }}
           
-      - name: 🚀 Deploy to Vercel (Fast Preview Mirror)
+      - name: 🚀 Deploy index to Vercel (Fast Access Mirror)
+        id: deploy_index_vercel
         run: |
-          echo "🌐 Deploying to Vercel for fast preview access..."
+          echo "🌐 Deploying crawled index to Vercel for fast access..."
           bun run deploy:preview
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           
-      - name: 📡 Deploy to production (Main ArNS)
-        id: deploy_production
+      - name: 📝 Report crawl & deployment summary
         run: |
-          echo "📡 Deploying fresh content to production..."
-          
-          npx permaweb-deploy \
-            --ant-process=${{ secrets.ANT_PROCESS }} \
-            --deploy-folder=dist \
-            --verbose
-          
-          echo "deployment_url=https://permaweb-llms-builder.ar.io" >> $GITHUB_OUTPUT
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-          ANT_PROCESS: ${{ secrets.ANT_PROCESS }}
-          
-      - name: 📈 Report crawl & deployment summary
-        run: |
-          echo "## 📊 Daily Crawl & Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 📊 Daily Crawl & Index Deployment Summary" >> $GITHUB_STEP_SUMMARY
           echo "- **Timestamp**: $(date)" >> $GITHUB_STEP_SUMMARY
           echo "- **Index file size**: $(du -h public/docs-index.json | cut -f1)" >> $GITHUB_STEP_SUMMARY
           echo "- **Total entries**: $(wc -l < public/docs-index.json)" >> $GITHUB_STEP_SUMMARY
           echo "- **Build artifacts**: $(find dist -type f | wc -l) files" >> $GITHUB_STEP_SUMMARY
-          echo "- **Preview**: ✅ ${{ steps.deploy_preview.outputs.deployment_url }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Preview (Vercel)**: ✅ Fast mirror deployed" >> $GITHUB_STEP_SUMMARY
-          echo "- **Production**: ✅ ${{ steps.deploy_production.outputs.deployment_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Index (ArNS)**: ✅ ${{ steps.deploy_index_arns.outputs.deployment_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Index (Vercel)**: ✅ Fast mirror deployed" >> $GITHUB_STEP_SUMMARY
           
           echo ""
-          echo "🎉 Daily content update complete!"
-          echo "Preview: ${{ steps.deploy_preview.outputs.deployment_url }}"
-          echo "Production: ${{ steps.deploy_production.outputs.deployment_url }}" 
+          echo "🎉 Daily index update complete!"
+          echo "Index ArNS: ${{ steps.deploy_index_arns.outputs.deployment_url }}"
+          echo "Index access: ${{ steps.deploy_index_arns.outputs.deployment_url }}/docs-index.json" 
