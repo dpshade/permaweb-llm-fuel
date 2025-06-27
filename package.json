@@ -22,6 +22,7 @@
     "clean": "rm -rf dist .vercel/output node_modules/.cache",
     "crawl": "bun run src/utils/crawler.js",
     "crawl:prod": "NODE_ENV=production bun run src/utils/crawler.js",
+    "crawl-and-index": "bun run src/utils/crawler.js --output src/data/index.json",
     "deploy:preview": "./scripts/deploy-preview.sh",
     "deploy:prod": "./scripts/deploy-prod.sh",
     "lint": "astro check",

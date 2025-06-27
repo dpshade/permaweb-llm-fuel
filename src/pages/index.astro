@@ -1,6 +1,35 @@
 ---
 // Main page for Permaweb LLMs Builder
 import "../styles/theme.css";
+import indexData from "../data/index.json";
+
+// TypeScript interfaces for the data structure
+interface PageData {
+	title: string;
+	url: string;
+	breadcrumbs?: string[];
+	estimatedWords?: number;
+	estimatedChars?: number;
+}
+
+interface SiteData {
+	name: string;
+	description?: string;
+	pages: PageData[];
+	crawledAt?: string;
+}
+
+interface DocumentationIndex {
+	sites: Record<string, SiteData>;
+	_metadata?: {
+		generated: string;
+		totalSites: number;
+		totalPages: number;
+	};
+}
+
+// Cast the imported data to our interface
+const docsIndex = indexData as DocumentationIndex;
 ---
 
 <html lang="en">
@@ -177,85 +206,8 @@ import "../styles/theme.css";
 				</p>
 
 				<!-- Documentation Tree -->
-				<div id="loading-message" style="display: none;">
-					<h3>Loading Documentation Index</h3>
-					<p>
-						Loading curated documentation from the Permaweb ecosystem...
-					</p>
-				</div>
 				<div id="docs-tree">
-					<!-- Optimistic UI - shows immediately -->
-									<div id="optimistic-tree">
-					<div class="loading-description">
-						Loading documentation from the Permaweb ecosystem...
-					</div>
-					<div id="tree-root" class="tree-font">
-						<!-- Skeleton structure -->
-						<div class="mb-8">
-							<div class="flex-center-gap skeleton-opacity-60">
-								<div class="skeleton-base skeleton-checkbox"></div>
-								<svg class="world-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-								</svg>
-								<div class="skeleton-base skeleton-text-md"></div>
-								<div class="skeleton-base skeleton-text-sm ml-8"></div>
-							</div>
-							<div class="ml-24">
-								<div class="skeleton-row skeleton-opacity-40">
-									<div class="skeleton-base skeleton-checkbox"></div>
-									<div class="skeleton-base skeleton-text-lg"></div>
-								</div>
-								<div class="skeleton-row skeleton-opacity-40">
-									<div class="skeleton-base skeleton-checkbox"></div>
-									<div class="skeleton-base" style="height: 16px; width: 160px;"></div>
-								</div>
-								<div class="skeleton-row skeleton-opacity-40">
-									<div class="skeleton-base skeleton-checkbox"></div>
-									<div class="skeleton-base skeleton-text-xl"></div>
-								</div>
-							</div>
-						</div>
-													<div class="mb-8">
-							<div class="skeleton-site-row skeleton-opacity-40">
-								<div class="skeleton-base skeleton-checkbox"></div>
-								<svg class="world-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-								</svg>
-								<div class="skeleton-base" style="height: 20px; width: 140px;"></div>
-								<div class="skeleton-base skeleton-text-sm ml-8"></div>
-							</div>
-							<div class="ml-24">
-								<div class="skeleton-row skeleton-opacity-30">
-									<div class="skeleton-base skeleton-checkbox"></div>
-									<div class="skeleton-base" style="height: 16px; width: 220px;"></div>
-								</div>
-								<div class="skeleton-row skeleton-opacity-30">
-									<div class="skeleton-base skeleton-checkbox"></div>
-									<div class="skeleton-base" style="height: 16px; width: 150px;"></div>
-								</div>
-							</div>
-						</div>
-													<div class="mb-8">
-							<div class="skeleton-site-row skeleton-opacity-20">
-								<div class="skeleton-base skeleton-checkbox"></div>
-								<svg class="world-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
-									<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
-								</svg>
-								<div class="skeleton-base" style="height: 20px; width: 100px;"></div>
-								<div class="skeleton-base" style="height: 16px; width: 70px; margin-left: 8px;"></div>
-							</div>
-							<div class="ml-24">
-								<div class="skeleton-row skeleton-opacity-20">
-									<div class="skeleton-base skeleton-checkbox"></div>
-									<div class="skeleton-base" style="height: 16px; width: 190px;"></div>
-								</div>
-							</div>
-						</div>
-						</div>
-					</div>
+					<!-- Will be populated by JavaScript -->
 				</div>
 			</div>
 			<div class="bottom-controls">
@@ -321,7 +273,7 @@ import "../styles/theme.css";
 		</div>
 
 		<!-- Main JavaScript -->
-		<script>
+		<script define:vars={{ docsIndex }}>
 			import { initializeAllTheme } from "../utils/theme.js";
 			import {
 				batchFetchAndClean,
@@ -334,34 +286,28 @@ import "../styles/theme.css";
 			initializeAllTheme();
 
 			// State management
-			let docsIndex = null;
-			let displayTree = null;
+			let displayTree = {};
 			let selectedPages = new Set();
 			let allPages = [];
 			let configOrder = []; // Order from crawl-config.json
 
 			// DOM elements
 			const docsTree = document.getElementById("docs-tree");
-			const loadingMessage = document.getElementById("loading-message");
 			const selectionCount = document.getElementById("selection-count");
 			const generateBtn = document.getElementById("generate-btn");
 			const selectAllBtn = document.getElementById("select-all-btn");
 			const clearAllBtn = document.getElementById("clear-all-btn");
-			const progressContainer =
-				document.getElementById("progress-container");
+			const progressContainer = document.getElementById("progress-container");
 			const progressFill = document.getElementById("progress-fill");
 			const progressText = document.getElementById("progress-text");
-			const selectionDetails =
-				document.getElementById("selection-details");
+			const selectionDetails = document.getElementById("selection-details");
 			const selectionToggle = document.getElementById("selection-toggle");
-			const selectedPagesList = document.getElementById(
-				"selected-pages-list",
-			);
+			const selectedPagesList = document.getElementById("selected-pages-list");
 
 			// Initialize the application
 			async function initialize() {
 				await loadConfigOrder();
-				await loadDocumentationIndex();
+				loadDocumentationIndex();
 			}
 
 			// Load config order to maintain site ordering
@@ -377,71 +323,9 @@ import "../styles/theme.css";
 				}
 			}
 
-			// Load documentation index with environment-aware source selection
-			async function loadDocumentationIndex() {
+			// Load documentation index from pre-built data
+			function loadDocumentationIndex() {
 				try {
-					updateLoadingMessage(
-						"Loading Documentation Index",
-						"Fetching latest documentation index...",
-					);
-
-					let response;
-					let indexSource = "local";
-					
-					// Determine the best source for the index
-					const isProduction = window.location.hostname === 'permaweb-llms-builder.ar.io' || 
-					                    window.location.hostname === 'permaweb-llms-builder-a6bermwrm-dpshade22s-projects.vercel.app';
-					
-					try {
-						if (isProduction) {
-							// For production, try ArNS first, fallback to Vercel-deployed copy
-							try {
-								const indexJsonUrl = "https://index_permaweb-llms-builder.ar.io/docs-index.json";
-								response = await fetch(indexJsonUrl);
-								
-								if (response.ok) {
-									indexSource = "ArNS";
-									console.log("Successfully loaded from ArNS index endpoint");
-								} else {
-									throw new Error(`ArNS endpoint returned ${response.status}`);
-								}
-							} catch (arnsError) {
-								console.warn("ArNS index endpoint failed, falling back to Vercel:", arnsError.message);
-								// Fallback to Vercel-deployed copy
-								response = await fetch("/docs-index.json");
-								indexSource = "Vercel (ArNS fallback)";
-							}
-						} else {
-							// For previews, development, and other environments, use Vercel-deployed copy
-							response = await fetch("/docs-index.json");
-							indexSource = "Vercel";
-						}
-
-						if (!response.ok) {
-							throw new Error(
-								`Index loading failed: ${response.status} from ${indexSource}`,
-							);
-						}
-
-						console.log(`Successfully loaded documentation index from ${indexSource}`);
-					} catch (indexError) {
-						console.error(
-							"Failed to load documentation index:",
-							indexError.message,
-						);
-
-						updateLoadingMessage(
-							"Documentation Index Unavailable",
-							"Unable to load documentation index. Please check your connection and try again.",
-						);
-
-						throw new Error(
-							`Documentation index unavailable: ${indexError.message}`,
-						);
-					}
-
-					docsIndex = await response.json();
-
 					// Process the index into display format
 					displayTree = processIndex(docsIndex);
 					allPages = extractAllPages(docsIndex);
@@ -449,15 +333,13 @@ import "../styles/theme.css";
 					// Render the tree
 					renderDocumentationTree();
 
-					// Loading message is already hidden by default with optimistic UI
-
 					console.log(
-						`Loaded documentation index: ${allPages.length} total pages from ${Object.keys(docsIndex.sites || docsIndex).length} sites`,
+						`Loaded documentation index: ${allPages.length} total pages from ${Object.keys(docsIndex.sites || {}).length} sites`,
 					);
 				} catch (error) {
-					console.error("Failed to load documentation index:", error);
+					console.error("Failed to process documentation index:", error);
 					showError(
-						`Failed to load documentation index: ${error.message}`,
+						`Failed to process documentation index: ${error.message}`,
 					);
 				}
 			}
@@ -467,7 +349,7 @@ import "../styles/theme.css";
 				const processed = {};
 
 				// Handle the new structure with sites object
-				const sites = index.sites || index;
+				const sites = index.sites || {};
 
 				for (const [siteKey, siteData] of Object.entries(sites)) {
 					// Skip metadata entries
@@ -489,7 +371,7 @@ import "../styles/theme.css";
 				const pages = [];
 
 				// Handle the new structure with sites object
-				const sites = index.sites || index;
+				const sites = index.sites || {};
 
 				for (const [siteKey, siteData] of Object.entries(sites)) {
 					// Skip metadata entries
@@ -531,8 +413,8 @@ import "../styles/theme.css";
 				const sortedPages = [...allPages].sort((a, b) => {
 					if (a.siteKey !== b.siteKey) {
 						// Sort by config order if available
-						const aIndex = configOrder.indexOf(a.siteKey);
-						const bIndex = configOrder.indexOf(b.siteKey);
+						const aIndex = configOrder.indexOf(a.siteKey || '');
+						const bIndex = configOrder.indexOf(b.siteKey || '');
 						
 						// If both sites are in config, sort by config order
 						if (aIndex !== -1 && bIndex !== -1) {
@@ -542,7 +424,7 @@ import "../styles/theme.css";
 						if (aIndex !== -1) return -1;
 						if (bIndex !== -1) return 1;
 						// If neither is in config, fall back to alphabetical
-						return a.siteName.localeCompare(b.siteName);
+						return (a.siteName || '').localeCompare(b.siteName || '');
 					}
 					const pathA = a.breadcrumbs
 						? a.breadcrumbs.join(" / ")
@@ -562,28 +444,9 @@ import "../styles/theme.css";
 					</div>
 				`;
 
-				// Smooth transition from optimistic to real content
-				const optimisticTree =
-					document.getElementById("optimistic-tree");
-				if (optimisticTree) {
-					optimisticTree.style.opacity = '0';
-					optimisticTree.style.transition = 'opacity 0.15s ease';
-					
-					setTimeout(() => {
-						docsTree.innerHTML = treeHtml;
-						docsTree.style.opacity = '0';
-						docsTree.style.transition = 'opacity 0.15s ease';
-						requestAnimationFrame(() => {
-							docsTree.style.opacity = "1";
-							// Add event listeners after DOM is fully rendered and visible
-							addTreeEventListeners();
-						});
-					}, 300);
-				} else {
-					docsTree.innerHTML = treeHtml;
-					// Add event listeners immediately when no transition
-					addTreeEventListeners();
-				}
+				docsTree.innerHTML = treeHtml;
+				// Add event listeners after DOM is rendered
+				addTreeEventListeners();
 
 				// Select all pages by default
 				allPages.forEach((page) => {
@@ -598,13 +461,14 @@ import "../styles/theme.css";
 				// Group pages by site
 				const pagesBySite = {};
 				sortedPages.forEach((page) => {
-					if (!pagesBySite[page.siteKey]) {
-						pagesBySite[page.siteKey] = {
-							siteName: page.siteName,
+					const siteKey = page.siteKey || 'unknown';
+					if (!pagesBySite[siteKey]) {
+						pagesBySite[siteKey] = {
+							siteName: page.siteName || 'Unknown Site',
 							pages: [],
 						};
 					}
-					pagesBySite[page.siteKey].pages.push(page);
+					pagesBySite[siteKey].pages.push(page);
 				});
 
 				// Sort sites by config order
@@ -750,8 +614,9 @@ import "../styles/theme.css";
 					.querySelectorAll(".site-checkbox")
 					.forEach((checkbox) => {
 						checkbox.addEventListener("change", (e) => {
-							const siteKey = e.target.dataset.site;
-							const isChecked = e.target.checked;
+							const target = e.target;
+							const siteKey = target.dataset.site;
+							const isChecked = target.checked;
 
 							// Toggle all pages in this site
 							const sitePageCheckboxes =
@@ -764,9 +629,9 @@ import "../styles/theme.css";
 								const url = pageCheckbox.dataset.url;
 
 								// Update selectedPages set directly
-								if (isChecked) {
+								if (isChecked && url) {
 									selectedPages.add(url);
-								} else {
+								} else if (url) {
 									selectedPages.delete(url);
 								}
 							});
@@ -781,7 +646,8 @@ import "../styles/theme.css";
 					.querySelectorAll(".page-checkbox")
 					.forEach((checkbox) => {
 						checkbox.addEventListener("change", (e) => {
-							handlePageSelection(e.target, e.target.checked);
+							const target = e.target;
+							handlePageSelection(target, target.checked);
 						});
 					});
 			}
@@ -790,9 +656,9 @@ import "../styles/theme.css";
 			function handlePageSelection(checkbox, isChecked) {
 				const url = checkbox.dataset.url;
 
-				if (isChecked) {
+				if (isChecked && url) {
 					selectedPages.add(url);
-				} else {
+				} else if (url) {
 					selectedPages.delete(url);
 				}
 
@@ -805,7 +671,8 @@ import "../styles/theme.css";
 				document
 					.querySelectorAll(".site-checkbox")
 					.forEach((siteCheckbox) => {
-						const siteKey = siteCheckbox.dataset.site;
+						const element = siteCheckbox;
+						const siteKey = element.dataset.site;
 						const sitePageCheckboxes = document.querySelectorAll(
 							`input[data-site="${siteKey}"].page-checkbox`,
 						);
@@ -816,16 +683,16 @@ import "../styles/theme.css";
 
 						// Update site checkbox state
 						if (checkedPages.length === 0) {
-							siteCheckbox.checked = false;
-							siteCheckbox.indeterminate = false;
+							element.checked = false;
+							element.indeterminate = false;
 						} else if (
 							checkedPages.length === sitePageCheckboxes.length
 						) {
-							siteCheckbox.checked = true;
-							siteCheckbox.indeterminate = false;
+							element.checked = true;
+							element.indeterminate = false;
 						} else {
-							siteCheckbox.checked = false;
-							siteCheckbox.indeterminate = true;
+							element.checked = false;
+							element.indeterminate = true;
 						}
 					});
 			}
@@ -1012,8 +879,8 @@ import "../styles/theme.css";
 						selectedPagesData.push({
 							title: generateSpecificTitle(page),
 							url: page.url,
-							siteName: page.siteName,
-							siteKey: page.siteKey,
+							siteName: page.siteName || 'Unknown Site',
+							siteKey: page.siteKey || 'unknown',
 							breadcrumbPath: breadcrumbPath,
 						});
 					}
@@ -1058,20 +925,6 @@ import "../styles/theme.css";
 				selectedPagesList.innerHTML = listHtml;
 			}
 
-			// Update loading message (optimistic UI shows instead)
-			function updateLoadingMessage(title, description) {
-				// With optimistic UI, we just update the skeleton message
-				const optimisticMessage = document.querySelector(
-					"#optimistic-tree > div:first-child",
-				);
-				if (optimisticMessage) {
-					optimisticMessage.textContent = description;
-				}
-
-				// Keep the old loading message hidden since we show optimistic UI
-				console.log(`Loading: ${title} - ${description}`);
-			}
-
 			// Show error message
 			function showError(message) {
 				docsTree.innerHTML = `
@@ -1107,7 +960,9 @@ import "../styles/theme.css";
 					// Clear and rebuild selectedPages set efficiently
 					selectedPages.clear();
 					pageCheckboxes.forEach((checkbox) => {
-						selectedPages.add(checkbox.dataset.url);
+						if (checkbox.dataset.url) {
+							selectedPages.add(checkbox.dataset.url);
+						}
 					});
 
 					// Update counts once at the end

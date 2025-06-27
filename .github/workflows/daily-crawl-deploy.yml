@@ -1,178 +1,46 @@
-name: 📅 Daily Documentation Index Update
+name: Daily Index Update
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # Daily at 2 AM UTC
-  workflow_dispatch:  # Manual trigger
-
-defaults:
-  run:
-    shell: bash
+    - cron: '0 6 * * *'  # 6 AM daily
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
-  update-documentation-index:
+  update-index:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    # Prevent multiple index update operations from running simultaneously
-    concurrency:
-      group: daily-index-update
-      cancel-in-progress: false
-    
     steps:
-      - name: ⬇️ Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
-        
-      - name: 🧅 Setup Bun
-        uses: oven-sh/setup-bun@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-          
-      - name: 📦 Install dependencies
-        run: bun install --frozen-lockfile
-        
-      - name: 👀 Environment info
-        run: |
-          echo "Event name: ${{ github.event_name }}"
-          echo "SHA:        ${{ github.sha }}"
-          echo "Bun ver:    $(bun --version)"
-          echo "Node ver:   $(node --version)"
-          echo "Crawl time: $(date)"
-        
-      - name: 🕷️ Run documentation crawl
-        run: |
-          echo "🕷️ Starting documentation crawl..."
-          bun run crawl --force-reindex
-          echo "✅ Crawl completed successfully!"
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Generate Fresh Index
+        run: bun run crawl-and-index
         env:
           NODE_ENV: production
-        
-      - name: ✅ Verify crawl output
+
+      - name: Check for changes
+        id: check_changes
         run: |
-          if [ ! -f "public/docs-index.json" ]; then
-            echo "❌ Crawl failed - no output file generated"
-            exit 1
+          if git diff --quiet src/data/index.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
-          
-          echo "📊 Crawl statistics:"
-          echo "   File size: $(du -h public/docs-index.json | cut -f1)"
-          echo "   Line count: $(wc -l < public/docs-index.json)"
-          echo "   Last modified: $(date -r public/docs-index.json)"
-          
-          # Basic JSON validation
-          if ! bun -e "JSON.parse(await Bun.file('public/docs-index.json').text())"; then
-            echo "❌ Generated JSON is invalid"
-            exit 1
-          fi
-          
-          echo "✅ Crawl output validation passed!"
-          
-      - name: 🚀 Deploy JSON to Arweave & Update ArNS
-        id: deploy_index_arns
+
+      - name: Commit Updated Index
+        if: steps.check_changes.outputs.changed == 'true'
         run: |
-          echo "📊 Deploying JSON to Arweave and updating ArNS undername..."
-          
-          # Verify crawl output exists
-          if [ ! -f "public/docs-index.json" ]; then
-            echo "❌ Crawl index file not found"
-            exit 1
-          fi
-          
-          echo "📊 Index file stats:"
-          ls -la public/docs-index.json
-          du -h public/docs-index.json
-          
-          # Step 1: Upload JSON file directly to Arweave using Turbo SDK
-          echo "🔄 Step 1: Uploading JSON to Arweave..."
-          TRANSACTION_ID=$(bun -e "
-            import fs from 'fs';
-            import * as TurboSdk from '@ardrive/turbo-sdk';
-            
-            const turbo = TurboSdk.TurboFactory.authenticated({
-              privateKey: JSON.parse(Buffer.from(process.env.DEPLOY_KEY, 'base64').toString('utf-8'))
-            });
-            
-            const result = await turbo.uploadFile({
-              fileStreamFactory: () => fs.createReadStream('public/docs-index.json'),
-              fileSizeFactory: () => fs.statSync('public/docs-index.json').size,
-              dataItemOpts: {
-                tags: [
-                  { name: 'Content-Type', value: 'application/json' },
-                  { name: 'Title', value: 'Permaweb LLMs Builder - Documentation Index' },
-                  { name: 'Description', value: 'Curated documentation index from Permaweb ecosystem' },
-                  { name: 'Type', value: 'docs-index' },
-                  { name: 'App-Name', value: 'permaweb-llms-builder' },
-                  { name: 'App-Version', value: '1.0.0' }
-                ]
-              }
-            });
-            
-            console.log(result.id);
-          ")
-          
-          echo "✅ Uploaded to Arweave with Transaction ID: $TRANSACTION_ID"
-          
-          # Step 2: Update ArNS undername to point to the uploaded JSON
-          echo "🔄 Step 2: Updating ArNS undername 'index' to point to $TRANSACTION_ID..."
-          bun -e "
-            import { ANT, AOProcess, ARIO, ARIO_MAINNET_PROCESS_ID, ArweaveSigner } from '@ar.io/sdk';
-            import { connect } from '@permaweb/aoconnect';
-            
-            const jwk = JSON.parse(Buffer.from(process.env.DEPLOY_KEY, 'base64').toString('utf-8'));
-            const ARNS_NAME = 'permaweb-llms-builder';
-            const TRANSACTION_ID = '$TRANSACTION_ID';
-            
-            // Initialize AR.IO SDK
-            const ario = ARIO.init({
-              process: new AOProcess({
-                processId: ARIO_MAINNET_PROCESS_ID,
-                ao: connect({
-                  MODE: 'legacy',
-                  CU_URL: 'https://cu.ardrive.io'
-                })
-              })
-            });
-            
-            // Get the ArNS record to find the ANT process ID
-            const arnsRecord = await ario.getArNSRecord({ name: ARNS_NAME });
-            console.log('Found ANT process:', arnsRecord.processId);
-            
-            // Initialize ANT with the signer
-            const signer = new ArweaveSigner(jwk);
-            const ant = ANT.init({ processId: arnsRecord.processId, signer });
-            
-            // Update the undername to point to our JSON
-            await ant.setRecord({
-              undername: 'index',
-              transactionId: TRANSACTION_ID,
-              ttlSeconds: 3600,
-            }, {
-              tags: [
-                { name: 'App-Name', value: 'Permaweb-LLMs-Builder-Index' },
-                { name: 'Deployment-Type', value: 'docs-index-update' },
-                ...(process.env.GITHUB_SHA ? [{ name: 'GIT-HASH', value: process.env.GITHUB_SHA }] : [])
-              ]
-            });
-            
-            console.log('✅ Successfully updated undername index to point to', TRANSACTION_ID);
-          "
-          
-          echo "deployment_tx_id=$TRANSACTION_ID" >> $GITHUB_OUTPUT
-          echo "deployment_url=https://index_permaweb-llms-builder.ar.io" >> $GITHUB_OUTPUT
-          echo "arweave_url=https://arweave.net/$TRANSACTION_ID" >> $GITHUB_OUTPUT
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-          
-      - name: 📝 Report crawl & deployment summary
-        run: |
-          echo "## 📊 Daily Documentation Index Update" >> $GITHUB_STEP_SUMMARY
-          echo "- **Timestamp**: $(date)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Index file size**: $(du -h public/docs-index.json | cut -f1)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Total entries**: $(wc -l < public/docs-index.json)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Transaction ID**: \`${{ steps.deploy_index_arns.outputs.deployment_tx_id }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **Direct JSON access**: ✅ ${{ steps.deploy_index_arns.outputs.deployment_url }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Arweave URL**: ${{ steps.deploy_index_arns.outputs.arweave_url }}" >> $GITHUB_STEP_SUMMARY
-          
-          echo ""
-          echo "🎉 Daily documentation index update complete!"
-          echo "Direct JSON access: ${{ steps.deploy_index_arns.outputs.deployment_url }}" 
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/data/index.json
+          git commit -m "chore: update daily index [$(date +'%Y-%m-%d')]"
+          git push 
