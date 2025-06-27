@@ -338,6 +338,7 @@ import "../styles/theme.css";
 			let displayTree = null;
 			let selectedPages = new Set();
 			let allPages = [];
+			let configOrder = []; // Order from crawl-config.json
 
 			// DOM elements
 			const docsTree = document.getElementById("docs-tree");
@@ -359,7 +360,21 @@ import "../styles/theme.css";
 
 			// Initialize the application
 			async function initialize() {
+				await loadConfigOrder();
 				await loadDocumentationIndex();
+			}
+
+			// Load config order to maintain site ordering
+			async function loadConfigOrder() {
+				try {
+					const response = await fetch("/crawl-config.json");
+					const config = await response.json();
+					configOrder = Object.keys(config);
+					console.log("Config order loaded:", configOrder);
+				} catch (error) {
+					console.warn("Failed to load config order:", error);
+					configOrder = [];
+				}
 			}
 
 			// Load documentation index with Vercel primary and local fallback
@@ -490,9 +505,21 @@ import "../styles/theme.css";
 				const totalPages = allPages.length;
 				const siteCount = Object.keys(displayTree).length;
 
-				// Sort pages by site name, then by breadcrumb path
+				// Sort pages by config order, then by breadcrumb path
 				const sortedPages = [...allPages].sort((a, b) => {
-					if (a.siteName !== b.siteName) {
+					if (a.siteKey !== b.siteKey) {
+						// Sort by config order if available
+						const aIndex = configOrder.indexOf(a.siteKey);
+						const bIndex = configOrder.indexOf(b.siteKey);
+						
+						// If both sites are in config, sort by config order
+						if (aIndex !== -1 && bIndex !== -1) {
+							return aIndex - bIndex;
+						}
+						// If only one is in config, prioritize the one in config
+						if (aIndex !== -1) return -1;
+						if (bIndex !== -1) return 1;
+						// If neither is in config, fall back to alphabetical
 						return a.siteName.localeCompare(b.siteName);
 					}
 					const pathA = a.breadcrumbs
@@ -558,8 +585,24 @@ import "../styles/theme.css";
 					pagesBySite[page.siteKey].pages.push(page);
 				});
 
+				// Sort sites by config order
+				const sortedSiteEntries = Object.entries(pagesBySite).sort(([siteKeyA], [siteKeyB]) => {
+					const aIndex = configOrder.indexOf(siteKeyA);
+					const bIndex = configOrder.indexOf(siteKeyB);
+					
+					// If both sites are in config, sort by config order
+					if (aIndex !== -1 && bIndex !== -1) {
+						return aIndex - bIndex;
+					}
+					// If only one is in config, prioritize the one in config
+					if (aIndex !== -1) return -1;
+					if (bIndex !== -1) return 1;
+					// If neither is in config, fall back to alphabetical
+					return siteKeyA.localeCompare(siteKeyB);
+				});
+				
 				// Render each site with its pages
-				return Object.entries(pagesBySite)
+				return sortedSiteEntries
 					.map(([siteKey, siteData]) => {
 						const sitePageCount = siteData.pages.length;
 
@@ -931,14 +974,27 @@ import "../styles/theme.css";
 							title: generateSpecificTitle(page),
 							url: page.url,
 							siteName: page.siteName,
+							siteKey: page.siteKey,
 							breadcrumbPath: breadcrumbPath,
 						});
 					}
 				});
 
-				// Sort by site name then by breadcrumb path
+				// Sort by config order then by breadcrumb path
 				selectedPagesData.sort((a, b) => {
-					if (a.siteName !== b.siteName) {
+					if (a.siteKey !== b.siteKey) {
+						// Sort by config order if available
+						const aIndex = configOrder.indexOf(a.siteKey);
+						const bIndex = configOrder.indexOf(b.siteKey);
+						
+						// If both sites are in config, sort by config order
+						if (aIndex !== -1 && bIndex !== -1) {
+							return aIndex - bIndex;
+						}
+						// If only one is in config, prioritize the one in config
+						if (aIndex !== -1) return -1;
+						if (bIndex !== -1) return 1;
+						// If neither is in config, fall back to alphabetical
 						return a.siteName.localeCompare(b.siteName);
 					}
 					return a.breadcrumbPath.localeCompare(b.breadcrumbPath);
