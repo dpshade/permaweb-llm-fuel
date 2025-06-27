@@ -30,7 +30,8 @@
   "dependencies": {
     "@astrojs/node": "^8.3.4",
     "@ar.io/wayfinder-core": "^0.0.5-alpha.4",
-    "@ar.io/sdk": "^2.0.0",
+    "@ar.io/sdk": "^3.10.1",
+    "@ardrive/turbo-sdk": "^1.17.0",
     "astro": "^4.16.16",
     "defuddle": "^0.6.4",
     "flexsearch": "^0.8.205",
