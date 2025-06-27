@@ -85,9 +85,10 @@ async function loadExistingIndex() {
     const { readFileSync } = await import('fs');
     const { resolve } = await import('path');
     
-    // Load from src/data/index.json (the standard location)
-    // In local dev, also try temp file as fallback for partial updates
+    // Load from public/docs-index.json (publicly accessible in Astro)
+    // Also try src/data/index.json and temp file as fallbacks
     const indexPaths = [
+      resolve(process.cwd(), 'public/docs-index.json'),
       resolve(process.cwd(), 'src/data/index.json'),
       resolve(process.cwd(), 'temp-docs-index.json')
     ];
@@ -844,12 +845,12 @@ export async function runCrawl(specificSiteKey = null, options = {}) {
   if (outputPath) {
     finalOutputPath = resolve(process.cwd(), outputPath);
   } else {
-    // Default to src/data/index.json (the standard location for build-time inclusion)
+    // Default to public/docs-index.json (publicly accessible in Astro static sites)
     // Use temp file in local dev to avoid committing partial updates
     const isLocal = !(process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true');
     finalOutputPath = isLocal 
       ? resolve(process.cwd(), 'temp-docs-index.json')
-      : resolve(process.cwd(), 'src/data/index.json');
+      : resolve(process.cwd(), 'public/docs-index.json');
   }
   
   await fs.writeFile(finalOutputPath, jsonOutput);
@@ -889,10 +890,10 @@ ${colors.green}Options:${colors.reset}
   ${colors.yellow}--help, -h${colors.reset}               Show this help message
 
 ${colors.green}Examples:${colors.reset}
-  bun run crawl                            # Crawl all sites (saves to temp file locally, src/data/index.json in CI)
+  bun run crawl                            # Crawl all sites (saves to temp file locally, public/docs-index.json in CI)
   bun run crawl hyperbeam                  # Crawl only Hyperbeam docs
   bun run crawl ao --force                 # Force reindex AO docs
-  bun run crawl --output src/data/index.json  # Output to src/data/index.json (standard location)
+  bun run crawl --output public/docs-index.json  # Output to public/docs-index.json (publicly accessible)
 
 ${colors.green}Production Mode:${colors.reset}
   Set NODE_ENV=production or MINIFY_INDEX=true to save minified JSON

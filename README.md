@@ -335,3 +335,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 Built with ❤️ for the Permaweb ecosystem
+
+### Architecture
+
+The Permaweb LLMs Builder uses a hybrid approach for documentation indexing:
+
+- **📁 Public Access**: `public/docs-index.json` - Accessible at `/docs-index.json` for external API access
+- **⚡ Build-time Import**: `src/data/index.json` - Used for build-time imports in Astro components
+- **🔄 Automatic Sync**: Build processes maintain both files in sync
+
+This ensures the documentation index is available both for static API access and optimized build-time compilation.

@@ -29,22 +29,33 @@ const isCI = process.env.CI === 'true' ||
 if (isCI) {
   console.log('🕷️  Running crawler to generate docs index...');
   try {
-    // Run crawler with production settings, outputting to src/data/index.json
-    execSync('NODE_ENV=production bun run src/utils/crawler.js --output src/data/index.json', { 
+    // Run crawler with production settings, outputting to public/docs-index.json
+    execSync('NODE_ENV=production bun run src/utils/crawler.js --output public/docs-index.json', { 
       stdio: 'inherit',
       cwd: process.cwd()
     });
-    console.log('   ✓ Docs index generated to src/data/index.json');
+    console.log('   ✓ Docs index generated to public/docs-index.json');
     
-    // Verify the index was created
-    const srcIndexPath = path.join(process.cwd(), 'src/data/index.json');
-    if (fs.existsSync(srcIndexPath)) {
-      const stats = fs.statSync(srcIndexPath);
+    // Copy to src/data/index.json for build-time imports
+    const publicIndexPath = path.join(process.cwd(), 'public/docs-index.json');
+    const srcDataPath = path.join(process.cwd(), 'src/data/index.json');
+    
+    if (fs.existsSync(publicIndexPath)) {
+      // Ensure src/data directory exists
+      const srcDataDir = path.dirname(srcDataPath);
+      if (!fs.existsSync(srcDataDir)) {
+        fs.mkdirSync(srcDataDir, { recursive: true });
+      }
+      
+      // Copy for build-time import
+      fs.copyFileSync(publicIndexPath, srcDataPath);
+      
+      const stats = fs.statSync(publicIndexPath);
       console.log(`   ✓ Index file verified: ${(stats.size / 1024).toFixed(1)}KB`);
+      console.log(`   ✓ Copied to src/data/index.json for build-time imports`);
     } else {
       console.warn('   ⚠️  Index file not found at expected location');
-    }
-    
+    }    
   } catch (error) {
     console.error('   ❌ Failed to run crawler:', error.message);
     // Don't fail the build if crawler fails - the site should still deploy

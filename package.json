@@ -20,7 +20,7 @@
     "test:watch": "vitest",
     "clean": "rm -rf dist .vercel/output node_modules/.cache",
     "crawl": "bun run src/utils/crawler.js",
-    "crawl-and-index": "bun run src/utils/crawler.js --output src/data/index.json",
+    "crawl-and-index": "bun run src/utils/crawler.js --output public/docs-index.json && mkdir -p src/data && cp public/docs-index.json src/data/index.json",
     "deploy:preview": "./scripts/deploy-preview.sh",
     "deploy:prod": "./scripts/deploy-prod.sh",
     "lint": "astro check",

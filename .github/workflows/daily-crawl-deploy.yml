@@ -30,7 +30,7 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if git diff --quiet src/data/index.json; then
+          if git diff --quiet public/docs-index.json src/data/index.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -41,6 +41,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/index.json
+          git add public/docs-index.json src/data/index.json
           git commit -m "chore: update daily index [$(date +'%Y-%m-%d')]"
           git push 
