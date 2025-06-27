@@ -161,9 +161,8 @@ Configure these secrets in your GitHub repository settings:
 ```bash
 # Vercel Deployment
 VERCEL_TOKEN=your_vercel_token
-VERCEL_ORG_ID=your_vercel_org_id
-VERCEL_PROJECT_ID=your_main_project_id
-VERCEL_JSON_PROJECT_ID=your_json_project_id
+VERCEL_ORG_ID=team_6GvOyT5ARQJH1mo4x6fXQqzE
+VERCEL_PROJECT_ID=prj_eFRPzU5WfC6v7l4GNqrtzkSUqdcT
 
 # ArNS Deployment (when enabled)
 DEPLOY_KEY=your_arweave_wallet_jwk

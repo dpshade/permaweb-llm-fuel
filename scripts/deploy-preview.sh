@@ -27,6 +27,16 @@ if [ -z "$VERCEL_TOKEN" ]; then
     exit 1
 fi
 
+if [ -z "$VERCEL_ORG_ID" ]; then
+    print_error "VERCEL_ORG_ID environment variable not set"
+    exit 1
+fi
+
+if [ -z "$VERCEL_PROJECT_ID" ]; then
+    print_error "VERCEL_PROJECT_ID environment variable not set"
+    exit 1
+fi
+
 print_header "🚀 Preview Deployment (Vercel)"
 
 echo "Building project..."
@@ -37,7 +47,7 @@ bun run test
 
 echo "Deploying to Vercel..."
 cd dist
-npx vercel --token "$VERCEL_TOKEN" --yes
+npx vercel --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" --yes
 cd ..
 
 print_success "Preview deployment completed!"

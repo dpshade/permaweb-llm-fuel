@@ -85,15 +85,12 @@ async function loadExistingIndex() {
     const { readFileSync } = await import('fs');
     const { resolve } = await import('path');
     
-    // In CI, try to load from public directory
-    // In local dev, try temp file first, then public as fallback
-    const isCI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
-    const indexPaths = isCI 
-      ? [resolve(process.cwd(), 'public/docs-index.json')]
-      : [
-          resolve(process.cwd(), 'temp-docs-index.json'),
-          resolve(process.cwd(), 'public/docs-index.json')
-        ];
+    // Load from src/data/index.json (the standard location)
+    // In local dev, also try temp file as fallback for partial updates
+    const indexPaths = [
+      resolve(process.cwd(), 'src/data/index.json'),
+      resolve(process.cwd(), 'temp-docs-index.json')
+    ];
     
     let indexJson = null;
     let usedPath = null;
@@ -786,7 +783,7 @@ export async function crawlSite(siteKey, options = {}) {
 export async function runCrawl(specificSiteKey = null, options = {}) {
   const configs = await loadCrawlConfigs();
   const results = {};
-  const { forceReindex = false } = options;
+  const { forceReindex = false, outputPath = null } = options;
   
   const sitesToCrawl = specificSiteKey ? [specificSiteKey] : Object.keys(configs);
   
@@ -842,23 +839,29 @@ export async function runCrawl(specificSiteKey = null, options = {}) {
     ? JSON.stringify(indexData)
     : JSON.stringify(indexData, null, 2);
   
-  // Only write to public/docs-index.json in CI/GitHub Actions environment
-  // In local development, write to a temp location to avoid polluting the repo
-  const isCI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
-  const outputPath = isCI 
-    ? resolve(process.cwd(), 'public/docs-index.json')
-    : resolve(process.cwd(), 'temp-docs-index.json');
+  // Determine output path - custom path takes priority, then standard location
+  let finalOutputPath;
+  if (outputPath) {
+    finalOutputPath = resolve(process.cwd(), outputPath);
+  } else {
+    // Default to src/data/index.json (the standard location for build-time inclusion)
+    // Use temp file in local dev to avoid committing partial updates
+    const isLocal = !(process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true');
+    finalOutputPath = isLocal 
+      ? resolve(process.cwd(), 'temp-docs-index.json')
+      : resolve(process.cwd(), 'src/data/index.json');
+  }
   
-  await fs.writeFile(outputPath, jsonOutput);
+  await fs.writeFile(finalOutputPath, jsonOutput);
   
   // Log size info
   const fileSize = (jsonOutput.length / 1024).toFixed(1);
   const formatType = shouldMinify ? 'minified' : 'pretty-printed';
-  const outputType = isCI ? 'production' : 'local development';
-  log.info(`Output: ${outputPath} (${fileSize}KB, ${formatType}, ${outputType})`);
+  const outputType = outputPath ? 'custom path' : (process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true') ? 'production build' : 'local development';
+  log.info(`Output: ${finalOutputPath} (${fileSize}KB, ${formatType}, ${outputType})`);
   
-  if (!isCI) {
-    log.info('Note: Running locally - index written to temp file, not public directory');
+  if (!outputPath && !(process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true')) {
+    log.info('Note: Running locally - index written to temp file to avoid committing partial updates');
   }
   
   return results;
@@ -882,13 +885,14 @@ ${sites.map(site => `  ${colors.cyan}${site}${colors.reset} - ${configs[site].na
 
 ${colors.green}Options:${colors.reset}
   ${colors.yellow}--force, --force-reindex${colors.reset}  Force reindex all pages (ignore cache)
+  ${colors.yellow}--output <path>${colors.reset}           Custom output path for index file
   ${colors.yellow}--help, -h${colors.reset}               Show this help message
 
 ${colors.green}Examples:${colors.reset}
-  bun run crawl                    # Crawl all sites (pretty JSON)
-  bun run crawl:prod               # Crawl all sites (minified JSON)
-  bun run crawl hyperbeam          # Crawl only Hyperbeam docs
-  bun run crawl ao --force         # Force reindex AO docs
+  bun run crawl                            # Crawl all sites (saves to temp file locally, src/data/index.json in CI)
+  bun run crawl hyperbeam                  # Crawl only Hyperbeam docs
+  bun run crawl ao --force                 # Force reindex AO docs
+  bun run crawl --output src/data/index.json  # Output to src/data/index.json (standard location)
 
 ${colors.green}Production Mode:${colors.reset}
   Set NODE_ENV=production or MINIFY_INDEX=true to save minified JSON
@@ -908,14 +912,18 @@ if (import.meta.main) {
   
   const forceReindex = args.includes('--force-reindex') || args.includes('--force');
   
-  // Filter out flags to get the site key
-  const siteKey = args.find(arg => !arg.startsWith('--'));
+  // Parse --output flag
+  let customOutputPath = null;
+  const outputIndex = args.findIndex(arg => arg === '--output');
+  if (outputIndex !== -1 && args[outputIndex + 1]) {
+    customOutputPath = args[outputIndex + 1];
+  }
   
-  // Show help only if explicitly requested
-  // If no arguments provided, crawl all sites (as documented in help)
+  // Filter out flags to get the site key
+  const siteKey = args.find(arg => !arg.startsWith('--') && arg !== customOutputPath);
   
   try {
-    await runCrawl(siteKey, { forceReindex });
+    await runCrawl(siteKey, { forceReindex, outputPath: customOutputPath });
   } catch (error) {
     log.error(`Crawl failed: ${error.message}`);
     process.exit(1);

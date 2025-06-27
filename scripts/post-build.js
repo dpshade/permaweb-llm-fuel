@@ -29,31 +29,20 @@ const isCI = process.env.CI === 'true' ||
 if (isCI) {
   console.log('🕷️  Running crawler to generate docs index...');
   try {
-    // Run crawler with production settings
-    execSync('NODE_ENV=production bun run src/utils/crawler.js', { 
+    // Run crawler with production settings, outputting to src/data/index.json
+    execSync('NODE_ENV=production bun run src/utils/crawler.js --output src/data/index.json', { 
       stdio: 'inherit',
       cwd: process.cwd()
     });
-    console.log('   ✓ Docs index generated successfully');
+    console.log('   ✓ Docs index generated to src/data/index.json');
     
-    // Copy docs index to build directory if it was generated in project root
-    const tempIndexPath = path.join(process.cwd(), 'temp-docs-index.json');
-    const publicIndexPath = path.join(process.cwd(), 'public/docs-index.json');
-    const buildIndexPath = path.join(buildDir, 'docs-index.json');
-    
-    // Try to copy from temp location first, then public
-    let indexCopied = false;
-    for (const sourcePath of [publicIndexPath, tempIndexPath]) {
-      if (fs.existsSync(sourcePath)) {
-        fs.copyFileSync(sourcePath, buildIndexPath);
-        console.log(`   ✓ Copied docs index to build directory from ${path.basename(sourcePath)}`);
-        indexCopied = true;
-        break;
-      }
-    }
-    
-    if (!indexCopied) {
-      console.warn('   ⚠️  No docs index found to copy to build directory');
+    // Verify the index was created
+    const srcIndexPath = path.join(process.cwd(), 'src/data/index.json');
+    if (fs.existsSync(srcIndexPath)) {
+      const stats = fs.statSync(srcIndexPath);
+      console.log(`   ✓ Index file verified: ${(stats.size / 1024).toFixed(1)}KB`);
+    } else {
+      console.warn('   ⚠️  Index file not found at expected location');
     }
     
   } catch (error) {
