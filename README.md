@@ -129,8 +129,8 @@ graph TD
 
 **Process:**
 1. Crawls all configured documentation sites
-2. Updates `public/docs-index.json`
-3. Builds and deploys updated site
+2. Generates fresh documentation index
+3. Uploads index to dedicated ArNS endpoint
 4. Reports crawl statistics
 
 ### Deployment Commands
@@ -178,7 +178,6 @@ permaweb-llms-builder/
 │   └── workflows/           # CI/CD workflows
 ├── public/                  # Static assets
 │   ├── crawl-config.json   # Crawl configuration
-│   ├── docs-index.json     # Generated documentation index
 │   └── favicon.svg
 ├── scripts/                 # Build and deployment scripts
 │   ├── deploy-preview.sh    # Preview deployment

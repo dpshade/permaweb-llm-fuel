@@ -79,8 +79,35 @@ async function loadExistingIndex() {
   try {
     const { readFileSync } = await import('fs');
     const { resolve } = await import('path');
-    const indexPath = resolve(process.cwd(), 'public/docs-index.json');
-    const indexJson = readFileSync(indexPath, 'utf8');
+    
+    // In CI, try to load from public directory
+    // In local dev, try temp file first, then public as fallback
+    const isCI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
+    const indexPaths = isCI 
+      ? [resolve(process.cwd(), 'public/docs-index.json')]
+      : [
+          resolve(process.cwd(), 'temp-docs-index.json'),
+          resolve(process.cwd(), 'public/docs-index.json')
+        ];
+    
+    let indexJson = null;
+    let usedPath = null;
+    
+    for (const indexPath of indexPaths) {
+      try {
+        indexJson = readFileSync(indexPath, 'utf8');
+        usedPath = indexPath;
+        break;
+      } catch (error) {
+        // Continue to next path
+        continue;
+      }
+    }
+    
+    if (!indexJson) {
+      throw new Error('No existing index found');
+    }
+    
     const indexData = JSON.parse(indexJson);
     
     // Create a Set of all existing URLs for fast lookup
@@ -89,6 +116,10 @@ async function loadExistingIndex() {
       for (const page of siteData.pages || []) {
         existingUrls.add(page.url);
       }
+    }
+    
+    if (usedPath) {
+      log.info(`Loaded existing index from: ${usedPath}`);
     }
     
     return { indexData, existingUrls };
@@ -621,8 +652,7 @@ export async function runCrawl(specificSiteKey = null, options = {}) {
     }
   }
   
-  // Save results
-  const outputPath = resolve(process.cwd(), 'public/docs-index.json');
+  // Prepare index data
   const indexData = {
     generated: new Date().toISOString(),
     sites: {}
@@ -652,12 +682,24 @@ export async function runCrawl(specificSiteKey = null, options = {}) {
     ? JSON.stringify(indexData)
     : JSON.stringify(indexData, null, 2);
   
+  // Only write to public/docs-index.json in CI/GitHub Actions environment
+  // In local development, write to a temp location to avoid polluting the repo
+  const isCI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
+  const outputPath = isCI 
+    ? resolve(process.cwd(), 'public/docs-index.json')
+    : resolve(process.cwd(), 'temp-docs-index.json');
+  
   await fs.writeFile(outputPath, jsonOutput);
   
   // Log size info
   const fileSize = (jsonOutput.length / 1024).toFixed(1);
   const formatType = shouldMinify ? 'minified' : 'pretty-printed';
-  log.info(`Output: ${outputPath} (${fileSize}KB, ${formatType})`);
+  const outputType = isCI ? 'production' : 'local development';
+  log.info(`Output: ${outputPath} (${fileSize}KB, ${formatType}, ${outputType})`);
+  
+  if (!isCI) {
+    log.info('Note: Running locally - index written to temp file, not public directory');
+  }
   
   return results;
 }

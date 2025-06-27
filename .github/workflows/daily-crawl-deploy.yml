@@ -88,7 +88,9 @@ jobs:
           ls -la index-deploy/
           du -h index-deploy/docs-index.json
           
+          # Deploy to ArNS undername (requires both --arns-name and --undername flags)
           npx permaweb-deploy \
+            --arns-name=permaweb-llms-builder \
             --undername=index \
             --ant-process=${{ secrets.ANT_PROCESS }} \
             --deploy-folder=index-deploy \

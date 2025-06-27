@@ -152,3 +152,6 @@ pnpm-debug.log*
 .vscode/
 .vercel
 .cursorlogs
+
+# Temp files
+temp-docs-index.json

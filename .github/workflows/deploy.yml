@@ -183,31 +183,6 @@ jobs:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           ANT_PROCESS: ${{ secrets.ANT_PROCESS }}
           
-      - name: 📊 Deploy fresh index to ArNS (Main branch only)
-        if: github.ref == 'refs/heads/main'
-        id: deploy_fresh_index
-        run: |
-          echo "📊 Deploying fresh documentation index JSON to dedicated ArNS..."
-          
-          # Create deployment folder with only the JSON file
-          mkdir -p index-deploy
-          cp public/docs-index.json index-deploy/
-          
-          echo "📊 Index deployment contents:"
-          ls -la index-deploy/
-          du -h index-deploy/docs-index.json
-          
-          npx permaweb-deploy \
-            --undername=index \
-            --ant-process=${{ secrets.ANT_PROCESS }} \
-            --deploy-folder=index-deploy \
-            --verbose
-          
-          echo "index_deployment_url=https://index_permaweb-llms-builder.ar.io" >> $GITHUB_OUTPUT
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-          ANT_PROCESS: ${{ secrets.ANT_PROCESS }}
-          
       - name: 🚀 Deploy to Vercel (Preview Mirror)
         if: github.ref == 'refs/heads/preview'
         run: |
@@ -222,23 +197,10 @@ jobs:
           echo "Type: ${{ steps.deploy_to_arweave.outputs.deployment_type }}"
           echo "URL: ${{ steps.deploy_to_arweave.outputs.deployment_url }}"
           
-          # Add index deployment info for main branch
-          if [[ "${{ github.ref }}" == "refs/heads/main" && "${{ steps.deploy_fresh_index.outputs.index_deployment_url }}" != "" ]]; then
-            echo "Index: ${{ steps.deploy_fresh_index.outputs.index_deployment_url }}"
-          fi
-          
           echo ""
           echo "📊 Deployment details:"
           echo "- Branch: ${{ github.ref }}"
           echo "- Commit: ${{ github.sha }}"
           echo "- Actor: ${{ github.actor }}"
           echo "- Build artifacts: $(find dist -type f | wc -l) files"
-          
-          # Add fresh crawl info for main branch
-          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
-            if [ -f "public/docs-index.json" ]; then
-              echo "- Fresh index: ✅ $(wc -l < public/docs-index.json) documentation entries"
-            else
-              echo "- Fresh index: ⚠️ Using existing index"
-            fi
-          fi 
+          echo "- Index updates: Managed by daily crawl workflow" 

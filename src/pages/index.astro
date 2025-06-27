@@ -382,10 +382,9 @@ import "../styles/theme.css";
 				try {
 					updateLoadingMessage(
 						"Loading Documentation Index",
-						"Fetching latest documentation from Vercel endpoint...",
+						"Fetching latest documentation index from ArNS...",
 					);
 
-					// Try loading from ArNS index endpoint first  
 					let response;
 					try {
 						// Load from dedicated index ArNS undername (JSON only)
@@ -403,25 +402,19 @@ import "../styles/theme.css";
 							"Successfully loaded from ArNS index endpoint",
 						);
 					} catch (indexError) {
-						console.warn(
-							"ArNS index endpoint failed, trying local fallback:",
+						console.error(
+							"ArNS index endpoint failed:",
 							indexError.message,
 						);
 
 						updateLoadingMessage(
-							"Loading Documentation Index",
-							"ArNS index endpoint unavailable, loading local index...",
+							"Documentation Index Unavailable",
+							"Unable to load documentation index. Please check your connection and try again.",
 						);
 
-						// Fallback to local static index
-						response = await fetch("/docs-index.json");
-						if (!response.ok) {
-							throw new Error(
-								`Local index also failed: ${response.status}`,
-							);
-						}
-
-						console.log("Loaded from local fallback");
+						throw new Error(
+							`Documentation index unavailable: ${indexError.message}`,
+						);
 					}
 
 					docsIndex = await response.json();
