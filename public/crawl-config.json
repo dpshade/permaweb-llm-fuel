@@ -56,10 +56,12 @@
       "/mailto:/"
     ],
     "seedUrls": [
-      "/ar-io-sdk/getting-started",
+      "/introduction",
+      "/ar-io-sdk",
       "/gateways/linux-setup",
       "/guides/permaweb-deploy",
-      "/guides/"
+      "/guides/testnet",
+      "/glossary"
     ]
   },
   "arweave": {

@@ -231,6 +231,37 @@ function isValidUrl(url, baseUrl, config) {
 }
 
 /**
+ * Detect if a page is a 404 error page based on content
+ */
+function is404Page(doc, title, content) {
+  // Check title for 404 indicators
+  const titleLower = title.toLowerCase();
+  if (titleLower.includes('404') || 
+      titleLower.includes('not found') || 
+      titleLower.includes('page not found') ||
+      titleLower.includes('file not found')) {
+    return true;
+  }
+  
+  // Check content for 404 indicators
+  const contentLower = content.toLowerCase();
+  if (contentLower.includes('404') && 
+      (contentLower.includes('not found') || 
+       contentLower.includes('page not found') ||
+       contentLower.includes('file not found'))) {
+    return true;
+  }
+  
+  // Check for very short content that might be a 404 page
+  if (content.split(/\s+/).filter(word => word.length > 0).length < 20 &&
+      (contentLower.includes('not found') || contentLower.includes('404'))) {
+    return true;
+  }
+  
+  return false;
+}
+
+/**
  * Extract page content and metadata using Defuddle
  */
 async function extractPageMetadata(doc, url, config) {
@@ -277,6 +308,12 @@ async function extractPageMetadata(doc, url, config) {
     
     content = content.replace(/\s+/g, ' ').trim();
     estimatedWords = content.split(/\s+/).filter(word => word.length > 0).length;
+  }
+  
+  // Check if this is a 404 page
+  if (is404Page(doc, title, content)) {
+    log.warn(`404 page detected by content analysis: ${url}`);
+    return null;
   }
   
   // Basic quality check
