@@ -7,7 +7,7 @@ import { execSync } from 'child_process';
 import { gzipSync } from 'zlib';
 
 const CONFIG = {
-  buildDir: process.env.VERCEL_BUILD === 'true' ? '.vercel/output/static' : 'dist',
+  buildDir: '.vercel/output/static',
   compressibleExts: ['.js', '.css', '.html', '.json', '.svg', '.xml'],
   compressionThreshold: 0.9
 };
@@ -103,12 +103,15 @@ class DeploymentManager {
   }
 
   async deployArweave() {
+    await this.deployVercel();
+
     console.log('🚀 Deploying to Arweave...');
     
     if (!process.env.DEPLOY_KEY || !process.env.ANT_PROCESS) {
       throw new Error('Arweave deployment credentials not set');
     }
     
+
     execSync(`npx permaweb-deploy --ant-process="${process.env.ANT_PROCESS}" --arns-name="permaweb-llms-builder" --deploy-folder="${CONFIG.buildDir}" --verbose`, 
       { stdio: 'inherit' });
   }

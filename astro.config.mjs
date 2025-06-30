@@ -18,6 +18,11 @@ export default defineConfig({
           manualChunks: undefined
         }
       }
+    },
+    resolve: {
+      alias: {
+        '@': '/src'
+      }
     }
   },
   // Ensure iframe compatibility
