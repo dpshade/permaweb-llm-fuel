@@ -177,6 +177,7 @@ permaweb-llms-builder/
 │   └── workflows/           # CI/CD workflows
 ├── public/                  # Static assets
 │   ├── crawl-config.json   # Crawl configuration
+│   ├── docs-index.json     # Generated documentation index
 │   └── favicon.svg
 ├── scripts/                 # Build and deployment scripts
 │   ├── deploy-preview.sh    # Preview deployment
@@ -338,10 +339,10 @@ Built with ❤️ for the Permaweb ecosystem
 
 ### Architecture
 
-The Permaweb LLMs Builder uses a hybrid approach for documentation indexing:
+The Permaweb LLMs Builder uses a streamlined approach for documentation indexing:
 
-- **📁 Public Access**: `public/docs-index.json` - Accessible at `/docs-index.json` for external API access
-- **⚡ Build-time Import**: `src/data/index.json` - Used for build-time imports in Astro components
-- **🔄 Automatic Sync**: Build processes maintain both files in sync
+- **📁 Public Access**: `public/docs-index.json` - Accessible at `/docs-index.json` for frontend consumption and external API access
+- **🔄 Automatic Generation**: Crawl processes generate and maintain the index file automatically
+- **⚡ Optimized Loading**: Frontend loads the index via fetch for dynamic content rendering
 
-This ensures the documentation index is available both for static API access and optimized build-time compilation.
+This simplified structure eliminates redundancy while maintaining all functionality.

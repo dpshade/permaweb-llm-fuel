@@ -872,6 +872,15 @@ html.translucent-bg .main-container {
   animation: pulse 2s infinite;
 }
 
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 .skeleton-checkbox {
   width: 18px;
   height: 18px;

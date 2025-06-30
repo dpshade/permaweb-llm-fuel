@@ -154,6 +154,12 @@ function extractAllPages(index: any): PageData[] {
 function renderDocumentationTree() {
 	if (!allPages.length || !docsTree) return;
 
+	// Remove loading skeleton first
+	const loadingSkeleton = document.getElementById("loading-skeleton");
+	if (loadingSkeleton) {
+		loadingSkeleton.remove();
+	}
+
 	const totalPages = allPages.length;
 	const siteCount = Object.keys(displayTree).length;
 
@@ -696,6 +702,12 @@ function updateSelectedPagesList() {
 // Show error message
 function showError(message: string) {
 	if (!docsTree) return;
+	
+	// Remove loading skeleton first
+	const loadingSkeleton = document.getElementById("loading-skeleton");
+	if (loadingSkeleton) {
+		loadingSkeleton.remove();
+	}
 	
 	docsTree.innerHTML = `
 		<div style="padding: 32px; text-align: center; color: var(--ao-error-color, #dc3545);">

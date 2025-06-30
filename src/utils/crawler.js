@@ -86,28 +86,13 @@ async function loadExistingIndex() {
     const { resolve } = await import('path');
     
     // Load from public/docs-index.json (publicly accessible in Astro)
-    // Also try src/data/index.json and temp file as fallbacks
-    const indexPaths = [
-      resolve(process.cwd(), 'public/docs-index.json'),
-      resolve(process.cwd(), 'src/data/index.json'),
-      resolve(process.cwd(), 'temp-docs-index.json')
-    ];
+    const indexPath = resolve(process.cwd(), 'public/docs-index.json');
     
     let indexJson = null;
-    let usedPath = null;
     
-    for (const indexPath of indexPaths) {
-      try {
-        indexJson = readFileSync(indexPath, 'utf8');
-        usedPath = indexPath;
-        break;
-      } catch (error) {
-        // Continue to next path
-        continue;
-      }
-    }
-    
-    if (!indexJson) {
+    try {
+      indexJson = readFileSync(indexPath, 'utf8');
+    } catch (error) {
       throw new Error('No existing index found');
     }
     
@@ -121,9 +106,7 @@ async function loadExistingIndex() {
       }
     }
     
-    if (usedPath) {
-      log.info(`Loaded existing index from: ${usedPath}`);
-    }
+    log.info(`Loaded existing index from: ${indexPath}`);
     
     return { indexData, existingUrls };
   } catch (error) {
