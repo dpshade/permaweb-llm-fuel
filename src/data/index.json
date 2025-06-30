@@ -1,5 +1,5 @@
 {
-  "generated": "2025-06-30T16:35:08.617Z",
+  "generated": "2025-06-30T16:40:22.529Z",
   "sites": {
     "hyperbeam": {
       "name": "Hyperbeam",
@@ -714,14 +714,14 @@
           "crawledAt": "2025-06-30T15:11:54.470Z"
         }
       ],
-      "lastCrawled": "2025-06-30T16:35:08.618Z",
+      "lastCrawled": "2025-06-30T16:40:22.530Z",
       "stats": {
         "totalPages": 44,
         "averageWords": 609,
-        "duration": 287,
+        "duration": 461,
         "requestCount": 0,
         "averageResponseTime": 0,
-        "pagesPerSecond": 153.31010452961672
+        "pagesPerSecond": 95.44468546637744
       }
     },
     "ao": {
@@ -2238,14 +2238,14 @@
           "crawledAt": "2025-06-30T15:12:56.291Z"
         }
       ],
-      "lastCrawled": "2025-06-30T16:35:08.618Z",
+      "lastCrawled": "2025-06-30T16:40:22.530Z",
       "stats": {
         "totalPages": 96,
         "averageWords": 712,
-        "duration": 1306,
+        "duration": 1147,
         "requestCount": 0,
         "averageResponseTime": 0,
-        "pagesPerSecond": 73.50689127105666
+        "pagesPerSecond": 83.69659982563208
       }
     },
     "ario": {
@@ -3444,14 +3444,14 @@
           "crawledAt": "2025-06-30T15:13:39.945Z"
         }
       ],
-      "lastCrawled": "2025-06-30T16:35:08.618Z",
+      "lastCrawled": "2025-06-30T16:40:22.530Z",
       "stats": {
         "totalPages": 77,
         "averageWords": 715,
-        "duration": 1673,
+        "duration": 2512,
         "requestCount": 0,
         "averageResponseTime": 0,
-        "pagesPerSecond": 46.02510460251046
+        "pagesPerSecond": 30.652866242038215
       }
     },
     "arweave": {
@@ -4717,14 +4717,14 @@
           "crawledAt": "2025-06-30T15:14:34.301Z"
         }
       ],
-      "lastCrawled": "2025-06-30T16:35:08.618Z",
+      "lastCrawled": "2025-06-30T16:40:22.530Z",
       "stats": {
         "totalPages": 80,
         "averageWords": 368,
-        "duration": 1505,
+        "duration": 1379,
         "requestCount": 0,
         "averageResponseTime": 0,
-        "pagesPerSecond": 53.156146179402
+        "pagesPerSecond": 58.0130529369108
       }
     },
     "permaweb-glossary": {
@@ -4746,7 +4746,7 @@
           "crawledAt": "2025-06-30T15:14:34.689Z"
         }
       ],
-      "lastCrawled": "2025-06-30T16:35:08.618Z",
+      "lastCrawled": "2025-06-30T16:40:22.530Z",
       "stats": {
         "totalPages": 1,
         "averageWords": 9712,

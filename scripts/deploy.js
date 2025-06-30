@@ -7,7 +7,8 @@ import { execSync } from 'child_process';
 import { gzipSync } from 'zlib';
 
 const CONFIG = {
-  buildDir: '.vercel/output/static',
+  buildDir: 'dist',
+  vercelOutputDir: '.vercel/output/static',
   compressibleExts: ['.js', '.css', '.html', '.json', '.svg', '.xml'],
   compressionThreshold: 0.9
 };
@@ -25,23 +26,35 @@ class DeploymentManager {
       throw new Error(`Build directory ${CONFIG.buildDir} not found`);
     }
     
+    this.setupVercelOutput();
     this.optimize();
     this.validate();
+  }
+
+  setupVercelOutput() {
+    console.log('📁 Setting up Vercel output structure...');
+    
+    fs.mkdirSync(path.dirname(CONFIG.vercelOutputDir), { recursive: true });
+    
+    if (fs.existsSync(CONFIG.vercelOutputDir)) {
+      fs.rmSync(CONFIG.vercelOutputDir, { recursive: true });
+    }
+    
+    execSync(`cp -r ${CONFIG.buildDir} ${CONFIG.vercelOutputDir}`, { stdio: 'inherit' });
   }
 
   optimize() {
     console.log('⚡ Optimizing build...');
     
-    // Clean system files
-    try {
-      execSync(`find ${CONFIG.buildDir} -name ".DS_Store" -delete`, { stdio: 'ignore' });
-    } catch {}
+    [CONFIG.buildDir, CONFIG.vercelOutputDir].forEach(dir => {
+      try {
+        execSync(`find ${dir} -name ".DS_Store" -delete`, { stdio: 'ignore' });
+      } catch {}
+    });
     
-    // Add .nojekyll
-    fs.writeFileSync(path.join(CONFIG.buildDir, '.nojekyll'), '');
+    fs.writeFileSync(path.join(CONFIG.vercelOutputDir, '.nojekyll'), '');
     
-    // Compress assets
-    this.compressAssets(CONFIG.buildDir);
+    this.compressAssets(CONFIG.vercelOutputDir);
     
     console.log(`✅ Optimized: ${this.stats.compressed} files compressed`);
   }
@@ -80,7 +93,7 @@ class DeploymentManager {
   validate() {
     const criticalFiles = ['index.html'];
     const missing = criticalFiles.filter(file => 
-      !fs.existsSync(path.join(CONFIG.buildDir, file))
+      !fs.existsSync(path.join(CONFIG.vercelOutputDir, file))
     );
     
     if (missing.length > 0) {
@@ -96,10 +109,10 @@ class DeploymentManager {
       if (!process.env[env]) throw new Error(`${env} not set`);
     }
     
-    process.chdir(CONFIG.buildDir);
+    process.chdir(CONFIG.vercelOutputDir);
     execSync(`npx vercel --token "${process.env.VERCEL_TOKEN}" --scope "${process.env.VERCEL_ORG_ID}" --yes --prod`, 
       { stdio: 'inherit' });
-    process.chdir('..');
+    process.chdir('../../..');
   }
 
   async deployArweave() {
@@ -111,8 +124,7 @@ class DeploymentManager {
       throw new Error('Arweave deployment credentials not set');
     }
     
-
-    execSync(`npx permaweb-deploy --ant-process="${process.env.ANT_PROCESS}" --arns-name="permaweb-llms-builder" --deploy-folder="${CONFIG.buildDir}" --verbose`, 
+    execSync(`npx permaweb-deploy --ant-process="${process.env.ANT_PROCESS}" --arns-name="permaweb-llms-builder" --deploy-folder="${CONFIG.vercelOutputDir}" --verbose`, 
       { stdio: 'inherit' });
   }
 }
