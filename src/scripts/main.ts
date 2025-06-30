@@ -6,6 +6,7 @@ import {
 	downloadFile,
 	openContentInNewTab,
 } from "../utils/defuddle-fetch.js";
+import { AccordionManager } from "../utils/accordion-manager.js";
 
 // Type definitions
 interface PageData {
@@ -52,6 +53,22 @@ const estimatedChars = document.getElementById("estimated-chars");
 async function initialize() {
 	await loadConfigOrder();
 	loadDocumentationIndex();
+	
+	// Make functions available globally BEFORE initializing AccordionManager
+	(window as any).selectedPages = selectedPages;
+	(window as any).updateSelectionCount = updateSelectionCount;
+	(window as any).updateSiteCheckboxes = updateSiteCheckboxes;
+	(window as any).toggleNode = toggleNode;
+	(window as any).toggleSelectionDetails = toggleSelectionDetails;
+	
+	// Initialize the enhanced accordion manager AFTER making functions global
+	const accordionManager = new AccordionManager({
+		iframeMode: window.self !== window.top,
+		maxHeight: 300,
+		transitionDuration: 0.25
+	});
+	
+	console.log('🎯 AccordionManager integrated with main application');
 }
 
 // Load config order to maintain site ordering
@@ -710,7 +727,7 @@ function showError(message: string) {
 	}
 	
 	docsTree.innerHTML = `
-		<div style="padding: 32px; text-align: center; color: var(--ao-error-color, #dc3545);">
+		<div style="padding: 32px; text-align: center; color: var(--error-color, #dc3545);">
 			<h3>❌ Error</h3>
 			<p>${message}</p>
 			<button class="btn" onclick="location.reload()">Retry</button>
@@ -901,10 +918,6 @@ if (generateBtn) {
 		}
 	});
 }
-
-// Make functions available globally
-(window as any).toggleNode = toggleNode;
-(window as any).toggleSelectionDetails = toggleSelectionDetails;
 
 // Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", initialize); 

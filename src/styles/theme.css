@@ -1,28 +1,29 @@
 :root {
   /* Default color scheme (light mode) */
-  --ao-bg-color: white;
-  --ao-text-color: #000000;
-  --ao-border-color: #d1d1d1;
-  --ao-border-secondary-color: #f0f0f0;
-  --ao-input-bg: white;
-  --ao-hover-bg: #f6f6f6;
-  --ao-category-bg: #f0f0f0;
-  --ao-category-bg-2: #f6f6f6;
-  --ao-category-text: #555;
-  --ao-link-color: #29a879;
-  --ao-result-bg: white;
-  --ao-result-hover: #f0f0f0;
-  --ao-heading-color: #111;
-  --ao-tag-bg: #000;
-  --ao-tag-text: white;
-  --ao-button-bg: #000;
-  --ao-button-text: white;
-  --ao-button-hover-bg: #333;
-  --ao-accent-color: #29a879;
-  --ao-accent-hover-color: #1f7a5a;
-  --ao-secondary-text: #666;
-  --ao-section-bg: #f5f5f5;
-  --ao-section-color: #111;
+  --bg-color: white;
+  --text-color: #000000;
+  --border-color: #d1d1d1;
+  --border-secondary-color: #f0f0f0;
+  --input-bg: white;
+  --hover-bg: #f6f6f6;
+  --category-bg: #f0f0f0;
+  --category-bg-2: #f6f6f6;
+  --category-text: #555;
+  --link-color: #29a879;
+  --result-bg: white;
+  --result-hover: #f0f0f0;
+  --heading-color: #111;
+  --tag-bg: #000;
+  --tag-text: white;
+  --button-bg: #000;
+  --button-text: white;
+  --button-hover-bg: #333;
+  --accent-color: #29a879;
+  --accent-hover-color: #1f7a5a;
+  --secondary-text: #666;
+  --section-bg: #f5f5f5;
+  --section-color: #111;
+  --error-color: #dc3545;
 
   /* Layout variables */
   --container-padding: 32px;
@@ -44,29 +45,30 @@
 
 /* Dark mode color scheme */
 [data-theme="dark"] {
-  --ao-bg-color: #121212;
-  --ao-text-color: #e0e0e0;
-  --ao-border-color: #242424;
-  --ao-border-secondary-color: #3f3f3f;
-  --ao-input-bg: #141414;
-  --ao-hover-bg: #1a1a1a;
-  --ao-category-bg: #1a1a1a;
-  --ao-category-bg-2: #202020;
-  --ao-category-text: #ffffff;
-  --ao-link-color: #34d399;
-  --ao-result-bg: #141414;
-  --ao-result-hover: #1a1a1a;
-  --ao-heading-color: #ffffff;
-  --ao-tag-bg: #242424;
-  --ao-tag-text: #e0e0e0;
-  --ao-button-bg: #242424;
-  --ao-button-text: #ffffff;
-  --ao-button-hover-bg: #404040;
-  --ao-accent-color: #008000;
-  --ao-accent-hover-color: #00a000;
-  --ao-secondary-text: #a0a0a0;
-  --ao-section-bg: #1a1a1a;
-  --ao-section-color: #ffffff;
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --border-color: #242424;
+  --border-secondary-color: #3f3f3f;
+  --input-bg: #141414;
+  --hover-bg: #1a1a1a;
+  --category-bg: #1a1a1a;
+  --category-bg-2: #202020;
+  --category-text: #ffffff;
+  --link-color: #34d399;
+  --result-bg: #141414;
+  --result-hover: #1a1a1a;
+  --heading-color: #ffffff;
+  --tag-bg: #242424;
+  --tag-text: #e0e0e0;
+  --button-bg: #242424;
+  --button-text: #ffffff;
+  --button-hover-bg: #404040;
+  --accent-color: #008000;
+  --accent-hover-color: #00a000;
+  --secondary-text: #a0a0a0;
+  --section-bg: #1a1a1a;
+  --section-color: #ffffff;
+  --error-color: #ff6b6b;
 }
 
 /* Theme toggle button */
@@ -76,9 +78,9 @@
   right: 20px;
   width: 40px;
   height: 40px;
-  border: var(--container-border-width) solid var(--ao-border-color);
-  background-color: var(--ao-button-bg);
-  color: var(--ao-button-text);
+  border: var(--container-border-width) solid var(--border-color);
+  background-color: var(--button-bg);
+  color: var(--button-text);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -89,7 +91,7 @@
 }
 
 .theme-toggle:hover {
-  background-color: var(--ao-button-hover-bg);
+  background-color: var(--button-hover-bg);
 }
 
 /* SVG icon styles */
@@ -121,6 +123,19 @@
   display: none;
 }
 
+/* Make selection counter non-expandable in iframe mode */
+.iframe-embed .selection-counter .selection-header {
+  cursor: default;
+}
+
+.iframe-embed .selection-counter .selection-header svg {
+  display: none;
+}
+
+.iframe-embed .selection-counter .selection-details {
+  display: none !important;
+}
+
 /* Iframe mode variables */
 .iframe-embed {
   --container-border-width: 0;
@@ -129,14 +144,62 @@
   --container-width: 100%;
 }
 
+/* Enhanced iframe layout constraints */
+.iframe-embed .main-container {
+  max-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.iframe-embed .main-content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.iframe-embed .docs-tree {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px); /* Reserve space for header and bottom controls */
+}
+
+.iframe-embed .bottom-controls {
+  flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
+  background: var(--bg-color);
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  margin-top: 16px;
+  z-index: 100;
+}
+
+/* Constrain accordion heights in iframe mode */
+.iframe-embed .site-children.expanded {
+  max-height: min(150px, 20vh) !important; /* Reduced from min(200px, 30vh) to prevent pushing bottom sites out of view */
+  overflow-y: auto;
+}
+
+.iframe-embed .selection-details.expanded {
+  max-height: min(150px, 25vh) !important;
+  overflow-y: auto;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--ao-bg-color);
+  background-color: var(--bg-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--ao-text-color);
+  color: var(--text-color);
 }
 
 .main-container {
@@ -144,9 +207,9 @@ body {
   width: var(--container-width);
   margin: 0 auto;
   padding: var(--container-padding);
-  background-color: var(--ao-bg-color);
+  background-color: var(--bg-color);
   border-radius: var(--border-radius);
-  border: var(--container-border-width) solid var(--ao-border-color);
+  border: var(--container-border-width) solid var(--border-color);
   min-height: var(--container-min-height);
   max-height: 90vh; /* Adaptive max height - allows growth but prevents overflow */
   box-sizing: border-box;
@@ -169,7 +232,7 @@ body {
 }
 
 h1 {
-  color: var(--ao-heading-color);
+  color: var(--heading-color);
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 24px;
@@ -181,14 +244,15 @@ h1 {
 
 /* Tree view styles */
 .docs-tree {
-  background-color: var(--ao-section-bg);
-  border: var(--container-border-width) solid var(--ao-border-color);
+  background-color: var(--section-bg);
+  border: var(--container-border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 20px;
   margin-bottom: 24px;
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  padding-bottom: 40px; /* Add extra padding at bottom to ensure bottom sites are accessible */
 }
 
 .docs-tree ul {
@@ -212,48 +276,48 @@ h1 {
 .docs-tree input[type="checkbox"] {
   width: 16px;
   height: 16px;
-  accent-color: var(--ao-accent-color);
+  accent-color: var(--accent-color);
 }
 
 /* Target checkboxes by their specific classes and ID */
 .site-checkbox,
 .category-checkbox,
 .page-checkbox {
-  accent-color: var(--ao-accent-color);
+  accent-color: var(--accent-color);
 }
 
 #docs-tree input[type="checkbox"] {
-  accent-color: var(--ao-accent-color);
+  accent-color: var(--accent-color);
 }
 
 /* Radio button styling */
 .docs-tree input[type="radio"] {
-  accent-color: var(--ao-accent-color);
+  accent-color: var(--accent-color);
 }
 
 .site-radio,
 .category-radio,
 .page-radio {
-  accent-color: var(--ao-accent-color);
+  accent-color: var(--accent-color);
 }
 
 #docs-tree input[type="radio"] {
-  accent-color: var(--ao-accent-color);
+  accent-color: var(--accent-color);
 }
 
 input[type="radio"] {
-  accent-color: var(--ao-accent-color);
+  accent-color: var(--accent-color);
 }
 
 .docs-tree label {
-  color: var(--ao-text-color);
+  color: var(--text-color);
   cursor: pointer;
   font-size: 14px;
   flex: 1;
 }
 
 .docs-tree label:hover {
-  color: var(--ao-accent-color);
+  color: var(--accent-color);
 }
 
 /* Collapsible tree nodes */
@@ -264,7 +328,7 @@ input[type="radio"] {
 .tree-toggle {
   background: none;
   border: none;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
   cursor: pointer;
   font-size: 12px;
   padding: 2px 4px;
@@ -272,7 +336,7 @@ input[type="radio"] {
 }
 
 .tree-toggle:hover {
-  color: var(--ao-text-color);
+  color: var(--text-color);
 }
 
 .tree-toggle::before {
@@ -294,9 +358,9 @@ input[type="radio"] {
 
 .btn {
   padding: 12px 24px;
-  border: var(--container-border-width) solid var(--ao-border-color);
-  background-color: var(--ao-button-bg);
-  color: var(--ao-button-text);
+  border: var(--container-border-width) solid var(--border-color);
+  background-color: var(--button-bg);
+  color: var(--button-text);
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -308,7 +372,7 @@ input[type="radio"] {
 }
 
 .btn:hover {
-  background-color: var(--ao-button-hover-bg);
+  background-color: var(--button-hover-bg);
 }
 
 .btn:disabled {
@@ -319,14 +383,14 @@ input[type="radio"] {
 }
 
 .btn-primary {
-  background-color: var(--ao-accent-color);
-  border-color: var(--ao-accent-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: var(--ao-accent-hover-color);
-  border-color: var(--ao-accent-hover-color);
+  background-color: var(--accent-hover-color);
+  border-color: var(--accent-hover-color);
 }
 
 /* Globe icon styles */
@@ -367,15 +431,15 @@ input[type="radio"] {
 }
 
 .smart-btn {
-  background-color: var(--ao-background-secondary);
-  color: var(--ao-text-color);
-  border: 1px solid var(--ao-border-color);
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
 }
 
 .smart-btn:hover {
-  background-color: var(--ao-accent-color);
+  background-color: var(--accent-color);
   color: white;
-  border-color: var(--ao-accent-color);
+  border-color: var(--accent-color);
 }
 
 /* Progress indicator */
@@ -392,36 +456,36 @@ input[type="radio"] {
 .progress-bar {
   width: 100%;
   height: 8px;
-  background-color: var(--ao-category-bg);
-  border: 1px solid var(--ao-border-color);
+  background-color: var(--category-bg);
+  border: 1px solid var(--border-color);
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background-color: var(--ao-accent-color);
+  background-color: var(--accent-color);
   transition: width 0.3s ease;
   width: 0%;
 }
 
 .progress-text {
   font-size: 14px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
   margin-top: 8px;
 }
 
 /* Selection counter */
 .selection-counter {
-  background-color: var(--ao-category-bg);
+  background-color: var(--category-bg);
   padding: 12px 16px;
   border-radius: var(--border-radius);
   font-size: 14px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
   flex-shrink: 0;
 }
 
 .selection-counter strong {
-  color: var(--ao-text-color);
+  color: var(--text-color);
 }
 
 /* Enhanced loading interface */
@@ -434,22 +498,22 @@ input[type="radio"] {
 
 .loading-header h3 {
   margin: 0 0 8px 0;
-  color: var(--ao-heading-color);
+  color: var(--heading-color);
   font-size: 20px;
 }
 
 .loading-header p {
   margin: 0 0 24px 0;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
   font-size: 16px;
 }
 
 .loading-details {
-  background: var(--ao-background-secondary);
+  background: var(--section-bg);
   border-radius: var(--border-radius);
   padding: 20px;
   margin: 16px 0;
-  border: 1px solid var(--ao-border-color);
+  border: 1px solid var(--border-color);
 }
 
 .status-item {
@@ -458,13 +522,13 @@ input[type="radio"] {
   justify-content: flex-start;
   margin: 8px 0;
   padding: 8px 12px;
-  background: var(--ao-background);
+  background: var(--bg-color);
   border-radius: var(--border-radius);
   transition: all 0.3s ease;
 }
 
 .status-item.active {
-  background: var(--ao-accent-color);
+  background: var(--accent-color);
   color: white;
   transform: translateX(4px);
 }
@@ -496,7 +560,7 @@ input[type="radio"] {
 
 .status-details {
   font-size: 12px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
   margin-left: 32px;
   text-align: left;
 }
@@ -509,23 +573,23 @@ input[type="radio"] {
 }
 
 .stat-item {
-  background: var(--ao-background);
+  background: var(--bg-color);
   padding: 12px;
   border-radius: var(--border-radius);
-  border: 1px solid var(--ao-border-color);
+  border: 1px solid var(--border-color);
   text-align: center;
 }
 
 .stat-value {
   font-size: 18px;
   font-weight: bold;
-  color: var(--ao-accent-color);
+  color: var(--accent-color);
   display: block;
 }
 
 .stat-label {
   font-size: 12px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
   margin-top: 4px;
 }
 
@@ -548,7 +612,7 @@ input[type="radio"] {
 
   /* Reduce expanded heights on mobile */
   #docs-tree .site-children.expanded {
-    max-height: 20vh;
+    max-height: 12vh; /* Reduced from 20vh to prevent pushing bottom sites out of view */
   }
   
   .selection-details.expanded {
@@ -604,16 +668,16 @@ input[type="radio"] {
 }
 
 .iframe-embed .docs-tree::-webkit-scrollbar-track {
-  background: var(--ao-category-bg);
+  background: var(--category-bg);
 }
 
 .iframe-embed .docs-tree::-webkit-scrollbar-thumb {
-  background: var(--ao-border-color);
+  background: var(--border-color);
   border-radius: 3px;
 }
 
 .iframe-embed .docs-tree::-webkit-scrollbar-thumb:hover {
-  background: var(--ao-secondary-text);
+  background: var(--secondary-text);
 }
 
 /* URL parameter overrides */
@@ -637,8 +701,8 @@ html.translucent-bg .main-container {
 #docs-tree .site-children {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.25s ease-out, opacity 0.2s ease-out, filter 0.2s ease-out, transform 0.2s ease-out;
-  background: var(--ao-category-bg-2);
+  transition: max-height 0.15s ease-out, opacity 0.1s ease-out, filter 0.1s ease-out, transform 0.1s ease-out;
+  background: var(--category-bg-2);
   border-radius: var(--border-radius);
   opacity: 0;
   filter: blur(2px);
@@ -647,9 +711,9 @@ html.translucent-bg .main-container {
 }
 
 #docs-tree .site-children.expanded {
-  max-height: 25vh; /* Adaptive height relative to viewport */
+  max-height: 15vh; /* Reduced from 25vh to prevent pushing bottom sites out of view */
   padding: 8px 0px;
-  border: 1px solid var(--ao-border-secondary-color);
+  border: 1px solid var(--border-secondary-color);
   overflow-y: auto; /* Allow scrolling within site children if needed */
   margin-top: 12px;
   opacity: 1;
@@ -661,8 +725,8 @@ html.translucent-bg .main-container {
 .selection-details {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.25s ease-out, margin-top 0.2s ease-out, opacity 0.2s ease-out, filter 0.2s ease-out, transform 0.15s ease-out;
-  background-color: var(--ao-category-bg);
+  transition: max-height 0.15s ease-out, margin-top 0.1s ease-out, opacity 0.1s ease-out, filter 0.1s ease-out, transform 0.1s ease-out;
+  background-color: var(--category-bg);
   border-radius: var(--border-radius);
   opacity: 0;
   filter: blur(1.5px);
@@ -674,7 +738,7 @@ html.translucent-bg .main-container {
   max-height: 20vh; /* Adaptive height that won't overflow */
   padding: 12px 16px;
   margin-top: 12px;
-  border: 1px solid var(--ao-border-color);
+  border: 1px solid var(--border-color);
   overflow-y: auto; /* Allow scrolling if content exceeds height */
   opacity: 1;
   filter: blur(0px);
@@ -712,11 +776,11 @@ html.translucent-bg .main-container {
 
 /* Text utility classes */
 .text-secondary {
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
 }
 
 .text-primary {
-  color: var(--ao-text-color);
+  color: var(--text-color);
 }
 
 .text-small {
@@ -797,12 +861,12 @@ html.translucent-bg .main-container {
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  color: var(--ao-text-color);
+  color: var(--text-color);
 }
 
 .tree-page-link {
   font-size: 12px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
   margin-left: 8px;
   text-decoration: none;
   cursor: pointer;
@@ -816,13 +880,13 @@ html.translucent-bg .main-container {
   cursor: pointer;
   font-weight: 500;
   font-size: 15px;
-  color: var(--ao-text-color);
+  color: var(--text-color);
   pointer-events: none;
 }
 
 .tree-site-count {
   font-size: 12px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
 }
 
 /* Icon utility classes */
@@ -867,7 +931,7 @@ html.translucent-bg .main-container {
 
 /* Loading skeleton classes */
 .skeleton-base {
-  background-color: var(--ao-category-bg);
+  background-color: var(--category-bg);
   border-radius: 4px;
   animation: pulse 2s infinite;
 }
@@ -939,13 +1003,13 @@ html.translucent-bg .main-container {
 /* Button override classes */
 .btn-transparent {
   background-color: transparent !important;
-  border-color: var(--ao-border-color) !important;
-  color: var(--ao-text-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-color) !important;
 }
 
 .btn-transparent:hover {
-  background-color: var(--ao-hover-bg) !important;
-  color: var(--ao-text-color) !important;
+  background-color: var(--hover-bg) !important;
+  color: var(--text-color) !important;
 }
 
 /* Selection counter classes */
@@ -960,28 +1024,28 @@ html.translucent-bg .main-container {
 .selection-estimated-chars {
   font-style: italic;
   font-size: 12px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
 }
 
 .selection-page-item {
   margin-bottom: 8px;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--ao-border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .selection-page-title {
   font-weight: 500;
-  color: var(--ao-text-color);
+  color: var(--text-color);
 }
 
 .selection-page-meta {
   font-size: 12px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
   margin-top: 2px;
 }
 
 .selection-page-link {
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
   text-decoration: none;
 }
 
@@ -993,16 +1057,109 @@ html.translucent-bg .main-container {
 .loading-description {
   margin-bottom: 16px;
   font-size: 14px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
 }
 
 .docs-summary {
   margin-bottom: 16px;
   font-size: 14px;
-  color: var(--ao-secondary-text);
+  color: var(--secondary-text);
 }
 
 /* Tree font family */
 .tree-font {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Custom color overrides */
+[data-custom-colors="true"] {
+	/* Override all color variables when custom colors are applied */
+	--bg-color: var(--custom-background, var(--bg-color));
+	--text-color: var(--custom-text, var(--text-color));
+	--accent-color: var(--custom-primary, var(--accent-color));
+	--accent-hover-color: var(--custom-primary, var(--accent-hover-color));
+}
+
+[data-custom-colors="true"] body {
+	background-color: var(--background-color) !important;
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .main-container {
+	background-color: var(--background-color) !important;
+}
+
+[data-custom-colors="true"] .text-secondary {
+	color: var(--text-color) !important;
+	opacity: 0.7;
+}
+
+[data-custom-colors="true"] .btn-primary {
+	background-color: var(--accent-color) !important;
+	border-color: var(--accent-color) !important;
+	color: white !important;
+}
+
+[data-custom-colors="true"] .btn-primary:hover {
+	background-color: var(--accent-hover-color) !important;
+	border-color: var(--accent-hover-color) !important;
+}
+
+/* Ensure custom colors take precedence over theme colors */
+[data-custom-colors="true"] .main-container,
+[data-custom-colors="true"] .docs-tree,
+[data-custom-colors="true"] .selection-counter,
+[data-custom-colors="true"] .progress-container {
+	background-color: var(--bg-color) !important;
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .btn-primary {
+	background-color: var(--accent-color) !important;
+	border-color: var(--accent-color) !important;
+	color: white !important;
+}
+
+[data-custom-colors="true"] .btn-primary:hover {
+	background-color: var(--accent-hover-color) !important;
+	border-color: var(--accent-hover-color) !important;
+}
+
+[data-custom-colors="true"] .text-secondary {
+	color: var(--text-color) !important;
+	opacity: 0.7;
+}
+
+[data-custom-colors="true"] h1 {
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .docs-tree label {
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .docs-tree label:hover {
+	color: var(--accent-color) !important;
+}
+
+[data-custom-colors="true"] .selection-counter strong {
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .progress-fill {
+	background-color: var(--accent-color) !important;
+}
+
+[data-custom-colors="true"] .progress-text {
+	color: var(--text-color) !important;
+	opacity: 0.7;
+}
+
+/* Ensure checkboxes use the accent color */
+[data-custom-colors="true"] input[type="checkbox"] {
+	accent-color: var(--accent-color) !important;
+}
+
+[data-custom-colors="true"] input[type="radio"] {
+	accent-color: var(--accent-color) !important;
 }

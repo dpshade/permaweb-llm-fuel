@@ -155,3 +155,5 @@ pnpm-debug.log*
 
 # Temp files
 temp-docs-index.json
+
+iframe-tests/

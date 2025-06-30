@@ -6,8 +6,9 @@ import { optimizedBatchExtraction } from './batch-processor.js';
 /**
  * Strip HTML tags and decode HTML entities from text content
  * Works in both browser and Node.js environments
+ * Preserves only structurally meaningful formatting for LLMs
  * @param {string} text - Text that may contain HTML
- * @returns {string} Clean text without HTML
+ * @returns {string} Clean text with structural formatting preserved
  */
 function stripHTML(text) {
   if (!text) return '';
@@ -16,28 +17,117 @@ function stripHTML(text) {
 
   // Environment-agnostic HTML stripping
   if (typeof document !== 'undefined' && document.createElement) {
-    // Browser environment - use DOM
+    // Browser environment - use DOM for initial parsing
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = text;
     cleanText = tempDiv.textContent || tempDiv.innerText || '';
   } else {
-    // Node.js environment - use comprehensive regex-based stripping
-    cleanText = text
-      // Remove script tags and all content (including malicious JS)
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-      // Remove style tags and all content
-      .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
-      // Remove comment blocks
-      .replace(/<!--[\s\S]*?-->/g, '')
-      // Remove all HTML tags
-      .replace(/<[^>]*>/g, '')
-      // Handle self-closing tags
-      .replace(/<[^>]*\/>/g, '');
+    // Node.js environment - manual processing
+    cleanText = text;
   }
 
-  // Universal HTML entity decoding and cleanup
+  // Remove harmful script/style tags and their content FIRST
   cleanText = cleanText
-    // Common HTML entities
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
+
+  // Preserve code blocks with proper formatting
+  cleanText = cleanText.replace(/<pre\b[^>]*><code\b[^>]*>([\s\S]*?)<\/code><\/pre>/gi, (match, code) => {
+    code = code.replace(/^[\r\n]+|[\r\n]+$/g, '');
+    return '\n```\n' + code + '\n```\n';
+  });
+
+  // Strip Markdown formatting FIRST (before HTML conversion) while preserving code blocks
+  let markdownSegments = cleanText.split(/(\n```[\s\S]*?\n```\n?)/g);
+  markdownSegments = markdownSegments.map((segment, idx) => {
+    if (/^\n```[\s\S]*?\n```\n?$/.test(segment)) {
+      // This is a code block, return as-is without Markdown removal
+      return segment;
+    } else {
+      // For the first segment, preserve the first line's leading # (title), strip from all others
+      if (idx === 0) {
+        const lines = segment.split('\n');
+        // Preserve leading # for the first line only
+        lines[0] = lines[0].replace(/^\s*#\s+/, '# ');
+        for (let i = 1; i < lines.length; i++) {
+          lines[i] = lines[i]
+            // Remove bold formatting - only when double asterisks/underscores are used for Markdown formatting
+            .replace(/(?<=\s|^)\*\*([^*]+)\*\*(?=\s|$)/g, '$1')
+            .replace(/(?<=\s|^)__([^_]+)__(?=\s|$)/g, '$1')
+            // Remove italic formatting - only when underscores are used for Markdown formatting
+            .replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '$1')
+            .replace(/(?<=\s|^)_([^_]+)_(?=\s|$)/g, '$1')
+            // Remove inline code formatting
+            .replace(/`([^`]+)`/g, '$1')
+            // Remove strikethrough
+            .replace(/~~([^~]+)~~/g, '$1')
+            // Remove list markers
+            .replace(/^\s*[-*+]\s+/gm, '')
+            .replace(/^\s*\d+\.\s+/gm, '')
+            // Remove blockquotes
+            .replace(/^\s*>\s+/gm, '')
+            // Remove links (keep link text)
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+            // Remove images (keep alt text)
+            .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+            // Remove headers (but preserve the text)
+            .replace(/^\s*#{1,6}\s+/, '');
+        }
+        return lines.join('\n');
+      }
+      // For all other segments, strip all Markdown formatting
+      return segment
+        // Remove bold formatting - only when double asterisks/underscores are used for Markdown formatting
+        .replace(/(?<=\s|^)\*\*([^*]+)\*\*(?=\s|$)/g, '$1')
+        .replace(/(?<=\s|^)__([^_]+)__(?=\s|$)/g, '$1')
+        // Remove italic formatting - only when underscores are used for Markdown formatting
+        .replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '$1')
+        .replace(/(?<=\s|^)_([^_]+)_(?=\s|$)/g, '$1')
+        // Remove inline code formatting
+        .replace(/`([^`]+)`/g, '$1')
+        // Remove strikethrough
+        .replace(/~~([^~]+)~~/g, '$1')
+        // Remove list markers
+        .replace(/^\s*[-*+]\s+/gm, '')
+        .replace(/^\s*\d+\.\s+/gm, '')
+        // Remove blockquotes
+        .replace(/^\s*>\s+/gm, '')
+        // Remove links (keep link text)
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+        // Remove images (keep alt text)
+        .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+        // Remove headers (but preserve the text)
+        .replace(/^\s*#{1,6}\s+/, '');
+    }
+  });
+  cleanText = markdownSegments.join('');
+
+  // Convert structural HTML to markdown BEFORE removing tags
+  cleanText = cleanText
+    .replace(/<code\b[^>]*>(.*?)<\/code>/gi, '`$1`')
+    .replace(/<h([1-6])\b[^>]*>(.*?)<\/h[1-6]>/gi, (match, level, text) => {
+      const hashes = '#'.repeat(parseInt(level));
+      return `\n${hashes} ${text}\n`;
+    })
+    .replace(/<li\b[^>]*>(.*?)<\/li>/gi, '• $1\n')
+    .replace(/<ul\b[^>]*>|<\/ul>/gi, '')
+    .replace(/<ol\b[^>]*>|<\/ol>/gi, '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<p\b[^>]*>/gi, '\n')
+    .replace(/<\/p>/gi, '\n')
+    .replace(/<blockquote\b[^>]*>/gi, '\n> ')
+    .replace(/<\/blockquote>/gi, '\n')
+    .replace(/<hr\s*\/?>/gi, '\n---\n')
+    // Remove <strong> and <em> tags but preserve their content
+    .replace(/<strong\b[^>]*>(.*?)<\/strong>/gi, '$1')
+    .replace(/<em\b[^>]*>(.*?)<\/em>/gi, '$1');
+
+  // Remove ALL remaining HTML tags (including visual formatting)
+  cleanText = cleanText.replace(/<[^>]*>/g, '');
+
+  // Decode HTML entities AFTER tag removal
+  cleanText = cleanText
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -46,6 +136,7 @@ function stripHTML(text) {
     .replace(/&#x27;/g, "'")
     .replace(/&#x2F;/g, '/')
     .replace(/&apos;/g, "'")
+    .replace(/&#39;/g, "'")
     .replace(/&hellip;/g, '...')
     .replace(/&mdash;/g, '—')
     .replace(/&ndash;/g, '–')
@@ -53,7 +144,6 @@ function stripHTML(text) {
     .replace(/&lsquo;/g, "'")
     .replace(/&rdquo;/g, '"')
     .replace(/&ldquo;/g, '"')
-    // Numeric HTML entities
     .replace(/&#(\d+);/g, (match, dec) => {
       try {
         return String.fromCharCode(parseInt(dec, 10));
@@ -68,10 +158,10 @@ function stripHTML(text) {
         return ' ';
       }
     })
-    // Clean any remaining HTML-like patterns
-    .replace(/&[a-zA-Z0-9#]+;/g, ' ')
-    
-    // CRITICAL: Remove potentially malicious JavaScript patterns
+    .replace(/&[a-zA-Z0-9#]+;/g, ' ');
+
+  // Remove malicious JavaScript patterns
+  cleanText = cleanText
     .replace(/javascript:/gi, '')
     .replace(/alert\s*\(/gi, '')
     .replace(/document\./gi, '')
@@ -80,41 +170,49 @@ function stripHTML(text) {
     .replace(/Function\s*\(/gi, '')
     .replace(/setTimeout\s*\(/gi, '')
     .replace(/setInterval\s*\(/gi, '')
-    .replace(/<script[^>]*>/gi, '')
-    .replace(/<\/script>/gi, '')
-    .replace(/on\w+\s*=/gi, '') // Remove event handlers like onclick=
-    
-    // AGGRESSIVE: Remove CSS-like patterns and malicious content
-    .replace(/\{[^}]*\}/g, ' ') // Remove CSS rule blocks
-    .replace(/[a-zA-Z-]+\s*:\s*[^;]+;/g, ' ') // Remove CSS property:value; patterns
-    .replace(/\bdisplay\s*:\s*none\b/gi, '')
-    .replace(/\bcolor\s*:\s*[^;]+/gi, '')
-    .replace(/\bbackground\s*:\s*[^;]+/gi, '')
-    .replace(/url\s*\([^)]+\)/gi, '')
+    .replace(/on\w+\s*=/gi, '')
     .replace(/XSS/gi, '')
     .replace(/innerHTML/gi, '')
     .replace(/attempt/gi, '')
     .replace(/hacked/gi, '')
-    .replace(/malicious/gi, '')
-    
-    // Strip Markdown formatting for clean LLM consumption
-    .replace(/\*\*([^*]+)\*\*/g, '$1')  // **bold** -> bold
-    .replace(/__([^_]+)__/g, '$1')      // __bold__ -> bold
-    .replace(/\*([^*]+)\*/g, '$1')      // *italic* -> italic
-    .replace(/_([^_]+)_/g, '$1')        // _italic_ -> italic
-    .replace(/`([^`]+)`/g, '$1')        // `code` -> code
-    .replace(/~~([^~]+)~~/g, '$1')      // ~~strikethrough~~ -> strikethrough
-    .replace(/^#{1,6}\s+/gm, '')        // # Headers -> Headers
-    .replace(/^\s*[-*+]\s+/gm, '')      // - List items -> List items
-    .replace(/^\s*\d+\.\s+/gm, '')      // 1. Numbered lists -> Numbered lists
-    .replace(/^\s*>\s+/gm, '')          // > Blockquotes -> Blockquotes
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // [link text](url) -> link text
-    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1') // ![alt text](image) -> alt text
-    
-    // Clean up whitespace
-    .replace(/\s+/g, ' ')
-    .replace(/\n\s*\n\s*\n+/g, '\n\n')
-    .trim();
+    .replace(/malicious/gi, '');
+
+  // Remove CSS patterns more aggressively, but preserve code blocks
+  let cssSegments = cleanText.split(/(\n```[\s\S]*?\n```\n?)/g);
+  cssSegments = cssSegments.map(segment => {
+    if (/^\n```[\s\S]*?\n```\n?$/.test(segment)) {
+      // This is a code block, return as-is without CSS removal
+      return segment;
+    } else {
+      // Apply CSS removal only outside code blocks
+      return segment
+        .replace(/\{[^}]*\}/g, ' ')
+        .replace(/[a-zA-Z-]+\s*:\s*[^;]+;/g, ' ')
+        .replace(/\b(?:display|color|background|font|margin|padding|border|width|height)\s*:\s*[^;]+/gi, '')
+        .replace(/url\s*\([^)]+\)/gi, '');
+    }
+  });
+  cleanText = cssSegments.join('');
+
+
+
+  // Don't touch underscores - preserve them completely
+
+  // Clean up whitespace while preserving code block formatting
+  let segments = cleanText.split(/(\n```[\s\S]*?\n```\n?)/g);
+  segments = segments.map(segment => {
+    if (/^\n```[\s\S]*?\n```\n?$/.test(segment)) {
+      return segment;
+    } else {
+      return segment
+        .replace(/\n\s*\n\s*\n+/g, '\n\n')
+        .replace(/[ \t]+/g, ' ')
+        .replace(/\n[ \t]+/g, '\n')
+        .replace(/[ \t]+\n/g, '\n')
+        .trim();
+    }
+  });
+  cleanText = segments.join('');
 
   return cleanText;
 }

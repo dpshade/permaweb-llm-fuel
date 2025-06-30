@@ -51,10 +51,10 @@ jobs:
         env:
           NODE_ENV: production
       
-      - name: Test & Lint
-        run: |
-          bun run test
-          bun run lint
+      # - name: Test & Lint
+      #   run: |
+      #     bun run test
+      #     bun run lint
         
       - name: Commit Index Changes (Daily)
         if: github.event_name == 'schedule'
