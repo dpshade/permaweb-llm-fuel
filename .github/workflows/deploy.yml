@@ -129,15 +129,26 @@ jobs:
         env:
           NODE_ENV: production
           
-      - name: 🚀 Deploy to Vercel (Preview Mirror)
-        if: github.ref == 'refs/heads/preview'
+      - name: 🌐 Deploy to Vercel (Production or Preview)
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/preview'
         run: |
-          echo "🌐 Deploying preview to Vercel for fast access..."
-          bun run deploy:preview
+          echo "🌐 Deploying to Vercel..."
+          cd dist
+          npx vercel --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" --yes --prod
+          cd ..
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 🌐 Deploy to Permaweb (Arweave)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "🚀 Deploying to Arweave Permaweb using deploy-prod.sh..."
+          bash scripts/deploy-prod.sh
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          ANT_PROCESS: ${{ secrets.ANT_PROCESS }}
           
       - name: 📝 Deployment summary
         run: |

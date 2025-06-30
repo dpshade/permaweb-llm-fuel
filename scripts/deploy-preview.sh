@@ -39,12 +39,6 @@ fi
 
 print_header "🚀 Preview Deployment (Vercel)"
 
-echo "Building project..."
-bun run build
-
-echo "Running tests..."
-bun run test
-
 echo "Deploying to Vercel..."
 cd dist
 npx vercel --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" --yes --prod

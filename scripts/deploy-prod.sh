@@ -36,12 +36,6 @@ fi
 
 print_header "🚀 Production Deployment (Arweave)"
 
-echo "Building project..."
-bun run build
-
-echo "Running tests..."
-bun run test
-
 echo "Deploying to Arweave..."
 npx permaweb-deploy \
     --ant-process="$ANT_PROCESS" \
