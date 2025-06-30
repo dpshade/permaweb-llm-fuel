@@ -20,51 +20,6 @@ if (!fs.existsSync(buildDir)) {
 
 console.log(`📁 Processing build directory: ${buildDir}`);
 
-// Run crawler in CI/Vercel environment to generate docs index
-const isCI = process.env.CI === 'true' || 
-             process.env.VERCEL === '1' || 
-             process.env.GITHUB_ACTIONS === 'true' ||
-             process.env.VERCEL_BUILD === 'true';
-
-if (isCI) {
-  console.log('🕷️  Running crawler to generate docs index...');
-  try {
-    // Run crawler with production settings, outputting to public/docs-index.json
-    execSync('NODE_ENV=production bun run src/utils/crawler.js --output public/docs-index.json', { 
-      stdio: 'inherit',
-      cwd: process.cwd()
-    });
-    console.log('   ✓ Docs index generated to public/docs-index.json');
-    
-    // Copy to src/data/index.json for build-time imports
-    const publicIndexPath = path.join(process.cwd(), 'public/docs-index.json');
-    const srcDataPath = path.join(process.cwd(), 'src/data/index.json');
-    
-    if (fs.existsSync(publicIndexPath)) {
-      // Ensure src/data directory exists
-      const srcDataDir = path.dirname(srcDataPath);
-      if (!fs.existsSync(srcDataDir)) {
-        fs.mkdirSync(srcDataDir, { recursive: true });
-      }
-      
-      // Copy for build-time import
-      fs.copyFileSync(publicIndexPath, srcDataPath);
-      
-      const stats = fs.statSync(publicIndexPath);
-      console.log(`   ✓ Index file verified: ${(stats.size / 1024).toFixed(1)}KB`);
-      console.log(`   ✓ Copied to src/data/index.json for build-time imports`);
-    } else {
-      console.warn('   ⚠️  Index file not found at expected location');
-    }    
-  } catch (error) {
-    console.error('   ❌ Failed to run crawler:', error.message);
-    // Don't fail the build if crawler fails - the site should still deploy
-    console.warn('   ⚠️  Continuing build without updated docs index');
-  }
-} else {
-  console.log('📝 Skipping crawler (not in CI environment)');
-}
-
 // Clean up system files
 try {
   execSync(`find ${buildDir} -name ".DS_Store" -delete`, { stdio: 'ignore' });

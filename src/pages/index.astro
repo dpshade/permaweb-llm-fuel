@@ -1,35 +1,6 @@
 ---
 // Main page for Permaweb LLMs Builder
 import "../styles/theme.css";
-import indexData from "../data/index.json";
-
-// TypeScript interfaces for the data structure
-interface PageData {
-	title: string;
-	url: string;
-	breadcrumbs?: string[];
-	estimatedWords?: number;
-	estimatedChars?: number;
-}
-
-interface SiteData {
-	name: string;
-	description?: string;
-	pages: PageData[];
-	crawledAt?: string;
-}
-
-interface DocumentationIndex {
-	sites: Record<string, SiteData>;
-	_metadata?: {
-		generated: string;
-		totalSites: number;
-		totalPages: number;
-	};
-}
-
-// Cast the imported data to our interface
-const docsIndex = indexData as DocumentationIndex;
 ---
 
 <html lang="en">
@@ -273,7 +244,7 @@ const docsIndex = indexData as DocumentationIndex;
 		</div>
 
 		<!-- Main JavaScript -->
-		<script define:vars={{ docsIndex }}>
+		<script>
 			import { initializeAllTheme } from "../utils/theme.js";
 			import {
 				batchFetchAndClean,
@@ -324,8 +295,10 @@ const docsIndex = indexData as DocumentationIndex;
 			}
 
 			// Load documentation index from pre-built data
-			function loadDocumentationIndex() {
+			async function loadDocumentationIndex() {
 				try {
+					const response = await fetch("/docs-index.json");
+					const docsIndex = await response.json();
 					// Process the index into display format
 					displayTree = processIndex(docsIndex);
 					allPages = extractAllPages(docsIndex);

@@ -13,8 +13,9 @@
   ],
   "scripts": {
     "dev": "astro dev",
-    "build": "bun run clean && astro build && bun run scripts/post-build.js",
-    "build:vercel": "bun run clean && VERCEL_BUILD=true astro build && bun run scripts/post-build.js",
+    "build": "bun run clean && bun run build:data && astro build && bun run scripts/post-build.js",
+    "build:vercel": "bun run clean && bun run build:data && VERCEL_BUILD=true astro build && bun run scripts/post-build.js",
+    "build:data": "bun run src/utils/crawler.js --output public/docs-index.json && mkdir -p src/data && cp public/docs-index.json src/data/index.json",
     "preview": "bun run preview-server.js",
     "test": "vitest run",
     "test:watch": "vitest",
