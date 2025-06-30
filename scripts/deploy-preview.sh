@@ -47,7 +47,7 @@ bun run test
 
 echo "Deploying to Vercel..."
 cd dist
-npx vercel --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" --yes
+npx vercel --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" --yes --prod
 cd ..
 
 print_success "Preview deployment completed!"
