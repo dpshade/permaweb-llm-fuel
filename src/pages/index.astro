@@ -267,22 +267,32 @@ import "../styles/theme.css";
 				
 				// ===== CUSTOM COLORS =====
 				const customPrimary = urlParams.get('primary');
+				const customAccent = urlParams.get('accent');
 				const customBackground = urlParams.get('background');
 				const customText = urlParams.get('text');
 				
-				if (customPrimary || customBackground || customText) {
+				// Apply any custom colors provided
+				if (customPrimary || customAccent || customBackground || customText) {
 					document.body.setAttribute('data-custom-colors', 'true');
 					
 					// Apply custom colors via CSS custom properties
 					const root = document.documentElement;
 					if (customPrimary) {
 						root.style.setProperty('--custom-primary', customPrimary);
+						root.style.setProperty('--accent-color', customPrimary);
+						root.style.setProperty('--accent-hover-color', customPrimary);
+					}
+					if (customAccent) {
+						root.style.setProperty('--accent-color', customAccent);
+						root.style.setProperty('--accent-hover-color', customAccent);
 					}
 					if (customBackground) {
 						root.style.setProperty('--custom-background', customBackground);
+						root.style.setProperty('--bg-color', customBackground);
 					}
 					if (customText) {
 						root.style.setProperty('--custom-text', customText);
+						root.style.setProperty('--text-color', customText);
 					}
 				}
 				

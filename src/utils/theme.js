@@ -59,10 +59,12 @@ export function applyQueryParameters() {
   
   // Apply any colors that were provided as URL parameters
   const root = document.documentElement;
+  let hasCustomColors = false;
   
   Object.entries(colorParams).forEach(([varName, value]) => {
     if (value && /^#([0-9A-F]{3}){1,2}$/i.test(value)) {
       root.style.setProperty(varName, value);
+      hasCustomColors = true;
       
       // Special handling for bg-color when translucent is enabled
       if (varName === '--background-color' && translucent) {
@@ -83,6 +85,11 @@ export function applyQueryParameters() {
       }
     }
   });
+  
+  // Set data-custom-colors attribute if any custom colors were applied
+  if (hasCustomColors) {
+    root.setAttribute('data-custom-colors', 'true');
+  }
 }
 
 /**

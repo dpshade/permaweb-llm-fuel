@@ -1070,3 +1070,96 @@ html.translucent-bg .main-container {
 .tree-font {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 }
+
+/* Custom color overrides */
+[data-custom-colors="true"] {
+	/* Override all color variables when custom colors are applied */
+	--bg-color: var(--custom-background, var(--bg-color));
+	--text-color: var(--custom-text, var(--text-color));
+	--accent-color: var(--custom-primary, var(--accent-color));
+	--accent-hover-color: var(--custom-primary, var(--accent-hover-color));
+}
+
+[data-custom-colors="true"] body {
+	background-color: var(--background-color) !important;
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .main-container {
+	background-color: var(--background-color) !important;
+}
+
+[data-custom-colors="true"] .text-secondary {
+	color: var(--text-color) !important;
+	opacity: 0.7;
+}
+
+[data-custom-colors="true"] .btn-primary {
+	background-color: var(--accent-color) !important;
+	border-color: var(--accent-color) !important;
+	color: white !important;
+}
+
+[data-custom-colors="true"] .btn-primary:hover {
+	background-color: var(--accent-hover-color) !important;
+	border-color: var(--accent-hover-color) !important;
+}
+
+/* Ensure custom colors take precedence over theme colors */
+[data-custom-colors="true"] .main-container,
+[data-custom-colors="true"] .docs-tree,
+[data-custom-colors="true"] .selection-counter,
+[data-custom-colors="true"] .progress-container {
+	background-color: var(--bg-color) !important;
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .btn-primary {
+	background-color: var(--accent-color) !important;
+	border-color: var(--accent-color) !important;
+	color: white !important;
+}
+
+[data-custom-colors="true"] .btn-primary:hover {
+	background-color: var(--accent-hover-color) !important;
+	border-color: var(--accent-hover-color) !important;
+}
+
+[data-custom-colors="true"] .text-secondary {
+	color: var(--text-color) !important;
+	opacity: 0.7;
+}
+
+[data-custom-colors="true"] h1 {
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .docs-tree label {
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .docs-tree label:hover {
+	color: var(--accent-color) !important;
+}
+
+[data-custom-colors="true"] .selection-counter strong {
+	color: var(--text-color) !important;
+}
+
+[data-custom-colors="true"] .progress-fill {
+	background-color: var(--accent-color) !important;
+}
+
+[data-custom-colors="true"] .progress-text {
+	color: var(--text-color) !important;
+	opacity: 0.7;
+}
+
+/* Ensure checkboxes use the accent color */
+[data-custom-colors="true"] input[type="checkbox"] {
+	accent-color: var(--accent-color) !important;
+}
+
+[data-custom-colors="true"] input[type="radio"] {
+	accent-color: var(--accent-color) !important;
+}
