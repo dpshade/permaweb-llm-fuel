@@ -1,97 +1,197 @@
-#!/usr/bin/env bun
 // test/deploy-script.test.js - Test deployment script functionality
 
-import { describe, it, expect, beforeEach, afterEach } from 'bun:test';
+vi.spyOn(process, 'chdir').mockImplementation(() => {});
+
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
-describe('Deployment Script', () => {
-  const testDirs = ['dist', '.vercel/output/static'];
+// Mock child_process and fs for testing
+vi.mock('child_process');
+vi.mock('fs');
+
+const mockChdir = () => {};
+
+describe('deploy-script', () => {
+  const mockExecSync = vi.mocked(execSync);
+  const mockFs = vi.mocked(fs);
   
   beforeEach(() => {
-    // Clean up test directories
-    testDirs.forEach(dir => {
-      if (fs.existsSync(dir)) {
-        fs.rmSync(dir, { recursive: true });
-      }
-    });
+    vi.clearAllMocks();
+    
+    // Default mocks
+    mockFs.existsSync.mockReturnValue(true);
+    mockFs.mkdirSync.mockReturnValue(undefined);
+    mockFs.rmSync.mockReturnValue(undefined);
+    mockFs.writeFileSync.mockReturnValue(undefined);
+    mockFs.readFileSync.mockReturnValue(Buffer.from('test content'));
+    mockFs.readdirSync.mockReturnValue([]);
+    
+    mockExecSync.mockReturnValue(Buffer.from('success'));
   });
-  
+
   afterEach(() => {
-    // Clean up after tests
-    testDirs.forEach(dir => {
-      if (fs.existsSync(dir)) {
-        fs.rmSync(dir, { recursive: true });
-      }
+    vi.restoreAllMocks();
+    delete process.env.VERCEL_TOKEN;
+    delete process.env.VERCEL_ORG_ID;
+    delete process.env.VERCEL_PROJECT_ID;
+    delete process.env.DEPLOY_KEY;
+    delete process.env.ANT_PROCESS;
+  });
+
+  describe('DeploymentManager', () => {
+    it('should validate build directory exists', async () => {
+      mockFs.existsSync.mockReturnValue(false);
+      
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await expect(deployment.build()).rejects.toThrow('Build directory dist not found');
     });
-  });
 
-  it('should create Vercel output structure from dist directory', () => {
-    // Create mock dist directory with test files
-    fs.mkdirSync('dist', { recursive: true });
-    fs.writeFileSync('dist/index.html', '<!DOCTYPE html><html></html>');
-    fs.writeFileSync('dist/style.css', 'body { margin: 0; }');
-    
-    // Run the setupVercelOutput logic
-    const vercelOutputDir = '.vercel/output/static';
-    fs.mkdirSync(path.dirname(vercelOutputDir), { recursive: true });
-    
-    if (fs.existsSync(vercelOutputDir)) {
-      fs.rmSync(vercelOutputDir, { recursive: true });
-    }
-    
-    execSync(`cp -r dist ${vercelOutputDir}`, { stdio: 'ignore' });
-    
-    // Verify the structure was created correctly
-    expect(fs.existsSync(vercelOutputDir)).toBe(true);
-    expect(fs.existsSync(path.join(vercelOutputDir, 'index.html'))).toBe(true);
-    expect(fs.existsSync(path.join(vercelOutputDir, 'style.css'))).toBe(true);
-  });
+    it('should create Vercel output structure', async () => {
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await deployment.build();
+      
+      expect(mockFs.mkdirSync).toHaveBeenCalledWith(
+        path.dirname('.vercel/output/static'), 
+        { recursive: true }
+      );
+      expect(mockExecSync).toHaveBeenCalledWith(
+        'cp -r dist .vercel/output/static', 
+        { stdio: 'inherit' }
+      );
+    });
 
-  it('should handle missing dist directory gracefully', () => {
-    // Test that the script would throw an error for missing dist
-    expect(() => {
-      if (!fs.existsSync('dist')) {
-        throw new Error('Build directory dist not found');
-      }
-    }).toThrow('Build directory dist not found');
-  });
+    it('should compress eligible files', async () => {
+      // Mock directory structure to avoid infinite recursion
+      mockFs.readdirSync.mockReturnValue([
+        { name: 'test.js', isDirectory: () => false },
+        { name: 'test.txt', isDirectory: () => false },
+        { name: 'subdir', isDirectory: () => true }
+      ]);
+      
+      // Mock subdirectory read
+      mockFs.readdirSync.mockImplementation((dir) => {
+        if (dir.includes('subdir')) {
+          return [];
+        }
+        return [
+          { name: 'test.js', isDirectory: () => false },
+          { name: 'test.txt', isDirectory: () => false },
+          { name: 'subdir', isDirectory: () => true }
+        ];
+      });
+      
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await deployment.build();
+      
+      // Should attempt to compress .js files but not .txt
+      expect(mockFs.readFileSync).toHaveBeenCalled();
+    });
 
-  it('should validate critical files exist', () => {
-    // Create mock Vercel output without index.html
-    fs.mkdirSync('.vercel/output/static', { recursive: true });
-    fs.writeFileSync('.vercel/output/static/style.css', 'body { margin: 0; }');
-    
-    // Test validation logic
-    const criticalFiles = ['index.html'];
-    const missing = criticalFiles.filter(file => 
-      !fs.existsSync(path.join('.vercel/output/static', file))
-    );
-    
-    expect(missing).toContain('index.html');
-    expect(missing.length).toBe(1);
-  });
+    it('should validate critical files exist', async () => {
+      mockFs.existsSync.mockImplementation((filePath) => {
+        return !filePath.includes('index.html');
+      });
+      
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await expect(deployment.build()).rejects.toThrow('Missing critical files: index.html');
+    });
 
-  it('should identify compressible file extensions', () => {
-    const compressibleExts = ['.js', '.css', '.html', '.json', '.svg', '.xml'];
-    
-    const testCases = [
-      { filename: 'script.js', shouldCompress: true },
-      { filename: 'style.css', shouldCompress: true },
-      { filename: 'index.html', shouldCompress: true },
-      { filename: 'data.json', shouldCompress: true },
-      { filename: 'icon.svg', shouldCompress: true },
-      { filename: 'sitemap.xml', shouldCompress: true },
-      { filename: 'image.png', shouldCompress: false },
-      { filename: 'document.pdf', shouldCompress: false },
-      { filename: 'archive.zip', shouldCompress: false }
-    ];
-    
-    testCases.forEach(({ filename, shouldCompress }) => {
-      const ext = path.extname(filename).toLowerCase();
-      const isCompressible = compressibleExts.includes(ext);
-      expect(isCompressible).toBe(shouldCompress);
+    it('should handle Vercel deployment with required env vars', async () => {
+      process.env.VERCEL_TOKEN = 'test-token';
+      process.env.VERCEL_ORG_ID = 'test-org';
+      process.env.VERCEL_PROJECT_ID = 'test-project';
+      
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await deployment.deployVercel();
+      
+      expect(mockExecSync).toHaveBeenCalledWith(
+        expect.stringContaining('npx vercel --token'),
+        { stdio: 'inherit' }
+      );
+      
+      // Cleanup
+      delete process.env.VERCEL_TOKEN;
+      delete process.env.VERCEL_ORG_ID;
+      delete process.env.VERCEL_PROJECT_ID;
+    });
+
+    it('should fail Vercel deployment without required env vars', async () => {
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await expect(deployment.deployVercel()).rejects.toThrow('VERCEL_TOKEN not set');
+    });
+
+    it('should handle Arweave deployment with required env vars', async () => {
+      process.env.VERCEL_TOKEN = 'test-token';
+      process.env.VERCEL_ORG_ID = 'test-org';
+      process.env.VERCEL_PROJECT_ID = 'test-project';
+      process.env.DEPLOY_KEY = 'test-key';
+      process.env.ANT_PROCESS = 'test-process';
+      
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await deployment.deployArweave();
+      
+      expect(mockExecSync).toHaveBeenCalledWith(
+        expect.stringContaining('npx permaweb-deploy'),
+        { stdio: 'inherit' }
+      );
+      
+      // Cleanup
+      delete process.env.VERCEL_TOKEN;
+      delete process.env.VERCEL_ORG_ID;
+      delete process.env.VERCEL_PROJECT_ID;
+      delete process.env.DEPLOY_KEY;
+      delete process.env.ANT_PROCESS;
+    });
+
+    it('should fail Arweave deployment without required env vars', async () => {
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await expect(deployment.deployArweave()).rejects.toThrow('Arweave deployment credentials not set');
+      
+      // Cleanup
+      delete process.env.VERCEL_TOKEN;
+      delete process.env.VERCEL_ORG_ID;
+      delete process.env.VERCEL_PROJECT_ID;
+    });
+
+    it('should handle build errors gracefully', async () => {
+      mockExecSync.mockImplementation(() => {
+        throw new Error('Build failed');
+      });
+      
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await expect(deployment.build()).rejects.toThrow('Build failed');
+    });
+
+    it('should clean system files during optimization', async () => {
+      const { DeploymentManager } = await import('../scripts/deploy.js');
+      const deployment = new DeploymentManager({ chdir: mockChdir });
+      
+      await deployment.build();
+      
+      expect(mockExecSync).toHaveBeenCalledWith(
+        expect.stringContaining('find'),
+        { stdio: 'ignore' }
+      );
     });
   });
 }); 

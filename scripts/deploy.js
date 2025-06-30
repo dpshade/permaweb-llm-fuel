@@ -14,8 +14,9 @@ const CONFIG = {
 };
 
 class DeploymentManager {
-  constructor() {
+  constructor({ chdir = process.chdir } = {}) {
     this.stats = { compressed: 0, totalReduction: 0 };
+    this._chdir = chdir;
   }
 
   async build() {
@@ -60,14 +61,21 @@ class DeploymentManager {
   }
 
   compressAssets(dir) {
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      const fullPath = path.join(dir, entry.name);
+    try {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
       
-      if (entry.isDirectory()) {
-        this.compressAssets(fullPath);
-      } else if (this.shouldCompress(entry.name)) {
-        this.compressFile(fullPath);
+      for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
+        
+        if (entry.isDirectory()) {
+          // Recursively process subdirectories
+          this.compressAssets(fullPath);
+        } else if (this.shouldCompress(entry.name)) {
+          this.compressFile(fullPath);
+        }
       }
+    } catch (error) {
+      console.warn(`⚠️ Error reading directory ${dir}: ${error.message}`);
     }
   }
 
@@ -109,57 +117,60 @@ class DeploymentManager {
       if (!process.env[env]) throw new Error(`${env} not set`);
     }
     
-    process.chdir(CONFIG.vercelOutputDir);
+    this._chdir(CONFIG.vercelOutputDir);
     execSync(`npx vercel --token "${process.env.VERCEL_TOKEN}" --scope "${process.env.VERCEL_ORG_ID}" --yes --prod`, 
       { stdio: 'inherit' });
-    process.chdir('../../..');
+    this._chdir('../../..');
   }
 
   async deployArweave() {
-    await this.deployVercel();
-
-    console.log('🚀 Deploying to Arweave...');
-    
     if (!process.env.DEPLOY_KEY || !process.env.ANT_PROCESS) {
       throw new Error('Arweave deployment credentials not set');
     }
+    await this.deployVercel();
+
+    console.log('🚀 Deploying to Arweave...');
     
     execSync(`npx permaweb-deploy --ant-process="${process.env.ANT_PROCESS}" --arns-name="permaweb-llms-builder" --deploy-folder="${CONFIG.vercelOutputDir}" --verbose`, 
       { stdio: 'inherit' });
   }
 }
 
-// Main execution
-const deployment = new DeploymentManager();
-const target = process.argv[2] || 'build';
+// Export for testing
+export { DeploymentManager };
 
-(async () => {
-  try {
-    switch (target) {
-      case 'build':
-        await deployment.build();
-        break;
-      case 'vercel':
-        await deployment.build();
-        await deployment.deployVercel();
-        break;
-      case 'arweave':
-        await deployment.build();
-        await deployment.deployArweave();
-        break;
-      case 'all':
-        await deployment.build();
-        await deployment.deployVercel();
-        await deployment.deployArweave();
-        break;
-      default:
-        console.error('Usage: bun deploy.js [build|vercel|arweave|all]');
-        process.exit(1);
+// Main execution - only run if this file is executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const deployment = new DeploymentManager();
+  const target = process.argv[2] || 'build';
+  (async () => {
+    try {
+      switch (target) {
+        case 'build':
+          await deployment.build();
+          break;
+        case 'vercel':
+          await deployment.build();
+          await deployment.deployVercel();
+          break;
+        case 'arweave':
+          await deployment.build();
+          await deployment.deployArweave();
+          break;
+        case 'all':
+          await deployment.build();
+          await deployment.deployVercel();
+          await deployment.deployArweave();
+          break;
+        default:
+          console.error('Usage: bun deploy.js [build|vercel|arweave|all]');
+          process.exit(1);
+      }
+      
+      console.log('✅ Deployment completed successfully!');
+    } catch (error) {
+      console.error(`❌ Deployment failed: ${error.message}`);
+      process.exit(1);
     }
-    
-    console.log('✅ Deployment completed successfully!');
-  } catch (error) {
-    console.error(`❌ Deployment failed: ${error.message}`);
-    process.exit(1);
-  }
-})(); 
+  })();
+} 
