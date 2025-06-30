@@ -1,6 +1,18 @@
 ---
 // Main page for Permaweb LLMs Builder
 import "../styles/theme.css";
+
+// Get query parameters
+const url = new URL(Astro.request.url);
+const isMinimal = url.searchParams.get('minimal') === 'true';
+const colorScheme = url.searchParams.get('theme') || 'auto';
+const customPrimary = url.searchParams.get('primary');
+const customBackground = url.searchParams.get('background');
+const customText = url.searchParams.get('text');
+
+// Validate color scheme
+const validThemes = ['auto', 'light', 'dark', 'system'];
+const theme = validThemes.includes(colorScheme) ? colorScheme : 'auto';
 ---
 
 <html lang="en">
@@ -15,9 +27,63 @@ import "../styles/theme.css";
 		<title>Permaweb LLMs Builder</title>
 
 		<!-- Note: X-Frame-Options and CSP are configured in astro.config.mjs as HTTP headers -->
+		
+		<!-- Custom CSS for theme overrides -->
+		<style>
+			/* Custom theme overrides */
+			:root {
+				--custom-primary: {customPrimary || 'inherit'};
+				--custom-background: {customBackground || 'inherit'};
+				--custom-text: {customText || 'inherit'};
+			}
+
+			/* Force light theme */
+			[data-theme="light"] {
+				color-scheme: light;
+			}
+
+			/* Force dark theme */
+			[data-theme="dark"] {
+				color-scheme: dark;
+			}
+
+			/* Custom color overrides */
+			[data-custom-colors="true"] {
+				--primary-color: var(--custom-primary);
+				--background-color: var(--custom-background);
+				--text-color: var(--custom-text);
+			}
+
+			[data-custom-colors="true"] body {
+				background-color: var(--background-color) !important;
+				color: var(--text-color) !important;
+			}
+
+			[data-custom-colors="true"] .main-container {
+				background-color: var(--background-color) !important;
+			}
+
+			[data-custom-colors="true"] .text-secondary {
+				color: var(--text-color) !important;
+				opacity: 0.7;
+			}
+
+			[data-custom-colors="true"] .btn-primary {
+				background-color: var(--primary-color) !important;
+				border-color: var(--primary-color) !important;
+			}
+
+			[data-custom-colors="true"] .btn-primary:hover {
+				background-color: var(--primary-color) !important;
+				opacity: 0.9;
+			}
+		</style>
 	</head>
 
-	<body>
+	<body 
+		data-theme={theme}
+		data-custom-colors={customPrimary || customBackground || customText ? 'true' : 'false'}
+	>
 		<!-- Theme Toggle Button -->
 		<button class="theme-toggle" aria-label="Toggle theme">
 			<svg
@@ -50,10 +116,14 @@ import "../styles/theme.css";
 		<!-- Main Container -->
 		<div class="main-container">
 			<div class="main-content">
-				<h1 style="margin-bottom: 0;">Permaweb LLMs Builder</h1>
-				<p class="text-secondary" style="font-size: 13px; line-height: 1.5; margin-top: 8px; margin-bottom: 16px; max-width: 600px;">
-					All these docs have been collected throughout the permaweb. Feel free to select which ones to fuel your LLM.
-				</p>
+				{!isMinimal && (
+					<>
+						<h1 style="margin-bottom: 0;">Permaweb LLMs Builder</h1>
+						<p class="text-secondary" style="font-size: 13px; line-height: 1.5; margin-top: 8px; margin-bottom: 16px; max-width: 600px;">
+							All these docs have been collected throughout the permaweb. Feel free to select which ones to fuel your LLM.
+						</p>
+					</>
+				)}
 
 				<!-- Documentation Tree -->
 				<div id="docs-tree">
@@ -165,5 +235,42 @@ import "../styles/theme.css";
 
 		<!-- Main JavaScript -->
 		<script src="../scripts/main.ts"></script>
+		
+		<!-- Theme initialization script -->
+		<script>
+			// Initialize theme based on query parameters
+			(function() {
+				const urlParams = new URLSearchParams(window.location.search);
+				const theme = urlParams.get('theme');
+				
+				// Apply theme
+				if (theme === 'dark') {
+					document.documentElement.classList.add('dark');
+					document.body.classList.add('dark');
+				} else if (theme === 'light') {
+					document.documentElement.classList.remove('dark');
+					document.body.classList.remove('dark');
+				} else if (theme === 'system' || theme === 'auto') {
+					// Use system preference
+					if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+						document.documentElement.classList.add('dark');
+						document.body.classList.add('dark');
+					}
+				}
+				
+				// Listen for system theme changes
+				if (theme === 'system' || theme === 'auto') {
+					window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+						if (e.matches) {
+							document.documentElement.classList.add('dark');
+							document.body.classList.add('dark');
+						} else {
+							document.documentElement.classList.remove('dark');
+							document.body.classList.remove('dark');
+						}
+					});
+				}
+			})();
+		</script>
 	</body>
 </html>

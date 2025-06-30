@@ -38,23 +38,23 @@ export function applyQueryParameters() {
   
   // ===== COLOR PARAMETERS =====
   const colorParams = {
-    '--ao-bg-color': urlParams.get('bg-color'),
-    '--ao-text-color': urlParams.get('text-color'),
-    '--ao-border-color': urlParams.get('border-color'),
-    '--ao-input-bg': urlParams.get('input-bg') || urlParams.get('bg-color'),
-    '--ao-hover-bg': urlParams.get('hover-bg'),
-    '--ao-category-bg': urlParams.get('category-bg'),
-    '--ao-category-text': urlParams.get('category-text'),
-    '--ao-link-color': urlParams.get('link-color'),
-    '--ao-result-bg': urlParams.get('result-bg') || urlParams.get('bg-color'),
-    '--ao-result-hover': urlParams.get('result-hover') || urlParams.get('hover-bg'),
-    '--ao-heading-color': urlParams.get('heading-color') || urlParams.get('text-color'),
-    '--ao-tag-bg': urlParams.get('tag-bg') || urlParams.get('border-color'),
-    '--ao-tag-text': urlParams.get('tag-text') || urlParams.get('bg-color'),
-    '--ao-button-bg': urlParams.get('button-bg') || urlParams.get('border-color'),
-    '--ao-button-text': urlParams.get('button-text') || urlParams.get('bg-color'),
-    '--ao-accent-color': urlParams.get('accent-color') || urlParams.get('link-color'),
-    '--ao-secondary-text': urlParams.get('secondary-text') || urlParams.get('category-text')
+    '--background-color': urlParams.get('bg-color'),
+    '--text-color': urlParams.get('text-color'),
+    '--border-color': urlParams.get('border-color'),
+    '--input-bg': urlParams.get('input-bg') || urlParams.get('bg-color'),
+    '--hover-bg': urlParams.get('hover-bg'),
+    '--category-bg': urlParams.get('category-bg'),
+    '--category-text': urlParams.get('category-text'),
+    '--link-color': urlParams.get('link-color'),
+    '--result-bg': urlParams.get('result-bg') || urlParams.get('bg-color'),
+    '--result-hover': urlParams.get('result-hover') || urlParams.get('hover-bg'),
+    '--heading-color': urlParams.get('heading-color') || urlParams.get('text-color'),
+    '--tag-bg': urlParams.get('tag-bg') || urlParams.get('border-color'),
+    '--tag-text': urlParams.get('tag-text') || urlParams.get('bg-color'),
+    '--button-bg': urlParams.get('button-bg') || urlParams.get('border-color'),
+    '--button-text': urlParams.get('button-text') || urlParams.get('bg-color'),
+    '--accent-color': urlParams.get('accent-color') || urlParams.get('link-color'),
+    '--secondary-text': urlParams.get('secondary-text') || urlParams.get('category-text')
   };
   
   // Apply any colors that were provided as URL parameters
@@ -65,7 +65,7 @@ export function applyQueryParameters() {
       root.style.setProperty(varName, value);
       
       // Special handling for bg-color when translucent is enabled
-      if (varName === '--ao-bg-color' && translucent) {
+      if (varName === '--background-color' && translucent) {
         let r, g, b;
         
         if (value.length === 4) {
