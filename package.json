@@ -16,6 +16,8 @@
     "build": "bun run clean && bun run build:data && astro build && bun run scripts/post-build.js",
     "build:vercel": "bun run clean && bun run build:data && VERCEL_BUILD=true astro build && bun run scripts/post-build.js",
     "build:data": "bun run src/utils/crawler.js --output public/docs-index.json && mkdir -p src/data && cp public/docs-index.json src/data/index.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "clean": "rm -rf dist .vercel/output node_modules/.cache",
     "crawl": "bun run src/utils/crawler.js",
     "crawl-and-index": "bun run src/utils/crawler.js --output public/docs-index.json && mkdir -p src/data && cp public/docs-index.json src/data/index.json",
