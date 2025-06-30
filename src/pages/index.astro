@@ -1,18 +1,6 @@
 ---
 // Main page for Permaweb LLMs Builder
 import "../styles/theme.css";
-
-// Get query parameters
-const url = new URL(Astro.request.url);
-const isMinimal = url.searchParams.get('minimal') === 'true';
-const colorScheme = url.searchParams.get('theme') || 'auto';
-const customPrimary = url.searchParams.get('primary');
-const customBackground = url.searchParams.get('background');
-const customText = url.searchParams.get('text');
-
-// Validate color scheme
-const validThemes = ['auto', 'light', 'dark', 'system'];
-const theme = validThemes.includes(colorScheme) ? colorScheme : 'auto';
 ---
 
 <html lang="en">
@@ -30,11 +18,11 @@ const theme = validThemes.includes(colorScheme) ? colorScheme : 'auto';
 		
 		<!-- Custom CSS for theme overrides -->
 		<style>
-			/* Custom theme overrides */
+			/* Custom theme overrides - will be applied via JavaScript */
 			:root {
-				--custom-primary: {customPrimary || 'inherit'};
-				--custom-background: {customBackground || 'inherit'};
-				--custom-text: {customText || 'inherit'};
+				--custom-primary: inherit;
+				--custom-background: inherit;
+				--custom-text: inherit;
 			}
 
 			/* Force light theme */
@@ -80,10 +68,7 @@ const theme = validThemes.includes(colorScheme) ? colorScheme : 'auto';
 		</style>
 	</head>
 
-	<body 
-		data-theme={theme}
-		data-custom-colors={customPrimary || customBackground || customText ? 'true' : 'false'}
-	>
+	<body>
 		<!-- Theme Toggle Button -->
 		<button class="theme-toggle" aria-label="Toggle theme">
 			<svg
@@ -116,14 +101,12 @@ const theme = validThemes.includes(colorScheme) ? colorScheme : 'auto';
 		<!-- Main Container -->
 		<div class="main-container">
 			<div class="main-content">
-				{!isMinimal && (
-					<>
-						<h1 style="margin-bottom: 0;">Permaweb LLMs Builder</h1>
-						<p class="text-secondary" style="font-size: 13px; line-height: 1.5; margin-top: 8px; margin-bottom: 16px; max-width: 600px;">
-							All these docs have been collected throughout the permaweb. Feel free to select which ones to fuel your LLM.
-						</p>
-					</>
-				)}
+				<div id="header-content">
+					<h1 style="margin-bottom: 0;">Permaweb LLMs Builder</h1>
+					<p class="text-secondary" style="font-size: 13px; line-height: 1.5; margin-top: 8px; margin-bottom: 16px; max-width: 600px;">
+						All these docs have been collected throughout the permaweb. Feel free to select which ones to fuel your LLM.
+					</p>
+				</div>
 
 				<!-- Documentation Tree -->
 				<div id="docs-tree">
@@ -238,37 +221,78 @@ const theme = validThemes.includes(colorScheme) ? colorScheme : 'auto';
 		
 		<!-- Theme initialization script -->
 		<script>
-			// Initialize theme based on query parameters
+			// Initialize theme and query parameters on page load
 			(function() {
 				const urlParams = new URLSearchParams(window.location.search);
-				const theme = urlParams.get('theme');
+				
+				// ===== THEME HANDLING =====
+				const theme = urlParams.get('theme') || 'auto';
+				const validThemes = ['auto', 'light', 'dark', 'system'];
+				const finalTheme = validThemes.includes(theme) ? theme : 'auto';
 				
 				// Apply theme
-				if (theme === 'dark') {
+				if (finalTheme === 'dark') {
 					document.documentElement.classList.add('dark');
 					document.body.classList.add('dark');
-				} else if (theme === 'light') {
+					document.body.setAttribute('data-theme', 'dark');
+				} else if (finalTheme === 'light') {
 					document.documentElement.classList.remove('dark');
 					document.body.classList.remove('dark');
-				} else if (theme === 'system' || theme === 'auto') {
+					document.body.setAttribute('data-theme', 'light');
+				} else if (finalTheme === 'system' || finalTheme === 'auto') {
 					// Use system preference
 					if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 						document.documentElement.classList.add('dark');
 						document.body.classList.add('dark');
+						document.body.setAttribute('data-theme', 'dark');
+					} else {
+						document.body.setAttribute('data-theme', 'light');
 					}
 				}
 				
 				// Listen for system theme changes
-				if (theme === 'system' || theme === 'auto') {
+				if (finalTheme === 'system' || finalTheme === 'auto') {
 					window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
 						if (e.matches) {
 							document.documentElement.classList.add('dark');
 							document.body.classList.add('dark');
+							document.body.setAttribute('data-theme', 'dark');
 						} else {
 							document.documentElement.classList.remove('dark');
 							document.body.classList.remove('dark');
+							document.body.setAttribute('data-theme', 'light');
 						}
 					});
+				}
+				
+				// ===== CUSTOM COLORS =====
+				const customPrimary = urlParams.get('primary');
+				const customBackground = urlParams.get('background');
+				const customText = urlParams.get('text');
+				
+				if (customPrimary || customBackground || customText) {
+					document.body.setAttribute('data-custom-colors', 'true');
+					
+					// Apply custom colors via CSS custom properties
+					const root = document.documentElement;
+					if (customPrimary) {
+						root.style.setProperty('--custom-primary', customPrimary);
+					}
+					if (customBackground) {
+						root.style.setProperty('--custom-background', customBackground);
+					}
+					if (customText) {
+						root.style.setProperty('--custom-text', customText);
+					}
+				}
+				
+				// ===== MINIMAL MODE =====
+				const isMinimal = urlParams.get('minimal') === 'true';
+				if (isMinimal) {
+					const headerContent = document.getElementById('header-content');
+					if (headerContent) {
+						headerContent.style.display = 'none';
+					}
 				}
 			})();
 		</script>

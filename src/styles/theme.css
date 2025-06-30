@@ -183,7 +183,7 @@
 
 /* Constrain accordion heights in iframe mode */
 .iframe-embed .site-children.expanded {
-  max-height: min(200px, 30vh) !important;
+  max-height: min(150px, 20vh) !important; /* Reduced from min(200px, 30vh) to prevent pushing bottom sites out of view */
   overflow-y: auto;
 }
 
@@ -252,6 +252,7 @@ h1 {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  padding-bottom: 40px; /* Add extra padding at bottom to ensure bottom sites are accessible */
 }
 
 .docs-tree ul {
@@ -611,7 +612,7 @@ input[type="radio"] {
 
   /* Reduce expanded heights on mobile */
   #docs-tree .site-children.expanded {
-    max-height: 20vh;
+    max-height: 12vh; /* Reduced from 20vh to prevent pushing bottom sites out of view */
   }
   
   .selection-details.expanded {
@@ -700,7 +701,7 @@ html.translucent-bg .main-container {
 #docs-tree .site-children {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out, opacity 0.15s ease-out, filter 0.15s ease-out, transform 0.15s ease-out;
+  transition: max-height 0.15s ease-out, opacity 0.1s ease-out, filter 0.1s ease-out, transform 0.1s ease-out;
   background: var(--category-bg-2);
   border-radius: var(--border-radius);
   opacity: 0;
@@ -710,7 +711,7 @@ html.translucent-bg .main-container {
 }
 
 #docs-tree .site-children.expanded {
-  max-height: 25vh; /* Adaptive height relative to viewport */
+  max-height: 15vh; /* Reduced from 25vh to prevent pushing bottom sites out of view */
   padding: 8px 0px;
   border: 1px solid var(--border-secondary-color);
   overflow-y: auto; /* Allow scrolling within site children if needed */
@@ -724,7 +725,7 @@ html.translucent-bg .main-container {
 .selection-details {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out, margin-top 0.15s ease-out, opacity 0.15s ease-out, filter 0.15s ease-out, transform 0.15s ease-out;
+  transition: max-height 0.15s ease-out, margin-top 0.1s ease-out, opacity 0.1s ease-out, filter 0.1s ease-out, transform 0.1s ease-out;
   background-color: var(--category-bg);
   border-radius: var(--border-radius);
   opacity: 0;
