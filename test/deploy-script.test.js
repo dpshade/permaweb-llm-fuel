@@ -1,38 +1,70 @@
 // test/deploy-script.test.js - Test deployment script functionality
-
-vi.spyOn(process, 'chdir').mockImplementation(() => {});
-
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, mock, spyOn } from 'bun:test';
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
 // Mock child_process and fs for testing
-vi.mock('child_process');
-vi.mock('fs');
+const mockExecSync = mock(() => Buffer.from('success'));
+const mockFsExistsSync = mock(() => true);
+const mockFsMkdirSync = mock(() => undefined);
+const mockFsRmSync = mock(() => undefined);
+const mockFsWriteFileSync = mock(() => undefined);
+const mockFsReadFileSync = mock(() => Buffer.from('test content'));
+const mockFsReaddirSync = mock(() => []);
 
-const mockChdir = () => {};
+mock.module('child_process', () => ({
+  execSync: mockExecSync
+}));
+
+mock.module('fs', () => ({
+  existsSync: mockFsExistsSync,
+  mkdirSync: mockFsMkdirSync,
+  rmSync: mockFsRmSync,
+  writeFileSync: mockFsWriteFileSync,
+  readFileSync: mockFsReadFileSync,
+  readdirSync: mockFsReaddirSync,
+  default: {
+    existsSync: mockFsExistsSync,
+    mkdirSync: mockFsMkdirSync,
+    rmSync: mockFsRmSync,
+    writeFileSync: mockFsWriteFileSync,
+    readFileSync: mockFsReadFileSync,
+    readdirSync: mockFsReaddirSync
+  }
+}));
 
 describe('deploy-script', () => {
-  const mockExecSync = vi.mocked(execSync);
-  const mockFs = vi.mocked(fs);
+  let chdirSpy;
+  let originalCwd;
   
   beforeEach(() => {
-    vi.clearAllMocks();
+    originalCwd = process.cwd();
+    chdirSpy = spyOn(process, 'chdir').mockImplementation(() => {});
+    
+    // Reset mocks
+    mockExecSync.mockClear();
+    mockFsExistsSync.mockClear();
+    mockFsMkdirSync.mockClear();
+    mockFsRmSync.mockClear();
+    mockFsWriteFileSync.mockClear();
+    mockFsReadFileSync.mockClear();
+    mockFsReaddirSync.mockClear();
     
     // Default mocks
-    mockFs.existsSync.mockReturnValue(true);
-    mockFs.mkdirSync.mockReturnValue(undefined);
-    mockFs.rmSync.mockReturnValue(undefined);
-    mockFs.writeFileSync.mockReturnValue(undefined);
-    mockFs.readFileSync.mockReturnValue(Buffer.from('test content'));
-    mockFs.readdirSync.mockReturnValue([]);
+    mockFsExistsSync.mockReturnValue(true);
+    mockFsMkdirSync.mockReturnValue(undefined);
+    mockFsRmSync.mockReturnValue(undefined);
+    mockFsWriteFileSync.mockReturnValue(undefined);
+    mockFsReadFileSync.mockReturnValue(Buffer.from('test content'));
+    mockFsReaddirSync.mockReturnValue([]);
     
     mockExecSync.mockReturnValue(Buffer.from('success'));
   });
 
   afterEach(() => {
-    vi.restoreAllMocks();
+    chdirSpy.mockRestore();
+    process.chdir(originalCwd);
     delete process.env.VERCEL_TOKEN;
     delete process.env.VERCEL_ORG_ID;
     delete process.env.VERCEL_PROJECT_ID;
@@ -42,21 +74,21 @@ describe('deploy-script', () => {
 
   describe('DeploymentManager', () => {
     it('should validate build directory exists', async () => {
-      mockFs.existsSync.mockReturnValue(false);
+      mockFsExistsSync.mockReturnValue(false);
       
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await expect(deployment.build()).rejects.toThrow('Build directory dist not found');
     });
 
     it('should create Vercel output structure', async () => {
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await deployment.build();
       
-      expect(mockFs.mkdirSync).toHaveBeenCalledWith(
+      expect(mockFsMkdirSync).toHaveBeenCalledWith(
         path.dirname('.vercel/output/static'), 
         { recursive: true }
       );
@@ -68,14 +100,14 @@ describe('deploy-script', () => {
 
     it('should compress eligible files', async () => {
       // Mock directory structure to avoid infinite recursion
-      mockFs.readdirSync.mockReturnValue([
+      mockFsReaddirSync.mockReturnValue([
         { name: 'test.js', isDirectory: () => false },
         { name: 'test.txt', isDirectory: () => false },
         { name: 'subdir', isDirectory: () => true }
       ]);
       
       // Mock subdirectory read
-      mockFs.readdirSync.mockImplementation((dir) => {
+      mockFsReaddirSync.mockImplementation((dir) => {
         if (dir.includes('subdir')) {
           return [];
         }
@@ -87,21 +119,21 @@ describe('deploy-script', () => {
       });
       
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await deployment.build();
       
       // Should attempt to compress .js files but not .txt
-      expect(mockFs.readFileSync).toHaveBeenCalled();
+      expect(mockFsReadFileSync).toHaveBeenCalled();
     });
 
     it('should validate critical files exist', async () => {
-      mockFs.existsSync.mockImplementation((filePath) => {
+      mockFsExistsSync.mockImplementation((filePath) => {
         return !filePath.includes('index.html');
       });
       
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await expect(deployment.build()).rejects.toThrow('Missing critical files: index.html');
     });
@@ -112,7 +144,7 @@ describe('deploy-script', () => {
       process.env.VERCEL_PROJECT_ID = 'test-project';
       
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await deployment.deployVercel();
       
@@ -129,7 +161,7 @@ describe('deploy-script', () => {
 
     it('should fail Vercel deployment without required env vars', async () => {
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await expect(deployment.deployVercel()).rejects.toThrow('VERCEL_TOKEN not set');
     });
@@ -142,7 +174,7 @@ describe('deploy-script', () => {
       process.env.ANT_PROCESS = 'test-process';
       
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await deployment.deployArweave();
       
@@ -161,7 +193,7 @@ describe('deploy-script', () => {
 
     it('should fail Arweave deployment without required env vars', async () => {
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await expect(deployment.deployArweave()).rejects.toThrow('Arweave deployment credentials not set');
       
@@ -177,14 +209,14 @@ describe('deploy-script', () => {
       });
       
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await expect(deployment.build()).rejects.toThrow('Build failed');
     });
 
     it('should clean system files during optimization', async () => {
       const { DeploymentManager } = await import('../scripts/deploy.js');
-      const deployment = new DeploymentManager({ chdir: mockChdir });
+      const deployment = new DeploymentManager({ chdir: () => {} });
       
       await deployment.build();
       
