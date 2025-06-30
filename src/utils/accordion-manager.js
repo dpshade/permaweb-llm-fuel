@@ -409,6 +409,116 @@ class AccordionManager {
   }
 
   /**
+   * Toggle accordion functionality
+   * @param {string} accordionId - The ID of the accordion to toggle
+   */
+  toggleAccordion(accordionId) {
+    const accordion = document.querySelector(`#${accordionId}`);
+    if (!accordion) return;
+    
+    const children = accordion.querySelector('.site-children');
+    const toggle = accordion.querySelector('.tree-toggle');
+    
+    if (!children || !toggle) return;
+    
+    const isExpanded = children.classList.contains('expanded');
+    
+    // Close all other accordions (accordion-style behavior)
+    // Only close others if we're opening this accordion (not if we're closing it)
+    if (!isExpanded) {
+      document.querySelectorAll('.site-children.expanded').forEach(child => {
+        // Don't close the current accordion
+        if (child !== children) {
+          child.classList.remove('expanded');
+          const parentToggle = child.parentElement.querySelector('.tree-toggle');
+          if (parentToggle) {
+            parentToggle.style.transform = 'rotate(0deg)';
+          }
+        }
+      });
+    }
+    
+    // Toggle current accordion
+    children.classList.toggle('expanded');
+    toggle.style.transform = children.classList.contains('expanded') ? 'rotate(90deg)' : 'rotate(0deg)';
+    
+    // Recalculate heights in iframe mode
+    if (this.isIframe) {
+      requestAnimationFrame(() => {
+        this.recalculateAccordionHeights();
+      });
+    }
+    
+    return { accordionId, toggled: true };
+  }
+
+  /**
+   * Handle site checkbox changes
+   * @param {HTMLInputElement} checkbox - The site checkbox element
+   */
+  handleSiteCheckboxChange(checkbox) {
+    if (!checkbox || !checkbox.dataset.site) return;
+    
+    const site = checkbox.dataset.site;
+    const isChecked = checkbox.checked;
+    
+    // Initialize global variables if they don't exist
+    if (!window.selectedPages) {
+      window.selectedPages = new Set();
+    }
+    if (!window.updateSelectionCount) {
+      window.updateSelectionCount = () => {};
+    }
+    
+    // Get all page checkboxes for this site
+    const pageCheckboxes = document.querySelectorAll(`.page-checkbox[data-site="${site}"]`);
+    
+    pageCheckboxes.forEach(pageCheckbox => {
+      pageCheckbox.checked = isChecked;
+      
+      if (isChecked) {
+        window.selectedPages.add(pageCheckbox.dataset.url);
+      } else {
+        window.selectedPages.delete(pageCheckbox.dataset.url);
+      }
+    });
+    
+    window.updateSelectionCount();
+  }
+
+  /**
+   * Handle page checkbox changes
+   * @param {HTMLInputElement} checkbox - The page checkbox element
+   */
+  handlePageCheckboxChange(checkbox) {
+    if (!checkbox || !checkbox.dataset.url) return;
+    
+    const url = checkbox.dataset.url;
+    const site = checkbox.dataset.site;
+    const isChecked = checkbox.checked;
+    
+    // Initialize global variables if they don't exist
+    if (!window.selectedPages) {
+      window.selectedPages = new Set();
+    }
+    if (!window.updateSelectionCount) {
+      window.updateSelectionCount = () => {};
+    }
+    if (!window.updateSiteCheckboxes) {
+      window.updateSiteCheckboxes = () => {};
+    }
+    
+    if (isChecked) {
+      window.selectedPages.add(url);
+    } else {
+      window.selectedPages.delete(url);
+    }
+    
+    window.updateSelectionCount();
+    window.updateSiteCheckboxes();
+  }
+
+  /**
    * Initialize the accordion manager
    */
   init() {
