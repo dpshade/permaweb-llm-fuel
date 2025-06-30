@@ -1,165 +1,49 @@
-name: 🚀 Build & Deploy Permaweb LLMs Builder
+name: 🚀 Deploy
 
 on:
+  push:
+    branches: [main, preview]
+    paths: ['src/**', 'public/**', 'package.json']
   pull_request:
     branches: [main]
-    paths:
-      - "src/**"
-      - "public/**"
-      - "scripts/**" 
-      - "package.json"
-      - ".github/workflows/deploy.yml"
-  push:
-    branches: 
-      - main
-      - preview
-    paths:
-      - "src/**"
-      - "public/**"
-      - "scripts/**"
-      - "package.json"
-      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
-  # Build check for pull requests
-  check_build:
-    if: ${{ startsWith(github.ref, 'refs/pull/') }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - name: ⬇️ Checkout code
-        uses: actions/checkout@v4
-        
-      - name: 🧅 Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-          
-      - name: 📦 Install dependencies
-        run: bun install --frozen-lockfile
-        
-      - name: 🧪 Run tests
-        run: bun run test
-        
-      - name: 🔍 Run linting
-        run: bun run lint
-        
-      - name: 🔨 Build project
-        run: bun run build
-        env:
-          NODE_ENV: production
-          
-      - name: ✅ Verify build artifacts
-        run: |
-          echo "🔍 Checking build artifacts..."
-          if [ ! -d "dist" ]; then
-            echo "❌ Build artifacts not found"
-            exit 1
-          fi
-          
-          echo "📊 Build artifacts summary:"
-          find dist -type f -name "*.js" -o -name "*.css" -o -name "*.json" -o -name "*.txt" | while read file; do
-            size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null || echo "0")
-            echo "  ✓ $(basename "$file"): $(numfmt --to=iec --suffix=B $size)"
-          done
-          
-          echo "✅ Build verification complete!"
-
-  # Deploy to production or preview
   deploy:
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/preview'
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-    # However, do NOT cancel in-progress runs as we want to allow these deployments to complete.
     concurrency:
       group: deploy-${{ github.ref }}
       cancel-in-progress: false
       
     steps:
-      - name: ⬇️ Checkout code
-        uses: actions/checkout@v4
-        
-      - name: 🧅 Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - uses: actions/checkout@v4
+      
+      - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
           
-      - name: 📦 Install dependencies
-        run: bun install --frozen-lockfile
-        
-      - name: 🧪 Run tests
-        run: bun run test
-        
-      - name: 🔍 Run linting
-        run: bun run lint
-        
-      - name: 👀 Environment info
+      - run: bun install --frozen-lockfile
+      
+      - name: Test & Lint
         run: |
-          echo "Event name: ${{ github.event_name }}"
-          echo "Git ref:    ${{ github.ref }}"
-          echo "GH actor:   ${{ github.actor }}"
-          echo "SHA:        ${{ github.sha }}"
-          echo "Bun ver:    $(bun --version)"
-          echo "Node ver:   $(node --version)"
-          echo "Deploy target: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}"
+          bun run test
+          bun run lint
         
-      - name: 🔨 Build project
-        id: build_artifacts
+      - name: Deploy
         run: |
-          echo "🚀 Building for ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }} deployment..."
-          bun run build
-          
-          # Add .nojekyll for proper static hosting
-          touch dist/.nojekyll
-          
-          # Output build info
-          echo "artifacts_output_dir=dist" >> $GITHUB_OUTPUT
-          
-          echo "📊 Final build summary:"
-          du -sh dist/
-          find dist -type f -name "*.gz" | wc -l | xargs echo "Compressed files:"
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            bun scripts/deploy.js build
+          elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            bun scripts/deploy.js all
+          else
+            bun scripts/deploy.js vercel
+          fi
         env:
           NODE_ENV: production
-          
-      - name: 🌐 Deploy to Vercel (Production or Preview)
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/preview'
-        run: |
-          echo "🌐 Deploying to Vercel..."
-          cd dist
-          npx vercel --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" --yes --prod
-          cd ..
-        env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
-      - name: 🌐 Deploy to Permaweb (Arweave)
-        if: github.ref == 'refs/heads/main'
-        run: |
-          echo "🚀 Deploying to Arweave Permaweb using deploy-prod.sh..."
-          bash scripts/deploy-prod.sh
-        env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-          ANT_PROCESS: ${{ secrets.ANT_PROCESS }}
-          
-      - name: 📝 Deployment summary
-        run: |
-          echo "🎉 Deployment complete!"
-          echo "Type: ${{ steps.deploy_to_arweave.outputs.deployment_type }}"
-          echo "URL: ${{ steps.deploy_to_arweave.outputs.deployment_url }}"
-          
-          echo ""
-          echo "📊 Deployment details:"
-          echo "- Branch: ${{ github.ref }}"
-          echo "- Commit: ${{ github.sha }}"
-          echo "- Actor: ${{ github.actor }}"
-          echo "- Build artifacts: $(find dist -type f | wc -l) files"
-          echo "- Index updates: Managed by daily crawl workflow" 
+          ANT_PROCESS: ${{ secrets.ANT_PROCESS }} 
