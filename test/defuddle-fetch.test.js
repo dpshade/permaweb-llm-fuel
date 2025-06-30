@@ -200,4 +200,182 @@ describe('defuddle-fetch', () => {
       expect(typeof openContentInNewTab).toBe('function');
     });
   });
+
+  describe('HTML stripping improvements', () => {
+    it('should preserve structural formatting while removing visual formatting', () => {
+      const mockDocuments = [
+        {
+          title: 'Important Document with Formatting',
+          content: `
+            <h1>Main Title</h1>
+            <p>This is a <strong>bold</strong> paragraph with <em>italic</em> text.</p>
+            <p>Here is some <code>code</code> and a <a href="https://example.com">link</a>.</p>
+            <ul>
+              <li>List item 1</li>
+              <li>List item 2</li>
+            </ul>
+            <blockquote>This is a quote</blockquote>
+            <p>Technical terms like user_name, file_path, and API_endpoint should keep underscores.</p>
+            <p>But <em>this should be italic</em> and <strong>this should be bold</strong>.</p>
+          `,
+          url: 'https://example.com/formatted',
+          wordCount: 50,
+          domain: 'example.com'
+        }
+      ];
+
+      const result = generateLLMsTxt(mockDocuments, { includeMetadata: false });
+      
+      // Should preserve structural formatting
+      expect(result).toContain('# Main Title');
+      expect(result).toContain('Here is some `code`');
+      expect(result).toContain('• List item 1');
+      expect(result).toContain('• List item 2');
+      expect(result).toContain('> This is a quote');
+      
+      // Should preserve underscores in technical terms
+      expect(result).toContain('user_name');
+      expect(result).toContain('file_path');
+      expect(result).toContain('API_endpoint');
+      
+      // Should remove visual formatting (bold/italic)
+      expect(result).not.toContain('**bold**');
+      expect(result).not.toContain('*italic*');
+      expect(result).toContain('bold'); // Content should remain, just not formatted
+      expect(result).toContain('italic'); // Content should remain, just not formatted
+      
+      // Should not contain raw HTML tags
+      expect(result).not.toContain('<strong>');
+      expect(result).not.toContain('<em>');
+      expect(result).not.toContain('<h1>');
+      expect(result).not.toContain('<p>');
+      expect(result).not.toContain('<ul>');
+      expect(result).not.toContain('<li>');
+      expect(result).not.toContain('<blockquote>');
+    });
+
+    it('should handle security threats while preserving content', () => {
+      const mockDocuments = [
+        {
+          title: 'Security Test Document',
+          content: `
+            <p>Normal content here.</p>
+            <script>alert('malicious');</script>
+            <p>More normal content.</p>
+            <style>body { display: none; }</style>
+            <p>Content with javascript:alert('test') and onclick="alert('test')"</p>
+            <p>Technical content with underscores: user_name, file_path, API_endpoint</p>
+            <p>But also <em>italic text</em> and <strong>bold text</strong></p>
+          `,
+          url: 'https://example.com/security-test',
+          wordCount: 20,
+          domain: 'example.com'
+        }
+      ];
+
+      const result = generateLLMsTxt(mockDocuments, { includeMetadata: false });
+      
+      // Should contain normal content
+      expect(result).toContain('Normal content here.');
+      expect(result).toContain('More normal content.');
+      expect(result).toContain('Technical content with underscores: user_name, file_path, API_endpoint');
+      expect(result).toContain('italic text'); // Content preserved, formatting removed
+      expect(result).toContain('bold text'); // Content preserved, formatting removed
+      
+      // Should remove malicious content
+      expect(result).not.toContain('alert(\'malicious\')');
+      expect(result).not.toContain('display: none');
+      expect(result).not.toContain('javascript:alert');
+      expect(result).not.toContain('onclick=');
+      expect(result).not.toContain('<script>');
+      expect(result).not.toContain('<style>');
+    });
+
+    it('should handle complex HTML structures correctly', () => {
+      const mockDocuments = [
+        {
+          title: 'Complex HTML Test',
+          content: [
+            '<div class="container">',
+            '  <header>',
+            '    <h1>Page Title</h1>',
+            '    <nav><a href="/home">Home</a> | <a href="/about">About</a></nav>',
+            '  </header>',
+            '  <main>',
+            '    <article>',
+            '      <h2>Article Title</h2>',
+            '      <p>This is a <strong>complex</strong> article with <em>multiple</em> elements.</p>',
+            '      <pre><code>function test() {',
+            '  console.log(\'Hello World\');',
+            '}</code></pre>',
+            '      <table>',
+            '        <tr><th>Header 1</th><th>Header 2</th></tr>',
+            '        <tr><td>Data 1</td><td>Data 2</td></tr>',
+            '      </table>',
+            '    </article>',
+            '  </main>',
+            '</div>'
+          ].join('\n'),
+          url: 'https://example.com/complex',
+          wordCount: 30,
+          domain: 'example.com'
+        }
+      ];
+
+      const result = generateLLMsTxt(mockDocuments, { includeMetadata: false });
+      
+      // Should preserve structural formatting
+      expect(result).toContain('# Page Title');
+      expect(result).toContain('## Article Title');
+      expect(result).toContain('This is a complex article with multiple elements.'); // Content preserved, formatting removed
+      expect(result).toContain('```\nfunction test() {\n  console.log(\'Hello World\');\n}\n```');
+      
+      // Should not contain raw HTML
+      expect(result).not.toContain('<div');
+      expect(result).not.toContain('<header>');
+      expect(result).not.toContain('<nav>');
+      expect(result).not.toContain('<main>');
+      expect(result).not.toContain('<article>');
+    });
+
+    it('should handle edge cases and special characters', () => {
+      const mockDocuments = [
+        {
+          title: 'Edge Cases Test',
+          content: `
+            <p>Content with &amp; &lt; &gt; &quot; entities</p>
+            <p>Content with _single_underscores_ and __double__underscores__</p>
+            <p>Content with *asterisks* and **double**asterisks**</p>
+            <p>Content with backticks and triple backticks</p>
+            <p>Content with [brackets] and (parentheses)</p>
+            <p>Content with user_name, file_path, API_endpoint</p>
+            <p>Content with <em>_italic_underscores_</em> and <strong>**bold_asterisks**</strong></p>
+          `,
+          url: 'https://example.com/edge-cases',
+          wordCount: 25,
+          domain: 'example.com'
+        }
+      ];
+
+      const result = generateLLMsTxt(mockDocuments, { includeMetadata: false });
+      
+      // Should decode HTML entities
+      expect(result).toContain('Content with & < > " entities');
+      
+      // Should preserve technical terms with underscores
+      expect(result).toContain('user_name');
+      expect(result).toContain('file_path');
+      expect(result).toContain('API_endpoint');
+      
+      // Should preserve underscores in all contexts
+      expect(result).toContain('_single_underscores_');
+      expect(result).toContain('__double__underscores__');
+      expect(result).toContain('_italic_underscores_');
+      expect(result).toContain('**bold_asterisks**');
+      
+      // Should preserve special characters in context
+      expect(result).toContain('[brackets]');
+      expect(result).toContain('(parentheses)');
+    });
+  });
 });

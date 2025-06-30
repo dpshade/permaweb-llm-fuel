@@ -6,8 +6,9 @@ import { optimizedBatchExtraction } from './batch-processor.js';
 /**
  * Strip HTML tags and decode HTML entities from text content
  * Works in both browser and Node.js environments
+ * Preserves only structurally meaningful formatting for LLMs
  * @param {string} text - Text that may contain HTML
- * @returns {string} Clean text without HTML
+ * @returns {string} Clean text with structural formatting preserved
  */
 function stripHTML(text) {
   if (!text) return '';
@@ -16,28 +17,51 @@ function stripHTML(text) {
 
   // Environment-agnostic HTML stripping
   if (typeof document !== 'undefined' && document.createElement) {
-    // Browser environment - use DOM
+    // Browser environment - use DOM for initial parsing
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = text;
     cleanText = tempDiv.textContent || tempDiv.innerText || '';
   } else {
-    // Node.js environment - use comprehensive regex-based stripping
-    cleanText = text
-      // Remove script tags and all content (including malicious JS)
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-      // Remove style tags and all content
-      .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
-      // Remove comment blocks
-      .replace(/<!--[\s\S]*?-->/g, '')
-      // Remove all HTML tags
-      .replace(/<[^>]*>/g, '')
-      // Handle self-closing tags
-      .replace(/<[^>]*\/>/g, '');
+    // Node.js environment - use regex-based approach
+    cleanText = text;
   }
 
-  // Universal HTML entity decoding and cleanup
+  // Remove harmful script/style tags and their content
   cleanText = cleanText
-    // Common HTML entities
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
+
+  // Preserve code blocks and indentation
+  cleanText = cleanText.replace(/<pre\b[^>]*><code\b[^>]*>([\s\S]*?)<\/code><\/pre>/gi, (match, code) => {
+    // Remove only leading/trailing empty lines, not indentation
+    code = code.replace(/^[\r\n]+|[\r\n]+$/g, '');
+    return '\n```\n' + code + '\n```\n';
+  });
+
+  // Other structural formatting
+  cleanText = cleanText
+    .replace(/<code\b[^>]*>(.*?)<\/code>/gi, '`$1`')
+    .replace(/<h([1-6])\b[^>]*>(.*?)<\/h[1-6]>/gi, (match, level, text) => {
+      const hashes = '#'.repeat(parseInt(level));
+      return `\n${hashes} ${text}\n`;
+    })
+    .replace(/<li\b[^>]*>(.*?)<\/li>/gi, '• $1\n')
+    .replace(/<ul\b[^>]*>|<\/ul>/gi, '')
+    .replace(/<ol\b[^>]*>|<\/ol>/gi, '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<p\b[^>]*>/gi, '\n')
+    .replace(/<\/p>/gi, '\n')
+    .replace(/<blockquote\b[^>]*>/gi, '\n> ')
+    .replace(/<\/blockquote>/gi, '\n')
+    .replace(/<hr\s*\/?>/gi, '\n---\n')
+    .replace(/<\/?(?:strong|b|em|i|u|span|div|mark|small|sub|sup)\b[^>]*>/gi, '');
+
+  // Remove all remaining HTML tags
+  cleanText = cleanText.replace(/<[^>]*>/g, '');
+
+  // Now decode HTML entities (after tag removal)
+  cleanText = cleanText
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -46,6 +70,7 @@ function stripHTML(text) {
     .replace(/&#x27;/g, "'")
     .replace(/&#x2F;/g, '/')
     .replace(/&apos;/g, "'")
+    .replace(/&#39;/g, "'")
     .replace(/&hellip;/g, '...')
     .replace(/&mdash;/g, '—')
     .replace(/&ndash;/g, '–')
@@ -53,7 +78,6 @@ function stripHTML(text) {
     .replace(/&lsquo;/g, "'")
     .replace(/&rdquo;/g, '"')
     .replace(/&ldquo;/g, '"')
-    // Numeric HTML entities
     .replace(/&#(\d+);/g, (match, dec) => {
       try {
         return String.fromCharCode(parseInt(dec, 10));
@@ -68,10 +92,10 @@ function stripHTML(text) {
         return ' ';
       }
     })
-    // Clean any remaining HTML-like patterns
-    .replace(/&[a-zA-Z0-9#]+;/g, ' ')
-    
-    // CRITICAL: Remove potentially malicious JavaScript patterns
+    .replace(/&[a-zA-Z0-9#]+;/g, ' ');
+
+  // CRITICAL: Remove potentially malicious JavaScript patterns
+  cleanText = cleanText
     .replace(/javascript:/gi, '')
     .replace(/alert\s*\(/gi, '')
     .replace(/document\./gi, '')
@@ -80,41 +104,34 @@ function stripHTML(text) {
     .replace(/Function\s*\(/gi, '')
     .replace(/setTimeout\s*\(/gi, '')
     .replace(/setInterval\s*\(/gi, '')
-    .replace(/<script[^>]*>/gi, '')
-    .replace(/<\/script>/gi, '')
     .replace(/on\w+\s*=/gi, '') // Remove event handlers like onclick=
-    
-    // AGGRESSIVE: Remove CSS-like patterns and malicious content
-    .replace(/\{[^}]*\}/g, ' ') // Remove CSS rule blocks
-    .replace(/[a-zA-Z-]+\s*:\s*[^;]+;/g, ' ') // Remove CSS property:value; patterns
-    .replace(/\bdisplay\s*:\s*none\b/gi, '')
-    .replace(/\bcolor\s*:\s*[^;]+/gi, '')
-    .replace(/\bbackground\s*:\s*[^;]+/gi, '')
-    .replace(/url\s*\([^)]+\)/gi, '')
     .replace(/XSS/gi, '')
     .replace(/innerHTML/gi, '')
     .replace(/attempt/gi, '')
     .replace(/hacked/gi, '')
-    .replace(/malicious/gi, '')
-    
-    // Strip Markdown formatting for clean LLM consumption
-    .replace(/\*\*([^*]+)\*\*/g, '$1')  // **bold** -> bold
-    .replace(/__([^_]+)__/g, '$1')      // __bold__ -> bold
-    .replace(/\*([^*]+)\*/g, '$1')      // *italic* -> italic
-    .replace(/_([^_]+)_/g, '$1')        // _italic_ -> italic
-    .replace(/`([^`]+)`/g, '$1')        // `code` -> code
-    .replace(/~~([^~]+)~~/g, '$1')      // ~~strikethrough~~ -> strikethrough
-    .replace(/^#{1,6}\s+/gm, '')        // # Headers -> Headers
-    .replace(/^\s*[-*+]\s+/gm, '')      // - List items -> List items
-    .replace(/^\s*\d+\.\s+/gm, '')      // 1. Numbered lists -> Numbered lists
-    .replace(/^\s*>\s+/gm, '')          // > Blockquotes -> Blockquotes
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // [link text](url) -> link text
-    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1') // ![alt text](image) -> alt text
-    
-    // Clean up whitespace
-    .replace(/\s+/g, ' ')
-    .replace(/\n\s*\n\s*\n+/g, '\n\n')
-    .trim();
+    .replace(/malicious/gi, '');
+
+  // Don't touch underscores - they're often meaningful in technical content
+  // (variable names, file names, API endpoints, etc.)
+
+  // Clean up whitespace and formatting
+  // Preserve indentation inside code blocks
+  let segments = cleanText.split(/(\n```[\s\S]*?\n```\n?)/g);
+  segments = segments.map(segment => {
+    if (/^\n```[\s\S]*?\n```\n?$/.test(segment)) {
+      // This is a code block, return as-is
+      return segment;
+    } else {
+      // Normalize whitespace only outside code blocks
+      return segment
+        .replace(/\n\s*\n\s*\n+/g, '\n\n')
+        .replace(/[ \t]+/g, ' ')
+        .replace(/\n[ \t]+/g, '\n')
+        .replace(/[ \t]+\n/g, '\n')
+        .trim();
+    }
+  });
+  cleanText = segments.join('');
 
   return cleanText;
 }
