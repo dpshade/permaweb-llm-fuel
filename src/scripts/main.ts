@@ -319,6 +319,11 @@ function renderSitesWithPages(sortedPages: PageData[]): string {
 
 // Global function for toggling tree nodes (accordion-style: only one open at a time)
 function toggleNode(nodeId: string) {
+	// Disable accordion functionality on very small heights
+	if (window.innerHeight <= 400) {
+		return;
+	}
+	
 	const children = document.getElementById(nodeId + "-children");
 	const toggle = document.getElementById("toggle-" + nodeId);
 	if (children && toggle) {
@@ -357,6 +362,11 @@ function toggleNode(nodeId: string) {
 
 // Global function for toggling selection details
 function toggleSelectionDetails() {
+	// Disable accordion functionality on very small heights
+	if (window.innerHeight <= 400) {
+		return;
+	}
+	
 	if (!selectionDetails || !selectionToggle) return;
 	
 	const isExpanded = selectionDetails.classList.contains("expanded");

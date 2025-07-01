@@ -164,21 +164,126 @@
 }
 
 .iframe-embed .docs-tree {
-  flex: 1;
-  min-height: 0;
+  max-height: 70vh; /* Specific height for iframe embedding */
+  padding-bottom: 100px; /* Extra padding for iframe mode to ensure all content is accessible */
   overflow-y: auto;
-  max-height: calc(100vh - 200px); /* Reserve space for header and bottom controls */
+  position: relative;
 }
 
 .iframe-embed .bottom-controls {
   flex-shrink: 0;
-  position: sticky;
-  bottom: 0;
   background: var(--bg-color);
   border-top: 1px solid var(--border-color);
   padding-top: 16px;
   margin-top: 16px;
   z-index: 100;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Ensure iframe mode also uses ultra-compact docs tree layout on very small screens */
+@media (max-height: 400px) {
+  /* Ultra-compact iframe docs tree container */
+  .iframe-embed #docs-tree {
+    padding: 6px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  /* Minimal iframe tree item spacing */
+  .iframe-embed #docs-tree li {
+    margin: 0 !important;
+  }
+  
+  .iframe-embed #docs-tree ul ul {
+    padding-left: 8px !important;
+    margin-top: 0 !important;
+  }
+  
+  .iframe-embed #docs-tree .site-children {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  .iframe-embed .selection-details {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  .iframe-embed .tree-toggle {
+    display: none !important;
+  }
+  
+  .iframe-embed .selection-header {
+    cursor: default !important;
+    pointer-events: none !important;
+    opacity: 0.7 !important;
+  }
+  
+  .iframe-embed .tree-site-content {
+    cursor: default !important;
+    pointer-events: none !important;
+    gap: 4px !important;
+  }
+  
+  /* Ultra-compact iframe padding and margins */
+  
+  /* Ultra-compact iframe padding and margins */
+  .iframe-embed .tree-site-header {
+    gap: 2px !important;
+    padding: 0 !important;
+  }
+  
+  .iframe-embed .tree-page-item {
+    gap: 2px !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    margin-left: 12px !important;
+  }
+  
+  /* Ultra-compact iframe icon and element sizes */
+  .iframe-embed .world-icon {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  
+  .iframe-embed .world-icon path {
+    stroke-width: 1 !important;
+  }
+  
+  .iframe-embed #docs-tree input[type="checkbox"] {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  
+  .iframe-embed .site-checkbox,
+  .iframe-embed .category-checkbox,
+  .iframe-embed .page-checkbox {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  
+  .iframe-embed .bottom-controls {
+    background: var(--bg-color) !important;
+    border-top: 1px solid var(--border-color) !important;
+    padding-top: 6px !important;
+    margin-top: 4px !important;
+    z-index: 100;
+  }
+  
+  .iframe-embed .action-buttons {
+    gap: 4px !important;
+  }
+  
+  .iframe-embed .btn {
+    padding: 6px 8px !important;
+    font-size: 13px !important;
+  }
 }
 
 /* Constrain accordion heights in iframe mode */
@@ -229,6 +334,11 @@ body {
 .bottom-controls {
   flex-shrink: 0;
   margin-top: 16px;
+  background: var(--bg-color);
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  z-index: 100;
+  position: relative; /* Ensure proper stacking context */
 }
 
 h1 {
@@ -252,7 +362,8 @@ h1 {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
-  padding-bottom: 40px; /* Add extra padding at bottom to ensure bottom sites are accessible */
+  padding-bottom: 80px; /* Increased padding to ensure content isn't hidden behind buttons */
+  max-height: calc(100vh - 200px); /* Reserve space for header and bottom controls */
 }
 
 .docs-tree ul {
@@ -607,7 +718,7 @@ input[type="radio"] {
   }
 
   h1 {
-    font-size: 24px;
+    /* Font size scaling removed */
   }
 
   /* Reduce expanded heights on mobile */
@@ -620,16 +731,138 @@ input[type="radio"] {
   }
 
   .action-buttons {
-    flex-direction: column;
+    flex-wrap: nowrap; /* Prevents buttons from wrapping to the next line */
+    gap: 8px; /* Reduces the space between buttons */
   }
 
   .btn {
-    width: 100%;
-    text-align: center;
+    padding: 10px 12px; /* Reduce padding to make buttons smaller */
+    font-size: 16px;    /* Slightly larger than base for mobile */
+    flex-grow: 1;        /* Allows buttons to grow and fill available space */
+    flex-shrink: 1;      /* Allows buttons to shrink if space is limited */
   }
 }
 
-/* Iframe-specific overrides */
+/* Hide selection counter on very small heights */
+@media (max-height: 500px) {
+  .selection-counter {
+    display: none;
+  }
+}
+
+/* Ultra-compact docs tree layout for very small screens */
+@media (max-height: 400px) {
+  /* Ultra-compact docs tree container */
+  #docs-tree {
+    padding: 6px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  /* Minimal tree item spacing */
+  #docs-tree li {
+    margin: 0 !important;
+  }
+  
+  #docs-tree ul ul {
+    padding-left: 8px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Disable accordion expansion */
+  #docs-tree .site-children {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Disable selection details expansion */
+  .selection-details {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Disable toggle buttons with visual feedback */
+  .tree-toggle {
+    display: none !important;
+  }
+  
+  /* Disable selection header click with visual feedback */
+  .selection-header {
+    cursor: default !important;
+    pointer-events: none !important;
+    opacity: 0.7 !important;
+  }
+  
+  /* Disable site content click areas */
+  .tree-site-content {
+    cursor: default !important;
+    pointer-events: none !important;
+  }
+  
+  /* Ultra-compact padding and margins */
+  
+  /* Ultra-compact padding and margins */
+  .tree-site-header {
+    gap: 2px !important;
+    padding: 0 !important;
+  }
+  
+  .tree-page-item {
+    gap: 2px !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    margin-left: 12px !important;
+  }
+  
+  .tree-site-content {
+    gap: 2px !important;
+  }
+  
+  /* Ultra-compact icon and element sizes */
+  .world-icon {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  
+  .world-icon path {
+    stroke-width: 1 !important;
+  }
+  
+  #docs-tree input[type="checkbox"] {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  
+  .site-checkbox,
+  .category-checkbox,
+  .page-checkbox {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  
+  /* Ultra-compact button controls */
+  .bottom-controls {
+    background: var(--bg-color) !important;
+    border-top: 1px solid var(--border-color) !important;
+    padding-top: 6px !important;
+    margin-top: 4px !important;
+    z-index: 100;
+  }
+  
+  .action-buttons {
+    gap: 4px !important;
+  }
+  
+  .btn {
+    padding: 6px 8px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Iframe-specific overrides - ONLY when iframe-embed class is present */
 .iframe-embed .main-container {
   border: none;
   border-radius: 0;
@@ -638,10 +871,12 @@ input[type="radio"] {
   margin: 0;
   padding: 16px;
   min-height: 100vh;
+  max-height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .iframe-embed h1 {
-  font-size: 24px;
   margin-bottom: 16px;
 }
 
@@ -662,18 +897,40 @@ input[type="radio"] {
   }
 }
 
-/* Hide scrollbars in iframe mode */
+/* Enhanced scrollbar styling for docs tree */
+.docs-tree::-webkit-scrollbar {
+  width: 8px;
+}
+
+.docs-tree::-webkit-scrollbar-track {
+  background: var(--section-bg);
+  border-radius: 4px;
+}
+
+.docs-tree::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+  border: 1px solid var(--section-bg);
+}
+
+.docs-tree::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-text);
+}
+
+/* Iframe-specific scrollbar styling */
 .iframe-embed .docs-tree::-webkit-scrollbar {
   width: 6px;
 }
 
 .iframe-embed .docs-tree::-webkit-scrollbar-track {
-  background: var(--category-bg);
+  background: var(--section-bg);
+  border-radius: 3px;
 }
 
 .iframe-embed .docs-tree::-webkit-scrollbar-thumb {
   background: var(--border-color);
   border-radius: 3px;
+  border: 1px solid var(--section-bg);
 }
 
 .iframe-embed .docs-tree::-webkit-scrollbar-thumb:hover {
@@ -1075,4 +1332,301 @@ html.translucent-bg .main-container {
 [data-custom-colors="true"] {
 	/* The JavaScript system now applies all colors with !important */
 	/* This section is kept for any edge cases or future enhancements */
+}
+
+/* Container Query Support for Fluid Iframe Sizing */
+@supports (container-type: inline-size) {
+  .iframe-embed .main-container {
+    container-type: inline-size;
+    container-name: main;
+  }
+  
+  /* Fluid sizing based on container width - ONLY for iframe mode */
+  @container main (max-width: 400px) {
+    .iframe-embed .docs-tree {
+      max-height: calc(100vh - 120px);
+    }
+    
+    .iframe-embed .site-children.expanded {
+      max-height: min(100px, 15vh);
+    }
+    
+    .iframe-embed .selection-details.expanded {
+      max-height: min(80px, 12vh);
+    }
+    
+    .iframe-embed .btn {
+      padding: 8px 10px;
+    }
+  }
+  
+  @container main (min-width: 401px) and (max-width: 600px) {
+    .iframe-embed .docs-tree {
+      max-height: calc(100vh - 140px);
+    }
+    
+    .iframe-embed .site-children.expanded {
+      max-height: min(120px, 18vh);
+    }
+    
+    .iframe-embed .selection-details.expanded {
+      max-height: min(100px, 15vh);
+    }
+  }
+  
+  @container main (min-width: 601px) and (max-width: 800px) {
+    .iframe-embed .docs-tree {
+      max-height: calc(100vh - 160px);
+    }
+    
+    .iframe-embed .site-children.expanded {
+      max-height: min(150px, 20vh);
+    }
+    
+    .iframe-embed .selection-details.expanded {
+      max-height: min(120px, 18vh);
+    }
+  }
+  
+  @container main (min-width: 801px) {
+    .iframe-embed .docs-tree {
+      max-height: calc(100vh - 180px);
+    }
+    
+    .iframe-embed .site-children.expanded {
+      max-height: min(200px, 25vh);
+    }
+    
+    .iframe-embed .selection-details.expanded {
+      max-height: min(150px, 20vh);
+    }
+  }
+}
+
+/* Enhanced Fluid Responsive Breakpoints */
+/* Extra small iframe (300px and below) */
+@media (max-width: 300px) {
+  .iframe-embed .main-container {
+    padding: 8px;
+  }
+  
+  .iframe-embed h1 {
+    margin-bottom: 12px;
+  }
+  
+  .iframe-embed .docs-tree {
+    max-height: calc(100vh - 120px);
+    padding-bottom: 80px;
+  }
+  
+  .iframe-embed .site-children.expanded {
+    max-height: min(80px, 12vh);
+  }
+  
+  .iframe-embed .selection-details.expanded {
+    max-height: min(60px, 10vh);
+  }
+  
+  .iframe-embed .btn {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+}
+
+/* Small iframe (301px - 500px) */
+@media (min-width: 301px) and (max-width: 500px) {
+  .iframe-embed .main-container {
+    padding: 12px;
+  }
+  
+  .iframe-embed h1 {
+    margin-bottom: 14px;
+  }
+  
+  .iframe-embed .docs-tree {
+    max-height: calc(100vh - 140px);
+    padding-bottom: 90px;
+  }
+  
+  .iframe-embed .site-children.expanded {
+    max-height: min(100px, 15vh);
+  }
+  
+  .iframe-embed .selection-details.expanded {
+    max-height: min(80px, 12vh);
+  }
+  
+  .iframe-embed .btn {
+    font-size: 15px;
+  }
+}
+
+/* Medium iframe (501px - 800px) */
+@media (min-width: 501px) and (max-width: 800px) {
+  .iframe-embed .main-container {
+    padding: 16px;
+  }
+  
+  .iframe-embed h1 {
+    margin-bottom: 16px;
+  }
+  
+  .iframe-embed .docs-tree {
+    max-height: calc(100vh - 160px);
+    padding-bottom: 100px;
+  }
+  
+  .iframe-embed .site-children.expanded {
+    max-height: min(120px, 18vh);
+  }
+  
+  .iframe-embed .selection-details.expanded {
+    max-height: min(100px, 15vh);
+  }
+  
+  .iframe-embed .btn {
+    font-size: 16px;
+  }
+}
+
+/* Large iframe (801px - 1200px) */
+@media (min-width: 801px) and (max-width: 1200px) {
+  .iframe-embed .main-container {
+    padding: 20px;
+  }
+  
+  .iframe-embed h1 {
+    margin-bottom: 18px;
+  }
+  
+  .iframe-embed .docs-tree {
+    max-height: calc(100vh - 180px);
+    padding-bottom: 110px;
+  }
+  
+  .iframe-embed .site-children.expanded {
+    max-height: min(150px, 20vh);
+  }
+  
+  .iframe-embed .selection-details.expanded {
+    max-height: min(120px, 18vh);
+  }
+  
+  .iframe-embed .btn {
+    font-size: 17px;
+  }
+}
+
+/* Extra large iframe (1201px and above) */
+@media (min-width: 1201px) {
+  .iframe-embed .main-container {
+    padding: 24px;
+  }
+  
+  .iframe-embed h1 {
+    margin-bottom: 20px;
+  }
+  
+  .iframe-embed .docs-tree {
+    max-height: calc(100vh - 200px);
+    padding-bottom: 120px;
+  }
+  
+  .iframe-embed .site-children.expanded {
+    max-height: min(200px, 25vh);
+  }
+  
+  .iframe-embed .selection-details.expanded {
+    max-height: min(150px, 20vh);
+  }
+  
+  .iframe-embed .btn {
+    font-size: 14px;
+  }
+}
+
+/* Height-based fluid adjustments */
+@media (max-height: 300px) {
+  .iframe-embed .main-container {
+    padding: 6px;
+  }
+  
+  .iframe-embed h1 {
+    margin-bottom: 8px;
+  }
+  
+  .iframe-embed .docs-tree {
+    max-height: calc(100vh - 80px);
+    padding-bottom: 60px;
+  }
+  
+  .iframe-embed .site-children.expanded {
+    max-height: min(60px, 8vh);
+  }
+  
+  .iframe-embed .selection-details.expanded {
+    max-height: min(40px, 6vh);
+  }
+  
+  .iframe-embed .btn {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+}
+
+@media (min-height: 301px) and (max-height: 500px) {
+  .iframe-embed .docs-tree {
+    max-height: calc(100vh - 100px);
+    padding-bottom: 70px;
+  }
+  
+  .iframe-embed .site-children.expanded {
+    max-height: min(80px, 12vh);
+  }
+  
+  .iframe-embed .selection-details.expanded {
+    max-height: min(60px, 10vh);
+  }
+  
+  .iframe-embed .btn {
+    font-size: 14px;
+  }
+}
+
+@media (min-height: 501px) and (max-height: 700px) {
+  .iframe-embed .docs-tree {
+    max-height: calc(100vh - 120px);
+    padding-bottom: 80px;
+  }
+  
+  .iframe-embed .site-children.expanded {
+    max-height: min(100px, 15vh);
+  }
+  
+  .iframe-embed .selection-details.expanded {
+    max-height: min(80px, 12vh);
+  }
+  
+  .iframe-embed .btn {
+    font-size: 15px;
+  }
+}
+
+@media (min-height: 701px) {
+  .iframe-embed .docs-tree {
+    max-height: calc(100vh - 140px);
+    padding-bottom: 90px;
+  }
+  
+  .iframe-embed .site-children.expanded {
+    max-height: min(120px, 18vh);
+  }
+  
+  .iframe-embed .selection-details.expanded {
+    max-height: min(100px, 15vh);
+  }
+  
+  .iframe-embed .btn {
+    font-size: 16px;
+  }
 }
