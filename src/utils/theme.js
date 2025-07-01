@@ -160,8 +160,19 @@ export function applyQueryParameters() {
   const borderColor = urlParams.get('border-color');
   
   const root = document.documentElement;
+  let hasCustomColors = false;
   
+  // Apply accent color independently (Component 1 fix)
+  if (accentColor && /^#([0-9A-F]{3}){1,2}$/i.test(accentColor)) {
+    root.style.setProperty('--accent-color', accentColor, 'important');
+    root.style.setProperty('--accent-hover-color', accentColor, 'important');
+    hasCustomColors = true;
+  }
+  
+  // Apply background color and derived colors if present
   if (bgColor && /^#([0-9A-F]{3}){1,2}$/i.test(bgColor)) {
+    hasCustomColors = true;
+    
     // Pick best text color if not provided
     if (!textColor || !/^#([0-9A-F]{3}){1,2}$/i.test(textColor)) {
       const blackContrast = getContrastRatio(bgColor, '#000000');
@@ -188,8 +199,6 @@ export function applyQueryParameters() {
       '--button-bg': accentColor || textColor,
       '--button-text': bgColor,
       '--button-hover-bg': accentColor || derived.hoverBg,
-      '--accent-color': accentColor || '#29a879',
-      '--accent-hover-color': accentColor || '#1f7a5a',
       '--secondary-text': derived.secondaryText,
       '--section-bg': derived.categoryBg,
       '--section-color': textColor,
@@ -209,8 +218,10 @@ export function applyQueryParameters() {
       const a = root.style.getPropertyValue('--translucent-opacity') || 0.92;
       root.style.setProperty('--translucent-bg-color', `rgba(${r}, ${g}, ${b}, ${a})`, 'important');
     }
-    
-    // Set custom colors flag
+  }
+  
+  // Set custom colors flag if any custom colors were applied
+  if (hasCustomColors) {
     root.setAttribute('data-custom-colors', 'true');
     
     // Disable theme toggle
