@@ -77,6 +77,8 @@ class RateLimiter {
 // Global rate limiter - 2 requests per second with burst of 5
 const rateLimiter = new RateLimiter(2, 5);
 
+
+
 /**
  * Load existing docs index to avoid re-crawling pages
  */
@@ -207,16 +209,23 @@ function extractLinks(doc, currentPageUrl, baseUrl, config) {
   const links = [];
   const allLinks = doc.querySelectorAll('a[href]');
   
+
+  
   for (const link of allLinks) {
     const href = link.getAttribute('href');
     if (!href) continue;
     
     // Use current page URL as base for resolving relative paths
     const resolvedUrl = resolveUrl(href, currentPageUrl);
+    
+
+    
     if (isValidUrl(resolvedUrl, baseUrl, config)) {
       links.push(resolvedUrl);
     }
   }
+  
+
   
   return [...new Set(links)]; // Remove duplicates
 }
@@ -226,8 +235,9 @@ function extractLinks(doc, currentPageUrl, baseUrl, config) {
  */
 function resolveUrl(href, baseUrl) {
   try {
-    return new URL(href, baseUrl).href;
-  } catch {
+    const resolved = new URL(href, baseUrl).href;
+    return resolved;
+  } catch (error) {
     return null;
   }
 }
@@ -242,19 +252,25 @@ function isValidUrl(url, baseUrl, config) {
     const urlObj = new URL(url);
     const baseUrlObj = new URL(baseUrl);
     
+
+    
     // Must be same domain
-    if (urlObj.hostname !== baseUrlObj.hostname) return false;
+    if (urlObj.hostname !== baseUrlObj.hostname) {
+      return false;
+    }
     
     // Skip URLs with hash fragments (anchor links)
     if (urlObj.hash) return false;
     
     // Check exclude patterns
     for (const pattern of config.excludePatterns) {
-      if (pattern.test(url)) return false;
+      if (pattern.test(url)) {
+        return false;
+      }
     }
     
     return true;
-  } catch {
+  } catch (error) {
     return false;
   }
 }
@@ -263,8 +279,11 @@ function isValidUrl(url, baseUrl, config) {
  * Detect if a page is a 404 error page based on content
  */
 function is404Page(doc, title, content) {
-  // Check title for 404 indicators
+  const wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
+  const contentLower = content.toLowerCase();
   const titleLower = title.toLowerCase();
+  
+  // Check title for 404 indicators
   if (titleLower.includes('404') || 
       titleLower.includes('not found') || 
       titleLower.includes('page not found') ||
@@ -272,19 +291,30 @@ function is404Page(doc, title, content) {
     return true;
   }
   
-  // Check content for 404 indicators
-  const contentLower = content.toLowerCase();
-  if (contentLower.includes('404') && 
-      (contentLower.includes('not found') || 
-       contentLower.includes('page not found') ||
-       contentLower.includes('file not found'))) {
-    return true;
+  // Check content for 404 indicators with word count limits
+  const has404Indicators = contentLower.includes('404') && 
+    (contentLower.includes('not found') || 
+     contentLower.includes('page not found') ||
+     contentLower.includes('file not found'));
+  
+  if (has404Indicators) {
+    // If page has 404 indicators, it must also meet word count requirements
+    // to be considered a 404 page (not too long, not too short)
+    if (wordCount >= 20 && wordCount <= 200) {
+      return true;
+    }
   }
   
   // Check for very short content that might be a 404 page
-  if (content.split(/\s+/).filter(word => word.length > 0).length < 20 &&
+  if (wordCount < 20 && 
       (contentLower.includes('not found') || contentLower.includes('404'))) {
     return true;
+  }
+  
+  // If content is substantial (>200 words), it's likely not a 404 page
+  // even if it contains some 404-like text
+  if (wordCount > 200) {
+    return false;
   }
   
   return false;
@@ -403,7 +433,8 @@ async function extractPageMetadata(doc, url, config) {
   
   // Check if this is a 404 page
   if (is404Page(doc, title, content)) {
-    log.warn(`404 page detected by content analysis: ${url}`);
+    const wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
+    log.warn(`404 page detected by content analysis: ${url} (${wordCount} words)`);
     return null;
   }
   
@@ -453,12 +484,12 @@ function generateTitleFromUrl(url) {
 }
 
 /**
- * Simple sibling discovery by scanning all links
+ * Comprehensive discovery by scanning all links from seed URLs
  */
 async function discoverSiblings(baseUrl, config) {
   const discovered = new Set();
   
-  // Check each seed URL for siblings
+  // Check each seed URL for all discoverable pages
   for (const seedPath of config.seedUrls) {
     const seedUrl = baseUrl + (seedPath.startsWith('/') ? seedPath : '/' + seedPath);
     const doc = await fetchPage(seedUrl);
@@ -473,16 +504,12 @@ async function discoverSiblings(baseUrl, config) {
     // Extract all valid links using the same logic as main crawler
     const links = extractLinks(doc, seedUrl, config.baseUrl, config);
     
-    // Group links by section (first path segment)
-    const seedSection = seedPath.split('/').filter(Boolean)[0];
+    // Add all discovered paths (not just siblings)
     for (const link of links) {
       try {
         const linkUrl = new URL(link);
         const linkPath = linkUrl.pathname;
-        const pathSection = linkPath.split('/').filter(Boolean)[0];
-        if (pathSection === seedSection) {
-          discovered.add(linkPath);
-        }
+        discovered.add(linkPath);
       } catch {
         // Skip invalid URLs
       }
@@ -490,7 +517,10 @@ async function discoverSiblings(baseUrl, config) {
   }
   
   const discoveredArray = Array.from(discovered);
-  log.discovery(`Found ${discoveredArray.length} sibling pages`);
+  
+
+  
+  log.discovery(`Found ${discoveredArray.length} discoverable pages`);
   
   return discoveredArray;
 }
@@ -625,9 +655,16 @@ export async function crawlSite(siteKey, options = {}) {
   
   // Discover entry points
   const discoveredPaths = await discoverSiblings(config.baseUrl, config);
-  const entryPointsToUse = discoveredPaths.slice(0, 15); // Use up to 15 entry points
   
-  log.discovery(`Using ${entryPointsToUse.length} entry points`);
+  // PRIORITIZE SEED URLS: Always include all seed URLs first, then add discovered paths
+  const entryPointsToUse = [
+    ...config.seedUrls, // All seed URLs come first
+    ...discoveredPaths.filter(path => !config.seedUrls.includes(path)) // Add discovered paths that aren't already seed URLs
+  ].slice(0, 50); // Increased limit to accommodate all seed URLs + some discovered paths
+  
+
+  
+  log.discovery(`Using ${entryPointsToUse.length} entry points from ${discoveredPaths.length} discovered + ${config.seedUrls.length} seed paths (prioritized)`);
   
   // Add entry points to stack with proper depth calculation
   for (const entryPoint of entryPointsToUse.reverse()) {
@@ -636,14 +673,16 @@ export async function crawlSite(siteKey, options = {}) {
       const pathParts = entryPoint.split('/').filter(Boolean);
       const calculatedDepth = pathParts.length;
       
+
+      
       stack.push({ url, depth: calculatedDepth });
       seen.add(url);
     }
   }
   
-  // Crawl pages
+  // Crawl pages with simple FIFO queue
   while (stack.length > 0 && pages.length < maxPages) {
-    const { url, depth } = stack.pop();
+    const { url, depth } = stack.shift(); // Take next item (FIFO)
     
     if (visited.has(url) || depth > maxDepth) {
       continue;
@@ -717,7 +756,8 @@ export async function crawlSite(siteKey, options = {}) {
           }
         }
         
-        for (const linkData of newLinks.reverse()) {
+        // Add all new links to stack
+        for (const linkData of newLinks) {
           stack.push(linkData);
         }
         

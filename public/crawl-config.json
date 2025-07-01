@@ -3,7 +3,7 @@
     "name": "Hyperbeam",
     "baseUrl": "https://hyperbeam.arweave.net",
     "maxDepth": 4,
-    "maxPages": 100,
+    "maxPages": 200,
     "selectors": {
       "title": "h1, title",
       "content": "main, .content, article"
@@ -25,7 +25,7 @@
     "name": "AO Cookbook",
     "baseUrl": "https://cookbook_ao.arweave.net",
     "maxDepth": 4,
-    "maxPages": 100,
+    "maxPages": 200,
     "selectors": {
       "title": "h1, title",
       "content": "main, .content, article"
@@ -38,6 +38,7 @@
       "/llms\\.txt$/",
       "/llms-full\\.txt$/"
     ],
+
     "seedUrls": [
       "/welcome/ao-core-introduction.html",
       "/guides/",
@@ -50,7 +51,7 @@
     "name": "AR-IO Network",
     "baseUrl": "https://docs.ar.io",
     "maxDepth": 4,
-    "maxPages": 100,
+    "maxPages": 200,
     "selectors": {
       "title": "h1, title",
       "content": "main, .content, article"
@@ -61,20 +62,28 @@
       "/llms\\.txt$/",
       "/llms-full\\.txt$/"
     ],
+
     "seedUrls": [
       "/introduction",
       "/ar-io-sdk",
       "/gateways/linux-setup",
       "/guides/permaweb-deploy",
       "/guides/testnet",
-      "/glossary"
+      "/glossary",
+      "/wayfinder",
+      "/wayfinder/getting-started",
+      "/wayfinder/telemetry",
+      "/wayfinder/core",
+      "/wayfinder/react",
+      "/wayfinder/routing-strategies",
+      "/wayfinder/verification-strategies"
     ]
   },
   "arweave": {
     "name": "Arweave Cookbook",
     "baseUrl": "https://cookbook.arweave.net",
     "maxDepth": 4,
-    "maxPages": 100,
+    "maxPages": 200,
     "selectors": {
       "title": "h1, title",
       "content": "main, .content, article"
