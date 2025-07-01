@@ -67,7 +67,11 @@
       "/gateways/linux-setup",
       "/guides/permaweb-deploy",
       "/guides/testnet",
-      "/glossary"
+      "/glossary",
+      "/wayfinder/getting-started",
+      "/wayfinder/react",
+      "/wayfinder/routing-strategies",
+      "/wayfinder/verification-strategies"
     ]
   },
   "arweave": {

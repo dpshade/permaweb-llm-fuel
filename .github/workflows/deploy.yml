@@ -39,14 +39,50 @@ jobs:
           
       - run: bun install --frozen-lockfile
       
+      - name: Detect Crawl Config Changes
+        id: config_changes
+        run: |
+          # Check if crawl-config.json has changed in this push
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            # Get the list of changed files in this push
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} 2>/dev/null || echo "")
+            
+            # Check if crawl-config.json is in the changed files
+            if echo "$CHANGED_FILES" | grep -q "public/crawl-config.json"; then
+              echo "crawl_config_changed=true" >> $GITHUB_OUTPUT
+              echo "🔄 Crawl configuration has changed - will trigger full recrawl"
+            else
+              echo "crawl_config_changed=false" >> $GITHUB_OUTPUT
+              echo "📋 No crawl configuration changes detected"
+            fi
+          else
+            # For non-push events, default to false
+            echo "crawl_config_changed=false" >> $GITHUB_OUTPUT
+            echo "📋 Non-push event - using default crawl behavior"
+          fi
+      
       - name: Run Crawler
         run: |
-          if [[ "${{ github.event_name }}" == "schedule" ]] || [[ "${{ github.event.inputs.force_crawl }}" == "true" ]]; then
+          # Determine if we should do a full recrawl
+          SHOULD_FORCE_CRAWL=false
+          
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            SHOULD_FORCE_CRAWL=true
+            echo "🕐 Scheduled run - doing full recrawl"
+          elif [[ "${{ github.inputs.force_crawl }}" == "true" ]]; then
+            SHOULD_FORCE_CRAWL=true
+            echo "🔧 Manual force crawl requested"
+          elif [[ "${{ steps.config_changes.outputs.crawl_config_changed }}" == "true" ]]; then
+            SHOULD_FORCE_CRAWL=true
+            echo "⚙️ Crawl config changed - doing full recrawl"
+          fi
+          
+          if [[ "$SHOULD_FORCE_CRAWL" == "true" ]]; then
             echo "Running forced full re-crawl"
             bun run crawl:force
           else
-            echo "Running incremental crawl"
-            bun run crawl:incremental
+            echo "Running smart crawl (auto-detects config changes)"
+            bun run crawl:smart
           fi
         env:
           NODE_ENV: production

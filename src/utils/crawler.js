@@ -7,6 +7,7 @@ import { JSDOM } from 'jsdom';
 import { promises as fs } from 'fs';
 import { resolve } from 'path';
 import Defuddle from 'defuddle';
+import { createHash } from 'crypto';
 
 // Color utilities for clean console output
 const colors = {
@@ -98,6 +99,20 @@ async function loadExistingIndex() {
     
     const indexData = JSON.parse(indexJson);
     
+    // Check if configuration has changed
+    const currentConfigs = await loadCrawlConfigs();
+    const configChanged = !indexData.configHash || indexData.configHash !== currentConfigs._configHash;
+    
+    if (configChanged) {
+      log.info(`Configuration changed detected (old: ${indexData.configHash || 'none'}, new: ${currentConfigs._configHash})`);
+      log.info('Will perform full recrawl due to configuration changes');
+      // Return empty data to force full recrawl
+      return { 
+        indexData: { generated: new Date().toISOString(), configHash: currentConfigs._configHash, sites: {} }, 
+        existingUrls: new Set() 
+      };
+    }
+    
     // Create a Set of all existing URLs for fast lookup
     const existingUrls = new Set();
     for (const siteData of Object.values(indexData.sites || {})) {
@@ -106,16 +121,31 @@ async function loadExistingIndex() {
       }
     }
     
-    log.info(`Loaded existing index from: ${indexPath}`);
+    log.info(`Loaded existing index from: ${indexPath} (config hash: ${indexData.configHash})`);
     
     return { indexData, existingUrls };
   } catch (error) {
     // If no existing index, return empty data
+    const currentConfigs = await loadCrawlConfigs();
     return { 
-      indexData: { generated: new Date().toISOString(), sites: {} }, 
+      indexData: { generated: new Date().toISOString(), configHash: currentConfigs._configHash, sites: {} }, 
       existingUrls: new Set() 
     };
   }
+}
+
+/**
+ * Generate hash of crawl configuration for change detection
+ */
+function generateConfigHash(configs) {
+  const configString = JSON.stringify(configs, (key, value) => {
+    // Sort arrays to ensure consistent hashing
+    if (Array.isArray(value)) {
+      return value.sort();
+    }
+    return value;
+  });
+  return createHash('sha256').update(configString).digest('hex').substring(0, 8);
 }
 
 /**
@@ -147,6 +177,11 @@ async function loadCrawlConfigs() {
         })
       };
     }
+
+    // Add configuration hash for change detection (don't include in site enumeration)
+    const configHash = generateConfigHash(rawConfigs);
+    crawlConfigs._configHash = configHash;
+    log.debug(`Configuration hash: ${configHash}`);
 
     return crawlConfigs;
   } catch (error) {
@@ -796,6 +831,7 @@ export async function runCrawl(specificSiteKey = null, options = {}) {
   // Prepare index data
   const indexData = {
     generated: new Date().toISOString(),
+    configHash: configs._configHash,
     sites: {}
   };
   
