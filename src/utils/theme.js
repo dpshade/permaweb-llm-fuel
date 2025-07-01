@@ -72,7 +72,7 @@ function getLuminance(hex) {
   return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
 }
 
-function getContrastRatio(hex1, hex2) {
+export function getContrastRatio(hex1, hex2) {
   const lum1 = getLuminance(hex1);
   const lum2 = getLuminance(hex2);
   return (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05);
@@ -166,6 +166,10 @@ export function applyQueryParameters() {
   if (accentColor && /^#([0-9A-F]{3}){1,2}$/i.test(accentColor)) {
     root.style.setProperty('--accent-color', accentColor, 'important');
     root.style.setProperty('--accent-hover-color', accentColor, 'important');
+    
+    // Apply intelligent checkbox colors based on accent color
+    applyCheckboxColors(accentColor, bgColor);
+    
     hasCustomColors = true;
   }
   
@@ -260,6 +264,13 @@ export function initializeTheme() {
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    
+    // Apply intelligent checkbox colors for the current theme
+    const currentAccentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim();
+    if (currentAccentColor) {
+      applyCheckboxColors(currentAccentColor);
+    }
+    
     updateThemeToggle();
   }
   
@@ -372,4 +383,85 @@ export function createThemeToggleHTML() {
       </svg>
     </button>
   `;
+}
+
+/**
+ * Generate intelligent checkmark colors based on accent color
+ * This ensures optimal visibility and contrast for checkmarks within checkboxes
+ */
+export function generateCheckboxColors(accentColor) {
+  const [h, s, l] = hexToHsl(accentColor);
+  
+  // Determine if accent color is light or dark
+  const isLightAccent = l > 60;
+  
+  // Generate checkmark colors based on accent color characteristics
+  let checkmarkColor, checkmarkHoverColor;
+  
+  if (isLightAccent) {
+    // For light accent colors, use dark checkmark for contrast
+    checkmarkColor = '#000000';
+    checkmarkHoverColor = '#000000';
+  } else {
+    // For dark accent colors, use light checkmark for contrast
+    checkmarkColor = '#ffffff';
+    checkmarkHoverColor = '#ffffff';
+  }
+  
+  return {
+    checkmarkColor,
+    checkmarkHoverColor
+  };
+}
+
+/**
+ * Calculate optimal checkmark color based on accent color
+ * Ensures WCAG AA compliance (4.5:1 contrast ratio) for checkmark visibility
+ */
+export function calculateOptimalCheckboxColor(accentColor, bgColor = '#ffffff') {
+  const checkboxColors = generateCheckboxColors(accentColor);
+  
+  // Test contrast ratios between checkmark color and accent color
+  const contrastWithAccent = getContrastRatio(checkboxColors.checkmarkColor, accentColor);
+  
+  // If contrast is insufficient, adjust checkmark color
+  if (contrastWithAccent < 4.5) {
+    const [h, s, l] = hexToHsl(accentColor);
+    
+    // Determine if we need to use the opposite color
+    if (l > 60) {
+      // Light accent - ensure dark checkmark
+      return {
+        checkmarkColor: '#000000',
+        checkmarkHoverColor: '#000000'
+      };
+    } else {
+      // Dark accent - ensure light checkmark
+      return {
+        checkmarkColor: '#ffffff',
+        checkmarkHoverColor: '#ffffff'
+      };
+    }
+  }
+  
+  return checkboxColors;
+}
+
+/**
+ * Apply intelligent checkmark colors to CSS custom properties
+ */
+export function applyCheckboxColors(accentColor, bgColor = null) {
+  const root = document.documentElement;
+  
+  // Get current background color if not provided
+  if (!bgColor) {
+    const computedBg = getComputedStyle(root).getPropertyValue('--bg-color').trim();
+    bgColor = computedBg || '#ffffff';
+  }
+  
+  const checkboxColors = calculateOptimalCheckboxColor(accentColor, bgColor);
+  
+  // Apply checkmark color variables
+  root.style.setProperty('--checkmark-color', checkboxColors.checkmarkColor, 'important');
+  root.style.setProperty('--checkmark-hover-color', checkboxColors.checkmarkHoverColor, 'important');
 }

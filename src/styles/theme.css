@@ -20,6 +20,8 @@
   --button-hover-bg: #333;
   --accent-color: #29a879;
   --accent-hover-color: #1f7a5a;
+  --checkmark-color: #ffffff;
+  --checkmark-hover-color: #ffffff;
   --secondary-text: #666;
   --section-bg: #f5f5f5;
   --section-color: #111;
@@ -65,6 +67,8 @@
   --button-hover-bg: #404040;
   --accent-color: #008000;
   --accent-hover-color: #00a000;
+  --checkmark-color: #ffffff;
+  --checkmark-hover-color: #ffffff;
   --secondary-text: #a0a0a0;
   --section-bg: #1a1a1a;
   --section-color: #ffffff;
@@ -183,6 +187,54 @@
   right: 0;
 }
 
+/* Iframe-specific row click behavior */
+.iframe-embed .tree-site-header {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-radius: var(--border-radius);
+  padding: 4px 8px;
+  margin: -4px -8px;
+}
+
+/* Remove hover background for iframe site header */
+.iframe-embed .tree-site-header:hover {
+  background-color: unset;
+}
+
+.iframe-embed .tree-site-content {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-radius: var(--border-radius);
+  padding: 4px 8px;
+  margin: -4px -8px;
+}
+
+.iframe-embed .tree-site-content:hover {
+  background-color: var(--category-bg);
+}
+
+.iframe-embed .tree-page-item {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-radius: var(--border-radius);
+  padding: 2px 4px;
+  margin: -2px -4px;
+}
+
+.iframe-embed .tree-page-item:hover {
+  background-color: var(--category-bg-2);
+}
+
+/* Ensure links don't inherit the pointer cursor in iframe mode */
+.iframe-embed .tree-page-link {
+  cursor: pointer;
+}
+
+/* Hide expand/collapse arrow in iframe mode since we're using checkboxes */
+.iframe-embed .tree-toggle {
+  display: none;
+}
+
 /* Ensure iframe mode also uses ultra-compact docs tree layout on very small screens */
 @media (max-height: 400px) {
   /* Ultra-compact iframe docs tree container */
@@ -256,11 +308,9 @@
     stroke-width: 1 !important;
   }
   
-  .iframe-embed #docs-tree input[type="checkbox"] {
-    width: 12px !important;
-    height: 12px !important;
-  }
-  
+  /* Ultra-compact iframe checkbox sizing */
+  .iframe-embed .docs-tree input[type="checkbox"],
+  .iframe-embed #docs-tree input[type="checkbox"],
   .iframe-embed .site-checkbox,
   .iframe-embed .category-checkbox,
   .iframe-embed .page-checkbox {
@@ -284,17 +334,6 @@
     padding: 6px 8px !important;
     font-size: 13px !important;
   }
-}
-
-/* Constrain accordion heights in iframe mode */
-.iframe-embed .site-children.expanded {
-  max-height: min(150px, 20vh) !important; /* Reduced from min(200px, 30vh) to prevent pushing bottom sites out of view */
-  overflow-y: auto;
-}
-
-.iframe-embed .selection-details.expanded {
-  max-height: min(150px, 25vh) !important;
-  overflow-y: auto;
 }
 
 body {
@@ -384,21 +423,44 @@ h1 {
   gap: 8px;
 }
 
-.docs-tree input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: var(--accent-color);
-}
-
-/* Target checkboxes by their specific classes and ID */
+/* Unified checkbox styles - single source of truth */
+.docs-tree input[type="checkbox"],
+#docs-tree input[type="checkbox"],
 .site-checkbox,
 .category-checkbox,
 .page-checkbox {
+  width: 16px;
+  height: 16px;
   accent-color: var(--accent-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
-#docs-tree input[type="checkbox"] {
-  accent-color: var(--accent-color);
+.docs-tree input[type="checkbox"]:checked,
+#docs-tree input[type="checkbox"]:checked,
+.site-checkbox:checked,
+.category-checkbox:checked,
+.page-checkbox:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.docs-tree input[type="checkbox"]:checked::before,
+#docs-tree input[type="checkbox"]:checked::before,
+.site-checkbox:checked::before,
+.category-checkbox:checked::before,
+.page-checkbox:checked::before {
+  color: var(--checkmark-color, #ffffff);
+}
+
+.docs-tree input[type="checkbox"]:hover,
+#docs-tree input[type="checkbox"]:hover,
+.site-checkbox:hover,
+.category-checkbox:hover,
+.page-checkbox:hover {
+  accent-color: var(--accent-hover-color);
+  background-color: var(--accent-hover-color);
+  border-color: var(--accent-hover-color);
 }
 
 /* Radio button styling */
@@ -831,11 +893,9 @@ input[type="radio"] {
     stroke-width: 1 !important;
   }
   
-  #docs-tree input[type="checkbox"] {
-    width: 12px !important;
-    height: 12px !important;
-  }
-  
+  /* Ultra-compact checkbox sizing */
+  .docs-tree input[type="checkbox"],
+  #docs-tree input[type="checkbox"],
   .site-checkbox,
   .category-checkbox,
   .page-checkbox {
@@ -1629,4 +1689,29 @@ html.translucent-bg .main-container {
   .iframe-embed .btn {
     font-size: 16px;
   }
+}
+
+/* Constrain accordion heights in iframe mode */
+.iframe-embed .site-children.expanded {
+  max-height: min(150px, 20vh) !important; /* Reduced from min(200px, 30vh) to prevent pushing bottom sites out of view */
+  overflow-y: auto;
+}
+
+.iframe-embed .selection-details.expanded {
+  max-height: min(150px, 25vh) !important;
+  overflow-y: auto;
+}
+
+body {
+  /* The rest of the body styles remain unchanged */
+}
+
+/* Fix checkbox clipping in iframe mode */
+.iframe-embed .tree-site-header {
+  margin-left: 0;
+  padding-left: 8px;
+}
+.iframe-embed .site-checkbox {
+  margin-left: 0;
+  margin-right: 8px;
 }

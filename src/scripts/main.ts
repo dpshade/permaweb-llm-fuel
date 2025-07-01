@@ -268,7 +268,7 @@ function renderSitesWithPages(sortedPages: PageData[]): string {
 			<div class="mb-8">
 				<div class="tree-site-header">
 					<input type="checkbox" id="site-${siteKey}" class="site-checkbox" data-site="${siteKey}" checked>
-					<div class="tree-site-content flex-center-gap" onclick="toggleNode('site-${siteKey}')">
+					<div class="tree-site-content flex-center-gap" ${window.self === window.top ? `onclick="toggleNode('site-${siteKey}')"` : ''}>
 						<svg class="world-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<circle cx="12" cy="12" r="10" stroke="#666" stroke-width="2"/>
 							<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#666" stroke-width="2"/>
@@ -424,6 +424,13 @@ function addTreeEventListeners() {
 				// Update UI once after all changes
 				updateSelectionCount();
 			});
+
+			// Prevent checkbox clicks from triggering row clicks in iframe mode
+			if (window.self !== window.top) {
+				checkbox.addEventListener("click", (e) => {
+					e.stopPropagation();
+				});
+			}
 		});
 
 	// Page checkboxes
@@ -434,7 +441,53 @@ function addTreeEventListeners() {
 				const target = e.target as HTMLInputElement;
 				handlePageSelection(target, target.checked);
 			});
+
+			// Prevent checkbox clicks from triggering row clicks in iframe mode
+			if (window.self !== window.top) {
+				checkbox.addEventListener("click", (e) => {
+					e.stopPropagation();
+				});
+			}
 		});
+
+	// Iframe-specific row click handlers
+	if (window.self !== window.top) {
+		// Site header click handlers (entire header area)
+		document.querySelectorAll(".tree-site-header").forEach((siteHeader) => {
+			siteHeader.addEventListener("click", (e) => {
+				// Don't trigger if clicking directly on the checkbox
+				if ((e.target as HTMLElement).closest(".site-checkbox")) {
+					return;
+				}
+				
+				// Find the associated site checkbox
+				const checkbox = siteHeader.querySelector(".site-checkbox") as HTMLInputElement;
+				if (checkbox) {
+					checkbox.checked = !checkbox.checked;
+					// Trigger the change event
+					checkbox.dispatchEvent(new Event("change", { bubbles: true }));
+				}
+			});
+		});
+
+		// Page row click handlers
+		document.querySelectorAll(".tree-page-item").forEach((pageItem) => {
+			pageItem.addEventListener("click", (e) => {
+				// Don't trigger if clicking on the link
+				if ((e.target as HTMLElement).closest(".tree-page-link")) {
+					return;
+				}
+				
+				// Find the associated page checkbox
+				const checkbox = pageItem.querySelector(".page-checkbox") as HTMLInputElement;
+				if (checkbox) {
+					checkbox.checked = !checkbox.checked;
+					// Trigger the change event
+					checkbox.dispatchEvent(new Event("change", { bubbles: true }));
+				}
+			});
+		});
+	}
 }
 
 // Handle page selection
