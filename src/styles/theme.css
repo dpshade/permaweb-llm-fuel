@@ -139,7 +139,7 @@
 /* Iframe mode variables */
 .iframe-embed {
   --container-border-width: 0;
-  --container-padding: 16px;
+  --container-padding: 0;
   --container-max-width: 100%;
   --container-width: 100%;
 }
@@ -187,7 +187,7 @@
 @media (max-height: 400px) {
   /* Ultra-compact iframe docs tree container */
   .iframe-embed #docs-tree {
-    padding: 6px !important;
+    padding: 0 !important;
     margin-bottom: 6px !important;
   }
   
@@ -869,7 +869,7 @@ input[type="radio"] {
   max-width: 100%;
   width: 100%;
   margin: 0;
-  padding: 16px;
+  padding: 0;
   min-height: 100vh;
   max-height: 100vh;
   margin-top: 0;
@@ -892,7 +892,7 @@ input[type="radio"] {
     max-width: 100%;
     width: 100%;
     margin: 0;
-    padding: 16px;
+    padding: 0;
     min-height: 100vh;
   }
 }
@@ -1407,7 +1407,7 @@ html.translucent-bg .main-container {
 /* Extra small iframe (300px and below) */
 @media (max-width: 300px) {
   .iframe-embed .main-container {
-    padding: 8px;
+    padding: 0;
   }
   
   .iframe-embed h1 {
@@ -1436,7 +1436,7 @@ html.translucent-bg .main-container {
 /* Small iframe (301px - 500px) */
 @media (min-width: 301px) and (max-width: 500px) {
   .iframe-embed .main-container {
-    padding: 12px;
+    padding: 0;
   }
   
   .iframe-embed h1 {
@@ -1464,7 +1464,7 @@ html.translucent-bg .main-container {
 /* Medium iframe (501px - 800px) */
 @media (min-width: 501px) and (max-width: 800px) {
   .iframe-embed .main-container {
-    padding: 16px;
+    padding: 0;
   }
   
   .iframe-embed h1 {
@@ -1492,7 +1492,7 @@ html.translucent-bg .main-container {
 /* Large iframe (801px - 1200px) */
 @media (min-width: 801px) and (max-width: 1200px) {
   .iframe-embed .main-container {
-    padding: 20px;
+    padding: 0;
   }
   
   .iframe-embed h1 {
@@ -1520,7 +1520,7 @@ html.translucent-bg .main-container {
 /* Extra large iframe (1201px and above) */
 @media (min-width: 1201px) {
   .iframe-embed .main-container {
-    padding: 24px;
+    padding: 0;
   }
   
   .iframe-embed h1 {
@@ -1548,7 +1548,7 @@ html.translucent-bg .main-container {
 /* Height-based fluid adjustments */
 @media (max-height: 300px) {
   .iframe-embed .main-container {
-    padding: 6px;
+    padding: 0;
   }
   
   .iframe-embed h1 {
