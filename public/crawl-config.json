@@ -10,7 +10,9 @@
     },
     "excludePatterns": [
       "/\\.(pdf|zip|tar|gz)$/",
-      "/mailto:/"
+      "/mailto:/",
+      "/llms\\.txt$/",
+      "/llms-full\\.txt$/"
     ],
     "seedUrls": [
       "/build/introduction/what-is-hyperbeam.html",
@@ -32,7 +34,9 @@
       "/\\.(pdf|zip|tar|gz)$/",
       "/mailto:/",
       "/ja/",
-      "/zh/"
+      "/zh/",
+      "/llms\\.txt$/",
+      "/llms-full\\.txt$/"
     ],
     "seedUrls": [
       "/welcome/ao-core-introduction.html",
@@ -53,7 +57,9 @@
     },
     "excludePatterns": [
       "/\\.(pdf|zip|tar|gz)$/",
-      "/mailto:/"
+      "/mailto:/",
+      "/llms\\.txt$/",
+      "/llms-full\\.txt$/"
     ],
     "seedUrls": [
       "/introduction",
@@ -75,7 +81,9 @@
     },
     "excludePatterns": [
       "/\\.(pdf|zip|tar|gz)$/",
-      "/mailto:/"
+      "/mailto:/",
+      "/llms\\.txt$/",
+      "/llms-full\\.txt$/"
     ],
     "seedUrls": [
       "/getting-started/index.html",
@@ -96,7 +104,10 @@
       "title": "title",
       "content": "body"
     },
-    "excludePatterns": [],
+    "excludePatterns": [
+      "/llms\\.txt$/",
+      "/llms-full\\.txt$/"
+    ],
     "seedUrls": [
       "/glossary.txt"
     ]

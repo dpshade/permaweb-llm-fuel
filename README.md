@@ -346,3 +346,39 @@ The Permaweb LLMs Builder uses a streamlined approach for documentation indexing
 - **⚡ Optimized Loading**: Frontend loads the index via fetch for dynamic content rendering
 
 This simplified structure eliminates redundancy while maintaining all functionality.
+
+## 🔧 UI Customization via Query Parameters
+
+You can customize the Permaweb LLMs Builder UI by supplying query parameters in the URL. This is useful for embedding the tool in iframes, theming, or hiding certain UI elements.
+
+| Parameter         | Example                | Description                                                      |
+|------------------|-----------------------|------------------------------------------------------------------|
+| `iframe`         | `?iframe=true`        | Enables iframe-optimized UI (removes header, compact layout, etc) |
+| `hide-header`    | `?hide-header=1`      | Hides the main page header/title                                 |
+| `minimal`        | `?minimal=true`       | Hides the main header for a compact layout                       |
+| `theme`          | `?theme=dark`         | Forces dark mode (`light` or `dark`)                             |
+| `translucent`    | `?translucent=1`      | Enables translucent background (for overlays/embeds)             |
+| `accent`         | `?accent=%23ff6600`   | Sets the accent color (hex, URL-encoded, e.g. `%23ff6600`)       |
+| `bg-color`       | `?bg-color=%23f5f5f5` | Sets the background color (hex, URL-encoded)                     |
+| `text-color`     | `?text-color=%23000000`| Sets the text color (hex, URL-encoded)                          |
+
+### Example Usage
+
+- **Minimal mode:**
+  ```
+  https://your-llms-builder.app/?minimal=true
+  ```
+- **Iframe mode with dark theme:**
+  ```
+  https://your-llms-builder.app/?iframe=true&theme=dark
+  ```
+- **Hide header and use a custom accent color:**
+  ```
+  https://your-llms-builder.app/?hide-header=1&accent=%23ff6600
+  ```
+- **Translucent overlay with custom background:**
+  ```
+  https://your-llms-builder.app/?translucent=1&bg-color=%23ffffff
+  ```
+
+You can combine multiple parameters as needed. Most parameters are compatible with each other.
