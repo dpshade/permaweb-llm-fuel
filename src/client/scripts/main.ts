@@ -4,7 +4,7 @@
  * This file contains browser-specific code and should NEVER be imported in server code.
  * It uses DOM manipulation, browser APIs, and client-side utilities.
  * 
- * @fileoverview Main application logic for the Permaweb LLMs Builder interface
+ * @fileoverview Main application logic for the Permaweb LLM Fuel interface
  */
 
 import { initializeAllTheme } from "../utils/theme.js";
@@ -933,8 +933,8 @@ if (generateBtn) {
 				progressText.textContent = "Generating llms.txt...";
 			}
 
-			// Generate LLMs.txt
-			const llmsTxt = generateLLMsTxt(cleanedPages);
+					// Generate llms.txt
+		const llmsTxt = generateLLMsTxt(cleanedPages);
 
 			// Open content in new tab
 			const timestamp = new Date().toISOString().split("T")[0];

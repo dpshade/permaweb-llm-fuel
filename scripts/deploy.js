@@ -131,7 +131,7 @@ class DeploymentManager {
 
     console.log('🚀 Deploying to Arweave...');
     
-    execSync(`npx permaweb-deploy --ant-process="${process.env.ANT_PROCESS}" --arns-name="permaweb-llms-builder" --deploy-folder="${CONFIG.vercelOutputDir}" --verbose`, 
+    execSync(`npx permaweb-deploy --ant-process="${process.env.ANT_PROCESS}" --arns-name="permawebllms" --undername="fuel" --deploy-folder="${CONFIG.vercelOutputDir}" --verbose`, 
       { stdio: 'inherit' });
   }
 }

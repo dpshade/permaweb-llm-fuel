@@ -1,12 +1,12 @@
 {
-  "name": "permaweb-llms-builder",
+  "name": "permaweb-llm-fuel",
   "type": "module",
   "version": "0.0.1",
   "description": "Interactive tool to select and curate Permaweb documentation into llms.txt format for AI training",
   "keywords": [
     "permaweb",
     "arweave",
-    "llms",
+    "llm",
     "documentation",
     "ai",
     "training"

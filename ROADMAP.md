@@ -1,4 +1,4 @@
-# Permaweb LLMs Builder - Roadmap
+# Permaweb LLM Fuel - Roadmap
 
 ## 🚀 Immediate Priorities
 

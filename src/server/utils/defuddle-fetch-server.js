@@ -229,7 +229,7 @@ async function getDocumentFromHtml(html, url) {
 export async function fetchAndClean(url, options = {}) {
   const {
     timeout = 30000,
-    userAgent = 'Mozilla/5.0 (compatible; PermawebLLMsBuilder/1.0)',
+    userAgent = 'Mozilla/5.0 (compatible; PermawebLLMFuel/1.0)',
     qualityThreshold = 0.3,
     useEnhancedExtraction = true,
     contentFilters = {}

@@ -1,4 +1,4 @@
-# 🚀 Permaweb LLMs Builder
+# 🚀 Permaweb LLM Fuel
 
 An interactive tool for selecting and curating Permaweb documentation into `llms.txt` format for AI training.
 
@@ -7,7 +7,7 @@ An interactive tool for selecting and curating Permaweb documentation into `llms
 - 🌐 **Multi-site crawling**: Automatically crawl documentation from Hyperbeam, AO, ArIO, and core Arweave sites
 - 🎯 **Smart filtering**: Quality scoring and content enhancement for optimal AI training data
 - 📊 **Interactive selection**: Browse and filter documentation with real-time search
-- 📄 **LLMs.txt generation**: Export curated content in the standard format for AI training
+- 📄 **llms.txt generation**: Export curated content in the standard format for AI training
 - 📱 **Responsive design**: Works on desktop and mobile devices
 - 🚀 **Multiple deployment options**: Deploy to Vercel or Arweave with flexible configurations
 
@@ -23,8 +23,8 @@ An interactive tool for selecting and curating Permaweb documentation into `llms
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/permaweb-llms-builder.git
-cd permaweb-llms-builder
+git clone https://github.com/your-org/permaweb-llm-fuel.git
+cd permaweb-llm-fuel
 
 # Install dependencies
 bun install
@@ -105,7 +105,7 @@ graph TD
 |-------------|----------|-----|------------|
 | **Development** | Local | `localhost:4321` | Manual (`bun run dev`) |
 | **Preview** | Vercel | Vercel preview URLs | Manual (`bun run deploy:preview`) |
-| **Production** | Arweave | `permaweb-llms-builder.ar.io` | Manual (`bun run deploy:prod`) |
+| **Production** | Arweave | `fuel_permawebllms.ar.io` | Manual (`bun run deploy:prod`) |
 
 ### GitHub Actions Workflows
 
@@ -172,7 +172,7 @@ ANT_PROCESS=your_ant_process_id
 ## 📁 Project Structure
 
 ```
-permaweb-llms-builder/
+permaweb-llm-fuel/
 ├── .github/
 │   └── workflows/           # CI/CD workflows
 ├── public/                  # Static assets
@@ -270,7 +270,7 @@ Future deployment to Arweave Permaweb with ArNS:
 ```bash
 # Will be enabled when ready
 npx permaweb-deploy \
-  --arns-name=permaweb-llms-builder \
+  --arns-name=permaweb-llm-fuel \
   --ant-process=$ANT_PROCESS \
   --deploy-folder=dist
 ```
@@ -324,10 +324,9 @@ Monitor deployment status:
 
 ## 🔗 Links
 
-- **Live Site**: [Your Production URL]
-- **Preview Environment**: [Your Preview URL]
-- **Documentation**: [Your Docs URL]
-- **Issues**: [GitHub Issues](https://github.com/your-org/permaweb-llms-builder/issues)
+- **Live Site**: [https://fuel_permawebllms.ar.io](https://fuel_permawebllms.ar.io)
+<!-- - **Preview Environment**: [https://permaweb-llm-fuel.vercel.app](https://permaweb-llm-fuel.vercel.app) -->
+- **Issues**: [GitHub Issues](https://github.com/dpshade/permaweb-llm-fuel/issues)
 
 ## 📄 License
 
@@ -339,7 +338,7 @@ Built with ❤️ for the Permaweb ecosystem
 
 ### Architecture
 
-The Permaweb LLMs Builder uses a streamlined approach for documentation indexing:
+The Permaweb LLM Fuel uses a streamlined approach for documentation indexing:
 
 - **📁 Public Access**: `public/docs-index.json` - Accessible at `/docs-index.json` for frontend consumption and external API access
 - **🔄 Automatic Generation**: Crawl processes generate and maintain the index file automatically
@@ -349,7 +348,7 @@ This simplified structure eliminates redundancy while maintaining all functional
 
 ## 🔧 UI Customization via Query Parameters
 
-You can customize the Permaweb LLMs Builder UI by supplying query parameters in the URL. This is useful for embedding the tool in iframes, theming, or hiding certain UI elements.
+You can customize the Permaweb LLM Fuel UI by supplying query parameters in the URL. This is useful for embedding the tool in iframes, theming, or hiding certain UI elements.
 
 | Parameter         | Example                | Description                                                      |
 |------------------|-----------------------|------------------------------------------------------------------|
@@ -366,19 +365,19 @@ You can customize the Permaweb LLMs Builder UI by supplying query parameters in 
 
 - **Minimal mode:**
   ```
-  https://your-llms-builder.app/?minimal=true
+  https://your-llm-fuel.app/?minimal=true
   ```
 - **Iframe mode with dark theme:**
   ```
-  https://your-llms-builder.app/?iframe=true&theme=dark
+  https://your-llm-fuel.app/?iframe=true&theme=dark
   ```
 - **Hide header and use a custom accent color:**
   ```
-  https://your-llms-builder.app/?hide-header=1&accent=%23ff6600
+  https://your-llm-fuel.app/?hide-header=1&accent=%23ff6600
   ```
 - **Translucent overlay with custom background:**
   ```
-  https://your-llms-builder.app/?translucent=1&bg-color=%23ffffff
+  https://your-llm-fuel.app/?translucent=1&bg-color=%23ffffff
   ```
 
 You can combine multiple parameters as needed. Most parameters are compatible with each other.
