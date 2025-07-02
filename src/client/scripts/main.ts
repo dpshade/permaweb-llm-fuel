@@ -883,8 +883,8 @@ if (generateBtn) {
 
 			// Use the enhanced batch processing with optimized parallel processing
 			const batchResult = await batchFetchAndClean(selectedUrls, {
-				concurrency: 5,
-				qualityThreshold: 0.3,
+				concurrency: 5, 
+				qualityThreshold: 0.2, 
 				useOptimizedBatch: true,
 				onProgress: (
 					completed,

@@ -240,7 +240,7 @@ function getDocumentFromHtml(html, url) {
  * @returns {Object} Quality assessment
  */
 function assessContentQuality(content, options = {}) {
-  const { minLength = 50 } = options; // Reduced from 100 to 50
+  const { minLength = 30 } = options; // Further reduced from 50 to 30
   
   if (!content || content.length < minLength) {
     return {
@@ -253,18 +253,27 @@ function assessContentQuality(content, options = {}) {
   const wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
   const avgWordLength = content.replace(/\s+/g, '').length / wordCount;
   
-  // Loosened scoring based on word count and average word length
-  let score = Math.min(1.0, wordCount / 200); // Reduced cap from 500 to 200 words
-  score *= Math.min(1.0, avgWordLength / 3); // Reduced preference from 5 to 3 characters
+  // Much more lenient scoring to reduce over-filtering
+  let score = Math.min(1.0, wordCount / 100); // Further reduced cap to 100 words
+  score *= Math.min(1.0, avgWordLength / 2.0); // Further reduced preference to 2.0 characters
   
   // Boost score for shorter but meaningful content
-  if (wordCount >= 50 && wordCount < 100) {
-    score *= 1.2; // 20% boost for short but acceptable content
+  if (wordCount >= 20 && wordCount < 60) {
+    score *= 1.5; // 50% boost for short but acceptable content
   }
+  
+  // Additional boost for technical content indicators
+  const technicalIndicators = /(function|class|api|http|https|\.js|\.ts|\.html|\.css|\.json|\.xml|database|server|client)/i;
+  if (technicalIndicators.test(content)) {
+    score *= 1.2; // 20% boost for technical content
+  }
+  
+  // Minimum score for any content that passes length check
+  score = Math.max(score, 0.2); // Ensure minimum score of 0.2 for any valid content
   
   return {
     overallScore: score,
-    qualityLevel: score > 0.6 ? 'high' : score > 0.3 ? 'medium' : 'low', // Lowered thresholds
+    qualityLevel: score > 0.3 ? 'high' : score > 0.15 ? 'medium' : 'low', // Much more lenient thresholds
     reason: `Word count: ${wordCount}, avg word length: ${avgWordLength.toFixed(1)}`
   };
 }
@@ -278,7 +287,7 @@ function assessContentQuality(content, options = {}) {
 export async function batchFetchAndClean(urls, options = {}) {
   const {
     concurrency = 3, // Lower concurrency for client-side
-    qualityThreshold = 0.2,
+    qualityThreshold = 0.2, // Match the default in fetchAndClean
     onProgress = () => {},
     onError = () => {},
     onQualityFilter = () => {}
@@ -296,11 +305,10 @@ export async function batchFetchAndClean(urls, options = {}) {
       completed++;
       onProgress(completed, urls.length, url, result.qualityScore);
     } catch (error) {
-      // Check if this is a quality threshold error
+      // Check if this is a quality threshold error (simplified check)
       if (error.message.includes('Content quality too low')) {
-        // Extract quality score from error message
-        const qualityMatch = error.message.match(/quality too low: ([\d.]+)/);
-        const qualityScore = qualityMatch ? parseFloat(qualityMatch[1]) : 0;
+        // Simplified quality score extraction
+        const qualityScore = 0.1; // Default low score for filtered content
         
         qualityFiltered.push({ 
           url, 
@@ -350,7 +358,7 @@ export async function fetchAndClean(url, options = {}) {
   const {
     timeout = 30000,
     userAgent = 'Mozilla/5.0 (compatible; PermawebLLMFuel/1.0)',
-    qualityThreshold = 0.15 // Reduced from 0.3 to 0.15
+    qualityThreshold = 0.2
   } = options;
 
   try {
@@ -399,7 +407,9 @@ export async function fetchAndClean(url, options = {}) {
     if (titleElement) {
       title = titleElement.textContent.trim();
     }
-    if (!title) {
+    // Fallback if title is empty or generic
+    const genericTitle = /^(|untitled document|index|home|get(ting)? started)$/i;
+    if (!title || genericTitle.test(title)) {
       title = generateTitleFromUrl(url);
     }
 
@@ -430,7 +440,7 @@ export async function fetchAndClean(url, options = {}) {
     
     // Assess quality
     const qualityAssessment = assessContentQuality(content, {
-      minLength: 50, // Reduced from 100 to 50
+      minLength: 30, // Further reduced from 50 to 30
       requireTechnical: false
     });
     qualityScore = qualityAssessment.overallScore;
@@ -501,9 +511,12 @@ export function generateLLMsTxt(documents, options = {}, qualityFiltered = []) {
     llmsContent += '### Included Documents\n\n';
     for (let i = 0; i < sortedDocs.length; i++) {
       const doc = sortedDocs[i];
-      const title = cleanDocumentTitle(doc.title) || 'Untitled Document';
-      const anchor = title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-      llmsContent += `${i + 1}. [${title}](#${anchor}) - ${doc.url}\n`;
+      let title = cleanDocumentTitle(doc.title) || '';
+      const genericTitle = /^(|untitled document|index|home|get(ting)? started)$/i;
+      if (!title || genericTitle.test(title)) {
+        title = generateTitleFromUrl(doc.url);
+      }
+      llmsContent += `${i + 1}. [${title}](${doc.url})\n`;
     }
     llmsContent += '\n';
   }
@@ -623,17 +636,48 @@ export function openContentInNewTab(content, filename = 'llms.txt') {
 function generateTitleFromUrl(url) {
   try {
     const urlObj = new URL(url);
-    const pathParts = urlObj.pathname.split('/').filter(Boolean);
-    const lastPart = pathParts[pathParts.length - 1] || 'Home';
-    
-    return lastPart
-      .replace(/[-_]/g, ' ')
-      .replace(/\.(html?|php|aspx?)$/i, '')
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-      .join(' ');
+    let pathParts = urlObj.pathname.split('/').filter(Boolean);
+    let last = pathParts[pathParts.length - 1] || '';
+    let parent = pathParts.length > 1 ? pathParts[pathParts.length - 2] : '';
+    // Remove file extension
+    last = last.replace(/\.(html?|php|aspx?|md|txt)$/i, '');
+    // If last is empty or generic, use parent or domain
+    const generic = /^(index|home|readme)?$/i;
+    if (!last || generic.test(last)) {
+      last = parent || urlObj.hostname.replace(/^www\./, '');
+      parent = '';
+    }
+    // Prettify
+    let pretty = last.replace(/[-_]/g, ' ');
+    pretty = pretty.charAt(0).toUpperCase() + pretty.slice(1);
+    // Add parent or domain context if available
+    let context = '';
+    if (parent && !generic.test(parent)) {
+      context = parent.replace(/[-_]/g, ' ');
+      context = context.charAt(0).toUpperCase() + context.slice(1);
+    } else {
+      context = urlObj.hostname.replace(/^www\./, '');
+      context = context.split('.')[0];
+      context = context.charAt(0).toUpperCase() + context.slice(1);
+    }
+    if (context && context.toLowerCase() !== pretty.toLowerCase()) {
+      pretty += ` - ${context}`;
+    }
+    // Fallback
+    if (!pretty.trim()) return 'Untitled Document';
+    return pretty.trim();
   } catch {
-    return 'Untitled Page';
+    // Fallback: parse last segment of path manually
+    try {
+      const pathMatch = url.match(/\/([^\/]+)\/?$/);
+      let last = pathMatch ? pathMatch[1] : url;
+      last = last.replace(/\.(html?|php|aspx?|md|txt)$/i, '');
+      last = last.replace(/[-_]/g, ' ');
+      last = last.charAt(0).toUpperCase() + last.slice(1);
+      return last || 'Untitled Document';
+    } catch {
+      return 'Untitled Document';
+    }
   }
 }
 
