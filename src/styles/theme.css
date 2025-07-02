@@ -193,6 +193,7 @@
   border-radius: var(--border-radius);
   padding: 4px 8px;
   margin: -4px -8px;
+  margin-bottom: 2px;
 }
 
 /* Disable hover effects in iframe mode */
@@ -299,8 +300,8 @@
   
   /* Ultra-compact iframe icon and element sizes */
   .iframe-embed .world-icon {
-    width: 10px !important;
-    height: 10px !important;
+    width: 14px !important;
+    height: 14px !important;
   }
   
   .iframe-embed .world-icon path {
@@ -580,6 +581,12 @@ input[type="radio"] {
   transition: transform 0.3s ease;
   display: inline-block;
   vertical-align: middle;
+}
+
+/* Noticeably larger globe icon in iframe mode */
+.iframe-embed .btn .globe-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .btn:hover .globe-icon {
@@ -1413,11 +1420,18 @@ html.translucent-bg .main-container {
   background-color: transparent !important;
   border-color: var(--border-color) !important;
   color: var(--text-color) !important;
+  border: 2px solid var(--border-color);
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
 
 .btn-transparent:hover {
   background-color: var(--hover-bg) !important;
   color: var(--text-color) !important;
+  border-color: transparent;
+}
+
+.btn-transparent:focus {
+  border-color: var(--accent-color);
 }
 
 /* Selection counter classes */
