@@ -54,15 +54,24 @@
     "maxPages": 200,
     "selectors": {
       "title": "h1, title",
-      "content": "main, .content, article"
+      "content": "article, main, .content, [role='main']"
     },
     "excludePatterns": [
       "/\\.(pdf|zip|tar|gz)$/",
       "/mailto:/",
       "/llms\\.txt$/",
-      "/llms-full\\.txt$/"
+      "/llms-full\\.txt$/",
+      "/\\.js$/",
+      "/\\.css$/"
     ],
-
+    "contentFilters": {
+      "removeScripts": true,
+      "removeStyles": true,
+      "removeComments": true,
+      "removeEmptyElements": true,
+      "minWordCount": 50,
+      "maxCodeBlockLength": 1000
+    },
     "seedUrls": [
       "/introduction",
       "/ar-io-sdk",

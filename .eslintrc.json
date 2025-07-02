@@ -1,0 +1,73 @@
+{
+  "extends": ["astro"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["fs", "path", "child_process", "zlib", "jsdom"],
+            "message": "Node.js modules are not allowed in client code. Use @server/utils for server-side functionality."
+          },
+          {
+            "group": ["@server/*"],
+            "message": "Server utilities cannot be imported in client code. Use @client/utils instead."
+          }
+        ]
+      }
+    ],
+    "no-restricted-globals": [
+      "error",
+      {
+        "name": "process",
+        "message": "process is not available in client code. Use environment-specific alternatives."
+      },
+      {
+        "name": "__dirname",
+        "message": "__dirname is not available in client code."
+      },
+      {
+        "name": "__filename",
+        "message": "__filename is not available in client code."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/client/**/*.{js,ts}"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["fs", "path", "child_process", "zlib", "jsdom", "defuddle"],
+                "message": "Node.js modules are not allowed in client code. Use @client/utils for browser-compatible functionality."
+              },
+              {
+                "group": ["@server/*"],
+                "message": "Server utilities cannot be imported in client code. Use @client/utils instead."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/server/**/*.{js,ts}"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@client/*"],
+                "message": "Client utilities should not be imported in server code. Use @server/utils instead."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+} 

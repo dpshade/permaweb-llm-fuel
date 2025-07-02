@@ -1,9 +1,20 @@
 /**
+ * SERVER-ONLY: Web crawler for Permaweb documentation sites
+ * 
+ * This file contains Node.js-specific code and should NEVER be imported in client code.
+ * It uses fs, process, jsdom, and other Node.js modules that are not available in browsers.
+ * 
+ * For client-side content fetching, use @client/utils/defuddle-fetch-client.js instead.
+ * 
+ * @fileoverview Server-side crawler with rate limiting and content extraction
+ */
+
+/**
  * Simple browser-based crawler for Permaweb documentation sites
  * Discovers pages by following links with basic sibling discovery
  */
 
-import { JSDOM } from 'jsdom';
+// Remove static import of JSDOM - will use dynamic import in Node.js only
 import { promises as fs } from 'fs';
 import { resolve } from 'path';
 import Defuddle from 'defuddle';
@@ -193,9 +204,17 @@ async function fetchPage(url, options = {}) {
       };
     }
 
-    // Handle HTML content
-    const dom = new JSDOM(content, { url });
-    return dom.window.document;
+    // Handle HTML content - use dynamic import for JSDOM in Node.js
+    if (typeof window === 'undefined') {
+      // Node.js environment
+      const { JSDOM } = await import('jsdom');
+      const dom = new JSDOM(content, { url });
+      return dom.window.document;
+    } else {
+      // Browser environment - use DOMParser
+      const parser = new DOMParser();
+      return parser.parseFromString(content, 'text/html');
+    }
   } catch (error) {
     log.error(`Fetch failed for ${url}: ${error.message}`);
     return null;
@@ -321,6 +340,101 @@ function is404Page(doc, title, content) {
 }
 
 /**
+ * Apply content filters to clean up extracted content
+ */
+export function applyContentFilters(content, config) {
+  if (!content || !config.contentFilters) {
+    return content;
+  }
+
+  let filteredContent = content;
+
+  // Remove JavaScript code blocks and inline scripts
+  if (config.contentFilters.removeScripts) {
+    // Remove code blocks that look like JavaScript
+    filteredContent = filteredContent.replace(/```(?:javascript|js|typescript|ts)[\s\S]*?```/g, '');
+    // Remove inline JavaScript patterns
+    filteredContent = filteredContent.replace(/self\.__next_f\.push\([^)]*\)/g, '');
+    filteredContent = filteredContent.replace(/import\s+from\s+["'][^"']*["']/g, '');
+    filteredContent = filteredContent.replace(/const\s+\w+\s*=\s*[^;]+;/g, '');
+    filteredContent = filteredContent.replace(/function\s+\w+\s*\([^)]*\)\s*\{[^}]*\}/g, '');
+    filteredContent = filteredContent.replace(/async\s+function\s+\w+\s*\([^)]*\)\s*\{[^}]*\}/g, '');
+    filteredContent = filteredContent.replace(/=>\s*\{[^}]*\}/g, '');
+    filteredContent = filteredContent.replace(/\.catch\([^)]*\)/g, '');
+    filteredContent = filteredContent.replace(/\.then\([^)]*\)/g, '');
+  }
+
+  // Remove CSS and style content
+  if (config.contentFilters.removeStyles) {
+    filteredContent = filteredContent.replace(/```(?:css|scss|sass)[\s\S]*?```/g, '');
+    filteredContent = filteredContent.replace(/style\s*=\s*["'][^"']*["']/g, '');
+    filteredContent = filteredContent.replace(/class\s*=\s*["'][^"']*["']/g, '');
+  }
+
+  // Remove HTML comments
+  if (config.contentFilters.removeComments) {
+    filteredContent = filteredContent.replace(/<!--[\s\S]*?-->/g, '');
+    filteredContent = filteredContent.replace(/\/\*[\s\S]*?\*\//g, '');
+    filteredContent = filteredContent.replace(/\/\/.*$/gm, '');
+  }
+
+  // Remove empty elements and excessive whitespace
+  if (config.contentFilters.removeEmptyElements) {
+    filteredContent = filteredContent.replace(/\s+/g, ' ');
+    filteredContent = filteredContent.replace(/^\s+|\s+$/gm, '');
+  }
+
+  // Limit code block length
+  if (config.contentFilters.maxCodeBlockLength) {
+    filteredContent = filteredContent.replace(/```[\s\S]*?```/g, (match) => {
+      if (match.length > config.contentFilters.maxCodeBlockLength) {
+        return match.substring(0, config.contentFilters.maxCodeBlockLength) + '...';
+      }
+      return match;
+    });
+  }
+
+  // Remove common non-content patterns
+  filteredContent = filteredContent.replace(/CopyCopied!/g, '');
+  filteredContent = filteredContent.replace(/Find something\.\.\./g, '');
+  filteredContent = filteredContent.replace(/self\.__next_f\.push\([^)]*\)/g, '');
+  filteredContent = filteredContent.replace(/\[\"\$[^\"]*\",[^\]]*\]/g, '');
+  filteredContent = filteredContent.replace(/\"\$\d+\"/g, '');
+  filteredContent = filteredContent.replace(/\"\$L[^\"]*\"/g, '');
+  
+  // Remove Next.js specific patterns
+  filteredContent = filteredContent.replace(/self\.__next_f\.push\(\[[^\]]*\]\)/g, '');
+  filteredContent = filteredContent.replace(/\[\"\$[^\"]*\",[^\]]*\]/g, '');
+  filteredContent = filteredContent.replace(/\"\$\d+\"/g, '');
+  filteredContent = filteredContent.replace(/\"\$L[^\"]*\"/g, '');
+  filteredContent = filteredContent.replace(/\"\$undefined\"/g, '');
+  filteredContent = filteredContent.replace(/\"\$S[^\"]*\"/g, '');
+  filteredContent = filteredContent.replace(/\"\$1[^\"]*\"/g, '');
+  filteredContent = filteredContent.replace(/\"\$L\d+\"/g, '');
+  filteredContent = filteredContent.replace(/\"\$L[a-zA-Z0-9]+\"/g, '');
+  
+  // Remove React/Next.js component patterns
+  filteredContent = filteredContent.replace(/\[\"\$\",\"\$[^\"]*\",[^\]]*\]/g, '');
+  filteredContent = filteredContent.replace(/\[\"\$\",\"html\",[^\]]*\]/g, '');
+  filteredContent = filteredContent.replace(/\[\"\$\",\"\$L[^\"]*\",[^\]]*\]/g, '');
+  
+  // Remove template and style patterns
+  filteredContent = filteredContent.replace(/templateStyles.*?\"\$undefined\"/g, '');
+  filteredContent = filteredContent.replace(/templateScripts.*?\"\$undefined\"/g, '');
+  filteredContent = filteredContent.replace(/notFound.*?\"\$undefined\"/g, '');
+  filteredContent = filteredContent.replace(/forbidden.*?\"\$undefined\"/g, '');
+  filteredContent = filteredContent.replace(/unauthorized.*?\"\$undefined\"/g, '');
+  
+  // Remove specific AR.IO site patterns
+  filteredContent = filteredContent.replace(/else\s*\}\s*else\s*if\s*\([^)]*\)/g, '');
+  filteredContent = filteredContent.replace(/if\s*\([^)]*===\s*['"]light['"]\|\|[^)]*===\s*['"]dark['"]\)/g, '');
+  filteredContent = filteredContent.replace(/d\.style\.colorScheme\s*=\s*[^;]+/g, '');
+  filteredContent = filteredContent.replace(/catch\s*\([^)]*\)\s*\{\s*\}\s*\}\s*\(\)/g, '');
+
+  return filteredContent.trim();
+}
+
+/**
  * Extract page content and metadata using Defuddle or plain text processing
  */
 async function extractPageMetadata(doc, url, config) {
@@ -431,6 +545,12 @@ async function extractPageMetadata(doc, url, config) {
     }
   }
   
+  // Apply content filters to clean up the extracted content
+  content = applyContentFilters(content, config);
+  
+  // Recalculate word count after filtering
+  estimatedWords = content.split(/\s+/).filter(word => word.length > 0).length;
+  
   // Check if this is a 404 page
   if (is404Page(doc, title, content)) {
     const wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
@@ -438,8 +558,10 @@ async function extractPageMetadata(doc, url, config) {
     return null;
   }
   
-  // Basic quality check
-  if (estimatedWords < 10) {
+  // Basic quality check - use config minimum if specified
+  const minWordCount = config.contentFilters?.minWordCount || 10;
+  if (estimatedWords < minWordCount) {
+    log.debug(`Page ${url} has only ${estimatedWords} words (below minimum ${minWordCount}), skipping`);
     return null;
   }
   
@@ -613,7 +735,6 @@ export async function crawlSite(siteKey, options = {}) {
       const singlePage = {
         url: pageData.url,
         title: pageData.title,
-        description: pageData.content ? pageData.content.substring(0, 200) + '...' : '',
         estimatedWords: pageData.estimatedWords,
         lastModified: pageData.lastModified,
         breadcrumbs,
@@ -723,16 +844,12 @@ export async function crawlSite(siteKey, options = {}) {
       const breadcrumbs = pathParts.map(part => 
         part.replace(/[-_]/g, ' ')
             .replace(/\.(html?|php|aspx?)$/i, '')
-            .split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-            .join(' ')
+            .toLowerCase()
       );
 
-      // Only store metadata, not content (content fetched dynamically for llms.txt)
       pages.push({
         url: pageData.url,
         title: pageData.title,
-        description: pageData.content ? pageData.content.substring(0, 200) + '...' : '',
         estimatedWords: pageData.estimatedWords,
         lastModified: pageData.lastModified,
         breadcrumbs,

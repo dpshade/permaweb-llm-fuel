@@ -1,6 +1,1949 @@
 {
-  "generated": "2025-07-01T20:08:31.228Z",
+  "generated": "2025-07-02T15:21:07.459Z",
   "sites": {
+    "hyperbeam": {
+      "name": "Hyperbeam",
+      "baseUrl": "https://hyperbeam.arweave.net",
+      "pages": [
+        {
+          "url": "https://hyperbeam.arweave.net/llms.html",
+          "title": "LLM Context Files",
+          "estimatedWords": 150,
+          "lastModified": "2025-07-02T15:08:36.174Z",
+          "breadcrumbs": [
+            "llms"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 1,
+          "crawledAt": "2025-07-02T15:08:36.175Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/reference/troubleshooting.html",
+          "title": "Developer Troubleshooting Guide",
+          "estimatedWords": 159,
+          "lastModified": "2025-07-02T15:08:36.671Z",
+          "breadcrumbs": [
+            "build",
+            "reference",
+            "troubleshooting"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:36.671Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/reference/glossary.html",
+          "title": "Developer Glossary",
+          "estimatedWords": 256,
+          "lastModified": "2025-07-02T15:08:37.036Z",
+          "breadcrumbs": [
+            "build",
+            "reference",
+            "glossary"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:37.036Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/reference/faq.html",
+          "title": "Developer FAQ",
+          "estimatedWords": 292,
+          "lastModified": "2025-07-02T15:08:37.449Z",
+          "breadcrumbs": [
+            "build",
+            "reference",
+            "faq"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:37.449Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/building-devices.html",
+          "title": "Extending HyperBEAM with Devices",
+          "estimatedWords": 163,
+          "lastModified": "2025-07-02T15:08:37.813Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "building devices"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:37.814Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html",
+          "title": "Device meta10",
+          "estimatedWords": 358,
+          "lastModified": "2025-07-02T15:08:38.152Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "meta at 1 0"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:38.152Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/hyperbeam-devices.html",
+          "title": "HyperBEAM Devices",
+          "estimatedWords": 713,
+          "lastModified": "2025-07-02T15:08:38.612Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "hyperbeam devices"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:38.612Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html",
+          "title": "Pathing in HyperBEAM",
+          "estimatedWords": 879,
+          "lastModified": "2025-07-02T15:08:39.028Z",
+          "breadcrumbs": [
+            "build",
+            "pathing in hyperbeam"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:39.028Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/building-on-ao.html",
+          "title": "Building on HyperBEAM with ao",
+          "estimatedWords": 105,
+          "lastModified": "2025-07-02T15:08:39.434Z",
+          "breadcrumbs": [
+            "build",
+            "building on ao"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:39.434Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html",
+          "title": "HyperBEAM Your Decentralized Development Toolkit",
+          "estimatedWords": 704,
+          "lastModified": "2025-07-02T15:08:39.786Z",
+          "breadcrumbs": [
+            "build",
+            "hyperbeam capabilities"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:39.786Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html",
+          "title": "What is AO-Core",
+          "estimatedWords": 1090,
+          "lastModified": "2025-07-02T15:08:40.218Z",
+          "breadcrumbs": [
+            "build",
+            "introduction",
+            "what is ao core"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:40.219Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/run/running-a-hyperbeam-node.html",
+          "title": "Running a HyperBEAM Node",
+          "estimatedWords": 885,
+          "lastModified": "2025-07-02T15:08:40.585Z",
+          "breadcrumbs": [
+            "run",
+            "running a hyperbeam node"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:40.585Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/",
+          "title": "Hyperbeam",
+          "estimatedWords": 209,
+          "lastModified": "2025-07-02T15:08:40.792Z",
+          "breadcrumbs": [],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 0,
+          "crawledAt": "2025-07-02T15:08:40.792Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html",
+          "title": "What is HyperBEAM",
+          "estimatedWords": 958,
+          "lastModified": "2025-07-02T15:08:42.052Z",
+          "breadcrumbs": [
+            "build",
+            "introduction",
+            "what is hyperbeam"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:42.052Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/run/configuring-your-machine.html",
+          "title": "Configuring Your HyperBEAM Node",
+          "estimatedWords": 816,
+          "lastModified": "2025-07-02T15:08:42.645Z",
+          "breadcrumbs": [
+            "run",
+            "configuring your machine"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:42.646Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/run/tee-nodes.html",
+          "title": "Trusted Execution Environment (TEE)",
+          "estimatedWords": 577,
+          "lastModified": "2025-07-02T15:08:44.068Z",
+          "breadcrumbs": [
+            "run",
+            "tee nodes"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:44.068Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/run/joining-running-a-router.html",
+          "title": "Router Networks Joining vs Running",
+          "estimatedWords": 591,
+          "lastModified": "2025-07-02T15:08:44.572Z",
+          "breadcrumbs": [
+            "run",
+            "joining running a router"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:44.572Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/run/reference/faq.html",
+          "title": "Node Operator FAQ",
+          "estimatedWords": 341,
+          "lastModified": "2025-07-02T15:08:44.975Z",
+          "breadcrumbs": [
+            "run",
+            "reference",
+            "faq"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:44.975Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/run/reference/glossary.html",
+          "title": "Node Operator Glossary",
+          "estimatedWords": 292,
+          "lastModified": "2025-07-02T15:08:45.524Z",
+          "breadcrumbs": [
+            "run",
+            "reference",
+            "glossary"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:45.524Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/run/reference/troubleshooting.html",
+          "title": "Node Operator Troubleshooting Guide",
+          "estimatedWords": 341,
+          "lastModified": "2025-07-02T15:08:46.006Z",
+          "breadcrumbs": [
+            "run",
+            "reference",
+            "troubleshooting"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:08:46.006Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html",
+          "title": "Module dev_patcherl",
+          "estimatedWords": 394,
+          "lastModified": "2025-07-02T15:08:46.471Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev patch"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:46.471Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html",
+          "title": "Device relay10",
+          "estimatedWords": 379,
+          "lastModified": "2025-07-02T15:08:47.234Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "relay at 1 0"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:47.234Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/process-at-1-0.html",
+          "title": "Device process10",
+          "estimatedWords": 564,
+          "lastModified": "2025-07-02T15:08:47.803Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "process at 1 0"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:47.803Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/message-at-1-0.html",
+          "title": "Device message10",
+          "estimatedWords": 483,
+          "lastModified": "2025-07-02T15:08:48.212Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "message at 1 0"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:48.213Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html",
+          "title": "Device wasm6410",
+          "estimatedWords": 551,
+          "lastModified": "2025-07-02T15:08:48.577Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "wasm64 at 1 0"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:48.577Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html",
+          "title": "Device lua53a",
+          "estimatedWords": 557,
+          "lastModified": "2025-07-02T15:08:48.907Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "lua at 5 3a"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:48.907Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/json-at-1-0.html",
+          "title": "Device json10",
+          "estimatedWords": 211,
+          "lastModified": "2025-07-02T15:08:49.260Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "json at 1 0"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:49.260Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html",
+          "title": "Device scheduler10",
+          "estimatedWords": 689,
+          "lastModified": "2025-07-02T15:08:49.654Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "scheduler at 1 0"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:49.654Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html",
+          "title": "Module dev_metaerl",
+          "estimatedWords": 1195,
+          "lastModified": "2025-07-02T15:08:50.026Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev meta"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:50.026Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html",
+          "title": "Module dev_routererl",
+          "estimatedWords": 1438,
+          "lastModified": "2025-07-02T15:08:50.494Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev router"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:50.494Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_snp.html",
+          "title": "Module dev_snperl",
+          "estimatedWords": 436,
+          "lastModified": "2025-07-02T15:08:50.957Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev snp"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:50.957Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_httpsig.html",
+          "title": "Module dev_codec_httpsigerl",
+          "estimatedWords": 671,
+          "lastModified": "2025-07-02T15:08:51.369Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev codec httpsig"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:51.369Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html",
+          "title": "Module dev_p4erl",
+          "estimatedWords": 566,
+          "lastModified": "2025-07-02T15:08:51.991Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev p4"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:51.991Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html",
+          "title": "Module dev_fafferl",
+          "estimatedWords": 184,
+          "lastModified": "2025-07-02T15:08:52.514Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev faff"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:52.514Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html",
+          "title": "Module dev_cronerl",
+          "estimatedWords": 321,
+          "lastModified": "2025-07-02T15:08:52.827Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev cron"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:52.827Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html",
+          "title": "Module dev_stackerl",
+          "estimatedWords": 1197,
+          "lastModified": "2025-07-02T15:08:53.265Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev stack"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:53.265Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_monitor.html",
+          "title": "Module dev_monitorerl",
+          "estimatedWords": 55,
+          "lastModified": "2025-07-02T15:08:53.712Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev monitor"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:53.712Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html",
+          "title": "Module hb_singletonerl",
+          "estimatedWords": 1170,
+          "lastModified": "2025-07-02T15:08:54.741Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "hb singleton"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:54.741Z"
+        },
+        {
+          "url": "https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html",
+          "title": "Module dev_codec_structurederl",
+          "estimatedWords": 356,
+          "lastModified": "2025-07-02T15:08:55.100Z",
+          "breadcrumbs": [
+            "build",
+            "devices",
+            "source code",
+            "dev codec structured"
+          ],
+          "siteKey": "hyperbeam",
+          "siteName": "Hyperbeam",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:08:55.100Z"
+        }
+      ],
+      "lastCrawled": "2025-07-02T15:21:07.459Z",
+      "stats": {
+        "totalPages": 39,
+        "averageWords": 546,
+        "duration": 1229,
+        "requestCount": 3,
+        "averageResponseTime": 94.33333333333333,
+        "pagesPerSecond": 31.733116354759964
+      }
+    },
+    "ao": {
+      "name": "AO Cookbook",
+      "baseUrl": "https://cookbook_ao.arweave.net",
+      "pages": [
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/modules/base64.html",
+          "title": "Base64",
+          "estimatedWords": 233,
+          "lastModified": "2025-07-02T15:08:57.739Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "modules",
+            "base64"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:57.739Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html",
+          "title": "crypto",
+          "estimatedWords": 2304,
+          "lastModified": "2025-07-02T15:08:58.851Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "modules",
+            "crypto"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:58.851Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/modules/ao.html",
+          "title": "ao",
+          "estimatedWords": 100,
+          "lastModified": "2025-07-02T15:08:59.565Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "modules",
+            "ao"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:08:59.565Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/modules/json.html",
+          "title": "JSON",
+          "estimatedWords": 88,
+          "lastModified": "2025-07-02T15:09:00.192Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "modules",
+            "json"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:00.192Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/blueprints/voting.html",
+          "title": "Voting Blueprint",
+          "estimatedWords": 343,
+          "lastModified": "2025-07-02T15:09:01.174Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "blueprints",
+            "voting"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:01.174Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/blueprints/token.html",
+          "title": "Token Blueprint",
+          "estimatedWords": 974,
+          "lastModified": "2025-07-02T15:09:02.006Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "blueprints",
+            "token"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:02.007Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html",
+          "title": "Staking Blueprint",
+          "estimatedWords": 426,
+          "lastModified": "2025-07-02T15:09:02.601Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "blueprints",
+            "staking"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:02.601Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html",
+          "title": "CRED Utils Blueprint",
+          "estimatedWords": 664,
+          "lastModified": "2025-07-02T15:09:03.154Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "blueprints",
+            "cred utils"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:03.154Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/blueprints/chatroom.html",
+          "title": "Chatroom Blueprint",
+          "estimatedWords": 170,
+          "lastModified": "2025-07-02T15:09:03.822Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "blueprints",
+            "chatroom"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:03.822Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html",
+          "title": "Blueprints",
+          "estimatedWords": 46,
+          "lastModified": "2025-07-02T15:09:04.447Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "blueprints",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:04.447Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/token.html",
+          "title": "Building a Token in ao",
+          "estimatedWords": 1362,
+          "lastModified": "2025-07-02T15:09:05.159Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "token"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:05.159Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/faq.html",
+          "title": "FAQ",
+          "estimatedWords": 182,
+          "lastModified": "2025-07-02T15:09:05.780Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "faq"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:05.780Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/troubleshooting.html",
+          "title": "Troubleshooting using aolink",
+          "estimatedWords": 392,
+          "lastModified": "2025-07-02T15:09:06.302Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "troubleshooting"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:06.302Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/inbox-and-handlers.html",
+          "title": "Understanding the Inbox",
+          "estimatedWords": 211,
+          "lastModified": "2025-07-02T15:09:06.803Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "inbox and handlers"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:06.803Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/editor.html",
+          "title": "Editor setup",
+          "estimatedWords": 228,
+          "lastModified": "2025-07-02T15:09:07.408Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "editor"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:07.408Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/pingpong.html",
+          "title": "Creating a Pingpong Process in aos",
+          "estimatedWords": 360,
+          "lastModified": "2025-07-02T15:09:07.929Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "pingpong"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:07.929Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/load.html",
+          "title": "Load Lua Files with load filename",
+          "estimatedWords": 106,
+          "lastModified": "2025-07-02T15:09:08.547Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "load"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:08.548Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/prompt.html",
+          "title": "Customizing the Prompt in aos",
+          "estimatedWords": 203,
+          "lastModified": "2025-07-02T15:09:09.127Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "prompt"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:09.127Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/cli.html",
+          "title": "CLI",
+          "estimatedWords": 190,
+          "lastModified": "2025-07-02T15:09:09.849Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "cli"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:09.849Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/installing.html",
+          "title": "Installing aos",
+          "estimatedWords": 37,
+          "lastModified": "2025-07-02T15:09:10.493Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "installing"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:10.493Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/intro.html",
+          "title": "Introduction",
+          "estimatedWords": 531,
+          "lastModified": "2025-07-02T15:09:11.022Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "intro"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:11.022Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/index.html",
+          "title": "aos AO Operating System",
+          "estimatedWords": 420,
+          "lastModified": "2025-07-02T15:09:11.598Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:11.598Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/index.html",
+          "title": "Guides",
+          "estimatedWords": 233,
+          "lastModified": "2025-07-02T15:09:12.840Z",
+          "breadcrumbs": [
+            "guides",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:09:12.840Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html",
+          "title": "Expanding the Arena",
+          "estimatedWords": 1811,
+          "lastModified": "2025-07-02T15:09:13.878Z",
+          "breadcrumbs": [
+            "tutorials",
+            "bots and games",
+            "build game"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:13.878Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/bots-and-games/arena-mechanics.html",
+          "title": "Mechanics of the Arena",
+          "estimatedWords": 1920,
+          "lastModified": "2025-07-02T15:09:15.477Z",
+          "breadcrumbs": [
+            "tutorials",
+            "bots and games",
+            "arena mechanics"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:15.477Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html",
+          "title": "Bringing it Together",
+          "estimatedWords": 968,
+          "lastModified": "2025-07-02T15:09:16.261Z",
+          "breadcrumbs": [
+            "tutorials",
+            "bots and games",
+            "bringing together"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:16.261Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/bots-and-games/attacking.html",
+          "title": "Automated Responses",
+          "estimatedWords": 443,
+          "lastModified": "2025-07-02T15:09:16.944Z",
+          "breadcrumbs": [
+            "tutorials",
+            "bots and games",
+            "attacking"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:16.944Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html",
+          "title": "Strategic Decisions",
+          "estimatedWords": 559,
+          "lastModified": "2025-07-02T15:09:17.649Z",
+          "breadcrumbs": [
+            "tutorials",
+            "bots and games",
+            "decisions"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:17.649Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/bots-and-games/game-state.html",
+          "title": "Fetching Game State",
+          "estimatedWords": 445,
+          "lastModified": "2025-07-02T15:09:18.190Z",
+          "breadcrumbs": [
+            "tutorials",
+            "bots and games",
+            "game state"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:18.190Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html",
+          "title": "Interpreting Announcements",
+          "estimatedWords": 356,
+          "lastModified": "2025-07-02T15:09:18.688Z",
+          "breadcrumbs": [
+            "tutorials",
+            "bots and games",
+            "announcements"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:18.688Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/bots-and-games/ao-effect.html",
+          "title": "Lets Play A Game",
+          "estimatedWords": 655,
+          "lastModified": "2025-07-02T15:09:19.186Z",
+          "breadcrumbs": [
+            "tutorials",
+            "bots and games",
+            "ao effect"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:19.186Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/bots-and-games/index.html",
+          "title": "Bots and Games",
+          "estimatedWords": 189,
+          "lastModified": "2025-07-02T15:09:20.061Z",
+          "breadcrumbs": [
+            "tutorials",
+            "bots and games",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:20.061Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/begin/tokengating.html",
+          "title": "Tokengating the Chatroom",
+          "estimatedWords": 512,
+          "lastModified": "2025-07-02T15:09:20.611Z",
+          "breadcrumbs": [
+            "tutorials",
+            "begin",
+            "tokengating"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:20.611Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/begin/token.html",
+          "title": "Crafting a Token",
+          "estimatedWords": 607,
+          "lastModified": "2025-07-02T15:09:21.142Z",
+          "breadcrumbs": [
+            "tutorials",
+            "begin",
+            "token"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:21.142Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/begin/chatroom.html",
+          "title": "Building a Chatroom in aos",
+          "estimatedWords": 803,
+          "lastModified": "2025-07-02T15:09:21.649Z",
+          "breadcrumbs": [
+            "tutorials",
+            "begin",
+            "chatroom"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:21.650Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/begin/messaging.html",
+          "title": "Messaging in ao",
+          "estimatedWords": 1032,
+          "lastModified": "2025-07-02T15:09:22.312Z",
+          "breadcrumbs": [
+            "tutorials",
+            "begin",
+            "messaging"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:22.312Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/begin/preparations.html",
+          "title": "Preparations",
+          "estimatedWords": 532,
+          "lastModified": "2025-07-02T15:09:23.017Z",
+          "breadcrumbs": [
+            "tutorials",
+            "begin",
+            "preparations"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:23.017Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/begin/index.html",
+          "title": "Begin An Interactive Tutorial",
+          "estimatedWords": 141,
+          "lastModified": "2025-07-02T15:09:23.667Z",
+          "breadcrumbs": [
+            "tutorials",
+            "begin",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:23.667Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/tutorials/index.html",
+          "title": "Tutorials",
+          "estimatedWords": 57,
+          "lastModified": "2025-07-02T15:09:24.275Z",
+          "breadcrumbs": [
+            "tutorials",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:09:24.275Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/welcome/getting-started.html",
+          "title": "Get started in 5 minutes",
+          "estimatedWords": 852,
+          "lastModified": "2025-07-02T15:09:24.981Z",
+          "breadcrumbs": [
+            "welcome",
+            "getting started"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:09:24.981Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/welcome/legacynet-info/index.html",
+          "title": "Legacynet  HyperBEAM",
+          "estimatedWords": 386,
+          "lastModified": "2025-07-02T15:09:25.502Z",
+          "breadcrumbs": [
+            "welcome",
+            "legacynet info",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:09:25.502Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/welcome/ao-processes.html",
+          "title": "AO Processes",
+          "estimatedWords": 446,
+          "lastModified": "2025-07-02T15:09:25.946Z",
+          "breadcrumbs": [
+            "welcome",
+            "ao processes"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:09:25.946Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/llms-explanation.html",
+          "title": "LLMs Documentation",
+          "estimatedWords": 66,
+          "lastModified": "2025-07-02T15:09:26.529Z",
+          "breadcrumbs": [
+            "llms explanation"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 1,
+          "crawledAt": "2025-07-02T15:09:26.530Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/",
+          "title": "Cookbook",
+          "estimatedWords": 51,
+          "lastModified": "2025-07-02T15:09:26.662Z",
+          "breadcrumbs": [],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 0,
+          "crawledAt": "2025-07-02T15:09:26.662Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/welcome/ao-core-introduction.html",
+          "title": "Introduction to AO-Core",
+          "estimatedWords": 330,
+          "lastModified": "2025-07-02T15:09:27.235Z",
+          "breadcrumbs": [
+            "welcome",
+            "ao core introduction"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:09:27.235Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/modules/pretty.html",
+          "title": "Pretty",
+          "estimatedWords": 51,
+          "lastModified": "2025-07-02T15:09:27.940Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "modules",
+            "pretty"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:27.940Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/modules/utils.html",
+          "title": "Utils",
+          "estimatedWords": 541,
+          "lastModified": "2025-07-02T15:09:28.643Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "modules",
+            "utils"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:28.643Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/aoconnect.html",
+          "title": "aoconnect",
+          "estimatedWords": 47,
+          "lastModified": "2025-07-02T15:09:29.281Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "aoconnect"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:29.281Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/installing-connect.html",
+          "title": "Installing ao connect",
+          "estimatedWords": 51,
+          "lastModified": "2025-07-02T15:09:29.904Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "installing connect"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:29.905Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/connecting.html",
+          "title": "Connecting to specific ao nodes",
+          "estimatedWords": 180,
+          "lastModified": "2025-07-02T15:09:30.487Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "connecting"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:30.487Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/sending-messages.html",
+          "title": "Sending a Message to a Process",
+          "estimatedWords": 399,
+          "lastModified": "2025-07-02T15:09:30.964Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "sending messages"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:30.964Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/reading-results.html",
+          "title": "Reading results from an ao Process",
+          "estimatedWords": 139,
+          "lastModified": "2025-07-02T15:09:31.557Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "reading results"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:31.557Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/spawning-processes.html",
+          "title": "Spawning a Process",
+          "estimatedWords": 168,
+          "lastModified": "2025-07-02T15:09:32.205Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "spawning processes"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:32.205Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/calling-dryrun.html",
+          "title": "Calling DryRun",
+          "estimatedWords": 125,
+          "lastModified": "2025-07-02T15:09:32.892Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "calling dryrun"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:32.892Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html",
+          "title": "Monitoring Cron",
+          "estimatedWords": 77,
+          "lastModified": "2025-07-02T15:09:33.499Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "monitoring cron"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:33.499Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/assign-data.html",
+          "title": "Sending an Assignment to a Process",
+          "estimatedWords": 202,
+          "lastModified": "2025-07-02T15:09:33.957Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "assign data"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:33.957Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aoconnect/signers.html",
+          "title": "DataItem Signers",
+          "estimatedWords": 291,
+          "lastModified": "2025-07-02T15:09:34.582Z",
+          "breadcrumbs": [
+            "guides",
+            "aoconnect",
+            "signers"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:34.582Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/why-migrate.html",
+          "title": "Why Migrate to HyperBEAM",
+          "estimatedWords": 143,
+          "lastModified": "2025-07-02T15:09:35.160Z",
+          "breadcrumbs": [
+            "guides",
+            "migrating to hyperbeam",
+            "why migrate"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:35.160Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/exposing-process-state.html",
+          "title": "Exposing Process State to HyperBEAM",
+          "estimatedWords": 583,
+          "lastModified": "2025-07-02T15:09:35.675Z",
+          "breadcrumbs": [
+            "guides",
+            "migrating to hyperbeam",
+            "exposing process state"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:35.675Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/reading-dynamic-state.html",
+          "title": "Reading Dynamic State",
+          "estimatedWords": 430,
+          "lastModified": "2025-07-02T15:09:36.221Z",
+          "breadcrumbs": [
+            "guides",
+            "migrating to hyperbeam",
+            "reading dynamic state"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:36.222Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/aos-with-hyperbeam.html",
+          "title": "Connecting to HyperBEAM with aos",
+          "estimatedWords": 254,
+          "lastModified": "2025-07-02T15:09:36.730Z",
+          "breadcrumbs": [
+            "guides",
+            "migrating to hyperbeam",
+            "aos with hyperbeam"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:36.730Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/ao-connect.html",
+          "title": "HyperBEAM from AO Connect",
+          "estimatedWords": 213,
+          "lastModified": "2025-07-02T15:09:36.957Z",
+          "breadcrumbs": [
+            "guides",
+            "migrating to hyperbeam",
+            "ao connect"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:36.957Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/dev-cli/index.html",
+          "title": "AO Dev-Cli 01",
+          "estimatedWords": 464,
+          "lastModified": "2025-07-02T15:09:37.570Z",
+          "breadcrumbs": [
+            "guides",
+            "dev cli",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:37.570Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/snacks/sqlite.html",
+          "title": "Getting started with SQLite",
+          "estimatedWords": 138,
+          "lastModified": "2025-07-02T15:09:38.166Z",
+          "breadcrumbs": [
+            "guides",
+            "snacks",
+            "sqlite"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:38.166Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/snacks/weavedrive.html",
+          "title": "Using WeaveDrive",
+          "estimatedWords": 253,
+          "lastModified": "2025-07-02T15:09:38.816Z",
+          "breadcrumbs": [
+            "guides",
+            "snacks",
+            "weavedrive"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:38.816Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/concepts/index.html",
+          "title": "Concepts",
+          "estimatedWords": 211,
+          "lastModified": "2025-07-02T15:09:39.343Z",
+          "breadcrumbs": [
+            "concepts",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:39.343Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/concepts/how-it-works.html",
+          "title": "How ao messaging works",
+          "estimatedWords": 398,
+          "lastModified": "2025-07-02T15:09:39.859Z",
+          "breadcrumbs": [
+            "concepts",
+            "how it works"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:39.859Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/concepts/processes.html",
+          "title": "Processes",
+          "estimatedWords": 323,
+          "lastModified": "2025-07-02T15:09:40.375Z",
+          "breadcrumbs": [
+            "concepts",
+            "processes"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:40.376Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/concepts/messages.html",
+          "title": "Messages",
+          "estimatedWords": 316,
+          "lastModified": "2025-07-02T15:09:41.006Z",
+          "breadcrumbs": [
+            "concepts",
+            "messages"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:41.006Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/concepts/eval.html",
+          "title": "Eval",
+          "estimatedWords": 84,
+          "lastModified": "2025-07-02T15:09:41.736Z",
+          "breadcrumbs": [
+            "concepts",
+            "eval"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:41.736Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/concepts/units.html",
+          "title": "Units",
+          "estimatedWords": 14735,
+          "lastModified": "2025-07-02T15:09:42.280Z",
+          "breadcrumbs": [
+            "concepts",
+            "units"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:42.280Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/concepts/specs.html",
+          "title": "ao Specs",
+          "estimatedWords": 154,
+          "lastModified": "2025-07-02T15:09:42.923Z",
+          "breadcrumbs": [
+            "concepts",
+            "specs"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:42.924Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/concepts/tour.html",
+          "title": "aos Brief Tour",
+          "estimatedWords": 390,
+          "lastModified": "2025-07-02T15:09:43.394Z",
+          "breadcrumbs": [
+            "concepts",
+            "tour"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:43.394Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/concepts/lua.html",
+          "title": "A whistle stop tour of Lua",
+          "estimatedWords": 873,
+          "lastModified": "2025-07-02T15:09:44.003Z",
+          "breadcrumbs": [
+            "concepts",
+            "lua"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:44.003Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/index.html",
+          "title": "References",
+          "estimatedWords": 214,
+          "lastModified": "2025-07-02T15:09:44.444Z",
+          "breadcrumbs": [
+            "references",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:44.444Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/lua.html",
+          "title": "Meet Lua",
+          "estimatedWords": 300,
+          "lastModified": "2025-07-02T15:09:44.938Z",
+          "breadcrumbs": [
+            "references",
+            "lua"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:44.938Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/wasm.html",
+          "title": "Meet Web Assembly",
+          "estimatedWords": 192,
+          "lastModified": "2025-07-02T15:09:45.551Z",
+          "breadcrumbs": [
+            "references",
+            "wasm"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:45.551Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/lua-optimization.html",
+          "title": "Lua Optimization Guide for AO Platform",
+          "estimatedWords": 179,
+          "lastModified": "2025-07-02T15:09:46.305Z",
+          "breadcrumbs": [
+            "references",
+            "lua optimization"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:46.305Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/ao.html",
+          "title": "ao Module",
+          "estimatedWords": 603,
+          "lastModified": "2025-07-02T15:09:47.068Z",
+          "breadcrumbs": [
+            "references",
+            "ao"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:47.068Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/messaging.html",
+          "title": "Messaging Patterns in ao",
+          "estimatedWords": 686,
+          "lastModified": "2025-07-02T15:09:47.737Z",
+          "breadcrumbs": [
+            "references",
+            "messaging"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:47.737Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/handlers.html",
+          "title": "Handlers (Version 005)",
+          "estimatedWords": 943,
+          "lastModified": "2025-07-02T15:09:48.401Z",
+          "breadcrumbs": [
+            "references",
+            "handlers"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:48.401Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/token.html",
+          "title": "ao Token and Subledger Specification",
+          "estimatedWords": 1113,
+          "lastModified": "2025-07-02T15:09:49.298Z",
+          "breadcrumbs": [
+            "references",
+            "token"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:49.298Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/data.html",
+          "title": "Accessing Data from Arweave with ao",
+          "estimatedWords": 1265,
+          "lastModified": "2025-07-02T15:09:49.929Z",
+          "breadcrumbs": [
+            "references",
+            "data"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:49.929Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/cron.html",
+          "title": "Cron Messages",
+          "estimatedWords": 254,
+          "lastModified": "2025-07-02T15:09:50.435Z",
+          "breadcrumbs": [
+            "references",
+            "cron"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:50.435Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/editor-setup.html",
+          "title": "Editor setup",
+          "estimatedWords": 228,
+          "lastModified": "2025-07-02T15:09:51.128Z",
+          "breadcrumbs": [
+            "references",
+            "editor setup"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:51.128Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/betteridea/index.html",
+          "title": "BetterIDEa",
+          "estimatedWords": 90,
+          "lastModified": "2025-07-02T15:09:51.676Z",
+          "breadcrumbs": [
+            "references",
+            "betteridea",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:51.676Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/references/community.html",
+          "title": "Community Resources",
+          "estimatedWords": 187,
+          "lastModified": "2025-07-02T15:09:52.549Z",
+          "breadcrumbs": [
+            "references",
+            "community"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:52.549Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/releasenotes/index.html",
+          "title": "Release Notes",
+          "estimatedWords": 187,
+          "lastModified": "2025-07-02T15:09:53.890Z",
+          "breadcrumbs": [
+            "releasenotes",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:53.890Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/guides/aos/modules/index.html",
+          "title": "Modules",
+          "estimatedWords": 11,
+          "lastModified": "2025-07-02T15:09:54.794Z",
+          "breadcrumbs": [
+            "guides",
+            "aos",
+            "modules",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:54.794Z"
+        },
+        {
+          "url": "https://cookbook_ao.arweave.net/welcome/index.html",
+          "title": "Welcome to ao",
+          "estimatedWords": 219,
+          "lastModified": "2025-07-02T15:09:56.128Z",
+          "breadcrumbs": [
+            "welcome",
+            "index"
+          ],
+          "siteKey": "ao",
+          "siteName": "AO Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:09:56.128Z"
+        }
+      ],
+      "lastCrawled": "2025-07-02T15:21:07.459Z",
+      "stats": {
+        "totalPages": 90,
+        "averageWords": 576,
+        "duration": 2825,
+        "requestCount": 5,
+        "averageResponseTime": 235.4,
+        "pagesPerSecond": 31.858407079646014
+      }
+    },
     "ario": {
       "name": "AR-IO Network",
       "baseUrl": "https://docs.ar.io",
@@ -1907,16 +3850,1052 @@
           "siteName": "AR-IO Network",
           "depth": 2,
           "crawledAt": "2025-07-01T20:08:31.227Z"
+        },
+        {
+          "url": "https://docs.ar.io/gateways/release-notes",
+          "title": "ARIO Release Notes",
+          "estimatedWords": 84,
+          "lastModified": "2025-07-02T15:10:00.711Z",
+          "breadcrumbs": [
+            "gateways",
+            "release notes"
+          ],
+          "siteKey": "ario",
+          "siteName": "AR-IO Network",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:00.711Z"
+        },
+        {
+          "url": "https://docs.ar.io/glossary",
+          "title": "Glossary",
+          "estimatedWords": 1367,
+          "lastModified": "2025-07-02T15:10:00.843Z",
+          "breadcrumbs": [
+            "glossary"
+          ],
+          "siteKey": "ario",
+          "siteName": "AR-IO Network",
+          "depth": 1,
+          "crawledAt": "2025-07-02T15:10:00.843Z"
+        },
+        {
+          "url": "https://docs.ar.io/gateways/release-notes#",
+          "title": "ARIO Release Notes",
+          "estimatedWords": 84,
+          "lastModified": "2025-07-02T15:10:01.784Z",
+          "breadcrumbs": [
+            "gateways",
+            "release notes"
+          ],
+          "siteKey": "ario",
+          "siteName": "AR-IO Network",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:01.784Z"
         }
       ],
-      "lastCrawled": "2025-07-01T20:08:31.228Z",
+      "lastCrawled": "2025-07-02T15:21:07.459Z",
       "stats": {
-        "totalPages": 122,
-        "averageWords": 557,
-        "duration": 85488,
-        "requestCount": 135,
-        "averageResponseTime": 397.34814814814814,
-        "pagesPerSecond": 1.4271008796556242
+        "totalPages": 125,
+        "averageWords": 556,
+        "duration": 3829,
+        "requestCount": 0,
+        "averageResponseTime": 0,
+        "pagesPerSecond": 32.64559937320449
+      }
+    },
+    "arweave": {
+      "name": "Arweave Cookbook",
+      "baseUrl": "https://cookbook.arweave.net",
+      "pages": [
+        {
+          "url": "https://cookbook.arweave.net/guides/querying-arweave/queryingArweave.html",
+          "title": "Querying Arweave with GraphQL",
+          "estimatedWords": 870,
+          "lastModified": "2025-07-02T15:10:04.796Z",
+          "breadcrumbs": [
+            "guides",
+            "querying arweave",
+            "queryingarweave"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:04.796Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/deploying-manifests/arseeding-js.html",
+          "title": "Cooking with the Permaweb",
+          "estimatedWords": 386,
+          "lastModified": "2025-07-02T15:10:09.151Z",
+          "breadcrumbs": [
+            "guides",
+            "deploying manifests",
+            "arseeding js"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:09.151Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/deploying-manifests/ardrive.html",
+          "title": "Cooking with the Permaweb",
+          "estimatedWords": 96,
+          "lastModified": "2025-07-02T15:10:09.843Z",
+          "breadcrumbs": [
+            "guides",
+            "deploying manifests",
+            "ardrive"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:09.843Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/deploying-manifests/arweave-app.html",
+          "title": "Cooking with the Permaweb",
+          "estimatedWords": 78,
+          "lastModified": "2025-07-02T15:10:10.467Z",
+          "breadcrumbs": [
+            "guides",
+            "deploying manifests",
+            "arweave app"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:10.468Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/deploying-manifests/deployingManifests.html",
+          "title": "Creating and Deploying Manifests",
+          "estimatedWords": 95,
+          "lastModified": "2025-07-02T15:10:11.155Z",
+          "breadcrumbs": [
+            "guides",
+            "deploying manifests",
+            "deployingmanifests"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:11.155Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/deployment/github-action.html",
+          "title": "Github Action",
+          "estimatedWords": 543,
+          "lastModified": "2025-07-02T15:10:11.878Z",
+          "breadcrumbs": [
+            "guides",
+            "deployment",
+            "github action"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:11.878Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/deployment/arkb.html",
+          "title": "arkb",
+          "estimatedWords": 252,
+          "lastModified": "2025-07-02T15:10:12.460Z",
+          "breadcrumbs": [
+            "guides",
+            "deployment",
+            "arkb"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:12.460Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/dns-integration/server-side.html",
+          "title": "ServerSide DNS Integration",
+          "estimatedWords": 402,
+          "lastModified": "2025-07-02T15:10:13.487Z",
+          "breadcrumbs": [
+            "guides",
+            "dns integration",
+            "server side"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:13.487Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/vouch.html",
+          "title": "Vouch",
+          "estimatedWords": 316,
+          "lastModified": "2025-07-02T15:10:14.489Z",
+          "breadcrumbs": [
+            "concepts",
+            "vouch"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:14.489Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/arfs/schema-diagrams.html",
+          "title": "Cooking with the Permaweb",
+          "estimatedWords": 83,
+          "lastModified": "2025-07-02T15:10:14.854Z",
+          "breadcrumbs": [
+            "concepts",
+            "arfs",
+            "schema diagrams"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:14.854Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/arfs/privacy.html",
+          "title": "Privacy",
+          "estimatedWords": 717,
+          "lastModified": "2025-07-02T15:10:15.417Z",
+          "breadcrumbs": [
+            "concepts",
+            "arfs",
+            "privacy"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:15.417Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/arfs/content-types.html",
+          "title": "Content Types",
+          "estimatedWords": 223,
+          "lastModified": "2025-07-02T15:10:16.097Z",
+          "breadcrumbs": [
+            "concepts",
+            "arfs",
+            "content types"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:16.098Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/arfs/entity-types.html",
+          "title": "Entity Types",
+          "estimatedWords": 1341,
+          "lastModified": "2025-07-02T15:10:16.999Z",
+          "breadcrumbs": [
+            "concepts",
+            "arfs",
+            "entity types"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:16.999Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/arfs/data-model.html",
+          "title": "Data Model",
+          "estimatedWords": 354,
+          "lastModified": "2025-07-02T15:10:17.500Z",
+          "breadcrumbs": [
+            "concepts",
+            "arfs",
+            "data model"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:17.500Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/arfs/arfs.html",
+          "title": "ArFS Protocol A Decentralized File System on Arweave",
+          "estimatedWords": 409,
+          "lastModified": "2025-07-02T15:10:18.033Z",
+          "breadcrumbs": [
+            "concepts",
+            "arfs",
+            "arfs"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:18.033Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/bundlers.html",
+          "title": "Bundling Services",
+          "estimatedWords": 197,
+          "lastModified": "2025-07-02T15:10:18.430Z",
+          "breadcrumbs": [
+            "concepts",
+            "bundlers"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:18.430Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/gateways.html",
+          "title": "Gateways",
+          "estimatedWords": 309,
+          "lastModified": "2025-07-02T15:10:19.057Z",
+          "breadcrumbs": [
+            "concepts",
+            "gateways"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:19.057Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/permawebApplications.html",
+          "title": "Permaweb Applications",
+          "estimatedWords": 443,
+          "lastModified": "2025-07-02T15:10:19.598Z",
+          "breadcrumbs": [
+            "concepts",
+            "permawebapplications"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:19.598Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/permaweb.html",
+          "title": "Welcome to the Permaweb",
+          "estimatedWords": 164,
+          "lastModified": "2025-07-02T15:10:20.315Z",
+          "breadcrumbs": [
+            "concepts",
+            "permaweb"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:20.315Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/keyfiles-and-wallets.html",
+          "title": "Wallets and Keys",
+          "estimatedWords": 540,
+          "lastModified": "2025-07-02T15:10:20.579Z",
+          "breadcrumbs": [
+            "concepts",
+            "keyfiles and wallets"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:20.579Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/manifests.html",
+          "title": "Path Manifests",
+          "estimatedWords": 386,
+          "lastModified": "2025-07-02T15:10:21.096Z",
+          "breadcrumbs": [
+            "concepts",
+            "manifests"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:21.096Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/bundles.html",
+          "title": "Transaction Bundles",
+          "estimatedWords": 299,
+          "lastModified": "2025-07-02T15:10:21.828Z",
+          "breadcrumbs": [
+            "concepts",
+            "bundles"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:21.828Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/http-api.html",
+          "title": "Fetching Transaction Data",
+          "estimatedWords": 589,
+          "lastModified": "2025-07-02T15:10:22.519Z",
+          "breadcrumbs": [
+            "guides",
+            "http api"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:22.519Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/queryTransactions.html",
+          "title": "Querying Transactions",
+          "estimatedWords": 405,
+          "lastModified": "2025-07-02T15:10:22.790Z",
+          "breadcrumbs": [
+            "concepts",
+            "querytransactions"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:22.790Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/tags.html",
+          "title": "Transaction Metadata (Tags)",
+          "estimatedWords": 561,
+          "lastModified": "2025-07-02T15:10:23.376Z",
+          "breadcrumbs": [
+            "concepts",
+            "tags"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:23.376Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/posting-transactions/turbo.html",
+          "title": "Posting Transactions using Ardrive Turbo",
+          "estimatedWords": 339,
+          "lastModified": "2025-07-02T15:10:24.020Z",
+          "breadcrumbs": [
+            "guides",
+            "posting transactions",
+            "turbo"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:24.020Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/posting-transactions/arseeding-js.html",
+          "title": "Posting Transactions using arseedingjs",
+          "estimatedWords": 246,
+          "lastModified": "2025-07-02T15:10:24.415Z",
+          "breadcrumbs": [
+            "guides",
+            "posting transactions",
+            "arseeding js"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:24.415Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/posting-transactions/dispatch.html",
+          "title": "Posting a Transaction using Dispatch",
+          "estimatedWords": 171,
+          "lastModified": "2025-07-02T15:10:25.125Z",
+          "breadcrumbs": [
+            "guides",
+            "posting transactions",
+            "dispatch"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:25.125Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/posting-transactions/arweave-js.html",
+          "title": "Posting Transactions using arweave-js",
+          "estimatedWords": 385,
+          "lastModified": "2025-07-02T15:10:25.458Z",
+          "breadcrumbs": [
+            "guides",
+            "posting transactions",
+            "arweave js"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:25.458Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/post-transactions.html",
+          "title": "Posting Transactions",
+          "estimatedWords": 645,
+          "lastModified": "2025-07-02T15:10:25.994Z",
+          "breadcrumbs": [
+            "concepts",
+            "post transactions"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:25.994Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/getting-started/contributing.html",
+          "title": "Contributing Workflow",
+          "estimatedWords": 329,
+          "lastModified": "2025-07-02T15:10:26.705Z",
+          "breadcrumbs": [
+            "getting started",
+            "contributing"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:26.706Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/getting-started/quick-starts/hw-cli.html",
+          "title": "Hello World (CLI)",
+          "estimatedWords": 166,
+          "lastModified": "2025-07-02T15:10:27.423Z",
+          "breadcrumbs": [
+            "getting started",
+            "quick starts",
+            "hw cli"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:27.423Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html",
+          "title": "Hello World (No Code)",
+          "estimatedWords": 110,
+          "lastModified": "2025-07-02T15:10:28.152Z",
+          "breadcrumbs": [
+            "getting started",
+            "quick starts",
+            "hw no code"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:28.152Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/getting-started/welcome.html",
+          "title": "Developing on the Permaweb",
+          "estimatedWords": 222,
+          "lastModified": "2025-07-02T15:10:28.778Z",
+          "breadcrumbs": [
+            "getting started",
+            "welcome"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:28.778Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/index.html",
+          "title": "Build on the Permaweb",
+          "estimatedWords": 227,
+          "lastModified": "2025-07-02T15:10:29.317Z",
+          "breadcrumbs": [
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 1,
+          "crawledAt": "2025-07-02T15:10:29.317Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/references/index.html",
+          "title": "References",
+          "estimatedWords": 71,
+          "lastModified": "2025-07-02T15:10:29.820Z",
+          "breadcrumbs": [
+            "references",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:29.820Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/index.html",
+          "title": "Core Concepts",
+          "estimatedWords": 111,
+          "lastModified": "2025-07-02T15:10:30.195Z",
+          "breadcrumbs": [
+            "concepts",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:30.195Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/index.html",
+          "title": "Guides",
+          "estimatedWords": 98,
+          "lastModified": "2025-07-02T15:10:30.520Z",
+          "breadcrumbs": [
+            "guides",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:30.521Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/getting-started/index.html",
+          "title": "Cooking with the Permaweb",
+          "estimatedWords": 253,
+          "lastModified": "2025-07-02T15:10:30.762Z",
+          "breadcrumbs": [
+            "getting started",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-02T15:10:30.762Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/querying-arweave/ardb.html",
+          "title": "ArDB",
+          "estimatedWords": 204,
+          "lastModified": "2025-07-02T15:10:31.444Z",
+          "breadcrumbs": [
+            "guides",
+            "querying arweave",
+            "ardb"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:31.444Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/querying-arweave/ar-gql.html",
+          "title": "ar-gql",
+          "estimatedWords": 147,
+          "lastModified": "2025-07-02T15:10:32.148Z",
+          "breadcrumbs": [
+            "guides",
+            "querying arweave",
+            "ar gql"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:32.148Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html",
+          "title": "Search Indexing Service",
+          "estimatedWords": 614,
+          "lastModified": "2025-07-02T15:10:32.841Z",
+          "breadcrumbs": [
+            "guides",
+            "querying arweave",
+            "search indexing service"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:32.842Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/testing/arlocal.html",
+          "title": "arlocal",
+          "estimatedWords": 397,
+          "lastModified": "2025-07-02T15:10:33.752Z",
+          "breadcrumbs": [
+            "guides",
+            "testing",
+            "arlocal"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:33.752Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/vouch.html",
+          "title": "Vouch",
+          "estimatedWords": 233,
+          "lastModified": "2025-07-02T15:10:34.378Z",
+          "breadcrumbs": [
+            "guides",
+            "vouch"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:34.378Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/references/bundling.html",
+          "title": "Bundling",
+          "estimatedWords": 563,
+          "lastModified": "2025-07-02T15:10:34.995Z",
+          "breadcrumbs": [
+            "references",
+            "bundling"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:34.995Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/references/gql.html",
+          "title": "Complete GraphQL Structure for Transactions",
+          "estimatedWords": 419,
+          "lastModified": "2025-07-02T15:10:35.656Z",
+          "breadcrumbs": [
+            "references",
+            "gql"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:35.656Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/references/http-api.html",
+          "title": "Arweave peer HTTP API",
+          "estimatedWords": 330,
+          "lastModified": "2025-07-02T15:10:36.206Z",
+          "breadcrumbs": [
+            "references",
+            "http api"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:36.207Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/kits/index.html",
+          "title": "Starter Kits",
+          "estimatedWords": 28,
+          "lastModified": "2025-07-02T15:10:36.834Z",
+          "breadcrumbs": [
+            "kits",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:36.834Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/kits/react/index.html",
+          "title": "React Starter Kits",
+          "estimatedWords": 119,
+          "lastModified": "2025-07-02T15:10:37.450Z",
+          "breadcrumbs": [
+            "kits",
+            "react",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:37.450Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/kits/svelte/index.html",
+          "title": "Svelte Starter Kits",
+          "estimatedWords": 134,
+          "lastModified": "2025-07-02T15:10:38.143Z",
+          "breadcrumbs": [
+            "kits",
+            "svelte",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:38.143Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/kits/vue/index.html",
+          "title": "Vue Starter Kits",
+          "estimatedWords": 135,
+          "lastModified": "2025-07-02T15:10:38.714Z",
+          "breadcrumbs": [
+            "kits",
+            "vue",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:38.714Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/community/index.html",
+          "title": "Community",
+          "estimatedWords": 61,
+          "lastModified": "2025-07-02T15:10:39.323Z",
+          "breadcrumbs": [
+            "community",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:39.323Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/arns.html",
+          "title": "ArNS - Arweave Name System",
+          "estimatedWords": 529,
+          "lastModified": "2025-07-02T15:10:39.926Z",
+          "breadcrumbs": [
+            "concepts",
+            "arns"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:39.926Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/smartweave/atomic-assets/index.html",
+          "title": "Atomic Assets",
+          "estimatedWords": 149,
+          "lastModified": "2025-07-02T15:10:40.638Z",
+          "breadcrumbs": [
+            "guides",
+            "smartweave",
+            "atomic assets",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:40.638Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/smartweave/atomic-assets/ardrive-cli.html",
+          "title": "Deploy and Register Atomic Assets using ArDrive CLI",
+          "estimatedWords": 436,
+          "lastModified": "2025-07-02T15:10:41.226Z",
+          "breadcrumbs": [
+            "guides",
+            "smartweave",
+            "atomic assets",
+            "ardrive cli"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:41.226Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/legacy/index.html",
+          "title": "Legacy",
+          "estimatedWords": 42,
+          "lastModified": "2025-07-02T15:10:41.848Z",
+          "breadcrumbs": [
+            "legacy",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:41.848Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/smartweave.html",
+          "title": "SmartWeave",
+          "estimatedWords": 912,
+          "lastModified": "2025-07-02T15:10:42.366Z",
+          "breadcrumbs": [
+            "concepts",
+            "smartweave"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:42.366Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/concepts/psts.html",
+          "title": "Overview",
+          "estimatedWords": 415,
+          "lastModified": "2025-07-02T15:10:42.987Z",
+          "breadcrumbs": [
+            "concepts",
+            "psts"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:42.987Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/atomic-tokens/intro.html",
+          "title": "Atomic Tokens",
+          "estimatedWords": 361,
+          "lastModified": "2025-07-02T15:10:43.736Z",
+          "breadcrumbs": [
+            "guides",
+            "atomic tokens",
+            "intro"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:43.736Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/smartweave/warp/intro.html",
+          "title": "Warp (SmartWeave) SDK Intro",
+          "estimatedWords": 293,
+          "lastModified": "2025-07-02T15:10:44.331Z",
+          "breadcrumbs": [
+            "guides",
+            "smartweave",
+            "warp",
+            "intro"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:44.331Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/smartweave/warp/deploying-contracts.html",
+          "title": "Warp (SmartWeave) SDK - Deploying Contracts",
+          "estimatedWords": 745,
+          "lastModified": "2025-07-02T15:10:44.986Z",
+          "breadcrumbs": [
+            "guides",
+            "smartweave",
+            "warp",
+            "deploying contracts"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:44.986Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/smartweave/warp/readstate.html",
+          "title": "Warp (SmartWeave) SDK - ReadState",
+          "estimatedWords": 282,
+          "lastModified": "2025-07-02T15:10:45.586Z",
+          "breadcrumbs": [
+            "guides",
+            "smartweave",
+            "warp",
+            "readstate"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:45.586Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/smartweave/warp/write-interactions.html",
+          "title": "Warp WriteInteractions",
+          "estimatedWords": 362,
+          "lastModified": "2025-07-02T15:10:46.163Z",
+          "breadcrumbs": [
+            "guides",
+            "smartweave",
+            "warp",
+            "write interactions"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:46.163Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/guides/smartweave/warp/evolve.html",
+          "title": "Warp (SmartWeave) SDK - Evolve",
+          "estimatedWords": 428,
+          "lastModified": "2025-07-02T15:10:46.802Z",
+          "breadcrumbs": [
+            "guides",
+            "smartweave",
+            "warp",
+            "evolve"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-02T15:10:46.802Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/getting-started/quick-starts/hw-nodejs.html",
+          "title": "Hello World (NodeJS)",
+          "estimatedWords": 268,
+          "lastModified": "2025-07-02T15:10:50.356Z",
+          "breadcrumbs": [
+            "getting started",
+            "quick starts",
+            "hw nodejs"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-02T15:10:50.356Z"
+        }
+      ],
+      "lastCrawled": "2025-07-02T15:21:07.459Z",
+      "stats": {
+        "totalPages": 65,
+        "averageWords": 339,
+        "duration": 5335,
+        "requestCount": 11,
+        "averageResponseTime": 200.8181818181818,
+        "pagesPerSecond": 12.18369259606373
+      }
+    },
+    "permaweb-glossary": {
+      "name": "Permaweb Glossary",
+      "baseUrl": "https://glossary.arweave.net",
+      "pages": [
+        {
+          "url": "https://glossary.arweave.net/glossary.txt",
+          "title": "Permaweb Glossary",
+          "estimatedWords": 9712,
+          "lastModified": "2025-07-02T15:10:50.792Z",
+          "breadcrumbs": [
+            "Permaweb Glossary"
+          ],
+          "siteKey": "permaweb-glossary",
+          "siteName": "Permaweb Glossary",
+          "depth": 0,
+          "crawledAt": "2025-07-02T15:10:50.792Z"
+        }
+      ],
+      "lastCrawled": "2025-07-02T15:21:07.459Z",
+      "stats": {
+        "totalPages": 1,
+        "averageWords": 9712,
+        "duration": 0,
+        "requestCount": 0,
+        "averageResponseTime": 0,
+        "pagesPerSecond": 0
       }
     }
   }

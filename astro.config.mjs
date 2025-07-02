@@ -21,7 +21,11 @@ export default defineConfig({
     },
     resolve: {
       alias: {
-        '@': '/src'
+        '@': '/src',
+        '@client': '/src/client',
+        '@server': '/src/server',
+        '@client/utils': '/src/client/utils',
+        '@server/utils': '/src/server/utils'
       }
     }
   },

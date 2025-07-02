@@ -1,11 +1,19 @@
-// Main application script
+/**
+ * CLIENT-ONLY: Main application script for browser environment
+ * 
+ * This file contains browser-specific code and should NEVER be imported in server code.
+ * It uses DOM manipulation, browser APIs, and client-side utilities.
+ * 
+ * @fileoverview Main application logic for the Permaweb LLMs Builder interface
+ */
+
 import { initializeAllTheme } from "../utils/theme.js";
 import {
 	batchFetchAndClean,
 	generateLLMsTxt,
 	downloadFile,
 	openContentInNewTab,
-} from "../utils/defuddle-fetch.js";
+} from "../utils/defuddle-fetch-client.js";
 import { AccordionManager } from "../utils/accordion-manager.js";
 
 // Type definitions
