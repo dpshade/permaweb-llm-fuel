@@ -190,15 +190,19 @@
 /* Iframe-specific row click behavior */
 .iframe-embed .tree-site-header {
   cursor: pointer;
-  transition: background-color 0.15s ease;
   border-radius: var(--border-radius);
   padding: 4px 8px;
   margin: -4px -8px;
 }
 
-/* Remove hover background for iframe site header */
+/* Disable hover effects in iframe mode */
 .iframe-embed .tree-site-header:hover {
   background-color: unset;
+  transform: none;
+}
+
+.iframe-embed .tree-site-header:active {
+  transform: none;
 }
 
 .iframe-embed .tree-site-content {
@@ -215,14 +219,9 @@
 
 .iframe-embed .tree-page-item {
   cursor: pointer;
-  transition: background-color 0.15s ease;
   border-radius: var(--border-radius);
   padding: 2px 4px;
   margin: -2px -4px;
-}
-
-.iframe-embed .tree-page-item:hover {
-  background-color: var(--category-bg-2);
 }
 
 /* Ensure links don't inherit the pointer cursor in iframe mode */
@@ -461,6 +460,8 @@ h1 {
   accent-color: var(--accent-hover-color);
   background-color: var(--accent-hover-color);
   border-color: var(--accent-hover-color);
+  transform: scale(1.05);
+  transition: transform 0.1s ease;
 }
 
 /* Radio button styling */
@@ -506,10 +507,12 @@ input[type="radio"] {
   font-size: 12px;
   padding: 2px 4px;
   margin-right: 4px;
+  transition: color 0.15s ease, transform 0.15s ease;
 }
 
 .tree-toggle:hover {
-  color: var(--text-color);
+  color: var(--accent-color);
+  transform: scale(1.1);
 }
 
 .tree-toggle::before {
@@ -1158,11 +1161,31 @@ html.translucent-bg .main-container {
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  border-radius: var(--border-radius);
+  padding: 4px 8px;
+  margin: -4px -8px;
+}
+
+.tree-site-header:hover {
+  background-color: var(--hover-bg);
+  transform: translateX(2px);
+}
+
+.tree-site-header:active {
+  transform: translateX(1px);
+  transition: transform 0.05s ease;
 }
 
 .tree-site-content {
   cursor: pointer;
   flex: 1;
+  transition: color 0.15s ease;
+}
+
+.tree-site-content:hover {
+  color: var(--accent-color);
 }
 
 .tree-page-item {
@@ -1170,8 +1193,31 @@ html.translucent-bg .main-container {
   align-items: center;
   gap: 8px;
   margin-bottom: 4px;
-  padding: 2px 0;
+  padding: 2px 4px;
   margin-left: 24px;
+  border-radius: var(--border-radius);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.tree-page-item:hover {
+  background-color: var(--category-bg-2);
+  transform: translateX(2px);
+}
+
+.tree-page-item:active {
+  transform: translateX(1px);
+  transition: transform 0.05s ease;
+}
+
+/* Disable hover effects in iframe mode */
+.iframe-embed .tree-page-item:hover {
+  background-color: unset;
+  transform: none;
+}
+
+.iframe-embed .tree-page-item:active {
+  transform: none;
 }
 
 .tree-page-label {
@@ -1179,6 +1225,11 @@ html.translucent-bg .main-container {
   font-size: 14px;
   font-weight: 500;
   color: var(--text-color);
+  transition: color 0.15s ease;
+}
+
+.tree-page-item:hover .tree-page-label {
+  color: var(--accent-color);
 }
 
 .tree-page-link {
@@ -1187,10 +1238,16 @@ html.translucent-bg .main-container {
   margin-left: 8px;
   text-decoration: none;
   cursor: pointer;
+  transition: color 0.15s ease, text-decoration 0.15s ease;
 }
 
 .tree-page-link:hover {
+  color: var(--accent-color);
   text-decoration: underline;
+}
+
+.tree-page-item:hover .tree-page-link {
+  color: var(--accent-color);
 }
 
 .tree-site-label {
@@ -1199,11 +1256,24 @@ html.translucent-bg .main-container {
   font-size: 15px;
   color: var(--text-color);
   pointer-events: none;
+  transition: color 0.15s ease;
 }
 
 .tree-site-count {
   font-size: 12px;
   color: var(--secondary-text);
+  transition: color 0.15s ease, font-weight 0.15s ease;
+}
+
+.tree-site-header:hover .tree-site-count {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+/* Disable count hover effects in iframe mode */
+.iframe-embed .tree-site-header:hover .tree-site-count {
+  color: var(--secondary-text);
+  font-weight: normal;
 }
 
 /* Icon utility classes */
@@ -1239,11 +1309,32 @@ html.translucent-bg .main-container {
   width: 16px;
   height: 16px;
   opacity: 0.5;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .world-icon path {
   stroke: #666;
   stroke-width: 2;
+  transition: stroke 0.15s ease;
+}
+
+.tree-site-header:hover .world-icon {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.tree-site-header:hover .world-icon path {
+  stroke: var(--accent-color);
+}
+
+/* Disable icon hover effects in iframe mode */
+.iframe-embed .tree-site-header:hover .world-icon {
+  opacity: 0.5;
+  transform: none;
+}
+
+.iframe-embed .tree-site-header:hover .world-icon path {
+  stroke: #666;
 }
 
 /* Loading skeleton classes */
