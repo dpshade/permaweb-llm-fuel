@@ -511,7 +511,7 @@ export function generateLLMsTxt(documents, options = {}) {
     
     // Document separator
     if (i > 0) {
-      llmsContent += '\n' + '='.repeat(80) + '\n\n';
+      llmsContent += '\n---\n\n';
     }
 
     // Document header

@@ -522,7 +522,7 @@ export function generateLLMsTxt(documents, options = {}, qualityFiltered = []) {
     llmsContent += '\n';
   }
 
-  llmsContent += '='.repeat(80) + '\n\n';
+  llmsContent += '---\n\n';
 
   // Process each document
   for (let i = 0; i < sortedDocs.length; i++) {
@@ -530,7 +530,7 @@ export function generateLLMsTxt(documents, options = {}, qualityFiltered = []) {
     
     // Document separator
     if (i > 0) {
-      llmsContent += '\n' + '='.repeat(80) + '\n\n';
+      llmsContent += '\n---\n\n';
     }
 
     // Document header
