@@ -923,18 +923,20 @@ if (generateBtn) {
 
 			// Extract results array from batch result
 			const cleanedPages = batchResult.results || batchResult;
+			const qualityFiltered = batchResult.qualityFiltered || [];
 
 			// Show processing summary
 			if (batchResult.summary && progressText) {
-				const { total, successful, failed } =
+				const { total, successful, failed, qualityFiltered: filteredCount } =
 					batchResult.summary;
-				progressText.textContent = `Processed ${successful}/${total} pages successfully. Generating document...`;
+				const summaryText = `Processed ${successful}/${total} pages successfully${filteredCount > 0 ? ` (${filteredCount} filtered)` : ''}. Generating document...`;
+				progressText.textContent = summaryText;
 			} else if (progressText) {
 				progressText.textContent = "Generating llms.txt...";
 			}
 
-					// Generate llms.txt
-		const llmsTxt = generateLLMsTxt(cleanedPages);
+			// Generate llms.txt with quality disclaimer
+			const llmsTxt = generateLLMsTxt(cleanedPages, {}, qualityFiltered);
 
 			// Open content in new tab
 			const timestamp = new Date().toISOString().split("T")[0];
@@ -961,8 +963,11 @@ if (generateBtn) {
 
 			// Hide progress with success message
 			if (batchResult.summary && progressText) {
-				const { successful, failed } = batchResult.summary;
-				progressText.textContent = `Generated document with ${successful} pages${failed > 0 ? ` (${failed} failed)` : ""}`;
+				const { successful, failed, qualityFiltered: filteredCount } = batchResult.summary;
+				let successMessage = `Generated document with ${successful} pages`;
+				if (failed > 0) successMessage += ` (${failed} failed)`;
+				if (filteredCount > 0) successMessage += ` (${filteredCount} filtered)`;
+				progressText.textContent = successMessage;
 				setUIEnabled(true); // Re-enable UI immediately after success
 				setTimeout(() => {
 					if (progressContainer) {

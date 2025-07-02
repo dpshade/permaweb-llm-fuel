@@ -240,7 +240,7 @@ function getDocumentFromHtml(html, url) {
  * @returns {Object} Quality assessment
  */
 function assessContentQuality(content, options = {}) {
-  const { minLength = 100 } = options;
+  const { minLength = 50 } = options; // Reduced from 100 to 50
   
   if (!content || content.length < minLength) {
     return {
@@ -253,13 +253,18 @@ function assessContentQuality(content, options = {}) {
   const wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
   const avgWordLength = content.replace(/\s+/g, '').length / wordCount;
   
-  // Simple scoring based on word count and average word length
-  let score = Math.min(1.0, wordCount / 500); // Cap at 500 words
-  score *= Math.min(1.0, avgWordLength / 5); // Prefer longer words
+  // Loosened scoring based on word count and average word length
+  let score = Math.min(1.0, wordCount / 200); // Reduced cap from 500 to 200 words
+  score *= Math.min(1.0, avgWordLength / 3); // Reduced preference from 5 to 3 characters
+  
+  // Boost score for shorter but meaningful content
+  if (wordCount >= 50 && wordCount < 100) {
+    score *= 1.2; // 20% boost for short but acceptable content
+  }
   
   return {
     overallScore: score,
-    qualityLevel: score > 0.7 ? 'high' : score > 0.4 ? 'medium' : 'low',
+    qualityLevel: score > 0.6 ? 'high' : score > 0.3 ? 'medium' : 'low', // Lowered thresholds
     reason: `Word count: ${wordCount}, avg word length: ${avgWordLength.toFixed(1)}`
   };
 }
@@ -273,7 +278,7 @@ function assessContentQuality(content, options = {}) {
 export async function batchFetchAndClean(urls, options = {}) {
   const {
     concurrency = 3, // Lower concurrency for client-side
-    qualityThreshold = 0.3,
+    qualityThreshold = 0.2,
     onProgress = () => {},
     onError = () => {},
     onQualityFilter = () => {}
@@ -281,6 +286,7 @@ export async function batchFetchAndClean(urls, options = {}) {
 
   const results = [];
   const errors = [];
+  const qualityFiltered = []; // Track URLs filtered due to quality
   let completed = 0;
 
   const processUrl = async (url) => {
@@ -290,10 +296,24 @@ export async function batchFetchAndClean(urls, options = {}) {
       completed++;
       onProgress(completed, urls.length, url, result.qualityScore);
     } catch (error) {
-      errors.push({ url, error: error.message });
+      // Check if this is a quality threshold error
+      if (error.message.includes('Content quality too low')) {
+        // Extract quality score from error message
+        const qualityMatch = error.message.match(/quality too low: ([\d.]+)/);
+        const qualityScore = qualityMatch ? parseFloat(qualityMatch[1]) : 0;
+        
+        qualityFiltered.push({ 
+          url, 
+          error: error.message,
+          qualityScore: qualityScore
+        });
+        onQualityFilter(url, qualityScore, error.message);
+      } else {
+        errors.push({ url, error: error.message });
+        onError(url, error);
+      }
       completed++;
       onProgress(completed, urls.length, url, 0);
-      onError(url, error);
     }
   };
 
@@ -310,10 +330,12 @@ export async function batchFetchAndClean(urls, options = {}) {
   return {
     results,
     errors,
+    qualityFiltered,
     summary: {
       total: urls.length,
       successful: results.length,
-      failed: errors.length
+      failed: errors.length,
+      qualityFiltered: qualityFiltered.length
     }
   };
 }
@@ -328,7 +350,7 @@ export async function fetchAndClean(url, options = {}) {
   const {
     timeout = 30000,
     userAgent = 'Mozilla/5.0 (compatible; PermawebLLMFuel/1.0)',
-    qualityThreshold = 0.3
+    qualityThreshold = 0.15 // Reduced from 0.3 to 0.15
   } = options;
 
   try {
@@ -408,7 +430,7 @@ export async function fetchAndClean(url, options = {}) {
     
     // Assess quality
     const qualityAssessment = assessContentQuality(content, {
-      minLength: 100,
+      minLength: 50, // Reduced from 100 to 50
       requireTechnical: false
     });
     qualityScore = qualityAssessment.overallScore;
@@ -436,14 +458,16 @@ export async function fetchAndClean(url, options = {}) {
  * Generate llms.txt format from cleaned documents
  * @param {Array} documents - Array of cleaned document objects
  * @param {Object} options - Generation options
+ * @param {Array} qualityFiltered - Array of URLs filtered due to quality threshold
  * @returns {string} Formatted llms.txt content
  */
-export function generateLLMsTxt(documents, options = {}) {
+export function generateLLMsTxt(documents, options = {}, qualityFiltered = []) {
   const {
     includeMetadata = true,
     includeQualityScores = false,
     sortByQuality = true,
-    maxDocuments = null
+    maxDocuments = null,
+    includeQualityDisclaimer = true
   } = options;
 
   if (!Array.isArray(documents) || documents.length === 0) {
@@ -469,6 +493,37 @@ export function generateLLMsTxt(documents, options = {}) {
   llmsContent += `Total documents: ${sortedDocs.length}\n`;
   llmsContent += `Total words: ${sortedDocs.reduce((sum, doc) => sum + (doc.wordCount || 0), 0)}\n\n`;
 
+  // Add Table of Contents
+  llmsContent += '## Table of Contents\n\n';
+  
+  // Add successful documents to ToC
+  if (sortedDocs.length > 0) {
+    llmsContent += '### Included Documents\n\n';
+    for (let i = 0; i < sortedDocs.length; i++) {
+      const doc = sortedDocs[i];
+      const title = cleanDocumentTitle(doc.title) || 'Untitled Document';
+      const anchor = title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+      llmsContent += `${i + 1}. [${title}](#${anchor}) - ${doc.url}\n`;
+    }
+    llmsContent += '\n';
+  }
+
+  // Add quality-filtered URLs to ToC
+  if (includeQualityDisclaimer && qualityFiltered && qualityFiltered.length > 0) {
+    llmsContent += '### Excluded Documents (Quality Filtered)\n\n';
+    
+    // Sort quality filtered URLs by quality score (lowest first)
+    const sortedFiltered = [...qualityFiltered].sort((a, b) => (a.qualityScore || 0) - (b.qualityScore || 0));
+    
+    for (let i = 0; i < sortedFiltered.length; i++) {
+      const filtered = sortedFiltered[i];
+      llmsContent += `${i + 1}. ${filtered.url}\n`;
+    }
+    llmsContent += '\n';
+  }
+
+  llmsContent += '='.repeat(80) + '\n\n';
+
   // Process each document
   for (let i = 0; i < sortedDocs.length; i++) {
     const doc = sortedDocs[i];
@@ -482,12 +537,12 @@ export function generateLLMsTxt(documents, options = {}) {
     llmsContent += `# ${doc.title || 'Untitled Document'}\n\n`;
     
     if (includeMetadata) {
-      llmsContent += `**Source:** ${doc.url}\n`;
-      llmsContent += `**Words:** ${doc.wordCount || 0}\n`;
+      llmsContent += `Source: ${doc.url}\n`;
+      llmsContent += `Words: ${doc.wordCount || 0}\n`;
       if (includeQualityScores && doc.qualityScore !== undefined) {
-        llmsContent += `**Quality Score:** ${doc.qualityScore.toFixed(3)}\n`;
+        llmsContent += `Quality Score: ${doc.qualityScore.toFixed(3)}\n`;
       }
-      llmsContent += `**Extraction Method:** ${doc.source || 'unknown'}\n\n`;
+      llmsContent += `Extraction Method: ${doc.source || 'unknown'}\n\n`;
     }
 
     // Document content
@@ -497,6 +552,17 @@ export function generateLLMsTxt(documents, options = {}) {
   }
 
   return llmsContent;
+}
+
+/**
+ * Generate llms.txt content from batch processing results
+ * @param {Object} batchResults - Results from batchFetchAndClean
+ * @param {Object} options - Generation options
+ * @returns {string} Formatted llms.txt content
+ */
+export function generateLLMsTxtFromBatchResults(batchResults, options = {}) {
+  const { results, qualityFiltered } = batchResults;
+  return generateLLMsTxt(results, options, qualityFiltered);
 }
 
 /**
@@ -569,6 +635,63 @@ function generateTitleFromUrl(url) {
   } catch {
     return 'Untitled Page';
   }
+}
+
+/**
+ * Extract breadcrumbs from URL
+ * @param {string} url - URL to extract breadcrumbs from
+ * @returns {string} Breadcrumb path
+ */
+function extractBreadcrumbsFromUrl(url) {
+  try {
+    const urlObj = new URL(url);
+    const pathParts = urlObj.pathname.split('/').filter(Boolean);
+    
+    if (pathParts.length === 0) {
+      return urlObj.hostname;
+    }
+    
+    // Remove file extensions from the last part
+    const lastPart = pathParts[pathParts.length - 1].replace(/\.(html?|php|aspx?|md|txt)$/i, '');
+    pathParts[pathParts.length - 1] = lastPart;
+    
+    // Convert to readable format
+    const breadcrumbs = pathParts
+      .map(part => part.replace(/[-_]/g, ' '))
+      .map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+      .join(' > ');
+    
+    return `${urlObj.hostname} > ${breadcrumbs}`;
+  } catch {
+    // Fallback to just the URL if parsing fails
+    return url;
+  }
+}
+
+/**
+ * Clean document title by removing redundant site names
+ * @param {string} title - Raw title text
+ * @returns {string} Cleaned title
+ */
+function cleanDocumentTitle(title) {
+  if (!title) return '';
+  
+  // Remove common redundant site name patterns
+  let cleaned = title
+    .replace(/\s*-\s*(Cookbook|ARIO Docs|HyperBEAM - Documentation|Cooking with the Permaweb)\s*$/gi, '')
+    .replace(/\s*Cookbook\s*$/gi, '')
+    .replace(/\s*ARIO Docs\s*$/gi, '')
+    .replace(/\s*HyperBEAM - Documentation\s*$/gi, '')
+    .replace(/\s*Cooking with the Permaweb\s*$/gi, '')
+    .replace(/\s*-\s*ARIO Docs\s*$/gi, '')
+    .replace(/\s*-\s*Cookbook\s*$/gi, '')
+    .replace(/\s*-\s*HyperBEAM - Documentation\s*$/gi, '')
+    .replace(/\s*-\s*Cooking with the Permaweb\s*$/gi, '');
+  
+  // Clean up any remaining whitespace
+  cleaned = cleaned.replace(/\s+/g, ' ').trim();
+  
+  return cleaned;
 }
 
 /**
