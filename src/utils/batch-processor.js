@@ -4,6 +4,7 @@
  */
 
 import { assessContentQuality } from './quality-scorer.js';
+import { enhancedContentValidation, validateAndSanitizeContent } from './content-validator.js';
 
 /**
  * Semaphore for controlling concurrency
@@ -107,17 +108,36 @@ async function extractWithRetry(url, extractFn, options = {}) {
         throw new Error('No content extracted');
       }
       
-      // Assess content quality
-      const qualityAssessment = assessContentQuality(result.content, {
+      // Enhanced content validation and quality assessment
+      const validation = enhancedContentValidation(result.content, {
         minLength: options.minLength || 100,
-        requireTechnical: options.requireTechnical || false
+        requireTechnical: options.requireTechnical || false,
+        qualityThreshold: options.qualityThreshold || 0.7
       });
       
-      // Add quality metadata to result
-      result.qualityScore = qualityAssessment.overallScore;
-      result.qualityLevel = qualityAssessment.qualityLevel;
-      result.qualityDetails = qualityAssessment.details;
-      result.qualityReason = qualityAssessment.reason;
+      // Add validation metadata to result
+      result.qualityScore = validation.enhancedScore;
+      result.qualityLevel = validation.qualityAssessment.qualityLevel;
+      result.qualityDetails = validation.qualityAssessment.details;
+      result.qualityReason = validation.reason;
+      result.validationIssues = validation.issues;
+      result.jsDetection = validation.jsDetection;
+      result.canSanitize = validation.canSanitize;
+      result.finalDecision = validation.finalDecision;
+
+      // Apply sanitization if needed and possible
+      if (validation.jsDetection.hasJS && validation.canSanitize && options.sanitize !== false) {
+        const sanitization = validateAndSanitizeContent(result.content, {
+          minLength: options.minLength || 100,
+          requireTechnical: options.requireTechnical || false
+        });
+        
+        if (sanitization.valid) {
+          result.content = sanitization.sanitizedContent;
+          result.sanitizationApplied = true;
+          result.sanitizationReport = sanitization.sanitizationReport;
+        }
+      }
       
       return result;
     } catch (error) {

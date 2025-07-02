@@ -2,6 +2,7 @@ import Defuddle from 'defuddle';
 import { enhancedDefuddleExtraction } from './content-enhancer.js';
 import { assessContentQuality } from './quality-scorer.js';
 import { optimizedBatchExtraction } from './batch-processor.js';
+import { enhancedContentValidation, validateAndSanitizeContent } from './content-validator.js';
 
 /**
  * Strip HTML tags and decode HTML entities from text content
@@ -317,21 +318,44 @@ export async function fetchAndClean(url, options = {}) {
       parseTime: result.parseTime || 0
     };
 
-    // Assess content quality if requested
+    // Enhanced content validation and quality assessment
     if (assessQuality) {
-      const qualityAssessment = assessContentQuality(cleanContent, {
+      // Use enhanced validation that combines systematic checks with quality assessment
+      const validation = enhancedContentValidation(cleanContent, {
         minLength: 100,
-        requireTechnical: false
+        requireTechnical: false,
+        qualityThreshold: minQualityScore
       });
 
-      extractedContent.qualityScore = qualityAssessment.overallScore;
-      extractedContent.qualityLevel = qualityAssessment.qualityLevel;
-      extractedContent.qualityDetails = qualityAssessment.details;
-      extractedContent.qualityReason = qualityAssessment.reason;
+      // Apply validation results
+      extractedContent.qualityScore = validation.enhancedScore;
+      extractedContent.qualityLevel = validation.qualityAssessment.qualityLevel;
+      extractedContent.qualityDetails = validation.qualityAssessment.details;
+      extractedContent.qualityReason = validation.reason;
+      extractedContent.validationIssues = validation.issues;
+      extractedContent.jsDetection = validation.jsDetection;
+      extractedContent.canSanitize = validation.canSanitize;
 
-      // Filter by quality threshold
-      if (qualityAssessment.overallScore < minQualityScore) {
-        throw new Error(`Content quality ${qualityAssessment.overallScore.toFixed(2)} below threshold ${minQualityScore}`);
+      // Filter by quality threshold and validation
+      if (!validation.finalDecision) {
+        const reason = validation.jsDetection.hasJS ? 
+          `Content contains JavaScript (${validation.jsDetection.count} instances)` :
+          `Quality score ${validation.enhancedScore.toFixed(2)} below threshold ${minQualityScore}`;
+        throw new Error(reason);
+      }
+
+      // Apply sanitization if needed and possible
+      if (validation.jsDetection.hasJS && validation.canSanitize) {
+        const sanitization = validateAndSanitizeContent(cleanContent, {
+          minLength: 100,
+          requireTechnical: false
+        });
+        
+        if (sanitization.valid) {
+          extractedContent.content = sanitization.sanitizedContent;
+          extractedContent.sanitizationApplied = true;
+          extractedContent.sanitizationReport = sanitization.sanitizationReport;
+        }
       }
     }
 
@@ -363,10 +387,15 @@ export async function fetchAndClean(url, options = {}) {
       };
 
       if (assessQuality) {
-        const qualityAssessment = assessContentQuality(content);
-        fallbackResult.qualityScore = qualityAssessment.overallScore;
-        fallbackResult.qualityLevel = qualityAssessment.qualityLevel;
+        const validation = enhancedContentValidation(content, {
+          minLength: 100,
+          requireTechnical: false
+        });
+        fallbackResult.qualityScore = validation.enhancedScore;
+        fallbackResult.qualityLevel = validation.qualityAssessment.qualityLevel;
         fallbackResult.qualityReason = 'Fallback extraction';
+        fallbackResult.validationIssues = validation.issues;
+        fallbackResult.jsDetection = validation.jsDetection;
       }
 
       return fallbackResult;

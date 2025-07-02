@@ -758,9 +758,7 @@ export async function crawlSite(siteKey, options = {}) {
       const breadcrumbs = pathParts.map(part => 
         part.replace(/[-_]/g, ' ')
             .replace(/\.(html?|php|aspx?)$/i, '')
-            .split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-            .join(' ')
+            .toLowerCase()
       );
 
       // Only store metadata, not content (content fetched dynamically for llms.txt)
