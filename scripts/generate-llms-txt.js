@@ -9,7 +9,7 @@ console.log('🚀 LLMs.txt generator script starting...');
 
 const CONFIG = {
   docsIndexPath: 'public/docs-index.json',
-  outputDir: 'public/llms',
+  outputDir: 'public',
   maxConcurrency: 3,
   qualityThreshold: 0.2,
   minWordCount: 30
