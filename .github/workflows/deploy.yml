@@ -51,19 +51,28 @@ jobs:
         env:
           NODE_ENV: production
       
+      - name: Generate LLMs.txt Files
+        if: github.event_name == 'schedule' || github.ref == 'refs/heads/main'
+        run: |
+          echo "Generating LLMs.txt files for individual sites..."
+          bun run generate:llms
+        env:
+          NODE_ENV: production
+      
       # - name: Test & Lint
       #   run: |
       #     bun run test
       #     bun run lint
         
       - name: Commit Index Changes (Daily)
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.ref == 'refs/heads/main'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add public/docs-index.json
+          git add public/llms/
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update daily index [$(date +%Y-%m-%d)]"
+            git commit -m "chore: update index and LLMs.txt files [$(date +%Y-%m-%d)]"
             git push
           else
             echo "No changes to commit"

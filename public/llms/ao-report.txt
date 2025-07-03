@@ -1,0 +1,23 @@
+📊 AO Cookbook - Content Extraction Report
+==================================================
+
+Site: AO Cookbook
+Base URL: https://cookbook_ao.arweave.net
+Generated: 2025-07-03T17:23:32.862Z
+
+📈 EXTRACTION STATISTICS
+------------------------------
+Total pages: 90
+Successful: 90
+Failed: 0
+Quality filtered: 0
+Total words: 36784
+Average words per page: 409
+
+Average quality score: 0.468
+
+🔧 EXTRACTION METHODS
+-------------------------
+defuddle_semantic: 89 (98.9%)
+semantic_dom: 1 (1.1%)
+

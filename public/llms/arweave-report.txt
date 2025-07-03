@@ -1,0 +1,22 @@
+📊 Arweave Cookbook - Content Extraction Report
+==================================================
+
+Site: Arweave Cookbook
+Base URL: https://cookbook.arweave.net
+Generated: 2025-07-03T17:24:18.637Z
+
+📈 EXTRACTION STATISTICS
+------------------------------
+Total pages: 65
+Successful: 65
+Failed: 0
+Quality filtered: 0
+Total words: 21106
+Average words per page: 325
+
+Average quality score: 0.476
+
+🔧 EXTRACTION METHODS
+-------------------------
+defuddle_semantic: 65 (100.0%)
+

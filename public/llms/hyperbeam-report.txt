@@ -1,0 +1,22 @@
+📊 Hyperbeam - Content Extraction Report
+==================================================
+
+Site: Hyperbeam
+Base URL: https://hyperbeam.arweave.net
+Generated: 2025-07-03T17:23:03.464Z
+
+📈 EXTRACTION STATISTICS
+------------------------------
+Total pages: 39
+Successful: 39
+Failed: 0
+Quality filtered: 0
+Total words: 19150
+Average words per page: 491
+
+Average quality score: 0.500
+
+🔧 EXTRACTION METHODS
+-------------------------
+defuddle_semantic: 39 (100.0%)
+

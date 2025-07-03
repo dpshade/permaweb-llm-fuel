@@ -1,0 +1,23 @@
+📊 AR-IO Network - Content Extraction Report
+==================================================
+
+Site: AR-IO Network
+Base URL: https://docs.ar.io
+Generated: 2025-07-03T17:24:00.782Z
+
+📈 EXTRACTION STATISTICS
+------------------------------
+Total pages: 125
+Successful: 125
+Failed: 0
+Quality filtered: 0
+Total words: 78208
+Average words per page: 626
+
+Average quality score: 0.463
+
+🔧 EXTRACTION METHODS
+-------------------------
+defuddle_semantic: 124 (99.2%)
+semantic_dom: 1 (0.8%)
+

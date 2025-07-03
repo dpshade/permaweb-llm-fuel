@@ -21,6 +21,7 @@
     "crawl": "bun run src/server/utils/crawler.js",
     "crawl:incremental": "bun run src/server/utils/crawler.js --output public/docs-index.json",
     "crawl:force": "bun run src/server/utils/crawler.js --force --output public/docs-index.json",
+    "generate:llms": "bun scripts/generate-llms-txt.js",
     "deploy": "bun scripts/deploy.js all",
     "deploy:vercel": "bun scripts/deploy.js vercel",
     "deploy:arweave": "bun scripts/deploy.js arweave",

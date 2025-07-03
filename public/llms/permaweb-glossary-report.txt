@@ -1,0 +1,22 @@
+📊 Permaweb Glossary - Content Extraction Report
+==================================================
+
+Site: Permaweb Glossary
+Base URL: https://glossary.arweave.net
+Generated: 2025-07-03T17:24:19.217Z
+
+📈 EXTRACTION STATISTICS
+------------------------------
+Total pages: 1
+Successful: 1
+Failed: 0
+Quality filtered: 0
+Total words: 9710
+Average words per page: 9710
+
+Average quality score: 1.000
+
+🔧 EXTRACTION METHODS
+-------------------------
+plain-text: 1 (100.0%)
+
