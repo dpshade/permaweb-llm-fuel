@@ -670,7 +670,7 @@ function setUIEnabled(enabled: boolean) {
 	if (generateBtn) {
 		if (enabled) {
 			generateBtn.classList.remove("generating");
-			generateBtn.textContent = "Generate llms.txt";
+			generateBtn.textContent = "Get llms.txt";
 		} else {
 			generateBtn.classList.add("generating");
 			generateBtn.textContent = "Generating...";
@@ -1072,15 +1072,8 @@ function checkSingleSiteSelection(): string | null {
 function updateGenerateButtonText() {
 	if (!generateBtn) return;
 	
-	const singleSiteRoute = checkSingleSiteSelection();
-	if (singleSiteRoute) {
-		const siteKey = singleSiteRoute.replace('/-llms.txt', '').replace('/', '');
-		generateBtn.textContent = `Open ${siteKey} llms.txt`;
-		generateBtn.title = `Open existing ${siteKey} documentation file`;
-	} else {
-		generateBtn.textContent = 'Get llms.txt';
-		generateBtn.title = 'Generate custom llms.txt from selected pages';
-	}
+	generateBtn.textContent = 'Get llms.txt';
+	generateBtn.title = 'Generate custom llms.txt from selected pages';
 }
 
 // Helper function to get site-specific options for batch processing

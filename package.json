@@ -30,15 +30,15 @@
     "validate": "bun run test && bun run lint && bun run build"
   },
   "dependencies": {
-    "@astrojs/node": "^8.3.4",
-    "@ar.io/wayfinder-core": "^0.0.5-alpha.4",
     "@ar.io/sdk": "^3.10.1",
+    "@ar.io/wayfinder-core": "^0.0.5-alpha.4",
     "@ardrive/turbo-sdk": "^1.17.0",
+    "@astrojs/node": "^8.3.4",
     "astro": "^4.16.16",
     "defuddle": "^0.6.4",
+    "dotenv": "^16.4.7",
     "flexsearch": "^0.8.205",
-    "jsdom": "^25.0.1",
-    "dotenv": "^16.4.7"
+    "jsdom": "^25.0.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",

@@ -1,5 +1,5 @@
 {
-  "generated": "2025-07-03T18:18:28.488Z",
+  "generated": "2025-07-03T18:20:00.491Z",
   "sites": {
     "hyperbeam": {
       "name": "Hyperbeam",
@@ -590,14 +590,14 @@
           "crawledAt": "2025-07-02T15:08:55.100Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:18:28.489Z",
+      "lastCrawled": "2025-07-03T18:20:00.491Z",
       "stats": {
         "totalPages": 39,
         "averageWords": 546,
-        "duration": 1280,
+        "duration": 1138,
         "requestCount": 3,
-        "averageResponseTime": 58,
-        "pagesPerSecond": 30.46875
+        "averageResponseTime": 134.66666666666666,
+        "pagesPerSecond": 34.27065026362039
       }
     },
     "ao": {
@@ -1934,14 +1934,14 @@
           "crawledAt": "2025-07-02T15:09:56.128Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:18:28.489Z",
+      "lastCrawled": "2025-07-03T18:20:00.491Z",
       "stats": {
         "totalPages": 90,
         "averageWords": 576,
-        "duration": 3234,
+        "duration": 2792,
         "requestCount": 5,
-        "averageResponseTime": 304.6,
-        "pagesPerSecond": 27.82931354359926
+        "averageResponseTime": 238,
+        "pagesPerSecond": 32.23495702005731
       }
     },
     "ario": {
@@ -3893,14 +3893,14 @@
           "crawledAt": "2025-07-02T15:10:01.784Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:18:28.489Z",
+      "lastCrawled": "2025-07-03T18:20:00.491Z",
       "stats": {
         "totalPages": 125,
         "averageWords": 556,
-        "duration": 4060,
+        "duration": 4062,
         "requestCount": 0,
         "averageResponseTime": 0,
-        "pagesPerSecond": 30.78817733990148
+        "pagesPerSecond": 30.77301821762678
       }
     },
     "arweave": {
@@ -4860,14 +4860,14 @@
           "crawledAt": "2025-07-02T15:10:50.356Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:18:28.489Z",
+      "lastCrawled": "2025-07-03T18:20:00.491Z",
       "stats": {
         "totalPages": 65,
         "averageWords": 339,
-        "duration": 5108,
+        "duration": 4758,
         "requestCount": 11,
-        "averageResponseTime": 313.54545454545456,
-        "pagesPerSecond": 12.725137039937355
+        "averageResponseTime": 304.3636363636364,
+        "pagesPerSecond": 13.66120218579235
       }
     },
     "permaweb-glossary": {
@@ -4888,7 +4888,7 @@
           "crawledAt": "2025-07-02T15:10:50.792Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:18:28.489Z",
+      "lastCrawled": "2025-07-03T18:20:00.491Z",
       "stats": {
         "totalPages": 1,
         "averageWords": 9712,
