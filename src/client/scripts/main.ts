@@ -78,6 +78,9 @@ async function initialize() {
 		transitionDuration: 0.25
 	});
 	
+	// Initialize button text
+	updateGenerateButtonText();
+	
 	console.log('🎯 AccordionManager integrated with main application');
 }
 
@@ -713,6 +716,10 @@ function updateSelectionCount() {
 	if (generateBtn) {
 		(generateBtn as HTMLButtonElement).disabled = selectedCount === 0;
 	}
+	
+	// Update button text based on selection
+	updateGenerateButtonText();
+	
 	updateSelectedPagesList();
 }
 
@@ -844,6 +851,7 @@ if (selectAllBtn) {
 
 			// Update counts once at the end
 			updateSelectionCount();
+			updateGenerateButtonText();
 		});
 	});
 }
@@ -863,6 +871,7 @@ if (clearAllBtn) {
 		requestAnimationFrame(() => {
 			selectedPages.clear();
 			updateSelectionCount();
+			updateGenerateButtonText();
 		});
 	});
 }
@@ -872,6 +881,14 @@ if (generateBtn) {
 		if (selectedPages.size === 0) return;
 
 		try {
+			// Check if only one site is selected and route to existing file
+			const singleSiteRoute = checkSingleSiteSelection();
+			if (singleSiteRoute) {
+				// Route to existing site-specific llms.txt file
+				window.open(singleSiteRoute, '_blank');
+				return;
+			}
+
 			// Disable UI elements during generation
 			setUIEnabled(false);
 
@@ -1026,6 +1043,44 @@ function getSelectorsForUrl(url: string): string[] {
 	
 	// Fallback to default selectors
 	return ['main', 'article', '.content', '.main', '[role="main"]'];
+}
+
+// Helper function to check if only one site is selected and return the route
+function checkSingleSiteSelection(): string | null {
+	if (selectedPages.size === 0) return null;
+	
+	// Get all selected pages and extract their site keys
+	const selectedPageData = allPages.filter(page => selectedPages.has(page.url));
+	const selectedSiteKeys = new Set(selectedPageData.map(page => page.siteKey));
+	
+	// If only one site is selected, check if all pages from that site are selected
+	if (selectedSiteKeys.size === 1) {
+		const singleSiteKey = Array.from(selectedSiteKeys)[0];
+		const allPagesForSite = allPages.filter(page => page.siteKey === singleSiteKey);
+		const selectedPagesForSite = selectedPageData.filter(page => page.siteKey === singleSiteKey);
+		
+		// If all pages from this site are selected, route to the site-specific file
+		if (selectedPagesForSite.length === allPagesForSite.length) {
+			return `/${singleSiteKey}-llms.txt`;
+		}
+	}
+	
+	return null;
+}
+
+// Helper function to update button text based on selection
+function updateGenerateButtonText() {
+	if (!generateBtn) return;
+	
+	const singleSiteRoute = checkSingleSiteSelection();
+	if (singleSiteRoute) {
+		const siteKey = singleSiteRoute.replace('/-llms.txt', '').replace('/', '');
+		generateBtn.textContent = `Open ${siteKey} llms.txt`;
+		generateBtn.title = `Open existing ${siteKey} documentation file`;
+	} else {
+		generateBtn.textContent = 'Get llms.txt';
+		generateBtn.title = 'Generate custom llms.txt from selected pages';
+	}
 }
 
 // Helper function to get site-specific options for batch processing
