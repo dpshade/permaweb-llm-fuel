@@ -4,7 +4,6 @@
     "": {
       "name": "permaweb-llm-fuel",
       "dependencies": {
-        "@anthropic-ai/claude-code": "^1.0.41",
         "@ar.io/sdk": "^3.10.1",
         "@ar.io/wayfinder-core": "^0.0.5-alpha.4",
         "@ardrive/turbo-sdk": "^1.17.0",
@@ -26,8 +25,6 @@
     "@adraffy/ens-normalize": ["@adraffy/ens-normalize@1.10.1", "", {}, "sha512-96Z2IP3mYmF1Xg2cDm8f1gWGf/HUVedQ3FMifV4kG/PQ4yEP51xDtRAEfhVNt5f/uzpNkZHwWQuUcu6D6K+Ekw=="],
 
     "@ampproject/remapping": ["@ampproject/remapping@2.3.0", "", { "dependencies": { "@jridgewell/gen-mapping": "^0.3.5", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw=="],
-
-    "@anthropic-ai/claude-code": ["@anthropic-ai/claude-code@1.0.41", "", { "optionalDependencies": { "@img/sharp-darwin-arm64": "^0.33.5", "@img/sharp-darwin-x64": "^0.33.5", "@img/sharp-linux-arm": "^0.33.5", "@img/sharp-linux-arm64": "^0.33.5", "@img/sharp-linux-x64": "^0.33.5", "@img/sharp-win32-x64": "^0.33.5" }, "bin": { "claude": "cli.js" } }, "sha512-6E5SCb1I/pC4WCEFGwmyo4M4bL9vBuk7qkC78v9ZFX9PAxmKX94SEj422igdLeucBYX99ZqKSMYfsJEqTeIo2Q=="],
 
     "@ar.io/sdk": ["@ar.io/sdk@3.14.0", "", { "dependencies": { "@dha-team/arbundles": "^1.0.1", "@permaweb/aoconnect": "0.0.68", "arweave": "1.15.5", "axios": "1.8.4", "axios-retry": "^4.3.0", "commander": "^12.1.0", "eventemitter3": "^5.0.1", "plimit-lit": "^3.0.1", "prompts": "^2.4.2", "uuid": "^11.1.0", "winston": "^3.13.0", "zod": "^3.23.8" }, "bin": { "ar.io": "lib/esm/cli/cli.js" } }, "sha512-1moIb3CZzS7qu16K7CM8nc4vzuG4AHzXLVo711P+s5mSioZ235wshiXDJscQ2kZku4m/XpLSo1eEYv300AgAEA=="],
 
