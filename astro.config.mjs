@@ -35,5 +35,9 @@ export default defineConfig({
       'X-Frame-Options': 'ALLOWALL',
       'Content-Security-Policy': "frame-ancestors *;"
     }
+  },
+  // Disable dev toolbar to reduce console noise
+  devToolbar: {
+    enabled: false
   }
 });

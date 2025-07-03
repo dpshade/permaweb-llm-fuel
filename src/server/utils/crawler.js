@@ -442,11 +442,7 @@ async function extractPageMetadata(doc, url, config) {
   if (doc && doc.isPlainText) {
     const content = doc.textContent.replace(/\s+/g, ' ').trim();
     const estimatedWords = content.split(/\s+/).filter(word => word.length > 0).length;
-    
-    // Generate title from URL or content for plain text files
     let title = generateTitleFromUrl(url);
-    
-    // For glossary files, try to extract a better title from content
     if (url.includes('glossary') && content.length > 0) {
       const firstLine = content.split('\n')[0];
       if (firstLine && firstLine.length < 100) {
@@ -455,53 +451,39 @@ async function extractPageMetadata(doc, url, config) {
         title = 'Permaweb Glossary';
       }
     }
-    
     return {
       url,
       title: cleanTitle(title),
       content,
       estimatedWords,
-      lastModified: new Date().toISOString()
+      lastModified: new Date().toISOString(),
+      metadata: {},
+      extractorType: 'plain-text',
+      qualityScore: null
     };
   }
-  
-  // Handle HTML documents
-  // Extract title
-  let title = '';
-  const titleSelectors = config.selectors.title.split(',').map(s => s.trim());
-  for (const selector of titleSelectors) {
-    const element = doc.querySelector(selector);
-    if (element && element.textContent.trim()) {
-      title = element.textContent.trim();
-      break;
-    }
-  }
-  
-  if (!title) {
-    title = generateTitleFromUrl(url);
-  }
-  
-  // Try Defuddle first for better content extraction
+
+  // Always extract HTML string from Document for Defuddle
+  const html = doc.documentElement ? doc.documentElement.outerHTML : '';
+  let defuddleResult = null;
+  let defuddleSuccess = false;
   let content = '';
   let estimatedWords = 0;
-  let defuddleSuccess = false;
-  
+  let title = '';
+
   try {
-    // Create Defuddle instance with the document
-    const defuddle = new Defuddle(doc, {
-      cleanConditionally: true,
-      removeUnlikelyRoles: true,
-      removeEmptyTextNodes: true,
-      removeUselessElements: true
+    const defuddle = new Defuddle(html, {
+      url,
+      removeExactSelectors: true,
+      removePartialSelectors: true,
+      debug: false
     });
-    
-    const defuddleResult = defuddle.parse();
+    defuddleResult = await defuddle.parse();
     if (defuddleResult && defuddleResult.content) {
-      content = defuddleResult.content.replace(/\s+/g, ' ').trim();
-      estimatedWords = content.split(/\s+/).filter(word => word.length > 0).length;
+      content = defuddleResult.content;
+      estimatedWords = defuddleResult.wordCount || content.split(/\s+/).filter(word => word.length > 0).length;
+      title = defuddleResult.title || '';
       defuddleSuccess = true;
-      
-      // Log successful Defuddle extractions for debugging
       if (estimatedWords >= 50) {
         log.debug(`Defuddle extracted ${estimatedWords} words from ${url}`);
       }
@@ -509,68 +491,94 @@ async function extractPageMetadata(doc, url, config) {
   } catch (error) {
     log.debug(`Defuddle error for ${url}: ${error.message}`);
   }
-  
-  // Fallback to manual content extraction if Defuddle fails or extracts too little
-  if (estimatedWords < 20) { // Reduced threshold from 50 to 20
+
+  // Fallback to manual extraction if Defuddle fails or extracts too little
+  if (!defuddleSuccess || estimatedWords < 20) {
     if (defuddleSuccess && estimatedWords > 0) {
       log.debug(`Defuddle extracted only ${estimatedWords} words for ${url}, supplementing with manual extraction`);
     } else {
       log.warn(`Defuddle failed for ${url}, using fallback extraction`);
     }
-    
     const contentSelectors = config.selectors.content.split(',').map(s => s.trim());
     let manualContent = '';
-    
     for (const selector of contentSelectors) {
       const element = doc.querySelector(selector);
       if (element) {
         manualContent = element.textContent || '';
+        if (manualContent.includes('<') && manualContent.includes('>')) {
+          manualContent = manualContent
+            .replace(/<[^>]*>/g, '')
+            .replace(/&[^;]+;/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+        }
         break;
       }
     }
-    
     manualContent = manualContent.replace(/\s+/g, ' ').trim();
     const manualWords = manualContent.split(/\s+/).filter(word => word.length > 0).length;
-    
-    // Use the better extraction (Defuddle vs manual)
     if (manualWords > estimatedWords) {
       content = manualContent;
       estimatedWords = manualWords;
+      defuddleResult = null;
       log.debug(`Manual extraction provided ${manualWords} words (better than Defuddle's ${estimatedWords})`);
-    } else if (estimatedWords > 0) {
-      log.debug(`Keeping Defuddle content (${estimatedWords} words vs manual ${manualWords})`);
-    } else {
-      content = manualContent;
-      estimatedWords = manualWords;
     }
   }
-  
-  // Apply content filters to clean up the extracted content
+
+  // Use Defuddle's metadata and scoring if available
+  const metadata = defuddleResult ? {
+    description: defuddleResult.description,
+    domain: defuddleResult.domain,
+    favicon: defuddleResult.favicon,
+    image: defuddleResult.image,
+    published: defuddleResult.published,
+    author: defuddleResult.author,
+    site: defuddleResult.site,
+    schemaOrgData: defuddleResult.schemaOrgData,
+    metaTags: defuddleResult.metaTags
+  } : {};
+  const extractorType = defuddleResult ? defuddleResult.extractorType : 'manual';
+  const qualityScore = defuddleResult ? defuddleResult.qualityScore : null;
+
+  // Title fallback
+  if (!title) {
+    const titleSelectors = config.selectors.title.split(',').map(s => s.trim());
+    for (const selector of titleSelectors) {
+      const element = doc.querySelector(selector);
+      if (element && element.textContent.trim()) {
+        title = element.textContent.trim();
+        break;
+      }
+    }
+    if (!title) {
+      title = generateTitleFromUrl(url);
+    }
+  }
+
+  // Apply content filters
   content = applyContentFilters(content, config);
-  
-  // Recalculate word count after filtering
   estimatedWords = content.split(/\s+/).filter(word => word.length > 0).length;
-  
-  // Check if this is a 404 page
+
+  // 404 and quality checks
   if (is404Page(doc, title, content)) {
-    const wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
-    log.warn(`404 page detected by content analysis: ${url} (${wordCount} words)`);
+    log.warn(`404 page detected by content analysis: ${url} (${estimatedWords} words)`);
     return null;
   }
-  
-  // Basic quality check - use config minimum if specified
   const minWordCount = config.contentFilters?.minWordCount || 10;
   if (estimatedWords < minWordCount) {
     log.debug(`Page ${url} has only ${estimatedWords} words (below minimum ${minWordCount}), skipping`);
     return null;
   }
-  
+
   return {
     url,
     title: cleanTitle(title),
     content,
     estimatedWords,
-    lastModified: new Date().toISOString()
+    lastModified: new Date().toISOString(),
+    metadata,
+    extractorType,
+    qualityScore
   };
 }
 

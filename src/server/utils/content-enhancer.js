@@ -168,10 +168,7 @@ function removeNavigationNoise(content) {
 export function enhancedDefuddleExtraction(html, options = {}) {
   const defuddleOptions = {
     ...options,
-    preserveStructure: true,
-    removeRedundancy: true,
-    enhanceReadability: true,
-    markdown: true,
+    markdown: true, // Convert to Markdown for cleaner text output
     debug: false
   };
   
@@ -250,10 +247,39 @@ function stripHTML(text) {
     // Remove script and style content
     .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
     .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+    // Remove navigation and UI elements
+    .replace(/<nav\b[^<]*(?:(?!<\/nav>)<[^<]*)*<\/nav>/gi, '')
+    .replace(/<header\b[^<]*(?:(?!<\/header>)<[^<]*)*<\/header>/gi, '')
+    .replace(/<footer\b[^<]*(?:(?!<\/footer>)<[^<]*)*<\/footer>/gi, '')
+    .replace(/<aside\b[^<]*(?:(?!<\/aside>)<[^<]*)*<\/aside>/gi, '')
+    // Remove common UI text patterns
+    .replace(/Sorry, your browser doesn't support embedded video/gi, '')
+    .replace(/Scroll For More/gi, '')
+    .replace(/Learn More About/gi, '')
+    .replace(/Made with.*cyberspace/gi, '')
     // Remove HTML tags
     .replace(/<[^>]*>/g, '')
     // Remove HTML entities
     .replace(/&[a-zA-Z0-9#]+;/g, ' ')
+    // Remove paragraph symbol specifically
+    .replace(/&para;/g, '')
+    // Remove other common problematic entities
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;/g, "'")
+    .replace(/&#x2F;/g, '/')
+    .replace(/&apos;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&hellip;/g, '...')
+    .replace(/&mdash;/g, '—')
+    .replace(/&ndash;/g, '–')
+    .replace(/&rsquo;/g, "'")
+    .replace(/&lsquo;/g, "'")
+    .replace(/&rdquo;/g, '"')
+    .replace(/&ldquo;/g, '"')
     // Clean up whitespace
     .replace(/\s+/g, ' ')
     .trim();
@@ -382,15 +408,13 @@ export class ContentEnhancer {
     try {
       const { Defuddle } = await import('defuddle');
       const defuddle = new Defuddle(doc, {
-        cleanConditionally: true,
-        removeUnlikelyRoles: true,
-        removeEmptyTextNodes: true,
-        removeUselessElements: true
+        markdown: true, // Convert to Markdown for cleaner text output
+        debug: false
       });
       
       const result = defuddle.parse();
       if (result && result.content) {
-        const content = result.content.replace(/\s+/g, ' ').trim();
+        const content = result.content;
         const wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
         
         if (wordCount >= this.options.minWordCount) {

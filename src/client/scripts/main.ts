@@ -13,6 +13,7 @@ import {
 	generateLLMsTxt,
 	downloadFile,
 	openContentInNewTab,
+	generateParsingReport,
 } from "../utils/defuddle-fetch-client.js";
 import { AccordionManager } from "../utils/accordion-manager.js";
 
@@ -41,7 +42,8 @@ initializeAllTheme();
 let displayTree: Record<string, SiteData> = {};
 let selectedPages = new Set<string>();
 let allPages: PageData[] = [];
-let configOrder: string[] = []; // Order from crawl-config.json
+let configOrder: string[] = [];
+let crawlConfigs: Record<string, any> = {};
 
 // DOM elements
 const docsTree = document.getElementById("docs-tree");
@@ -85,10 +87,12 @@ async function loadConfigOrder() {
 		const response = await fetch("/crawl-config.json");
 		const config = await response.json();
 		configOrder = Object.keys(config);
+		crawlConfigs = config; // Store the full config for selector access
 		console.log("Config order loaded:", configOrder);
 	} catch (error) {
 		console.warn("Failed to load config order:", error);
 		configOrder = [];
+		crawlConfigs = {};
 	}
 }
 
@@ -881,11 +885,12 @@ if (generateBtn) {
 
 			const selectedUrls = Array.from(selectedPages);
 
+			// Get site-specific options including selectors
+			const batchOptions = getSiteSpecificOptions(selectedUrls);
+
 			// Use the enhanced batch processing with optimized parallel processing
 			const batchResult = await batchFetchAndClean(selectedUrls, {
-				concurrency: 5, 
-				qualityThreshold: 0.2, 
-				useOptimizedBatch: true,
+				...batchOptions,
 				onProgress: (
 					completed,
 					total,
@@ -937,6 +942,10 @@ if (generateBtn) {
 
 			// Generate llms.txt with quality disclaimer
 			const llmsTxt = generateLLMsTxt(cleanedPages, {}, qualityFiltered);
+
+			// Generate comprehensive parsing report
+			const parsingReport = generateParsingReport(batchResult);
+			console.log(parsingReport);
 
 			// Open content in new tab
 			const timestamp = new Date().toISOString().split("T")[0];
@@ -993,6 +1002,49 @@ if (generateBtn) {
 			}, 5000);
 		}
 	});
+}
+
+// Helper function to get site-specific selectors for a URL
+function getSelectorsForUrl(url: string): string[] {
+	try {
+		const urlObj = new URL(url);
+		const hostname = urlObj.hostname;
+		
+		// Find the site configuration that matches this URL
+		for (const [siteKey, config] of Object.entries(crawlConfigs)) {
+			if (config.baseUrl && hostname === new URL(config.baseUrl).hostname) {
+				// Return the content selectors for this site
+				const contentSelectors = config.selectors?.content;
+				if (contentSelectors) {
+					return contentSelectors.split(',').map(s => s.trim());
+				}
+			}
+		}
+	} catch (error) {
+		console.warn(`Failed to parse URL for selectors: ${url}`, error);
+	}
+	
+	// Fallback to default selectors
+	return ['main', 'article', '.content', '.main', '[role="main"]'];
+}
+
+// Helper function to get site-specific options for batch processing
+function getSiteSpecificOptions(urls: string[]): any {
+	const options: any = {
+		concurrency: 5,
+		qualityThreshold: 0.2,
+		useOptimizedBatch: true,
+		// Map each URL to its specific selectors
+		urlSpecificOptions: {}
+	};
+	
+	urls.forEach(url => {
+		options.urlSpecificOptions[url] = {
+			contentSelectors: getSelectorsForUrl(url)
+		};
+	});
+	
+	return options;
 }
 
 // Initialize when DOM is ready

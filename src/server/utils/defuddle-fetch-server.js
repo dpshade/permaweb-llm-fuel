@@ -15,114 +15,28 @@ import { applyContentFilters } from './crawler.js';
  */
 function stripHTML(text) {
   if (!text) return '';
-
-  let cleanText = text;
-
-  // Node.js environment - manual processing
-  cleanText = text;
-
-  // Remove harmful script/style tags and their content FIRST
-  cleanText = cleanText
+  
+  let cleanText = text
+    // Remove script and style content
     .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
     .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
-    .replace(/<!--[\s\S]*?-->/g, '');
-
-  // Preserve code blocks with proper formatting
-  cleanText = cleanText.replace(/<pre\b[^>]*><code\b[^>]*>([\s\S]*?)<\/code><\/pre>/gi, (match, code) => {
-    code = code.replace(/^[\r\n]+|[\r\n]+$/g, '');
-    return '\n```\n' + code + '\n```\n';
-  });
-
-  // Strip Markdown formatting FIRST (before HTML conversion) while preserving code blocks
-  let markdownSegments = cleanText.split(/(\n```[\s\S]*?\n```\n?)/g);
-  markdownSegments = markdownSegments.map((segment, idx) => {
-    if (/^\n```[\s\S]*?\n```\n?$/.test(segment)) {
-      // This is a code block, return as-is without Markdown removal
-      return segment;
-    } else {
-      // For the first segment, preserve the first line's leading # (title), strip from all others
-      if (idx === 0) {
-        const lines = segment.split('\n');
-        // Preserve leading # for the first line only
-        lines[0] = lines[0].replace(/^\s*#\s+/, '# ');
-        for (let i = 1; i < lines.length; i++) {
-          lines[i] = lines[i]
-            // Remove bold formatting - only when double asterisks/underscores are used for Markdown formatting
-            .replace(/(?<=\s|^)\*\*([^*]+)\*\*(?=\s|$)/g, '$1')
-            .replace(/(?<=\s|^)__([^_]+)__(?=\s|$)/g, '$1')
-            // Remove italic formatting - only when underscores are used for Markdown formatting
-            .replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '$1')
-            .replace(/(?<=\s|^)_([^_]+)_(?=\s|$)/g, '$1')
-            // Remove inline code formatting
-            .replace(/`([^`]+)`/g, '$1')
-            // Remove strikethrough
-            .replace(/~~([^~]+)~~/g, '$1')
-            // Remove list markers
-            .replace(/^\s*[-*+]\s+/gm, '')
-            .replace(/^\s*\d+\.\s+/gm, '')
-            // Remove blockquotes
-            .replace(/^\s*>\s+/gm, '')
-            // Remove links (keep link text)
-            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-            // Remove images (keep alt text)
-            .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
-            // Remove headers (but preserve the text)
-            .replace(/^\s*#{1,6}\s+/, '');
-        }
-        return lines.join('\n');
-      }
-      // For all other segments, strip all Markdown formatting
-      return segment
-        // Remove bold formatting - only when double asterisks/underscores are used for Markdown formatting
-        .replace(/(?<=\s|^)\*\*([^*]+)\*\*(?=\s|$)/g, '$1')
-        .replace(/(?<=\s|^)__([^_]+)__(?=\s|$)/g, '$1')
-        // Remove italic formatting - only when underscores are used for Markdown formatting
-        .replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '$1')
-        .replace(/(?<=\s|^)_([^_]+)_(?=\s|$)/g, '$1')
-        // Remove inline code formatting
-        .replace(/`([^`]+)`/g, '$1')
-        // Remove strikethrough
-        .replace(/~~([^~]+)~~/g, '$1')
-        // Remove list markers
-        .replace(/^\s*[-*+]\s+/gm, '')
-        .replace(/^\s*\d+\.\s+/gm, '')
-        // Remove blockquotes
-        .replace(/^\s*>\s+/gm, '')
-        // Remove links (keep link text)
-        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-        // Remove images (keep alt text)
-        .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
-        // Remove headers (but preserve the text)
-        .replace(/^\s*#{1,6}\s+/, '');
-    }
-  });
-  cleanText = markdownSegments.join('');
-
-  // Convert structural HTML to markdown BEFORE removing tags
-  cleanText = cleanText
-    .replace(/<code\b[^>]*>(.*?)<\/code>/gi, '`$1`')
-    .replace(/<h([1-6])\b[^>]*>(.*?)<\/h[1-6]>/gi, (match, level, text) => {
-      const hashes = '#'.repeat(parseInt(level));
-      return `\n${hashes} ${text}\n`;
-    })
-    .replace(/<li\b[^>]*>(.*?)<\/li>/gi, '• $1\n')
-    .replace(/<ul\b[^>]*>|<\/ul>/gi, '')
-    .replace(/<ol\b[^>]*>|<\/ol>/gi, '')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<p\b[^>]*>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
-    .replace(/<blockquote\b[^>]*>/gi, '\n> ')
-    .replace(/<\/blockquote>/gi, '\n')
-    .replace(/<hr\s*\/?>/gi, '\n---\n')
-    // Remove <strong> and <em> tags but preserve their content
-    .replace(/<strong\b[^>]*>(.*?)<\/strong>/gi, '$1')
-    .replace(/<em\b[^>]*>(.*?)<\/em>/gi, '$1');
-
-  // Remove ALL remaining HTML tags (including visual formatting)
-  cleanText = cleanText.replace(/<[^>]*>/g, '');
-
-  // Decode HTML entities AFTER tag removal
-  cleanText = cleanText
+    // Remove navigation and UI elements
+    .replace(/<nav\b[^<]*(?:(?!<\/nav>)<[^<]*)*<\/nav>/gi, '')
+    .replace(/<header\b[^<]*(?:(?!<\/header>)<[^<]*)*<\/header>/gi, '')
+    .replace(/<footer\b[^<]*(?:(?!<\/footer>)<[^<]*)*<\/footer>/gi, '')
+    .replace(/<aside\b[^<]*(?:(?!<\/aside>)<[^<]*)*<\/aside>/gi, '')
+    // Remove common UI text patterns
+    .replace(/Sorry, your browser doesn't support embedded video/gi, '')
+    .replace(/Scroll For More/gi, '')
+    .replace(/Learn More About/gi, '')
+    .replace(/Made with.*cyberspace/gi, '')
+    // Remove HTML tags
+    .replace(/<[^>]*>/g, '')
+    // Remove HTML entities
+    .replace(/&[a-zA-Z0-9#]+;/g, ' ')
+    // Remove paragraph symbol specifically
+    .replace(/&para;/g, '')
+    // Remove other common problematic entities
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -139,62 +53,10 @@ function stripHTML(text) {
     .replace(/&lsquo;/g, "'")
     .replace(/&rdquo;/g, '"')
     .replace(/&ldquo;/g, '"')
-    .replace(/&#(\d+);/g, (match, dec) => {
-      try {
-        return String.fromCharCode(parseInt(dec, 10));
-      } catch (e) {
-        return ' ';
-      }
-    })
-    .replace(/&#x([0-9A-F]+);/gi, (match, hex) => {
-      try {
-        return String.fromCharCode(parseInt(hex, 16));
-      } catch (e) {
-        return ' ';
-      }
-    })
-    .replace(/&[a-zA-Z0-9#]+;/g, ' ');
-
-  // Remove malicious JavaScript patterns
-  cleanText = cleanText
-    .replace(/javascript:/gi, '')
-    .replace(/alert\s*\(/gi, '')
-    .replace(/document\./gi, '')
-    .replace(/window\./gi, '')
-    .replace(/eval\s*\(/gi, '')
-    .replace(/Function\s*\(/gi, '')
-    .replace(/setTimeout\s*\(/gi, '')
-    .replace(/setInterval\s*\(/gi, '')
-    .replace(/on\w+\s*=/gi, '')
-    .replace(/XSS/gi, '')
-    .replace(/innerHTML/gi, '')
-    .replace(/attempt/gi, '')
-    .replace(/hacked/gi, '')
-    .replace(/malicious/gi, '');
-
-  // Remove CSS patterns more aggressively, but preserve code blocks
-  let cssSegments = cleanText.split(/(\n```[\s\S]*?\n```\n?)/g);
-  cssSegments = cssSegments.map(segment => {
-    if (/^\n```[\s\S]*?\n```\n?$/.test(segment)) {
-      // This is a code block, return as-is without CSS removal
-      return segment;
-    } else {
-      // Apply CSS removal only outside code blocks
-      return segment
-        .replace(/\{[^}]*\}/g, ' ')
-        .replace(/[a-zA-Z-]+\s*:\s*[^;]+;/g, ' ')
-        .replace(/\b(?:display|color|background|font|margin|padding|border|width|height)\s*:\s*[^;]+/gi, '')
-        .replace(/url\s*\([^)]+\)/gi, '');
-    }
-  });
-  cleanText = cssSegments.join('');
-
-  // Final cleanup
-  cleanText = cleanText
-    .replace(/\n\s*\n\s*\n/g, '\n\n') // Remove excessive line breaks
-    .replace(/^\s+|\s+$/g, '') // Trim whitespace
-    .replace(/\s+/g, ' '); // Normalize whitespace
-
+    // Clean up whitespace
+    .replace(/\s+/g, ' ')
+    .trim();
+    
   return cleanText;
 }
 
@@ -232,7 +94,8 @@ export async function fetchAndClean(url, options = {}) {
     userAgent = 'Mozilla/5.0 (compatible; PermawebLLMFuel/1.0)',
     qualityThreshold = 0.3,
     useEnhancedExtraction = true,
-    contentFilters = {}
+    contentFilters = {},
+    contentSelectors = []
   } = options;
 
   try {
@@ -291,6 +154,7 @@ export async function fetchAndClean(url, options = {}) {
     let qualityScore = 0;
 
     if (useEnhancedExtraction) {
+      console.log(`[defuddle-fetch-server] Attempting enhanced extraction for ${url}`);
       try {
         const enhancedResult = await enhancedDefuddleExtraction(html, {
           url,
@@ -306,7 +170,9 @@ export async function fetchAndClean(url, options = {}) {
         });
 
         if (enhancedResult && enhancedResult.content) {
-          content = enhancedResult.content;
+          console.log(`[defuddle-fetch-server] Enhanced extraction successful for ${url}`);
+          // Clean the content returned by enhanced extraction to remove any remaining HTML
+          content = stripHTML(enhancedResult.content);
           wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
           
           // Assess quality
@@ -323,16 +189,16 @@ export async function fetchAndClean(url, options = {}) {
 
     // Fallback to Defuddle if enhanced extraction failed or produced poor results
     if (!content || wordCount < 100) {
+      console.log(`[defuddle-fetch-server] Attempting Defuddle extraction for ${url}`);
       try {
         const defuddle = new Defuddle(doc, {
-          cleanConditionally: true,
-          removeUnlikelyRoles: true,
-          removeEmptyTextNodes: true,
-          removeUselessElements: true
+          markdown: true, // Convert to Markdown for cleaner text output
+          debug: false
         });
 
         const defuddleResult = defuddle.parse();
         if (defuddleResult && defuddleResult.content) {
+          console.log(`[defuddle-fetch-server] Defuddle extraction successful for ${url}`);
           content = defuddleResult.content;
           wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
           
@@ -350,14 +216,20 @@ export async function fetchAndClean(url, options = {}) {
 
     // Final fallback to manual extraction
     if (!content || wordCount < 50) {
-      const mainSelectors = ['main', 'article', '.content', '.main', '[role="main"]'];
+      // Use selectors from options or fallback
+      let selectors = contentSelectors || ['main', 'article', '.content', '.main', '[role="main"]'];
+      if (typeof selectors === 'string') selectors = selectors.split(',').map(s => s.trim());
+      
+      console.log(`[defuddle-fetch-server] Using selectors for ${url}:`, selectors);
+      
       let mainElement = null;
-
-      for (const selector of mainSelectors) {
+      for (const selector of selectors) {
         mainElement = doc.querySelector(selector);
-        if (mainElement) break;
+        if (mainElement) {
+          console.log(`[defuddle-fetch-server] Found content with selector: "${selector}"`);
+          break;
+        }
       }
-
       if (mainElement) {
         content = mainElement.textContent || '';
       } else {
@@ -365,7 +237,6 @@ export async function fetchAndClean(url, options = {}) {
         const body = doc.querySelector('body');
         content = body ? body.textContent || '' : '';
       }
-
       content = stripHTML(content);
       wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
       

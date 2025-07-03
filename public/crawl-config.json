@@ -6,7 +6,7 @@
     "maxPages": 200,
     "selectors": {
       "title": "h1, title",
-      "content": "main, .content, article"
+      "content": ".md-content__inner, main, .content, article"
     },
     "excludePatterns": [
       "/\\.(pdf|zip|tar|gz)$/",
@@ -14,6 +14,14 @@
       "/llms\\.txt$/",
       "/llms-full\\.txt$/"
     ],
+    "contentFilters": {
+      "removeScripts": true,
+      "removeStyles": true,
+      "removeComments": true,
+      "removeEmptyElements": true,
+      "minWordCount": 50,
+      "maxCodeBlockLength": 1000
+    },
     "seedUrls": [
       "/build/introduction/what-is-hyperbeam.html",
       "/build/",
