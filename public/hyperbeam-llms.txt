@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-03T19:49:36.702Z
-Total documents: 39
-Total words: 19150
+Generated on: 2025-07-04T12:11:46.108Z
+Total documents: 37
+Total words: 17775
 
 ## Table of Contents
 
@@ -10,43 +10,41 @@ Total words: 19150
 
 1. [Running a HyperBEAM Node](https://hyperbeam.arweave.net/run/running-a-hyperbeam-node.html)
 2. [Overview](https://hyperbeam.arweave.net/build/devices/hyperbeam-devices.html)
-3. [JoiningRunning a Router](https://hyperbeam.arweave.net/run/joining-running-a-router.html)
-4. [Module dev_snperl](https://hyperbeam.arweave.net/build/devices/source-code/dev_snp.html)
-5. [Configuring Your Machine](https://hyperbeam.arweave.net/run/configuring-your-machine.html)
-6. [Module dev_codec_httpsigerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_httpsig.html)
-7. [Module dev_metaerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html)
-8. [Core Capabilities](https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html)
-9. [Module dev_routererl](https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html)
-10. [Module dev_fafferl](https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html)
-11. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html)
-12. [TEE Nodes](https://hyperbeam.arweave.net/run/tee-nodes.html)
-13. [Building Devices](https://hyperbeam.arweave.net/build/devices/building-devices.html)
-14. [Intro to HyperBEAM](https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html)
-15. [Building ao Processes](https://hyperbeam.arweave.net/build/building-on-ao.html)
-16. [FAQ](https://hyperbeam.arweave.net/run/reference/faq.html)
-17. [Module hb_singletonerl](https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html)
-18. [Module dev_p4erl](https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html)
-19. [relay10](https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html)
-20. [process10](https://hyperbeam.arweave.net/build/devices/process-at-1-0.html)
-21. [Module dev_stackerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html)
-22. [meta10](https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html)
-23. [Glossary](https://hyperbeam.arweave.net/run/reference/glossary.html)
-24. [FAQ](https://hyperbeam.arweave.net/build/reference/faq.html)
-25. [Module dev_monitorerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_monitor.html)
-26. [Module dev_patcherl](https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html)
-27. [Fuel Your LLM](https://hyperbeam.arweave.net/llms.html)
-28. [lua53a](https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html)
-29. [Home](https://hyperbeam.arweave.net/)
-30. [Glossary](https://hyperbeam.arweave.net/build/reference/glossary.html)
-31. [wasm6410](https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html)
-32. [Module dev_codec_structurederl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html)
-33. [scheduler10](https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html)
-34. [json10](https://hyperbeam.arweave.net/build/devices/json-at-1-0.html)
-35. [Module dev_cronerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html)
-36. [Intro to AO-Core](https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html)
-37. [message10](https://hyperbeam.arweave.net/build/devices/message-at-1-0.html)
-38. [Troubleshooting](https://hyperbeam.arweave.net/run/reference/troubleshooting.html)
-39. [Troubleshooting](https://hyperbeam.arweave.net/build/reference/troubleshooting.html)
+3. [Module dev_snperl](https://hyperbeam.arweave.net/build/devices/source-code/dev_snp.html)
+4. [Configuring Your Machine](https://hyperbeam.arweave.net/run/configuring-your-machine.html)
+5. [Module dev_metaerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html)
+6. [Core Capabilities](https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html)
+7. [Module dev_routererl](https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html)
+8. [Module dev_fafferl](https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html)
+9. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html)
+10. [Building Devices](https://hyperbeam.arweave.net/build/devices/building-devices.html)
+11. [TEE Nodes](https://hyperbeam.arweave.net/run/tee-nodes.html)
+12. [Intro to HyperBEAM](https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html)
+13. [Building ao Processes](https://hyperbeam.arweave.net/build/building-on-ao.html)
+14. [Fuel Your LLM](https://hyperbeam.arweave.net/llms.html)
+15. [FAQ](https://hyperbeam.arweave.net/run/reference/faq.html)
+16. [Module hb_singletonerl](https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html)
+17. [Module dev_p4erl](https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html)
+18. [relay10](https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html)
+19. [process10](https://hyperbeam.arweave.net/build/devices/process-at-1-0.html)
+20. [Module dev_stackerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html)
+21. [meta10](https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html)
+22. [Glossary](https://hyperbeam.arweave.net/run/reference/glossary.html)
+23. [FAQ](https://hyperbeam.arweave.net/build/reference/faq.html)
+24. [Module dev_patcherl](https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html)
+25. [lua53a](https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html)
+26. [Home](https://hyperbeam.arweave.net/)
+27. [Glossary](https://hyperbeam.arweave.net/build/reference/glossary.html)
+28. [wasm6410](https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html)
+29. [Module dev_codec_structurederl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html)
+30. [scheduler10](https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html)
+31. [json10](https://hyperbeam.arweave.net/build/devices/json-at-1-0.html)
+32. [Module dev_cronerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html)
+33. [Intro to AO-Core](https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html)
+34. [JoiningRunning a Router](https://hyperbeam.arweave.net/run/joining-running-a-router.html)
+35. [message10](https://hyperbeam.arweave.net/build/devices/message-at-1-0.html)
+36. [Troubleshooting](https://hyperbeam.arweave.net/run/reference/troubleshooting.html)
+37. [Troubleshooting](https://hyperbeam.arweave.net/build/reference/troubleshooting.html)
 
 ---
 
@@ -103,64 +101,9 @@ HyperBEAM Devices In AO-Core and its implementation HyperBEAM, Devices are modul
 
 ---
 
-# 3. JoiningRunning a Router - HyperBEAM - Documentation
+# 3. Module dev_snperl - HyperBEAM - Documentation
 
 Document Number: 3
-Source: https://hyperbeam.arweave.net/run/joining-running-a-router.html
-Words: 568
-Quality Score: 0.628
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Router Networks: Joining vs Running Router networks in HyperBEAM have two distinct roles that are often confused:Two Different Concepts Joining a router = Registering your worker node with an existing router to receive work Running a router = Operating a router that manages and distributes work to other nodes Joining a Router Network (Worker Node) Most users want to join an existing router to offer computational services. This is what the configuration below accomplishes.Recommended Approach Use HyperBEAM OS for the simplest setup with built-in TEE security and automatic configuration.Quick Start with HyperBEAM OS The fastest way to join a router network is using HyperBEAM OS, which creates a measured VM image with everything pre-configured:# Clone and build the worker node image
-git clone https://github.com/permaweb/hb-os.git && cd hb-os
-./run init && ./run build_base && ./run build_guest Configure Your Worker Node Edit resources/hyperbeam/config.flat to set your worker node registration:port: 10000
-operator: your-wallet-address
-router-peer-location: https://forward.computer
-router-prefix: /my-unique-node~
-router-template: /my-unique-node~process@1.0/.*
-router-price: 100 Launch Your Worker Node./run start # Starts the TEE-protected worker node Your node will automatically register with the specified router network and begin receiving work.Using Routers as a Client Make requests to any router URL: https://forward.computer/~/...Configuration Options Your worker node can be customized with these key parameters in config.flat:router-peer-location: Target router to register with (e.g., https://forward.computer) router-prefix: Unique identifier for your node (e.g., /my-node~) router-template: Path pattern to handle (e.g., /my-node~process@1.0/.*) router-price: Cost per computation unit (competitive pricing recommended) operator: Your wallet address to receive payments How Registration Works When your worker node starts, it automatically:Registers with the target router using your configured parameters Gets validated by the router's admissibility checks (most routers accept all nodes) Starts receiving requests routed to your prefix Reports performance metrics back to the router for load balancing Monitoring Your Worker Node Check your worker node's status with:# View logs for registration confirmation
-DEBUG=HB_PRINT ./run start
-# Look for messages like:
-# [info] Router registration successful
-# [debug] Route added to routing table Running Your Own Router If you want to operate a router that manages other worker nodes (advanced use case):Router Requirements Deploy the dynamic router Lua process to handle registrations Configure trusted software hashes for TEE validation Set up load balancing and performance monitoring Manage worker node admissibility policies Basic Router Setup % Start a node that can act as a router
-hb:start_mainnet(#{
-% Standard node configuration
-port => 8080,
-% Router-specific configuration
-routes => [
-#{template => "/~meta@1.0/.*", target => self},
-#{template => "/.*", target => "http://default-worker.com"}
-],
-% Trust and validation settings
-snp_trusted => [#{
-% Trusted software configurations for TEE validation
-}]
-}).Advanced Configuration Running a production router requires careful consideration of security, performance, and economic incentives. Most users should join existing routers rather than run their own.Alternative: Manual Setup Advanced users can set up HyperBEAM manually (click to expand) Direct Installation # Clone HyperBEAM
-git clone https://github.com/permaweb/HyperBEAM.git && cd HyperBEAM
-rebar3 compile
-# Create config.flat with router settings
-cat > config.flat << EOF
-port: 10000
-operator: your-wallet-address
-router-peer-location: https://forward.computer
-router-prefix: /my-node~
-router-template: /my-node~process@1.0/.*
-router-price: 100
-EOF
-# Start the node
-rebar3 shell --eval "hb:start_mainnet()." Environment Variables # Alternative: use environment variables
-export ROUTER_PEER_LOCATION="https://forward.computer"
-export ROUTER_PREFIX="/my-prefix~"
-export ROUTER_TEMPLATE="/my-prefix~process@1.0/.*"
-export ROUTER_PRICE=100
-rebar3 shell --eval "hb:start_mainnet()." Further Exploration Examine the dev_router.erl source code for detailed implementation.Review the scripts/dynamic-router.lua for router-side logic.Review the available configuration options in hb_opts.erl related to routing (routes, strategies, etc.).Consult community channels for best practices on deploying production routers.
-
----
-
-# 4. Module dev_snperl - HyperBEAM - Documentation
-
-Document Number: 4
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_snp.html
 Words: 426
 Quality Score: 0.584
@@ -194,9 +137,9 @@ measurement, are trusted.
 
 ---
 
-# 5. Configuring Your Machine - HyperBEAM - Documentation
+# 4. Configuring Your Machine - HyperBEAM - Documentation
 
-Document Number: 5
+Document Number: 4
 Source: https://hyperbeam.arweave.net/run/configuring-your-machine.html
 Words: 801
 Quality Score: 0.561
@@ -215,46 +158,9 @@ priv_key_location = "/path/to/your/wallet.json".
 
 ---
 
-# 6. Module dev_codec_httpsigerl - HyperBEAM - Documentation
+# 5. Module dev_metaerl - HyperBEAM - Documentation
 
-Document Number: 6
-Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_httpsig.html
-Words: 645
-Quality Score: 0.558
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Module dev_codec_httpsig.erl This module implements HTTP Message Signatures as described in RFC-9421
-(https://datatracker.ietf.org/doc/html/rfc9421), as an AO-Core device.Description It implements the codec standard (from/1, to/1), as well as the optional
-commitment functions (id/3, sign/3, verify/3). The commitment functions
-are found in this module, while the codec functions are relayed to the dev_codec_httpsig_conv module.Function Index add_content_digest/2 If the body key is present and a binary, replace it with a
-content-digest.commit/3 Commit to a message using the HTTP-Signature format.committed_id_test/0* from/3 key_present/2* Calculate if a key or its +link TABM variant is present in a message.keys_to_commit/3* Derive the set of keys to commit to from a commit request and a
-base message.maybe_bundle_tag_commitment/3* Annotate the commitment with the bundle key if the request contains
-it.multicommitted_id_test/0* normalize_for_encoding/3 Given a base message and a commitment, derive the message and commitment
-normalized for encoding.opts/1* Generate the Opts to use during AO-Core operations in the codec.serialize/2 A helper utility for creating a direct encoding of a HTTPSig message.serialize/3 sign_and_verify_link_test/0* Test that we can sign and verify a message with a link.signature_base/3* create the signature base that will be signed in order to create the
-Signature and SignatureInput.signature_components_line/3* Given a list of Component Identifiers and a Request/Response Message
-context, create the "signature-base-line" portion of the signature base.signature_params_line/2* construct the "signature-params-line" part of the signature base.to/3 validate_large_message_from_http_test/0* Ensure that we can validate a signature on an extremely large and complex
-message that is sent over HTTP, signed with the codec.verify/3 Function Details add_content_digest/2 add_content_digest(Msg, Opts) -> any() If the body key is present and a binary, replace it with a
-content-digest.commit/3 commit(Msg, Req, Opts) -> any() Commit to a message using the HTTP-Signature format. We use the type parameter to determine the type of commitment to use. If the type parameter
-is signed, we default to the rsa-pss-sha512 algorithm. If the type parameter is unsigned, we default to the hmac-sha256 algorithm.committed_id_test/0 * committed_id_test() -> any() from/3 from(Msg, Req, Opts) -> any() key_present/2 * key_present(Key, Msg) -> any() Calculate if a key or its +link TABM variant is present in a message.keys_to_commit/3 * keys_to_commit(Base, Req, Opts) -> any() Derive the set of keys to commit to from a commit request and a
-base message.maybe_bundle_tag_commitment/3 * maybe_bundle_tag_commitment(Commitment, Req, Opts) -> any() Annotate the commitment with the bundle key if the request contains
-it.multicommitted_id_test/0 * multicommitted_id_test() -> any() normalize_for_encoding/3 normalize_for_encoding(Msg, Commitment, Opts) -> any() Given a base message and a commitment, derive the message and commitment
-normalized for encoding.opts/1 * opts(RawOpts) -> any() Generate the Opts to use during AO-Core operations in the codec.serialize/2 serialize(Msg, Opts) -> any() A helper utility for creating a direct encoding of a HTTPSig message.This function supports two modes of operation:
-1. format: binary, yielding a raw binary HTTP/1.1-style response that can
-either be stored or emitted raw accross a transport medium.
-2. format: components, yielding a message containing headers and body keys, suitable for use in connecting to HTTP-response flows implemented
-by other servers.Optionally, the index key can be set to override resolution of the default
-index page into HTTP responses that do not contain their own body field.serialize/3 serialize(Msg, Req, Opts) -> any() sign_and_verify_link_test/0 * sign_and_verify_link_test() -> any() Test that we can sign and verify a message with a link. We use signature_base/3 * signature_base(EncodedMsg, Commitment, Opts) -> any() create the signature base that will be signed in order to create the
-Signature and SignatureInput.This implements a portion of RFC-9421 see:
-https://datatracker.ietf.org/doc/html/rfc9421#name-creating-the-signature-base signature_components_line/3 * signature_components_line(Req, Commitment, Opts) -> any() Given a list of Component Identifiers and a Request/Response Message
-context, create the "signature-base-line" portion of the signature base signature_params_line/2 * signature_params_line(RawCommitment, Opts) -> any() construct the "signature-params-line" part of the signature base.See https://datatracker.ietf.org/doc/html/rfc9421#section-2.5-7.3.2.4 to/3 to(Msg, Req, Opts) -> any() validate_large_message_from_http_test/0 * validate_large_message_from_http_test() -> any() Ensure that we can validate a signature on an extremely large and complex
-message that is sent over HTTP, signed with the codec.verify/3 verify(Base, Req, RawOpts) -> any()
-
----
-
-# 7. Module dev_metaerl - HyperBEAM - Documentation
-
-Document Number: 7
+Document Number: 5
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html
 Words: 1162
 Quality Score: 0.557
@@ -309,9 +215,9 @@ allow them to update the node message.
 
 ---
 
-# 8. Core Capabilities - HyperBEAM - Documentation
+# 6. Core Capabilities - HyperBEAM - Documentation
 
-Document Number: 8
+Document Number: 6
 Source: https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html
 Words: 681
 Quality Score: 0.555
@@ -322,9 +228,9 @@ HyperBEAM: Your Decentralized Development Toolkit HyperBEAM is a versatile, mult
 
 ---
 
-# 9. Module dev_routererl - HyperBEAM - Documentation
+# 7. Module dev_routererl - HyperBEAM - Documentation
 
-Document Number: 9
+Document Number: 7
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html
 Words: 1355
 Quality Score: 0.552
@@ -393,9 +299,9 @@ function, taking only the request message and the Opts map.route/3 route(X1, Msg
 
 ---
 
-# 10. Module dev_fafferl - HyperBEAM - Documentation
+# 8. Module dev_fafferl - HyperBEAM - Documentation
 
-Document Number: 10
+Document Number: 8
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html
 Words: 180
 Quality Score: 0.540
@@ -411,9 +317,9 @@ for both the pricing and ledger P4 APIs.Function Index charge/3 Charge the user'
 
 ---
 
-# 11. Pathing in HyperBEAM - HyperBEAM - Documentation
+# 9. Pathing in HyperBEAM - HyperBEAM - Documentation
 
-Document Number: 11
+Document Number: 9
 Source: https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html
 Words: 844
 Quality Score: 0.534
@@ -424,43 +330,9 @@ Pathing in HyperBEAM Overview Understanding how to construct and interpret paths
 
 ---
 
-# 12. TEE Nodes - HyperBEAM - Documentation
+# 10. Building Devices - HyperBEAM - Documentation
 
-Document Number: 12
-Source: https://hyperbeam.arweave.net/run/tee-nodes.html
-Words: 557
-Quality Score: 0.515
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Trusted Execution Environment (TEE) Recommended Setup Use HyperBEAM OS for the easiest TEE deployment with pre-configured AMD SEV-SNP support.Overview HyperBEAM supports Trusted Execution Environments (TEEs) through the ~snp@1.0 device, enabling secure, verifiable computation on remote machines. TEEs provide hardware-level isolation and cryptographic attestation that allows users to verify their code is running in a protected environment exactly as intended, even on untrusted hardware.The ~snp@1.0 device generates and validates attestation reports that prove:Code is running inside a genuine AMD SEV-SNP TEE The execution environment hasn't been tampered with Specific software components (firmware, kernel, initramfs) match trusted hashes Debug mode is disabled for security Quick Start with HyperBEAM OS Prerequisites AMD EPYC processor with SEV-SNP support (Milan generation or newer) Host system with SEV-SNP enabled in BIOS:Secure Nested Paging enabled Secure Memory Encryption enabled SNP Memory Coverage enabled Minimum SEV non-ES ASID > 1 Setup TEE Node # Clone and build TEE-enabled HyperBEAM
-git clone https://github.com/permaweb/hb-os.git && cd hb-os
-./run init && ./run setup_host && ./run build_base_image && ./run build_guest_image
-# Launch TEE-protected node
-./run start The VM boots with dm-verity protection, measured boot, and automatic attestation report generation.Using the SNP Device Generate Attestation Report Request an attestation report from a TEE node:curl https://your-tee-node.com/~snp@1.0/generate Returns a signed attestation report containing:Nonce: Unique identifier preventing re attacks Address: Node's ephemeral public key (only exists inside TEE) Measurement: Cryptographic hash of the execution environment Report: AMD SEV-SNP hardware attestation with certificate chain Verify Attestation Report The verification process validates:Nonce integrity: Ensures report freshness and prevents re Signature validity: Confirms the report was signed by the claimed address Address authenticity: Verifies the signing key exists only in the TEE Debug disabled: Ensures no debugging capabilities that could compromise security Trusted software: Validates firmware, kernel, and initramfs hashes match approved versions Measurement accuracy: Confirms the reported environment matches actual execution Hardware attestation: Verifies AMD's cryptographic signature on the report Configuration Trusted Software Hashes Configure which software components are trusted by setting snp_trusted in your node options:{snp_trusted, [#{
-vcpus => 1,
-vcpu_type => 5,
-vmm_type => 1,
-guest_features => 1,
-firmware => <<"b8c5d4082d5738db6b0fb0294174992738645df70c44cdecf7fad3a62244b788e7e408c582ee48a74b289f3acec78510">>,
-kernel => <<"69d0cd7d13858e4fcef6bc7797aebd258730f215bc5642c4ad8e4b893cc67576">>,
-initrd => <<"853ebf56bc6ba5f08bd5583055a457898ffa3545897bee00103d3066b8766f5c">>,
-append => <<"6cb8a0082b483849054f93b203aa7d98439736e44163d614f79380ca368cc77e">>
-}]} Custom Trust Validation Implement custom trust policies by specifying an is-trusted-device:curl -X POST https://your-node.com/~snp@1.0/verify \
--H "is-trusted-device: my-custom-validator@1.0" \
--d '{"report": "...", "target": "self"}' Security Considerations Hardware Requirements SEV-SNP capable CPU: AMD EPYC Milan or newer Firmware support: Recent AMD firmware with SEV-SNP enabled Memory encryption: SME (Secure Memory Encryption) recommended RMP table: Sufficient memory reserved for Reverse Map Page Table Verification Best Practices Always verify reports: Never trust unverified attestation claims Check certificate chains: Validate AMD's hardware root of trust Monitor debug flags: Reject reports with debug mode enabled Validate measurements: Ensure software hashes match your trusted versions Use fresh nonces: Prevent re attacks with unique identifiers Limitations Performance overhead: TEE operations have computational cost Hardware dependency: Requires specific AMD processor features Measurement sensitivity: Any software change invalidates measurements Key management: Ephemeral keys are lost on VM restart Attestation Tools HyperBEAM OS includes several attestation utilities:get_report: Generate attestation reports with custom data verify_report: Validate attestation report signatures sev_feature_info: Check host SEV-SNP capabilities idblock_generator: Create signed VM configuration blocks Integration Examples Router Registration with TEE Process with TEE Attestation -- Request computation with TEE verification
-ao.send({
-Target = "TEE_PROCESS_ID",
-Action = "compute",
-Data = "sensitive_data",
-["Require-TEE"] = "true"
-}) HyperBEAM OS Repository
-
----
-
-# 13. Building Devices - HyperBEAM - Documentation
-
-Document Number: 13
+Document Number: 10
 Source: https://hyperbeam.arweave.net/build/devices/building-devices.html
 Words: 150
 Quality Score: 0.513
@@ -471,9 +343,22 @@ Extending HyperBEAM with Devices We encourage you to extend HyperBEAM with devic
 
 ---
 
-# 14. Intro to HyperBEAM - HyperBEAM - Documentation
+# 11. TEE Nodes - HyperBEAM - Documentation
 
-Document Number: 14
+Document Number: 11
+Source: https://hyperbeam.arweave.net/run/tee-nodes.html
+Words: 191
+Quality Score: 0.509
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Trusted Execution Environment (TEE) Documentation Coming Soon Detailed documentation about Trusted Execution Environment support in HyperBEAM is currently being developed and will be available soon.Overview HyperBEAM supports Trusted Execution Environments (TEEs) through the ~snp@1.0 device, which enables secure, trust-minimized computation on remote machines. TEEs provide hardware-level isolation and attestation capabilities that allow users to verify that their code is running in a protected environment, exactly as intended, even on untrusted hardware.The ~snp@1.0 device in HyperBEAM is used to generate and validate proofs that a node is executing inside a Trusted Execution Environment. Nodes executing inside these environments use an ephemeral key pair that provably only exists inside the TEE, and can sign attestations of AO-Core executions in a trust-minimized way.Key Features Hardware-level isolation for secure computation Remote attestation capabilities Protected execution state Confidential computing support Compatibility with AMD SEV-SNP technology Coming Soon Detailed documentation on the following topics will be added:TEE setup and configuration Using the ~snp@1.0 device Verifying TEE attestations Developing for TEEs Security considerations Performance characteristics If you intend to offer TEE-based computation of AO-Core devices, please see the HyperBEAM OS repository for preliminary details on configuration and deployment.
+
+---
+
+# 12. Intro to HyperBEAM - HyperBEAM - Documentation
+
+Document Number: 12
 Source: https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html
 Words: 307
 Quality Score: 0.509
@@ -486,9 +371,9 @@ computations across a network of distributed nodes. Messages Modular Data Packet
 
 ---
 
-# 15. Building ao Processes - HyperBEAM - Documentation
+# 13. Building ao Processes - HyperBEAM - Documentation
 
-Document Number: 15
+Document Number: 13
 Source: https://hyperbeam.arweave.net/build/building-on-ao.html
 Words: 92
 Quality Score: 0.508
@@ -499,9 +384,22 @@ Building on HyperBEAM with ao The guides for building applications on HyperBEAM 
 
 ---
 
-# 16. FAQ - HyperBEAM - Documentation
+# 14. Fuel Your LLM - HyperBEAM - Documentation
 
-Document Number: 16
+Document Number: 14
+Source: https://hyperbeam.arweave.net/llms.html
+Words: 166
+Quality Score: 0.503
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+LLM Context Files This section provides access to specially formatted files intended for consumption by Large Language Models (LLMs) to provide context about the HyperBEAM documentation.LLM Summary (llms.txt) Content: Contains a brief summary of the HyperBEAM documentation structure and a list of relative file paths for all markdown documents included in the build.Usage: Useful for providing an LLM with a high-level overview and the available navigation routes within the documentation.LLM Full Content (llms-full.txt) Content: A single text file containing the complete, concatenated content of all markdown documents from the specified documentation directories (begin, run, guides, devices, resources). Each file's content is clearly demarcated.Usage: Ideal for feeding the entire documentation content into an LLM for comprehensive context, analysis, or question-answering based on the full documentation set.Generation Process These files are automatically generated by the docs/build-all.sh script during the documentation build process. They consolidate information from the following directories:docs/run docs/build Permaweb LLMs.txt An interactive tool for selecting and curating Permaweb documentation into llms.txt format for feeding to LLMs.
+
+---
+
+# 15. FAQ - HyperBEAM - Documentation
+
+Document Number: 15
 Source: https://hyperbeam.arweave.net/run/reference/faq.html
 Words: 327
 Quality Score: 0.500
@@ -512,9 +410,9 @@ Node Operator FAQ This page answers common questions about running and maintaini
 
 ---
 
-# 17. Module hb_singletonerl - HyperBEAM - Documentation
+# 16. Module hb_singletonerl - HyperBEAM - Documentation
 
-Document Number: 17
+Document Number: 16
 Source: https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html
 Words: 1095
 Quality Score: 0.499
@@ -575,9 +473,9 @@ segments that are too long.path_parts_test/0 * path_parts_test() -> any() scoped
 
 ---
 
-# 18. Module dev_p4erl - HyperBEAM - Documentation
+# 17. Module dev_p4erl - HyperBEAM - Documentation
 
-Document Number: 18
+Document Number: 17
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html
 Words: 550
 Quality Score: 0.497
@@ -608,9 +506,9 @@ not set is to proceed, so it is important that a user initialize them.response/3
 
 ---
 
-# 19. relay10 - HyperBEAM - Documentation
+# 18. relay10 - HyperBEAM - Documentation
 
-Document Number: 19
+Document Number: 18
 Source: https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html
 Words: 365
 Quality Score: 0.491
@@ -621,9 +519,9 @@ Device: ~relay@1.0 Overview The ~relay@1.0 device enables HyperBEAM nodes to sen
 
 ---
 
-# 20. process10 - HyperBEAM - Documentation
+# 19. process10 - HyperBEAM - Documentation
 
-Document Number: 20
+Document Number: 19
 Source: https://hyperbeam.arweave.net/build/devices/process-at-1-0.html
 Words: 545
 Quality Score: 0.488
@@ -646,9 +544,9 @@ Quorum: 2 This defines a process that uses:
 
 ---
 
-# 21. Module dev_stackerl - HyperBEAM - Documentation
+# 20. Module dev_stackerl - HyperBEAM - Documentation
 
-Document Number: 21
+Document Number: 20
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html
 Words: 1145
 Quality Score: 0.475
@@ -714,9 +612,9 @@ keyInDevice executed on DeviceName against Msg1.
 
 ---
 
-# 22. meta10 - HyperBEAM - Documentation
+# 21. meta10 - HyperBEAM - Documentation
 
-Document Number: 22
+Document Number: 21
 Source: https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html
 Words: 346
 Quality Score: 0.475
@@ -727,9 +625,9 @@ Device: ~meta@1.0 Overview The ~meta@1.0 device provides access to metadata and 
 
 ---
 
-# 23. Glossary - HyperBEAM - Documentation
+# 22. Glossary - HyperBEAM - Documentation
 
-Document Number: 23
+Document Number: 22
 Source: https://hyperbeam.arweave.net/run/reference/glossary.html
 Words: 286
 Quality Score: 0.473
@@ -741,9 +639,9 @@ Node Operator Glossary This glossary provides definitions for terms and concepts
 
 ---
 
-# 24. FAQ - HyperBEAM - Documentation
+# 23. FAQ - HyperBEAM - Documentation
 
-Document Number: 24
+Document Number: 23
 Source: https://hyperbeam.arweave.net/build/reference/faq.html
 Words: 275
 Quality Score: 0.472
@@ -754,22 +652,9 @@ Developer FAQ This page answers common questions about building applications and
 
 ---
 
-# 25. Module dev_monitorerl - HyperBEAM - Documentation
+# 24. Module dev_patcherl - HyperBEAM - Documentation
 
-Document Number: 25
-Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_monitor.html
-Words: 42
-Quality Score: 0.465
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Module dev_monitor.erl Function Index add_monitor/2 end_of_schedule/1 execute/2 init/3 signal/2* uses/0 Function Details add_monitor/2 add_monitor(Mon, State) -> any() end_of_schedule/1 end_of_schedule(State) -> any() execute/2 execute(Message, State) -> any() init/3 init(State, X2, InitState) -> any() signal/2 * signal(State, Signal) -> any() uses/0 uses() -> any()
-
----
-
-# 26. Module dev_patcherl - HyperBEAM - Documentation
-
-Document Number: 26
+Document Number: 24
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html
 Words: 375
 Quality Score: 0.462
@@ -791,22 +676,9 @@ request.req_prefix_test/0 * req_prefix_test() -> any() snapshot/3 snapshot(Msg1,
 
 ---
 
-# 27. Fuel Your LLM - HyperBEAM - Documentation
+# 25. lua53a - HyperBEAM - Documentation
 
-Document Number: 27
-Source: https://hyperbeam.arweave.net/llms.html
-Words: 148
-Quality Score: 0.462
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-LLM Context Files This section provides access to specially formatted files intended for consumption by Large Language Models (LLMs) to provide context about the HyperBEAM documentation.LLM Summary (llms.txt) Content: Contains a brief summary of the HyperBEAM documentation structure and a list of relative file paths for all markdown documents included in the build.Usage: Useful for providing an LLM with a high-level overview and the available navigation routes within the documentation.LLM Full Content (llms-full.txt) Content: A single text file containing the complete, concatenated content of all markdown documents from the specified documentation directories (begin, run, guides, devices, resources). Each file's content is clearly demarcated.Usage: Ideal for feeding the entire documentation content into an LLM for comprehensive context, analysis, or question-answering based on the full documentation set.Generation Process These files are automatically generated by the docs/build-all.sh script during the documentation build process. They consolidate information from the following directories:docs/run docs/build
-
----
-
-# 28. lua53a - HyperBEAM - Documentation
-
-Document Number: 28
+Document Number: 25
 Source: https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html
 Words: 541
 Quality Score: 0.461
@@ -821,9 +693,9 @@ Sandbox: true This device offers a lightweight, integrated scripting capability 
 
 ---
 
-# 29. HyperBEAM - Documentation
+# 26. HyperBEAM - Documentation
 
-Document Number: 29
+Document Number: 26
 Source: https://hyperbeam.arweave.net/
 Words: 140
 Quality Score: 0.458
@@ -846,9 +718,9 @@ Sorry, your browser doesn’t support embedded video.
 
 ---
 
-# 30. Glossary - HyperBEAM - Documentation
+# 27. Glossary - HyperBEAM - Documentation
 
-Document Number: 30
+Document Number: 27
 Source: https://hyperbeam.arweave.net/build/reference/glossary.html
 Words: 250
 Quality Score: 0.458
@@ -860,9 +732,9 @@ Developer Glossary This glossary provides definitions for terms and concepts rel
 
 ---
 
-# 31. wasm6410 - HyperBEAM - Documentation
+# 28. wasm6410 - HyperBEAM - Documentation
 
-Document Number: 31
+Document Number: 28
 Source: https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html
 Words: 537
 Quality Score: 0.450
@@ -876,9 +748,9 @@ WASM-Image: This setup allows AO processes to leverage the computational power a
 
 ---
 
-# 32. Module dev_codec_structurederl - HyperBEAM - Documentation
+# 29. Module dev_codec_structurederl - HyperBEAM - Documentation
 
-Document Number: 32
+Document Number: 29
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html
 Words: 338
 Quality Score: 0.448
@@ -900,9 +772,9 @@ is a list.linkify_mode/2 * linkify_mode(Req, Opts) -> any() Discern the linkify 
 
 ---
 
-# 33. scheduler10 - HyperBEAM - Documentation
+# 30. scheduler10 - HyperBEAM - Documentation
 
-Document Number: 33
+Document Number: 30
 Source: https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html
 Words: 671
 Quality Score: 0.448
@@ -913,9 +785,9 @@ Device: ~scheduler@1.0 Overview The ~scheduler@1.0 device manages the queueing a
 
 ---
 
-# 34. json10 - HyperBEAM - Documentation
+# 31. json10 - HyperBEAM - Documentation
 
-Document Number: 34
+Document Number: 31
 Source: https://hyperbeam.arweave.net/build/devices/json-at-1-0.html
 Words: 198
 Quality Score: 0.447
@@ -926,9 +798,9 @@ Device: ~json@1.0 Overview The ~json@1.0 device provides a mechanism to interact
 
 ---
 
-# 35. Module dev_cronerl - HyperBEAM - Documentation
+# 32. Module dev_cronerl - HyperBEAM - Documentation
 
-Document Number: 35
+Document Number: 32
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html
 Words: 300
 Quality Score: 0.441
@@ -943,9 +815,9 @@ It is used to increment a counter and update the state of the worker.test_worker
 
 ---
 
-# 36. Intro to AO-Core - HyperBEAM - Documentation
+# 33. Intro to AO-Core - HyperBEAM - Documentation
 
-Document Number: 36
+Document Number: 33
 Source: https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html
 Words: 435
 Quality Score: 0.440
@@ -956,9 +828,22 @@ What is AO-Core? Your browser does not support the video tag.AO-Core is a protoc
 
 ---
 
-# 37. message10 - HyperBEAM - Documentation
+# 34. JoiningRunning a Router - HyperBEAM - Documentation
 
-Document Number: 37
+Document Number: 34
+Source: https://hyperbeam.arweave.net/run/joining-running-a-router.html
+Words: 228
+Quality Score: 0.439
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Joining or Running a Router Node Router nodes a crucial role in the HyperBEAM network by directing incoming HTTP requests to appropriate worker nodes capable of handling the requested computation or data retrieval. They act as intelligent load balancers and entry points into the AO ecosystem.Advanced Topic Configuring and running a production-grade router involves considerations beyond the scope of this introductory guide, including network topology, security, high availability, and performance tuning.What is a Router?In HyperBEAM, the dev_router device (and associated logic) implements routing functionality. A node configured as a router typically:Receives external HTTP requests.Parses the request path to determine the target process, device, and desired operation.Consults its routing table or logic to select an appropriate downstream worker node (which might be itself or another node).Forwards the request to the selected worker.Receives the response from the worker.Returns the response to the original client.Routers often maintain information about the capabilities and load of worker nodes they know about.Using Routers as a Client To use a router as a client, simply make HTTP requests to the router's URL: https://forward.computer/~/.... The router will automatically route your request to an appropriate worker node.Node Registration Process Coming soon...Further Exploration Examine the dev_router.erl source code for detailed implementation.Review the scripts/dynamic-router.lua for router-side logic.Review the available configuration options in hb_opts.erl related to routing (routes, strategies, etc.).Consult community channels for best practices on deploying production routers. -->
+
+---
+
+# 35. message10 - HyperBEAM - Documentation
+
+Document Number: 35
 Source: https://hyperbeam.arweave.net/build/devices/message-at-1-0.html
 Words: 472
 Quality Score: 0.435
@@ -969,9 +854,9 @@ Device: ~message@1.0 Overview The ~message@1.0 device is a fundamental built-in 
 
 ---
 
-# 38. Troubleshooting - HyperBEAM - Documentation
+# 36. Troubleshooting - HyperBEAM - Documentation
 
-Document Number: 38
+Document Number: 36
 Source: https://hyperbeam.arweave.net/run/reference/troubleshooting.html
 Words: 330
 Quality Score: 0.418
@@ -982,9 +867,9 @@ Node Operator Troubleshooting Guide This guide addresses common issues you might
 
 ---
 
-# 39. Troubleshooting - HyperBEAM - Documentation
+# 37. Troubleshooting - HyperBEAM - Documentation
 
-Document Number: 39
+Document Number: 37
 Source: https://hyperbeam.arweave.net/build/reference/troubleshooting.html
 Words: 146
 Quality Score: 0.385

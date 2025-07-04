@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-03T19:52:09.983Z
-Total documents: 125
-Total words: 78208
+Generated on: 2025-07-04T12:14:11.796Z
+Total documents: 134
+Total words: 76327
 
 ## Table of Contents
 
@@ -12,127 +12,136 @@ Total words: 78208
 2. [AO Compute Unit (CU)](https://docs.ar.io/gateways/cu)
 3. [Arns Viewer](https://docs.ar.io/build/guides/arns-viewer)
 4. [Arns Viewer](https://docs.ar.io/guides/arns-viewer)
-5. [Wayfinder Protocol](https://docs.ar.io/concepts/wayfinder)
+5. [Deploy a dApp with ArDrive web](https://docs.ar.io/build/guides/ardrive-web)
 6. [Deploy a dApp with ArDrive web](https://docs.ar.io/guides/ardrive-web)
-7. [Deploy a dApp with ArDrive web](https://docs.ar.io/build/guides/ardrive-web)
-8. [Permaweb Deploy](https://docs.ar.io/guides/permaweb-deploy)
-9. [Permaweb Deploy](https://docs.ar.io/build/guides/permaweb-deploy)
-10. [Linux Setup](https://docs.ar.io/gateways/linux-setup)
-11. [Advanced](https://docs.ar.io/gateways/advanced)
-12. [Advanced Config](https://docs.ar.io/gateways/ar-io-node/advanced-config.html)
-13. [Telemetry](https://docs.ar.io/wayfinder/telemetry)
-14. [Upgrading](https://docs.ar.io/gateways/upgrading)
-15. [Uploading to Arweave](https://docs.ar.io/guides/uploading-to-arweave)
-16. [Gql](https://docs.ar.io/guides/gql)
-17. [Gql](https://docs.ar.io/build/guides/gql)
-18. [ARIO Gateway Grafana](https://docs.ar.io/gateways/grafana)
-19. [Windows Setup](https://docs.ar.io/gateways/windows-setup)
-20. [Gateway Network](https://docs.ar.io/gateways/gateway-network)
-21. [Getting Started](https://docs.ar.io/wayfinder/getting-started)
-22. [Managing Undernames](https://docs.ar.io/guides/managing-undernames)
-23. [Managing Undernames](https://docs.ar.io/build/guides/managing-undernames)
+7. [Permaweb Deploy](https://docs.ar.io/guides/permaweb-deploy)
+8. [Permaweb Deploy](https://docs.ar.io/build/guides/permaweb-deploy)
+9. [Linux Setup](https://docs.ar.io/gateways/linux-setup)
+10. [Advanced](https://docs.ar.io/gateways/advanced)
+11. [Advanced Config](https://docs.ar.io/gateways/ar-io-node/advanced-config.html)
+12. [Telemetry](https://docs.ar.io/wayfinder/telemetry)
+13. [Upgrading](https://docs.ar.io/gateways/upgrading)
+14. [Uploading to Arweave](https://docs.ar.io/guides/uploading-to-arweave)
+15. [Gql](https://docs.ar.io/guides/gql)
+16. [Gql](https://docs.ar.io/build/guides/gql)
+17. [ARIO Gateway Grafana](https://docs.ar.io/gateways/grafana)
+18. [Windows Setup](https://docs.ar.io/gateways/windows-setup)
+19. [Gateway Network](https://docs.ar.io/gateways/gateway-network)
+20. [Getting Started](https://docs.ar.io/wayfinder/getting-started)
+21. [Managing Undernames](https://docs.ar.io/guides/managing-undernames)
+22. [Managing Undernames](https://docs.ar.io/build/guides/managing-undernames)
+23. [Get Delegations](https://docs.ar.io/ar-io-sdk/ario/gateways/get-delegations)
 24. [Admin](https://docs.ar.io/gateways/admin)
 25. [useWayfinder](https://docs.ar.io/wayfinder/react/use-wayfinder)
 26. [Introduction](https://docs.ar.io/introduction)
 27. [Parquet and ClickHouse Usage Guide](https://docs.ar.io/gateways/parquet)
 28. [Observation and Incentives](https://docs.ar.io/gateways/observer)
 29. [Core](https://docs.ar.io/wayfinder/core)
-30. [wayfinderrequest()](https://docs.ar.io/wayfinder/core/request)
-31. [Bundler](https://docs.ar.io/gateways/bundler)
-32. [Importing SQLite Database Snapshots](https://docs.ar.io/gateways/snapshots)
-33. [Arlink Deploy](https://docs.ar.io/build/guides/arlink)
-34. [Arlink Deploy](https://docs.ar.io/guides/arlink)
-35. [ARIO Network Testnet](https://docs.ar.io/guides/testnet)
-36. [Ar Io Sdk](https://docs.ar.io/ar-io-sdk)
+30. [Bundler](https://docs.ar.io/gateways/bundler)
+31. [Importing SQLite Database Snapshots](https://docs.ar.io/gateways/snapshots)
+32. [Arlink Deploy](https://docs.ar.io/build/guides/arlink)
+33. [Arlink Deploy](https://docs.ar.io/guides/arlink)
+34. [ARIO Network Testnet](https://docs.ar.io/guides/testnet)
+35. [Ar Io Sdk](https://docs.ar.io/ar-io-sdk)
+36. [joinNetwork](https://docs.ar.io/ar-io-sdk/ario/gateways/join-network)
 37. [Get Arns Returned Name](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-name)
 38. [Arweave Name System (ArNS)](https://docs.ar.io/arns)
 39. [Get Arns Returned Names](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-names)
-40. [ARIO Node Release Notes](https://docs.ar.io/gateways/release-notes)
-41. [ARIO Node Release Notes](https://docs.ar.io/gateways/release-notes#)
-42. [Join the Gateway Network](https://docs.ar.io/gateways/join-network)
-43. [Staking](https://docs.ar.io/staking)
-44. [getTokenCost](https://docs.ar.io/ar-io-sdk/ario/arns/get-token-cost)
-45. [Manifests](https://docs.ar.io/concepts/manifests)
-46. [Register an IP Asset on Arweave](https://docs.ar.io/guides/story)
-47. [Browser Sandboxing](https://docs.ar.io/concepts/sandboxing)
-48. [Wayfinder](https://docs.ar.io/wayfinder)
-49. [Content Moderation](https://docs.ar.io/gateways/moderation)
-50. [Release Name](https://docs.ar.io/ar-io-sdk/ants/release-name)
-51. [Gateway Architecture](https://docs.ar.io/gateways)
-52. [upgradeRecord](https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record)
-53. [setUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/set-undername-record)
-54. [ANT Configuration](https://docs.ar.io/ar-io-sdk/ants/configuration)
-55. [setBaseNameRecord](https://docs.ar.io/ar-io-sdk/ants/set-base-name-record)
-56. [getDemandFactorSettings](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor-settings)
-57. [Get Demand Factor](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor)
-58. [SimpleCacheRoutingStrategy](https://docs.ar.io/wayfinder/routing-strategies/simple-cache)
-59. [getRecords](https://docs.ar.io/ar-io-sdk/ants/get-records)
-60. [setRecord](https://docs.ar.io/ar-io-sdk/ants/set-record)
-61. [getRegistrationFees](https://docs.ar.io/ar-io-sdk/ario/arns/get-registration-fees)
-62. [The ARIO Token](https://docs.ar.io/token)
-63. [Gateway Troubleshooting FAQ](https://docs.ar.io/gateways/troubleshooting)
-64. [getState](https://docs.ar.io/ar-io-sdk/ants/get-state)
-65. [Glossary](https://docs.ar.io/glossary)
-66. [Gateway Providers](https://docs.ar.io/wayfinder/core/gateway-providers)
-67. [getInfo](https://docs.ar.io/ar-io-sdk/ants/get-info)
-68. [getArNSRecord](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record)
-69. [Cache](https://docs.ar.io/wayfinder/core/gateway-providers/cache)
-70. [Remove Primary Names](https://docs.ar.io/ar-io-sdk/ants/remove-primary-names)
-71. [Reassign Name](https://docs.ar.io/ar-io-sdk/ants/reassign-name)
-72. [getBalance](https://docs.ar.io/ar-io-sdk/ants/get-balance)
-73. [Gateway ArNS Resolution](https://docs.ar.io/gateways/arns-resolution)
-74. [Getting Started](https://docs.ar.io/ar-io-sdk/getting-started)
-75. [getBalances](https://docs.ar.io/ar-io-sdk/ants/get-balances)
-76. [removeRecord](https://docs.ar.io/ar-io-sdk/ants/remove-record)
-77. [getArNSReservedNames](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names)
-78. [getArNSReservedName](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-name)
-79. [removeUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/remove-undername-record)
-80. [ARIO Configuration](https://docs.ar.io/ar-io-sdk/ario/configuration)
-81. [Managing Primary Names](https://docs.ar.io/guides/primary-names)
-82. [Preferred With Fallback](https://docs.ar.io/wayfinder/routing-strategies/preferred-with-fallback)
-83. [ARIO Node Filtering System](https://docs.ar.io/gateways/filters)
-84. [Normalized Addresses](https://docs.ar.io/concepts/normalized-addresses)
-85. [Hash Verification Strategy](https://docs.ar.io/wayfinder/verification-strategies/hash-verification)
-86. [Network](https://docs.ar.io/wayfinder/core/gateway-providers/network)
-87. [Extend Lease](https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease)
-88. [Static](https://docs.ar.io/wayfinder/core/gateway-providers/static)
-89. [addController](https://docs.ar.io/ar-io-sdk/ants/add-controller)
-90. [Events](https://docs.ar.io/wayfinder/core/events)
-91. [Optimizing Data Handling in ARIO Gateway](https://docs.ar.io/gateways/optimize-data)
-92. [transfer](https://docs.ar.io/ar-io-sdk/ants/transfer)
-93. [getCostDetails](https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details)
-94. [setKeywords](https://docs.ar.io/ar-io-sdk/ants/set-keywords)
-95. [approvePrimaryNameRequest](https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request)
-96. [wayfinderresolveUrl()](https://docs.ar.io/wayfinder/core/resolve-url)
-97. [ANTgetLogo()](https://docs.ar.io/ar-io-sdk/ants/get-logo)
-98. [ARIO Gateway Environment Variables](https://docs.ar.io/gateways/env)
-99. [getControllers](https://docs.ar.io/ar-io-sdk/ants/get-controllers)
-100. [Random](https://docs.ar.io/wayfinder/routing-strategies/random)
-101. [StaticRoutingStrategy](https://docs.ar.io/wayfinder/routing-strategies/static)
-102. [Increase Undername Limit](https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit)
-103. [ARIO SDK Release Notes](https://docs.ar.io/ar-io-sdk/release-notes)
-104. [Remove Controller](https://docs.ar.io/ar-io-sdk/ants/remove-controller)
-105. [ARIO Documentation](https://docs.ar.io/)
-106. [Signature Verification Strategy](https://docs.ar.io/wayfinder/verification-strategies/signature-verification)
-107. [Data Root Verification Strategy](https://docs.ar.io/wayfinder/verification-strategies/data-root-verification)
-108. [Set Logo](https://docs.ar.io/ar-io-sdk/ants/set-logo)
-109. [ANTs on Bazar](https://docs.ar.io/guides/ants-on-bazar)
-110. [ANTs on Bazar](https://docs.ar.io/learn/guides/ants-on-bazar)
-111. [getOwner](https://docs.ar.io/ar-io-sdk/ants/get-owner)
-112. [getArNSRecords](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-records)
-113. [Set Name](https://docs.ar.io/ar-io-sdk/ants/set-name)
-114. [Set Ticker](https://docs.ar.io/ar-io-sdk/ants/set-ticker)
-115. [Set Description](https://docs.ar.io/ar-io-sdk/ants/set-description)
-116. [getHandlers](https://docs.ar.io/ar-io-sdk/ants/get-handlers)
-117. [Gateway Apex Domain Content Resolution](https://docs.ar.io/gateways/apex)
-118. [buyRecord](https://docs.ar.io/ar-io-sdk/ario/arns/buy-record)
-119. [ARIO Network Composition](https://docs.ar.io/network-composition)
-120. [Quick Start Guides](https://docs.ar.io/guides)
-121. [Round Robin](https://docs.ar.io/wayfinder/routing-strategies/round-robin)
-122. [ARIO Smart Contract](https://docs.ar.io/ario-contract)
-123. [Fastest Ping](https://docs.ar.io/wayfinder/routing-strategies/fastest-ping)
-124. [Routing Strategies](https://docs.ar.io/wayfinder/routing-strategies)
-125. [Verification Strategies](https://docs.ar.io/wayfinder/verification-strategies)
+40. [Redelegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/redelegate-stake)
+41. [ARIO Node Release Notes](https://docs.ar.io/gateways/release-notes)
+42. [ARIO Node Release Notes](https://docs.ar.io/gateways/release-notes#)
+43. [Get Allowed Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-allowed-delegates)
+44. [Join the Gateway Network](https://docs.ar.io/gateways/join-network)
+45. [Staking](https://docs.ar.io/staking)
+46. [getTokenCost](https://docs.ar.io/ar-io-sdk/ario/arns/get-token-cost)
+47. [Get Redelegation Fee](https://docs.ar.io/ar-io-sdk/ario/gateways/get-redelegation-fee)
+48. [Register an IP Asset on Arweave](https://docs.ar.io/guides/story)
+49. [Wayfinder](https://docs.ar.io/wayfinder)
+50. [Content Moderation](https://docs.ar.io/gateways/moderation)
+51. [Release Name](https://docs.ar.io/ar-io-sdk/ants/release-name)
+52. [Gateway Architecture](https://docs.ar.io/gateways)
+53. [upgradeRecord](https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record)
+54. [setUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/set-undername-record)
+55. [ANT Configuration](https://docs.ar.io/ar-io-sdk/ants/configuration)
+56. [getGatewayVaults](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults)
+57. [setBaseNameRecord](https://docs.ar.io/ar-io-sdk/ants/set-base-name-record)
+58. [Get Gateway Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates)
+59. [getDemandFactorSettings](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor-settings)
+60. [Get Demand Factor](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor)
+61. [SimpleCacheRoutingStrategy](https://docs.ar.io/wayfinder/routing-strategies/simple-cache)
+62. [getRecords](https://docs.ar.io/ar-io-sdk/ants/get-records)
+63. [setRecord](https://docs.ar.io/ar-io-sdk/ants/set-record)
+64. [getRegistrationFees](https://docs.ar.io/ar-io-sdk/ario/arns/get-registration-fees)
+65. [The ARIO Token](https://docs.ar.io/token)
+66. [Gateway Troubleshooting FAQ](https://docs.ar.io/gateways/troubleshooting)
+67. [getState](https://docs.ar.io/ar-io-sdk/ants/get-state)
+68. [Glossary](https://docs.ar.io/glossary)
+69. [Gateway Providers](https://docs.ar.io/wayfinder/core/gateway-providers)
+70. [getInfo](https://docs.ar.io/ar-io-sdk/ants/get-info)
+71. [getArNSRecord](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record)
+72. [Cache](https://docs.ar.io/wayfinder/core/gateway-providers/cache)
+73. [Remove Primary Names](https://docs.ar.io/ar-io-sdk/ants/remove-primary-names)
+74. [Reassign Name](https://docs.ar.io/ar-io-sdk/ants/reassign-name)
+75. [Instant Withdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/instant-withdrawal)
+76. [getBalance](https://docs.ar.io/ar-io-sdk/ants/get-balance)
+77. [Gateway ArNS Resolution](https://docs.ar.io/gateways/arns-resolution)
+78. [Leave Network](https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network)
+79. [Increase Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake)
+80. [Decrease Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake)
+81. [Getting Started](https://docs.ar.io/ar-io-sdk/getting-started)
+82. [getBalances](https://docs.ar.io/ar-io-sdk/ants/get-balances)
+83. [removeRecord](https://docs.ar.io/ar-io-sdk/ants/remove-record)
+84. [getArNSReservedNames](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names)
+85. [getArNSReservedName](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-name)
+86. [removeUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/remove-undername-record)
+87. [ARIO Configuration](https://docs.ar.io/ar-io-sdk/ario/configuration)
+88. [Managing Primary Names](https://docs.ar.io/guides/primary-names)
+89. [Preferred With Fallback](https://docs.ar.io/wayfinder/routing-strategies/preferred-with-fallback)
+90. [ARIO Node Filtering System](https://docs.ar.io/gateways/filters)
+91. [Normalized Addresses](https://docs.ar.io/concepts/normalized-addresses)
+92. [Hash Verification Strategy](https://docs.ar.io/wayfinder/verification-strategies/hash-verification)
+93. [Update Gateway Settings](https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings)
+94. [Network](https://docs.ar.io/wayfinder/core/gateway-providers/network)
+95. [Extend Lease](https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease)
+96. [Static](https://docs.ar.io/wayfinder/core/gateway-providers/static)
+97. [addController](https://docs.ar.io/ar-io-sdk/ants/add-controller)
+98. [Events](https://docs.ar.io/wayfinder/core/events)
+99. [Optimizing Data Handling in ARIO Gateway](https://docs.ar.io/gateways/optimize-data)
+100. [transfer](https://docs.ar.io/ar-io-sdk/ants/transfer)
+101. [getCostDetails](https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details)
+102. [setKeywords](https://docs.ar.io/ar-io-sdk/ants/set-keywords)
+103. [approvePrimaryNameRequest](https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request)
+104. [ARIO Gateway Environment Variables](https://docs.ar.io/gateways/env)
+105. [Random](https://docs.ar.io/wayfinder/routing-strategies/random)
+106. [StaticRoutingStrategy](https://docs.ar.io/wayfinder/routing-strategies/static)
+107. [Increase Undername Limit](https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit)
+108. [ARIO SDK Release Notes](https://docs.ar.io/ar-io-sdk/release-notes)
+109. [Remove Controller](https://docs.ar.io/ar-io-sdk/ants/remove-controller)
+110. [getGateway](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway)
+111. [getGateways](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateways)
+112. [ARIO Documentation](https://docs.ar.io/)
+113. [Data Root Verification Strategy](https://docs.ar.io/wayfinder/verification-strategies/data-root-verification)
+114. [Signature Verification Strategy](https://docs.ar.io/wayfinder/verification-strategies/signature-verification)
+115. [Set Logo](https://docs.ar.io/ar-io-sdk/ants/set-logo)
+116. [ANTs on Bazar](https://docs.ar.io/guides/ants-on-bazar)
+117. [ANTs on Bazar](https://docs.ar.io/learn/guides/ants-on-bazar)
+118. [cancelWithdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal)
+119. [Increase Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake)
+120. [Decrease Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake)
+121. [getArNSRecords](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-records)
+122. [Set Name](https://docs.ar.io/ar-io-sdk/ants/set-name)
+123. [Set Ticker](https://docs.ar.io/ar-io-sdk/ants/set-ticker)
+124. [Set Description](https://docs.ar.io/ar-io-sdk/ants/set-description)
+125. [getHandlers](https://docs.ar.io/ar-io-sdk/ants/get-handlers)
+126. [Gateway Apex Domain Content Resolution](https://docs.ar.io/gateways/apex)
+127. [buyRecord](https://docs.ar.io/ar-io-sdk/ario/arns/buy-record)
+128. [ARIO Network Composition](https://docs.ar.io/network-composition)
+129. [Quick Start Guides](https://docs.ar.io/guides)
+130. [Round Robin](https://docs.ar.io/wayfinder/routing-strategies/round-robin)
+131. [ARIO Smart Contract](https://docs.ar.io/ario-contract)
+132. [Fastest Ping](https://docs.ar.io/wayfinder/routing-strategies/fastest-ping)
+133. [Routing Strategies](https://docs.ar.io/wayfinder/routing-strategies)
+134. [Verification Strategies](https://docs.ar.io/wayfinder/verification-strategies)
 
 ---
 
@@ -232,16 +241,17 @@ ArNS Viewer Overview This guide will walk you through creating a project that us
 
 ---
 
-# 5. Wayfinder Protocol - ARIO Docs
+# 5. Deploy a dApp with ArDrive web - ARIO Docs
 
 Document Number: 5
-Source: https://docs.ar.io/concepts/wayfinder
-Words: 1088
-Quality Score: 0.563
+Source: https://docs.ar.io/build/guides/ardrive-web
+Words: 787
+Quality Score: 0.561
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Overview The Wayfinder protocol is a URI scheme designed to translate requests for Arweave content into https:// requests. Essentially, Wayfinder allows for transforming traditional Arweave URLs like https://arweave.net/long-txid into more concise and user-friendly forms such as ar://txid or ar://arns-name. When combined with the AR.IO WayFinder browser extension, the request can be directed to any number of functional AR.IO Gateways to serve the content.Browser Integration The Wayfinder Protocol is currently facilitated via the WayFinder App or internal application integration. The intention is to lead popular web browsers like Chrome and Brave towards a direct integration of the Wayfinder Protocol, similar to recent integrations of the ipfs:// protocol. Such integration would remove the need for a client-side extension and boost developers' confidence in embedding Wayfinder Protocol URLs in their websites.Internal Application Integration Certain websites or apps may want to resolve Arweave Transaction ID's (TxId) internally. In these scenarios, they can process the Wayfinder Protocol internally without depending on browser support or the WayFinder App. A prime example is opensea.io. Opensea, an NFT marketplace, frequently imports NFT metadata from external sources. If metadata employs the Wayfinder Protocol, Opensea internally resolves these, presenting content without redirecting users through an https:// link.There are two main approaches to resolving Wayfinder Protocol URLs:Convert Wayfinder into a request directed at a predefined Arweave gateway.Retrieve a list of active AR.IO Gateways from the GAR by reading the contract state, or other available resources, and then fetch content from a gateway on the list.Each strategy has its benefits and challenges, necessitating careful evaluation based on specific use cases.Benefits of Wayfinder Over Hardcoded Gateway Links Using the Wayfinder Protocol offers several advantages over hardcoded links to a specific gateway:Flexibility: Wayfinder links can be routed through any available AR.IO Gateway, ensuring content remains accessible even if a specific gateway is down or congested.Decentralization: By not being tied to a single gateway, the Wayfinder Protocol embodies the decentralized spirit of the web, reducing potential censorship points.Ease of Maintenance: Developers and content creators don't need to modify links if a gateway changes its URL or becomes unavailable. The WayFinder extension handles routing to an active gateway.Consistency: Users always receive the same content, regardless of the gateway used, ensuring a consistent user experience.Use Cases Decentralized Web Hosting with Flexible Access With Wayfinder, not only can websites be hosted on the Arweave network, but their accessibility is also enhanced. By using the Wayfinder Protocol, web developers can ensure that if a specific AR.IO Gateway is down, the content can still be accessed through another gateway, offering a more reliable and resilient user experience.Digital Archives and Preservation with Enhanced Sharing Digitally archiving public domain works, especially in light of events like "banned books week", becomes more efficient with Wayfinder. Historical institutions or enthusiasts can easily share specific Wayfinder links to documents or media. Unlike hardcoded links which might break if a specific gateway goes offline, Wayfinder ensures that the content remains consistently accessible.Media Sharing Platforms with Consistent Content Delivery For platforms hosting user-generated content, the Wayfinder Protocol provides not just decentralized hosting but also a guarantee of content delivery. Even if a content piece becomes viral and one gateway gets congested, Wayfinder ensures that users can still access the content through another gateway, providing a seamless experience.Decentralized Applications (DApps) with Reliable Front-End Accessibility DApps, while benefiting from Arweave's permanent hosting, can further ensure their front-end remains consistently accessible to users by using Wayfinder. If a DApp's front-end is accessed frequently, causing strain on one gateway, Wayfinder can help ensure the load is distributed, and the DApp remains online and functional.How it Works Transaction ID To access content tied to an Arweave Transaction ID (TxId), simply append the TxId to ar://:ar://qI19W6spw-kzOGl4qUMNp2gwFH2EBfDXOFsjkcNyK9A Inputting this into a WayFinder-equipped browser will route your request through the right AR.IO Gateway, translating it as per your Routing Method settings.ArNS Fetching content via an Arweave Name System (ArNS) name is straightforward. Attach the ArNS name to ar://:ar://good-morning The Wayfinder protocol, along with the WayFinder App, discerns between TxIds and ArNS names. Once the suitable https:// request is formulated, the chosen gateway translates the ArNS name based on the ArNS aoComputer contract.Wayfinder App The AR.IO WayFinder App is a browser extension designed to facilitate the resolving of ar:// urls.v0.0.10 As of v0.0.10, Wayfinder supports the resolution of TXT records to Arweave content on top level domains. This innovative feature leverages DNS TXT records to associate Arweave transaction IDs with human-readable domain names, facilitating intuitive and memorable access to permaweb content. By simply entering an ar:// URL with a domain name, the Wayfinder App resolves the corresponding Arweave transaction ID through DNS TXT records, redirecting users directly to the content hosted on the Arweave network.Setup: Owners of a domain can set a TXT record for that domain following the format ARTX . Wayfinder Redirection: With a TXT record set properly, whenever a user (who has Wayfinder installed) enters an ar:// URL containing a domain name (e.g., ar://example.com), the Wayfinder App performs a DNS lookup for that TXT record in order to redirect to the Arweave content. The lookup is completed through a secure DNS-over-HTTPS query to ensure privacy and integrity.Dynamic Content Resolution: After retrieving the TXT record, the Wayfinder App extracts that Arweave transaction ID and dynamically redirects the user to the content on the permaweb. This process is transparent to the user, providing a seamless experience as if accessing a traditional website.Key Features Gasless: TXT records can be set without any onchain transactions that would require gas fees.Easy Integration: Domain owners can easily link their permaweb content to their domains, making it accessible through a simple ar:// URL.Dyncamic Content Access: Content links can be updated in real-time through DNS TXT records, without requiring any changes to the ar:// URL itself.Enhanced User Experience: Offers users a familiar and easy-to-remember way to access permaweb content, leveraging standard web domain names.Security and Privacy: Secure DNS-over-HTTPS queries for DNS lookups protect user privacy and enhances security.Use Cases Branded Content Access: Companies and individuals can brand their permaweb content, making it accessible through their domain, enhancing brand visibility and user trust.Dynamic Content Updates: Domain owners can easily update what Permaweb content their AR:// URL resolves to, which is ideal for frequently updated resources like documents, blogs, and application interfaces.Educational and Informational Resources: Educational institutions and information providers can make their resources permanently available on the permaweb, accessible through simple, memorable URLs.This feature marks a significant advancement in making decentralized content more accessible and user-friendly, bridging the gap between traditional internet usability and the permaweb's permanence and censorship-resistant nature.
+ArDrive Web Deployment Guide Overview This guide will outline the simple steps needed to deploy your dApp or website onto the Arweave blockchain using the ArDrive web app and friendly UI.Simple apps and websites should work right out of the box. However, for advanced applications, this assumes you have already prepared your dApp to use hash routing and relative file paths, and built static files for any dApp in a language or framework that requires it (like React). your dApp for deployment here.Deploying Step 1: Log into ArDrive Go to the ArDrive web app and log in using the method of your choosing. If you don't already have an account, you will need to follow the instructions to set one up.Step 2: Select or Create a Drive Once logged in, navigate to the drive where you want your project to be hosted. If you haven't created a drive yet, or if you want a new one specifically for this project, click the big red "New" button at the top left and create a new drive. Remember, the drive needs to be set to public for your dApp to be accessible to others.Step 3: Upload your project With your drive selected, click the big red "New" button again, but this time, select "Upload Folder". Navigate to your project's root directory, or the built directory if required, and select it. This will upload the entire directory, maintaining your project's file structure.Step 4: Confirm Upload You'll be given a chance to review the upload and the associated cost. If everything looks right, click "Confirm". Remember, uploading to Arweave isnt free, but the cost is usually quite small and the benefits of having your dApp or website hosted on the permaweb are significant.Step 5: Create the Manifest While ArDrive diss your uploaded files as a traditional file structure, with files and folders inside other folders, thats not how they actually exist on Arweave. The manifest acts as a map to all the files your dApp needs to function. After you confirm your upload, navigate into your newly created folder by double clicking on it. Click the big red "New" button again and select "New Manifest" in the "Advanced" section. You'll be prompted to name the manifest and choose where to save it. Be sure to save it inside the folder you just created.Step 6: Get the Data TX ID Once the manifest is created, click on it to expand its details. In the "details" tab, on the bottom right, there's a line labeled "Data TX ID". This is the unique identifier for your uploaded dApp on Arweave. Copy this value.Step 7: View and Share your dApp Your dApp or website is now available on the permaweb forever! Append the Data TX ID you just copied to the end of an Arweave gateway URL, like https://arweave.net/. It might take a few minutes for all of your files to finish propagating through the network, but once they do your dApp or website will be accessible to anyone, anywhere, at any time.Step 8: Assign a Friendly Name The Data TX ID you copied in Step 6 is long and difficult to remember. To make it easier to access your dApp or website, you can assign a friendly name to it using ArNS. If you already own an ArNS name, you will be prompted during the creation of
+your manifest if you want to assign one. If you do not, you can purchase one from arns.app.You can also assign an ArNS name to an existing manifest (or any other file) by clicking on the three dots on the right side of the file and selecting "Assign ArNS name".Updating your dApp Files uploaded to Arweave are permanent and immutable. They cannot be changed. However, the Arweave File System (ArFS) protocol used (and created) by ArDrive lets you "replace" them with new versions while still being able to access the old ones. You can do this with entire dApps as well. The old files won't be dised in the ArDrive web app unless you click on a file to view its history.Once you have made changes to your dApp or website, and built the static directory for it, you can upload the entire folder again to the same location where you uploaded the original. Follow all the same steps listed above for uploading your dApp. You will need to create a new manifest to correctly point to the updated files. Give it the same name as the old manifest in order to "replace" it. Creating the new manifest will generate a new TX ID used to view the updated dApp.The old version of the dApp will always be available to anyone who has the correct TX ID.
 
 ---
 
@@ -259,24 +269,23 @@ your manifest if you want to assign one. If you do not, you can purchase one fro
 
 ---
 
-# 7. Deploy a dApp with ArDrive web - ARIO Docs
+# 7. ARIO Docs
 
 Document Number: 7
-Source: https://docs.ar.io/build/guides/ardrive-web
-Words: 787
-Quality Score: 0.561
+Source: https://docs.ar.io/guides/permaweb-deploy
+Words: 1059
+Quality Score: 0.554
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-ArDrive Web Deployment Guide Overview This guide will outline the simple steps needed to deploy your dApp or website onto the Arweave blockchain using the ArDrive web app and friendly UI.Simple apps and websites should work right out of the box. However, for advanced applications, this assumes you have already prepared your dApp to use hash routing and relative file paths, and built static files for any dApp in a language or framework that requires it (like React). your dApp for deployment here.Deploying Step 1: Log into ArDrive Go to the ArDrive web app and log in using the method of your choosing. If you don't already have an account, you will need to follow the instructions to set one up.Step 2: Select or Create a Drive Once logged in, navigate to the drive where you want your project to be hosted. If you haven't created a drive yet, or if you want a new one specifically for this project, click the big red "New" button at the top left and create a new drive. Remember, the drive needs to be set to public for your dApp to be accessible to others.Step 3: Upload your project With your drive selected, click the big red "New" button again, but this time, select "Upload Folder". Navigate to your project's root directory, or the built directory if required, and select it. This will upload the entire directory, maintaining your project's file structure.Step 4: Confirm Upload You'll be given a chance to review the upload and the associated cost. If everything looks right, click "Confirm". Remember, uploading to Arweave isnt free, but the cost is usually quite small and the benefits of having your dApp or website hosted on the permaweb are significant.Step 5: Create the Manifest While ArDrive diss your uploaded files as a traditional file structure, with files and folders inside other folders, thats not how they actually exist on Arweave. The manifest acts as a map to all the files your dApp needs to function. After you confirm your upload, navigate into your newly created folder by double clicking on it. Click the big red "New" button again and select "New Manifest" in the "Advanced" section. You'll be prompted to name the manifest and choose where to save it. Be sure to save it inside the folder you just created.Step 6: Get the Data TX ID Once the manifest is created, click on it to expand its details. In the "details" tab, on the bottom right, there's a line labeled "Data TX ID". This is the unique identifier for your uploaded dApp on Arweave. Copy this value.Step 7: View and Share your dApp Your dApp or website is now available on the permaweb forever! Append the Data TX ID you just copied to the end of an Arweave gateway URL, like https://arweave.net/. It might take a few minutes for all of your files to finish propagating through the network, but once they do your dApp or website will be accessible to anyone, anywhere, at any time.Step 8: Assign a Friendly Name The Data TX ID you copied in Step 6 is long and difficult to remember. To make it easier to access your dApp or website, you can assign a friendly name to it using ArNS. If you already own an ArNS name, you will be prompted during the creation of
-your manifest if you want to assign one. If you do not, you can purchase one from arns.app.You can also assign an ArNS name to an existing manifest (or any other file) by clicking on the three dots on the right side of the file and selecting "Assign ArNS name".Updating your dApp Files uploaded to Arweave are permanent and immutable. They cannot be changed. However, the Arweave File System (ArFS) protocol used (and created) by ArDrive lets you "replace" them with new versions while still being able to access the old ones. You can do this with entire dApps as well. The old files won't be dised in the ArDrive web app unless you click on a file to view its history.Once you have made changes to your dApp or website, and built the static directory for it, you can upload the entire folder again to the same location where you uploaded the original. Follow all the same steps listed above for uploading your dApp. You will need to create a new manifest to correctly point to the updated files. Give it the same name as the old manifest in order to "replace" it. Creating the new manifest will generate a new TX ID used to view the updated dApp.The old version of the dApp will always be available to anyone who has the correct TX ID.
+Deploy a Website or Application Overview With the growing popularity of permanently deployed apps, hosted on Arweave, along with the growing list of tools offered by AR.IO, several methods have been developed to automate the process of deploying a website and updating the ArNS name pointed at it. A particularly useful tool for this is permaweb-deploy from Forward Research.permaweb-deploy is a cli tool that handles uploading a build folder to Arweave using Turbo, creating a manifest, and then updating an ArNS name to point at the new manifest. It being a cli tool makes it very easy to incorporate into a github actions flow. Setting up an automated deployment with permaweb-deploy is simple, but does require a few steps.ENV Security Before automating your deployments, be sure to build your app and check for exposed environmental secrets. Some app frameworks or build flows will build your app with the secrets exposed, and if you are using a tool like permaweb-deploy, those secrets will be uploaded to Arweave. Since the permaweb is permanent, this could pose a security risk, especially with a copy of your wallet keyfile required for the deployment automation.Getting Started Installing package permaweb-deploy is an npm package, and must be installed in any project before it can be used. If you are using npm, you can install the package with the below command:If you prefer yarn for your package installations, the process is slightly more involved. permaweb-deploy is not designed for installation with yarn, so you must provide the additional argument ignore-engines in order to skip over the yarn version error you would normally get with installation. There are two methods for doing so:Directly in the install command In a .yarnc file You can provide a file, named .yarnc in the same directory as your package.json in order to assign specific instructions to all of your yarn commands. Creating a .yarnc file with the line will have the same effect as providing the flag directly in your yarn command Adding a Deploy Script The simplest way to utilize the permaweb-deploy tool is to build it into a script in your package.json. Here you will provide all of the variables that permaweb-deploy needs in order to function properly, as well as ensure that your app is statically built before being uploaded.Be sure to replace with the name of the ArNS name you want to deploy to.The above example shows a build script for a vuepress app, which will build the app into a static folder for deployment, and a deploy script which runs build and then permaweb-deploy. Your build script will look different depending on the framework you are using, but most will provide that for you when you create your app.The permaweb-deploy command has two required arguments:--deploy-folder This is the relative path (from your package.json) to the build folder you want to upload. In a vuepress app, that will be ./src/.vuepress/dist unless you manually specify otherwise in your vuepress configuration. It will be different depending on your chosen framework and if you have modified the default location.--arns-name This is the ArNS name you want to deploy to. It must be an ArNS name that the wallet used to authenticate has ownership or controller privileges over, otherwise the deployment will fail at authentication in the ao process that controls the ArNS name.Undernames The --arns-name flag MUST be the top level name, not and undername. That is, if you want to deploy to undername_arnsname you must set --arns-name arnsname and not --arns-name undername_arnsname.There is the additional, optional flag --undername. If you want to deploy your app to an undername on an ArNS name, provide that name with this flag.--arns-name arnsname --undername undername Testnet Permaweb-deploy supports both Mainnet and Testnet deployments. By default, it will deploy to Mainnet. To deploy to Testnet, you can provide the --ario-process flag as "testnet". If not provided, deployments will default to Mainnet.Providing Arweave Wallet Keys While using permaweb-deploy, you will be uploading data to Arweave using Turbo, as well as performing protected actions on an Arweave Name Token. Because of this, you will need to provide the keys to an Arweave wallet in order for the actions to be successful. The wallet must contain Turbo Credits to pay for the upload, and it must either be a controller or the owner of the ArNS name you are trying to update.permaweb-deploy requires your wallet keyfile be encoded in base64 format. You can convert a local keyfile to base64, and copy the new value to your clipboard by using one of the below commands, depending on your operating system:Linux Mac Windows (CMD) Be sure to replace wallet.json with the path to your chosen wallet keyfile. Once you have this value saved to your clipboard, you can move on to the next step.Create Github Secrets Anyone who has your wallet keyfile (including the base64 formatted keyfile) has full control over your wallet and any of its assets. Because of this, you do not want to include it directly in your package.json script. Instead, keep the value safe by storing it in a github secret. You will create the secrets in the settings tab on your github repo, and the secrets will act as environmental variables in the github actions workflow.You will need to create 1 secret DEPLOY_KEY: This is the base64 encoded version of your Arweave wallet keyfile.Create Action Workflow Github Actions allow you to perform specific actions whenever you push code to github. They are handled by using .yaml files provided in /.github/workflows.To get started, create a new file named deploy.yaml in the workflows directory, then paste the below inside of it:The above tells github to perform these actions when you push new code to the branch main It then sets up a vps with nodejs v 20. When that is complete, it installs dependencies for your project using npm (You will need to add a step to install yarn if that is your preferred package manager), and runs your deploy script, which builds your static folder and then runs permaweb-deploy. It also loads your github secrets into environmental variables that can be used by your deploy script.Deploying App With the above setup complete, the only thing you need to do to deploy a new version of a permasite app to Arweave is push the updated code to branch main on github. Everything else is fully automated.
 
 ---
 
 # 8. ARIO Docs
 
 Document Number: 8
-Source: https://docs.ar.io/guides/permaweb-deploy
+Source: https://docs.ar.io/build/guides/permaweb-deploy
 Words: 1059
 Quality Score: 0.554
 Extraction Method: defuddle_semantic
@@ -289,19 +298,6 @@ Deploy a Website or Application Overview With the growing popularity of permanen
 # 9. ARIO Docs
 
 Document Number: 9
-Source: https://docs.ar.io/build/guides/permaweb-deploy
-Words: 1059
-Quality Score: 0.554
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Deploy a Website or Application Overview With the growing popularity of permanently deployed apps, hosted on Arweave, along with the growing list of tools offered by AR.IO, several methods have been developed to automate the process of deploying a website and updating the ArNS name pointed at it. A particularly useful tool for this is permaweb-deploy from Forward Research.permaweb-deploy is a cli tool that handles uploading a build folder to Arweave using Turbo, creating a manifest, and then updating an ArNS name to point at the new manifest. It being a cli tool makes it very easy to incorporate into a github actions flow. Setting up an automated deployment with permaweb-deploy is simple, but does require a few steps.ENV Security Before automating your deployments, be sure to build your app and check for exposed environmental secrets. Some app frameworks or build flows will build your app with the secrets exposed, and if you are using a tool like permaweb-deploy, those secrets will be uploaded to Arweave. Since the permaweb is permanent, this could pose a security risk, especially with a copy of your wallet keyfile required for the deployment automation.Getting Started Installing package permaweb-deploy is an npm package, and must be installed in any project before it can be used. If you are using npm, you can install the package with the below command:If you prefer yarn for your package installations, the process is slightly more involved. permaweb-deploy is not designed for installation with yarn, so you must provide the additional argument ignore-engines in order to skip over the yarn version error you would normally get with installation. There are two methods for doing so:Directly in the install command In a .yarnc file You can provide a file, named .yarnc in the same directory as your package.json in order to assign specific instructions to all of your yarn commands. Creating a .yarnc file with the line will have the same effect as providing the flag directly in your yarn command Adding a Deploy Script The simplest way to utilize the permaweb-deploy tool is to build it into a script in your package.json. Here you will provide all of the variables that permaweb-deploy needs in order to function properly, as well as ensure that your app is statically built before being uploaded.Be sure to replace with the name of the ArNS name you want to deploy to.The above example shows a build script for a vuepress app, which will build the app into a static folder for deployment, and a deploy script which runs build and then permaweb-deploy. Your build script will look different depending on the framework you are using, but most will provide that for you when you create your app.The permaweb-deploy command has two required arguments:--deploy-folder This is the relative path (from your package.json) to the build folder you want to upload. In a vuepress app, that will be ./src/.vuepress/dist unless you manually specify otherwise in your vuepress configuration. It will be different depending on your chosen framework and if you have modified the default location.--arns-name This is the ArNS name you want to deploy to. It must be an ArNS name that the wallet used to authenticate has ownership or controller privileges over, otherwise the deployment will fail at authentication in the ao process that controls the ArNS name.Undernames The --arns-name flag MUST be the top level name, not and undername. That is, if you want to deploy to undername_arnsname you must set --arns-name arnsname and not --arns-name undername_arnsname.There is the additional, optional flag --undername. If you want to deploy your app to an undername on an ArNS name, provide that name with this flag.--arns-name arnsname --undername undername Testnet Permaweb-deploy supports both Mainnet and Testnet deployments. By default, it will deploy to Mainnet. To deploy to Testnet, you can provide the --ario-process flag as "testnet". If not provided, deployments will default to Mainnet.Providing Arweave Wallet Keys While using permaweb-deploy, you will be uploading data to Arweave using Turbo, as well as performing protected actions on an Arweave Name Token. Because of this, you will need to provide the keys to an Arweave wallet in order for the actions to be successful. The wallet must contain Turbo Credits to pay for the upload, and it must either be a controller or the owner of the ArNS name you are trying to update.permaweb-deploy requires your wallet keyfile be encoded in base64 format. You can convert a local keyfile to base64, and copy the new value to your clipboard by using one of the below commands, depending on your operating system:Linux Mac Windows (CMD) Be sure to replace wallet.json with the path to your chosen wallet keyfile. Once you have this value saved to your clipboard, you can move on to the next step.Create Github Secrets Anyone who has your wallet keyfile (including the base64 formatted keyfile) has full control over your wallet and any of its assets. Because of this, you do not want to include it directly in your package.json script. Instead, keep the value safe by storing it in a github secret. You will create the secrets in the settings tab on your github repo, and the secrets will act as environmental variables in the github actions workflow.You will need to create 1 secret DEPLOY_KEY: This is the base64 encoded version of your Arweave wallet keyfile.Create Action Workflow Github Actions allow you to perform specific actions whenever you push code to github. They are handled by using .yaml files provided in /.github/workflows.To get started, create a new file named deploy.yaml in the workflows directory, then paste the below inside of it:The above tells github to perform these actions when you push new code to the branch main It then sets up a vps with nodejs v 20. When that is complete, it installs dependencies for your project using npm (You will need to add a step to install yarn if that is your preferred package manager), and runs your deploy script, which builds your static folder and then runs permaweb-deploy. It also loads your github secrets into environmental variables that can be used by your deploy script.Deploying App With the above setup complete, the only thing you need to do to deploy a new version of a permasite app to Arweave is push the updated code to branch main on github. Everything else is fully automated.
-
----
-
-# 10. ARIO Docs
-
-Document Number: 10
 Source: https://docs.ar.io/gateways/linux-setup
 Words: 1273
 Quality Score: 0.554
@@ -314,10 +310,23 @@ nginx is a free and open-source web server and reverse proxy server. It will han
 
 ---
 
+# 10. ARIO Docs
+
+Document Number: 10
+Source: https://docs.ar.io/gateways/advanced
+Words: 781
+Quality Score: 0.551
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Advanced Configuration Overview The Getting Started guides for windows and linux contain all the information needed to start your AR.IO Gateway node successfully with basic configurations. There are also ever expanding advanced configuration options that allow you to run your node in a way that is customized to your specific use case.Most of the below options can be added to your .env file in order to customize its operation. Any changes made to your .env require you to the docker containers running your node, and restarting them with the --build flag in order for the changes to take effect. See ENV for a complete list of environmental variables you can set.Data Storage Location You can set a custom location for your AR.IO Gateway to save the data it pulls from the Arweave network. There are three primary types of data stored, and you can set a unique storage location for each of these independently. These are "chunks data", "contiguous data", and "headers data". The custom location for each of these can be set in your.env file like this:Be sure to replace "" with the path to the location where you would like the data stored. If these values are omitted, the data will be stored in the "data" directory inside your Gateway code repository.Admin API Key HTTP endpoints under "/ar-io/admin" are protected by an admin API key. These endpoints allow you to get certain analytics data or make adjustments to your node as it's running. When your node starts, it reads your environmental variables to see if a key is set. If not, a random key is generated. The key name is ADMIN_API_KEY and it should be set in your .env file like this:ADMIN_API_KEY=SUPER_SECRET_PASSWORD View examples of the admin endpoints here Wallet Association In order to participate in the greater AR.IO network, Gateway nodes need to associate themselves with an Arweave wallet. This can be configured by setting the AR_IO_WALLET key value in your .env file.AR_IO_WALLET=1seRanklLU_1VTGowDZdD7s_-7k1qowT6oeFZHUZiZo Unbundling AR.IO Gateway nodes support unbundling and indexing ANS-104 bundle data. This is disabled by default, but can be turned on with several different configuration options. You can set these configurations with the ANS104_UNBUNDLE_FILTER and ANS104_INDEX_FILTER keys in your.env:The following types of filters are supported:Content Moderation You are able to set your Gateway to block specific transactions or data-items you don't want to serve. Unlike previous configuration options in this list, blocking content can be achieved without the need to add to your.env file and rebuild your Gateway. Instead, make a PUT request to your Gateway at /ar-io/admin/block-data. As this is an admin endpoint, you will need to have configured your ADMIN_API_KEY. Using curl as an example, the request should be formatted as follows:id (string): This will be the transaction ID of the content you want to add to your block list.notes (string): Internal notes regarding why a particular ID is blocked.source (string): Identifier of a particular source of IDs to block. (e.g. the name of a block list) notes and source are used for documentation only, and have no effect on your block list itself.Contiguous Data Cleanup Transaction data on Arweave is stored in a chunked manner. It is commonly retrieved, however, in the the transaction data's original, contiguous form with all of its component chunks assembled end-to-end. Gateways cache contiguous representations of the transaction data to assist in various workloads, including serving transaction data to clients, allowing for efficient utilization of valuable system resources. Gateway operators will need to determine for themselves the best balance between disk space and other resource usage based on the size of their gateway and their particular use case.Contiguous data cache cleanup can be enabled using the CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD environmental variable. This variable sets the number of seconds from the creation of a file in the contiguous data cache after which that file will be deleted. For example:CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD=10000 will clear items from the contiguous data cache after ten thousand (10,000) seconds.ArNS Resolver Gateways, by default, forward requests to resolve ArNS names to arweave.dev. Starting with Release 9 gateways can instead build and maintain their own local cache. Doing so removes external dependencies and allows faster resolution.View the code for the ArNS resolver service here: https://github.com/ar-io/arns-resolver NOTE: The ArNS resolver is still an experimental feature. It is possible it may behave in unexpected ways when presented with rare edge case scenarios.In order to enable the local ArNS resolver, three environmental variables will need to be set:RUN_RESOLVER is a boolean representing an on/off switch for the local resolver.TRUSTED_ARNS_RESOLVER_TYPE sets the method the gateway uses for resolving ArNS names. Use resolver for the local resolver, or gateway for default functionality.TRUSTED_ARNS_RESOLVER_URL is the url a gateway will use to request ArNS name resolution.
+
+---
+
 # 11. ARIO Docs
 
 Document Number: 11
-Source: https://docs.ar.io/gateways/advanced
+Source: https://docs.ar.io/gateways/ar-io-node/advanced-config.html
 Words: 781
 Quality Score: 0.551
 Extraction Method: defuddle_semantic
@@ -330,19 +339,6 @@ Advanced Configuration Overview The Getting Started guides for windows and linux
 # 12. ARIO Docs
 
 Document Number: 12
-Source: https://docs.ar.io/gateways/ar-io-node/advanced-config.html
-Words: 781
-Quality Score: 0.551
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Advanced Configuration Overview The Getting Started guides for windows and linux contain all the information needed to start your AR.IO Gateway node successfully with basic configurations. There are also ever expanding advanced configuration options that allow you to run your node in a way that is customized to your specific use case.Most of the below options can be added to your .env file in order to customize its operation. Any changes made to your .env require you to the docker containers running your node, and restarting them with the --build flag in order for the changes to take effect. See ENV for a complete list of environmental variables you can set.Data Storage Location You can set a custom location for your AR.IO Gateway to save the data it pulls from the Arweave network. There are three primary types of data stored, and you can set a unique storage location for each of these independently. These are "chunks data", "contiguous data", and "headers data". The custom location for each of these can be set in your.env file like this:Be sure to replace "" with the path to the location where you would like the data stored. If these values are omitted, the data will be stored in the "data" directory inside your Gateway code repository.Admin API Key HTTP endpoints under "/ar-io/admin" are protected by an admin API key. These endpoints allow you to get certain analytics data or make adjustments to your node as it's running. When your node starts, it reads your environmental variables to see if a key is set. If not, a random key is generated. The key name is ADMIN_API_KEY and it should be set in your .env file like this:ADMIN_API_KEY=SUPER_SECRET_PASSWORD View examples of the admin endpoints here Wallet Association In order to participate in the greater AR.IO network, Gateway nodes need to associate themselves with an Arweave wallet. This can be configured by setting the AR_IO_WALLET key value in your .env file.AR_IO_WALLET=1seRanklLU_1VTGowDZdD7s_-7k1qowT6oeFZHUZiZo Unbundling AR.IO Gateway nodes support unbundling and indexing ANS-104 bundle data. This is disabled by default, but can be turned on with several different configuration options. You can set these configurations with the ANS104_UNBUNDLE_FILTER and ANS104_INDEX_FILTER keys in your.env:The following types of filters are supported:Content Moderation You are able to set your Gateway to block specific transactions or data-items you don't want to serve. Unlike previous configuration options in this list, blocking content can be achieved without the need to add to your.env file and rebuild your Gateway. Instead, make a PUT request to your Gateway at /ar-io/admin/block-data. As this is an admin endpoint, you will need to have configured your ADMIN_API_KEY. Using curl as an example, the request should be formatted as follows:id (string): This will be the transaction ID of the content you want to add to your block list.notes (string): Internal notes regarding why a particular ID is blocked.source (string): Identifier of a particular source of IDs to block. (e.g. the name of a block list) notes and source are used for documentation only, and have no effect on your block list itself.Contiguous Data Cleanup Transaction data on Arweave is stored in a chunked manner. It is commonly retrieved, however, in the the transaction data's original, contiguous form with all of its component chunks assembled end-to-end. Gateways cache contiguous representations of the transaction data to assist in various workloads, including serving transaction data to clients, allowing for efficient utilization of valuable system resources. Gateway operators will need to determine for themselves the best balance between disk space and other resource usage based on the size of their gateway and their particular use case.Contiguous data cache cleanup can be enabled using the CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD environmental variable. This variable sets the number of seconds from the creation of a file in the contiguous data cache after which that file will be deleted. For example:CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD=10000 will clear items from the contiguous data cache after ten thousand (10,000) seconds.ArNS Resolver Gateways, by default, forward requests to resolve ArNS names to arweave.dev. Starting with Release 9 gateways can instead build and maintain their own local cache. Doing so removes external dependencies and allows faster resolution.View the code for the ArNS resolver service here: https://github.com/ar-io/arns-resolver NOTE: The ArNS resolver is still an experimental feature. It is possible it may behave in unexpected ways when presented with rare edge case scenarios.In order to enable the local ArNS resolver, three environmental variables will need to be set:RUN_RESOLVER is a boolean representing an on/off switch for the local resolver.TRUSTED_ARNS_RESOLVER_TYPE sets the method the gateway uses for resolving ArNS names. Use resolver for the local resolver, or gateway for default functionality.TRUSTED_ARNS_RESOLVER_URL is the url a gateway will use to request ArNS name resolution.
-
----
-
-# 13. ARIO Docs
-
-Document Number: 13
 Source: https://docs.ar.io/wayfinder/telemetry
 Words: 193
 Quality Score: 0.548
@@ -354,9 +350,9 @@ explicitly enable it in your configuration.Basic Configuration Minimal Setup Sen
 
 ---
 
-# 14. ARIO Docs
+# 13. ARIO Docs
 
-Document Number: 14
+Document Number: 13
 Source: https://docs.ar.io/gateways/upgrading
 Words: 350
 Quality Score: 0.547
@@ -367,9 +363,9 @@ Upgrading your Gateway To ensure the optimal performance and security of your AR
 
 ---
 
-# 15. Uploading to Arweave - ARIO Docs
+# 14. Uploading to Arweave - ARIO Docs
 
-Document Number: 15
+Document Number: 14
 Source: https://docs.ar.io/guides/uploading-to-arweave
 Words: 337
 Quality Score: 0.540
@@ -380,9 +376,9 @@ Uploading to Arweave Overview While AR.IO provides powerful tools for accessing 
 
 ---
 
-# 16. ARIO Docs
+# 15. ARIO Docs
 
-Document Number: 16
+Document Number: 15
 Source: https://docs.ar.io/guides/gql
 Words: 1295
 Quality Score: 0.534
@@ -393,9 +389,9 @@ GraphQL Overview GraphQL is a powerful query language designed for modern web ap
 
 ---
 
-# 17. ARIO Docs
+# 16. ARIO Docs
 
-Document Number: 17
+Document Number: 16
 Source: https://docs.ar.io/build/guides/gql
 Words: 1295
 Quality Score: 0.534
@@ -406,9 +402,9 @@ GraphQL Overview GraphQL is a powerful query language designed for modern web ap
 
 ---
 
-# 18. ARIO Gateway Grafana - ARIO Docs
+# 17. ARIO Gateway Grafana - ARIO Docs
 
-Document Number: 18
+Document Number: 17
 Source: https://docs.ar.io/gateways/grafana
 Words: 694
 Quality Score: 0.531
@@ -422,9 +418,9 @@ In order to be able to access Grafana from outside the network running the gatew
 
 ---
 
-# 19. ARIO Docs
+# 18. ARIO Docs
 
-Document Number: 19
+Document Number: 18
 Source: https://docs.ar.io/gateways/windows-setup
 Words: 1299
 Quality Score: 0.524
@@ -435,9 +431,9 @@ Windows Installation Instructions Overview This guide provides step-by-step inst
 
 ---
 
-# 20. Gateway Network - ARIO Docs
+# 19. Gateway Network - ARIO Docs
 
-Document Number: 20
+Document Number: 19
 Source: https://docs.ar.io/gateways/gateway-network
 Words: 651
 Quality Score: 0.523
@@ -462,9 +458,9 @@ Gateways then expose these hashes and their verification status to users via HTT
 
 ---
 
-# 21. ARIO Docs
+# 20. ARIO Docs
 
-Document Number: 21
+Document Number: 20
 Source: https://docs.ar.io/wayfinder/getting-started
 Words: 576
 Quality Score: 0.521
@@ -575,9 +571,9 @@ console.error(Request failed: ${event.error.message}`)
 
 ---
 
-# 22. Managing Undernames - ARIO Docs
+# 21. Managing Undernames - ARIO Docs
 
-Document Number: 22
+Document Number: 21
 Source: https://docs.ar.io/guides/managing-undernames
 Words: 302
 Quality Score: 0.512
@@ -591,9 +587,9 @@ The quantity (qty) parameter specifies the number of ADDITIONAL undernames to be
 
 ---
 
-# 23. Managing Undernames - ARIO Docs
+# 22. Managing Undernames - ARIO Docs
 
-Document Number: 23
+Document Number: 22
 Source: https://docs.ar.io/build/guides/managing-undernames
 Words: 302
 Quality Score: 0.512
@@ -604,6 +600,19 @@ Overview ArNS undernames are subdomains of top level ArNS domains. They are sepa
 The process for setting/removing a record for an undername vs. a top level ArNS domain is nearly identical, the only difference being the undername parameter. When managing a record on a top level ArNS domain, this must be set to @, while updates to an undername should provide the undername being updated.Chaining Undernames Undernames can be created on other undernames, for example ar://og_logo_ardrive. In this example the undername og exists under the undername logo on the ArNS name ardrive.For the purpose of the undername parameter in the AR.IO SDK, this should be written as a single undername, including the separating underscores:og_logo Creating an Undername There are no special steps required to create an undername (provided the selected ArNS name has available undername space). Simply setting a record for an undername that does not exist will create the undername.Updating an Undername If an undername already exists, its record can easily be updated using the same setRecord method.Removing an Undername An existing undername can be removed by using the removeRecord method on the AR.IO SDK.
 The undername parameter should be set to the undername being removed.Increasing Undername Support By default, ArNS names support up to 10 undernames. This number can be increased, for a fee. This is done using the increaseUndernameLimit method on the ARIO class of the AR.IO SDK, rather than the ANT class.
 The quantity (qty) parameter specifies the number of ADDITIONAL undernames to be supported. i.e. increasing from 10 undernames to 15 would require the qty parameter set to 5.
+
+---
+
+# 23. ARIO Docs
+
+Document Number: 23
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-delegations
+Words: 56
+Quality Score: 0.510
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+getDelegations getDelegations is a method on the ARIO class that retrieves all active and vaulted stakes across all gateways for a specific address. Results are paginated and sorted by the specified criteria. The cursor parameter represents the last delegationId (a combination of gateway address and delegation start timestamp) from the previous request.getDelegations does not require authentication.
 
 ---
 
@@ -1022,23 +1031,9 @@ console.error(`[WAYFINDER] ${message}`, ...args),
 
 ---
 
-# 30. wayfinderrequest() - ARIO Docs
+# 30. ARIO Docs
 
 Document Number: 30
-Source: https://docs.ar.io/wayfinder/core/request
-Words: 272
-Quality Score: 0.499
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Fetch data from Arweave using the ar:// protocol with intelligent routing and verification. This method is a wrapper around the native Fetch API, providing the same interface with additional Wayfinder-specific functionality.Syntax Parameters input (string | URL | RequestInfo): The ar:// URL or standard fetch input init (RequestInit & WayfinderRequetions, optional): Standard fetch options plus Wayfinder overrides Wayfinder-Specific Options Returns Type: Promise Returns a standard Response object that can be processed with methods like response.text(), response.json(), response.blob(), etc.Basic Usage Fetching Different Data Types Handling Unknown Data Types When you don't know the MIME type in advance, check the Content-Type header to determine how to process the response:Custom Headers You can pass custom headers with your requests using the standard fetch options:Standard Fetch Options Since wayfinder.request() is a wrapper around the native Fetch API, all standard fetch options are supported:Wayfinder Override Settings You can override the global Wayfinder configuration for individual requests:Override Verification Settings Override Routing Settings Supported URL Formats Transaction IDs ArNS Names Gateway Endpoints Gateway endpoint availability varies by gateway implementation. The /info endpoint is standard, while others like /peers and /graphql may not be
-available on all gateways.Additional Usage Patterns For advanced usage patterns, configuration options, and detailed examples, refer to the MDN Fetch API documentation. Since wayfinder.request() is a wrapper around the native fetch function, all standard fetch patterns apply:Request configuration and headers Response processing methods Streaming data handling Caching strategies CORS handling Error types and handling The Wayfinder-specific additions (verification and routing overrides) work seamlessly with all standard fetch functionality.resolveUrl(): Resolve ar:// URLs without fetching data Events System: Monitor request events and performance Configuration: Set up global request settings
-
----
-
-# 31. ARIO Docs
-
-Document Number: 31
 Source: https://docs.ar.io/gateways/bundler
 Words: 808
 Quality Score: 0.499
@@ -1049,9 +1044,9 @@ Bundler Overview A Turbo ANS-104 data item bundler can be run alongside an AR.IO
 
 ---
 
-# 32. Importing SQLite Database Snapshots - ARIO Docs
+# 31. Importing SQLite Database Snapshots - ARIO Docs
 
-Document Number: 32
+Document Number: 31
 Source: https://docs.ar.io/gateways/snapshots
 Words: 483
 Quality Score: 0.498
@@ -1062,9 +1057,9 @@ Overview One of the challenges of running an AR.IO Gateway is the initial synchr
 
 ---
 
-# 33. Arlink Deploy - ARIO Docs
+# 32. Arlink Deploy - ARIO Docs
 
-Document Number: 33
+Document Number: 32
 Source: https://docs.ar.io/build/guides/arlink
 Words: 462
 Quality Score: 0.496
@@ -1078,9 +1073,9 @@ Duplicate undernames cannot exist, so you can only select an undername that is n
 
 ---
 
-# 34. Arlink Deploy - ARIO Docs
+# 33. Arlink Deploy - ARIO Docs
 
-Document Number: 34
+Document Number: 33
 Source: https://docs.ar.io/guides/arlink
 Words: 462
 Quality Score: 0.496
@@ -1094,9 +1089,9 @@ Duplicate undernames cannot exist, so you can only select an undername that is n
 
 ---
 
-# 35. ARIO Network Testnet - ARIO Docs
+# 34. ARIO Network Testnet - ARIO Docs
 
-Document Number: 35
+Document Number: 34
 Source: https://docs.ar.io/guides/testnet
 Words: 885
 Quality Score: 0.496
@@ -1153,9 +1148,9 @@ quantity: new ARIOToken(100).toMARIO().valueOf(), // 100 ARIO
 
 ---
 
-# 36. ARIO Docs
+# 35. ARIO Docs
 
-Document Number: 36
+Document Number: 35
 Source: https://docs.ar.io/ar-io-sdk
 Words: 422
 Quality Score: 0.495
@@ -1173,6 +1168,45 @@ AR.IO SDK Overview The AR.IO SDK provides functionality for interacting with the
 "status": "string (e.g., joined)", // The current status of the operator
 "observerAddress": "string" // The public wallet address of the observer for the gateway
 } The ar.io SDK supports write operations for gateway management, including joining, leaving, and updating settings. It also provides read operations for discovering gateways in the GAR and retrieving details about specific gateways.ARIO Token ARIO is an AO token that powers the ar.io Network and and its suite of permaweb applications. It is used to join the GAR, as payment for services like ArNS, as incentives for participation in the ar.io Network, and more.The ar.io SDK supports read and write operations for getting token information and balances, or transferring tokens.ArNS The Arweave Name System (ArNS) is a protocol which allows for assigning friendly names to Arweave transactions or data items. Powered by Arweave Name Tokens (ANTs), AO tokens that manage settings for individual ArNS domains, ArNS enables easy interaction with data stored on Arweave.The ar.io SDK supports read and write operations for managing ArNS domains, including retrieving domain information, leasing, purchasing, and extending leases. Additionally, it allows direct read and write access to ANTs.
+
+---
+
+# 36. joinNetwork - ARIO Docs
+
+Document Number: 36
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/join-network
+Words: 200
+Quality Score: 0.495
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+joinNetwork is a method on the ARIO class that joins a gateway to the ar.io network using its associated wallet.joinNetwork requires authentication.Parameters Example joinNetwork const fs = require("fs");
+const { ARIO, ArweaveSigner, ARIOToken } = require("@ar.io/sdk");
+async function main() {
+const jwk = JSON.parse(fs.readFileSync("KeyFile.json"));
+const ario = ARIO.init({
+signer: new ArweaveSigner(jwk),
+});
+const { id: txId } = await ario.joinNetwork(
+{
+qty: new ARIOToken(10_000).toMARIO(), // minimum operator stake allowed
+autoStake: true, // auto-stake operator rewards to the gateway
+allowDelegatedStaking: true, // allows delegated staking
+minDelegatedStake: new ARIOToken(100).toMARIO(), // minimum delegated stake allowed
+delegateRewardShareRatio: 10, // percentage of rewards to share with delegates (e.g. 10%)
+label: 'john smith', // min 1, max 64 characters
+note: 'The example gateway', // max 256 characters
+properties: 'FH1aVetOoulPGqgYukj0VE0wIhDy90WiQoV3U2PeY44', // Arweave transaction ID containing additional properties of the Gateway
+observerWallet: '0VE0wIhDy90WiQoV3U2PeY44FH1aVetOoulPGqgYukj', // wallet address of the observer, must match OBSERVER_WALLET on the observer
+fqdn: 'example.com', // fully qualified domain name - note: you must own the domain and set the OBSERVER_WALLET on your gateway to match `observerWallet`
+port: 443, // port number
+protocol: 'https', // only 'https' is supported
+},
+// optional additional tags
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+);
+}
+main();
 
 ---
 
@@ -1244,9 +1278,22 @@ getArNSReturnedNames getArNSReturnedNames is a method on the ARIO class that ret
 
 ---
 
-# 40. ARIO Node Release Notes - ARIO Docs
+# 40. ARIO Docs
 
 Document Number: 40
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/redelegate-stake
+Words: 107
+Quality Score: 0.490
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+redelegateStake redelegateStake is a method on the ARIO class that moves staked tokens from one gateway to another. A vault ID can be optionally included to redelegate from an existing withdrawal vault. The redelegation fee is calculated based on the fee rate and the stake amount. Users receive one free redelegation every seven epochs. Each additional redelegation increases the fee by 10%, up to a maximum of 60%.For example: If 1000 mARIO is redelegated with a 10% fee rate, the fee will be 100 mARIO. This results in 900 mARIO being redelegated to the new gateway and 100 mARIO being returned to the protocol balance.redelegateStake requires authentication.
+
+---
+
+# 41. ARIO Node Release Notes - ARIO Docs
+
+Document Number: 41
 Source: https://docs.ar.io/gateways/release-notes
 Words: 7692
 Quality Score: 0.489
@@ -1332,9 +1379,9 @@ containers exit with a success status even when they shouldn't.Fixed Added missi
 
 ---
 
-# 41. ARIO Node Release Notes - ARIO Docs
+# 42. ARIO Node Release Notes - ARIO Docs
 
-Document Number: 41
+Document Number: 42
 Source: https://docs.ar.io/gateways/release-notes#
 Words: 7692
 Quality Score: 0.489
@@ -1420,9 +1467,22 @@ containers exit with a success status even when they shouldn't.Fixed Added missi
 
 ---
 
-# 42. Join the Gateway Network - ARIO Docs
+# 43. ARIO Docs
 
-Document Number: 42
+Document Number: 43
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-allowed-delegates
+Words: 39
+Quality Score: 0.488
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+getAllowedDelegates getAllowedDelegates is a method on the ARIO class that retrieves all allowed delegates for a specific gateway address. The cursor parameter is used for pagination and represents the last address from the previous request.getAllowedDelegates does not require authentication.
+
+---
+
+# 44. Join the Gateway Network - ARIO Docs
+
+Document Number: 44
 Source: https://docs.ar.io/gateways/join-network
 Words: 468
 Quality Score: 0.487
@@ -1433,9 +1493,9 @@ Join the AR.IO Network Prerequisites Must have a fully functional AR.IO gateway.
 
 ---
 
-# 43. Staking - ARIO Docs
+# 45. Staking - ARIO Docs
 
-Document Number: 43
+Document Number: 45
 Source: https://docs.ar.io/staking
 Words: 534
 Quality Score: 0.484
@@ -1461,9 +1521,9 @@ Once triggered, the tokens are returned immediately to the user’s wallet.
 
 ---
 
-# 44. getTokenCost - ARIO Docs
+# 46. getTokenCost - ARIO Docs
 
-Document Number: 44
+Document Number: 46
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-token-cost
 Words: 71
 Quality Score: 0.484
@@ -1474,22 +1534,22 @@ getTokenCost is a method on the ARIO class that calculates the cost in mARIO tok
 
 ---
 
-# 45. Manifests - ARIO Docs
+# 47. ARIO Docs
 
-Document Number: 45
-Source: https://docs.ar.io/concepts/manifests
-Words: 728
-Quality Score: 0.483
+Document Number: 47
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-redelegation-fee
+Words: 45
+Quality Score: 0.482
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Overview AR.IO Gateways support friendly-path-name routing for data on Arweave via Manifests. This greatly improves the programmability of data relationships. Consider an illustrative example where data stored on Arweave and accessed like this:can instead be accessed like this:NFT collections also benefit from manifest-based routing:AR.IO gateways are capable of resolving manifest paths in a relative manner. An HTML page loading assets from Arweave would be very difficult to develop, maintain, and harden against hosting domains leaving existence if assets had to be linked to by a fully qualified domain name and an Arweave data item ID as the path. For example:Manifests allow HTML pages to use relative paths to assets with friendly names so that the document is easy to read, maintain, and host across any AR.IO domain. For example:Relative routing eliminates the need for every link to contain the full Arweave transaction ID and fully qualified domain name. This makes the HTML more readable and ensures that links remain valid even if the hosting domain changes. If index.html needed to access js/style.css, the relative link ./js/style.css could be used instead of /js/style.css. This relative routing is incredibly useful for linking together files in a way that allows functional websites to be hosted entirely on Arweave. path routing and structuring files into a permanently hosted website in ArDrive's decentralized app guide What is a Manifest Manifests, also known as "Path Manifests" or "Arweave Manifests," are JSON objects that connect various Arweave data items and define relational paths for easy navigation. A common use case for manifests is permanently hosting websites on Arweave by linking all necessary files together. An AR.IO gateway can then resolve the manifest into a fully functional website.Sample Manifest How it Works A resolver, typically an AR.IO gateway, resolves URLs requesting content based on a manifest transaction ID to the corresponding path key in the paths object. The URL schema for this type of request is https:////.Example Usage Assume the manifest above is uploaded to Arweave with the transaction ID UyC5P5qKPZaltMmmZAWdakhlDXsBF6qmyrbWYFchRTk. The below table shows https requests to the AR.IO gateway arweave.dev requesting various endpoints on the manifest transaction Id, the manifest path where the gateway will find the data to return, and the resulting Arweave txId.Specifications Transaction Tags Manifest are uploaded to Arweave in the same manner as any other data item. A specific content type tag must be added while uploading so that resolvers like the AR.IO gateways can recognize a manifest and properly resolve the paths. Tags must be attached to the manifest at the time of upload. They cannot be added later without uploading a new manifest, and they must be attached to the upload transaction, NOT placed inside the json object.Failure to provide this tag will result in resolvers not recognizing the manifest, so they will only return the raw json instead of the linked data items.Content-Type Transaction Data Being a json object, there are several attributes that make up the structure of a manifest. The json object must be fully defined and uploaded to Arweave as a data item.manifest The manifest attribute serves as an additional validation layer. It must have the value arweave/paths in order for a gateway to resolve the manifest.version The version attribute defines the version of manifest schema a manifest is using.index or The index attribute is an object that defines the base, or 'starting' data item. It is similar to the / endpoint on a website. When resolving the manifest with no additional path definition, this is the data item that will be returned.index accepts either path or id as sub attributes. path represents the key of a defined path in the manifest, while id represents a specific Arweave data item transaction Id.If both path and id are defined in index, id will override path.fallback The fallback attribute is an object that defines an Arweave data item transaction Id for the resolver to fall back to if it fails to correctly resolve a requested path. For example, it can act as a 404 page if a user requests manifest/non-existent-page fallback accepts id as a sub attribute, representing an Arweave data item transaction Id.paths The paths attribute is an object that defines the url paths that a manifest can resolve to. If a user navigates to manifest/index.html the resolver will look for index.html as a key in the paths object and return the corresponding id. (cG7Hdi_iTQPoEYgQJFqJ8NMpN4KoZ-vH_j7pG4iP7NI)
+getRedelegationFee getRedelegationFee is a method on the ARIO class that retrieves the redelegation fee rate as a percentage for a specific address. The fee rate ranges from 0% to 60% based on the number of redelegations since the last fee reset.getRedelegationFee does not require authentication.
 
 ---
 
-# 46. Register an IP Asset on Arweave - ARIO Docs
+# 48. Register an IP Asset on Arweave - ARIO Docs
 
-Document Number: 46
+Document Number: 48
 Source: https://docs.ar.io/guides/story
 Words: 1932
 Quality Score: 0.481
@@ -1749,22 +1809,9 @@ console.error("Error registering derivative IP Asset on Story Protocol:", error)
 
 ---
 
-# 47. Browser Sandboxing - ARIO Docs
+# 49. ARIO Docs
 
-Document Number: 47
-Source: https://docs.ar.io/concepts/sandboxing
-Words: 519
-Quality Score: 0.480
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview Browser sandboxing allows data requests to a gateway node to benefit from the security advantages of using a browser's same-origin policy by redirecting the requests to a pseudo-unique subdomain of the gateway's apex domain. For example, an attempt to access https://arweave.net/gnWKBqFXMJrrksEWrXLQRUQQQeFhv4uVxesHBcT8i6o would redirect to https://qj2yubvbk4yjv24syelk24wqivcbaqpbmg7yxfof5mdqlrh4rova.arweave.net/gnWKBqFXMJrrksEWrXLQRUQQQeFhv4uVxesHBcT8i6o Two DNS records are required to link a domain to an Arweave transaction on a gateway node. For example, www.mycustomsite.com would need the following records to link it to www.arweave-gateway.net:A DNS CNAME record pointing to an Arweave gateway: www CNAME arweave-gateway.net,A DNS TXT record linking the domain with a specific transaction ID: arweavetx TXT kTv4OkVtmc0NAsqIcnHfudKjykJeQ83qXXrxf8hrh0S When a browser requests www.mycustomsite.com the user's machine will (through the usual DNS processes) resolve this to the IP address for the gateway node arweave-gateway.net. When the gateway receives an HTTP request with a non-default hostname, e.g. www.mycustomsite.com instead of www.arweave-gateway.net, the gateway will query the DNS records for www.mycustomsite.com and the 'arweavetx' TXT record will tell the node which transaction to serve.TLS and its Role in Browser Sandboxing Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network. In the context of Arweave applications and browser sandboxing, TLS s a critical role in ensuring secure data transmission and enabling the effective use of browser security features.When Arweave applications are accessed without TLS, most browsers restrict the use of native cryptographic functions. These functions, which include hashing, signing, and verification, are essential for the secure operation of Arweave permaweb apps. Without TLS, not only are these functions unavailable, but the applications also become susceptible to various security threats, notably man-in-the-middle (MITM) attacks. Although Arweave transactions are signed, making direct MITM attacks challenging, the absence of encryption can expose other vulnerabilities. For instance, attackers could intercept and alter the /price endpoint, potentially causing transaction failures or leading to overcharging.To address these concerns, gateway operators are responsible for generating and maintaining TLS certificates for their gateways. This can be achieved through various systems, such as ACME for Let's Encrypt. An important step in setting up a gateway is obtaining a wildcard TLS certificate for the gateway's domain. This certificate secures traffic on both the apex domain and its single-level subdomains (e.g., gateway.com and subdomain.gateway.com).The integration of TLS is crucial for the implementation of browser sandboxing. When a browser requests a transaction from a gateway, the gateway issues a 301 redirect to a subdomain of the gateway, using a Base32 pseudo-unique address derived from the transaction ID. This redirection, secured by TLS, invokes the browser's same-origin policy. As a result, the requested web page is confined within a secure sandbox environment, isolated from other domains. This isolation is vital for maintaining the integrity and security of transactions and interactions within Arweave's permaweb applications.Deriving Sandbox Value AR.IO nodes generate browser sandbox values deterministically. Because of this, it is possible to calculate ahead of time what that value will be for a particular transaction id.Sandbox values are a Base32 encoding of the transaction ID. AR.IO gateways use the following code snippet to accomplish the encoding:Example:Example Output:qj2yubvbk4yjv24syelk24wqivcbaqpbmg7yxfof5mdqlrh4rova View the full code for generating browser sandbox values here.
-
----
-
-# 48. ARIO Docs
-
-Document Number: 48
+Document Number: 49
 Source: https://docs.ar.io/wayfinder
 Words: 351
 Quality Score: 0.480
@@ -1775,9 +1822,9 @@ Wayfinder Wayfinder is a client-side routing and verification protocol that prov
 
 ---
 
-# 49. Content Moderation - ARIO Docs
+# 50. Content Moderation - ARIO Docs
 
-Document Number: 49
+Document Number: 50
 Source: https://docs.ar.io/gateways/moderation
 Words: 543
 Quality Score: 0.479
@@ -1791,9 +1838,9 @@ Sqlite3 is able to interact with a hexadecimal representation of the BLOB, by us
 
 ---
 
-# 50. ARIO Docs
+# 51. ARIO Docs
 
-Document Number: 50
+Document Number: 51
 Source: https://docs.ar.io/ar-io-sdk/ants/release-name
 Words: 71
 Quality Score: 0.478
@@ -1804,9 +1851,9 @@ releaseName releaseName is a method on the ANT class that releases an ArNS name 
 
 ---
 
-# 51. Gateway Architecture - ARIO Docs
+# 52. Gateway Architecture - ARIO Docs
 
-Document Number: 51
+Document Number: 52
 Source: https://docs.ar.io/gateways
 Words: 650
 Quality Score: 0.477
@@ -1819,9 +1866,9 @@ This means that a gateway's main task is to make it easier for users to interact
 
 ---
 
-# 52. upgradeRecord - ARIO Docs
+# 53. upgradeRecord - ARIO Docs
 
-Document Number: 52
+Document Number: 53
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record
 Words: 76
 Quality Score: 0.476
@@ -1832,9 +1879,9 @@ upgradeRecord is a method on the ARIO class that upgrades an existing ArNS recor
 
 ---
 
-# 53. setUndernameRecord - ARIO Docs
+# 54. setUndernameRecord - ARIO Docs
 
-Document Number: 53
+Document Number: 54
 Source: https://docs.ar.io/ar-io-sdk/ants/set-undername-record
 Words: 120
 Quality Score: 0.476
@@ -1848,9 +1895,9 @@ quickly.TTL must be between 60 seconds (1 minute) and 86400 seconds (1 day).
 
 ---
 
-# 54. ANT Configuration - ARIO Docs
+# 55. ANT Configuration - ARIO Docs
 
-Document Number: 54
+Document Number: 55
 Source: https://docs.ar.io/ar-io-sdk/ants/configuration
 Words: 98
 Quality Score: 0.475
@@ -1862,9 +1909,22 @@ blockchain true ← Swipe to see more →
 
 ---
 
-# 55. setBaseNameRecord - ARIO Docs
+# 56. getGatewayVaults - ARIO Docs
 
-Document Number: 55
+Document Number: 56
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults
+Words: 27
+Quality Score: 0.474
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+getGatewayVaults is a method on the ARIO class that retrieves all vault information for a specific gateway, including delegated stakes and pending withdrawals.getGatewayVaults does not require authentication.
+
+---
+
+# 57. setBaseNameRecord - ARIO Docs
+
+Document Number: 57
 Source: https://docs.ar.io/ar-io-sdk/ants/set-base-name-record
 Words: 116
 Quality Score: 0.474
@@ -1878,9 +1938,22 @@ quickly.TTL must be between 60 seconds (1 minute) and 86400 seconds (1 day).
 
 ---
 
-# 56. getDemandFactorSettings - ARIO Docs
+# 58. ARIO Docs
 
-Document Number: 56
+Document Number: 58
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates
+Words: 42
+Quality Score: 0.473
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+getGatewayDelegates getGatewayDelegates is a method on the ARIO class that retrieves all delegates for a specific gateway. Results are paginated and sorted by the specified criteria. The cursor parameter represents the last delegate address from the previous request.getGatewayDelegates does not require authentication.
+
+---
+
+# 59. getDemandFactorSettings - ARIO Docs
+
+Document Number: 59
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor-settings
 Words: 40
 Quality Score: 0.473
@@ -1891,9 +1964,9 @@ getDemandFactorSettings is a method on the ARIO class that retrieves the configu
 
 ---
 
-# 57. ARIO Docs
+# 60. ARIO Docs
 
-Document Number: 57
+Document Number: 60
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor
 Words: 52
 Quality Score: 0.471
@@ -1904,9 +1977,9 @@ getDemandFactor getDemandFactor is a method on the ARIO class that retrieves the
 
 ---
 
-# 58. SimpleCacheRoutingStrategy - ARIO Docs
+# 61. SimpleCacheRoutingStrategy - ARIO Docs
 
-Document Number: 58
+Document Number: 61
 Source: https://docs.ar.io/wayfinder/routing-strategies/simple-cache
 Words: 197
 Quality Score: 0.469
@@ -1917,9 +1990,9 @@ Overview The SimpleCacheRoutingStrategy wraps another routing strategy and cache
 
 ---
 
-# 59. getRecords - ARIO Docs
+# 62. getRecords - ARIO Docs
 
-Document Number: 59
+Document Number: 62
 Source: https://docs.ar.io/ar-io-sdk/ants/get-records
 Words: 38
 Quality Score: 0.469
@@ -1930,9 +2003,9 @@ getRecords is a method on the ANT class that retrieves all the records stored in
 
 ---
 
-# 60. setRecord - ARIO Docs
+# 63. setRecord - ARIO Docs
 
-Document Number: 60
+Document Number: 63
 Source: https://docs.ar.io/ar-io-sdk/ants/set-record
 Words: 206
 Quality Score: 0.467
@@ -1948,9 +2021,9 @@ quickly.TTL must be between 60 seconds (1 minute) and 86400 seconds (1 day).
 
 ---
 
-# 61. getRegistrationFees - ARIO Docs
+# 64. getRegistrationFees - ARIO Docs
 
-Document Number: 61
+Document Number: 64
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-registration-fees
 Words: 37
 Quality Score: 0.467
@@ -1961,9 +2034,9 @@ getRegistrationFees is a method on the ARIO class that retrieves the current reg
 
 ---
 
-# 62. The ARIO Token - ARIO Docs
+# 65. The ARIO Token - ARIO Docs
 
-Document Number: 62
+Document Number: 65
 Source: https://docs.ar.io/token
 Words: 250
 Quality Score: 0.467
@@ -1974,9 +2047,9 @@ Overview ARIO is the multifunction AO Computer based token that powers the AR.IO
 
 ---
 
-# 63. Gateway Troubleshooting  FAQ - ARIO Docs
+# 66. Gateway Troubleshooting  FAQ - ARIO Docs
 
-Document Number: 63
+Document Number: 66
 Source: https://docs.ar.io/gateways/troubleshooting
 Words: 2165
 Quality Score: 0.467
@@ -1987,9 +2060,9 @@ Welcome to the unified troubleshooting and FAQ resource for AR.IO Gateway operat
 
 ---
 
-# 64. getState - ARIO Docs
+# 67. getState - ARIO Docs
 
-Document Number: 64
+Document Number: 67
 Source: https://docs.ar.io/ar-io-sdk/ants/get-state
 Words: 36
 Quality Score: 0.465
@@ -2000,9 +2073,9 @@ getState is a method on the ANT class that retrieves the complete state of the A
 
 ---
 
-# 65. Glossary - ARIO Docs
+# 68. Glossary - ARIO Docs
 
-Document Number: 65
+Document Number: 68
 Source: https://docs.ar.io/glossary
 Words: 1405
 Quality Score: 0.465
@@ -2013,9 +2086,9 @@ Many novel terms and acronyms are used by the Arweave ecosystem as well as some 
 
 ---
 
-# 66. ARIO Docs
+# 69. ARIO Docs
 
-Document Number: 66
+Document Number: 69
 Source: https://docs.ar.io/wayfinder/core/gateway-providers
 Words: 1106
 Quality Score: 0.465
@@ -2272,9 +2345,9 @@ expect(mockProvider.getGateways).toHaveBeenCalledTimes(1)
 
 ---
 
-# 67. getInfo - ARIO Docs
+# 70. getInfo - ARIO Docs
 
-Document Number: 67
+Document Number: 70
 Source: https://docs.ar.io/ar-io-sdk/ants/get-info
 Words: 35
 Quality Score: 0.463
@@ -2285,9 +2358,9 @@ getInfo is a method on the ANT class that retrieves general information about th
 
 ---
 
-# 68. getArNSRecord - ARIO Docs
+# 71. getArNSRecord - ARIO Docs
 
-Document Number: 68
+Document Number: 71
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record
 Words: 34
 Quality Score: 0.461
@@ -2298,9 +2371,9 @@ getArNSRecord is a method on the ARIO class that retrieves the details of a spec
 
 ---
 
-# 69. ARIO Docs
+# 72. ARIO Docs
 
-Document Number: 69
+Document Number: 72
 Source: https://docs.ar.io/wayfinder/core/gateway-providers/cache
 Words: 747
 Quality Score: 0.461
@@ -2480,9 +2553,9 @@ await expect(cacheProvider.getGateways()).rejects.toThrow('Provider failed')
 
 ---
 
-# 70. ARIO Docs
+# 73. ARIO Docs
 
-Document Number: 70
+Document Number: 73
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-primary-names
 Words: 33
 Quality Score: 0.460
@@ -2493,9 +2566,9 @@ removePrimaryNames removePrimaryNames is a method on the ANT class that removes 
 
 ---
 
-# 71. ARIO Docs
+# 74. ARIO Docs
 
-Document Number: 71
+Document Number: 74
 Source: https://docs.ar.io/ar-io-sdk/ants/reassign-name
 Words: 33
 Quality Score: 0.460
@@ -2506,9 +2579,22 @@ reassignName reassignName is a method on the ANT class that transfers ownership 
 
 ---
 
-# 72. getBalance - ARIO Docs
+# 75. ARIO Docs
 
-Document Number: 72
+Document Number: 75
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/instant-withdrawal
+Words: 33
+Quality Score: 0.460
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+instantWithdrawal instantWithdrawal is a method on the ARIO class that instantly withdraws funds from an existing vault on a gateway. If no gatewayAddress is provided, the signer's address will be used.instantWithdrawal requires authentication.
+
+---
+
+# 76. getBalance - ARIO Docs
+
+Document Number: 76
 Source: https://docs.ar.io/ar-io-sdk/ants/get-balance
 Words: 46
 Quality Score: 0.456
@@ -2519,9 +2605,9 @@ getBalance is a method on the ANT class that retrieves the token balance for a s
 
 ---
 
-# 73. Gateway ArNS Resolution - ARIO Docs
+# 77. Gateway ArNS Resolution - ARIO Docs
 
-Document Number: 73
+Document Number: 77
 Source: https://docs.ar.io/gateways/arns-resolution
 Words: 624
 Quality Score: 0.455
@@ -2544,9 +2630,48 @@ always respects the TTL when serving it)
 
 ---
 
-# 74. Getting Started - ARIO Docs
+# 78. ARIO Docs
 
-Document Number: 74
+Document Number: 78
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network
+Words: 51
+Quality Score: 0.455
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+leaveNetwork leaveNetwork is a method on the ARIO class that sets a gateway's status to leaving on the ar.io network. The gateway's operator and delegate stakes are vaulted and will be returned after the leave period. The gateway will be removed from the network once the leave period ends.leaveNetwork requires authentication.
+
+---
+
+# 79. ARIO Docs
+
+Document Number: 79
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake
+Words: 30
+Quality Score: 0.454
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+increaseOperatorStake increaseOperatorStake is a method on the ARIO class that increases the caller's operator stake. This method must be executed with a wallet registered as a gateway operator.increaseOperatorStake requires authentication.
+
+---
+
+# 80. ARIO Docs
+
+Document Number: 80
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake
+Words: 30
+Quality Score: 0.454
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+decreaseOperatorStake decreaseOperatorStake is a method on the ARIO class that decreases the caller's operator stake. This method must be executed with a wallet registered as a gateway operator.decreaseOperatorStake requires authentication.
+
+---
+
+# 81. Getting Started - ARIO Docs
+
+Document Number: 81
 Source: https://docs.ar.io/ar-io-sdk/getting-started
 Words: 120
 Quality Score: 0.454
@@ -2561,9 +2686,9 @@ documentation for more information on how to provide the necessary polyfills.Out
 
 ---
 
-# 75. getBalances - ARIO Docs
+# 82. getBalances - ARIO Docs
 
-Document Number: 75
+Document Number: 82
 Source: https://docs.ar.io/ar-io-sdk/ants/get-balances
 Words: 29
 Quality Score: 0.452
@@ -2574,9 +2699,9 @@ getBalances is a method on the ANT class that retrieves all token balances withi
 
 ---
 
-# 76. removeRecord - ARIO Docs
+# 83. removeRecord - ARIO Docs
 
-Document Number: 76
+Document Number: 83
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-record
 Words: 33
 Quality Score: 0.451
@@ -2588,9 +2713,9 @@ for more details.removeRecord is a method on the ANT class that removes a record
 
 ---
 
-# 77. getArNSReservedNames - ARIO Docs
+# 84. getArNSReservedNames - ARIO Docs
 
-Document Number: 77
+Document Number: 84
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names
 Words: 94
 Quality Score: 0.451
@@ -2601,9 +2726,9 @@ getArNSReservedNames is a method on the ARIO class that retrieves all reserved A
 
 ---
 
-# 78. getArNSReservedName - ARIO Docs
+# 85. getArNSReservedName - ARIO Docs
 
-Document Number: 78
+Document Number: 85
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-name
 Words: 43
 Quality Score: 0.450
@@ -2614,9 +2739,9 @@ getArNSReservedName is a method on the ARIO class that retrieves details about a
 
 ---
 
-# 79. removeUndernameRecord - ARIO Docs
+# 86. removeUndernameRecord - ARIO Docs
 
-Document Number: 79
+Document Number: 86
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-undername-record
 Words: 28
 Quality Score: 0.450
@@ -2627,9 +2752,9 @@ removeUndernameRecord is a method on the ANT class that removes a specified unde
 
 ---
 
-# 80. ARIO Configuration - ARIO Docs
+# 87. ARIO Configuration - ARIO Docs
 
-Document Number: 80
+Document Number: 87
 Source: https://docs.ar.io/ar-io-sdk/ario/configuration
 Words: 96
 Quality Score: 0.450
@@ -2641,9 +2766,9 @@ blockchain true ← Swipe to see more →
 
 ---
 
-# 81. Managing Primary Names - ARIO Docs
+# 88. Managing Primary Names - ARIO Docs
 
-Document Number: 81
+Document Number: 88
 Source: https://docs.ar.io/guides/primary-names
 Words: 716
 Quality Score: 0.447
@@ -2656,9 +2781,9 @@ owner (ANT) must approve who can claim their name as an identifier. Setting a Pr
 
 ---
 
-# 82. ARIO Docs
+# 89. ARIO Docs
 
-Document Number: 82
+Document Number: 89
 Source: https://docs.ar.io/wayfinder/routing-strategies/preferred-with-fallback
 Words: 234
 Quality Score: 0.446
@@ -2669,9 +2794,9 @@ PreferredWithFallbackRoutingStrategy Overview The PreferredWithFallbackRoutingSt
 
 ---
 
-# 83. ARIO Node Filtering System - ARIO Docs
+# 90. ARIO Node Filtering System - ARIO Docs
 
-Document Number: 83
+Document Number: 90
 Source: https://docs.ar.io/gateways/filters
 Words: 541
 Quality Score: 0.444
@@ -2682,9 +2807,9 @@ The AR.IO Node filtering system provides a flexible way to match and filter item
 
 ---
 
-# 84. Normalized Addresses - ARIO Docs
+# 91. Normalized Addresses - ARIO Docs
 
-Document Number: 84
+Document Number: 91
 Source: https://docs.ar.io/concepts/normalized-addresses
 Words: 618
 Quality Score: 0.442
@@ -2698,9 +2823,9 @@ respectively.Arweave The public key for an Arweave wallet is the n field of the 
 
 ---
 
-# 85. Hash Verification Strategy - ARIO Docs
+# 92. Hash Verification Strategy - ARIO Docs
 
-Document Number: 85
+Document Number: 92
 Source: https://docs.ar.io/wayfinder/verification-strategies/hash-verification
 Words: 330
 Quality Score: 0.442
@@ -2715,9 +2840,26 @@ required data indexed, verification will fail.How It Works Fetch Data: Retrieve 
 
 ---
 
-# 86. ARIO Docs
+# 93. ARIO Docs
 
-Document Number: 86
+Document Number: 93
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings
+Words: 198
+Quality Score: 0.441
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+updateGatewaySettings updateGatewaySettings is a method on the ARIO class that writes new gateway settings to the caller's gateway configuration.updateGatewaySettings requires authentication.Parameters ← Swipe to see more → Parameter Type Description Optional autoStake boolean If true, automatically stakes gateway rewards.true allowDelegatedStaking boolean If true, allows third parties to delegate stake to the gateway.true minDelegatedStake number Minimum number of tokens, in mARIO that can be delegated to the
+gateway.true delegateRewardShareRatio number Percentage of gateway rewards to share with delegates. e.g. 10% true label string Friendly name for gateway, min 1 character, max 64 characters.true note string A note to be associated with gateway, max 256 characters.true properties string - ArweaveTxId ArweaveTxId to properties object containing additional gateway
+configuration details.true observerWallet string - WalletAddress Public wallet address for wallet used to upload network observations.true fqdn string Fully qualified domain name, must be valid domain owned by gateway
+operator.true port number Port number to use when accessing gateway, generally 443 (https) true protocol string - "http" || "https" Protocol to use when accessing gateway, only "https" is supported for
+network participation.true tags array An array of GQL tag objects to attach to the joinNetwork AO message.true ← Swipe to see more →
+
+---
+
+# 94. ARIO Docs
+
+Document Number: 94
 Source: https://docs.ar.io/wayfinder/core/gateway-providers/network
 Words: 1385
 Quality Score: 0.439
@@ -3124,9 +3266,9 @@ expect(gateways.length).toBeLessThanOrEqual(3)
 
 ---
 
-# 87. ARIO Docs
+# 95. ARIO Docs
 
-Document Number: 87
+Document Number: 95
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease
 Words: 115
 Quality Score: 0.439
@@ -3137,9 +3279,9 @@ extendLease extendLease is a method on the ARIO class that extends the lease dur
 
 ---
 
-# 88. ARIO Docs
+# 96. ARIO Docs
 
-Document Number: 88
+Document Number: 96
 Source: https://docs.ar.io/wayfinder/core/gateway-providers/static
 Words: 288
 Quality Score: 0.435
@@ -3194,9 +3336,9 @@ return { healthy: false, error: error.message }
 
 ---
 
-# 89. addController - ARIO Docs
+# 97. addController - ARIO Docs
 
-Document Number: 89
+Document Number: 97
 Source: https://docs.ar.io/ar-io-sdk/ants/add-controller
 Words: 83
 Quality Score: 0.435
@@ -3207,9 +3349,9 @@ addController is a method on the ANT class that adds a new controller to the ANT
 
 ---
 
-# 90. ARIO Docs
+# 98. ARIO Docs
 
-Document Number: 90
+Document Number: 98
 Source: https://docs.ar.io/wayfinder/core/events
 Words: 1340
 Quality Score: 0.433
@@ -3647,9 +3789,9 @@ txId: 'test-transaction-id',
 
 ---
 
-# 91. Optimizing Data Handling in ARIO Gateway - ARIO Docs
+# 99. Optimizing Data Handling in ARIO Gateway - ARIO Docs
 
-Document Number: 91
+Document Number: 99
 Source: https://docs.ar.io/gateways/optimize-data
 Words: 968
 Quality Score: 0.432
@@ -3660,9 +3802,9 @@ The AR.IO Gateway provides powerful tools for optimizing how you access and serv
 
 ---
 
-# 92. transfer - ARIO Docs
+# 100. transfer - ARIO Docs
 
-Document Number: 92
+Document Number: 100
 Source: https://docs.ar.io/ar-io-sdk/ants/transfer
 Words: 65
 Quality Score: 0.430
@@ -3673,9 +3815,9 @@ transfer is a method on the ANT class that transfers ownership of the ANT proces
 
 ---
 
-# 93. getCostDetails - ARIO Docs
+# 101. getCostDetails - ARIO Docs
 
-Document Number: 93
+Document Number: 101
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details
 Words: 148
 Quality Score: 0.429
@@ -3686,9 +3828,9 @@ getCostDetails is a method on the ARIO class that calculates detailed cost infor
 
 ---
 
-# 94. setKeywords - ARIO Docs
+# 102. setKeywords - ARIO Docs
 
-Document Number: 94
+Document Number: 102
 Source: https://docs.ar.io/ar-io-sdk/ants/set-keywords
 Words: 66
 Quality Score: 0.428
@@ -3699,9 +3841,9 @@ setKeywords is a method on the ANT class that updates the list of keywords assoc
 
 ---
 
-# 95. approvePrimaryNameRequest - ARIO Docs
+# 103. approvePrimaryNameRequest - ARIO Docs
 
-Document Number: 95
+Document Number: 103
 Source: https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request
 Words: 85
 Quality Score: 0.423
@@ -3712,35 +3854,9 @@ approvePrimaryNameRequest is a method on the ANT class that approves a primary n
 
 ---
 
-# 96. wayfinderresolveUrl() - ARIO Docs
+# 104. ARIO Gateway Environment Variables - ARIO Docs
 
-Document Number: 96
-Source: https://docs.ar.io/wayfinder/core/resolve-url
-Words: 269
-Quality Score: 0.418
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Resolve ar:// URLs to fully-qualified gateway URLs using the configured routing strategy without making a network request.Syntax Parameters originalUrl (string): The ar:// URL to resolve to a full gateway URL logger (Logger, optional): Custom logger for this operation. Defaults to wayfinder's logger Returns Type: Promise Returns a fully-qualified URL object that points to the selected gateway.Examples Basic URL Resolution Transaction ID Resolution ArNS Name Resolution Gateway Endpoint Resolution With Custom Logger Batch URL Resolution Using Different Routing Strategies Handling Resolution Errors URL Format Support The resolveUrl() method supports various ar:// URL formats:Transaction IDs (43 characters) ArNS Names (1-51 characters, alphanumeric + hyphens/underscores) Gateway Endpoints Comparison with request() When to use resolveUrl() URL preview: Show users which gateway will be used Manual fetch: You want to use your own fetch implementation URL sharing: Generate shareable gateway URLs Caching: Pre-resolve URLs for caching strategies When to use request() Data fetching: You want to fetch and consume the data Verification: You want automatic data verification Event monitoring: You want routing and verification events Example: Manual Fetch with resolveUrl() Performance Considerations Gateway Selection: resolveUrl() triggers gateway selection, which may involve network requests to test gateway availability Caching: Results are not cached between calls - consider caching resolved URLs if making multiple requests Concurrent Calls: Multiple resolveUrl() calls may use the same gateway selection process Integration Examples With React With URL Shortening After resolving URLs:Make requests: Use the resolved URL with fetch() or other HTTP clients Cache results: Store resolved URLs to avoid repeated gateway selection Monitor performance: Track resolution times and gateway selection patterns Handle errors: Implement proper error handling for resolution failures
-
----
-
-# 97. ANTgetLogo() - ARIO Docs
-
-Document Number: 97
-Source: https://docs.ar.io/ar-io-sdk/ants/get-logo
-Words: 34
-Quality Score: 0.417
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-getLogo getLogo is a method on the ANT class that retrieves the transaction ID (TX ID) of the ANT's logo.getLogo does not require authentication.Parameters The getLogo method does not accept any parameters.Examples Output Sie_26dvgyok0PZD_-iQAFOhOd5YxDTkczOLoqTTL_A
-
----
-
-# 98. ARIO Gateway Environment Variables - ARIO Docs
-
-Document Number: 98
+Document Number: 104
 Source: https://docs.ar.io/gateways/env
 Words: 1250
 Quality Score: 0.416
@@ -3798,22 +3914,9 @@ specified filter PROMETHEUS_METRICS_ENABLED Boolean false If true, the gateway w
 
 ---
 
-# 99. getControllers - ARIO Docs
+# 105. ARIO Docs
 
-Document Number: 99
-Source: https://docs.ar.io/ar-io-sdk/ants/get-controllers
-Words: 31
-Quality Score: 0.413
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-getControllers is a method on the ANT class that retrieves the controllers of the configured ANT process.getControllers does not require authentication.Parameters The getControllers method does not accept any parameters.Examples Output ["ccp3blG__gKUvG3hsGC2u06aDmqv4CuhuDJGOIg0jw4"]
-
----
-
-# 100. ARIO Docs
-
-Document Number: 100
+Document Number: 105
 Source: https://docs.ar.io/wayfinder/routing-strategies/random
 Words: 210
 Quality Score: 0.409
@@ -3824,9 +3927,9 @@ RandomRoutingStrategy Overview The RandomRoutingStrategy selects gateways random
 
 ---
 
-# 101. StaticRoutingStrategy - ARIO Docs
+# 106. StaticRoutingStrategy - ARIO Docs
 
-Document Number: 101
+Document Number: 106
 Source: https://docs.ar.io/wayfinder/routing-strategies/static
 Words: 213
 Quality Score: 0.407
@@ -3837,9 +3940,9 @@ Overview The StaticRoutingStrategy is the simplest routing strategy that always 
 
 ---
 
-# 102. ARIO Docs
+# 107. ARIO Docs
 
-Document Number: 102
+Document Number: 107
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit
 Words: 114
 Quality Score: 0.407
@@ -3851,9 +3954,9 @@ total) false fundFrom string The source of funds: 'balance', 'stakes', 'any', or
 
 ---
 
-# 103. ARIO SDK Release Notes - ARIO Docs
+# 108. ARIO SDK Release Notes - ARIO Docs
 
-Document Number: 103
+Document Number: 108
 Source: https://docs.ar.io/ar-io-sdk/release-notes
 Words: 5988
 Quality Score: 0.406
@@ -3864,9 +3967,9 @@ AR.IO SDK Changelog Overview Welcome to the documentation page for the AR.IO SDK
 
 ---
 
-# 104. ARIO Docs
+# 109. ARIO Docs
 
-Document Number: 104
+Document Number: 109
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-controller
 Words: 24
 Quality Score: 0.405
@@ -3877,9 +3980,35 @@ removeController removeController is a method on the ANT class that removes a sp
 
 ---
 
-# 105. ARIO Documentation
+# 110. getGateway - ARIO Docs
 
-Document Number: 105
+Document Number: 110
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway
+Words: 24
+Quality Score: 0.405
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+getGateway is a method on the ARIO class that retrieves detailed information about a specific gateway using its wallet address.getGateway does not require authentication.
+
+---
+
+# 111. getGateways - ARIO Docs
+
+Document Number: 111
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateways
+Words: 87
+Quality Score: 0.404
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+getGateways is a method on the ARIO class that retrieves all gateways with optional pagination and filtering support.getGateways does not require authentication.Parameters ← Swipe to see more → Parameter Type Description Optional Default cursor string The gateway address to use as the starting point for pagination true None limit number The maximum number of gateways to return (max: 1000) true 100 sortBy string The property to sort gateways by true startTimestamp sortOrder string The sort direction ('desc' or 'asc') true desc ← Swipe to see more →
+
+---
+
+# 112. ARIO Documentation
+
+Document Number: 112
 Source: https://docs.ar.io/
 Words: 141
 Quality Score: 0.404
@@ -3890,26 +4019,9 @@ Extraction Reason: defuddle_returned_html_semantic_extracted
 
 ---
 
-# 106. Signature Verification Strategy - ARIO Docs
+# 113. Data Root Verification Strategy - ARIO Docs
 
-Document Number: 106
-Source: https://docs.ar.io/wayfinder/verification-strategies/signature-verification
-Words: 378
-Quality Score: 0.402
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-SignatureVerificationStrategy Overview The SignatureVerificationStrategy validates Arweave transaction signatures to ensure data authenticity and ownership. This strategy provides cryptographic proof that the data was created by the claimed wallet address and hasn't been tampered with since signing.Important Verification methods require that the gateway being used has the relevant
-transaction data indexed locally. Gateways cannot proxy out verification
-requests to other sources, as this would compromise the security and
-reliability of the verification process. If a gateway doesn't have the
-required data indexed, verification will fail.How It Works Fetch Metadata: Retrieve transaction metadata from trusted gateways Reconstruct Signature Data: Build the signature data using the received content Verify Signature: Validate the signature matches the claimed owner's public key Check Ownership: Confirm the transaction was signed by the claimed wallet Result: Pass or fail based on signature validation Configuration Basic Usage Advanced Configuration Parameters ← Swipe to see more → Parameter Type Default Description trustedGateways URL[] Required Array of trusted gateway URLs for transaction metadata maxConcurrency number 1 Maximum number of concurrent requests to gateways logger Logger defaultLogger Custom logger instance for debugging classifier DataClassifier GqlClassifier Data classifier to determine transaction type (ANS-104 vs regular) ← Swipe to see more → Integration Examples With Wayfinder With Event Monitoring Standalone Usage Data Types Supported The SignatureVerificationStrategy automatically handles two types of Arweave data:ANS-104 Data Items Bundled transactions (data items within bundles) Uses ANS-104 signature verification Supports nested data items Regular Transactions Standard Arweave transactions Uses traditional Arweave signature verification Direct transaction signatures The strategy automatically classifies the transaction type and applies the appropriate verification method.Use Cases Content Authentication Verify that content was created by a specific wallet:Document Integrity Verify legal or important documents:Development vs Production Best Practices Use Multiple Trusted Gateways: Increases reliability for transaction metadata Set Appropriate Concurrency: Balance between performance and gateway load Monitor Verification Events: Track success rates and failure reasons Handle Network Failures: Implement proper error handling for gateway requests Validate Transaction Format: Ensure transaction metadata is well-formed Use Reputable Gateways: Choose gateways with reliable transaction indexing Comparison with Other Strategies The SignatureVerificationStrategy is ideal when you need to verify not just data integrity, but also the authenticity and ownership of the content. It provides cryptographic proof that the content was actually signed by the claimed wallet address.
-
----
-
-# 107. Data Root Verification Strategy - ARIO Docs
-
-Document Number: 107
+Document Number: 113
 Source: https://docs.ar.io/wayfinder/verification-strategies/data-root-verification
 Words: 479
 Quality Score: 0.402
@@ -3924,9 +4036,26 @@ required data indexed, verification will fail.How It Works Compute Data Root: Ch
 
 ---
 
-# 108. ARIO Docs
+# 114. Signature Verification Strategy - ARIO Docs
 
-Document Number: 108
+Document Number: 114
+Source: https://docs.ar.io/wayfinder/verification-strategies/signature-verification
+Words: 378
+Quality Score: 0.402
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+SignatureVerificationStrategy Overview The SignatureVerificationStrategy validates Arweave transaction signatures to ensure data authenticity and ownership. This strategy provides cryptographic proof that the data was created by the claimed wallet address and hasn't been tampered with since signing.Important Verification methods require that the gateway being used has the relevant
+transaction data indexed locally. Gateways cannot proxy out verification
+requests to other sources, as this would compromise the security and
+reliability of the verification process. If a gateway doesn't have the
+required data indexed, verification will fail.How It Works Fetch Metadata: Retrieve transaction metadata from trusted gateways Reconstruct Signature Data: Build the signature data using the received content Verify Signature: Validate the signature matches the claimed owner's public key Check Ownership: Confirm the transaction was signed by the claimed wallet Result: Pass or fail based on signature validation Configuration Basic Usage Advanced Configuration Parameters ← Swipe to see more → Parameter Type Default Description trustedGateways URL[] Required Array of trusted gateway URLs for transaction metadata maxConcurrency number 1 Maximum number of concurrent requests to gateways logger Logger defaultLogger Custom logger instance for debugging classifier DataClassifier GqlClassifier Data classifier to determine transaction type (ANS-104 vs regular) ← Swipe to see more → Integration Examples With Wayfinder With Event Monitoring Standalone Usage Data Types Supported The SignatureVerificationStrategy automatically handles two types of Arweave data:ANS-104 Data Items Bundled transactions (data items within bundles) Uses ANS-104 signature verification Supports nested data items Regular Transactions Standard Arweave transactions Uses traditional Arweave signature verification Direct transaction signatures The strategy automatically classifies the transaction type and applies the appropriate verification method.Use Cases Content Authentication Verify that content was created by a specific wallet:Document Integrity Verify legal or important documents:Development vs Production Best Practices Use Multiple Trusted Gateways: Increases reliability for transaction metadata Set Appropriate Concurrency: Balance between performance and gateway load Monitor Verification Events: Track success rates and failure reasons Handle Network Failures: Implement proper error handling for gateway requests Validate Transaction Format: Ensure transaction metadata is well-formed Use Reputable Gateways: Choose gateways with reliable transaction indexing Comparison with Other Strategies The SignatureVerificationStrategy is ideal when you need to verify not just data integrity, but also the authenticity and ownership of the content. It provides cryptographic proof that the content was actually signed by the claimed wallet address.
+
+---
+
+# 115. ARIO Docs
+
+Document Number: 115
 Source: https://docs.ar.io/ar-io-sdk/ants/set-logo
 Words: 33
 Quality Score: 0.400
@@ -3937,9 +4066,9 @@ setLogo setLogo is a method on the ANT class that updates the logo of the ANT pr
 
 ---
 
-# 109. ANTs on Bazar - ARIO Docs
+# 116. ANTs on Bazar - ARIO Docs
 
-Document Number: 109
+Document Number: 116
 Source: https://docs.ar.io/guides/ants-on-bazar
 Words: 526
 Quality Score: 0.399
@@ -3950,9 +4079,9 @@ Trading ANTs on Bazar Overview Arweave Name Tokens are Atomic Asset Spec complia
 
 ---
 
-# 110. ANTs on Bazar - ARIO Docs
+# 117. ANTs on Bazar - ARIO Docs
 
-Document Number: 110
+Document Number: 117
 Source: https://docs.ar.io/learn/guides/ants-on-bazar
 Words: 526
 Quality Score: 0.399
@@ -3963,22 +4092,48 @@ Trading ANTs on Bazar Overview Arweave Name Tokens are Atomic Asset Spec complia
 
 ---
 
-# 111. getOwner - ARIO Docs
+# 118. cancelWithdrawal - ARIO Docs
 
-Document Number: 111
-Source: https://docs.ar.io/ar-io-sdk/ants/get-owner
-Words: 33
-Quality Score: 0.399
+Document Number: 118
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal
+Words: 82
+Quality Score: 0.397
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-getOwner is a method on the ANT class that retrieves the owner wallet address of the configured ANT process.getOwner does not require authentication.Parameters The getOwner method does not accept any parameters.Examples Output 'ccp3blG__gKUvG3hsGC2u06aDmqv4CuhuDJGOIg0jw4'
+cancelWithdrawal is a method on the ARIO class that cancels a pending withdrawal for a gateway, returning the stake back to the delegated amount.cancelWithdrawal requires authentication.Parameters ← Swipe to see more → Parameter Type Description Optional gatewayAddress string - WalletAddress The wallet address of the gateway false vaultId string The ID of the vault containing the withdrawal to cancel false tags array An array of GQL tag objects to attach to the transfer AO message true ← Swipe to see more →
 
 ---
 
-# 112. getArNSRecords - ARIO Docs
+# 119. ARIO Docs
 
-Document Number: 112
+Document Number: 119
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake
+Words: 21
+Quality Score: 0.397
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+increaseDelegateStake increaseDelegateStake is a method on the ARIO class that increases the caller's delegated stake on the target gateway.increaseDelegateStake requires authentication.
+
+---
+
+# 120. ARIO Docs
+
+Document Number: 120
+Source: https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake
+Words: 21
+Quality Score: 0.397
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+decreaseDelegateStake decreaseDelegateStake is a method on the ARIO class that decreases the caller's delegated stake on the target gateway.decreaseDelegateStake requires authentication.
+
+---
+
+# 121. getArNSRecords - ARIO Docs
+
+Document Number: 121
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-records
 Words: 92
 Quality Score: 0.395
@@ -3989,9 +4144,9 @@ getArNSRecords is a method on the ARIO class that retrieves all ArNS records wit
 
 ---
 
-# 113. ARIO Docs
+# 122. ARIO Docs
 
-Document Number: 113
+Document Number: 122
 Source: https://docs.ar.io/ar-io-sdk/ants/set-name
 Words: 20
 Quality Score: 0.394
@@ -4002,9 +4157,9 @@ setName setName is a method on the ANT class that updates the dis name of the AN
 
 ---
 
-# 114. ARIO Docs
+# 123. ARIO Docs
 
-Document Number: 114
+Document Number: 123
 Source: https://docs.ar.io/ar-io-sdk/ants/set-ticker
 Words: 20
 Quality Score: 0.394
@@ -4015,9 +4170,9 @@ setTicker setTicker is a method on the ANT class that updates the ticker symbol 
 
 ---
 
-# 115. ARIO Docs
+# 124. ARIO Docs
 
-Document Number: 115
+Document Number: 124
 Source: https://docs.ar.io/ar-io-sdk/ants/set-description
 Words: 20
 Quality Score: 0.394
@@ -4028,9 +4183,9 @@ setDescription setDescription is a method on the ANT class that updates the desc
 
 ---
 
-# 116. getHandlers - ARIO Docs
+# 125. getHandlers - ARIO Docs
 
-Document Number: 116
+Document Number: 125
 Source: https://docs.ar.io/ar-io-sdk/ants/get-handlers
 Words: 28
 Quality Score: 0.390
@@ -4041,9 +4196,9 @@ getHandlers is a method on the ANT class that retrieves the handlers supported b
 
 ---
 
-# 117. Gateway Apex Domain Content Resolution - ARIO Docs
+# 126. Gateway Apex Domain Content Resolution - ARIO Docs
 
-Document Number: 117
+Document Number: 126
 Source: https://docs.ar.io/gateways/apex
 Words: 355
 Quality Score: 0.374
@@ -4054,9 +4209,9 @@ Overview Prior to gateway Release 28, the apex domain of a gateway would only di
 
 ---
 
-# 118. buyRecord - ARIO Docs
+# 127. buyRecord - ARIO Docs
 
-Document Number: 118
+Document Number: 127
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/buy-record
 Words: 111
 Quality Score: 0.370
@@ -4067,9 +4222,9 @@ buyRecord is a method on the ARIO class that purchases a record in the ArNS regi
 
 ---
 
-# 119. ARIO Network Composition - ARIO Docs
+# 128. ARIO Network Composition - ARIO Docs
 
-Document Number: 119
+Document Number: 128
 Source: https://docs.ar.io/network-composition
 Words: 265
 Quality Score: 0.360
@@ -4085,9 +4240,9 @@ Each layer strengthens the others, creating a resilient foundation for the perma
 
 ---
 
-# 120. Quick Start Guides - ARIO Docs
+# 129. Quick Start Guides - ARIO Docs
 
-Document Number: 120
+Document Number: 129
 Source: https://docs.ar.io/guides
 Words: 104
 Quality Score: 0.352
@@ -4099,9 +4254,9 @@ Deploy a dApp with ArlinkEasily deploy a web app with ArNS using Arlinkmake your
 
 ---
 
-# 121. ARIO Docs
+# 130. ARIO Docs
 
-Document Number: 121
+Document Number: 130
 Source: https://docs.ar.io/wayfinder/routing-strategies/round-robin
 Words: 205
 Quality Score: 0.350
@@ -4112,9 +4267,9 @@ RoundRobinRoutingStrategy Overview The RoundRobinRoutingStrategy distributes req
 
 ---
 
-# 122. ARIO Smart Contract - ARIO Docs
+# 131. ARIO Smart Contract - ARIO Docs
 
-Document Number: 122
+Document Number: 131
 Source: https://docs.ar.io/ario-contract
 Words: 300
 Quality Score: 0.347
@@ -4130,9 +4285,9 @@ Should a user or organization desire, tokens can even be sent directly into this
 
 ---
 
-# 123. ARIO Docs
+# 132. ARIO Docs
 
-Document Number: 123
+Document Number: 132
 Source: https://docs.ar.io/wayfinder/routing-strategies/fastest-ping
 Words: 224
 Quality Score: 0.341
@@ -4143,9 +4298,9 @@ FastestPingRoutingStrategy Overview The FastestPingRoutingStrategy selects the g
 
 ---
 
-# 124. Routing Strategies - ARIO Docs
+# 133. Routing Strategies - ARIO Docs
 
-Document Number: 124
+Document Number: 133
 Source: https://docs.ar.io/wayfinder/routing-strategies
 Words: 287
 Quality Score: 0.333
@@ -4156,9 +4311,9 @@ Routing strategies determine how Wayfinder selects which AR.IO gateway to use fo
 
 ---
 
-# 125. Verification Strategies - ARIO Docs
+# 134. Verification Strategies - ARIO Docs
 
-Document Number: 125
+Document Number: 134
 Source: https://docs.ar.io/wayfinder/verification-strategies
 Words: 733
 Quality Score: 0.287
