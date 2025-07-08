@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-07T12:15:25.368Z
+Generated on: 2025-07-08T12:15:06.309Z
 Total documents: 1
-Total words: 9710
+Total words: 9823
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Total words: 9710
 
 Document Number: 1
 Source: https://glossary.arweave.net/glossary.txt
-Words: 9710
+Words: 9823
 Quality Score: 1.000
 Extraction Method: plain-text
 Extraction Reason: plain-text-file
@@ -249,4 +249,7 @@ Token Sink: A mechanism in the Arweave ecosystem that removes tokens from circul
 TabM: A unified data format in HyperBEAM standing for 'Type Annotated Binary Messages'. TabM serves as the intermediary representation that all message formats can convert to and from, enabling seamless communication between different encoding schemes. It includes type annotations that preserve the data types of fields (such as integers, strings, and binaries), allowing for accurate message transformation across the system. TabM is a core component of HyperBEAM's message processing pipeline, bridging the gap between various message formats while preserving data integrity.
 Codecs: Modular components in HyperBEAM that convert between different message formats and the unified TabM format. Codecs solve interoperability challenges in distributed systems by using TabM as an intermediate format, reducing complexity from N² direct conversions to N codecs for N formats. This maintains data integrity and type safety while supporting various encodings (ANS-104, HTTP Signatures, JSON, flat formats). The architecture makes the system extensible - adding a new format only requires one codec that converts to/from TabM, rather than creating conversions for every existing format. This enables HyperBEAM to seamlessly communicate across different systems while maintaining consistent message semantics.
 Flat Format: A simple key-value encoding scheme in HyperBEAM where data is represented as a series of 'key: value' pairs, each on a new line. This format is particularly used in configuration files and certain message types due to its simplicity and human readability. For example, a flat format message might look like 'Content-Type: text/plain\nAction: update\nValue: 123'. Unlike nested formats like JSON, flat formats have no hierarchy or nesting capabilities, making them easier to parse but less expressive. In HyperBEAM, flat formats are often used for configuration files and basic message headers where nested structures aren't necessary.
-PATCH: A method in HyperBEAM that enables efficient state updates by modifying only specific parts of data structures rather than replacing entire objects. When sent with method=patch in AO, it allows processes to update their state incrementally, significantly reducing latency and computational overhead. PATCH works with HyperBEAM's caching system to provide high-performance state management even for legacy processes. This mechanism is particularly valuable for applications handling large datasets or requiring frequent small updates, as it minimizes network traffic and processing time by transmitting only the changed portions of state.
+~patch@1.0: A HyperBEAM device that enables AO processes to expose specific parts of their internal state for direct HTTP access. It allows developers to make selected data immediately readable via a standardized URL path, improving performance for web frontends and data services by replacing slower dryrun calls with immediate state reading.
+Permaweb Deploy: A Node.js command-line tool designed to streamline the deployment of web applications to the Arweave permaweb. It automates the process of uploading build folders using Turbo, creating manifests, and updating ArNS (Arweave Name Service) records. The tool supports both mainnet and testnet deployments and integrates easily with GitHub Actions for continuous deployment workflows.
+~lua@5.3a: A HyperBEAM device (lua@5.3a) that enables dynamic, on-the-fly computation of process state using Lua scripts. It allows transformation of process state without altering the underlying data, supporting pipeline-style processing where state is passed as a base message and custom Lua functions are executed to return computed results.
+Wayfinder SDK: A client-side routing and verification library for decentralized data access on the Arweave network. It provides intelligent gateway routing based on performance and availability, cryptographic data verification to ensure content integrity, and seamless access to permaweb content by automatically selecting optimal gateways and verifying data authenticity.

@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-07T12:15:25.185Z
-Total documents: 65
-Total words: 21106
+Generated on: 2025-07-08T12:15:06.192Z
+Total documents: 67
+Total words: 21199
 
 ## Table of Contents
 
@@ -66,13 +66,15 @@ Total words: 21106
 56. [Complete GraphQL Structure for Transactions](https://cookbook.arweave.net/references/gql.html)
 57. [Schema Diagrams](https://cookbook.arweave.net/concepts/arfs/schema-diagrams.html)
 58. [Hello World (No Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html)
-59. [Content Types](https://cookbook.arweave.net/concepts/arfs/content-types.html)
-60. [Warp (SmartWeave) SDK - Evolve](https://cookbook.arweave.net/guides/smartweave/warp/evolve.html)
-61. [Transaction Bundles](https://cookbook.arweave.net/concepts/bundles.html)
-62. [Search Indexing Service](https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html)
-63. [Arweave App](https://cookbook.arweave.net/guides/deploying-manifests/arweave-app.html)
-64. [Permaweb Cookbook - Legacy](https://cookbook.arweave.net/legacy/index.html)
-65. [Starter Kits](https://cookbook.arweave.net/kits/index.html)
+59. [LLMstxt](https://cookbook.arweave.net/references/llms.html)
+60. [Content Types](https://cookbook.arweave.net/concepts/arfs/content-types.html)
+61. [Glossary](https://cookbook.arweave.net/references/glossary.html)
+62. [Warp (SmartWeave) SDK - Evolve](https://cookbook.arweave.net/guides/smartweave/warp/evolve.html)
+63. [Transaction Bundles](https://cookbook.arweave.net/concepts/bundles.html)
+64. [Search Indexing Service](https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html)
+65. [Arweave App](https://cookbook.arweave.net/guides/deploying-manifests/arweave-app.html)
+66. [Permaweb Cookbook - Legacy](https://cookbook.arweave.net/legacy/index.html)
+67. [Starter Kits](https://cookbook.arweave.net/kits/index.html)
 
 ---
 
@@ -1845,9 +1847,22 @@ Join the first Arweave Fullstack Hack for up to $50k in funding Hello World (No 
 
 ---
 
-# 59. Content Types  Cooking with the Permaweb
+# 59. LLMstxt  Cooking with the Permaweb
 
 Document Number: 59
+Source: https://cookbook.arweave.net/references/llms.html
+Words: 48
+Quality Score: 0.414
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Join the first Arweave Fullstack Hack for up to $50k in funding LLMs.txt The following is a tool open in new window that allows you to build your own LLMs.txt files based on docs from the permaweb ecosystem.Built with ❤️ by the Arweave community. Learn more at Arweave.org
+
+---
+
+# 60. Content Types  Cooking with the Permaweb
+
+Document Number: 60
 Source: https://cookbook.arweave.net/concepts/arfs/content-types.html
 Words: 171
 Quality Score: 0.405
@@ -1858,9 +1873,22 @@ Join the first Arweave Fullstack Hack for up to $50k in funding Content Types Al
 
 ---
 
-# 60. Warp (SmartWeave) SDK - Evolve  Cooking with the Permaweb
+# 61. Glossary  Cooking with the Permaweb
 
-Document Number: 60
+Document Number: 61
+Source: https://cookbook.arweave.net/references/glossary.html
+Words: 45
+Quality Score: 0.403
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Join the first Arweave Fullstack Hack for up to $50k in funding Glossary The following is an embedded glossary tool for the permaweb ecosystem. It supports both light and dark mode, matching the documentation theme.Built with ❤️ by the Arweave community. Learn more at Arweave.org
+
+---
+
+# 62. Warp (SmartWeave) SDK - Evolve  Cooking with the Permaweb
+
+Document Number: 62
 Source: https://cookbook.arweave.net/guides/smartweave/warp/evolve.html
 Words: 419
 Quality Score: 0.401
@@ -1903,9 +1931,9 @@ return { state }
 
 ---
 
-# 61. Transaction Bundles  Cooking with the Permaweb
+# 63. Transaction Bundles  Cooking with the Permaweb
 
-Document Number: 61
+Document Number: 63
 Source: https://cookbook.arweave.net/concepts/bundles.html
 Words: 296
 Quality Score: 0.400
@@ -1916,9 +1944,9 @@ Transaction Bundles What is a Bundle? A transaction bundle is a special type of 
 
 ---
 
-# 62. Search Indexing Service  Cooking with the Permaweb
+# 64. Search Indexing Service  Cooking with the Permaweb
 
-Document Number: 62
+Document Number: 64
 Source: https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html
 Words: 595
 Quality Score: 0.382
@@ -2055,9 +2083,9 @@ count
 
 ---
 
-# 63. Cooking with the Permaweb
+# 65. Cooking with the Permaweb
 
-Document Number: 63
+Document Number: 65
 Source: https://cookbook.arweave.net/guides/deploying-manifests/arweave-app.html
 Words: 63
 Quality Score: 0.286
@@ -2068,9 +2096,9 @@ Join the first Arweave Fullstack Hack for up to $50k in funding Arweave.app Uplo
 
 ---
 
-# 64. Permaweb Cookbook - Legacy  Cooking with the Permaweb
+# 66. Permaweb Cookbook - Legacy  Cooking with the Permaweb
 
-Document Number: 64
+Document Number: 66
 Source: https://cookbook.arweave.net/legacy/index.html
 Words: 35
 Quality Score: 0.285
@@ -2081,9 +2109,9 @@ Join the first Arweave Fullstack Hack for up to $50k in funding Legacy The follo
 
 ---
 
-# 65. Starter Kits  Cooking with the Permaweb
+# 67. Starter Kits  Cooking with the Permaweb
 
-Document Number: 65
+Document Number: 67
 Source: https://cookbook.arweave.net/kits/index.html
 Words: 23
 Quality Score: 0.264
