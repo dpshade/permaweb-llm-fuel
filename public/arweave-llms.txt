@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-15T12:15:51.031Z
+Generated on: 2025-07-16T12:15:30.248Z
 Total documents: 65
-Total words: 21518
+Total words: 21384
 
 ## Table of Contents
 
@@ -38,16 +38,16 @@ Total words: 21518
 28. [arkb](https://cookbook.arweave.net/guides/deployment/arkb.html)
 29. [Entity Types](https://cookbook.arweave.net/concepts/arfs/entity-types.html)
 30. [Posting Transactions using Ardrive Turbo](https://cookbook.arweave.net/guides/posting-transactions/turbo.html)
-31. [Vouch](https://cookbook.arweave.net/concepts/vouch.html)
-32. [Warp WriteInteractions](https://cookbook.arweave.net/guides/smartweave/warp/write-interactions.html)
-33. [Cooking with the Permaweb](https://cookbook.arweave.net/index.html)
-34. [Permaweb Applications](https://cookbook.arweave.net/concepts/permawebApplications.html)
-35. [Fetching Transaction Data](https://cookbook.arweave.net/guides/http-api.html)
-36. [Cooking with the Permaweb](https://cookbook.arweave.net/getting-started/index.html)
-37. [Vouch](https://cookbook.arweave.net/guides/vouch.html)
-38. [ArNS - Arweave Name System](https://cookbook.arweave.net/concepts/arns.html)
-39. [Privacy](https://cookbook.arweave.net/concepts/arfs/privacy.html)
-40. [Developing on the Permaweb](https://cookbook.arweave.net/getting-started/welcome.html)
+31. [Warp WriteInteractions](https://cookbook.arweave.net/guides/smartweave/warp/write-interactions.html)
+32. [Cooking with the Permaweb](https://cookbook.arweave.net/index.html)
+33. [Permaweb Applications](https://cookbook.arweave.net/concepts/permawebApplications.html)
+34. [Fetching Transaction Data](https://cookbook.arweave.net/guides/http-api.html)
+35. [Cooking with the Permaweb](https://cookbook.arweave.net/getting-started/index.html)
+36. [Vouch](https://cookbook.arweave.net/guides/vouch.html)
+37. [ArNS - Arweave Name System](https://cookbook.arweave.net/concepts/arns.html)
+38. [Privacy](https://cookbook.arweave.net/concepts/arfs/privacy.html)
+39. [Developing on the Permaweb](https://cookbook.arweave.net/getting-started/welcome.html)
+40. [Vouch](https://cookbook.arweave.net/concepts/vouch.html)
 41. [Gateways](https://cookbook.arweave.net/concepts/gateways.html)
 42. [Path Manifests](https://cookbook.arweave.net/concepts/manifests.html)
 43. [Welcome to the Permaweb](https://cookbook.arweave.net/concepts/permaweb.html)
@@ -1204,31 +1204,9 @@ console.error('Failed to upload data item!', error);
 
 ---
 
-# 31. Vouch  Cooking with the Permaweb
+# 31. Warp WriteInteractions  Cooking with the Permaweb
 
 Document Number: 31
-Source: https://cookbook.arweave.net/concepts/vouch.html
-Words: 313
-Quality Score: 0.484
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Vouch Overview Motivation Vouching provides a decentralized approach to Sybil resistance. A Sybil attack is when an attacker subverts the network by creating a large number of pseudonymous identities to gain a disproportionately large influence.Vouch Protocol Arweave introduced the concept of the ANS-109 Vouch (Assertion of Identity). It is a standard that uses a specific transaction format along with some tags to allows anyone on the permaweb to "vouch" for the identity and humanity of any Arweave address.Adding a standard such as the ANS-109 to the permaweb will help minimize Sybil attacks and bad actors, making it a safer experience for permaweb users.VouchDAO VouchDAO is a community led, decentralized verification layer built on top of the Vouch standard. Developers create vouch services and members of the VouchDAO community vote on which of these verification services are deemed trustworthy. How It Works Developers have the ability to create different Vouch services to attest to a user's Arweave wallet based on a given set of requirements. A current example of this is the Twitter service which is the first vouch service, which has vouched over 180 Arweave addresses so far.The VouchDAO smart contract state has an attribute vouched. This state gets updated whenever a user gets verified. The vouched object stores a list of vouched addresses in the following format:VOUCH_USER_ADDRESS:[
-{
-service:"SERVICE_ADDRESS_1"
-transaction:"TX_ID"
-},
-{
-service:"SERVICE_ADDRESS_2"
-transaction:"TX_ID"
-}
-] Users that get verified will have the ANS-109 token sent to their wallet to indicate that wallet has been vouched for by that service.ANS-109 Transaction Format Tag Name Optional?Tag Value App-Name False Vouch Vouch-For False Arweave address that is being vouched for in this transaction App-Version True 0.1 Verification-Method True Method of verification of identity for the person. Example - Twitter / In-Person / Gmail / Facebook User-Identifier True An identifier for the user based on the Verification Method. Example - abhav@arweave.org Resources VouchDAO VouchDAO Contract
-
----
-
-# 32. Warp WriteInteractions  Cooking with the Permaweb
-
-Document Number: 32
 Source: https://cookbook.arweave.net/guides/smartweave/warp/write-interactions.html
 Words: 353
 Quality Score: 0.484
@@ -1266,9 +1244,9 @@ function: 'NAME_OF_YOUR_FUNCTION',
 
 ---
 
-# 33. Cooking with the Permaweb  Cooking with the Permaweb
+# 32. Cooking with the Permaweb  Cooking with the Permaweb
 
-Document Number: 33
+Document Number: 32
 Source: https://cookbook.arweave.net/index.html
 Words: 224
 Quality Score: 0.480
@@ -1279,9 +1257,9 @@ Cooking with the Permaweb The Permaweb Cookbook is a developer resource that pro
 
 ---
 
-# 34. Permaweb Applications  Cooking with the Permaweb
+# 33. Permaweb Applications  Cooking with the Permaweb
 
-Document Number: 34
+Document Number: 33
 Source: https://cookbook.arweave.net/concepts/permawebApplications.html
 Words: 430
 Quality Score: 0.478
@@ -1292,9 +1270,9 @@ Permaweb Applications A Permaweb application refers to a web page or app built o
 
 ---
 
-# 35. Fetching Transaction Data  Cooking with the Permaweb
+# 34. Fetching Transaction Data  Cooking with the Permaweb
 
-Document Number: 35
+Document Number: 34
 Source: https://cookbook.arweave.net/guides/http-api.html
 Words: 563
 Quality Score: 0.477
@@ -1349,9 +1327,9 @@ console.log(res.data) Click to view example result {
 
 ---
 
-# 36. Cooking with the Permaweb  Cooking with the Permaweb
+# 35. Cooking with the Permaweb  Cooking with the Permaweb
 
-Document Number: 36
+Document Number: 35
 Source: https://cookbook.arweave.net/getting-started/index.html
 Words: 251
 Quality Score: 0.476
@@ -1362,9 +1340,9 @@ Cooking with the Permaweb The Permaweb Cookbook is a developer resource that pro
 
 ---
 
-# 37. Vouch  Cooking with the Permaweb
+# 36. Vouch  Cooking with the Permaweb
 
-Document Number: 37
+Document Number: 36
 Source: https://cookbook.arweave.net/guides/vouch.html
 Words: 224
 Quality Score: 0.475
@@ -1417,9 +1395,9 @@ value
 
 ---
 
-# 38. ArNS - Arweave Name System  Cooking with the Permaweb
+# 37. ArNS - Arweave Name System  Cooking with the Permaweb
 
-Document Number: 38
+Document Number: 37
 Source: https://cookbook.arweave.net/concepts/arns.html
 Words: 523
 Quality Score: 0.475
@@ -1441,9 +1419,9 @@ ticker:"ANT-ARDRIVE-OG-LOGO"
 
 ---
 
-# 39. Privacy  Cooking with the Permaweb
+# 38. Privacy  Cooking with the Permaweb
 
-Document Number: 39
+Document Number: 38
 Source: https://cookbook.arweave.net/concepts/arfs/privacy.html
 Words: 700
 Quality Score: 0.467
@@ -1456,9 +1434,9 @@ Cipher-IV?: "<12 byte initialization vector as Base64>" Just like drives, privat
 
 ---
 
-# 40. Developing on the Permaweb  Cooking with the Permaweb
+# 39. Developing on the Permaweb  Cooking with the Permaweb
 
-Document Number: 40
+Document Number: 39
 Source: https://cookbook.arweave.net/getting-started/welcome.html
 Words: 203
 Quality Score: 0.465
@@ -1466,6 +1444,19 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Developing on the Permaweb Welcome to the Permaweb Creating applications on the permaweb, which is built on the Arweave protocol, is similar to building traditional web applications but with some key differences.One major difference is that data is stored on the permaweb permanently, as the name suggests, rather than on a centralized server. This means that once data is uploaded to the permaweb, it cannot be deleted or altered. This can be beneficial for applications that require tamper-proof data storage, such as supply chain management or voting systems.Another difference is that the permaweb is decentralized, meaning there is no central point of control or failure. This can provide increased security and reliability for applications.Additionally, the permaweb uses a unique token, called AR, to pay for the storage of data on the network. This can add a new layer of complexity to application development, as developers need to consider how to integrate AR into their applications and handle payments.Overall, the experience of creating applications on the permaweb can be challenging, but it can also be rewarding as it offers unique benefits over traditional web development.Hello Worlds Hello World (No Code) Hello World (CLI) Built with ❤️ by the Arweave community. Learn more at Arweave.org
+
+---
+
+# 40. Vouch  Cooking with the Permaweb
+
+Document Number: 40
+Source: https://cookbook.arweave.net/concepts/vouch.html
+Words: 179
+Quality Score: 0.464
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Vouch Overview Motivation Vouching provides a decentralized approach to Sybil resistance. A Sybil attack is when an attacker subverts the network by creating a large number of pseudonymous identities to gain a disproportionately large influence.Vouch Protocol Arweave introduced the concept of the ANS-109 Vouch (Assertion of Identity). It is a standard that uses a specific transaction format along with some tags to allows anyone on the permaweb to "vouch" for the identity and humanity of any Arweave address.Adding a standard such as the ANS-109 to the permaweb will help minimize Sybil attacks and bad actors, making it a safer experience for permaweb users.ANS-109 Transaction Format Tag Name Optional?Tag Value App-Name False Vouch Vouch-For False Arweave address that is being vouched for in this transaction App-Version True 0.1 Verification-Method True Method of verification of identity for the person. Example - Twitter / In-Person / Gmail / Facebook User-Identifier True An identifier for the user based on the Verification Method. Example - abhav@arweave.org Resources ANS-109 Docs open in new window Built with ❤️ by the Arweave community. Learn more at Arweave.org
 
 ---
 

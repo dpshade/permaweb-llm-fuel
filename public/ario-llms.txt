@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-15T12:15:12.691Z
+Generated on: 2025-07-16T12:14:42.835Z
 Total documents: 134
-Total words: 76327
+Total words: 76377
 
 ## Table of Contents
 
@@ -19,8 +19,8 @@ Total words: 76327
 9. [Linux Setup](https://docs.ar.io/gateways/linux-setup)
 10. [Advanced](https://docs.ar.io/gateways/advanced)
 11. [Advanced Config](https://docs.ar.io/gateways/ar-io-node/advanced-config.html)
-12. [Telemetry](https://docs.ar.io/wayfinder/telemetry)
-13. [Upgrading](https://docs.ar.io/gateways/upgrading)
+12. [Upgrading](https://docs.ar.io/gateways/upgrading)
+13. [Telemetry](https://docs.ar.io/wayfinder/telemetry)
 14. [Uploading to Arweave](https://docs.ar.io/guides/uploading-to-arweave)
 15. [Gql](https://docs.ar.io/guides/gql)
 16. [Gql](https://docs.ar.io/build/guides/gql)
@@ -36,11 +36,11 @@ Total words: 76327
 26. [Introduction](https://docs.ar.io/introduction)
 27. [Parquet and ClickHouse Usage Guide](https://docs.ar.io/gateways/parquet)
 28. [Observation and Incentives](https://docs.ar.io/gateways/observer)
-29. [Core](https://docs.ar.io/wayfinder/core)
-30. [Bundler](https://docs.ar.io/gateways/bundler)
-31. [Importing SQLite Database Snapshots](https://docs.ar.io/gateways/snapshots)
-32. [Arlink Deploy](https://docs.ar.io/build/guides/arlink)
-33. [Arlink Deploy](https://docs.ar.io/guides/arlink)
+29. [Bundler](https://docs.ar.io/gateways/bundler)
+30. [Importing SQLite Database Snapshots](https://docs.ar.io/gateways/snapshots)
+31. [Arlink Deploy](https://docs.ar.io/build/guides/arlink)
+32. [Arlink Deploy](https://docs.ar.io/guides/arlink)
+33. [Core](https://docs.ar.io/wayfinder/core)
 34. [ARIO Network Testnet](https://docs.ar.io/guides/testnet)
 35. [Ar Io Sdk](https://docs.ar.io/ar-io-sdk)
 36. [joinNetwork](https://docs.ar.io/ar-io-sdk/ario/gateways/join-network)
@@ -149,8 +149,8 @@ Total words: 76327
 
 Document Number: 1
 Source: https://docs.ar.io/wayfinder/react
-Words: 355
-Quality Score: 0.612
+Words: 361
+Quality Score: 0.604
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -186,6 +186,8 @@ console.error('Verification failed:', error),
 telemetrySettings={{
 enabled: process.env.NODE_ENV === 'production',
 serviceName: 'my-react-app',
+clientName: 'my-react-app',
+clientVersion: process.env.REACT_APP_VERSION || '1.0.0',
 sampleRate: 0.05,
 exporterUrl: process.env.REACT_APP_TELEMETRY_URL,
 }}
@@ -339,20 +341,6 @@ Advanced Configuration Overview The Getting Started guides for windows and linux
 # 12. ARIO Docs
 
 Document Number: 12
-Source: https://docs.ar.io/wayfinder/telemetry
-Words: 193
-Quality Score: 0.548
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Telemetry Configuration Wayfinder includes optional telemetry support built on the OpenTelemetry standard. Telemetry is completely opt-in and disabled by default.Overview Wayfinder's telemetry system:100% Opt-in: Disabled by default, only enabled when you explicitly configure it OpenTelemetry Standard: Built on the industry-standard OpenTelemetry framework Your Choice of Destination: Send data to your own servers Configurable: Full control over what data is collected and where it goes All telemetry is disabled by default. It only activates when you
-explicitly enable it in your configuration.Basic Configuration Minimal Setup Send to Your Own Infrastructure Advanced Configuration For advanced telemetry configuration, custom instrumentation, and detailed trace management, refer to the OpenTelemetry documentation.Wayfinder uses these OpenTelemetry packages:@opentelemetry/api @opentelemetry/exporter-trace-otlp-http @opentelemetry/sdk-trace-base Best Practices Production Settings Development Settings Frequently Asked Questions Q: Is telemetry enabled by default?A: No, telemetry is completely disabled by default and only activates when you explicitly configure it.Q: Can I use my own telemetry backend?A: Yes, specify your own exporterUrl to send data to any OpenTelemetry-compatible backend.Q: Does this affect performance?A: Minimal impact when using appropriate sampling rates (1-10% for production).Q: Can I disable telemetry after enabling it?A: Yes, simply set enabled: false or remove the telemetrySettings configuration entirely.
-
----
-
-# 13. ARIO Docs
-
-Document Number: 13
 Source: https://docs.ar.io/gateways/upgrading
 Words: 350
 Quality Score: 0.547
@@ -360,6 +348,20 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Upgrading your Gateway To ensure the optimal performance and security of your AR.IO Gateway, it's essential to regularly upgrade to the latest version. Notably, indexed data resides separate from Docker. As a result, neither upgrading the Gateway nor pruning Docker will erase your data or progress. Here's how you can perform the upgrade:Prerequisites Your Gateway should have been cloned using git. If you haven't, follow the installation instructions for windows or linux.Checking your Release Number Effective with release 3, you can view the currently implemented release on any gateway by visiting https:///ar-io/info in a browser. Be sure to replace with the domain of the gateway you are checking.If the release number dised includes -pre it means that your gateway is using the develop branch of the github repo for the gateway code. Follow steps in our troubleshooting guide to switch over to the more stable main branch.Announcements will be made in our discord server showing each new release.Upgrade Steps Pull the latest changes from the repository Navigate to your cloned repository directory and execute the following command:Shut down Docker Depending on your operating system, use the respective commands:Linux Windows Prune Docker (Optional) It's a good practice to clean up unused Docker resources. Again, use the command based on your OS:NOTE: This will erase all inactive docker containers on your machine. If you use docker for anything beyond running a gateway be extremely careful using this command.Linux Windows Check for New Environmental Variables Read the update release change logs and community announcements to see if the new version includes any new environmental variables that you should set before restarting your gateway.Restart the Docker container Finally, start the Docker container again to implement the changes:Linux Windows NOTE: Effective with Release #3, it is no longer required to include the --build flag when starting your gateway. Docker will automatically build using the image specified in the docker-commpose.yaml file.That's it! Your AR.IO Gateway is now upgraded to the latest version. Ensure to test and verify that everything is functioning as expected. If you encounter any issues, reach out to the AR.IO community for assistance.
+
+---
+
+# 13. ARIO Docs
+
+Document Number: 13
+Source: https://docs.ar.io/wayfinder/telemetry
+Words: 229
+Quality Score: 0.545
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Telemetry Configuration Wayfinder includes optional telemetry support built on the OpenTelemetry standard. Telemetry is completely opt-in and disabled by default.Overview Wayfinder's telemetry system:100% Opt-in: Disabled by default, only enabled when you explicitly configure it OpenTelemetry Standard: Built on the industry-standard OpenTelemetry framework Your Choice of Destination: Send data to your own servers Configurable: Full control over what data is collected and where it goes All telemetry is disabled by default. It only activates when you
+explicitly enable it in your configuration.Basic Configuration Minimal Setup Send to Your Own Infrastructure Configuration Options Client Identification You can identify your client application and version in telemetry data:The clientName and clientVersion are added as OpenTelemetry resource attributes (client.name and client.version) to help identify and filter telemetry data from different clients.Advanced Configuration For advanced telemetry configuration, custom instrumentation, and detailed trace management, refer to the OpenTelemetry documentation.Wayfinder uses these OpenTelemetry packages:@opentelemetry/api @opentelemetry/exporter-trace-otlp-http @opentelemetry/sdk-trace-base Best Practices Production Settings Development Settings Frequently Asked Questions Q: Is telemetry enabled by default?A: No, telemetry is completely disabled by default and only activates when you explicitly configure it.Q: Can I use my own telemetry backend?A: Yes, specify your own exporterUrl to send data to any OpenTelemetry-compatible backend.Q: Does this affect performance?A: Minimal impact when using appropriate sampling rates (1-10% for production).Q: Can I disable telemetry after enabling it?A: Yes, simply set enabled: false or remove the telemetrySettings configuration entirely.
 
 ---
 
@@ -462,8 +464,8 @@ Gateways then expose these hashes and their verification status to users via HTT
 
 Document Number: 20
 Source: https://docs.ar.io/wayfinder/getting-started
-Words: 576
-Quality Score: 0.521
+Words: 580
+Quality Score: 0.519
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -550,6 +552,8 @@ console.log('Verification passed for:', event.txId)
 telemetrySettings: {
 enabled: true,
 serviceName: 'my-app',
+clientName: 'my-app',
+clientVersion: '1.0.0',
 sampleRate: 0.1, // 10% sampling
 },
 // Configure event handlers
@@ -961,9 +965,67 @@ In addition, the gateway shall have its minimum network-join stake slashed by 10
 # 29. ARIO Docs
 
 Document Number: 29
-Source: https://docs.ar.io/wayfinder/core
-Words: 440
+Source: https://docs.ar.io/gateways/bundler
+Words: 808
 Quality Score: 0.499
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Bundler Overview A Turbo ANS-104 data item bundler can be run alongside an AR.IO gateway. This allows gateways the ability to accept data items to be submit to the Arweave blockweave.The bundler service can be easily run inside Docker in the same way that the gateway is. It utilizes a separate docker compose file for configuration and deployment, which also allows for the use of a separate file for environmental variables specific to the bundler service. Additionally, the separation allows operators to spin their bundler service up or down at any time without affecting their core gateway service. Despite the use of separate docker compose files, the bundler service shares a docker network with the AR.IO gateway, and so is able to directly interact with the gateway service and data.Getting Started NOTE: The bundler service relies on GraphQL indexing of recently bundled and uploaded data to manage its pipeline operations. The AR.IO gateway should have its indexes synced up to Arweave's current block height before starting the bundler's service stack.Environmental Variables Environmental variables must be provided for the bundler to function and integrate properly with an existing AR.IO gateway. The gateway repository provides a .env.bundler.example file that can be renamed to .env.bundler and used as a starting point. It contains the following:BUNDLER_ARWEAVE_WALLET must be the entire jwk of an Arweave wallet's keyfile, stringified. All uploads of bundled data items to Arweave will be signed and paid for by this wallet, so it must maintain a balance of AR tokens sufficient to handle the uploads.BUNDLER_ARWEAVE_ADDRESS must be the normalized public address for the provided Arweave wallet.APP_NAME is a GraphQL tag that will be added to uploaded bundles.The remaining lines in the .env.bundler.example file control settings that allow the bundler service to share data with the AR.IO gateway. Data sharing of contiguous data between a bundler and a gateway allows the gateway to serve optimistically cached data without waiting for it to fully settle on chain.Managing Bundler Access By default, the bundler will only accept data items uploaded by data item signers whose normalized wallet addresses are in the ALLOW_LISTED_ADDRESSES list. This is an additional environmental variable that can be added to your .env.bundler file, and must be a comma separated list of normalized public wallet addresses for wallets that should be allowed to bundle and upload data through your gateway.ALLOW_LISTED_ADDRESSES=, The following permissioning configurations schemes are also possible:Indexing Bundlers submit data to the Arweave network as an ANS-104 data item bundle. This means it is several transactions wrapped into one. A gateway will need to unbundle these transactions in order to index them. A gateway should include the following ANS-104 filters in order to unbundle and index transactions from a particular bundler:$BUNDLER_ARWEAVE_ADDRESS should be replaced with the normalized public wallet address associated with the bundler.NOTE: The above filters must be placed in the .env file for the core gateway service, not the bundler.Gateways handle data item indexing asynchronously. This means they establish a queue of items to index, and work on processing the queue in the background while the gateway continues with its normal operations. If a gateway has broad indexing filters, there can be some latency in indexing data items from the bundler while the gateway works through its queue.Optimistic Indexing Gateway operators control access to their optimistic data item indexing API via an admin key that must be supplied by all bundling clients in order for their requests to be accepted. This key should be made available in the environment configuration files for BOTH the core gateway, and the bundler, and should be provided as AR_IO_ADMIN_KEY:NOTE: If a gateway is started without providing the admin key, a random string will be generated to protect the gateway's admin endpoints. This can be reset by restarting the gateway with the admin key provided in the .env file.Starting and ping the Bundler Starting The bundler service is designed to run in conjunction with an AR.IO gateway, and so relies on the ar-io-network network created in Docker when the core gateway services are spun up. It is possible to spin up the bundler while the core services are down, but the network must exist in Docker.To start the bundler, specify the env and docker-compose files being used in a docker compose up command:The -d flag runs the command in "detached" mode, so it will run in the background without requiring the terminal to remain active.ping To spin the bundler service down, specify the docker-compose file in a docker compose down command:logs While the bundler service is running in detached mode, logs can be checked by specifying the docker-compose file in a docker compose logs command:-f runs the command in "follow" mode, so the terminal will continue to watch and dis new logs.--tail= defines the number of logs to dis that existed prior to running the command. 0 diss only new logs.
+
+---
+
+# 30. Importing SQLite Database Snapshots - ARIO Docs
+
+Document Number: 30
+Source: https://docs.ar.io/gateways/snapshots
+Words: 483
+Quality Score: 0.498
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Overview One of the challenges of running an AR.IO Gateway is the initial synchronization time as your gateway builds its local index of the Arweave network. This process can take days or even weeks, depending on your hardware and the amount of data you want to index. To accelerate this process, you can import a pre-synchronized SQLite database snapshot that contains transaction and data item records already indexed.This guide will walk you through the process of importing a database snapshot into your AR.IO Gateway.Note The below instructions are designed to be used in a linux environment. Windows and MacOS users must modify the instructions to use the appropriate package manager/ command syntax for their platform.Unless otherwise specified, all commands should be run from the root directory of the gateway.Obtaining a Database Snapshot SQLite database snapshots are very large and not easy to incrementally update. For these reasons, AR.IO is distributing them using BitTorrent. These snapshots can be downloaded using any preferred torrenting client, and below is instructions on doing so using transmission-cli from a terminal.This will download a snapshot, current to April 23, 2025, of an unbundled data set that includes all data items uploaded via an ArDrive product, including Turbo. The file will be named 2025-04-23-sqlite.tar.gz and be approximately 42.8Gb in size.Note While continuing to seed the torrent after download is not required, it is highly recommended to help ensure the continued availability of the snapshot for others, as well as the integrity of the data. Seeding this file should not cause any issues with your internet service provider.This is a compressed tarball, so it will need to be extracted before it can be used.Extracting the Database Snapshot Once the file has downloaded, you can extract it using the following command, be sure to replace the filename with the actual filename of the snapshot you are using, if not using the example above.This will extract the file into a directory matching the filename, minus the .tar.gz extension.Importing the Database Snapshot Once you have an extracted database snapshot, you can import it into your AR.IO gateway by replacing the existing SQLite database files. Follow the instructions below to do so.IMPORTANT Importing a database snapshot will delete your existing database and replace it with the snapshot you are importing. your AR.IO gateway.(Optional) Backup your existing SQLite database files.Delete the existing SQLite database files.Move the snapshot files into the data/sqlite directory.Be sure to replace 2025-04-23-sqlite with the actual directory name of the extracted snapshot you are using.Start your AR.IO gateway.Verifying the Import The simplest way to verify the import is to check the gateway logs to see what block number is being imported. The 2025-04-23 snapshot was taken at block 1645229, so the gateway will start importing blocks after this height if the snapshot was imported successfully.You can also use the Grafana Sidecar to view the last block imported in a more human readable format.
+
+---
+
+# 31. Arlink Deploy - ARIO Docs
+
+Document Number: 31
+Source: https://docs.ar.io/build/guides/arlink
+Words: 462
+Quality Score: 0.496
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Overview Arlink is a third party tool that allows you to permanently deploy and manage web apps on the permaweb with ease.How it works Users can link their Github or Protocol.land repositories to their Arlink account through the Arlink dashboard. When a new project or build is deployed,
+Arlink will take the repository, build it, and upload the build folder to Arweave.Arlink also allows users to connect their project to an ArNS name they own, or an undername of the ArNS name ar://arlink.Dashboard After connecting your wallet to the Arlink web app using the button at the top right, you will be taken to your dashboard. This page will dis any deployments associated with your wallet, and includes a "+ New Deployment" button
+in order to start the process of deploying a new project. New Deployment After clicking on the new deployment button, you will be prompted to import a repository from either Github or Protocol.land. Authorize Github If this is your first time importing from Github, you will be prompted to authorize Arlink to access your Github repositories. You can authorize all repositories, or limit authorization to any number of specific ones. Select Repository Once authorization is approved, select which repository and branch you want to deploy. Define Build and Output Steps Once you select what you want to deploy, you need to specify how the project needs to be built to get it ready. Arlink prompts for five inputs:Project Name: This is the name of your project.Install Command: The command for installing dependencies for your project. Usually npm install or yarn install Build Command: This is the command to run your build script. Usually npm run build or yarn build Sub Directory: If the front end for your project lives in a sub directory of your selected repository, you can specify that here.Output Directory: This is the path to the build folder being deployed. This will be different depending on the framework your project uses. Select ArNS The last thing to do is select an ArNS name to deploy your project to. If you own your own name, you can connect to it here with the "Use existing ArNS" toggle. Otherwise, you can select an undername of the ArNS name arlink to deploy to.
+Duplicate undernames cannot exist, so you can only select an undername that is not already being used. Logs Once you select your ArNS name and click "Deploy", your project will be deployed. Logs from the build and deploy process will be dised so you can monitor for errors. Updates To deploy a new build of your project, select it from the dashboard. The project page gives you the option to update any settings or configurations, and has a "Deploy Latest" button which will redeploy your project.
+
+---
+
+# 32. Arlink Deploy - ARIO Docs
+
+Document Number: 32
+Source: https://docs.ar.io/guides/arlink
+Words: 462
+Quality Score: 0.496
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Overview Arlink is a third party tool that allows you to permanently deploy and manage web apps on the permaweb with ease.How it works Users can link their Github or Protocol.land repositories to their Arlink account through the Arlink dashboard. When a new project or build is deployed,
+Arlink will take the repository, build it, and upload the build folder to Arweave.Arlink also allows users to connect their project to an ArNS name they own, or an undername of the ArNS name ar://arlink.Dashboard After connecting your wallet to the Arlink web app using the button at the top right, you will be taken to your dashboard. This page will dis any deployments associated with your wallet, and includes a "+ New Deployment" button
+in order to start the process of deploying a new project. New Deployment After clicking on the new deployment button, you will be prompted to import a repository from either Github or Protocol.land. Authorize Github If this is your first time importing from Github, you will be prompted to authorize Arlink to access your Github repositories. You can authorize all repositories, or limit authorization to any number of specific ones. Select Repository Once authorization is approved, select which repository and branch you want to deploy. Define Build and Output Steps Once you select what you want to deploy, you need to specify how the project needs to be built to get it ready. Arlink prompts for five inputs:Project Name: This is the name of your project.Install Command: The command for installing dependencies for your project. Usually npm install or yarn install Build Command: This is the command to run your build script. Usually npm run build or yarn build Sub Directory: If the front end for your project lives in a sub directory of your selected repository, you can specify that here.Output Directory: This is the path to the build folder being deployed. This will be different depending on the framework your project uses. Select ArNS The last thing to do is select an ArNS name to deploy your project to. If you own your own name, you can connect to it here with the "Use existing ArNS" toggle. Otherwise, you can select an undername of the ArNS name arlink to deploy to.
+Duplicate undernames cannot exist, so you can only select an undername that is not already being used. Logs Once you select your ArNS name and click "Deploy", your project will be deployed. Logs from the build and deploy process will be dised so you can monitor for errors. Updates To deploy a new build of your project, select it from the dashboard. The project page gives you the option to update any settings or configurations, and has a "Deploy Latest" button which will redeploy your project.
+
+---
+
+# 33. ARIO Docs
+
+Document Number: 33
+Source: https://docs.ar.io/wayfinder/core
+Words: 444
+Quality Score: 0.496
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -1016,6 +1078,8 @@ console.warn('Verification failed:', error.message)
 telemetrySettings: {
 enabled: true,
 serviceName: 'my-application',
+clientName: 'my-app',
+clientVersion: '1.0.0',
 sampleRate: 0.1,
 },
 // Custom logger (optional)
@@ -1028,64 +1092,6 @@ error: (message, ...args) =>
 console.error(`[WAYFINDER] ${message}`, ...args),
 },
 }) Core Methods request() Fetches data from Arweave with intelligent routing and optional verification.resolveUrl() Resolves an ar:// URL to a gateway URL without fetching data.Event Monitoring Monitor wayfinder operations using the built-in event system:What Can Wayfinder Core Do?Gateway Providers NetworkGatewaysProvider: Discovers gateways from the AR.IO Network StaticGatewaysProvider: Uses predefined gateway lists SimpleCacheGatewaysProvider: Caches gateway lists for performance Routing Strategies FastestPingRoutingStrategy: Selects lowest latency gateway PreferredWithFallbackRoutingStrategy: Tries preferred gateway first RoundRobinRoutingStrategy: Distributes requests evenly RandomRoutingStrategy: Randomly selects gateways Verification Strategies HashVerificationStrategy: Verifies against trusted gateway hashes SignatureVerificationStrategy: Validates Arweave signatures DataRootVerificationStrategy: Verifies against data roots Best Practices Choose Appropriate Routing: Use FastestPingRoutingStrategy for performance-critical apps Enable Verification: Use verification for important or sensitive data Handle Errors: Implement proper error handling for different failure scenarios Monitor Performance: Use events to track gateway performance and success rates Configure Timeouts: Set appropriate timeouts based on your application needs Use Telemetry: Enable telemetry in production for monitoring and debugging Events System: Learn about event handling and monitoring Gateway Providers: Understand gateway discovery options Routing Strategies: Explore different routing algorithms Verification Strategies: Learn about data integrity verification Telemetry: Set up monitoring and observability
-
----
-
-# 30. ARIO Docs
-
-Document Number: 30
-Source: https://docs.ar.io/gateways/bundler
-Words: 808
-Quality Score: 0.499
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Bundler Overview A Turbo ANS-104 data item bundler can be run alongside an AR.IO gateway. This allows gateways the ability to accept data items to be submit to the Arweave blockweave.The bundler service can be easily run inside Docker in the same way that the gateway is. It utilizes a separate docker compose file for configuration and deployment, which also allows for the use of a separate file for environmental variables specific to the bundler service. Additionally, the separation allows operators to spin their bundler service up or down at any time without affecting their core gateway service. Despite the use of separate docker compose files, the bundler service shares a docker network with the AR.IO gateway, and so is able to directly interact with the gateway service and data.Getting Started NOTE: The bundler service relies on GraphQL indexing of recently bundled and uploaded data to manage its pipeline operations. The AR.IO gateway should have its indexes synced up to Arweave's current block height before starting the bundler's service stack.Environmental Variables Environmental variables must be provided for the bundler to function and integrate properly with an existing AR.IO gateway. The gateway repository provides a .env.bundler.example file that can be renamed to .env.bundler and used as a starting point. It contains the following:BUNDLER_ARWEAVE_WALLET must be the entire jwk of an Arweave wallet's keyfile, stringified. All uploads of bundled data items to Arweave will be signed and paid for by this wallet, so it must maintain a balance of AR tokens sufficient to handle the uploads.BUNDLER_ARWEAVE_ADDRESS must be the normalized public address for the provided Arweave wallet.APP_NAME is a GraphQL tag that will be added to uploaded bundles.The remaining lines in the .env.bundler.example file control settings that allow the bundler service to share data with the AR.IO gateway. Data sharing of contiguous data between a bundler and a gateway allows the gateway to serve optimistically cached data without waiting for it to fully settle on chain.Managing Bundler Access By default, the bundler will only accept data items uploaded by data item signers whose normalized wallet addresses are in the ALLOW_LISTED_ADDRESSES list. This is an additional environmental variable that can be added to your .env.bundler file, and must be a comma separated list of normalized public wallet addresses for wallets that should be allowed to bundle and upload data through your gateway.ALLOW_LISTED_ADDRESSES=, The following permissioning configurations schemes are also possible:Indexing Bundlers submit data to the Arweave network as an ANS-104 data item bundle. This means it is several transactions wrapped into one. A gateway will need to unbundle these transactions in order to index them. A gateway should include the following ANS-104 filters in order to unbundle and index transactions from a particular bundler:$BUNDLER_ARWEAVE_ADDRESS should be replaced with the normalized public wallet address associated with the bundler.NOTE: The above filters must be placed in the .env file for the core gateway service, not the bundler.Gateways handle data item indexing asynchronously. This means they establish a queue of items to index, and work on processing the queue in the background while the gateway continues with its normal operations. If a gateway has broad indexing filters, there can be some latency in indexing data items from the bundler while the gateway works through its queue.Optimistic Indexing Gateway operators control access to their optimistic data item indexing API via an admin key that must be supplied by all bundling clients in order for their requests to be accepted. This key should be made available in the environment configuration files for BOTH the core gateway, and the bundler, and should be provided as AR_IO_ADMIN_KEY:NOTE: If a gateway is started without providing the admin key, a random string will be generated to protect the gateway's admin endpoints. This can be reset by restarting the gateway with the admin key provided in the .env file.Starting and ping the Bundler Starting The bundler service is designed to run in conjunction with an AR.IO gateway, and so relies on the ar-io-network network created in Docker when the core gateway services are spun up. It is possible to spin up the bundler while the core services are down, but the network must exist in Docker.To start the bundler, specify the env and docker-compose files being used in a docker compose up command:The -d flag runs the command in "detached" mode, so it will run in the background without requiring the terminal to remain active.ping To spin the bundler service down, specify the docker-compose file in a docker compose down command:logs While the bundler service is running in detached mode, logs can be checked by specifying the docker-compose file in a docker compose logs command:-f runs the command in "follow" mode, so the terminal will continue to watch and dis new logs.--tail= defines the number of logs to dis that existed prior to running the command. 0 diss only new logs.
-
----
-
-# 31. Importing SQLite Database Snapshots - ARIO Docs
-
-Document Number: 31
-Source: https://docs.ar.io/gateways/snapshots
-Words: 483
-Quality Score: 0.498
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview One of the challenges of running an AR.IO Gateway is the initial synchronization time as your gateway builds its local index of the Arweave network. This process can take days or even weeks, depending on your hardware and the amount of data you want to index. To accelerate this process, you can import a pre-synchronized SQLite database snapshot that contains transaction and data item records already indexed.This guide will walk you through the process of importing a database snapshot into your AR.IO Gateway.Note The below instructions are designed to be used in a linux environment. Windows and MacOS users must modify the instructions to use the appropriate package manager/ command syntax for their platform.Unless otherwise specified, all commands should be run from the root directory of the gateway.Obtaining a Database Snapshot SQLite database snapshots are very large and not easy to incrementally update. For these reasons, AR.IO is distributing them using BitTorrent. These snapshots can be downloaded using any preferred torrenting client, and below is instructions on doing so using transmission-cli from a terminal.This will download a snapshot, current to April 23, 2025, of an unbundled data set that includes all data items uploaded via an ArDrive product, including Turbo. The file will be named 2025-04-23-sqlite.tar.gz and be approximately 42.8Gb in size.Note While continuing to seed the torrent after download is not required, it is highly recommended to help ensure the continued availability of the snapshot for others, as well as the integrity of the data. Seeding this file should not cause any issues with your internet service provider.This is a compressed tarball, so it will need to be extracted before it can be used.Extracting the Database Snapshot Once the file has downloaded, you can extract it using the following command, be sure to replace the filename with the actual filename of the snapshot you are using, if not using the example above.This will extract the file into a directory matching the filename, minus the .tar.gz extension.Importing the Database Snapshot Once you have an extracted database snapshot, you can import it into your AR.IO gateway by replacing the existing SQLite database files. Follow the instructions below to do so.IMPORTANT Importing a database snapshot will delete your existing database and replace it with the snapshot you are importing. your AR.IO gateway.(Optional) Backup your existing SQLite database files.Delete the existing SQLite database files.Move the snapshot files into the data/sqlite directory.Be sure to replace 2025-04-23-sqlite with the actual directory name of the extracted snapshot you are using.Start your AR.IO gateway.Verifying the Import The simplest way to verify the import is to check the gateway logs to see what block number is being imported. The 2025-04-23 snapshot was taken at block 1645229, so the gateway will start importing blocks after this height if the snapshot was imported successfully.You can also use the Grafana Sidecar to view the last block imported in a more human readable format.
-
----
-
-# 32. Arlink Deploy - ARIO Docs
-
-Document Number: 32
-Source: https://docs.ar.io/build/guides/arlink
-Words: 462
-Quality Score: 0.496
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview Arlink is a third party tool that allows you to permanently deploy and manage web apps on the permaweb with ease.How it works Users can link their Github or Protocol.land repositories to their Arlink account through the Arlink dashboard. When a new project or build is deployed,
-Arlink will take the repository, build it, and upload the build folder to Arweave.Arlink also allows users to connect their project to an ArNS name they own, or an undername of the ArNS name ar://arlink.Dashboard After connecting your wallet to the Arlink web app using the button at the top right, you will be taken to your dashboard. This page will dis any deployments associated with your wallet, and includes a "+ New Deployment" button
-in order to start the process of deploying a new project. New Deployment After clicking on the new deployment button, you will be prompted to import a repository from either Github or Protocol.land. Authorize Github If this is your first time importing from Github, you will be prompted to authorize Arlink to access your Github repositories. You can authorize all repositories, or limit authorization to any number of specific ones. Select Repository Once authorization is approved, select which repository and branch you want to deploy. Define Build and Output Steps Once you select what you want to deploy, you need to specify how the project needs to be built to get it ready. Arlink prompts for five inputs:Project Name: This is the name of your project.Install Command: The command for installing dependencies for your project. Usually npm install or yarn install Build Command: This is the command to run your build script. Usually npm run build or yarn build Sub Directory: If the front end for your project lives in a sub directory of your selected repository, you can specify that here.Output Directory: This is the path to the build folder being deployed. This will be different depending on the framework your project uses. Select ArNS The last thing to do is select an ArNS name to deploy your project to. If you own your own name, you can connect to it here with the "Use existing ArNS" toggle. Otherwise, you can select an undername of the ArNS name arlink to deploy to.
-Duplicate undernames cannot exist, so you can only select an undername that is not already being used. Logs Once you select your ArNS name and click "Deploy", your project will be deployed. Logs from the build and deploy process will be dised so you can monitor for errors. Updates To deploy a new build of your project, select it from the dashboard. The project page gives you the option to update any settings or configurations, and has a "Deploy Latest" button which will redeploy your project.
-
----
-
-# 33. Arlink Deploy - ARIO Docs
-
-Document Number: 33
-Source: https://docs.ar.io/guides/arlink
-Words: 462
-Quality Score: 0.496
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview Arlink is a third party tool that allows you to permanently deploy and manage web apps on the permaweb with ease.How it works Users can link their Github or Protocol.land repositories to their Arlink account through the Arlink dashboard. When a new project or build is deployed,
-Arlink will take the repository, build it, and upload the build folder to Arweave.Arlink also allows users to connect their project to an ArNS name they own, or an undername of the ArNS name ar://arlink.Dashboard After connecting your wallet to the Arlink web app using the button at the top right, you will be taken to your dashboard. This page will dis any deployments associated with your wallet, and includes a "+ New Deployment" button
-in order to start the process of deploying a new project. New Deployment After clicking on the new deployment button, you will be prompted to import a repository from either Github or Protocol.land. Authorize Github If this is your first time importing from Github, you will be prompted to authorize Arlink to access your Github repositories. You can authorize all repositories, or limit authorization to any number of specific ones. Select Repository Once authorization is approved, select which repository and branch you want to deploy. Define Build and Output Steps Once you select what you want to deploy, you need to specify how the project needs to be built to get it ready. Arlink prompts for five inputs:Project Name: This is the name of your project.Install Command: The command for installing dependencies for your project. Usually npm install or yarn install Build Command: This is the command to run your build script. Usually npm run build or yarn build Sub Directory: If the front end for your project lives in a sub directory of your selected repository, you can specify that here.Output Directory: This is the path to the build folder being deployed. This will be different depending on the framework your project uses. Select ArNS The last thing to do is select an ArNS name to deploy your project to. If you own your own name, you can connect to it here with the "Use existing ArNS" toggle. Otherwise, you can select an undername of the ArNS name arlink to deploy to.
-Duplicate undernames cannot exist, so you can only select an undername that is not already being used. Logs Once you select your ArNS name and click "Deploy", your project will be deployed. Logs from the build and deploy process will be dised so you can monitor for errors. Updates To deploy a new build of your project, select it from the dashboard. The project page gives you the option to update any settings or configurations, and has a "Deploy Latest" button which will redeploy your project.
 
 ---
 
