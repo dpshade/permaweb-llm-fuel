@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-16T12:15:30.248Z
+Generated on: 2025-07-17T12:15:04.480Z
 Total documents: 65
-Total words: 21384
+Total words: 21387
 
 ## Table of Contents
 
@@ -1248,12 +1248,12 @@ function: 'NAME_OF_YOUR_FUNCTION',
 
 Document Number: 32
 Source: https://cookbook.arweave.net/index.html
-Words: 224
-Quality Score: 0.480
+Words: 227
+Quality Score: 0.479
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Cooking with the Permaweb The Permaweb Cookbook is a developer resource that provides the essential concepts and references for buiding applications on the Permaweb. Each concept and reference will focus on specific aspects of the Permaweb development ecosystem while providing additional details and usage examples.Developers Welcome to the Arweave development community, where the past is forever etched in the blockchain and the future is full of endless possibilities. Let's build the decentralized web together!Read More Contributing The Cookbook is designed in a way that makes it easy for new Permaweb developers to contribute. Even if you don't know how to do something, contributing to the cookbook is a great way to learn!Check out all open issues here. Contribution guidelines here. if you find the cookbook is missing a concept, guide or reference, please add an issue.Read More How to Read the Cookbook The Permaweb Cookbook is split into different sections, each aimed at a different goal.Section Description Core Concepts Building blocks of the Permaweb that are good to know for development Guides Snack-sized guides about different tools for development References References to commonly needed code snippets Starter Kits Front-end Framework Starters to get you started building on the Permaweb in no time Quick Starts These are small guides to help developers from every experience level to ship code the the permaweb.Hello World (No Code)
+Cooking with the Permaweb The Permaweb Cookbook is a developer resource that provides the essential concepts and references for buiding applications on the Permaweb. Each concept and reference will focus on specific aspects of the Permaweb development ecosystem while providing additional details and usage examples.Developers Welcome to the Arweave development community, where the past is forever etched in the blockchain and the future is full of endless possibilities. Let's build the decentralized web together!Read More Contributing The Cookbook is designed in a way that makes it easy for new Permaweb developers to contribute. Even if you don't know how to do something, contributing to the cookbook is a great way to learn!Check out all open issues here. Contribution guidelines here. if you find the cookbook is missing a concept, guide or reference, please add an issue.Read More How to Read the Cookbook The Permaweb Cookbook is split into different sections, each aimed at a different goal.Section Description Core Concepts Building blocks of the Permaweb that are good to know for development Guides Snack-sized guides about different tools for development References References to commonly needed code snippets Starter Kits Front-end Framework Starters to get you started building on the Permaweb in no time Quick Starts These are small guides to help developers from every experience level to ship code the the permaweb.Hello World (No Code) Hello World (CLI)
 
 ---
 

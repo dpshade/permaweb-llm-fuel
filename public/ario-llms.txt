@@ -1,15 +1,15 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-16T12:14:42.835Z
-Total documents: 134
-Total words: 76377
+Generated on: 2025-07-17T12:14:17.590Z
+Total documents: 133
+Total words: 69261
 
 ## Table of Contents
 
 ### Included Documents
 
-1. [ariowayfinder-react](https://docs.ar.io/wayfinder/react)
-2. [AO Compute Unit (CU)](https://docs.ar.io/gateways/cu)
+1. [AO Compute Unit (CU)](https://docs.ar.io/gateways/cu)
+2. [ariowayfinder-react](https://docs.ar.io/wayfinder/react)
 3. [Arns Viewer](https://docs.ar.io/build/guides/arns-viewer)
 4. [Arns Viewer](https://docs.ar.io/guides/arns-viewer)
 5. [Deploy a dApp with ArDrive web](https://docs.ar.io/build/guides/ardrive-web)
@@ -20,14 +20,14 @@ Total words: 76377
 10. [Advanced](https://docs.ar.io/gateways/advanced)
 11. [Advanced Config](https://docs.ar.io/gateways/ar-io-node/advanced-config.html)
 12. [Upgrading](https://docs.ar.io/gateways/upgrading)
-13. [Telemetry](https://docs.ar.io/wayfinder/telemetry)
-14. [Uploading to Arweave](https://docs.ar.io/guides/uploading-to-arweave)
+13. [Uploading to Arweave](https://docs.ar.io/guides/uploading-to-arweave)
+14. [Getting Started](https://docs.ar.io/wayfinder/getting-started)
 15. [Gql](https://docs.ar.io/guides/gql)
 16. [Gql](https://docs.ar.io/build/guides/gql)
 17. [ARIO Gateway Grafana](https://docs.ar.io/gateways/grafana)
 18. [Windows Setup](https://docs.ar.io/gateways/windows-setup)
 19. [Gateway Network](https://docs.ar.io/gateways/gateway-network)
-20. [Getting Started](https://docs.ar.io/wayfinder/getting-started)
+20. [Telemetry](https://docs.ar.io/wayfinder/core/telemetry)
 21. [Managing Undernames](https://docs.ar.io/guides/managing-undernames)
 22. [Managing Undernames](https://docs.ar.io/build/guides/managing-undernames)
 23. [Get Delegations](https://docs.ar.io/ar-io-sdk/ario/gateways/get-delegations)
@@ -36,11 +36,11 @@ Total words: 76377
 26. [Introduction](https://docs.ar.io/introduction)
 27. [Parquet and ClickHouse Usage Guide](https://docs.ar.io/gateways/parquet)
 28. [Observation and Incentives](https://docs.ar.io/gateways/observer)
-29. [Bundler](https://docs.ar.io/gateways/bundler)
-30. [Importing SQLite Database Snapshots](https://docs.ar.io/gateways/snapshots)
-31. [Arlink Deploy](https://docs.ar.io/build/guides/arlink)
-32. [Arlink Deploy](https://docs.ar.io/guides/arlink)
-33. [Core](https://docs.ar.io/wayfinder/core)
+29. [Local Storage](https://docs.ar.io/wayfinder/core/gateway-providers/local-storage)
+30. [Bundler](https://docs.ar.io/gateways/bundler)
+31. [Importing SQLite Database Snapshots](https://docs.ar.io/gateways/snapshots)
+32. [Arlink Deploy](https://docs.ar.io/build/guides/arlink)
+33. [Arlink Deploy](https://docs.ar.io/guides/arlink)
 34. [ARIO Network Testnet](https://docs.ar.io/guides/testnet)
 35. [Ar Io Sdk](https://docs.ar.io/ar-io-sdk)
 36. [joinNetwork](https://docs.ar.io/ar-io-sdk/ario/gateways/join-network)
@@ -57,104 +57,116 @@ Total words: 76377
 47. [Get Redelegation Fee](https://docs.ar.io/ar-io-sdk/ario/gateways/get-redelegation-fee)
 48. [Register an IP Asset on Arweave](https://docs.ar.io/guides/story)
 49. [Wayfinder](https://docs.ar.io/wayfinder)
-50. [Content Moderation](https://docs.ar.io/gateways/moderation)
-51. [Release Name](https://docs.ar.io/ar-io-sdk/ants/release-name)
-52. [Gateway Architecture](https://docs.ar.io/gateways)
-53. [upgradeRecord](https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record)
-54. [setUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/set-undername-record)
-55. [ANT Configuration](https://docs.ar.io/ar-io-sdk/ants/configuration)
-56. [getGatewayVaults](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults)
-57. [setBaseNameRecord](https://docs.ar.io/ar-io-sdk/ants/set-base-name-record)
-58. [Get Gateway Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates)
-59. [getDemandFactorSettings](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor-settings)
-60. [Get Demand Factor](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor)
-61. [SimpleCacheRoutingStrategy](https://docs.ar.io/wayfinder/routing-strategies/simple-cache)
-62. [getRecords](https://docs.ar.io/ar-io-sdk/ants/get-records)
-63. [setRecord](https://docs.ar.io/ar-io-sdk/ants/set-record)
-64. [getRegistrationFees](https://docs.ar.io/ar-io-sdk/ario/arns/get-registration-fees)
-65. [The ARIO Token](https://docs.ar.io/token)
-66. [Gateway Troubleshooting FAQ](https://docs.ar.io/gateways/troubleshooting)
-67. [getState](https://docs.ar.io/ar-io-sdk/ants/get-state)
-68. [Glossary](https://docs.ar.io/glossary)
-69. [Gateway Providers](https://docs.ar.io/wayfinder/core/gateway-providers)
-70. [getInfo](https://docs.ar.io/ar-io-sdk/ants/get-info)
-71. [getArNSRecord](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record)
-72. [Cache](https://docs.ar.io/wayfinder/core/gateway-providers/cache)
+50. [Network](https://docs.ar.io/wayfinder/core/gateway-providers/network)
+51. [Content Moderation](https://docs.ar.io/gateways/moderation)
+52. [Core](https://docs.ar.io/wayfinder/core)
+53. [Release Name](https://docs.ar.io/ar-io-sdk/ants/release-name)
+54. [Gateway Architecture](https://docs.ar.io/gateways)
+55. [upgradeRecord](https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record)
+56. [setUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/set-undername-record)
+57. [ANT Configuration](https://docs.ar.io/ar-io-sdk/ants/configuration)
+58. [getGatewayVaults](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults)
+59. [setBaseNameRecord](https://docs.ar.io/ar-io-sdk/ants/set-base-name-record)
+60. [Get Gateway Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates)
+61. [getDemandFactorSettings](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor-settings)
+62. [Get Demand Factor](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor)
+63. [getRecords](https://docs.ar.io/ar-io-sdk/ants/get-records)
+64. [Gateway Providers](https://docs.ar.io/wayfinder/core/gateway-providers)
+65. [setRecord](https://docs.ar.io/ar-io-sdk/ants/set-record)
+66. [getRegistrationFees](https://docs.ar.io/ar-io-sdk/ario/arns/get-registration-fees)
+67. [The ARIO Token](https://docs.ar.io/token)
+68. [Gateway Troubleshooting FAQ](https://docs.ar.io/gateways/troubleshooting)
+69. [getState](https://docs.ar.io/ar-io-sdk/ants/get-state)
+70. [Glossary](https://docs.ar.io/glossary)
+71. [getInfo](https://docs.ar.io/ar-io-sdk/ants/get-info)
+72. [getArNSRecord](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record)
 73. [Remove Primary Names](https://docs.ar.io/ar-io-sdk/ants/remove-primary-names)
 74. [Reassign Name](https://docs.ar.io/ar-io-sdk/ants/reassign-name)
 75. [Instant Withdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/instant-withdrawal)
-76. [getBalance](https://docs.ar.io/ar-io-sdk/ants/get-balance)
-77. [Gateway ArNS Resolution](https://docs.ar.io/gateways/arns-resolution)
-78. [Leave Network](https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network)
-79. [Increase Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake)
-80. [Decrease Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake)
-81. [Getting Started](https://docs.ar.io/ar-io-sdk/getting-started)
-82. [getBalances](https://docs.ar.io/ar-io-sdk/ants/get-balances)
-83. [removeRecord](https://docs.ar.io/ar-io-sdk/ants/remove-record)
-84. [getArNSReservedNames](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names)
-85. [getArNSReservedName](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-name)
-86. [removeUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/remove-undername-record)
-87. [ARIO Configuration](https://docs.ar.io/ar-io-sdk/ario/configuration)
-88. [Managing Primary Names](https://docs.ar.io/guides/primary-names)
-89. [Preferred With Fallback](https://docs.ar.io/wayfinder/routing-strategies/preferred-with-fallback)
-90. [ARIO Node Filtering System](https://docs.ar.io/gateways/filters)
-91. [Normalized Addresses](https://docs.ar.io/concepts/normalized-addresses)
-92. [Hash Verification Strategy](https://docs.ar.io/wayfinder/verification-strategies/hash-verification)
-93. [Update Gateway Settings](https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings)
-94. [Network](https://docs.ar.io/wayfinder/core/gateway-providers/network)
+76. [Simple Cache](https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache)
+77. [getBalance](https://docs.ar.io/ar-io-sdk/ants/get-balance)
+78. [Gateway ArNS Resolution](https://docs.ar.io/gateways/arns-resolution)
+79. [Leave Network](https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network)
+80. [Increase Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake)
+81. [Decrease Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake)
+82. [Getting Started](https://docs.ar.io/ar-io-sdk/getting-started)
+83. [getBalances](https://docs.ar.io/ar-io-sdk/ants/get-balances)
+84. [removeRecord](https://docs.ar.io/ar-io-sdk/ants/remove-record)
+85. [getArNSReservedNames](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names)
+86. [getArNSReservedName](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-name)
+87. [removeUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/remove-undername-record)
+88. [ARIO Configuration](https://docs.ar.io/ar-io-sdk/ario/configuration)
+89. [Managing Primary Names](https://docs.ar.io/guides/primary-names)
+90. [Data Root Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/data-root-verification)
+91. [ARIO Node Filtering System](https://docs.ar.io/gateways/filters)
+92. [Static](https://docs.ar.io/wayfinder/core/gateway-providers/static)
+93. [Normalized Addresses](https://docs.ar.io/concepts/normalized-addresses)
+94. [Update Gateway Settings](https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings)
 95. [Extend Lease](https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease)
-96. [Static](https://docs.ar.io/wayfinder/core/gateway-providers/static)
-97. [addController](https://docs.ar.io/ar-io-sdk/ants/add-controller)
-98. [Events](https://docs.ar.io/wayfinder/core/events)
-99. [Optimizing Data Handling in ARIO Gateway](https://docs.ar.io/gateways/optimize-data)
-100. [transfer](https://docs.ar.io/ar-io-sdk/ants/transfer)
-101. [getCostDetails](https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details)
-102. [setKeywords](https://docs.ar.io/ar-io-sdk/ants/set-keywords)
-103. [approvePrimaryNameRequest](https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request)
-104. [ARIO Gateway Environment Variables](https://docs.ar.io/gateways/env)
-105. [Random](https://docs.ar.io/wayfinder/routing-strategies/random)
-106. [StaticRoutingStrategy](https://docs.ar.io/wayfinder/routing-strategies/static)
-107. [Increase Undername Limit](https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit)
-108. [ARIO SDK Release Notes](https://docs.ar.io/ar-io-sdk/release-notes)
-109. [Remove Controller](https://docs.ar.io/ar-io-sdk/ants/remove-controller)
-110. [getGateway](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway)
-111. [getGateways](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateways)
-112. [ARIO Documentation](https://docs.ar.io/)
-113. [Data Root Verification Strategy](https://docs.ar.io/wayfinder/verification-strategies/data-root-verification)
-114. [Signature Verification Strategy](https://docs.ar.io/wayfinder/verification-strategies/signature-verification)
-115. [Set Logo](https://docs.ar.io/ar-io-sdk/ants/set-logo)
-116. [ANTs on Bazar](https://docs.ar.io/guides/ants-on-bazar)
-117. [ANTs on Bazar](https://docs.ar.io/learn/guides/ants-on-bazar)
-118. [cancelWithdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal)
-119. [Increase Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake)
-120. [Decrease Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake)
-121. [getArNSRecords](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-records)
-122. [Set Name](https://docs.ar.io/ar-io-sdk/ants/set-name)
-123. [Set Ticker](https://docs.ar.io/ar-io-sdk/ants/set-ticker)
-124. [Set Description](https://docs.ar.io/ar-io-sdk/ants/set-description)
-125. [getHandlers](https://docs.ar.io/ar-io-sdk/ants/get-handlers)
-126. [Gateway Apex Domain Content Resolution](https://docs.ar.io/gateways/apex)
-127. [buyRecord](https://docs.ar.io/ar-io-sdk/ario/arns/buy-record)
-128. [ARIO Network Composition](https://docs.ar.io/network-composition)
-129. [Quick Start Guides](https://docs.ar.io/guides)
-130. [Round Robin](https://docs.ar.io/wayfinder/routing-strategies/round-robin)
-131. [ARIO Smart Contract](https://docs.ar.io/ario-contract)
-132. [Fastest Ping](https://docs.ar.io/wayfinder/routing-strategies/fastest-ping)
-133. [Routing Strategies](https://docs.ar.io/wayfinder/routing-strategies)
-134. [Verification Strategies](https://docs.ar.io/wayfinder/verification-strategies)
+96. [addController](https://docs.ar.io/ar-io-sdk/ants/add-controller)
+97. [Optimizing Data Handling in ARIO Gateway](https://docs.ar.io/gateways/optimize-data)
+98. [transfer](https://docs.ar.io/ar-io-sdk/ants/transfer)
+99. [getCostDetails](https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details)
+100. [setKeywords](https://docs.ar.io/ar-io-sdk/ants/set-keywords)
+101. [Signature Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/signature-verification)
+102. [approvePrimaryNameRequest](https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request)
+103. [ARIO Gateway Environment Variables](https://docs.ar.io/gateways/env)
+104. [Increase Undername Limit](https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit)
+105. [ARIO SDK Release Notes](https://docs.ar.io/ar-io-sdk/release-notes)
+106. [Remove Controller](https://docs.ar.io/ar-io-sdk/ants/remove-controller)
+107. [getGateway](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway)
+108. [getGateways](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateways)
+109. [ARIO Documentation](https://docs.ar.io/)
+110. [Set Logo](https://docs.ar.io/ar-io-sdk/ants/set-logo)
+111. [ANTs on Bazar](https://docs.ar.io/guides/ants-on-bazar)
+112. [ANTs on Bazar](https://docs.ar.io/learn/guides/ants-on-bazar)
+113. [cancelWithdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal)
+114. [Increase Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake)
+115. [Decrease Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake)
+116. [getArNSRecords](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-records)
+117. [Set Name](https://docs.ar.io/ar-io-sdk/ants/set-name)
+118. [Set Ticker](https://docs.ar.io/ar-io-sdk/ants/set-ticker)
+119. [Set Description](https://docs.ar.io/ar-io-sdk/ants/set-description)
+120. [getHandlers](https://docs.ar.io/ar-io-sdk/ants/get-handlers)
+121. [Verification Strategies](https://docs.ar.io/wayfinder/core/verification-strategies)
+122. [Gateway Apex Domain Content Resolution](https://docs.ar.io/gateways/apex)
+123. [buyRecord](https://docs.ar.io/ar-io-sdk/ario/arns/buy-record)
+124. [StaticRoutingStrategy](https://docs.ar.io/wayfinder/core/routing-strategies/static)
+125. [Hash Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/hash-verification)
+126. [ARIO Network Composition](https://docs.ar.io/network-composition)
+127. [Random](https://docs.ar.io/wayfinder/core/routing-strategies/random)
+128. [Quick Start Guides](https://docs.ar.io/guides)
+129. [ARIO Smart Contract](https://docs.ar.io/ario-contract)
+130. [Fastest Ping](https://docs.ar.io/wayfinder/core/routing-strategies/fastest-ping)
+131. [Round Robin](https://docs.ar.io/wayfinder/core/routing-strategies/round-robin)
+132. [Preferred With Fallback](https://docs.ar.io/wayfinder/core/routing-strategies/preferred-with-fallback)
+133. [Routing Strategies](https://docs.ar.io/wayfinder/core/routing-strategies)
 
 ---
 
-# 1. ariowayfinder-react - ARIO Docs
+# 1. AO Compute Unit (CU) - ARIO Docs
 
 Document Number: 1
-Source: https://docs.ar.io/wayfinder/react
-Words: 361
-Quality Score: 0.604
+Source: https://docs.ar.io/gateways/cu
+Words: 1013
+Quality Score: 0.588
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Overview The @ar.io/wayfinder-react package provides React-specific components and hooks for integrating Wayfinder into React applications. It offers a provider pattern for configuration and convenient hooks for fetching data with built-in loading states and error handling.Installation Quick Start 1. Wrap Your App with WayfinderProvider 2. Use Hooks in Your Components Components WayfinderProvider The WayfinderProvider component wraps your application to make Wayfinder available throughout your component tree. It accepts all the same configuration options as the core Wayfinder constructor.Props All WayfinderOptions from the core package are supported. See the Core Configuration documentation for details.Basic Configuration Advanced Configuration import { WayfinderProvider } from '@ar.io/wayfinder-react'
+Overview An AO Compute Unit (CU) is a critical component in the AO ecosystem responsible for executing AO processes and maintaining their state. CUs serve as the computational backbone of the AO network by:Processing Messages: CUs receive and process messages sent to AO processes Executing WASM Modules: CUs run the WebAssembly (WASM) code that defines process behavior Maintaining State: CUs track and update the state of AO processes Creating Checkpoints: CUs periodically save process state to the Arweave network as checkpoints Running a CU alongside your gateway allows you to:Process AO requests locally rather than relying on external services Improve response times for AO-related queries Contribute computational resources to the AO network Ensure your gateway has reliable access to AO functionality For more detailed information about Compute Units, please refer to the AO Cookbook: Units.System Requirements Before deploying a CU, ensure your system meets the following requirements:Recommended: At least 16GB RAM for optimal CU operation Minimum: 4GB RAM is possible with adjusted memory limits (see resource allocation settings) At least 100GB disk space dedicated to CU operation These requirements are separate from your gateway requirements Running a CU is resource-intensive. Make sure your system has sufficient resources to handle both the gateway and the CU. While you can run a CU with less than the recommended RAM, you'll need to adjust the memory limits accordingly.Deploying an AO CU Step 1: Navigate to Gateway Directory First, navigate to the root directory of your gateway:Step 2: Configure Environment Variables Copy the example environment file:Default.env.ao.example Contents The default .env.ao.example file contains the following settings:These default settings are configured to work with a gateway running on the same machine, but you'll need to modify them as described below.Open the .env.ao file in your preferred text editor:Configure the following settings:CU_WALLET: Replace '[wallet json here]' with the JSON from an Arweave wallet.The entire JSON must be placed on a single line for proper registration.PROCESS_CHECKPOINT_TRUSTED_OWNERS: This is a comma-separated list of trusted wallet addresses:PROCESS_CHECKPOINT_TRUSTED_OWNERS=fcoN_xJeisVsPXA-trzVAuIiqO3ydLQxM-L4XbrQKzY Adding Your Own Wallet If you are uploading your own checkpoints, you should add your own CU wallet address after the default value, separated by a comma:PROCESS_CHECKPOINT_TRUSTED_OWNERS=fcoN_xJeisVsPXA-trzVAuIiqO3ydLQxM-L4XbrQKzY,YOUR_WALLET_ADDRESS_HERE This allows your CU to trust checkpoints from both the official source and your own wallet.GATEWAY_URL: By default, this is set to use your own gateway:GATEWAY_URL=http://envoy:3000 A gateway must be set to index all ANS-104 data items from AO or the CU will not operate properly. Most users will want to set this to:GATEWAY_URL=https://arweave.net UPLOADER_URL: By default, this is set to use a bundler sidecar run by your gateway:UPLOADER_URL=http://envoy:3000/bundler Important: Checkpoint Uploads Require Payment Checkpoints are uploaded to Arweave, so the upload must be paid for. You must ensure your wallet has sufficient funds:If using https://up.arweave.net (recommended), your CU_WALLET must contain Turbo Credits If using your own bundler or another service, you'll need the appropriate token (AR or other) Without proper funding, checkpoints will fail to upload and your CU may not function correctly The simplest option for most users is to use:UPLOADER_URL=https://up.arweave.net This requires your CU_WALLET to contain Turbo Credits.Optional: Disable Checkpoint Creation: If you want to disable checkpoint uploads, add:DISABLE_PROCESS_CHECKPOINT_CREATION=true Example of a Completed.env.ao File Here's an example of what your completed .env.ao file might look like with common settings:After making your changes, save and exit the nano editor:Press Ctrl+X to exit Press Y to confirm saving changes Press Enter to confirm the filename Optional Resource Allocation Settings You can fine-tune the CU's resource usage by adding these optional environment variables:PROCESS_WASM_MEMORY_MAX_LIMIT: Sets the maximum memory limit (in bytes) for WASM processes.Important Memory Requirement To work with the AR.IO process, PROCESS_WASM_MEMORY_MAX_LIMIT must be at least 17179869184 (16GB).Note: This doesn't mean your server needs 16GB of RAM. This is the maximum memory limit the CU will support for processes. Most processes don't use their maximum allocated memory.You can set this value to 16GB even if your server only has 4GB of RAM. However, if a process requires more memory than your server has available, the CU will fail when evaluating messages that need more memory.WASM_EVALUATION_MAX_WORKERS: Sets the maximum number of worker threads for WASM evaluation.Worker Thread Configuration This will default to (available CPUs - 1) if not specified. If you're running a gateway and unbundling on the same server, consider setting this to 2 or less to avoid overloading your CPU.PROCESS_WASM_COMPUTE_MAX_LIMIT: The maximum Compute-Limit, in bytes, supported for ao processes (defaults to 9 billion) PROCESS_WASM_COMPUTE_MAX_LIMIT=9000000000 NODE_OPTIONS: Sets Node.js memory allocation for the Docker container.Resource Tuning Start with conservative values and monitor performance. You can adjust these settings based on your system's capabilities and the CU's performance.Step 3: Start the CU Container Once your environment file is configured, start the CU container:This command uses the following flags:--env-file .env.ao: Specifies the environment file to use -f docker-compose.ao.yaml: Specifies the Docker Compose file to use up: Creates and starts the containers -d: Runs containers in detached mode (background) Step 4: Check the Logs To check the logs of your CU container:This command uses the following flags:-f: Follows the log output (continuous dis) --tail=20: Shows only the last 20 lines of logs Exit the logs by pressing Ctrl+C.Connecting Your Gateway to the CU To make your gateway use your local CU:Add the following line to your gateway's .env file:AO_CU_URL=http://ao-cu:6363 This assumes the CU is running on the same machine as the gateway.Restart your gateway:Accessing Your CU Once properly set up and connected to your gateway, you can access your CU via:https:///ao/cu This endpoint allows you to interact with your CU directly through your gateway's domain.Important Notes Initial Processing Time: A CU will need to process AO history before it can give valid responses. This process can take several hours.Gateway Fallback: A gateway on release 27 or above will fallback to arweave.net if its default CU is not responding quickly enough, so gateway operations will not be significantly impacted during the initial processing.Monitoring Progress: Check the CU logs after pointing a gateway at it to watch the process of working through AO history:Resource Usage: Running a CU is resource-intensive. Monitor your system's performance to ensure it can handle both the gateway and CU workloads.
+
+---
+
+# 2. ariowayfinder-react - ARIO Docs
+
+Document Number: 2
+Source: https://docs.ar.io/wayfinder/react
+Words: 163
+Quality Score: 0.577
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Overview The @ar.io/wayfinder-react package provides React-specific components and hooks for integrating Wayfinder into React applications. It offers a provider pattern for configuration and convenient hooks for fetching data with built-in loading states and error handling.Installation Quick Start 1. Add the Wayfinder Context Provider 2. Use Hooks in Your Components Advanced Configuration import { WayfinderProvider } from '@ar.io/wayfinder-react'
 import {
 NetworkGatewaysProvider,
 PreferredWithFallbackRoutingStrategy,
@@ -185,7 +197,6 @@ console.error('Verification failed:', error),
 }}
 telemetrySettings={{
 enabled: process.env.NODE_ENV === 'production',
-serviceName: 'my-react-app',
 clientName: 'my-react-app',
 clientVersion: process.env.REACT_APP_VERSION || '1.0.0',
 sampleRate: 0.05,
@@ -194,20 +205,7 @@ exporterUrl: process.env.REACT_APP_TELEMETRY_URL,
 >
 
 )
-} Available Hooks The package provides three main hooks for different use cases:useWayfinder Access the complete Wayfinder instance with full control over all methods and configuration.Best for: Advanced usage, custom implementations, accessing multiple Wayfinder methods useWayfinderRequest Get direct access to the request function for data fetching with ar:// URLs.Best for: Data fetching, most common use case, cleaner component code useWayfinderUrl Resolve ar:// URLs to gateway URLs with built-in loading states and error handling.Best for: Creating links, dising resolved URLs, URL resolution with state management Provider Patterns Multiple Providers for Different Configurations Use nested providers for different parts of your application that need different Wayfinder configurations:Context Composition Combine Wayfinder with other React contexts:TypeScript Support The package includes comprehensive TypeScript definitions:Global Error Boundary Hook-Level Error Handling Performance Optimization Memoization Best Practices The Wayfinder instance is automatically memoized in the provider based on the configuration options:Lazy Loading and Code Splitting Testing Mocking Wayfinder in Tests API Reference useWayfinder: Access the complete Wayfinder instance useWayfinderRequest: Direct access to the request function useWayfinderUrl: URL resolution with loading states For more advanced configuration options, see the Core Documentation.
-
----
-
-# 2. AO Compute Unit (CU) - ARIO Docs
-
-Document Number: 2
-Source: https://docs.ar.io/gateways/cu
-Words: 1013
-Quality Score: 0.588
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview An AO Compute Unit (CU) is a critical component in the AO ecosystem responsible for executing AO processes and maintaining their state. CUs serve as the computational backbone of the AO network by:Processing Messages: CUs receive and process messages sent to AO processes Executing WASM Modules: CUs run the WebAssembly (WASM) code that defines process behavior Maintaining State: CUs track and update the state of AO processes Creating Checkpoints: CUs periodically save process state to the Arweave network as checkpoints Running a CU alongside your gateway allows you to:Process AO requests locally rather than relying on external services Improve response times for AO-related queries Contribute computational resources to the AO network Ensure your gateway has reliable access to AO functionality For more detailed information about Compute Units, please refer to the AO Cookbook: Units.System Requirements Before deploying a CU, ensure your system meets the following requirements:Recommended: At least 16GB RAM for optimal CU operation Minimum: 4GB RAM is possible with adjusted memory limits (see resource allocation settings) At least 100GB disk space dedicated to CU operation These requirements are separate from your gateway requirements Running a CU is resource-intensive. Make sure your system has sufficient resources to handle both the gateway and the CU. While you can run a CU with less than the recommended RAM, you'll need to adjust the memory limits accordingly.Deploying an AO CU Step 1: Navigate to Gateway Directory First, navigate to the root directory of your gateway:Step 2: Configure Environment Variables Copy the example environment file:Default.env.ao.example Contents The default .env.ao.example file contains the following settings:These default settings are configured to work with a gateway running on the same machine, but you'll need to modify them as described below.Open the .env.ao file in your preferred text editor:Configure the following settings:CU_WALLET: Replace '[wallet json here]' with the JSON from an Arweave wallet.The entire JSON must be placed on a single line for proper registration.PROCESS_CHECKPOINT_TRUSTED_OWNERS: This is a comma-separated list of trusted wallet addresses:PROCESS_CHECKPOINT_TRUSTED_OWNERS=fcoN_xJeisVsPXA-trzVAuIiqO3ydLQxM-L4XbrQKzY Adding Your Own Wallet If you are uploading your own checkpoints, you should add your own CU wallet address after the default value, separated by a comma:PROCESS_CHECKPOINT_TRUSTED_OWNERS=fcoN_xJeisVsPXA-trzVAuIiqO3ydLQxM-L4XbrQKzY,YOUR_WALLET_ADDRESS_HERE This allows your CU to trust checkpoints from both the official source and your own wallet.GATEWAY_URL: By default, this is set to use your own gateway:GATEWAY_URL=http://envoy:3000 A gateway must be set to index all ANS-104 data items from AO or the CU will not operate properly. Most users will want to set this to:GATEWAY_URL=https://arweave.net UPLOADER_URL: By default, this is set to use a bundler sidecar run by your gateway:UPLOADER_URL=http://envoy:3000/bundler Important: Checkpoint Uploads Require Payment Checkpoints are uploaded to Arweave, so the upload must be paid for. You must ensure your wallet has sufficient funds:If using https://up.arweave.net (recommended), your CU_WALLET must contain Turbo Credits If using your own bundler or another service, you'll need the appropriate token (AR or other) Without proper funding, checkpoints will fail to upload and your CU may not function correctly The simplest option for most users is to use:UPLOADER_URL=https://up.arweave.net This requires your CU_WALLET to contain Turbo Credits.Optional: Disable Checkpoint Creation: If you want to disable checkpoint uploads, add:DISABLE_PROCESS_CHECKPOINT_CREATION=true Example of a Completed.env.ao File Here's an example of what your completed .env.ao file might look like with common settings:After making your changes, save and exit the nano editor:Press Ctrl+X to exit Press Y to confirm saving changes Press Enter to confirm the filename Optional Resource Allocation Settings You can fine-tune the CU's resource usage by adding these optional environment variables:PROCESS_WASM_MEMORY_MAX_LIMIT: Sets the maximum memory limit (in bytes) for WASM processes.Important Memory Requirement To work with the AR.IO process, PROCESS_WASM_MEMORY_MAX_LIMIT must be at least 17179869184 (16GB).Note: This doesn't mean your server needs 16GB of RAM. This is the maximum memory limit the CU will support for processes. Most processes don't use their maximum allocated memory.You can set this value to 16GB even if your server only has 4GB of RAM. However, if a process requires more memory than your server has available, the CU will fail when evaluating messages that need more memory.WASM_EVALUATION_MAX_WORKERS: Sets the maximum number of worker threads for WASM evaluation.Worker Thread Configuration This will default to (available CPUs - 1) if not specified. If you're running a gateway and unbundling on the same server, consider setting this to 2 or less to avoid overloading your CPU.PROCESS_WASM_COMPUTE_MAX_LIMIT: The maximum Compute-Limit, in bytes, supported for ao processes (defaults to 9 billion) PROCESS_WASM_COMPUTE_MAX_LIMIT=9000000000 NODE_OPTIONS: Sets Node.js memory allocation for the Docker container.Resource Tuning Start with conservative values and monitor performance. You can adjust these settings based on your system's capabilities and the CU's performance.Step 3: Start the CU Container Once your environment file is configured, start the CU container:This command uses the following flags:--env-file .env.ao: Specifies the environment file to use -f docker-compose.ao.yaml: Specifies the Docker Compose file to use up: Creates and starts the containers -d: Runs containers in detached mode (background) Step 4: Check the Logs To check the logs of your CU container:This command uses the following flags:-f: Follows the log output (continuous dis) --tail=20: Shows only the last 20 lines of logs Exit the logs by pressing Ctrl+C.Connecting Your Gateway to the CU To make your gateway use your local CU:Add the following line to your gateway's .env file:AO_CU_URL=http://ao-cu:6363 This assumes the CU is running on the same machine as the gateway.Restart your gateway:Accessing Your CU Once properly set up and connected to your gateway, you can access your CU via:https:///ao/cu This endpoint allows you to interact with your CU directly through your gateway's domain.Important Notes Initial Processing Time: A CU will need to process AO history before it can give valid responses. This process can take several hours.Gateway Fallback: A gateway on release 27 or above will fallback to arweave.net if its default CU is not responding quickly enough, so gateway operations will not be significantly impacted during the initial processing.Monitoring Progress: Check the CU logs after pointing a gateway at it to watch the process of working through AO history:Resource Usage: Running a CU is resource-intensive. Monitor your system's performance to ensure it can handle both the gateway and CU workloads.
+} Related useWayfinder: Access the complete Wayfinder instance useWayfinderRequest: Direct access to the request function useWayfinderUrl: URL resolution with loading states For more advanced configuration options, see the Core Documentation.
 
 ---
 
@@ -351,23 +349,9 @@ Upgrading your Gateway To ensure the optimal performance and security of your AR
 
 ---
 
-# 13. ARIO Docs
+# 13. Uploading to Arweave - ARIO Docs
 
 Document Number: 13
-Source: https://docs.ar.io/wayfinder/telemetry
-Words: 229
-Quality Score: 0.545
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Telemetry Configuration Wayfinder includes optional telemetry support built on the OpenTelemetry standard. Telemetry is completely opt-in and disabled by default.Overview Wayfinder's telemetry system:100% Opt-in: Disabled by default, only enabled when you explicitly configure it OpenTelemetry Standard: Built on the industry-standard OpenTelemetry framework Your Choice of Destination: Send data to your own servers Configurable: Full control over what data is collected and where it goes All telemetry is disabled by default. It only activates when you
-explicitly enable it in your configuration.Basic Configuration Minimal Setup Send to Your Own Infrastructure Configuration Options Client Identification You can identify your client application and version in telemetry data:The clientName and clientVersion are added as OpenTelemetry resource attributes (client.name and client.version) to help identify and filter telemetry data from different clients.Advanced Configuration For advanced telemetry configuration, custom instrumentation, and detailed trace management, refer to the OpenTelemetry documentation.Wayfinder uses these OpenTelemetry packages:@opentelemetry/api @opentelemetry/exporter-trace-otlp-http @opentelemetry/sdk-trace-base Best Practices Production Settings Development Settings Frequently Asked Questions Q: Is telemetry enabled by default?A: No, telemetry is completely disabled by default and only activates when you explicitly configure it.Q: Can I use my own telemetry backend?A: Yes, specify your own exporterUrl to send data to any OpenTelemetry-compatible backend.Q: Does this affect performance?A: Minimal impact when using appropriate sampling rates (1-10% for production).Q: Can I disable telemetry after enabling it?A: Yes, simply set enabled: false or remove the telemetrySettings configuration entirely.
-
----
-
-# 14. Uploading to Arweave - ARIO Docs
-
-Document Number: 14
 Source: https://docs.ar.io/guides/uploading-to-arweave
 Words: 337
 Quality Score: 0.540
@@ -375,6 +359,113 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Uploading to Arweave Overview While AR.IO provides powerful tools for accessing and interacting with data on Arweave, that data must first be uploaded to the network. This guide will walk you through the process of uploading data to Arweave using the Turbo SDK, which provides a streamlined experience for data uploads.Installing Turbo SDK Authentication Node.js Environment Browser Environment Purchasing Turbo Credits Turbo Credits are the payment medium used by the Turbo Upload Service. Each Credit represents a 1:1 conversion from the upload power of the Arweave native token (AR). Turbo Credits can be purchased with fiat currency via the Turbo Top Up App, or with supported cryptocurrencies via the Turbo SDK. Credits and available methods for purchasing them here.Node.js Environment Browser Environment In a browser environment, the topUpWithTokens method is not available. Instead, you'll need to manually send tokens to the Turbo wallet address and then submit the transaction for processing. Here are detailed examples for each supported chain:Browser Top-Up Examples Note: The wait times for chain settlement are approximate and may need adjustment based on network conditions:Ethereum: ~15 minutes Solana: ~400-600 milliseconds Arweave: ~30-36 minutes Polygon: ~2-3 seconds Base: ~2-5 seconds KYVE: ~5 minutes Once you have purchased Turbo credits, you can upload files and folders to Arweave. The process is the same regardless of which token type you used for authentication, but differs between Node.js and browser environments.Node.js Environment Node.js Upload Examples Browser Environment Browser Upload Examples Important Notes:For single file uploads, always include a Content-Type tag to ensure proper file viewing The fileStreamFactory must return a NEW stream each time it's called Folder uploads automatically detect and set Content-Type tags for all files You can specify additional tags in dataItemOpts for both file and folder uploads The maxConcurrentUploads option controls how many files are uploaded simultaneously Use throwOnFailure: true to ensure all files are uploaded successfully Complete Examples Here are complete examples showing how to authenticate, check balances, and handle lazy funding for uploads. These examples demonstrate the full workflow from start to finish.
+
+---
+
+# 14. ARIO Docs
+
+Document Number: 14
+Source: https://docs.ar.io/wayfinder/getting-started
+Words: 564
+Quality Score: 0.538
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Getting Started with Wayfinder Wayfinder provides decentralized and verified access to data stored on Arweave. This guide will help you get started with the core concepts and basic usage.Installation Choose the package that fits your project:Core Library (JavaScript/TypeScript) React Components Quick Start Basic Usage The simplest way to get started is with the default configuration:React Integration For React applications, use the wayfinder-react package:import { LocalStorageGatewaysProvider, NetworkGatewaysProvider } from '@ar.io/wayfinder-core'
+import { WayfinderProvider, useWayfinder } from '@ar.io/wayfinder-react'
+// Wrap your app with the provider
+function App() {
+return (
+
+)
+}
+function YourComponent() {
+const txId = 'your-transaction-id'; // Replace with actual txId
+// Use custom hooks for URL resolution and data fetching
+const request = useWayfinderRequest();
+// store the fetched data
+const [data, setData] = useState(null);
+const [dataLoading, setDataLoading] = useState(false);
+const [dataError, setDataError] = useState(null);
+useEffect(() => {
+(async () => {
+try {
+setDataLoading(true);
+setDataError(null);
+// fetch the data for the txId using wayfinder
+const response = await request(`ar://${txId}`, {
+verificationSettings: {
+enabled: true, // enable verification on the request
+strict: true, // don't use the data if it's not verified
+},
+});
+const data = await response.arrayBuffer(); // or response.json() if you want to parse the data as JSON
+setData(data);
+} catch (error) {
+setDataError(error as Error);
+} finally {
+setDataLoading(false);
+}
+})();
+}, [request, txId]);
+return (
+{dataLoading && Loading data...}
+{dataError && Error loading data: {dataError.message}}
+{data}
+);
+} Available Strategies Routing Strategies ← Swipe to see more → Strategy Description Use Case FastestPingRoutingStrategy Selects gateway with lowest latency Performance-critical applications PreferredWithFallbackRoutingStrategy Tries preferred gateway first, falls back to others When you have a trusted primary gateway RoundRobinRoutingStrategy Distributes requests evenly across gateways Load balancing and fair distribution RandomRoutingStrategy Randomly selects from available gateways Simple load distribution ← Swipe to see more → Verification Strategies Verification strategies may be dependent on the gateway being used having the
+data indexed locally. A gateway cannot verify data it doesn't have access to
+or hasn't indexed yet.Advanced Configuration For production applications, you'll want to configure gateway providers, routing strategies, and verification:import {
+Wayfinder,
+NetworkGatewaysProvider,
+FastestPingRoutingStrategy,
+HashVerificationStrategy,
+} from '@ar.io/wayfinder-core'
+import { ARIO } from '@ar.io/sdk'
+const wayfinder = new Wayfinder({
+// Discover gateways from the AR.IO Network
+gatewaysProvider: new SimpleCacheGatewaysProvider({
+gatewaysProvider: new NetworkGatewaysProvider({
+ario: ARIO.mainnet(),
+limit: 10,
+sortBy: 'operatorStake',
+sortOrder: 'desc',
+}),
+}),
+// Use fastest ping routing strategy
+routingSettings: {
+strategy: new FastestPingRoutingStrategy({
+timeoutMs: 500,
+}),
+events: {
+onRoutingSucceeded: (event) => {
+console.log('Selected gateway:', event.selectedGateway)
+},
+},
+},
+// Enable data verification
+verificationSettings: {
+enabled: true,
+strategy: new HashVerificationStrategy({
+trustedGateways: ['https://arweave.net'],
+}),
+events: {
+onVerificationSucceeded: (event) => {
+console.log('Verification passed for:', event.txId)
+},
+onVerificationFailed: (event) => {
+console.log('Verification failed for:', event.txId)
+},
+},
+},
+// Enable telemetry
+telemetrySettings: {
+enabled: true,
+clientName: 'my-app',
+clientVersion: '1.0.0',
+sampleRate: 0.1, // 10% sampling
+},
+}) Core Concepts Gateway Providers Gateway providers discover and manage the list of available AR.IO gateways:NetworkGatewaysProvider: Fetches gateways from the AR.IO Network StaticGatewaysProvider: Uses a predefined list of gateways SimpleCacheGatewaysProvider: Caches gateway lists for performance in-memory LocalStorageGatewaysProvider Caches gateway lists for performance in window.localStorage Routing Strategies Routing strategies determine which gateway to use for each request:FastestPingRoutingStrategy: Selects the gateway with lowest latency PreferredWithFallbackRoutingStrategy: Tries a preferred gateway first RoundRobinRoutingStrategy: Distributes requests evenly RandomRoutingStrategy: Randomly selects gateways Verification Strategies Verification strategies ensure data integrity:HashVerificationStrategy: Verifies data against trusted gateway hashes SignatureVerificationStrategy: Validates Arweave transaction signatures DataRootVerificationStrategy: Verifies against transaction data roots
 
 ---
 
@@ -463,115 +554,14 @@ Gateways then expose these hashes and their verification status to users via HTT
 # 20. ARIO Docs
 
 Document Number: 20
-Source: https://docs.ar.io/wayfinder/getting-started
-Words: 580
-Quality Score: 0.519
+Source: https://docs.ar.io/wayfinder/core/telemetry
+Words: 178
+Quality Score: 0.515
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Getting Started with Wayfinder Wayfinder provides decentralized and verified access to data stored on Arweave. This guide will help you get started with the core concepts and basic usage.Verification strategies may be dependent on the gateway being used having the
-data indexed locally. A gateway cannot verify data it doesn't have access to
-or hasn't indexed yet.Installation Choose the package that fits your project:Core Library (JavaScript/TypeScript) React Components Quick Start Basic Usage with Default Settings The simplest way to get started is with the default configuration:React Integration For React applications, use the wayfinder-react package:Available Strategies Routing Strategies ← Swipe to see more → Strategy Description Use Case FastestPingRoutingStrategy Selects gateway with lowest latency Performance-critical applications PreferredWithFallbackRoutingStrategy Tries preferred gateway first, falls back to others When you have a trusted primary gateway RoundRobinRoutingStrategy Distributes requests evenly across gateways Load balancing and fair distribution RandomRoutingStrategy Randomly selects from available gateways Simple load distribution ← Swipe to see more → Verification Strategies Handling Unknown Data Types When you're not sure what type of data you're fetching, check the content type and handle accordingly:import { Wayfinder } from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-const wayfinder = new Wayfinder({
-gatewaysProvider: new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-}),
-})
-async function fetchUnknownData(txId) {
-try {
-const response = await wayfinder.request(`ar://${txId}`)
-const contentType = response.headers.get('content-type') || ''
-if (contentType.includes('application/json')) {
-// Handle JSON data
-const jsonData = await response.json()
-console.log('JSON data:', jsonData)
-return jsonData
-} else if (contentType.startsWith('text/')) {
-// Handle text data
-const textData = await response.text()
-console.log('Text data:', textData)
-return textData
-} else if (contentType.startsWith('image/')) {
-// Handle image data
-const blob = await response.blob()
-const imageUrl = URL.createObjectURL(blob)
-console.log('Image URL:', imageUrl)
-return imageUrl
-} else {
-// Handle binary/unknown data as ArrayBuffer
-const buffer = await response.arrayBuffer()
-console.log('Binary data size:', buffer.byteLength, 'bytes')
-return buffer
-}
-} catch (error) {
-console.error('Failed to fetch data:', error)
-throw error
-}
-}
-// Usage
-fetchUnknownData('your-transaction-id') Event Monitoring Monitor wayfinder operations using events:Advanced Configuration For production applications, you'll want to configure gateway providers, routing strategies, and verification:import {
-Wayfinder,
-NetworkGatewaysProvider,
-FastestPingRoutingStrategy,
-HashVerificationStrategy,
-} from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-const wayfinder = new Wayfinder({
-// Discover gateways from the AR.IO Network
-gatewaysProvider: new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-limit: 10,
-sortBy: 'operatorStake',
-sortOrder: 'desc',
-}),
-// Use fastest ping routing strategy
-routingSettings: {
-strategy: new FastestPingRoutingStrategy({
-timeoutMs: 500,
-}),
-events: {
-onRoutingSucceeded: (event) => {
-console.log('Selected gateway:', event.selectedGateway)
-},
-},
-},
-// Enable data verification
-verificationSettings: {
-enabled: true,
-strategy: new HashVerificationStrategy({
-trustedGateways: ['https://arweave.net'],
-}),
-events: {
-onVerificationSucceeded: (event) => {
-console.log('Verification passed for:', event.txId)
-},
-},
-},
-// Enable telemetry
-telemetrySettings: {
-enabled: true,
-serviceName: 'my-app',
-clientName: 'my-app',
-clientVersion: '1.0.0',
-sampleRate: 0.1, // 10% sampling
-},
-// Configure event handlers
-events: {
-onGatewaysRefreshed: (event) => {
-console.log(`Refreshed ${event.gateways.length} gateways)
-},
-onRequestStarted: (event) => {
-console.log(Starting request for ${event.url}`)
-},
-onRequestCompleted: (event) => {
-console.log(`Request completed in ${event.duration}ms)
-},
-onRequestFailed: (event) => {
-console.error(Request failed: ${event.error.message}`)
-},
-},
-}) Core Concepts Gateway Providers Gateway providers discover and manage the list of available AR.IO gateways:NetworkGatewaysProvider: Fetches gateways from the AR.IO Network StaticGatewaysProvider: Uses a predefined list of gateways SimpleCacheGatewaysProvider: Caches gateway lists for performance Routing Strategies Routing strategies determine which gateway to use for each request:FastestPingRoutingStrategy: Selects the gateway with lowest latency PreferredWithFallbackRoutingStrategy: Tries a preferred gateway first RoundRobinRoutingStrategy: Distributes requests evenly RandomRoutingStrategy: Randomly selects gateways Verification Strategies Verification strategies ensure data integrity:HashVerificationStrategy: Verifies data against trusted gateway hashes SignatureVerificationStrategy: Validates Arweave transaction signatures DataRootVerificationStrategy: Verifies against transaction data roots
+Telemetry Configuration Wayfinder includes optional telemetry support built on the OpenTelemetry standard. Telemetry is completely opt-in and disabled by default.Overview Wayfinder's telemetry system:100% Opt-in: Disabled by default, only enabled when you explicitly configure it OpenTelemetry Standard: Built on the industry-standard OpenTelemetry framework Your Choice of Destination: Send data to your own servers Configurable: Full control over what data is collected and where it goes All telemetry is disabled by default. It only activates when you
+explicitly enable it in your configuration.Basic Configuration Minimal Setup Send to Your Own Infrastructure Configuration Options Client Identification You can identify your client application and version in telemetry data:Frequently Asked Questions Q: Is telemetry enabled by default?A: No, telemetry is completely disabled by default and only activates when you explicitly configure it.Q: Can I use my own telemetry backend?A: Yes, specify your own exporterUrl to send data to any OpenTelemetry-compatible backend.Q: Does this affect performance?A: Minimal impact when using appropriate sampling rates (1-10% for production).Q: Can I disable telemetry after enabling it?A: Yes, simply set enabled: false or remove the telemetrySettings configuration entirely.
 
 ---
 
@@ -965,6 +955,19 @@ In addition, the gateway shall have its minimum network-join stake slashed by 10
 # 29. ARIO Docs
 
 Document Number: 29
+Source: https://docs.ar.io/wayfinder/core/gateway-providers/local-storage
+Words: 142
+Quality Score: 0.500
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+LocalStorageGatewaysProvider The LocalStorageGatewaysProvider is a gateway provider that caches gateway lists in the browser's localStorage. This allows gateway data to persist across page reloads and browser sessions, making it ideal for web applications that require fast access to gateway information without repeated network requests. The provider automatically manages cache expiration based on a configurable TTL (time-to-live), ensuring that gateway data remains fresh while minimizing network usage. Use this provider when you want persistent, client-side caching of gateway lists in browser environments.Note: If you are building a React-based application, consider using @ar.io/wayfinder-react for seamless integration with React components, hooks, and context providers. This package is designed to work hand-in-hand with gateway providers like LocalStorageGatewaysProvider for optimal developer experience.Basic Usage Configuration Options Related Documentation Gateway Providers Overview: Compare all gateway providers NetworkGatewaysProvider: Dynamic network discovery StaticGatewaysProvider: Static gateway configuration Wayfinder Configuration: Main wayfinder setup
+
+---
+
+# 30. ARIO Docs
+
+Document Number: 30
 Source: https://docs.ar.io/gateways/bundler
 Words: 808
 Quality Score: 0.499
@@ -975,9 +978,9 @@ Bundler Overview A Turbo ANS-104 data item bundler can be run alongside an AR.IO
 
 ---
 
-# 30. Importing SQLite Database Snapshots - ARIO Docs
+# 31. Importing SQLite Database Snapshots - ARIO Docs
 
-Document Number: 30
+Document Number: 31
 Source: https://docs.ar.io/gateways/snapshots
 Words: 483
 Quality Score: 0.498
@@ -988,9 +991,9 @@ Overview One of the challenges of running an AR.IO Gateway is the initial synchr
 
 ---
 
-# 31. Arlink Deploy - ARIO Docs
+# 32. Arlink Deploy - ARIO Docs
 
-Document Number: 31
+Document Number: 32
 Source: https://docs.ar.io/build/guides/arlink
 Words: 462
 Quality Score: 0.496
@@ -1004,9 +1007,9 @@ Duplicate undernames cannot exist, so you can only select an undername that is n
 
 ---
 
-# 32. Arlink Deploy - ARIO Docs
+# 33. Arlink Deploy - ARIO Docs
 
-Document Number: 32
+Document Number: 33
 Source: https://docs.ar.io/guides/arlink
 Words: 462
 Quality Score: 0.496
@@ -1017,81 +1020,6 @@ Overview Arlink is a third party tool that allows you to permanently deploy and 
 Arlink will take the repository, build it, and upload the build folder to Arweave.Arlink also allows users to connect their project to an ArNS name they own, or an undername of the ArNS name ar://arlink.Dashboard After connecting your wallet to the Arlink web app using the button at the top right, you will be taken to your dashboard. This page will dis any deployments associated with your wallet, and includes a "+ New Deployment" button
 in order to start the process of deploying a new project. New Deployment After clicking on the new deployment button, you will be prompted to import a repository from either Github or Protocol.land. Authorize Github If this is your first time importing from Github, you will be prompted to authorize Arlink to access your Github repositories. You can authorize all repositories, or limit authorization to any number of specific ones. Select Repository Once authorization is approved, select which repository and branch you want to deploy. Define Build and Output Steps Once you select what you want to deploy, you need to specify how the project needs to be built to get it ready. Arlink prompts for five inputs:Project Name: This is the name of your project.Install Command: The command for installing dependencies for your project. Usually npm install or yarn install Build Command: This is the command to run your build script. Usually npm run build or yarn build Sub Directory: If the front end for your project lives in a sub directory of your selected repository, you can specify that here.Output Directory: This is the path to the build folder being deployed. This will be different depending on the framework your project uses. Select ArNS The last thing to do is select an ArNS name to deploy your project to. If you own your own name, you can connect to it here with the "Use existing ArNS" toggle. Otherwise, you can select an undername of the ArNS name arlink to deploy to.
 Duplicate undernames cannot exist, so you can only select an undername that is not already being used. Logs Once you select your ArNS name and click "Deploy", your project will be deployed. Logs from the build and deploy process will be dised so you can monitor for errors. Updates To deploy a new build of your project, select it from the dashboard. The project page gives you the option to update any settings or configurations, and has a "Deploy Latest" button which will redeploy your project.
-
----
-
-# 33. ARIO Docs
-
-Document Number: 33
-Source: https://docs.ar.io/wayfinder/core
-Words: 444
-Quality Score: 0.496
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Wayfinder Core The @ar.io/wayfinder-core library provides intelligent gateway routing and data verification for accessing Arweave data through the AR.IO network. It's the foundational package that powers all other Wayfinder tools.What is Wayfinder Core?Wayfinder Core is a JavaScript/TypeScript library that:Intelligently Routes Requests: Automatically selects the best AR.IO gateway for each request Verifies Data Integrity: Cryptographically verifies that data hasn't been tampered with Handles Failures Gracefully: Automatically retries with different gateways when requests fail Provides Observability: Emits events and telemetry for monitoring and debugging Works Everywhere: Compatible with browsers, Node.js, and edge environments Installation Basic Configuration Advanced Configuration With Routing Strategy With Data Verification Full Configuration Example import {
-Wayfinder,
-NetworkGatewaysProvider,
-FastestPingRoutingStrategy,
-HashVerificationStrategy,
-} from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-const wayfinder = new Wayfinder({
-// Gateway discovery
-gatewaysProvider: new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-limit: 10,
-sortBy: 'operatorStake',
-}),
-// Routing configuration
-routingSettings: {
-strategy: new FastestPingRoutingStrategy({
-timeoutMs: 500,
-cacheResultsMs: 30000,
-}),
-events: {
-onRoutingSucceeded: (event) => {
-console.log('Selected gateway:', event.selectedGateway)
-},
-onRoutingFailed: (error) => {
-console.error('Routing failed:', error.message)
-},
-},
-},
-// Data verification
-verificationSettings: {
-enabled: true,
-strategy: new HashVerificationStrategy({
-trustedGateways: ['https://arweave.net'],
-}),
-strict: false,
-events: {
-onVerificationSucceeded: (event) => {
-console.log('Verification passed:', event.txId)
-},
-onVerificationFailed: (error) => {
-console.warn('Verification failed:', error.message)
-},
-},
-},
-// Telemetry (optional)
-telemetrySettings: {
-enabled: true,
-serviceName: 'my-application',
-clientName: 'my-app',
-clientVersion: '1.0.0',
-sampleRate: 0.1,
-},
-// Custom logger (optional)
-logger: {
-debug: (message, ...args) =>
-console.debug(`[WAYFINDER] ${message}`, ...args),
-info: (message, ...args) => console.info(`[WAYFINDER] ${message}`, ...args),
-warn: (message, ...args) => console.warn(`[WAYFINDER] ${message}`, ...args),
-error: (message, ...args) =>
-console.error(`[WAYFINDER] ${message}`, ...args),
-},
-}) Core Methods request() Fetches data from Arweave with intelligent routing and optional verification.resolveUrl() Resolves an ar:// URL to a gateway URL without fetching data.Event Monitoring Monitor wayfinder operations using the built-in event system:What Can Wayfinder Core Do?Gateway Providers NetworkGatewaysProvider: Discovers gateways from the AR.IO Network StaticGatewaysProvider: Uses predefined gateway lists SimpleCacheGatewaysProvider: Caches gateway lists for performance Routing Strategies FastestPingRoutingStrategy: Selects lowest latency gateway PreferredWithFallbackRoutingStrategy: Tries preferred gateway first RoundRobinRoutingStrategy: Distributes requests evenly RandomRoutingStrategy: Randomly selects gateways Verification Strategies HashVerificationStrategy: Verifies against trusted gateway hashes SignatureVerificationStrategy: Validates Arweave signatures DataRootVerificationStrategy: Verifies against data roots Best Practices Choose Appropriate Routing: Use FastestPingRoutingStrategy for performance-critical apps Enable Verification: Use verification for important or sensitive data Handle Errors: Implement proper error handling for different failure scenarios Monitor Performance: Use events to track gateway performance and success rates Configure Timeouts: Set appropriate timeouts based on your application needs Use Telemetry: Enable telemetry in production for monitoring and debugging Events System: Learn about event handling and monitoring Gateway Providers: Understand gateway discovery options Routing Strategies: Explore different routing algorithms Verification Strategies: Learn about data integrity verification Telemetry: Set up monitoring and observability
 
 ---
 
@@ -1828,9 +1756,22 @@ Wayfinder Wayfinder is a client-side routing and verification protocol that prov
 
 ---
 
-# 50. Content Moderation - ARIO Docs
+# 50. ARIO Docs
 
 Document Number: 50
+Source: https://docs.ar.io/wayfinder/core/gateway-providers/network
+Words: 96
+Quality Score: 0.479
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+NetworkGatewaysProvider Overview The NetworkGatewaysProvider discovers AR.IO gateways from the AR.IO Network using the AR.IO SDK. It provides dynamic access to the full network of verified gateways, making it the recommended choice for production applications.Important To avoid rate limits and improve performance, consider wrapping NetworkGatewaysProvider with SimpleCacheGatewaysProvider (for Node.js/server environments) or LocalStorageGatewaysProvider (for browser environments). This enables caching of gateway lists and reduces unnecessary network requests.Basic Usage Configuration Options NetworkGatewaysProviderOptions Related Documentation Gateway Providers Overview: Compare all gateway providers StaticGatewaysProvider: Static gateway configuration SimpleCacheGatewaysProvider: Caching wrapper Wayfinder Configuration: Main wayfinder setup Routing Strategies: How gateways are selected
+
+---
+
+# 51. Content Moderation - ARIO Docs
+
+Document Number: 51
 Source: https://docs.ar.io/gateways/moderation
 Words: 543
 Quality Score: 0.479
@@ -1844,9 +1785,84 @@ Sqlite3 is able to interact with a hexadecimal representation of the BLOB, by us
 
 ---
 
-# 51. ARIO Docs
+# 52. ARIO Docs
 
-Document Number: 51
+Document Number: 52
+Source: https://docs.ar.io/wayfinder/core
+Words: 298
+Quality Score: 0.478
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Wayfinder The @ar.io/wayfinder-core library provides intelligent gateway routing and data verification for accessing Arweave data through the AR.IO network. It's the foundational package that powers all other Wayfinder tools.What is Wayfinder?Wayfinder Core is a JavaScript/TypeScript library that:Intelligently Routes Requests: Automatically selects the best AR.IO gateway for each request Verifies Data Integrity: Cryptographically verifies that data hasn't been tampered with Handles Failures Gracefully: Automatically retries with different gateways when requests fail Provides Observability: Emits events and telemetry for monitoring and debugging Works Everywhere: Compatible with browsers, Node.js, and edge environments Installation Basic Configuration Advanced Configuration With Routing Strategy With Data Verification Full Configuration Example import {
+Wayfinder,
+NetworkGatewaysProvider,
+FastestPingRoutingStrategy,
+HashVerificationStrategy,
+} from '@ar.io/wayfinder-core'
+import { ARIO } from '@ar.io/sdk'
+const wayfinder = new Wayfinder({
+// Gateway discovery
+gatewaysProvider: new NetworkGatewaysProvider({
+ario: ARIO.mainnet(),
+limit: 10,
+sortBy: 'operatorStake',
+}),
+// Routing configuration
+routingSettings: {
+strategy: new FastestPingRoutingStrategy({
+timeoutMs: 500,
+cacheResultsMs: 30000,
+}),
+events: {
+onRoutingSucceeded: (event) => {
+console.log('Selected gateway:', event.selectedGateway)
+},
+onRoutingFailed: (error) => {
+console.error('Routing failed:', error.message)
+},
+},
+},
+// Data verification
+verificationSettings: {
+enabled: true,
+strategy: new HashVerificationStrategy({
+trustedGateways: ['https://arweave.net'],
+}),
+strict: false,
+events: {
+onVerificationSucceeded: (event) => {
+console.log('Verification passed:', event.txId)
+},
+onVerificationFailed: (error) => {
+console.warn('Verification failed:', error.message)
+},
+},
+},
+// Telemetry (optional)
+telemetrySettings: {
+enabled: true,
+serviceName: 'my-application',
+clientName: 'my-app',
+clientVersion: '1.0.0',
+sampleRate: 0.1,
+},
+// Custom logger (optional)
+logger: {
+debug: (message, ...args) =>
+console.debug(`[WAYFINDER] ${message}`, ...args),
+info: (message, ...args) => console.info(`[WAYFINDER] ${message}`, ...args),
+warn: (message, ...args) => console.warn(`[WAYFINDER] ${message}`, ...args),
+error: (message, ...args) =>
+console.error(`[WAYFINDER] ${message}`, ...args),
+},
+}) request(): How to fetch Arweave data using Wayfinder resolveUrl(): Use dynamic URLs for transaction IDs, ArNS names, etc.Gateway Providers: Understand gateway discovery options Routing Strategies: Explore different routing algorithms Verification Strategies: Learn about data integrity verification Telemetry: Set up monitoring and observability
+
+---
+
+# 53. ARIO Docs
+
+Document Number: 53
 Source: https://docs.ar.io/ar-io-sdk/ants/release-name
 Words: 71
 Quality Score: 0.478
@@ -1857,9 +1873,9 @@ releaseName releaseName is a method on the ANT class that releases an ArNS name 
 
 ---
 
-# 52. Gateway Architecture - ARIO Docs
+# 54. Gateway Architecture - ARIO Docs
 
-Document Number: 52
+Document Number: 54
 Source: https://docs.ar.io/gateways
 Words: 650
 Quality Score: 0.477
@@ -1872,9 +1888,9 @@ This means that a gateway's main task is to make it easier for users to interact
 
 ---
 
-# 53. upgradeRecord - ARIO Docs
+# 55. upgradeRecord - ARIO Docs
 
-Document Number: 53
+Document Number: 55
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record
 Words: 76
 Quality Score: 0.476
@@ -1885,9 +1901,9 @@ upgradeRecord is a method on the ARIO class that upgrades an existing ArNS recor
 
 ---
 
-# 54. setUndernameRecord - ARIO Docs
+# 56. setUndernameRecord - ARIO Docs
 
-Document Number: 54
+Document Number: 56
 Source: https://docs.ar.io/ar-io-sdk/ants/set-undername-record
 Words: 120
 Quality Score: 0.476
@@ -1901,9 +1917,9 @@ quickly.TTL must be between 60 seconds (1 minute) and 86400 seconds (1 day).
 
 ---
 
-# 55. ANT Configuration - ARIO Docs
+# 57. ANT Configuration - ARIO Docs
 
-Document Number: 55
+Document Number: 57
 Source: https://docs.ar.io/ar-io-sdk/ants/configuration
 Words: 98
 Quality Score: 0.475
@@ -1915,9 +1931,9 @@ blockchain true ← Swipe to see more →
 
 ---
 
-# 56. getGatewayVaults - ARIO Docs
+# 58. getGatewayVaults - ARIO Docs
 
-Document Number: 56
+Document Number: 58
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults
 Words: 27
 Quality Score: 0.474
@@ -1928,9 +1944,9 @@ getGatewayVaults is a method on the ARIO class that retrieves all vault informat
 
 ---
 
-# 57. setBaseNameRecord - ARIO Docs
+# 59. setBaseNameRecord - ARIO Docs
 
-Document Number: 57
+Document Number: 59
 Source: https://docs.ar.io/ar-io-sdk/ants/set-base-name-record
 Words: 116
 Quality Score: 0.474
@@ -1944,9 +1960,9 @@ quickly.TTL must be between 60 seconds (1 minute) and 86400 seconds (1 day).
 
 ---
 
-# 58. ARIO Docs
+# 60. ARIO Docs
 
-Document Number: 58
+Document Number: 60
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates
 Words: 42
 Quality Score: 0.473
@@ -1957,9 +1973,9 @@ getGatewayDelegates getGatewayDelegates is a method on the ARIO class that retri
 
 ---
 
-# 59. getDemandFactorSettings - ARIO Docs
+# 61. getDemandFactorSettings - ARIO Docs
 
-Document Number: 59
+Document Number: 61
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor-settings
 Words: 40
 Quality Score: 0.473
@@ -1970,9 +1986,9 @@ getDemandFactorSettings is a method on the ARIO class that retrieves the configu
 
 ---
 
-# 60. ARIO Docs
+# 62. ARIO Docs
 
-Document Number: 60
+Document Number: 62
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor
 Words: 52
 Quality Score: 0.471
@@ -1983,22 +1999,9 @@ getDemandFactor getDemandFactor is a method on the ARIO class that retrieves the
 
 ---
 
-# 61. SimpleCacheRoutingStrategy - ARIO Docs
+# 63. getRecords - ARIO Docs
 
-Document Number: 61
-Source: https://docs.ar.io/wayfinder/routing-strategies/simple-cache
-Words: 197
-Quality Score: 0.469
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview The SimpleCacheRoutingStrategy wraps another routing strategy and caches its results for a specified duration. This improves performance by avoiding repeated expensive operations like network pings or complex calculations.Routing Strategy Comparison How It Works Check Cache: Look for a cached result from previous strategy calls Cache Hit: Return cached gateway if still valid (within TTL) Cache Miss: Call the wrapped strategy to get a new gateway Store Result: Cache the new gateway with timestamp Return Gateway: Return the selected gateway Configuration Basic Usage With Different Strategies Parameters Integration with Wayfinder Use Cases Caching Expensive Ping Operations Perfect for wrapping FastestPingRoutingStrategy to avoid repeated network calls.Reducing Complex Calculations Ideal for strategies that perform complex calculations or multiple network requests.Development and Testing Useful for consistent behavior during development and testing.Best Practices Choose Appropriate Cache Time: Balance between performance and freshness Wrap Expensive Strategies: Use with strategies that perform network calls Monitor Cache Hit Rates: Track how often cache is used vs. strategy calls Consider Cache Invalidation: Plan for scenarios where cache should be cleared Test Cache Behavior: Verify caching works correctly in your use cases The SimpleCacheRoutingStrategy is ideal for improving performance by caching results from expensive routing strategies.
-
----
-
-# 62. getRecords - ARIO Docs
-
-Document Number: 62
+Document Number: 63
 Source: https://docs.ar.io/ar-io-sdk/ants/get-records
 Words: 38
 Quality Score: 0.469
@@ -2009,9 +2012,22 @@ getRecords is a method on the ANT class that retrieves all the records stored in
 
 ---
 
-# 63. setRecord - ARIO Docs
+# 64. ARIO Docs
 
-Document Number: 63
+Document Number: 64
+Source: https://docs.ar.io/wayfinder/core/gateway-providers
+Words: 70
+Quality Score: 0.468
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Gateway Providers Overview Gateway providers are responsible for discovering and managing AR.IO gateways that Wayfinder can use to access Arweave data. They abstract the complexity of gateway discovery and provide a consistent interface for routing strategies to select optimal gateways.Provider Comparison Related NetworkGatewaysProvider: Network-based gateway discovery StaticGatewaysProvider: Static gateway configuration SimpleCacheGatewaysProvider: Caching wrapper for providers Routing Strategies: How gateways are selected for requests Wayfinder Configuration: Main wayfinder setup and usage
+
+---
+
+# 65. setRecord - ARIO Docs
+
+Document Number: 65
 Source: https://docs.ar.io/ar-io-sdk/ants/set-record
 Words: 206
 Quality Score: 0.467
@@ -2027,9 +2043,9 @@ quickly.TTL must be between 60 seconds (1 minute) and 86400 seconds (1 day).
 
 ---
 
-# 64. getRegistrationFees - ARIO Docs
+# 66. getRegistrationFees - ARIO Docs
 
-Document Number: 64
+Document Number: 66
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-registration-fees
 Words: 37
 Quality Score: 0.467
@@ -2040,9 +2056,9 @@ getRegistrationFees is a method on the ARIO class that retrieves the current reg
 
 ---
 
-# 65. The ARIO Token - ARIO Docs
+# 67. The ARIO Token - ARIO Docs
 
-Document Number: 65
+Document Number: 67
 Source: https://docs.ar.io/token
 Words: 250
 Quality Score: 0.467
@@ -2053,9 +2069,9 @@ Overview ARIO is the multifunction AO Computer based token that powers the AR.IO
 
 ---
 
-# 66. Gateway Troubleshooting  FAQ - ARIO Docs
+# 68. Gateway Troubleshooting  FAQ - ARIO Docs
 
-Document Number: 66
+Document Number: 68
 Source: https://docs.ar.io/gateways/troubleshooting
 Words: 2165
 Quality Score: 0.467
@@ -2066,9 +2082,9 @@ Welcome to the unified troubleshooting and FAQ resource for AR.IO Gateway operat
 
 ---
 
-# 67. getState - ARIO Docs
+# 69. getState - ARIO Docs
 
-Document Number: 67
+Document Number: 69
 Source: https://docs.ar.io/ar-io-sdk/ants/get-state
 Words: 36
 Quality Score: 0.465
@@ -2079,9 +2095,9 @@ getState is a method on the ANT class that retrieves the complete state of the A
 
 ---
 
-# 68. Glossary - ARIO Docs
+# 70. Glossary - ARIO Docs
 
-Document Number: 68
+Document Number: 70
 Source: https://docs.ar.io/glossary
 Words: 1405
 Quality Score: 0.465
@@ -2092,268 +2108,9 @@ Many novel terms and acronyms are used by the Arweave ecosystem as well as some 
 
 ---
 
-# 69. ARIO Docs
+# 71. getInfo - ARIO Docs
 
-Document Number: 69
-Source: https://docs.ar.io/wayfinder/core/gateway-providers
-Words: 1106
-Quality Score: 0.465
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Gateway Providers Overview Gateway providers are responsible for discovering and managing AR.IO gateways that Wayfinder can use to access Arweave data. They abstract the complexity of gateway discovery and provide a consistent interface for routing strategies to select optimal gateways.Available Providers NetworkGatewaysProvider Discovers gateways from the AR.IO Network using the AR.IO SDK. This is the recommended provider for production applications as it provides access to the full network of verified gateways.Best for: Production applications, dynamic gateway discovery, accessing the full AR.IO network StaticGatewaysProvider Uses a predefined list of gateway URLs. Ideal for testing, development, or when you want to use specific trusted gateways.Best for: Development, testing, specific gateway requirements, offline environments SimpleCacheGatewaysProvider Wraps another gateway provider and caches the results for improved performance. Reduces the overhead of repeated gateway discovery calls.Best for: Production applications with frequent gateway lookups, performance optimization Provider Interface All gateway providers implement the GatewaysProvider interface:getGateways() Returns a list of available gateway URLs.Signature:Returns: Promise - Array of gateway URLs Usage:refresh() (Optional) Forces a refresh of the gateway list, bypassing any caches.Signature:Usage:Configuration Examples Production Configuration Development Configuration Testing Configuration High-Performance Configuration Advanced Usage Custom Gateway Provider Create a custom provider for specialized requirements:class CustomGatewaysProvider {
-constructor(options) {
-this.primaryGateways = options.primaryGateways || []
-this.fallbackProvider = options.fallbackProvider
-this.healthChecker = options.healthChecker
-}
-async getGateways() {
-// Try primary gateways first
-const healthyPrimary = await this.filterHealthyGateways(
-this.primaryGateways,
-)
-if (healthyPrimary.length > 0) {
-return healthyPrimary
-}
-// Fallback to network provider if primary gateways are unavailable
-if (this.fallbackProvider) {
-const fallbackGateways = await this.fallbackProvider.getGateways()
-return this.filterHealthyGateways(fallbackGateways)
-}
-throw new Error('No healthy gateways available')
-}
-async filterHealthyGateways(gateways) {
-if (!this.healthChecker) {
-return gateways
-}
-const healthChecks = await Promise.allSettled(
-gateways.map((gateway) => this.healthChecker.check(gateway)),
-)
-return gateways.filter(
-(gateway, index) =>
-healthChecks[index].status === 'fulfilled' &&
-healthChecks[index].value.healthy,
-)
-}
-async refresh() {
-if (this.fallbackProvider?.refresh) {
-await this.fallbackProvider.refresh()
-}
-}
-}
-// Usage
-const customProvider = new CustomGatewaysProvider({
-primaryGateways: [
-'https://my-primary-gateway.com',
-'https://my-secondary-gateway.com',
-],
-fallbackProvider: new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-}),
-healthChecker: {
-check: async (gateway) => {
-try {
-const response = await fetch(`${gateway}/ar-io/info`, {
-method: 'HEAD',
-signal: AbortSignal.timeout(2000),
-})
-return { healthy: response.ok }
-} catch (error) {
-return { healthy: false, error: error.message }
-}
-},
-},
-}) Composite Gateway Provider Combine multiple providers for redundancy:Geographic Gateway Provider Filter gateways by geographic location:class GeographicGatewaysProvider {
-constructor(options) {
-this.baseProvider = options.baseProvider
-this.userLocation = options.userLocation
-this.gatewayLocations = options.gatewayLocations || new Map()
-this.maxDistance = options.maxDistance || 5000 // km
-}
-async getGateways() {
-const allGateways = await this.baseProvider.getGateways()
-if (!this.userLocation) {
-return allGateways
-}
-const nearbyGateways = allGateways.filter((gateway) => {
-const gatewayLocation = this.gatewayLocations.get(gateway)
-if (!gatewayLocation) {
-return true // Include if location unknown
-}
-const distance = this.calculateDistance(
-this.userLocation,
-gatewayLocation,
-)
-return distance <= this.maxDistance
-})
-return nearbyGateways.length > 0 ? nearbyGateways : allGateways
-}
-calculateDistance(loc1, loc2) {
-const R = 6371 // Earth's radius in kilometers
-const dLat = this.toRadians(loc2.lat - loc1.lat)
-const dLon = this.toRadians(loc2.lon - loc1.lon)
-const a =
-Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-Math.cos(this.toRadians(loc1.lat)) *
-Math.cos(this.toRadians(loc2.lat)) *
-Math.sin(dLon / 2) *
-Math.sin(dLon / 2)
-const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-return R * c
-}
-toRadians(degrees) {
-return degrees * (Math.PI / 180)
-}
-async refresh() {
-if (this.baseProvider.refresh) {
-await this.baseProvider.refresh()
-}
-}
-}
-// Usage
-const geoProvider = new GeographicGatewaysProvider({
-baseProvider: new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-}),
-userLocation: { lat: 40.7128, lon: -74.006 }, // New York
-gatewayLocations: new Map([
-['https://us-east.ar-io.net', { lat: 40.7128, lon: -74.006 }],
-['https://us-west.ar-io.net', { lat: 37.7749, lon: -122.4194 }],
-['https://eu.ar-io.net', { lat: 51.5074, lon: -0.1278 }],
-]),
-maxDistance: 2000, // 2000km radius
-}) Common Error Types Graceful Degradation class RobustGatewaysProvider {
-constructor(options) {
-this.primaryProvider = options.primaryProvider
-this.fallbackProviders = options.fallbackProviders || []
-this.emergencyGateways = options.emergencyGateways || [
-'https://arweave.net',
-]
-}
-async getGateways() {
-// Try primary provider first
-try {
-const gateways = await this.primaryProvider.getGateways()
-if (gateways.length > 0) {
-return gateways
-}
-} catch (error) {
-console.warn('Primary provider failed:', error.message)
-}
-// Try fallback providers
-for (const provider of this.fallbackProviders) {
-try {
-const gateways = await provider.getGateways()
-if (gateways.length > 0) {
-console.log('Using fallback provider')
-return gateways
-}
-} catch (error) {
-console.warn('Fallback provider failed:', error.message)
-}
-}
-// Use emergency gateways as last resort
-console.warn('All providers failed, using emergency gateways')
-return this.emergencyGateways
-}
-}
-// Usage
-const robustProvider = new RobustGatewaysProvider({
-primaryProvider: new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-}),
-fallbackProviders: [
-new StaticGatewaysProvider({
-gateways: ['https://backup-gateway.com'],
-}),
-],
-emergencyGateways: ['https://arweave.net', 'https://ar-io.net'],
-}) Performance Optimization Preloading Gateways class PreloadingGatewaysProvider {
-constructor(baseProvider, preloadInterval = 60000) {
-this.baseProvider = baseProvider
-this.preloadInterval = preloadInterval
-this.cachedGateways = []
-this.lastUpdate = 0
-this.isPreloading = false
-this.startPreloading()
-}
-startPreloading() {
-// Initial load
-this.preloadGateways()
-// Periodic updates
-setInterval(() => {
-this.preloadGateways()
-}, this.preloadInterval)
-}
-async preloadGateways() {
-if (this.isPreloading) return
-this.isPreloading = true
-try {
-const gateways = await this.baseProvider.getGateways()
-this.cachedGateways = gateways
-this.lastUpdate = Date.now()
-console.log('Preloaded', gateways.length, 'gateways')
-} catch (error) {
-console.warn('Failed to preload gateways:', error.message)
-} finally {
-this.isPreloading = false
-}
-}
-async getGateways() {
-// Return cached gateways if available and recent
-if (
-this.cachedGateways.length > 0 &&
-Date.now() - this.lastUpdate < this.preloadInterval * 2
-) {
-return this.cachedGateways
-}
-// Otherwise fetch fresh gateways
-return this.baseProvider.getGateways()
-}
-async refresh() {
-await this.preloadGateways()
-}
-}
-const preloadingProvider = new PreloadingGatewaysProvider(
-new NetworkGatewaysProvider({ ario: ARIO.mainnet() }),
-30000, // Preload every 30 seconds
-) Testing Unit Testing import { StaticGatewaysProvider } from '@ar.io/wayfinder-core'
-describe('StaticGatewaysProvider', () => {
-test('should return configured gateways', async () => {
-const gateways = ['https://gateway1.com', 'https://gateway2.com']
-const provider = new StaticGatewaysProvider({ gateways })
-const result = await provider.getGateways()
-expect(result).toEqual(gateways)
-})
-test('should handle empty gateway list', async () => {
-const provider = new StaticGatewaysProvider({ gateways: [] })
-const result = await provider.getGateways()
-expect(result).toEqual([])
-})
-})
-describe('SimpleCacheGatewaysProvider', () => {
-test('should cache gateway results', async () => {
-const mockProvider = {
-getGateways: jest.fn().mockResolvedValue(['https://gateway.com']),
-}
-const cacheProvider = new SimpleCacheGatewaysProvider({
-gatewaysProvider: mockProvider,
-ttlSeconds: 60,
-})
-// First call should hit the underlying provider
-await cacheProvider.getGateways()
-expect(mockProvider.getGateways).toHaveBeenCalledTimes(1)
-// Second call should use cache
-await cacheProvider.getGateways()
-expect(mockProvider.getGateways).toHaveBeenCalledTimes(1)
-})
-}) Best Practices Use Caching in Production: Wrap providers with SimpleCacheGatewaysProvider to reduce discovery overhead Set Appropriate Stake Requirements: Use minStake to filter for reliable gateways Limit Gateway Count: Use maxGateways to prevent overwhelming routing strategies Implement Fallbacks: Always have a fallback strategy for when providers fail Monitor Provider Performance: Track how long gateway discovery takes Handle Network Failures: Implement proper error handling for network issues Use Geographic Filtering: Consider user location when selecting gateways Test with Static Providers: Use static providers for predictable testing Provider Comparison NetworkGatewaysProvider: Network-based gateway discovery StaticGatewaysProvider: Static gateway configuration SimpleCacheGatewaysProvider: Caching wrapper for providers Routing Strategies: How gateways are selected for requests Wayfinder Configuration: Main wayfinder setup and usage
-
----
-
-# 70. getInfo - ARIO Docs
-
-Document Number: 70
+Document Number: 71
 Source: https://docs.ar.io/ar-io-sdk/ants/get-info
 Words: 35
 Quality Score: 0.463
@@ -2364,9 +2121,9 @@ getInfo is a method on the ANT class that retrieves general information about th
 
 ---
 
-# 71. getArNSRecord - ARIO Docs
+# 72. getArNSRecord - ARIO Docs
 
-Document Number: 71
+Document Number: 72
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record
 Words: 34
 Quality Score: 0.461
@@ -2374,188 +2131,6 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 getArNSRecord is a method on the ARIO class that retrieves the details of a specific ArNS record by its name. This includes lease information, type, process ID, and other metadata.getArNSRecord does not require authentication.
-
----
-
-# 72. ARIO Docs
-
-Document Number: 72
-Source: https://docs.ar.io/wayfinder/core/gateway-providers/cache
-Words: 747
-Quality Score: 0.461
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-SimpleCacheGatewaysProvider Overview The SimpleCacheGatewaysProvider wraps another gateway provider and caches the results for improved performance. It reduces the overhead of repeated gateway discovery calls while maintaining the benefits of dynamic gateway providers.Installation Basic Usage Configuration Options SimpleCacheGatewaysProviderOptions Parameters Configuration Examples Production Configuration Development Configuration High-Performance Configuration Advanced Usage Multi-Level Caching Smart Cache with Metrics import { SimpleCacheGatewaysProvider } from '@ar.io/wayfinder-core'
-class MetricsAwareCacheProvider extends SimpleCacheGatewaysProvider {
-constructor(options) {
-super(options)
-this.metrics = {
-hits: 0,
-misses: 0,
-refreshes: 0,
-errors: 0,
-}
-}
-async getGateways() {
-const startTime = Date.now()
-try {
-const gateways = await super.getGateways()
-// Track cache hit/miss
-if (this.isCacheHit()) {
-this.metrics.hits++
-} else {
-this.metrics.misses++
-}
-return gateways
-} catch (error) {
-this.metrics.errors++
-throw error
-}
-}
-async refresh() {
-try {
-await super.refresh()
-this.metrics.refreshes++
-} catch (error) {
-this.metrics.errors++
-throw error
-}
-}
-getMetrics() {
-const total = this.metrics.hits + this.metrics.misses
-return {
-...this.metrics,
-hitRate: total > 0 ? this.metrics.hits / total : 0,
-totalRequests: total,
-}
-}
-resetMetrics() {
-this.metrics = { hits: 0, misses: 0, refreshes: 0, errors: 0 }
-}
-}
-// Usage
-const metricsProvider = new MetricsAwareCacheProvider({
-gatewaysProvider: new NetworkGatewaysProvider({ ario: ARIO.mainnet() }),
-ttlSeconds: 300,
-})
-// Later, check metrics
-console.log('Cache metrics:', metricsProvider.getMetrics()) Persistent Cache import { SimpleCacheGatewaysProvider } from '@ar.io/wayfinder-core'
-class PersistentCacheProvider extends SimpleCacheGatewaysProvider {
-constructor(options) {
-super(options)
-this.storageKey = options.storageKey || 'wayfinder-gateway-cache'
-this.loadFromStorage()
-}
-async getGateways() {
-const gateways = await super.getGateways()
-this.saveToStorage()
-return gateways
-}
-loadFromStorage() {
-if (typeof localStorage === 'undefined') return
-try {
-const stored = localStorage.getItem(this.storageKey)
-if (stored) {
-const { gateways, timestamp } = JSON.parse(stored)
-const now = Date.now()
-// Check if stored data is still valid
-if (now - timestamp < this.options.ttlSeconds * 1000) {
-this.cachedGateways = gateways
-this.cacheTimestamp = timestamp
-}
-}
-} catch (error) {
-console.warn('Failed to load cache from storage:', error.message)
-}
-}
-saveToStorage() {
-if (typeof localStorage === 'undefined') return
-if (!this.cachedGateways) return
-try {
-const data = {
-gateways: this.cachedGateways,
-timestamp: this.cacheTimestamp,
-}
-localStorage.setItem(this.storageKey, JSON.stringify(data))
-} catch (error) {
-console.warn('Failed to save cache to storage:', error.message)
-}
-}
-clearStorage() {
-if (typeof localStorage !== 'undefined') {
-localStorage.removeItem(this.storageKey)
-}
-}
-}
-// Usage
-const persistentProvider = new PersistentCacheProvider({
-gatewaysProvider: new NetworkGatewaysProvider({ ario: ARIO.mainnet() }),
-ttlSeconds: 60 * 60, // 1 hour
-storageKey: 'my-app-gateways',
-}) Methods getGateways() Returns cached gateways or fetches from the underlying provider if cache is expired.refresh() Forces a refresh of the cache, bypassing TTL.clearCache() Clears the current cache.getCacheInfo() Returns information about the current cache state.Performance Benefits Cache Hit Rates // Measure cache performance
-const provider = new SimpleCacheGatewaysProvider({
-gatewaysProvider: new NetworkGatewaysProvider({ ario: ARIO.mainnet() }),
-ttlSeconds: 300,
-})
-let hits = 0
-let misses = 0
-for (let i = 0; i < 10; i++) {
-const startTime = Date.now()
-const gateways = await provider.getGateways()
-const duration = Date.now() - startTime
-if (duration < 10) {
-// Likely a cache hit
-hits++
-console.log(`Request ${i + 1}: Cache hit (${duration}ms)`)
-} else {
-misses++
-console.log(`Request ${i + 1}: Cache miss (${duration}ms)`)
-}
-// Wait between requests
-await new Promise((resolve) => setTimeout(resolve, 1000))
-}
-console.log(`Cache hit rate: ${(hits / (hits + misses)) * 100}%`) Testing Unit Tests import { SimpleCacheGatewaysProvider } from '@ar.io/wayfinder-core'
-describe('SimpleCacheGatewaysProvider', () => {
-let mockProvider
-let cacheProvider
-beforeEach(() => {
-mockProvider = {
-getGateways: jest.fn().mockResolvedValue(['https://gateway.com']),
-}
-cacheProvider = new SimpleCacheGatewaysProvider({
-gatewaysProvider: mockProvider,
-ttlSeconds: 60,
-})
-})
-test('should cache gateway results', async () => {
-// First call should hit the underlying provider
-await cacheProvider.getGateways()
-expect(mockProvider.getGateways).toHaveBeenCalledTimes(1)
-// Second call should use cache
-await cacheProvider.getGateways()
-expect(mockProvider.getGateways).toHaveBeenCalledTimes(1)
-})
-test('should refresh cache when TTL expires', async () => {
-// Mock Date.now to control time
-const originalNow = Date.now
-let currentTime = 1000000
-Date.now = jest.fn(() => currentTime)
-// First call
-await cacheProvider.getGateways()
-expect(mockProvider.getGateways).toHaveBeenCalledTimes(1)
-// Advance time beyond TTL
-currentTime += 70000 // 70 seconds
-// Second call should refresh cache
-await cacheProvider.getGateways()
-expect(mockProvider.getGateways).toHaveBeenCalledTimes(2)
-Date.now = originalNow
-})
-test('should handle provider errors gracefully', async () => {
-mockProvider.getGateways.mockRejectedValue(new Error('Provider failed'))
-await expect(cacheProvider.getGateways()).rejects.toThrow('Provider failed')
-})
-}) Best Practices Use in Production: Caching significantly improves performance for network providers Set Appropriate TTL: Balance between freshness and performance Enable Background Refresh: Keeps cache warm without blocking requests Monitor Cache Performance: Track hit rates and adjust TTL accordingly Handle Provider Failures: Implement fallback strategies for when providers fail Consider Memory Usage: Set appropriate maxCacheSize for your application Use Persistent Storage: For web applications, consider localStorage for cache persistence Comparison with Other Providers Gateway Providers Overview: Compare all gateway providers NetworkGatewaysProvider: Dynamic network discovery StaticGatewaysProvider: Static gateway configuration Wayfinder Configuration: Main wayfinder setup
 
 ---
 
@@ -2598,9 +2173,22 @@ instantWithdrawal instantWithdrawal is a method on the ARIO class that instantly
 
 ---
 
-# 76. getBalance - ARIO Docs
+# 76. ARIO Docs
 
 Document Number: 76
+Source: https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache
+Words: 76
+Quality Score: 0.457
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+SimpleCacheGatewaysProvider Overview The SimpleCacheGatewaysProvider holds the resulting gateways in memory for the provided TTL, making it ideal for Node environments. This helps avoid rate-limits and unnecessary network requests to the underlying gateways provider.Important SimpleCacheGatewaysProvider is ideal for Node.js/server environments. For browser-based web applications, use LocalStorageGatewaysProvider instead to persist gateway lists across sessions.Basic Usage Configuration Options Related Documentation Gateway Providers: Compare all gateway providers NetworkGatewaysProvider: Dynamic network discovery StaticGatewaysProvider: Static gateway configuration Wayfinder Configuration: Main wayfinder setup
+
+---
+
+# 77. getBalance - ARIO Docs
+
+Document Number: 77
 Source: https://docs.ar.io/ar-io-sdk/ants/get-balance
 Words: 46
 Quality Score: 0.456
@@ -2611,9 +2199,9 @@ getBalance is a method on the ANT class that retrieves the token balance for a s
 
 ---
 
-# 77. Gateway ArNS Resolution - ARIO Docs
+# 78. Gateway ArNS Resolution - ARIO Docs
 
-Document Number: 77
+Document Number: 78
 Source: https://docs.ar.io/gateways/arns-resolution
 Words: 624
 Quality Score: 0.455
@@ -2636,9 +2224,9 @@ always respects the TTL when serving it)
 
 ---
 
-# 78. ARIO Docs
+# 79. ARIO Docs
 
-Document Number: 78
+Document Number: 79
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network
 Words: 51
 Quality Score: 0.455
@@ -2649,9 +2237,9 @@ leaveNetwork leaveNetwork is a method on the ARIO class that sets a gateway's st
 
 ---
 
-# 79. ARIO Docs
+# 80. ARIO Docs
 
-Document Number: 79
+Document Number: 80
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake
 Words: 30
 Quality Score: 0.454
@@ -2662,9 +2250,9 @@ increaseOperatorStake increaseOperatorStake is a method on the ARIO class that i
 
 ---
 
-# 80. ARIO Docs
+# 81. ARIO Docs
 
-Document Number: 80
+Document Number: 81
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake
 Words: 30
 Quality Score: 0.454
@@ -2675,9 +2263,9 @@ decreaseOperatorStake decreaseOperatorStake is a method on the ARIO class that d
 
 ---
 
-# 81. Getting Started - ARIO Docs
+# 82. Getting Started - ARIO Docs
 
-Document Number: 81
+Document Number: 82
 Source: https://docs.ar.io/ar-io-sdk/getting-started
 Words: 120
 Quality Score: 0.454
@@ -2692,9 +2280,9 @@ documentation for more information on how to provide the necessary polyfills.Out
 
 ---
 
-# 82. getBalances - ARIO Docs
+# 83. getBalances - ARIO Docs
 
-Document Number: 82
+Document Number: 83
 Source: https://docs.ar.io/ar-io-sdk/ants/get-balances
 Words: 29
 Quality Score: 0.452
@@ -2705,9 +2293,9 @@ getBalances is a method on the ANT class that retrieves all token balances withi
 
 ---
 
-# 83. removeRecord - ARIO Docs
+# 84. removeRecord - ARIO Docs
 
-Document Number: 83
+Document Number: 84
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-record
 Words: 33
 Quality Score: 0.451
@@ -2719,9 +2307,9 @@ for more details.removeRecord is a method on the ANT class that removes a record
 
 ---
 
-# 84. getArNSReservedNames - ARIO Docs
+# 85. getArNSReservedNames - ARIO Docs
 
-Document Number: 84
+Document Number: 85
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names
 Words: 94
 Quality Score: 0.451
@@ -2732,9 +2320,9 @@ getArNSReservedNames is a method on the ARIO class that retrieves all reserved A
 
 ---
 
-# 85. getArNSReservedName - ARIO Docs
+# 86. getArNSReservedName - ARIO Docs
 
-Document Number: 85
+Document Number: 86
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-name
 Words: 43
 Quality Score: 0.450
@@ -2745,9 +2333,9 @@ getArNSReservedName is a method on the ARIO class that retrieves details about a
 
 ---
 
-# 86. removeUndernameRecord - ARIO Docs
+# 87. removeUndernameRecord - ARIO Docs
 
-Document Number: 86
+Document Number: 87
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-undername-record
 Words: 28
 Quality Score: 0.450
@@ -2758,9 +2346,9 @@ removeUndernameRecord is a method on the ANT class that removes a specified unde
 
 ---
 
-# 87. ARIO Configuration - ARIO Docs
+# 88. ARIO Configuration - ARIO Docs
 
-Document Number: 87
+Document Number: 88
 Source: https://docs.ar.io/ar-io-sdk/ario/configuration
 Words: 96
 Quality Score: 0.450
@@ -2772,9 +2360,9 @@ blockchain true ← Swipe to see more →
 
 ---
 
-# 88. Managing Primary Names - ARIO Docs
+# 89. Managing Primary Names - ARIO Docs
 
-Document Number: 88
+Document Number: 89
 Source: https://docs.ar.io/guides/primary-names
 Words: 716
 Quality Score: 0.447
@@ -2787,22 +2375,26 @@ owner (ANT) must approve who can claim their name as an identifier. Setting a Pr
 
 ---
 
-# 89. ARIO Docs
+# 90. Data Root Verification Strategy - ARIO Docs
 
-Document Number: 89
-Source: https://docs.ar.io/wayfinder/routing-strategies/preferred-with-fallback
-Words: 234
-Quality Score: 0.446
+Document Number: 90
+Source: https://docs.ar.io/wayfinder/core/verification-strategies/data-root-verification
+Words: 196
+Quality Score: 0.445
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-PreferredWithFallbackRoutingStrategy Overview The PreferredWithFallbackRoutingStrategy attempts to use a designated preferred gateway first, and only falls back to an alternative routing strategy if the preferred gateway fails or is unavailable. This strategy is ideal for applications with dedicated infrastructure or specific gateway requirements.Routing Strategy Comparison Configuration Basic Usage With Default Fallback Parameters How It Works Health Check: Performs a HEAD request to the preferred gateway with a 1000ms timeout Success: If the preferred gateway responds with a successful status, it's used Failure: If the preferred gateway fails or times out, the fallback strategy is used Logging: All attempts and failures are logged for monitoring Integration with Wayfinder Multiple Fallback Levels Different Fallback Strategies Use Cases AR.IO Gateway with Fallback Perfect for applications using a preferred AR.IO gateway that need to fall back to other gateways when unavailable.Enterprise Gateway with Public Fallback Ideal for enterprise applications with dedicated gateways that need public gateway fallback.High Availability Setup For mission-critical applications requiring multiple levels of redundancy.Best Practices Choose Appropriate Fallback Strategies: Use strategies that complement your preferred gateway Monitor Gateway Performance: Track preferred gateway uptime and performance through logs Set Reasonable Timeouts in Fallback: Configure fallback strategies with appropriate timeouts Use Nested Fallbacks: Create multiple levels of fallback for high availability Handle Subdomain Routing: The strategy supports subdomain-based routing automatically The PreferredWithFallbackRoutingStrategy is ideal for applications with dedicated infrastructure that need predictable routing behavior with reliable fallback options.
+DataRootVerificationStrategy Overview The DataRootVerificationStrategy provides the highest level of data integrity verification by validating data using Arweave's Merkle tree proofs. This strategy ensures maximum security by verifying that the data matches the cryptographic data root stored in the transaction, providing mathematical proof of data integrity.Important DataRootVerificationStrategy requires that the trusted gateway has the relevant
+transaction data indexed locally. Gateways cannot proxy out verification
+requests to other sources, as this would compromise the security and
+reliability of the verification process. If a gateway doesn't have the
+required data indexed, verification will fail.How It Works Compute Data Root: Chunk the received content and build a Merkle tree Calculate Root Hash: Compute the root hash of the Merkle tree Fetch Trusted Root: Get the data root from trusted gateways via /tx/{txId}/data_root Compare Roots: Verify the calculated root matches the trusted data root Result: Pass or fail based on data root validation Warning ANS-104 Data Items Not Supported: This strategy currently only works with regular Arweave transactions, not ANS-104 bundled data items. If you attempt to verify an ANS-104 data item, it will throw an error.Basic Usage Related Hash Verification: Learn about fast integrity checking Signature Verification: Understand authenticity validation
 
 ---
 
-# 90. ARIO Node Filtering System - ARIO Docs
+# 91. ARIO Node Filtering System - ARIO Docs
 
-Document Number: 90
+Document Number: 91
 Source: https://docs.ar.io/gateways/filters
 Words: 541
 Quality Score: 0.444
@@ -2813,9 +2405,22 @@ The AR.IO Node filtering system provides a flexible way to match and filter item
 
 ---
 
-# 91. Normalized Addresses - ARIO Docs
+# 92. ARIO Docs
 
-Document Number: 91
+Document Number: 92
+Source: https://docs.ar.io/wayfinder/core/gateway-providers/static
+Words: 66
+Quality Score: 0.443
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+StaticGatewaysProvider Overview The StaticGatewaysProvider uses a predefined list of gateway URLs, making it ideal for development, testing, or when you need to use specific trusted gateways. It provides fast, predictable gateway discovery without network calls.Basic Usage Configuration Options StaticGatewaysProviderOptions Related Documentation Gateway Providers Overview: Compare all gateway providers NetworkGatewaysProvider: Dynamic network discovery SimpleCacheGatewaysProvider: Caching wrapper Wayfinder Configuration: Main wayfinder setup Routing Strategies: How gateways are selected
+
+---
+
+# 93. Normalized Addresses - ARIO Docs
+
+Document Number: 93
 Source: https://docs.ar.io/concepts/normalized-addresses
 Words: 618
 Quality Score: 0.442
@@ -2829,26 +2434,9 @@ respectively.Arweave The public key for an Arweave wallet is the n field of the 
 
 ---
 
-# 92. Hash Verification Strategy - ARIO Docs
+# 94. ARIO Docs
 
-Document Number: 92
-Source: https://docs.ar.io/wayfinder/verification-strategies/hash-verification
-Words: 330
-Quality Score: 0.442
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-HashVerificationStrategy Overview The HashVerificationStrategy verifies data integrity by comparing SHA-256 hashes of fetched data against trusted gateway digest headers. This strategy provides fast, cryptographically secure verification for high-throughput applications.Important Verification methods require that the gateway being used has the relevant
-transaction data indexed locally. Gateways cannot proxy out verification
-requests to other sources, as this would compromise the security and
-reliability of the verification process. If a gateway doesn't have the
-required data indexed, verification will fail.How It Works Fetch Data: Retrieve content from the selected gateway Compute Hash: Calculate the SHA-256 hash of the received data Request Digest: Get the digest from trusted gateways via HTTP headers using HEAD/GET requests Compare: Verify that both hashes match exactly Result: Pass or fail based on hash comparison Configuration Basic Usage Advanced Configuration Parameters Integration Examples With Wayfinder With Event Monitoring Standalone Usage How Digest Fetching Works The strategy uses a sophisticated approach to get digest headers from trusted gateways:HEAD Request: First tries a HEAD request to get the digest header GET Request: If HEAD fails, performs a GET request to hydrate the gateway's cache Second HEAD Request: Makes another HEAD request to get the cached digest Sandbox URLs: Uses subdomain sandboxing for security (e.g., txid.arweave.net) This ensures that even if a gateway doesn't have the data cached initially, it will fetch and cache it, then provide the digest header.Use Cases High-Throughput Applications Perfect for applications that need fast verification:Development and Testing Quick verification for development environments:Production with Multiple Gateways Reliable verification with fallback options:Best Practices Use Multiple Trusted Gateways: Increases reliability and provides fallback options Set Appropriate Concurrency: Balance between performance and gateway load Monitor Verification Events: Track success rates and failure reasons Handle Network Failures: Implement proper error handling for gateway requests Use Reputable Gateways: Choose gateways with reliable data indexing and caching Comparison with Other Strategies The HashVerificationStrategy provides an excellent balance of security and performance, making it ideal for most applications that need fast, reliable data integrity verification.
-
----
-
-# 93. ARIO Docs
-
-Document Number: 93
+Document Number: 94
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings
 Words: 198
 Quality Score: 0.441
@@ -2860,415 +2448,6 @@ gateway.true delegateRewardShareRatio number Percentage of gateway rewards to sh
 configuration details.true observerWallet string - WalletAddress Public wallet address for wallet used to upload network observations.true fqdn string Fully qualified domain name, must be valid domain owned by gateway
 operator.true port number Port number to use when accessing gateway, generally 443 (https) true protocol string - "http" || "https" Protocol to use when accessing gateway, only "https" is supported for
 network participation.true tags array An array of GQL tag objects to attach to the joinNetwork AO message.true ← Swipe to see more →
-
----
-
-# 94. ARIO Docs
-
-Document Number: 94
-Source: https://docs.ar.io/wayfinder/core/gateway-providers/network
-Words: 1385
-Quality Score: 0.439
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-NetworkGatewaysProvider Overview The NetworkGatewaysProvider discovers AR.IO gateways from the AR.IO Network using the AR.IO SDK. It provides dynamic access to the full network of verified gateways, making it the recommended choice for production applications.Installation Basic Usage Configuration Options NetworkGatewaysProviderOptions Parameters Configuration Examples Production Configuration Development Configuration Performance-Optimized Configuration Advanced Usage Custom Filtering import { NetworkGatewaysProvider } from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-class FilteredNetworkGatewaysProvider extends NetworkGatewaysProvider {
-constructor(options) {
-super(options)
-this.customFilters = options.customFilters || []
-}
-async getGateways() {
-let gateways = await super.getGateways()
-// Apply custom filters
-for (const filter of this.customFilters) {
-gateways = await filter(gateways)
-}
-return gateways
-}
-}
-// Usage with custom filters
-const provider = new FilteredNetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-minStake: 50000,
-customFilters: [
-// Filter by geographic region
-async (gateways) => {
-const geoData = await getGatewayGeographicData(gateways)
-return gateways.filter(
-(gateway, index) => geoData[index].region === 'us-east',
-)
-},
-// Filter by health status
-async (gateways) => {
-const healthChecks = await Promise.allSettled(
-gateways.map((gateway) => checkGatewayHealth(gateway)),
-)
-return gateways.filter(
-(gateway, index) =>
-healthChecks[index].status === 'fulfilled' &&
-healthChecks[index].value.healthy,
-)
-},
-],
-}) Caching with Refresh Strategy import {
-NetworkGatewaysProvider,
-SimpleCacheGatewaysProvider,
-} from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-class SmartCacheProvider extends SimpleCacheGatewaysProvider {
-constructor(options) {
-super({
-gatewaysProvider: new NetworkGatewaysProvider(options.networkOptions),
-ttlSeconds: options.ttlSeconds || 300, // 5 minutes
-maxCacheSize: options.maxCacheSize || 100,
-})
-this.refreshInterval = options.refreshInterval || 60000 // 1 minute
-this.lastRefreshAttempt = 0
-this.isRefreshing = false
-}
-async getGateways() {
-const now = Date.now()
-// Attempt background refresh if needed
-if (
-now - this.lastRefreshAttempt > this.refreshInterval &&
-!this.isRefreshing
-) {
-this.backgroundRefresh()
-}
-return super.getGateways()
-}
-async backgroundRefresh() {
-this.isRefreshing = true
-this.lastRefreshAttempt = Date.now()
-try {
-await this.refresh()
-console.log('Gateway cache refreshed successfully')
-} catch (error) {
-console.warn('Background refresh failed:', error.message)
-} finally {
-this.isRefreshing = false
-}
-}
-}
-// Usage
-const smartProvider = new SmartCacheProvider({
-networkOptions: {
-ario: ARIO.mainnet(),
-minStake: 50000,
-maxGateways: 25,
-},
-ttlSeconds: 300, // 5 minute cache
-refreshInterval: 60000, // Try refresh every minute
-maxCacheSize: 100,
-}) Multi-Network Provider import { NetworkGatewaysProvider } from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-class MultiNetworkGatewaysProvider {
-constructor(options) {
-this.providers = [
-new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-...options.mainnetOptions,
-}),
-new NetworkGatewaysProvider({
-ario: ARIO.testnet(),
-...options.testnetOptions,
-}),
-]
-this.preferMainnet = options.preferMainnet !== false
-}
-async getGateways() {
-const results = await Promise.allSettled(
-this.providers.map((provider) => provider.getGateways()),
-)
-const allGateways = []
-results.forEach((result, index) => {
-if (result.status === 'fulfilled') {
-const networkType = index === 0 ? 'mainnet' : 'testnet'
-const gateways = result.value.map((gateway) => ({
-url: gateway,
-network: networkType,
-priority: this.preferMainnet && networkType === 'mainnet' ? 1 : 2,
-}))
-allGateways.push(...gateways)
-}
-})
-// Sort by priority (mainnet first if preferred)
-allGateways.sort((a, b) => a.priority - b.priority)
-return allGateways.map((gateway) => gateway.url)
-}
-async refresh() {
-await Promise.allSettled(
-this.providers.map((provider) => provider.refresh?.()),
-)
-}
-}
-// Usage
-const multiProvider = new MultiNetworkGatewaysProvider({
-preferMainnet: true,
-mainnetOptions: {
-minStake: 100000,
-maxGateways: 15,
-},
-testnetOptions: {
-minStake: 1000,
-maxGateways: 5,
-},
-}) Common Errors import { NetworkGatewaysProvider } from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-const provider = new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-minStake: 50000,
-})
-try {
-const gateways = await provider.getGateways()
-console.log('Found', gateways.length, 'gateways')
-} catch (error) {
-switch (error.constructor.name) {
-case 'NetworkError':
-console.error('Failed to connect to AR.IO network')
-console.error('Check internet connection and AR.IO network status')
-break
-case 'NoGatewaysFoundError':
-console.error('No gateways found matching criteria')
-console.error('Consider lowering minStake or increasing maxGateways')
-break
-case 'InvalidConfigurationError':
-console.error('Invalid provider configuration')
-console.error('Check ARIO instance and configuration parameters')
-break
-case 'TimeoutError':
-console.error('Gateway discovery timed out')
-console.error('Network may be slow or unavailable')
-break
-case 'RateLimitError':
-console.error('Rate limit exceeded')
-console.error('Too many requests to AR.IO network')
-break
-default:
-console.error('Unknown error:', error.message)
-}
-} Retry Logic class RetryableNetworkGatewaysProvider extends NetworkGatewaysProvider {
-constructor(options) {
-super(options)
-this.maxRetries = options.maxRetries || 3
-this.retryDelay = options.retryDelay || 1000
-this.backoffMultiplier = options.backoffMultiplier || 2
-}
-async getGateways() {
-let lastError
-let delay = this.retryDelay
-for (let attempt = 0; attempt <= this.maxRetries; attempt++) {
-try {
-return await super.getGateways()
-} catch (error) {
-lastError = error
-if (attempt === this.maxRetries) {
-break
-}
-console.warn(
-`Gateway discovery attempt ${attempt + 1} failed:`,
-error.message,
-)
-console.warn(`Retrying in ${delay}ms...`)
-await new Promise((resolve) => setTimeout(resolve, delay))
-delay *= this.backoffMultiplier
-}
-}
-throw new Error(
-`Failed to discover gateways after ${this.maxRetries + 1} attempts: ${lastError.message}`,
-)
-}
-}
-// Usage
-const retryableProvider = new RetryableNetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-minStake: 50000,
-maxRetries: 3,
-retryDelay: 1000,
-backoffMultiplier: 2,
-}) Performance Optimization Parallel Discovery import { NetworkGatewaysProvider } from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-class ParallelNetworkGatewaysProvider {
-constructor(options) {
-this.baseOptions = options
-this.partitionSize = options.partitionSize || 25
-}
-async getGateways() {
-const totalGateways = this.baseOptions.maxGateways || 100
-const partitions = Math.ceil(totalGateways / this.partitionSize)
-const providers = Array.from(
-{ length: partitions },
-(_, i) =>
-new NetworkGatewaysProvider({
-...this.baseOptions,
-maxGateways: Math.min(
-this.partitionSize,
-totalGateways - i * this.partitionSize,
-),
-offset: i * this.partitionSize,
-}),
-)
-const results = await Promise.allSettled(
-providers.map((provider) => provider.getGateways()),
-)
-const allGateways = []
-results.forEach((result) => {
-if (result.status === 'fulfilled') {
-allGateways.push(...result.value)
-}
-})
-// Remove duplicates and sort by stake
-const uniqueGateways = [...new Set(allGateways)]
-return uniqueGateways.slice(0, totalGateways)
-}
-}
-// Usage
-const parallelProvider = new ParallelNetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-minStake: 50000,
-maxGateways: 100,
-partitionSize: 25,
-}) Monitoring and Metrics class MonitoredNetworkGatewaysProvider extends NetworkGatewaysProvider {
-constructor(options) {
-super(options)
-this.metrics = {
-requestCount: 0,
-totalResponseTime: 0,
-errorCount: 0,
-lastSuccessfulUpdate: null,
-gatewayCount: 0,
-}
-}
-async getGateways() {
-const startTime = Date.now()
-this.metrics.requestCount++
-try {
-const gateways = await super.getGateways()
-this.metrics.totalResponseTime += Date.now() - startTime
-this.metrics.lastSuccessfulUpdate = new Date()
-this.metrics.gatewayCount = gateways.length
-console.log(
-`Discovered ${gateways.length} gateways in ${Date.now() - startTime}ms,
-)
-return gateways
-} catch (error) {
-this.metrics.errorCount++
-console.error('Gateway discovery failed:', error.message)
-throw error
-}
-}
-getMetrics() {
-return {
-...this.metrics,
-averageResponseTime:
-this.metrics.totalResponseTime / this.metrics.requestCount,
-successRate:
-(this.metrics.requestCount - this.metrics.errorCount) /
-this.metrics.requestCount,
-}
-}
-resetMetrics() {
-this.metrics = {
-requestCount: 0,
-totalResponseTime: 0,
-errorCount: 0,
-lastSuccessfulUpdate: null,
-gatewayCount: 0,
-}
-}
-}
-// Usage
-const monitoredProvider = new MonitoredNetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-minStake: 50000,
-})
-// Later, get metrics
-console.log('Provider metrics:', monitoredProvider.getMetrics()) Testing Unit Tests import { NetworkGatewaysProvider } from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-describe('NetworkGatewaysProvider', () => {
-let mockArio
-let provider
-beforeEach(() => {
-mockArio = {
-gateways: {
-getGateways: jest.fn(),
-},
-}
-provider = new NetworkGatewaysProvider({
-ario: mockArio,
-minStake: 10000,
-maxGateways: 10,
-})
-})
-test('should return gateways from AR.IO network', async () => {
-const mockGateways = [
-{ fqdn: 'gateway1.com', stake: 50000 },
-{ fqdn: 'gateway2.com', stake: 75000 },
-]
-mockArio.gateways.getGateways.mockResolvedValue(mockGateways)
-const result = await provider.getGateways()
-expect(result).toEqual([
-'https://gateway2.com', // Higher stake first
-'https://gateway1.com',
-])
-})
-test('should filter by minimum stake', async () => {
-const mockGateways = [
-{ fqdn: 'gateway1.com', stake: 5000 }, // Below minimum
-{ fqdn: 'gateway2.com', stake: 15000 }, // Above minimum
-]
-mockArio.gateways.getGateways.mockResolvedValue(mockGateways)
-const result = await provider.getGateways()
-expect(result).toEqual(['https://gateway2.com'])
-})
-test('should limit number of gateways', async () => {
-const mockGateways = Array.from({ length: 20 }, (_, i) => ({
-fqdn: gateway${i}.com`,
-stake: 50000 + i * 1000,
-}))
-mockArio.gateways.getGateways.mockResolvedValue(mockGateways)
-const result = await provider.getGateways()
-expect(result).toHaveLength(10) // maxGateways limit
-})
-test('should handle network errors', async () => {
-mockArio.gateways.getGateways.mockRejectedValue(
-new Error('Network connection failed'),
-)
-await expect(provider.getGateways()).rejects.toThrow(
-'Network connection failed',
-)
-})
-}) Integration Tests import { NetworkGatewaysProvider } from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-describe('NetworkGatewaysProvider Integration', () => {
-test('should discover real gateways from mainnet', async () => {
-const provider = new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-minStake: 10000,
-maxGateways: 5,
-})
-const gateways = await provider.getGateways()
-expect(gateways).toBeInstanceOf(Array)
-expect(gateways.length).toBeGreaterThan(0)
-expect(gateways.length).toBeLessThanOrEqual(5)
-// Check that all returned values are valid URLs
-gateways.forEach((gateway) => {
-expect(() => new URL(gateway)).not.toThrow()
-})
-}, 30000) // 30 second timeout for network call
-test('should handle testnet discovery', async () => {
-const provider = new NetworkGatewaysProvider({
-ario: ARIO.testnet(),
-maxGateways: 3,
-})
-const gateways = await provider.getGateways()
-expect(gateways).toBeInstanceOf(Array)
-// Testnet may have fewer gateways
-expect(gateways.length).toBeLessThanOrEqual(3)
-}, 30000)
-}) Best Practices Set Appropriate Stake Requirements: Use minStake to filter for reliable gateways Limit Gateway Count: Use maxGateways to prevent overwhelming routing strategies Use Caching: Wrap with SimpleCacheGatewaysProvider for production Handle Network Failures: Implement proper error handling and retries Monitor Performance: Track discovery times and success rates Use Mainnet for Production: Only use testnet for development and testing Consider Geographic Distribution: Filter gateways based on user location Implement Fallbacks: Have backup providers for when network discovery fails Comparison with Other Providers Gateway Providers Overview: Compare all gateway providers StaticGatewaysProvider: Static gateway configuration SimpleCacheGatewaysProvider: Caching wrapper Wayfinder Configuration: Main wayfinder setup Routing Strategies: How gateways are selected
 
 ---
 
@@ -3285,66 +2464,9 @@ extendLease extendLease is a method on the ARIO class that extends the lease dur
 
 ---
 
-# 96. ARIO Docs
+# 96. addController - ARIO Docs
 
 Document Number: 96
-Source: https://docs.ar.io/wayfinder/core/gateway-providers/static
-Words: 288
-Quality Score: 0.435
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-StaticGatewaysProvider Overview The StaticGatewaysProvider uses a predefined list of gateway URLs, making it ideal for development, testing, or when you need to use specific trusted gateways. It provides fast, predictable gateway discovery without network calls.Installation Basic Usage Configuration Options StaticGatewaysProviderOptions Parameters Configuration Examples Development Configuration Production Configuration Testing Configuration Advanced Usage Environment-Based Configuration Health-Checked Provider import { StaticGatewaysProvider } from '@ar.io/wayfinder-core'
-class HealthCheckedStaticProvider extends StaticGatewaysProvider {
-constructor(options) {
-super(options)
-this.healthyGateways = new Set()
-this.unhealthyGateways = new Set()
-if (options.healthCheck) {
-this.performHealthChecks()
-}
-}
-async getGateways() {
-const allGateways = await super.getGateways()
-if (!this.options.healthCheck) {
-return allGateways
-}
-// Return healthy gateways first
-const healthy = allGateways.filter((g) => this.healthyGateways.has(g))
-const unhealthy = allGateways.filter((g) => this.unhealthyGateways.has(g))
-return [...healthy, ...unhealthy]
-}
-async performHealthChecks() {
-const healthChecks = await Promise.allSettled(
-this.options.gateways.map((gateway) => this.checkGatewayHealth(gateway)),
-)
-healthChecks.forEach((result, index) => {
-const gateway = this.options.gateways[index]
-if (result.status === 'fulfilled' && result.value.healthy) {
-this.healthyGateways.add(gateway)
-} else {
-this.unhealthyGateways.add(gateway)
-}
-})
-}
-async checkGatewayHealth(gateway) {
-try {
-const response = await fetch(`${gateway}/ar-io/info`, {
-method: 'HEAD',
-signal: AbortSignal.timeout(this.options.healthCheckTimeout || 5000),
-})
-return { healthy: response.ok }
-} catch (error) {
-return { healthy: false, error: error.message }
-}
-}
-} Testing Unit Tests Best Practices Use for Development and Testing: Static providers are perfect for predictable environments Include Fallback Gateways: Always include reliable public gateways as fallbacks Enable Health Checks for Production: Use health checks when reliability is critical Maintain Gateway Lists: Keep your static gateway lists up to date Use Environment-Specific Configs: Different gateway lists for different environments Validate URLs: Ensure all gateway URLs are valid and accessible Comparison with Other Providers Gateway Providers Overview: Compare all gateway providers NetworkGatewaysProvider: Dynamic network discovery SimpleCacheGatewaysProvider: Caching wrapper Wayfinder Configuration: Main wayfinder setup Routing Strategies: How gateways are selected
-
----
-
-# 97. addController - ARIO Docs
-
-Document Number: 97
 Source: https://docs.ar.io/ar-io-sdk/ants/add-controller
 Words: 83
 Quality Score: 0.435
@@ -3355,449 +2477,9 @@ addController is a method on the ANT class that adds a new controller to the ANT
 
 ---
 
-# 98. ARIO Docs
+# 97. Optimizing Data Handling in ARIO Gateway - ARIO Docs
 
-Document Number: 98
-Source: https://docs.ar.io/wayfinder/core/events
-Words: 1340
-Quality Score: 0.433
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Events System Overview Wayfinder provides a comprehensive event system that allows you to monitor and respond to various operations including routing, verification, telemetry, and errors. This enables detailed logging, metrics collection, and custom behavior based on wayfinder operations.Event Types Routing Events Events related to gateway selection and routing operations.Verification Events Events related to data verification operations.Telemetry Events Events related to telemetry and tracing operations.Gateway Events Events related to gateway operations and health.Basic Usage Listening to Events Event Configuration Configure events during wayfinder initialization:import {
-Wayfinder,
-NetworkGatewaysProvider,
-HashVerificationStrategy,
-} from '@ar.io/wayfinder-core'
-import { ARIO } from '@ar.io/sdk'
-const wayfinder = new Wayfinder({
-gatewaysProvider: new NetworkGatewaysProvider({
-ario: ARIO.mainnet(),
-}),
-routingSettings: {
-events: {
-onRoutingStarted: (event) => {
-console.log(`Starting routing for ${event.originalUrl}`)
-},
-onRoutingSucceeded: (event) => {
-console.log(
-`Routing succeeded: ${event.selectedGateway} (${event.responseTime}ms)`,
-)
-},
-onRoutingFailed: (error) => {
-console.error(`Routing failed: ${error.message}`)
-},
-},
-},
-verificationSettings: {
-enabled: true,
-strategy: new HashVerificationStrategy({
-trustedGateways: ['https://arweave.net'],
-}),
-events: {
-onVerificationStarted: (event) => {
-console.log(`Verifying ${event.txId} with ${event.strategy}`)
-},
-onVerificationSucceeded: (event) => {
-console.log(`Verification passed for ${event.txId}`)
-},
-onVerificationFailed: (error) => {
-console.warn(`Verification failed: ${error.message}`)
-},
-},
-},
-}) Advanced Usage Event Aggregation class EventAggregator {
-constructor(wayfinder) {
-this.wayfinder = wayfinder
-this.stats = {
-routing: { success: 0, failed: 0, totalTime: 0 },
-verification: { success: 0, failed: 0, totalTime: 0 },
-gateways: new Map(),
-}
-this.setupEventListeners()
-}
-setupEventListeners() {
-// Routing events
-this.wayfinder.emitter.on('routing-succeeded', (event) => {
-this.stats.routing.success++
-this.stats.routing.totalTime += event.responseTime
-// Track gateway usage
-const usage = this.stats.gateways.get(event.selectedGateway) || 0
-this.stats.gateways.set(event.selectedGateway, usage + 1)
-})
-this.wayfinder.emitter.on('routing-failed', () => {
-this.stats.routing.failed++
-})
-// Verification events
-this.wayfinder.emitter.on('verification-succeeded', (event) => {
-this.stats.verification.success++
-this.stats.verification.totalTime += event.verificationTime
-})
-this.wayfinder.emitter.on('verification-failed', () => {
-this.stats.verification.failed++
-})
-}
-getStats() {
-const routingTotal = this.stats.routing.success + this.stats.routing.failed
-const verificationTotal =
-this.stats.verification.success + this.stats.verification.failed
-return {
-routing: {
-successRate:
-routingTotal > 0 ? this.stats.routing.success / routingTotal : 0,
-averageResponseTime:
-this.stats.routing.success > 0
-? this.stats.routing.totalTime / this.stats.routing.success
-: 0,
-totalRequests: routingTotal,
-},
-verification: {
-successRate:
-verificationTotal > 0
-? this.stats.verification.success / verificationTotal
-: 0,
-averageVerificationTime:
-this.stats.verification.success > 0
-? this.stats.verification.totalTime /
-this.stats.verification.success
-: 0,
-totalVerifications: verificationTotal,
-},
-gatewayUsage: Object.fromEntries(this.stats.gateways),
-}
-}
-reset() {
-this.stats = {
-routing: { success: 0, failed: 0, totalTime: 0 },
-verification: { success: 0, failed: 0, totalTime: 0 },
-gateways: new Map(),
-}
-}
-}
-// Usage
-const aggregator = new EventAggregator(wayfinder)
-// Later, get aggregated statistics
-console.log('Performance stats:', aggregator.getStats()) Event Filtering class EventFilter {
-constructor(wayfinder, options = {}) {
-this.wayfinder = wayfinder
-this.options = options
-this.setupFilters()
-}
-setupFilters() {
-// Filter routing events by response time
-if (this.options.slowRequestThreshold) {
-this.wayfinder.emitter.on('routing-succeeded', (event) => {
-if (event.responseTime > this.options.slowRequestThreshold) {
-console.warn(
-`Slow request detected: ${event.originalUrl} took ${event.responseTime}ms,
-)
-// Emit custom event
-this.wayfinder.emitter.emit('slow-request', {
-...event,
-threshold: this.options.slowRequestThreshold,
-})
-}
-})
-}
-// Filter verification events by strategy
-if (this.options.verificationStrategies) {
-this.wayfinder.emitter.on('verification-failed', (event) => {
-if (this.options.verificationStrategies.includes(event.strategy)) {
-console.error(
-Critical verification failure: ${event.txId} with ${event.strategy}`,
-)
-// Emit custom event
-this.wayfinder.emitter.emit('critical-verification-failure', event)
-}
-})
-}
-// Filter gateway events by specific gateways
-if (this.options.monitoredGateways) {
-this.wayfinder.emitter.on('gateway-error', (event) => {
-if (this.options.monitoredGateways.includes(event.gateway)) {
-console.error(`Monitored gateway error: ${event.gateway}`)
-// Emit custom event
-this.wayfinder.emitter.emit('monitored-gateway-error', event)
-}
-})
-}
-}
-}
-// Usage
-const filter = new EventFilter(wayfinder, {
-slowRequestThreshold: 5000, // 5 seconds
-verificationStrategies: ['DataRootVerificationStrategy'],
-monitoredGateways: ['https://my-critical-gateway.com'],
-})
-// Listen to filtered events
-wayfinder.emitter.on('slow-request', (event) => {
-console.log('Slow request alert:', event)
-})
-wayfinder.emitter.on('critical-verification-failure', (event) => {
-console.log('Critical verification failure:', event)
-}) Event Persistence class EventLogger {
-constructor(wayfinder, options = {}) {
-this.wayfinder = wayfinder
-this.logLevel = options.logLevel || 'info'
-this.logFile = options.logFile
-this.maxLogSize = options.maxLogSize || 10 * 1024 * 1024 // 10MB
-this.logs = []
-this.setupLogging()
-}
-setupLogging() {
-// Log all events based on log level
-const eventTypes = [
-'routing-started',
-'routing-succeeded',
-'routing-failed',
-'verification-started',
-'verification-succeeded',
-'verification-failed',
-'telemetry-span-started',
-'telemetry-span-ended',
-'telemetry-error',
-'gateway-discovered',
-'gateway-health-check',
-'gateway-error',
-]
-eventTypes.forEach((eventType) => {
-this.wayfinder.emitter.on(eventType, (event) => {
-this.logEvent(eventType, event)
-})
-})
-}
-logEvent(eventType, event) {
-const logEntry = {
-timestamp: new Date().toISOString(),
-type: eventType,
-data: event,
-}
-// Add to memory log
-this.logs.push(logEntry)
-// Trim logs if too large
-if (this.logs.length > 1000) {
-this.logs = this.logs.slice(-1000)
-}
-// Console logging based on level
-if (this.shouldLog(eventType)) {
-console.log(`[${logEntry.timestamp}] ${eventType}:`, event)
-}
-// File logging (Node.js only)
-if (this.logFile && typeof require !== 'undefined') {
-this.writeToFile(logEntry)
-}
-}
-shouldLog(eventType) {
-const levels = {
-error: [
-'routing-failed',
-'verification-failed',
-'telemetry-error',
-'gateway-error',
-],
-warn: ['verification-failed', 'gateway-error'],
-info: [
-'routing-succeeded',
-'verification-succeeded',
-'gateway-discovered',
-],
-debug: [
-'routing-started',
-'verification-started',
-'telemetry-span-started',
-],
-}
-switch (this.logLevel) {
-case 'error':
-return levels.error.includes(eventType)
-case 'warn':
-return (
-levels.error.includes(eventType) || levels.warn.includes(eventType)
-)
-case 'info':
-return (
-levels.error.includes(eventType) ||
-levels.warn.includes(eventType) ||
-levels.info.includes(eventType)
-)
-case 'debug':
-return true
-default:
-return false
-}
-}
-writeToFile(logEntry) {
-try {
-const fs = require('fs')
-const logLine = JSON.stringify(logEntry) + '\n'
-// Check file size and rotate if needed
-if (fs.existsSync(this.logFile)) {
-const stats = fs.statSync(this.logFile)
-if (stats.size > this.maxLogSize) {
-fs.renameSync(this.logFile, `${this.logFile}.old)
-}
-}
-fs.appendFileSync(this.logFile, logLine)
-} catch (error) {
-console.error('Failed to write log to file:', error.message)
-}
-}
-getLogs(filter = {}) {
-let filteredLogs = this.logs
-if (filter.type) {
-filteredLogs = filteredLogs.filter((log) => log.type === filter.type)
-}
-if (filter.since) {
-const since = new Date(filter.since)
-filteredLogs = filteredLogs.filter(
-(log) => new Date(log.timestamp) >= since,
-)
-}
-if (filter.limit) {
-filteredLogs = filteredLogs.slice(-filter.limit)
-}
-return filteredLogs
-}
-clearLogs() {
-this.logs = []
-}
-}
-// Usage
-const logger = new EventLogger(wayfinder, {
-logLevel: 'info',
-logFile: './wayfinder.log',
-maxLogSize: 50 * 1024 * 1024, // 50MB
-})
-// Later, retrieve logs
-const recentErrors = logger.getLogs({
-type: 'routing-failed',
-since: new Date(Date.now() - 24 * 60 * 60 * 1000), // Last 24 hours
-limit: 100,
-}) Event-Driven Architecture Patterns Circuit Breaker Pattern class CircuitBreakerEventHandler {
-constructor(wayfinder, options = {}) {
-this.wayfinder = wayfinder
-this.failureThreshold = options.failureThreshold || 5
-this.resetTimeout = options.resetTimeout || 60000 // 1 minute
-this.gatewayStates = new Map()
-this.setupCircuitBreaker()
-}
-setupCircuitBreaker() {
-this.wayfinder.emitter.on('routing-failed', (event) => {
-this.recordFailure(event.selectedGateway || 'unknown')
-})
-this.wayfinder.emitter.on('routing-succeeded', (event) => {
-this.recordSuccess(event.selectedGateway)
-})
-}
-recordFailure(gateway) {
-const state = this.getGatewayState(gateway)
-state.failures++
-state.lastFailure = Date.now()
-if (state.failures >= this.failureThreshold && state.status !== 'open') {
-state.status = 'open'
-console.warn(Circuit breaker opened for gateway: ${gateway}`)
-// Emit custom event
-this.wayfinder.emitter.emit('circuit-breaker-opened', {
-gateway,
-failures: state.failures,
-timestamp: Date.now(),
-})
-// Schedule reset attempt
-setTimeout(() => {
-state.status = 'half-open'
-console.info(`Circuit breaker half-open for gateway: ${gateway}`)
-}, this.resetTimeout)
-}
-}
-recordSuccess(gateway) {
-const state = this.getGatewayState(gateway)
-if (state.status === 'half-open') {
-state.status = 'closed'
-state.failures = 0
-console.info(`Circuit breaker closed for gateway: ${gateway}`)
-// Emit custom event
-this.wayfinder.emitter.emit('circuit-breaker-closed', {
-gateway,
-timestamp: Date.now(),
-})
-}
-}
-getGatewayState(gateway) {
-if (!this.gatewayStates.has(gateway)) {
-this.gatewayStates.set(gateway, {
-status: 'closed',
-failures: 0,
-lastFailure: null,
-})
-}
-return this.gatewayStates.get(gateway)
-}
-isGatewayAvailable(gateway) {
-const state = this.getGatewayState(gateway)
-return state.status !== 'open'
-}
-}
-// Usage
-const circuitBreaker = new CircuitBreakerEventHandler(wayfinder, {
-failureThreshold: 3,
-resetTimeout: 30000,
-})
-// Listen to circuit breaker events
-wayfinder.emitter.on('circuit-breaker-opened', (event) => {
-console.log('Circuit breaker opened:', event)
-})
-wayfinder.emitter.on('circuit-breaker-closed', (event) => {
-console.log('Circuit breaker closed:', event)
-}) Testing Events Event Testing import { Wayfinder, StaticGatewaysProvider } from '@ar.io/wayfinder-core'
-describe('Wayfinder Events', () => {
-let wayfinder
-let eventSpy
-beforeEach(() => {
-wayfinder = new Wayfinder({
-gatewaysProvider: new StaticGatewaysProvider({
-gateways: ['https://test-gateway.com'],
-}),
-})
-eventSpy = jest.fn()
-})
-test('should emit routing events', async () => {
-wayfinder.emitter.on('routing-started', eventSpy)
-wayfinder.emitter.on('routing-succeeded', eventSpy)
-await wayfinder.request('ar://test-transaction-id')
-expect(eventSpy).toHaveBeenCalledWith(
-expect.objectContaining({
-originalUrl: expect.stringContaining('test-transaction-id'),
-}),
-)
-})
-test('should emit verification events when enabled', async () => {
-wayfinder = new Wayfinder({
-gatewaysProvider: new StaticGatewaysProvider({
-gateways: ['https://test-gateway.com'],
-}),
-verificationSettings: {
-enabled: true,
-strategy: new HashVerificationStrategy({
-trustedGateways: ['https://arweave.net'],
-}),
-},
-})
-wayfinder.emitter.on('verification-started', eventSpy)
-wayfinder.emitter.on('verification-succeeded', eventSpy)
-await wayfinder.request('ar://test-transaction-id')
-expect(eventSpy).toHaveBeenCalledWith(
-expect.objectContaining({
-txId: 'test-transaction-id',
-}),
-)
-})
-}) Best Practices Use Events for Monitoring: Implement comprehensive event listeners for production monitoring Avoid Blocking Operations: Keep event handlers lightweight and non-blocking Handle Event Errors: Wrap event handlers in try-catch blocks Filter Events Appropriately: Only listen to events you need to avoid performance overhead Implement Circuit Breakers: Use events to implement circuit breaker patterns for reliability Log Important Events: Log critical events for debugging and analysis Use Event Aggregation: Aggregate events for metrics and analytics Test Event Handlers: Write tests for your event handling logic Wayfinder Class: Main wayfinder class and configuration Routing Strategies: Gateway selection algorithms Verification Strategies: Data integrity verification Telemetry: OpenTelemetry integration
-
----
-
-# 99. Optimizing Data Handling in ARIO Gateway - ARIO Docs
-
-Document Number: 99
+Document Number: 97
 Source: https://docs.ar.io/gateways/optimize-data
 Words: 968
 Quality Score: 0.432
@@ -3808,9 +2490,9 @@ The AR.IO Gateway provides powerful tools for optimizing how you access and serv
 
 ---
 
-# 100. transfer - ARIO Docs
+# 98. transfer - ARIO Docs
 
-Document Number: 100
+Document Number: 98
 Source: https://docs.ar.io/ar-io-sdk/ants/transfer
 Words: 65
 Quality Score: 0.430
@@ -3821,9 +2503,9 @@ transfer is a method on the ANT class that transfers ownership of the ANT proces
 
 ---
 
-# 101. getCostDetails - ARIO Docs
+# 99. getCostDetails - ARIO Docs
 
-Document Number: 101
+Document Number: 99
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details
 Words: 148
 Quality Score: 0.429
@@ -3834,9 +2516,9 @@ getCostDetails is a method on the ARIO class that calculates detailed cost infor
 
 ---
 
-# 102. setKeywords - ARIO Docs
+# 100. setKeywords - ARIO Docs
 
-Document Number: 102
+Document Number: 100
 Source: https://docs.ar.io/ar-io-sdk/ants/set-keywords
 Words: 66
 Quality Score: 0.428
@@ -3847,9 +2529,26 @@ setKeywords is a method on the ANT class that updates the list of keywords assoc
 
 ---
 
-# 103. approvePrimaryNameRequest - ARIO Docs
+# 101. Signature Verification Strategy - ARIO Docs
 
-Document Number: 103
+Document Number: 101
+Source: https://docs.ar.io/wayfinder/core/verification-strategies/signature-verification
+Words: 148
+Quality Score: 0.427
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+SignatureVerificationStrategy Overview The SignatureVerificationStrategy validates Arweave transaction signatures to ensure data authenticity and ownership. This strategy provides cryptographic proof that the data was created by the claimed wallet address and hasn't been tampered with since signing.Important SignatureVerificationStrategy requires that the trusted gateway has the relevant
+transaction data indexed locally. Gateways cannot proxy out verification
+requests to other sources, as this would compromise the security and
+reliability of the verification process. If a gateway doesn't have the
+required data indexed, verification will fail.How It Works Fetch Metadata: Retrieve transaction metadata from trusted gateways Reconstruct Signature Data: Build the signature data using the received content Verify Signature: Validate the signature matches the claimed owner's public key Check Ownership: Confirm the transaction was signed by the claimed wallet Result: Pass or fail based on signature validation Basic Usage Related Hash Verification: Learn about fast integrity checking Signature Verification: Understand authenticity validation
+
+---
+
+# 102. approvePrimaryNameRequest - ARIO Docs
+
+Document Number: 102
 Source: https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request
 Words: 85
 Quality Score: 0.423
@@ -3860,9 +2559,9 @@ approvePrimaryNameRequest is a method on the ANT class that approves a primary n
 
 ---
 
-# 104. ARIO Gateway Environment Variables - ARIO Docs
+# 103. ARIO Gateway Environment Variables - ARIO Docs
 
-Document Number: 104
+Document Number: 103
 Source: https://docs.ar.io/gateways/env
 Words: 1250
 Quality Score: 0.416
@@ -3920,35 +2619,9 @@ specified filter PROMETHEUS_METRICS_ENABLED Boolean false If true, the gateway w
 
 ---
 
-# 105. ARIO Docs
+# 104. ARIO Docs
 
-Document Number: 105
-Source: https://docs.ar.io/wayfinder/routing-strategies/random
-Words: 210
-Quality Score: 0.409
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-RandomRoutingStrategy Overview The RandomRoutingStrategy selects gateways randomly from the available pool. This strategy provides simple load distribution without maintaining state or performing complex calculations, making it ideal for scenarios where unpredictability is desired or where simplicity is paramount.Routing Strategy Comparison How It Works Receive Gateway List: Accept the list of available gateways Generate Random Index: Create a random number within the gateway list range Select Gateway: Choose the gateway at the random index Apply Filters: Optionally filter out unhealthy or blocked gateways Return Selection: Return the randomly selected gateway Configuration Basic Usage With Weighted Selection Parameters Integration with Wayfinder Use Cases Load Testing and Development Perfect for testing applications with unpredictable gateway selection patterns.Simple Load Distribution Ideal for applications that need basic load spreading without complex logic.Backup Strategy Useful as a fallback strategy when other routing methods fail.Best Practices Use for Testing: Great for testing applications with unpredictable traffic patterns Consider Weighted Selection: Use weights to favor higher-capacity gateways Combine with Other Strategies: Works well as a fallback strategy Set Seeds for Testing: Use reproducible randomness in test environments Monitor Distribution: Track which gateways are selected over time The RandomRoutingStrategy is ideal for applications that need simple, unpredictable load distribution or as a fallback strategy for more complex routing methods.
-
----
-
-# 106. StaticRoutingStrategy - ARIO Docs
-
-Document Number: 106
-Source: https://docs.ar.io/wayfinder/routing-strategies/static
-Words: 213
-Quality Score: 0.407
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview The StaticRoutingStrategy is the simplest routing strategy that always returns a single, pre-configured gateway URL. This strategy ignores any gateways provided by the GatewaysProvider and is useful for scenarios where you want to force all requests to use a specific gateway.Routing Strategy Comparison How It Works The strategy always returns the configured gateway, ignoring any provided gateway lists:Configure Gateway: Set a single gateway URL during initialization Ignore Provided Gateways: Any gateways from providers are ignored Return Static Gateway: Always return the same configured gateway Log Warnings: Warn when provided gateways are ignored Configuration Basic Usage With Custom Gateway Parameters Integration with Wayfinder Use Cases Development Environment Perfect for local development or testing against a specific gateway.Dedicated Gateway Ideal when you need to ensure all requests use your organization's specific gateway.Compliance Requirements Useful when compliance requires all requests to go through an approved gateway.Best Practices Use for Development: Great for local development and testing Ensure Gateway Reliability: Make sure your static gateway is highly available Monitor Performance: Track the performance of your single gateway Plan for Failures: Consider fallback strategies for production use Document Gateway Choice: Clearly document why a static gateway is needed The StaticRoutingStrategy is ideal for development, testing, or scenarios where you need complete control over which gateway is used.
-
----
-
-# 107. ARIO Docs
-
-Document Number: 107
+Document Number: 104
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit
 Words: 114
 Quality Score: 0.407
@@ -3960,9 +2633,9 @@ total) false fundFrom string The source of funds: 'balance', 'stakes', 'any', or
 
 ---
 
-# 108. ARIO SDK Release Notes - ARIO Docs
+# 105. ARIO SDK Release Notes - ARIO Docs
 
-Document Number: 108
+Document Number: 105
 Source: https://docs.ar.io/ar-io-sdk/release-notes
 Words: 5988
 Quality Score: 0.406
@@ -3973,9 +2646,9 @@ AR.IO SDK Changelog Overview Welcome to the documentation page for the AR.IO SDK
 
 ---
 
-# 109. ARIO Docs
+# 106. ARIO Docs
 
-Document Number: 109
+Document Number: 106
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-controller
 Words: 24
 Quality Score: 0.405
@@ -3986,9 +2659,9 @@ removeController removeController is a method on the ANT class that removes a sp
 
 ---
 
-# 110. getGateway - ARIO Docs
+# 107. getGateway - ARIO Docs
 
-Document Number: 110
+Document Number: 107
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway
 Words: 24
 Quality Score: 0.405
@@ -3999,9 +2672,9 @@ getGateway is a method on the ARIO class that retrieves detailed information abo
 
 ---
 
-# 111. getGateways - ARIO Docs
+# 108. getGateways - ARIO Docs
 
-Document Number: 111
+Document Number: 108
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateways
 Words: 87
 Quality Score: 0.404
@@ -4012,9 +2685,9 @@ getGateways is a method on the ARIO class that retrieves all gateways with optio
 
 ---
 
-# 112. ARIO Documentation
+# 109. ARIO Documentation
 
-Document Number: 112
+Document Number: 109
 Source: https://docs.ar.io/
 Words: 141
 Quality Score: 0.404
@@ -4025,43 +2698,9 @@ Extraction Reason: defuddle_returned_html_semantic_extracted
 
 ---
 
-# 113. Data Root Verification Strategy - ARIO Docs
+# 110. ARIO Docs
 
-Document Number: 113
-Source: https://docs.ar.io/wayfinder/verification-strategies/data-root-verification
-Words: 479
-Quality Score: 0.402
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-DataRootVerificationStrategy Overview The DataRootVerificationStrategy provides the highest level of data integrity verification by validating data using Arweave's Merkle tree proofs. This strategy ensures maximum security by verifying that the data matches the cryptographic data root stored in the transaction, providing mathematical proof of data integrity.Important Verification methods require that the gateway being used has the relevant
-transaction data indexed locally. Gateways cannot proxy out verification
-requests to other sources, as this would compromise the security and
-reliability of the verification process. If a gateway doesn't have the
-required data indexed, verification will fail.How It Works Compute Data Root: Chunk the received content and build a Merkle tree Calculate Root Hash: Compute the root hash of the Merkle tree Fetch Trusted Root: Get the data root from trusted gateways via /tx/{txId}/data_root Compare Roots: Verify the calculated root matches the trusted data root Result: Pass or fail based on data root validation Important Limitation ANS-104 Data Items Not Supported: This strategy currently only works with regular Arweave transactions, not ANS-104 bundled data items. If you attempt to verify an ANS-104 data item, it will throw an error.Configuration Basic Usage Advanced Configuration Parameters ← Swipe to see more → Parameter Type Default Description trustedGateways URL[] Required Array of trusted gateway URLs for data root fetching maxConcurrency number 1 Maximum number of concurrent requests to gateways logger Logger defaultLogger Custom logger instance for debugging classifier DataClassifier GqlClassifier Data classifier to determine transaction type ← Swipe to see more → Integration Examples With Wayfinder With Event Monitoring Standalone Usage How Merkle Tree Processing Works The strategy uses Arweave's standard Merkle tree implementation:Chunking Process Chunk Size: Uses Arweave's standard chunk sizes (MAX_CHUNK_SIZE and MIN_CHUNK_SIZE) Smart Chunking: Automatically adjusts chunk sizes to avoid small remainder chunks Sequential Processing: Processes data streams chunk by chunk Merkle Tree Construction Generate Leaves: Creates Merkle tree leaves from data chunks Build Layers: Constructs the full Merkle tree structure Compute Root: Calculates the final root hash Data Root Fetching Fetches data root from trusted gateways via /tx/{txId}/data_root endpoint Uses concurrent requests with configurable concurrency limits Returns first successful response from any gateway Use Cases Maximum Security Applications Perfect for applications requiring the highest level of verification:Legal and Financial Documents Critical document verification:Production vs Development ANS-104 Data Items Data Root Mismatch Best Practices Use Multiple Trusted Gateways: Increases reliability for data root fetching Set Appropriate Concurrency: Balance between performance and gateway load Monitor for ANS-104: Check transaction types before verification Handle Large Files: Be aware that Merkle tree computation can be resource-intensive Use for Critical Data: Reserve for applications requiring maximum security Comparison with Other Strategies The DataRootVerificationStrategy provides the highest level of security by using Arweave's native Merkle tree structure. It's ideal for applications where data integrity is absolutely critical and performance is secondary to security. However, note that it currently only supports regular Arweave transactions, not ANS-104 bundled data items.
-
----
-
-# 114. Signature Verification Strategy - ARIO Docs
-
-Document Number: 114
-Source: https://docs.ar.io/wayfinder/verification-strategies/signature-verification
-Words: 378
-Quality Score: 0.402
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-SignatureVerificationStrategy Overview The SignatureVerificationStrategy validates Arweave transaction signatures to ensure data authenticity and ownership. This strategy provides cryptographic proof that the data was created by the claimed wallet address and hasn't been tampered with since signing.Important Verification methods require that the gateway being used has the relevant
-transaction data indexed locally. Gateways cannot proxy out verification
-requests to other sources, as this would compromise the security and
-reliability of the verification process. If a gateway doesn't have the
-required data indexed, verification will fail.How It Works Fetch Metadata: Retrieve transaction metadata from trusted gateways Reconstruct Signature Data: Build the signature data using the received content Verify Signature: Validate the signature matches the claimed owner's public key Check Ownership: Confirm the transaction was signed by the claimed wallet Result: Pass or fail based on signature validation Configuration Basic Usage Advanced Configuration Parameters ← Swipe to see more → Parameter Type Default Description trustedGateways URL[] Required Array of trusted gateway URLs for transaction metadata maxConcurrency number 1 Maximum number of concurrent requests to gateways logger Logger defaultLogger Custom logger instance for debugging classifier DataClassifier GqlClassifier Data classifier to determine transaction type (ANS-104 vs regular) ← Swipe to see more → Integration Examples With Wayfinder With Event Monitoring Standalone Usage Data Types Supported The SignatureVerificationStrategy automatically handles two types of Arweave data:ANS-104 Data Items Bundled transactions (data items within bundles) Uses ANS-104 signature verification Supports nested data items Regular Transactions Standard Arweave transactions Uses traditional Arweave signature verification Direct transaction signatures The strategy automatically classifies the transaction type and applies the appropriate verification method.Use Cases Content Authentication Verify that content was created by a specific wallet:Document Integrity Verify legal or important documents:Development vs Production Best Practices Use Multiple Trusted Gateways: Increases reliability for transaction metadata Set Appropriate Concurrency: Balance between performance and gateway load Monitor Verification Events: Track success rates and failure reasons Handle Network Failures: Implement proper error handling for gateway requests Validate Transaction Format: Ensure transaction metadata is well-formed Use Reputable Gateways: Choose gateways with reliable transaction indexing Comparison with Other Strategies The SignatureVerificationStrategy is ideal when you need to verify not just data integrity, but also the authenticity and ownership of the content. It provides cryptographic proof that the content was actually signed by the claimed wallet address.
-
----
-
-# 115. ARIO Docs
-
-Document Number: 115
+Document Number: 110
 Source: https://docs.ar.io/ar-io-sdk/ants/set-logo
 Words: 33
 Quality Score: 0.400
@@ -4072,9 +2711,9 @@ setLogo setLogo is a method on the ANT class that updates the logo of the ANT pr
 
 ---
 
-# 116. ANTs on Bazar - ARIO Docs
+# 111. ANTs on Bazar - ARIO Docs
 
-Document Number: 116
+Document Number: 111
 Source: https://docs.ar.io/guides/ants-on-bazar
 Words: 526
 Quality Score: 0.399
@@ -4085,9 +2724,9 @@ Trading ANTs on Bazar Overview Arweave Name Tokens are Atomic Asset Spec complia
 
 ---
 
-# 117. ANTs on Bazar - ARIO Docs
+# 112. ANTs on Bazar - ARIO Docs
 
-Document Number: 117
+Document Number: 112
 Source: https://docs.ar.io/learn/guides/ants-on-bazar
 Words: 526
 Quality Score: 0.399
@@ -4098,9 +2737,9 @@ Trading ANTs on Bazar Overview Arweave Name Tokens are Atomic Asset Spec complia
 
 ---
 
-# 118. cancelWithdrawal - ARIO Docs
+# 113. cancelWithdrawal - ARIO Docs
 
-Document Number: 118
+Document Number: 113
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal
 Words: 82
 Quality Score: 0.397
@@ -4111,9 +2750,9 @@ cancelWithdrawal is a method on the ARIO class that cancels a pending withdrawal
 
 ---
 
-# 119. ARIO Docs
+# 114. ARIO Docs
 
-Document Number: 119
+Document Number: 114
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake
 Words: 21
 Quality Score: 0.397
@@ -4124,9 +2763,9 @@ increaseDelegateStake increaseDelegateStake is a method on the ARIO class that i
 
 ---
 
-# 120. ARIO Docs
+# 115. ARIO Docs
 
-Document Number: 120
+Document Number: 115
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake
 Words: 21
 Quality Score: 0.397
@@ -4137,9 +2776,9 @@ decreaseDelegateStake decreaseDelegateStake is a method on the ARIO class that d
 
 ---
 
-# 121. getArNSRecords - ARIO Docs
+# 116. getArNSRecords - ARIO Docs
 
-Document Number: 121
+Document Number: 116
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-records
 Words: 92
 Quality Score: 0.395
@@ -4150,9 +2789,9 @@ getArNSRecords is a method on the ARIO class that retrieves all ArNS records wit
 
 ---
 
-# 122. ARIO Docs
+# 117. ARIO Docs
 
-Document Number: 122
+Document Number: 117
 Source: https://docs.ar.io/ar-io-sdk/ants/set-name
 Words: 20
 Quality Score: 0.394
@@ -4163,9 +2802,9 @@ setName setName is a method on the ANT class that updates the dis name of the AN
 
 ---
 
-# 123. ARIO Docs
+# 118. ARIO Docs
 
-Document Number: 123
+Document Number: 118
 Source: https://docs.ar.io/ar-io-sdk/ants/set-ticker
 Words: 20
 Quality Score: 0.394
@@ -4176,9 +2815,9 @@ setTicker setTicker is a method on the ANT class that updates the ticker symbol 
 
 ---
 
-# 124. ARIO Docs
+# 119. ARIO Docs
 
-Document Number: 124
+Document Number: 119
 Source: https://docs.ar.io/ar-io-sdk/ants/set-description
 Words: 20
 Quality Score: 0.394
@@ -4189,9 +2828,9 @@ setDescription setDescription is a method on the ANT class that updates the desc
 
 ---
 
-# 125. getHandlers - ARIO Docs
+# 120. getHandlers - ARIO Docs
 
-Document Number: 125
+Document Number: 120
 Source: https://docs.ar.io/ar-io-sdk/ants/get-handlers
 Words: 28
 Quality Score: 0.390
@@ -4202,9 +2841,26 @@ getHandlers is a method on the ANT class that retrieves the handlers supported b
 
 ---
 
-# 126. Gateway Apex Domain Content Resolution - ARIO Docs
+# 121. Verification Strategies - ARIO Docs
 
-Document Number: 126
+Document Number: 121
+Source: https://docs.ar.io/wayfinder/core/verification-strategies
+Words: 158
+Quality Score: 0.386
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Overview Verification strategies in Wayfinder ensure data integrity and authenticity when fetching content from Arweave through AR.IO gateways. These strategies use cryptographic methods to verify that the data you receive matches what was originally stored on Arweave, protecting against tampering, corruption, or malicious gateways.Why Verification Matters Data Integrity: Ensures content hasn't been corrupted during transmission Security: Protects against malicious gateways serving fake data Trust: Provides cryptographic proof that data is authentic Compliance: Meets security requirements for sensitive applications Strategy Comparison Important Verification methods require that the gateway being used has the relevant
+transaction data indexed locally. Gateways cannot proxy out verification
+requests to other sources, as this would compromise the security and
+reliability of the verification process. If a gateway doesn't have the
+required data indexed, verification will fail.Related Hash Verification: Learn about fast integrity checking Signature Verification: Understand authenticity validation Data Root Verification: Explore maximum security verification Wayfinder Core: See how to configure verification in your application
+
+---
+
+# 122. Gateway Apex Domain Content Resolution - ARIO Docs
+
+Document Number: 122
 Source: https://docs.ar.io/gateways/apex
 Words: 355
 Quality Score: 0.374
@@ -4215,9 +2871,9 @@ Overview Prior to gateway Release 28, the apex domain of a gateway would only di
 
 ---
 
-# 127. buyRecord - ARIO Docs
+# 123. buyRecord - ARIO Docs
 
-Document Number: 127
+Document Number: 123
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/buy-record
 Words: 111
 Quality Score: 0.370
@@ -4228,9 +2884,35 @@ buyRecord is a method on the ARIO class that purchases a record in the ArNS regi
 
 ---
 
-# 128. ARIO Network Composition - ARIO Docs
+# 124. StaticRoutingStrategy - ARIO Docs
 
-Document Number: 128
+Document Number: 124
+Source: https://docs.ar.io/wayfinder/core/routing-strategies/static
+Words: 110
+Quality Score: 0.368
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Overview The StaticRoutingStrategy is the simplest routing strategy that always returns a single, pre-configured gateway URL. This strategy ignores any gateways provided by the GatewaysProvider and is useful for scenarios where you want to force all requests to use a specific gateway.How It Works The strategy always returns the configured gateway, ignoring any provided gateway lists:Configure Gateway: Set a single gateway URL during initialization Ignore Provided Gateways: Any gateways from providers are ignored Return Static Gateway: Always return the same configured gateway Log Warnings: Warn when provided gateways are ignored Configuration Basic Usage With Custom Gateway Parameters Related FastestPingRoutingStrategy: Network-based gateway discovery PreferredWithFallbackRoutingStrategy: Static gateway configuration RandomRoutingStrategy: Randomized gateway selection
+
+---
+
+# 125. Hash Verification Strategy - ARIO Docs
+
+Document Number: 125
+Source: https://docs.ar.io/wayfinder/core/verification-strategies/hash-verification
+Words: 97
+Quality Score: 0.367
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+HashVerificationStrategy Overview The HashVerificationStrategy verifies data integrity by comparing SHA-256 hashes of fetched data against trusted gateway digest headers. This strategy provides fast, cryptographically secure verification for high-throughput applications.How It Works Fetch Data: Retrieve content from the selected gateway Request Digest: Get the digest from trusted gateways via HTTP headers using HEAD/GET requests from a trusted gatweay Compute Hash: Calculate the SHA-256 hash of the received data Compare: Verify that both hashes match exactly Result: Pass or fail based on hash comparison Basic Usage Related Signature Verification: Understand authenticity validation Data Root Verification: Explore maximum security verification
+
+---
+
+# 126. ARIO Network Composition - ARIO Docs
+
+Document Number: 126
 Source: https://docs.ar.io/network-composition
 Words: 265
 Quality Score: 0.360
@@ -4246,9 +2928,22 @@ Each layer strengthens the others, creating a resilient foundation for the perma
 
 ---
 
-# 129. Quick Start Guides - ARIO Docs
+# 127. ARIO Docs
 
-Document Number: 129
+Document Number: 127
+Source: https://docs.ar.io/wayfinder/core/routing-strategies/random
+Words: 102
+Quality Score: 0.355
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+RandomRoutingStrategy Overview The RandomRoutingStrategy selects gateways randomly from the available pool. This strategy provides simple load distribution without maintaining state or performing complex calculations, making it ideal for scenarios where unpredictability is desired or where simplicity is paramount.How It Works Receive Gateway List: Accept the list of available gateways Generate Random Index: Create a random number within the gateway list range Select Gateway: Choose the gateway at the random index Apply Filters: Optionally filter out unhealthy or blocked gateways Return Selection: Return the randomly selected gateway Basic Usage Parameters Related FastestPingRoutingStrategy: Network-based gateway discovery PreferredWithFallbackRoutingStrategy: Static gateway configuration RandomRoutingStrategy: Randomized gateway selection
+
+---
+
+# 128. Quick Start Guides - ARIO Docs
+
+Document Number: 128
 Source: https://docs.ar.io/guides
 Words: 104
 Quality Score: 0.352
@@ -4260,22 +2955,9 @@ Deploy a dApp with ArlinkEasily deploy a web app with ArNS using Arlinkmake your
 
 ---
 
-# 130. ARIO Docs
+# 129. ARIO Smart Contract - ARIO Docs
 
-Document Number: 130
-Source: https://docs.ar.io/wayfinder/routing-strategies/round-robin
-Words: 205
-Quality Score: 0.350
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-RoundRobinRoutingStrategy Overview The RoundRobinRoutingStrategy distributes requests evenly across all available gateways in a cyclical manner. Each gateway is selected in turn, ensuring fair load distribution and preventing any single gateway from being overwhelmed.Routing Strategy Comparison How It Works Initialize Gateway List: Start with an ordered list of available gateways Track Current Position: Maintain a pointer to the current gateway in the rotation Select Next Gateway: Choose the next gateway in the sequence Cycle Through List: Return to the first gateway after reaching the end Handle Failures: Skip failed gateways and continue rotation Configuration Basic Usage With Weighted Rotation Parameters Integration with Wayfinder Use Cases Even Load Distribution Perfect for distributing load evenly across multiple known gateways.Capacity-Based Distribution Ideal for gateways with different capacities using weighted rotation.Predictable Testing Useful for testing scenarios where you need predictable gateway selection.Best Practices Define Gateway Order: Carefully consider the order of gateways in your list Use Weighted Rotation: Apply weights when gateways have different capacities Monitor Distribution: Track requests to ensure even distribution Consider Shuffling: Use shuffleOnStart to avoid predictable patterns Plan for Failures: Combine with health checking for production use The RoundRobinRoutingStrategy is ideal for applications that need predictable, even distribution of requests across a known set of gateways.
-
----
-
-# 131. ARIO Smart Contract - ARIO Docs
-
-Document Number: 131
+Document Number: 129
 Source: https://docs.ar.io/ario-contract
 Words: 300
 Quality Score: 0.347
@@ -4291,43 +2973,52 @@ Should a user or organization desire, tokens can even be sent directly into this
 
 ---
 
-# 132. ARIO Docs
+# 130. ARIO Docs
 
-Document Number: 132
-Source: https://docs.ar.io/wayfinder/routing-strategies/fastest-ping
-Words: 224
-Quality Score: 0.341
+Document Number: 130
+Source: https://docs.ar.io/wayfinder/core/routing-strategies/fastest-ping
+Words: 105
+Quality Score: 0.347
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-FastestPingRoutingStrategy Overview The FastestPingRoutingStrategy selects the gateway with the lowest latency by performing HEAD requests to all available gateways and choosing the one that responds fastest. This strategy optimizes for performance by dynamically selecting the most responsive gateway for each request.Routing Strategy Comparison How It Works Ping All Gateways: Send HEAD requests to all available gateways Measure Response Times: Record the time taken for each gateway to respond Select Fastest: Choose the gateway with the lowest response time Cache Results: Optionally cache ping results for a specified duration Fallback: If all pings fail, fall back to the first available gateway Configuration Basic Usage With Caching Parameters Integration with Wayfinder Use Cases Performance-Critical Applications Perfect for applications where response time is crucial and you want the fastest possible data access.Gaming and Real-Time Apps Ideal for gaming applications or real-time data feeds where latency matters most.Load Testing and Benchmarking Useful for testing gateway performance and identifying the fastest gateways in your region.Best Practices Set Appropriate Timeouts: Balance between speed and reliability Use Caching: Cache ping results to avoid repeated measurements Monitor Performance: Track which gateways perform best over time Consider Network Conditions: Results may vary based on user location and network Combine with Fallback: Use with other strategies for high availability The FastestPingRoutingStrategy is ideal for applications where performance and low latency are the primary concerns.
+FastestPingRoutingStrategy Overview The FastestPingRoutingStrategy selects the gateway with the lowest latency by performing HEAD requests to all available gateways and choosing the one that responds fastest. This strategy optimizes for performance by dynamically selecting the most responsive gateway for each request.How It Works Ping All Gateways: Send HEAD requests to all available gateways for the provided path and subdomain Measure Response Times: Records the time taken for each gateway to respond Select Fastest: Choose the gateway with the lowest response time Basic Usage Parameters Related PreferredWithFallbackRoutingStrategy: Static gateway configuration RoundRobinRoutingStrategy: Even distribution across gateways RandomRoutingStrategy: Randomized gateway selection StaticRoutingStrategy: Always use a single, fixed gateway
+
+---
+
+# 131. ARIO Docs
+
+Document Number: 131
+Source: https://docs.ar.io/wayfinder/core/routing-strategies/round-robin
+Words: 116
+Quality Score: 0.338
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+RoundRobinRoutingStrategy Overview The RoundRobinRoutingStrategy distributes requests evenly across all available gateways in a cyclical manner. Each gateway is selected in turn, ensuring fair load distribution and preventing any single gateway from being overwhelmed.How It Works Initialize Gateway List: Start with an ordered list of available gateways Track Current Position: Maintain a pointer to the current gateway in the rotation Select Next Gateway: Choose the next gateway in the sequence Cycle Through List: Return to the first gateway after reaching the end Handle Failures: Skip failed gateways and continue rotation Configuration Basic Usage With Weighted Rotation Parameters Related FastestPingRoutingStrategy: Network-based gateway discovery PreferredWithFallbackRoutingStrategy: Static gateway configuration RandomRoutingStrategy: Randomized gateway selection StaticRoutingStrategy: Always use a single, fixed gateway
+
+---
+
+# 132. ARIO Docs
+
+Document Number: 132
+Source: https://docs.ar.io/wayfinder/core/routing-strategies/preferred-with-fallback
+Words: 117
+Quality Score: 0.337
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+PreferredWithFallbackRoutingStrategy Overview The PreferredWithFallbackRoutingStrategy attempts to use a designated preferred gateway first, and only falls back to an alternative routing strategy if the preferred gateway fails or is unavailable. This strategy is ideal for applications with dedicated infrastructure or specific gateway requirements.How It Works Health Check: Performs a HEAD request to the preferred gateway with a 1000ms timeout Success: If the preferred gateway responds with a successful status, it's used Failure: If the preferred gateway fails or times out, the fallback strategy is used Logging: All attempts and failures are logged for monitoring Basic Usage Parameters Related FastestPingRoutingStrategy: Network-based gateway discovery RoundRobinRoutingStrategy: Even distribution across gateways RandomRoutingStrategy: Randomized gateway selection StaticRoutingStrategy: Always use a single, fixed gateway
 
 ---
 
 # 133. Routing Strategies - ARIO Docs
 
 Document Number: 133
-Source: https://docs.ar.io/wayfinder/routing-strategies
-Words: 287
-Quality Score: 0.333
+Source: https://docs.ar.io/wayfinder/core/routing-strategies
+Words: 52
+Quality Score: 0.309
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Routing strategies determine how Wayfinder selects which AR.IO gateway to use for each request. Different strategies optimize for different goals like performance, reliability, or load distribution.Strategy Comparison Available Strategies FastestPingRoutingStrategy Selects the gateway with the lowest latency based on HEAD request ping times. Performs health checks on all available gateways and chooses the fastest responding one.Best for: Real-time applications, interactive user experiences, gaming Trade-offs: Higher initial latency due to ping tests, network overhead PreferredWithFallbackRoutingStrategy Tries a preferred gateway first, falls back to another strategy if it fails. Ideal for applications with dedicated infrastructure that need reliable fallback options.Best for: Applications with dedicated gateway infrastructure, CDN setups, enterprise environments Trade-offs: Potential single point of failure if preferred gateway is down RoundRobinRoutingStrategy Distributes requests evenly across all available gateways in a cyclical manner. Ensures fair load distribution and prevents gateway overload.Best for: Load balancing, even gateway utilization, high-traffic applications Trade-offs: May route to slow gateways, doesn't optimize for performance RandomRoutingStrategy Randomly selects a gateway from the available options. Provides simple load distribution without maintaining state or complex calculations.Best for: Simple load distribution, avoiding patterns, testing environments Trade-offs: No optimization for performance or reliability, unpredictable behavior StaticRoutingStrategy Always returns the same configured gateway, ignoring provided gateway lists. Useful for development, testing, or when you need to force all requests through a specific gateway.Best for: Development, testing, compliance requirements, dedicated gateway setups Trade-offs: Single point of failure, no load distribution or optimization SimpleCacheRoutingStrategy Wraps another routing strategy and caches its results for improved performance. Reduces overhead from expensive operations like network pings.Best for: Wrapping expensive strategies, high-traffic applications, performance optimization Trade-offs: May serve stale gateway selections, adds complexity Custom Strategies You can implement custom routing strategies by implementing the RoutingStrategy interface:
-
----
-
-# 134. Verification Strategies - ARIO Docs
-
-Document Number: 134
-Source: https://docs.ar.io/wayfinder/verification-strategies
-Words: 733
-Quality Score: 0.287
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview Verification strategies in Wayfinder ensure data integrity and authenticity when fetching content from Arweave through AR.IO gateways. These strategies use cryptographic methods to verify that the data you receive matches what was originally stored on Arweave, protecting against tampering, corruption, or malicious gateways.Important Verification methods require that the gateway being used has
-the relevant transaction data indexed locally. Gateways cannot proxy out
-verification requests to other sources, as this would compromise the security
-and reliability of the verification process. If a gateway doesn't have the
-required data indexed, verification will fail.Strategy Comparison What Are Verification Strategies?Verification strategies are cryptographic methods that ensure the data you receive from AR.IO gateways is authentic and hasn't been tampered with. They work by comparing the received data against trusted sources or using mathematical proofs to validate integrity.Why Verification Matters Data Integrity: Ensures content hasn't been corrupted during transmission Security: Protects against malicious gateways serving fake data Trust: Provides cryptographic proof that data is authentic Compliance: Meets security requirements for sensitive applications Available Strategies Hash Verification Strategy What it does: Compares SHA-256 hashes of received data against trusted gateway digest headers How it works: Fetches the data from a gateway, computes its SHA-256 hash, then requests the digest from trusted gateways via HTTP headers and compares them Best for:Development and testing environments High-throughput applications where speed matters Basic integrity checking Applications with trusted gateway infrastructure Security: High - Uses cryptographic hashing to detect tampering Signature Verification Strategy What it does: Validates the cryptographic signatures of Arweave transactions and data items How it works: Fetches transaction metadata from trusted gateways, reconstructs the signature data using the received content, and verifies the signature matches the claimed owner's public key Best for:Financial applications Legal document storage Identity verification systems Applications requiring proof of ownership Security: Very High - Provides cryptographic proof of authenticity and ownership Data Root Verification Strategy What it does: Verifies data integrity by reconstructing and comparing Merkle tree data roots How it works: Computes the data root from received content by chunking it and building a Merkle tree, then compares this against the data root fetched from trusted gateways Best for:Production applications with critical data Maximum security requirements Regulatory compliance scenarios Long-term data archival systems Security: Highest - Provides mathematical proof of data integrity using blockchain records Configuration Options Verification Modes Strict Mode: Blocks requests when verification fails - ensures maximum security but may impact availability Non-Strict Mode: Logs verification failures but allows requests to proceed - balances security with user experience Event Monitoring All verification strategies emit events that allow you to:Track verification success and failure rates Monitor performance metrics Log security incidents Implement custom alerting Trusted Gateways Verification strategies can be configured with lists of trusted gateways used as reference sources for validation.Advanced Capabilities Strategy Combination Sequential Verification: Run multiple strategies one after another for layered security Parallel Verification: Run multiple strategies simultaneously for comprehensive validation Fallback Verification: Try strategies in order until one succeeds, providing resilience Custom Strategies Implement your own verification logic by creating custom strategies that integrate with Wayfinder's verification system.Performance Optimization Caching: Cache verification results to avoid repeated computations Circuit Breakers: Automatically disable verification when failure rates are too high Timeout Management: Configure appropriate timeouts for different verification methods Use Cases by Environment Development Use Hash Verification for fast iteration Enable non-strict mode to avoid blocking Focus on basic integrity checking Production Use Data Root Verification for maximum security Enable strict mode for critical applications Implement comprehensive monitoring High-Security Combine multiple verification strategies Use strict mode with comprehensive logging Implement custom verification logic for specific requirements High-Performance Use Hash Verification with caching Implement circuit breakers for resilience Balance security with performance requirements Best Practices Choose the Right Strategy: Match verification strength to your security requirements Monitor Performance: Track verification success rates and response times Handle Failures Gracefully: Implement appropriate fallback behavior Use Trusted Sources: Configure reliable gateways for verification Plan for Scale: Consider performance implications at high request s Verification strategies can fail for various reasons:Network Issues: Trusted gateways are unreachable Data Corruption: Content has been tampered with Timeout Errors: Verification takes too long Configuration Issues: Invalid trusted gateway lists Understanding these failure modes helps you implement appropriate error handling and recovery strategies.Hash Verification: Learn about fast integrity checking Signature Verification: Understand authenticity validation Data Root Verification: Explore maximum security verification Wayfinder Core: See how to configure verification in your application
+Routing strategies determine how Wayfinder selects which AR.IO gateway to use for each request. Different strategies optimize for different goals like performance, reliability, or load distribution.Strategy Comparison Related FastestPingRoutingStrategy: Network-based gateway discovery PreferredWithFallbackRoutingStrategy: Static gateway configuration RoundRobinRoutingStrategy: Even distribution across gateways RandomRoutingStrategy: Randomized gateway selection StaticRoutingStrategy: Always use a single, fixed gateway
