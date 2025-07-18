@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-17T12:15:04.480Z
+Generated on: 2025-07-18T12:15:19.849Z
 Total documents: 65
-Total words: 21387
+Total words: 21374
 
 ## Table of Contents
 
@@ -55,10 +55,10 @@ Total words: 21387
 45. [Bundling Services](https://cookbook.arweave.net/concepts/bundlers.html)
 46. [Contributing Workflow](https://cookbook.arweave.net/getting-started/contributing.html)
 47. [Creating and Deploying Manifests](https://cookbook.arweave.net/guides/deploying-manifests/deployingManifests.html)
-48. [Permaweb Cookbook - Core Concepts](https://cookbook.arweave.net/concepts/index.html)
-49. [Permaweb Cookbook - Guides](https://cookbook.arweave.net/guides/index.html)
-50. [Ardrive](https://cookbook.arweave.net/guides/deploying-manifests/ardrive.html)
-51. [Posting a Transaction using Dispatch](https://cookbook.arweave.net/guides/posting-transactions/dispatch.html)
+48. [Permaweb Cookbook - Guides](https://cookbook.arweave.net/guides/index.html)
+49. [Ardrive](https://cookbook.arweave.net/guides/deploying-manifests/ardrive.html)
+50. [Posting a Transaction using Dispatch](https://cookbook.arweave.net/guides/posting-transactions/dispatch.html)
+51. [Permaweb Cookbook - Core Concepts](https://cookbook.arweave.net/concepts/index.html)
 52. [Content Types](https://cookbook.arweave.net/concepts/arfs/content-types.html)
 53. [Hello World (No Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html)
 54. [Transaction Types](https://cookbook.arweave.net/concepts/transaction-types.html)
@@ -1580,22 +1580,9 @@ Creating and Deploying Manifests This guide lays out how to create and deploy a 
 
 ---
 
-# 48. Permaweb Cookbook - Core Concepts  Cooking with the Permaweb
+# 48. Permaweb Cookbook - Guides  Cooking with the Permaweb
 
 Document Number: 48
-Source: https://cookbook.arweave.net/concepts/index.html
-Words: 74
-Quality Score: 0.436
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Core Concepts Foundations of Arweave and the Permaweb.Posting Transactions Metadata (Tags) Querying Fetching Data Transaction Types Bundles Path Manifests Wallets and Keys Permaweb Permaweb Applications Gateway Services Bundling Services Arweave File System (ArFS) Data model Entity Types Content Types Privacy Schema Diagrams Do you think a permaweb core concept is missing? Create a issue at Github open in new window or consider contributing Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 49. Permaweb Cookbook - Guides  Cooking with the Permaweb
-
-Document Number: 49
 Source: https://cookbook.arweave.net/guides/index.html
 Words: 59
 Quality Score: 0.436
@@ -1606,9 +1593,9 @@ Guides Snack-sized guides for the building blocks of the Permaweb DNS Integratio
 
 ---
 
-# 50. Cooking with the Permaweb
+# 49. Cooking with the Permaweb
 
-Document Number: 50
+Document Number: 49
 Source: https://cookbook.arweave.net/guides/deploying-manifests/ardrive.html
 Words: 69
 Quality Score: 0.431
@@ -1619,9 +1606,9 @@ ArDrive You can create a manifest for a folder or group of folders with ardrive 
 
 ---
 
-# 51. Posting a Transaction using Dispatch  Cooking with the Permaweb
+# 50. Posting a Transaction using Dispatch  Cooking with the Permaweb
 
-Document Number: 51
+Document Number: 50
 Source: https://cookbook.arweave.net/guides/posting-transactions/dispatch.html
 Words: 151
 Quality Score: 0.428
@@ -1639,6 +1626,19 @@ tx.addTag('Type', 'post')
 let result = await window.arweaveWallet.dispatch(tx);
 // log out the transactino id
 console.log(result.id);Resources For an overview of all the ways you can post transactions, see the Posting Transactions section of the cookbook.Built with ❤️ by the Arweave community. Learn more at Arweave.org
+
+---
+
+# 51. Permaweb Cookbook - Core Concepts  Cooking with the Permaweb
+
+Document Number: 51
+Source: https://cookbook.arweave.net/concepts/index.html
+Words: 61
+Quality Score: 0.421
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Core Concepts Foundations of Arweave and the Permaweb.Posting Transactions Metadata (Tags) Querying Fetching Data Transaction Types Bundles Path Manifests Wallets and Keys Permaweb Permaweb Applications Gateway Services Bundling Services Do you think a permaweb core concept is missing? Create a issue at Github open in new window or consider contributing Built with ❤️ by the Arweave community. Learn more at Arweave.org
 
 ---
 
