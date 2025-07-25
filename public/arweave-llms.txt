@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-24T12:15:47.554Z
-Total documents: 65
-Total words: 21374
+Generated on: 2025-07-25T12:14:41.396Z
+Total documents: 56
+Total words: 17661
 
 ## Table of Contents
 
@@ -12,67 +12,58 @@ Total words: 21374
 2. [SvelteVite Starter Kit](https://cookbook.arweave.net/kits/svelte/vite.html)
 3. [Hello World (CLI)](https://cookbook.arweave.net/getting-started/quick-starts/hw-cli.html)
 4. [Minimal Svelte Starter Kit](https://cookbook.arweave.net/kits/svelte/minimal.html)
-5. [SmartWeave](https://cookbook.arweave.net/concepts/smartweave.html)
-6. [Data Model](https://cookbook.arweave.net/concepts/arfs/data-model.html)
-7. [React Starter Kit wvite ArDrive](https://cookbook.arweave.net/kits/react/turbo.html)
-8. [Atomic Tokens](https://cookbook.arweave.net/guides/atomic-tokens/intro.html)
-9. [Querying Transactions](https://cookbook.arweave.net/concepts/queryTransactions.html)
-10. [Overview](https://cookbook.arweave.net/concepts/psts.html)
-11. [Warp (SmartWeave) SDK - Deploying Contracts](https://cookbook.arweave.net/guides/smartweave/warp/deploying-contracts.html)
-12. [Warp (SmartWeave) SDK Intro](https://cookbook.arweave.net/guides/smartweave/warp/intro.html)
-13. [Arseeding Js](https://cookbook.arweave.net/guides/deploying-manifests/arseeding-js.html)
-14. [Create React App Starter Kit](https://cookbook.arweave.net/kits/react/create-react-app.html)
-15. [Create Vue Starter Kit](https://cookbook.arweave.net/kits/vue/create-vue.html)
-16. [Warp (SmartWeave) SDK - ReadState](https://cookbook.arweave.net/guides/smartweave/warp/readstate.html)
-17. [Posting Transactions](https://cookbook.arweave.net/concepts/post-transactions.html)
-18. [ar-gql](https://cookbook.arweave.net/guides/querying-arweave/ar-gql.html)
-19. [Svelte Starter Kits](https://cookbook.arweave.net/kits/svelte/index.html)
-20. [ServerSide DNS Integration](https://cookbook.arweave.net/guides/dns-integration/server-side.html)
-21. [Transaction Metadata (Tags)](https://cookbook.arweave.net/concepts/tags.html)
-22. [Vue Starter Kits](https://cookbook.arweave.net/kits/vue/index.html)
-23. [Posting Transactions using arseedingjs](https://cookbook.arweave.net/guides/posting-transactions/arseeding-js.html)
-24. [Querying Arweave with GraphQL](https://cookbook.arweave.net/guides/querying-arweave/queryingArweave.html)
-25. [Wallets and Keys](https://cookbook.arweave.net/concepts/keyfiles-and-wallets.html)
-26. [React Starter Kits](https://cookbook.arweave.net/kits/react/index.html)
-27. [Posting Transactions using arweave-js](https://cookbook.arweave.net/guides/posting-transactions/arweave-js.html)
-28. [arkb](https://cookbook.arweave.net/guides/deployment/arkb.html)
-29. [Entity Types](https://cookbook.arweave.net/concepts/arfs/entity-types.html)
-30. [Posting Transactions using Ardrive Turbo](https://cookbook.arweave.net/guides/posting-transactions/turbo.html)
-31. [Warp WriteInteractions](https://cookbook.arweave.net/guides/smartweave/warp/write-interactions.html)
-32. [Cooking with the Permaweb](https://cookbook.arweave.net/index.html)
-33. [Permaweb Applications](https://cookbook.arweave.net/concepts/permawebApplications.html)
-34. [Fetching Transaction Data](https://cookbook.arweave.net/guides/http-api.html)
-35. [Cooking with the Permaweb](https://cookbook.arweave.net/getting-started/index.html)
-36. [Vouch](https://cookbook.arweave.net/guides/vouch.html)
-37. [ArNS - Arweave Name System](https://cookbook.arweave.net/concepts/arns.html)
-38. [Privacy](https://cookbook.arweave.net/concepts/arfs/privacy.html)
-39. [Developing on the Permaweb](https://cookbook.arweave.net/getting-started/welcome.html)
-40. [Vouch](https://cookbook.arweave.net/concepts/vouch.html)
-41. [Gateways](https://cookbook.arweave.net/concepts/gateways.html)
-42. [Path Manifests](https://cookbook.arweave.net/concepts/manifests.html)
-43. [Welcome to the Permaweb](https://cookbook.arweave.net/concepts/permaweb.html)
-44. [ArFS Protocol A Decentralized File System on Arweave](https://cookbook.arweave.net/concepts/arfs/arfs.html)
-45. [Bundling Services](https://cookbook.arweave.net/concepts/bundlers.html)
-46. [Contributing Workflow](https://cookbook.arweave.net/getting-started/contributing.html)
-47. [Creating and Deploying Manifests](https://cookbook.arweave.net/guides/deploying-manifests/deployingManifests.html)
-48. [Permaweb Cookbook - Guides](https://cookbook.arweave.net/guides/index.html)
-49. [Ardrive](https://cookbook.arweave.net/guides/deploying-manifests/ardrive.html)
-50. [Posting a Transaction using Dispatch](https://cookbook.arweave.net/guides/posting-transactions/dispatch.html)
-51. [Permaweb Cookbook - Core Concepts](https://cookbook.arweave.net/concepts/index.html)
-52. [Content Types](https://cookbook.arweave.net/concepts/arfs/content-types.html)
-53. [Hello World (No Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html)
-54. [Transaction Types](https://cookbook.arweave.net/concepts/transaction-types.html)
-55. [Schema Diagrams](https://cookbook.arweave.net/concepts/arfs/schema-diagrams.html)
-56. [Permaweb Cookbook - References](https://cookbook.arweave.net/references/index.html)
-57. [LLMstxt](https://cookbook.arweave.net/references/llms.html)
-58. [Warp (SmartWeave) SDK - Evolve](https://cookbook.arweave.net/guides/smartweave/warp/evolve.html)
-59. [Transaction Bundles](https://cookbook.arweave.net/concepts/bundles.html)
-60. [Glossary](https://cookbook.arweave.net/references/glossary.html)
-61. [Search Indexing Service](https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html)
-62. [Arweave App](https://cookbook.arweave.net/guides/deploying-manifests/arweave-app.html)
-63. [Permaweb Cookbook - Legacy](https://cookbook.arweave.net/legacy/index.html)
-64. [Starter Kits](https://cookbook.arweave.net/kits/index.html)
-65. [Permaweb Cookbook - Community](https://cookbook.arweave.net/community/index.html)
+5. [Data Model](https://cookbook.arweave.net/concepts/arfs/data-model.html)
+6. [React Starter Kit wvite ArDrive](https://cookbook.arweave.net/kits/react/turbo.html)
+7. [Querying Transactions](https://cookbook.arweave.net/concepts/queryTransactions.html)
+8. [Arseeding Js](https://cookbook.arweave.net/guides/deploying-manifests/arseeding-js.html)
+9. [Create React App Starter Kit](https://cookbook.arweave.net/kits/react/create-react-app.html)
+10. [Create Vue Starter Kit](https://cookbook.arweave.net/kits/vue/create-vue.html)
+11. [Posting Transactions](https://cookbook.arweave.net/concepts/post-transactions.html)
+12. [ar-gql](https://cookbook.arweave.net/guides/querying-arweave/ar-gql.html)
+13. [Svelte Starter Kits](https://cookbook.arweave.net/kits/svelte/index.html)
+14. [ServerSide DNS Integration](https://cookbook.arweave.net/guides/dns-integration/server-side.html)
+15. [Transaction Metadata (Tags)](https://cookbook.arweave.net/concepts/tags.html)
+16. [Vue Starter Kits](https://cookbook.arweave.net/kits/vue/index.html)
+17. [Posting Transactions using arseedingjs](https://cookbook.arweave.net/guides/posting-transactions/arseeding-js.html)
+18. [Querying Arweave with GraphQL](https://cookbook.arweave.net/guides/querying-arweave/queryingArweave.html)
+19. [Wallets and Keys](https://cookbook.arweave.net/concepts/keyfiles-and-wallets.html)
+20. [React Starter Kits](https://cookbook.arweave.net/kits/react/index.html)
+21. [Posting Transactions using arweave-js](https://cookbook.arweave.net/guides/posting-transactions/arweave-js.html)
+22. [arkb](https://cookbook.arweave.net/guides/deployment/arkb.html)
+23. [Entity Types](https://cookbook.arweave.net/concepts/arfs/entity-types.html)
+24. [Posting Transactions using Ardrive Turbo](https://cookbook.arweave.net/guides/posting-transactions/turbo.html)
+25. [Cooking with the Permaweb](https://cookbook.arweave.net/index.html)
+26. [Permaweb Applications](https://cookbook.arweave.net/concepts/permawebApplications.html)
+27. [Fetching Transaction Data](https://cookbook.arweave.net/guides/http-api.html)
+28. [Cooking with the Permaweb](https://cookbook.arweave.net/getting-started/index.html)
+29. [Vouch](https://cookbook.arweave.net/guides/vouch.html)
+30. [ArNS - Arweave Name System](https://cookbook.arweave.net/concepts/arns.html)
+31. [Privacy](https://cookbook.arweave.net/concepts/arfs/privacy.html)
+32. [Developing on the Permaweb](https://cookbook.arweave.net/getting-started/welcome.html)
+33. [Vouch](https://cookbook.arweave.net/concepts/vouch.html)
+34. [Gateways](https://cookbook.arweave.net/concepts/gateways.html)
+35. [Path Manifests](https://cookbook.arweave.net/concepts/manifests.html)
+36. [Welcome to the Permaweb](https://cookbook.arweave.net/concepts/permaweb.html)
+37. [ArFS Protocol A Decentralized File System on Arweave](https://cookbook.arweave.net/concepts/arfs/arfs.html)
+38. [Bundling Services](https://cookbook.arweave.net/concepts/bundlers.html)
+39. [Contributing Workflow](https://cookbook.arweave.net/getting-started/contributing.html)
+40. [Creating and Deploying Manifests](https://cookbook.arweave.net/guides/deploying-manifests/deployingManifests.html)
+41. [Permaweb Cookbook - Guides](https://cookbook.arweave.net/guides/index.html)
+42. [Ardrive](https://cookbook.arweave.net/guides/deploying-manifests/ardrive.html)
+43. [Posting a Transaction using Dispatch](https://cookbook.arweave.net/guides/posting-transactions/dispatch.html)
+44. [Permaweb Cookbook - Core Concepts](https://cookbook.arweave.net/concepts/index.html)
+45. [Content Types](https://cookbook.arweave.net/concepts/arfs/content-types.html)
+46. [Hello World (No Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html)
+47. [Transaction Types](https://cookbook.arweave.net/concepts/transaction-types.html)
+48. [Schema Diagrams](https://cookbook.arweave.net/concepts/arfs/schema-diagrams.html)
+49. [Permaweb Cookbook - References](https://cookbook.arweave.net/references/index.html)
+50. [LLMstxt](https://cookbook.arweave.net/references/llms.html)
+51. [Transaction Bundles](https://cookbook.arweave.net/concepts/bundles.html)
+52. [Glossary](https://cookbook.arweave.net/references/glossary.html)
+53. [Search Indexing Service](https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html)
+54. [Arweave App](https://cookbook.arweave.net/guides/deploying-manifests/arweave-app.html)
+55. [Starter Kits](https://cookbook.arweave.net/kits/index.html)
+56. [Permaweb Cookbook - Community](https://cookbook.arweave.net/community/index.html)
 
 ---
 
@@ -266,64 +257,9 @@ base: './'
 
 ---
 
-# 5. SmartWeave  Cooking with the Permaweb
+# 5. Data Model  Cooking with the Permaweb
 
 Document Number: 5
-Source: https://cookbook.arweave.net/concepts/smartweave.html
-Words: 891
-Quality Score: 0.574
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-SmartWeave ⚠️ Deprecation Notice This document is deprecated and may contain outdated information.What is SmartWeave?SmartWeave is the name given to the dominant SmartContract paradigm on Arweave. A unique property of SmartWeave contracts is that the current state of the contract is provided by a process of "lazy evaluation". This means that instead of Arweave mining nodes constantly evaluating the current state of all contracts, a client reading a contract evaluates the state for themselves.Why is SmartWeave important?The state and logic of decentralized applications need to be as censorship-resistant, permanent, and verifiable as the rest of their data. SmartWeave enables developers to write smart contracts that encapsulate their apps state and logic on-chain and execute it in a trustless verifiable way. This is no small feat as the Arweave protocol does not include incentives for nodes to evaluate smart contract state for the network.SmartWeave provides an immutable append-only pattern for contract interactions that leverage permanent storage to hold onto their state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way. By using SmartWeave, developers can create smart contracts that are stored on Arweave and are guaranteed not to change over time. This allows them to build Permaweb applications with dynamic functionality that can be used in a permissionless and trustless manner.There are several reasons why developers might choose to use SmartWeave to implement the logic for their permaweb applications:Decentralized storage: SmartWeave is built on Arweave, which means that applications created using SmartWeave will be stored on a distributed network of nodes rather than on a centralized server. This can make them more resistant to censorship, tampering, and other forms of interference.Lazy evaluation: The lazy evaluation feature of SmartWeave contracts allows for efficient and scaleable execution. Instead of Arweave nodes constantly evaluating the state of a contract, the client reading the contract is responsible for evaluating the state, leveraging the users processing power instead of the networks nodes.Language support: SmartWeave supports a range of programming languages, including JavaScript, TypeScript, Rust, Go, AssemblyScript, and WASM (WebAssembly). This allows developers to use the language they are most familiar with when creating SmartWeave applications.Data durability: Arweave is designed to store data in a way that makes it highly durable and long-lasting. This can be useful for applications that need to store data over a long period of time, such as historical records or scientific data.Economic model: Arweave uses a unique economic model based on the concept of permanent storage that incentivizes miners to store data indefinitely. This can help ensure the long-term viability and durability of permaweb applications created using SmartWeave.How does SmartWeave Work?SmartWeave contracts, at their core, are built from an initial contract state, with edits, additions, and subtractions using transaction tags.SmartWeave SDK's such as Warp (previously RedStone), are used to query for these transactions to build contract state locally, modifying the contract state with each transaction. The Evaluator (Warp) uses tags to query for a contracts transactions; It knows a transaction is part of the contract by way of the App-Name tag, and the Contract tag.Here is an example of a contract interaction.The App-Name says its a Smartweave ACTION.The Contract tag gives the specific transaction ID of the initial contract state.The Input tag gives the contract its function to execute and any other data it needs:[
-{
-name:"App-Name"
-value:"SmartWeaveAction"
-},
-{
-name:"App-Version"
-value:"0.3.0"
-},
-{
-name:"Contract"
-value:"pyM5amizQRN2VlcVBVaC7QzlguUB0p3O3xx9JmbNW48"
-},
-{
-name:"Input"
-value:"{
-"function":"setRecord",
-"subDomain":"@",
-"transactionId":"lfaFgcoBT8auBrFJepLV1hyiUjtlKwVwn5MTjPnTDcs"
-}"
-}
-] And here is an example of a contract.The App-Name says its a Smartweave CONTRACT The Contract-Src tag points to the source code of the contract:[
-{
-key:"App-Name"
-value:"SmartWeaveContract"
-},
-{
-key:"App-Version"
-value:"0.3.0"
-},
-{
-key:"Contract-Src"
-value:"JIIB01pRbNK2-UyNxwQK-6eknrjENMTpTvQmB8ZDzQg"
-},
-{
-key:"SDK"
-value:"RedStone"
-},
-{
-key:"Content-Type"
-value:"application/json"
-}
-] The resulting state is the current contract state, which the SDK on the client side can use to calculate user balances, contract owners, and other contract specific details. Once the caller has a validated contract state they can build an interaction for the user to deploy to the chain, which upon mining or indexing on a Gateway will be included the next time someone builds the contract state.For a comprehensive overview of the SmartWeave Protocol, its leading implementation Warp Contracts, and more, head to Warp Academy. Dive into step-by-step tutorials, explore advanced concepts, and uncover how SmartWeave power up the permaweb!Smartweave ecosystem projects There's quite a few ecosystem projects leveraging SmartWeave SmartContracts, but here are some of notes:Implementations Warp | Main provider of SmartWeave SDK's, tutorials, and helps maintain the SmartWeave protocol.MEM | Molecular Execution Machine (MEM) is a developer platform that powers the creation and usage of highly available and highly performant applications within a decentralized environment.Tools SonAr | SmartWeave contract explorer, created and hosted by Warp.Resources Warp Academy | A one- shop for all things SmartWeave Apps Permapages | Permanent webpage creation tool, ArNS purchase portal, and ANT creation portal. Your profile on the permaweb.ArNS | Arweave Name System WeaveDB | NoSQL Database as a Smart Contract.KwilDB | SQL Database as a Smart Contract.ArDrive Inferno | Get PST's for uploading thru Ardrive.FirstBatch | FirstBatch aids developers and enterprises in creating personalized, private, and distortion-free AI applications.Othent | Web3 transactions with existing traditional social logins.BazAR | Digital content marketplace with real-world rights.Alex the Archieve | A decentralized archival platform utilizing Arweave's immutable storage.and so much more.
-
----
-
-# 6. Data Model  Cooking with the Permaweb
-
-Document Number: 6
 Source: https://cookbook.arweave.net/concepts/arfs/data-model.html
 Words: 344
 Quality Score: 0.569
@@ -341,9 +277,9 @@ Data Model Because of Arweave's permanent and immutable nature, traditional file
 
 ---
 
-# 7. React Starter Kit wvite  ArDrive  Cooking with the Permaweb
+# 6. React Starter Kit wvite  ArDrive  Cooking with the Permaweb
 
-Document Number: 7
+Document Number: 6
 Source: https://cookbook.arweave.net/kits/react/turbo.html
 Words: 470
 Quality Score: 0.568
@@ -409,61 +345,9 @@ plugins: [react()],
 
 ---
 
-# 8. Atomic Tokens  Cooking with the Permaweb
+# 7. Querying Transactions  Cooking with the Permaweb
 
-Document Number: 8
-Source: https://cookbook.arweave.net/guides/atomic-tokens/intro.html
-Words: 355
-Quality Score: 0.567
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Atomic Tokens ⚠️ Deprecation Notice This document is deprecated and may contain outdated information.What is an Atomic Token?Check out the concept Creating an Atomic Token INFORMATION For this example, we are using a SWT Contract Source that is already published on the network. x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs - example.ts import Irys from '@irys/sdk'
-import { WarpFactory } from 'warp-contracts'
-async function main() {
-const wallet = JSON.parse(await import('fs')
-.then(fs => fs.readFileSync('./wallet.json', 'utf-8')))
-const irys = new Irys({ 'https://node2.irys.xyz', 'arweave', wallet })
-const warp = WarpFactory.forMainnet()
-const data = `# Hello Permaweb!
-`
-const tags = [
-{ name: 'Content-Type', value: 'text/html' },
-// ANS-110 Tags
-{ name: 'Type', value: 'web-page' },
-{ name: 'Title', value: 'My first permaweb page' },
-{ name: 'Description', value: 'First permaweb page by Anon' },
-{ name: 'Topic:Noob', value: 'Noob' },
-// SmartWeave Contract
-{ name: 'App-Name', value: 'SmartWeaveContract' },
-{ name: 'App-Version', value: '0.3.0' },
-{ name: 'Contract-Src', value: 'x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs' },
-{
-name: 'Init-State', value: JSON.stringify({
-balances: {
-'cHB6D8oNeXxbQCsKcmOyjUX3UkL8cc3FbJmzbaj3-Nc': 1000000
-},
-name: 'AtomicToken',
-ticker: 'ATOMIC-TOKEN',
-pairs: [],
-creator: 'cHB6D8oNeXxbQCsKcmOyjUX3UkL8cc3FbJmzbaj3-Nc',
-settings: [['isTradeable', true]]
-})
-}
-]
-const { id } = await irys.upload(data, { tags })
-await warp.createContract.register(id, 'node2')
-console.log('Atomic Token: ', id)
-}
-main() In this example, we are creating a data-item and uploading the item to the bundler network service. Then we are registering our contract with the Warp sequencer. By using bundler to publish our data-item and registering with the Warp sequencer, our data is immediately available on the gateway service and our contract is immediately able to accept interactions.Run Example npm install @irys/sdk warp-contracts
-npm install typescript ts-node
-npx ts-node example.ts INFORMATION ANS-110 is an Asset Discovery Specification to allow for composability with the Permaweb Application ecosystem.Summary This is a simple example of deploying an Atomic Asset, for more detailed examples check out: https://atomic-assets.arweave.dev Working with Tokens SmartWeave Contracts can not hold AR the native coin of the Arweave Network. AR is used to purchase storage for data on the Arweave Network and it can be transferred from a source wallet to a target wallet on the Arweave network, but it can not be held in a SmartWeave contract.
-
----
-
-# 9. Querying Transactions  Cooking with the Permaweb
-
-Document Number: 9
+Document Number: 7
 Source: https://cookbook.arweave.net/concepts/queryTransactions.html
 Words: 390
 Quality Score: 0.545
@@ -494,94 +378,9 @@ const results = await arweave.api.post('/graphql', queryObject);Public Indexing 
 
 ---
 
-# 10. Overview  Cooking with the Permaweb
+# 8. Cooking with the Permaweb
 
-Document Number: 10
-Source: https://cookbook.arweave.net/concepts/psts.html
-Words: 399
-Quality Score: 0.538
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview ⚠️ Deprecation Notice This document is deprecated and may contain outdated information.Profit Sharing Tokens (PSTs) are a type of SmartWeaveToken which include the following structure:property type balances object name string ticker string transfer method balance method PSTs are typically used to govern a protocol or "Profit Sharing Community" (PSC) - similar to a DAO.How are PSTs Distributed? Founders of an application can create a set number of PSTs and distribute them as they see fit - to keep, or sell to investors to raise capital.Protocols can offer PSTs as a reward for contributing work, or completing tasks for the community to incentivize growth.PSTs can also be exchanged between each other on Permaswap (currently in testnet), and developers can set up token trading permissions using Verto Flex.Features PSTs work as ‘ micro-dividends ’. When a protocol is used, a tipping amount is set aside to be distributed amongst holders. The tip is paid out in $AR - not in the currency of the PST. This creates quite a special relationship between the app being developed, and Arweave itself.Benefits Provides a flexible way for developers to run a protocol and distribute as much ‘ownership’ as they see fit PSTs can be used as payment for protocol work or for community tasks Founders are incentivized to increase network usage, as it is directly tied to revenue Holders get intrinsic value (rewards $AR, not more ‘stock’) Example PST: ARDRIVE Token ArDrive is a permaweb application utilitizing their aptly named PST, ARDRIVE.When someone pays $AR to upload data through ArDrive, a 15% community fee is distributed to a single token holder using a random, weighted method. A user uploads data -> An ARDRIVE token holder receives $AR -> ARDRIVE token holder can use this $AR to upload files -> cycle repeats. Hopefully this gives you a good idea of one way you could implement your own PST!Exploring PSTs Going straight to viewblock and Sonar by Redstone is most appropriate most likely. Just use links that specifically show PSTs so someone doesn’t have to navigate to find them.You can use ViewBlock for an etherscan-like experience to view PST contracts, like this one here.Another option is Sonar, an Arweave smart contract explorer built by RedStone Finance. View the same contract here.Some community members have been discussing calling PSTs “Permaweb Service Tokens”. There is still much to explore with PSTs → join the discussion here (Discord).
-
----
-
-# 11. Warp (SmartWeave) SDK - Deploying Contracts  Cooking with the Permaweb
-
-Document Number: 11
-Source: https://cookbook.arweave.net/guides/smartweave/warp/deploying-contracts.html
-Words: 726
-Quality Score: 0.527
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Warp (SmartWeave) SDK - Deploying Contracts ⚠️ Deprecation Notice This document is deprecated and may contain outdated information.SmartWeave Contracts are created by posting two transactions to the network, a Source Transaction and a Initial State Transaction, the source transaction contains the source code the contract will use to determine the current state. The initial state transaction provides a contract identifer to reference as well as the initial seed data the contract should use as the starting point to evaluate the current state. The current state is calculated by accessing actions that are transactions written to the network that contain input parameters to execute using the evaluated and instantiated source code. Warp Contracts can be created using many different languages and can be evaluated using the Warp SDK. This guide will show the many different ways you can deploy a Warp Contract.TIP If you would like to Warp SmartWeaveContracts, checkout the Warp Academy! https://academy.warp.cc/ As of Warp version 1.3.0 you willl need a plugin to deploy contracts with Warp. This plugin will enable you to add different wallet signatures.import { DeployPlugin, InjectedArweaveSigner } from 'warp-contracts-plugin-deploy'
-import { WarpFactory } from 'warp-contracts'
-const warp = WarpFactory.forMainnet().use(new DeployPlugin())
-...
-function deploy(initState, src) {
-if (window.arweaveWallet) {
-await window.arweaveWallet.connect(['ACCESS_ADDRESS', 'SIGN_TRANSACTION', 'ACCESS_PUBLIC_KEY', 'SIGNATURE']);
-}
-const userSigner = new InjectedArweaveSigner(window.arweaveWallet);
-await userSigner.setPublicKey();
-return warp.deploy({
-wallet: userSigner,
-src,
-initState: JSON.stringify(initState)
-})
-} The Four ways to deploy a Warp SmartWeave Contract There are 4 ways you can deploy a SmartWeaveContract via the Warp SDK, these options handle different use cases that a developer may encounter.Need to deploy the contract with the source at the same time Need to deploy a contract where the source is already on the permaweb Need to deploy a contract through the sequencer and point it to some data using a path manifest Need to deploy a contract via Irys and register that contract on the sequencer TIP For more information about Warp deployments check out the github Readme for the project. https://github.com/warp-contracts/warp#deployment.WARNING This project is in rapid development, so the documentation here could be out of data quickly, if you discover it is out of date, please let us know on the Permaweb Cookbook Discord Channel.Examples TIP By default all deploy functions are published to Arweave via Irys, each option has a flag that can be set to not use Irys, but it can take many confirmations for the network to fully confirm the transaction.deploy Deploys contract plus source code to Warp Sequencer, to Irys (L2), to Arweave.const { contractTxId, srcTxId } = await warp.deploy({
-wallet,
-initState,
-data: { "Content-Type": "text/html", body: "# Hello World
-" },
-src: contractSrc,
-tags: [{ name: "AppName", value: "HelloWorld" }],
-});wallet - should be Arweave keyfile (wallet.json) parsed as a JSON object implementing the JWK Interface or the string 'use_wallet' initState - is a stringified JSON object data - is optional if you want to write data as part of your deployment src - is the string or Uint8Array value of the source code for the contract tags - is an array of name/value objects {name: string, value: string}[], deployFromSourceTx Already have the source on the permaweb? Then deployFromSourceTx is your tool of choice! With the permaweb you never have to worry about data changing so re-using source code for contracts is a no brainer.const { contractTxId, srcTxId } = await warp.deployFromSourceTx({
-wallet,
-initState,
-srcTxId: "SRC_TX_ID",
-});deployBundled Uses Warp Gateway Sequencer's endpoint to upload a raw data item to Irys and index it.import { createData } from "arbundles";
-const dataItem = createData(
-JSON.stringify({
-manifest: "arweave/paths",
-version: "0.1.0",
-index: {
-path: "index.html",
-},
-paths: {
-"index.html": {
-id: "cG7Hdi_iTQPoEYgQJFqJ8NMpN4KoZ-vH_j7pG4iP7NI",
-},
-},
-}),
-{ tags: [{ "Content-Type": "application/x.arweave-manifest+json" }] },
-);
-const { contractTxId } = await warp.deployBundled(dataItem.getRaw());register Uses Warp Gateway Sequencer's endpoint to index a contract that has been uploaded with Irys.Summary Why are there so many options to deploy contracts? These methods exist to reduce duplication, enable advanced contract interactions, and allow for flexibility for testing and usage of the smartweave protocol. The permaweb is very unique in its architecture, it provides a feature where you can deploy both digital data and the contract to manage that data generating the same transaction identifier. The result is dynamic data paired with an immutable set of data. Deploying contracts is just one piece of the Warp SDK, to learn more keep reading this guide!
-
----
-
-# 12. Warp (SmartWeave) SDK Intro  Cooking with the Permaweb
-
-Document Number: 12
-Source: https://cookbook.arweave.net/guides/smartweave/warp/intro.html
-Words: 272
-Quality Score: 0.526
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Warp (SmartWeave) SDK Intro ⚠️ Deprecation Notice This document is deprecated and may contain outdated information.Warp is a popular SmartWeave Protocol SDK. With Warp and Irys your SmartWeave deployments and interactions can be extremely fast.Introduction This guide is a short introduction to the Warp SDK and some of its API methods, if you want to Contracts in general visit Core Concepts: SmartWeave.TIP You can find the Warp SDK on github. For a deeper dive on Warp SmartWeave visit Warp Website To use the SDK on the server, you will need access to a wallet.json file, to use the SDK in the browser you will need to connect to an arweave supported wallet.Install To install warp in your project you can use npm or yarn or other npm clients.npm install warp-contracts yarn add warp-contracts Import When using Warp with your project there are several ways to import the sdk depending on your project setup.import { WarpFactory } from "warp-contracts";import { WarpFactory } from "warp-contracts/mjs";const { WarpFactory } = require("warp-contracts");Connecting to an environment There are several environments that you may want to interact with, you can connect to those environments using the forXXXX helpers.const warp = WarpFactory.forMainnet();const warp = WarpFactory.forTestnet();const warp = WarpFactory.forLocal();const warp = WarpFactory.custom(
-arweave, // arweave-js
-cacheOptions, // { ...defaultCacheOptions, inMemory: true}
-environment, // 'local', 'testnet', 'mainnet'
-);WARNING When using local environment, you will need to have arLocal running on port 1984.Summary This intro guide is to help you get setup with Warp, the following guides will show you how to deploy SmartWeave contracts using the Warp SDK, how to interact with those contracts and finally, how to evolve SmartWeave contracts.
-
----
-
-# 13. Cooking with the Permaweb
-
-Document Number: 13
+Document Number: 8
 Source: https://cookbook.arweave.net/guides/deploying-manifests/arseeding-js.html
 Words: 371
 Quality Score: 0.525
@@ -609,9 +408,9 @@ everHash:[
 
 ---
 
-# 14. Create React App Starter Kit  Cooking with the Permaweb
+# 9. Create React App Starter Kit  Cooking with the Permaweb
 
-Document Number: 14
+Document Number: 9
 Source: https://cookbook.arweave.net/kits/react/create-react-app.html
 Words: 693
 Quality Score: 0.524
@@ -638,9 +437,9 @@ turbo top-up --wallet-file wallet.json --currency USD --value 10 Be sure to repl
 
 ---
 
-# 15. Create Vue Starter Kit  Cooking with the Permaweb
+# 10. Create Vue Starter Kit  Cooking with the Permaweb
 
-Document Number: 15
+Document Number: 10
 Source: https://cookbook.arweave.net/kits/vue/create-vue.html
 Words: 705
 Quality Score: 0.522
@@ -687,35 +486,9 @@ turbo top-up --wallet-file wallet.json --currency USD --value 10 Be sure to repl
 
 ---
 
-# 16. Warp (SmartWeave) SDK - ReadState  Cooking with the Permaweb
+# 11. Posting Transactions  Cooking with the Permaweb
 
-Document Number: 16
-Source: https://cookbook.arweave.net/guides/smartweave/warp/readstate.html
-Words: 275
-Quality Score: 0.520
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Warp (SmartWeave) SDK - ReadState ⚠️ Deprecation Notice This document is deprecated and may contain outdated information.SmartWeave Contract state is calculated via lazy evaluation, which means, the state evaluation occurs on reads not writes. When reading contracts, the SDK gathers all state interactions, sorts them, and executes them against the source contract using a reduce or fold pattern.Basic Readstate const warp = WarpFactory.forMainnet()
-const CONTRACT_ID = '_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk'
-const result = await warp.contract(CONTRACT_ID).readState()
-// log current state
-console.log(result.cachedValue.state) Advanced Readstate Some contracts either read the state of other contracts, or invoke or write to other contracts, when requesting the state of these contracts it is necessary to set evaluation options.const warp = WarpFactory.forMainnet()
-const CONTRACT_ID = 'FMRHYgSijiUNBrFy-XqyNNXenHsCV0ThR4lGAPO4chA'
-const result = await warp.contract(CONTRACT_ID)
-.setEvaluationOptions({
-internalWrites: true,
-allowBigInt: true
-})
-.readState()
-// log current state
-console.log(result.cachedValue.state) Common Evaluation Options Name Description internalWrites Evaluates contracts that contain internal writes to other contracts allowBigInt Evaluates contracts that use the BigInt primitive you can find out more about bigInt MDN Docs unsafeClient This value could be allow or skip or throw. You should avoid using unsafeClient in your contracts it can lead to underministic results.Readstate from specific BlockHeight or Sortkey You may want to look at a previous state, not the current state, by supplying a blockHeight you can read the state of a contract at a specific block height const { sortKey, cachedValue } = await contract.readState(1090111) Summary Reading the current state of SmartWeave Contracts performs state evaluation by pulling all interactions and processing each interaction via a fold method. This approach is unique to the permaweb and requires a unique understanding of how your SmartWeave Contract code is executed.
-
----
-
-# 17. Posting Transactions  Cooking with the Permaweb
-
-Document Number: 17
+Document Number: 11
 Source: https://cookbook.arweave.net/concepts/post-transactions.html
 Words: 634
 Quality Score: 0.519
@@ -726,9 +499,9 @@ Posting Transactions😍 There are several ways to post transactions to Arweave.
 
 ---
 
-# 18. ar-gql  Cooking with the Permaweb
+# 12. ar-gql  Cooking with the Permaweb
 
-Document Number: 18
+Document Number: 12
 Source: https://cookbook.arweave.net/guides/querying-arweave/ar-gql.html
 Words: 127
 Quality Score: 0.515
@@ -778,9 +551,9 @@ console.log(results);
 
 ---
 
-# 19. Svelte Starter Kits  Cooking with the Permaweb
+# 13. Svelte Starter Kits  Cooking with the Permaweb
 
-Document Number: 19
+Document Number: 13
 Source: https://cookbook.arweave.net/kits/svelte/index.html
 Words: 115
 Quality Score: 0.512
@@ -791,9 +564,9 @@ Svelte Starter Kits Svelte is a framework that compiles to a JavaScript bundle a
 
 ---
 
-# 20. ServerSide DNS Integration  Cooking with the Permaweb
+# 14. ServerSide DNS Integration  Cooking with the Permaweb
 
-Document Number: 20
+Document Number: 14
 Source: https://cookbook.arweave.net/guides/dns-integration/server-side.html
 Words: 399
 Quality Score: 0.511
@@ -804,9 +577,9 @@ ServerSide DNS Integration So you have a permaweb application and it is on the p
 
 ---
 
-# 21. Transaction Metadata (Tags)  Cooking with the Permaweb
+# 15. Transaction Metadata (Tags)  Cooking with the Permaweb
 
-Document Number: 21
+Document Number: 15
 Source: https://cookbook.arweave.net/concepts/tags.html
 Words: 559
 Quality Score: 0.510
@@ -824,9 +597,9 @@ await arweave.transactions.post(tx);Summary Understanding how Transaction Tags f
 
 ---
 
-# 22. Vue Starter Kits  Cooking with the Permaweb
+# 16. Vue Starter Kits  Cooking with the Permaweb
 
-Document Number: 22
+Document Number: 16
 Source: https://cookbook.arweave.net/kits/vue/index.html
 Words: 117
 Quality Score: 0.509
@@ -837,9 +610,9 @@ Vue Starter Kits Vue.js is a progressive JavaScript framework that allows buildi
 
 ---
 
-# 23. Posting Transactions using arseedingjs  Cooking with the Permaweb
+# 17. Posting Transactions using arseedingjs  Cooking with the Permaweb
 
-Document Number: 23
+Document Number: 17
 Source: https://cookbook.arweave.net/guides/posting-transactions/arseeding-js.html
 Words: 223
 Quality Score: 0.500
@@ -862,9 +635,9 @@ run() Resources For an overview of all methods for publishing transactions, plea
 
 ---
 
-# 24. Querying Arweave with GraphQL  Cooking with the Permaweb
+# 18. Querying Arweave with GraphQL  Cooking with the Permaweb
 
-Document Number: 24
+Document Number: 18
 Source: https://cookbook.arweave.net/guides/querying-arweave/queryingArweave.html
 Words: 812
 Quality Score: 0.498
@@ -967,9 +740,9 @@ address
 
 ---
 
-# 25. Wallets and Keys  Cooking with the Permaweb
+# 19. Wallets and Keys  Cooking with the Permaweb
 
-Document Number: 25
+Document Number: 19
 Source: https://cookbook.arweave.net/concepts/keyfiles-and-wallets.html
 Words: 530
 Quality Score: 0.498
@@ -991,9 +764,9 @@ Wallets and Keys Arweave Wallets On Arweave a wallet secures a unique address on
 
 ---
 
-# 26. React Starter Kits  Cooking with the Permaweb
+# 20. React Starter Kits  Cooking with the Permaweb
 
-Document Number: 26
+Document Number: 20
 Source: https://cookbook.arweave.net/kits/react/index.html
 Words: 100
 Quality Score: 0.497
@@ -1004,9 +777,9 @@ React Starter Kits React is a popular library used for building user interfaces.
 
 ---
 
-# 27. Posting Transactions using arweave-js  Cooking with the Permaweb
+# 21. Posting Transactions using arweave-js  Cooking with the Permaweb
 
-Document Number: 27
+Document Number: 21
 Source: https://cookbook.arweave.net/guides/posting-transactions/arweave-js.html
 Words: 375
 Quality Score: 0.495
@@ -1045,9 +818,9 @@ await uploader.uploadChunk();
 
 ---
 
-# 28. arkb  Cooking with the Permaweb
+# 22. arkb  Cooking with the Permaweb
 
-Document Number: 28
+Document Number: 22
 Source: https://cookbook.arweave.net/guides/deployment/arkb.html
 Words: 243
 Quality Score: 0.495
@@ -1061,9 +834,9 @@ arkb Requirements An Arweave wallet is required to deploy using arkb for coverin
 
 ---
 
-# 29. Entity Types  Cooking with the Permaweb
+# 23. Entity Types  Cooking with the Permaweb
 
-Document Number: 29
+Document Number: 23
 Source: https://cookbook.arweave.net/concepts/arfs/entity-types.html
 Words: 1168
 Quality Score: 0.491
@@ -1120,9 +893,9 @@ Data-Start: "" Snapshot Transaction GQL tags example Snapshot Entity Data A JSON
 
 ---
 
-# 30. Posting Transactions using Ardrive Turbo  Cooking with the Permaweb
+# 24. Posting Transactions using Ardrive Turbo  Cooking with the Permaweb
 
-Document Number: 30
+Document Number: 24
 Source: https://cookbook.arweave.net/guides/posting-transactions/turbo.html
 Words: 377
 Quality Score: 0.488
@@ -1204,49 +977,9 @@ console.error('Failed to upload data item!', error);
 
 ---
 
-# 31. Warp WriteInteractions  Cooking with the Permaweb
+# 25. Cooking with the Permaweb  Cooking with the Permaweb
 
-Document Number: 31
-Source: https://cookbook.arweave.net/guides/smartweave/warp/write-interactions.html
-Words: 353
-Quality Score: 0.484
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-⚠️ Deprecation Notice This document is deprecated and may contain outdated information.To call a function on a SmartWeave contract, you can create a transaction known as a SmartWeave action. This action includes the function name and the necessary input parameters for the function on the SmartWeave contract. You can create a SmartWeave action using the contract.writeInteraction function.Code import { WarpFactory } from 'warp-contracts'
-const warp = WarpFactory.forMainnet()
-const STAMP_PROTOCOL = 'FMRHYgSijiUNBrFy-XqyNNXenHsCV0ThR4lGAPO4chA'
-async function doStamp() {
-const result = await warp.contract(STAMP_PROTOCOL)
-.connect('use_wallet')
-.writeInteraction({
-function: 'stamp',
-timestamp: Date.now(),
-transactionId: 'zQhANphTO0DOsaWXhExylUD5cBN3a6xWvfn5ZCpmCVY'
-})
-console.log(result)
-} When calling writeInteraction, you need to pass your input parameters, these are the parameters the contract is expecting to receive.WARNING Since SmartWeave contracts are evaluated in a lazy flow, you do not know if your interaction ran successfully until you evaluate the contract to the current state. Use Warp readState to access the contract and determine if the interaction was applied successfully.Dry Write DryWrite allows you to test and verify an interaction on the current state without actually executing it on the permaweb. This feature allows you to simulate the interaction locally and ensure that it will be successful before applying it.import { WarpFactory } from 'warp-contracts'
-const warp = WarpFactory.forMainnet()
-const STAMP_PROTOCOL = 'FMRHYgSijiUNBrFy-XqyNNXenHsCV0ThR4lGAPO4chA'
-async function doStamp() {
-const result = await warp.contract(STAMP_PROTOCOL)
-.connect('use_wallet')
-.dryWrite({
-function: 'stamp',
-timestamp: Date.now(),
-transactionId: 'zQhANphTO0DOsaWXhExylUD5cBN3a6xWvfn5ZCpmCVY'
-})
-console.log(result)
-} WARNING One thing to note when using dry writes, is that the entire state needs to be evaluated locally for contacts that use readState or internalWrites. This can result in a slow performing process.Optimized for speed By default, writeInteractions are submitted to the Warp Sequencer and bundled and posted to Arweave. You can post directly to Arweave by disabling bundling.const result = await contract.writeInteraction({
-function: 'NAME_OF_YOUR_FUNCTION',
-...
-}, { disableBundling: true }) Summary The SmartWeave Protocol allows for the modification of dynamic data on an immutable, append-only storage system using writeInteractions. These interactions enable trustless and permissionless communication with SmartWeave contracts. The Warp SDK provides developers with a user-friendly API for interacting with the SmartWeave Protocol and its writeInteractions feature.For additional resources:Warp SDK https://github.com/warp-contracts/warp Warp Docs https://warp.cc
-
----
-
-# 32. Cooking with the Permaweb  Cooking with the Permaweb
-
-Document Number: 32
+Document Number: 25
 Source: https://cookbook.arweave.net/index.html
 Words: 227
 Quality Score: 0.479
@@ -1257,9 +990,9 @@ Cooking with the Permaweb The Permaweb Cookbook is a developer resource that pro
 
 ---
 
-# 33. Permaweb Applications  Cooking with the Permaweb
+# 26. Permaweb Applications  Cooking with the Permaweb
 
-Document Number: 33
+Document Number: 26
 Source: https://cookbook.arweave.net/concepts/permawebApplications.html
 Words: 430
 Quality Score: 0.478
@@ -1270,9 +1003,9 @@ Permaweb Applications A Permaweb application refers to a web page or app built o
 
 ---
 
-# 34. Fetching Transaction Data  Cooking with the Permaweb
+# 27. Fetching Transaction Data  Cooking with the Permaweb
 
-Document Number: 34
+Document Number: 27
 Source: https://cookbook.arweave.net/guides/http-api.html
 Words: 563
 Quality Score: 0.477
@@ -1327,9 +1060,9 @@ console.log(res.data) Click to view example result {
 
 ---
 
-# 35. Cooking with the Permaweb  Cooking with the Permaweb
+# 28. Cooking with the Permaweb  Cooking with the Permaweb
 
-Document Number: 35
+Document Number: 28
 Source: https://cookbook.arweave.net/getting-started/index.html
 Words: 251
 Quality Score: 0.476
@@ -1340,9 +1073,9 @@ Cooking with the Permaweb The Permaweb Cookbook is a developer resource that pro
 
 ---
 
-# 36. Vouch  Cooking with the Permaweb
+# 29. Vouch  Cooking with the Permaweb
 
-Document Number: 36
+Document Number: 29
 Source: https://cookbook.arweave.net/guides/vouch.html
 Words: 224
 Quality Score: 0.475
@@ -1395,9 +1128,9 @@ value
 
 ---
 
-# 37. ArNS - Arweave Name System  Cooking with the Permaweb
+# 30. ArNS - Arweave Name System  Cooking with the Permaweb
 
-Document Number: 37
+Document Number: 30
 Source: https://cookbook.arweave.net/concepts/arns.html
 Words: 523
 Quality Score: 0.475
@@ -1419,9 +1152,9 @@ ticker:"ANT-ARDRIVE-OG-LOGO"
 
 ---
 
-# 38. Privacy  Cooking with the Permaweb
+# 31. Privacy  Cooking with the Permaweb
 
-Document Number: 38
+Document Number: 31
 Source: https://cookbook.arweave.net/concepts/arfs/privacy.html
 Words: 700
 Quality Score: 0.467
@@ -1434,9 +1167,9 @@ Cipher-IV?: "<12 byte initialization vector as Base64>" Just like drives, privat
 
 ---
 
-# 39. Developing on the Permaweb  Cooking with the Permaweb
+# 32. Developing on the Permaweb  Cooking with the Permaweb
 
-Document Number: 39
+Document Number: 32
 Source: https://cookbook.arweave.net/getting-started/welcome.html
 Words: 203
 Quality Score: 0.465
@@ -1447,9 +1180,9 @@ Developing on the Permaweb Welcome to the Permaweb Creating applications on the 
 
 ---
 
-# 40. Vouch  Cooking with the Permaweb
+# 33. Vouch  Cooking with the Permaweb
 
-Document Number: 40
+Document Number: 33
 Source: https://cookbook.arweave.net/concepts/vouch.html
 Words: 179
 Quality Score: 0.464
@@ -1460,9 +1193,9 @@ Vouch Overview Motivation Vouching provides a decentralized approach to Sybil re
 
 ---
 
-# 41. Gateways  Cooking with the Permaweb
+# 34. Gateways  Cooking with the Permaweb
 
-Document Number: 41
+Document Number: 34
 Source: https://cookbook.arweave.net/concepts/gateways.html
 Words: 298
 Quality Score: 0.462
@@ -1473,9 +1206,9 @@ Gateways Data uploaded to the Arweave network (or the permaweb) isn't always imm
 
 ---
 
-# 42. Path Manifests  Cooking with the Permaweb
+# 35. Path Manifests  Cooking with the Permaweb
 
-Document Number: 42
+Document Number: 35
 Source: https://cookbook.arweave.net/concepts/manifests.html
 Words: 370
 Quality Score: 0.456
@@ -1515,9 +1248,9 @@ Path Manifests Overview When uploading files to Arweave each file is assigned it
 
 ---
 
-# 43. Welcome to the Permaweb  Cooking with the Permaweb
+# 36. Welcome to the Permaweb  Cooking with the Permaweb
 
-Document Number: 43
+Document Number: 36
 Source: https://cookbook.arweave.net/concepts/permaweb.html
 Words: 139
 Quality Score: 0.448
@@ -1528,9 +1261,9 @@ Welcome to the Permaweb The permaweb is like the web, but permanent. Developers 
 
 ---
 
-# 44. ArFS Protocol A Decentralized File System on Arweave  Cooking with the Permaweb
+# 37. ArFS Protocol A Decentralized File System on Arweave  Cooking with the Permaweb
 
-Document Number: 44
+Document Number: 37
 Source: https://cookbook.arweave.net/concepts/arfs/arfs.html
 Words: 404
 Quality Score: 0.446
@@ -1541,9 +1274,9 @@ ArFS Protocol: A Decentralized File System on Arweave Arweave File System, or �
 
 ---
 
-# 45. Bundling Services  Cooking with the Permaweb
+# 38. Bundling Services  Cooking with the Permaweb
 
-Document Number: 45
+Document Number: 38
 Source: https://cookbook.arweave.net/concepts/bundlers.html
 Words: 176
 Quality Score: 0.443
@@ -1554,9 +1287,9 @@ Bundling Services With bundling services users can post their data transactions 
 
 ---
 
-# 46. Contributing Workflow  Cooking with the Permaweb
+# 39. Contributing Workflow  Cooking with the Permaweb
 
-Document Number: 46
+Document Number: 39
 Source: https://cookbook.arweave.net/getting-started/contributing.html
 Words: 315
 Quality Score: 0.443
@@ -1567,9 +1300,9 @@ Contributing Workflow Anyone in the community is welcome to contribute to the Pe
 
 ---
 
-# 47. Creating and Deploying Manifests  Cooking with the Permaweb
+# 40. Creating and Deploying Manifests  Cooking with the Permaweb
 
-Document Number: 47
+Document Number: 40
 Source: https://cookbook.arweave.net/guides/deploying-manifests/deployingManifests.html
 Words: 76
 Quality Score: 0.441
@@ -1580,9 +1313,9 @@ Creating and Deploying Manifests This guide lays out how to create and deploy a 
 
 ---
 
-# 48. Permaweb Cookbook - Guides  Cooking with the Permaweb
+# 41. Permaweb Cookbook - Guides  Cooking with the Permaweb
 
-Document Number: 48
+Document Number: 41
 Source: https://cookbook.arweave.net/guides/index.html
 Words: 59
 Quality Score: 0.436
@@ -1593,9 +1326,9 @@ Guides Snack-sized guides for the building blocks of the Permaweb DNS Integratio
 
 ---
 
-# 49. Cooking with the Permaweb
+# 42. Cooking with the Permaweb
 
-Document Number: 49
+Document Number: 42
 Source: https://cookbook.arweave.net/guides/deploying-manifests/ardrive.html
 Words: 69
 Quality Score: 0.431
@@ -1606,9 +1339,9 @@ ArDrive You can create a manifest for a folder or group of folders with ardrive 
 
 ---
 
-# 50. Posting a Transaction using Dispatch  Cooking with the Permaweb
+# 43. Posting a Transaction using Dispatch  Cooking with the Permaweb
 
-Document Number: 50
+Document Number: 43
 Source: https://cookbook.arweave.net/guides/posting-transactions/dispatch.html
 Words: 151
 Quality Score: 0.428
@@ -1629,9 +1362,9 @@ console.log(result.id);Resources For an overview of all the ways you can post tr
 
 ---
 
-# 51. Permaweb Cookbook - Core Concepts  Cooking with the Permaweb
+# 44. Permaweb Cookbook - Core Concepts  Cooking with the Permaweb
 
-Document Number: 51
+Document Number: 44
 Source: https://cookbook.arweave.net/concepts/index.html
 Words: 61
 Quality Score: 0.421
@@ -1642,9 +1375,9 @@ Core Concepts Foundations of Arweave and the Permaweb.Posting Transactions Metad
 
 ---
 
-# 52. Content Types  Cooking with the Permaweb
+# 45. Content Types  Cooking with the Permaweb
 
-Document Number: 52
+Document Number: 45
 Source: https://cookbook.arweave.net/concepts/arfs/content-types.html
 Words: 159
 Quality Score: 0.417
@@ -1655,9 +1388,9 @@ Content Types All transaction types in ArFS leverage a specific metadata tag for
 
 ---
 
-# 53. Hello World (No Code)  Cooking with the Permaweb
+# 46. Hello World (No Code)  Cooking with the Permaweb
 
-Document Number: 53
+Document Number: 46
 Source: https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html
 Words: 90
 Quality Score: 0.415
@@ -1668,9 +1401,9 @@ Hello World (No Code) In this quick start we are going to upload an image to the
 
 ---
 
-# 54. Transaction Types  Cooking with the Permaweb
+# 47. Transaction Types  Cooking with the Permaweb
 
-Document Number: 54
+Document Number: 47
 Source: https://cookbook.arweave.net/concepts/transaction-types.html
 Words: 254
 Quality Score: 0.414
@@ -1681,9 +1414,9 @@ Transaction Types Arweave supports different types of transactions that serve va
 
 ---
 
-# 55. Cooking with the Permaweb
+# 48. Cooking with the Permaweb
 
-Document Number: 55
+Document Number: 48
 Source: https://cookbook.arweave.net/concepts/arfs/schema-diagrams.html
 Words: 62
 Quality Score: 0.411
@@ -1694,9 +1427,9 @@ Schema Diagrams The following diagrams show complete examples of Drive, Folder, 
 
 ---
 
-# 56. Permaweb Cookbook - References  Cooking with the Permaweb
+# 49. Permaweb Cookbook - References  Cooking with the Permaweb
 
-Document Number: 56
+Document Number: 49
 Source: https://cookbook.arweave.net/references/index.html
 Words: 59
 Quality Score: 0.408
@@ -1707,9 +1440,9 @@ References Quick reference materials and lookup guides for working with the perm
 
 ---
 
-# 57. LLMstxt  Cooking with the Permaweb
+# 50. LLMstxt  Cooking with the Permaweb
 
-Document Number: 57
+Document Number: 50
 Source: https://cookbook.arweave.net/references/llms.html
 Words: 36
 Quality Score: 0.403
@@ -1720,54 +1453,9 @@ LLMs.txt The following is a tool open in new window that allows you to build you
 
 ---
 
-# 58. Warp (SmartWeave) SDK - Evolve  Cooking with the Permaweb
+# 51. Transaction Bundles  Cooking with the Permaweb
 
-Document Number: 58
-Source: https://cookbook.arweave.net/guides/smartweave/warp/evolve.html
-Words: 419
-Quality Score: 0.401
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Warp (SmartWeave) SDK - Evolve ⚠️ Deprecation Notice This document is deprecated and may contain outdated information.Evolve is a feature that allows developers to update the source code of a smart contract without deploying a new contract. To use this feature, you must first submit the new source code using the save function. Once the updated code has been confirmed on the Permaweb, you can use the evolve function to point the contract to the new source code ID. This allows you to update the contract's behavior without creating a new contract instance.Why?Writing SmartWeave contracts can be difficult and sometimes requires updates or new features to be added over time. Evolve allows you to make changes to your contract without having to create a new contract instance from scratch. To use this feature, your contract state object must include an evolve property that is set to the new contract source transaction identifier. This enables you to modify and improve your existing contract without starting from scratch.{
-...
-"evolve": "YOUR SOURCE CODE TX_ID"
-} Post your new source to the permaweb Before you can evolve your existing contract, you need to post the new source code to the permaweb, you can do this with the save function.import { WarpFactory } from 'warp-contracts'
-import fs from 'fs'
-const src = fs.readFileSync('./dist/contract.js', 'utf-8')
-const jwk = JSON.parse(fs.readFileSync('./wallet.json', 'utf-8'))
-const TX_ID = 'VFr3Bk-uM-motpNNkkFg4lNW1BMmSfzqsVO551Ho4hA'
-const warp = WarpFactory.forMainnet()
-async function main() {
-const newSrcTxId = await warp.contract(TX_ID).connect(jwk).save({src })
-console.log('NEW SRC ID', newSrcTxId)
-}
-main() Evolve your contract WARNING Verify your new Source TX_ID is confirmed, go to Sonar to make sure the TX_ID is confirmed.import { WarpFactory } from 'warp-contracts'
-import fs from 'fs'
-const src = fs.readFileSync('./dist/contract.js', 'utf-8')
-const jwk = JSON.parse(fs.readFileSync('./wallet.json', 'utf-8'))
-const TX_ID = 'VFr3Bk-uM-motpNNkkFg4lNW1BMmSfzqsVO551Ho4hA'
-const warp = WarpFactory.forMainnet()
-async function main() {
-const newSrcTxId = await warp.contract(TX_ID).connect(jwk).evolve('SRC TX ID')
-console.log(result)
-}
-main() TIP It's worth noting that the evolve feature is only applicable to future actions, meaning you cannot use it to apply new source code to actions that occurred before the contract was evolved.Summary Evolve is a powerful feature and can provide extensibility for your contracts, it can also be an attack vector, so make sure you fully understand what you are doing when using it. Below is a common snippet of what an evolve function may look like in your contract.export async function handle(state, action) {
-...
-if (action.input.function === 'evolve') {
-if (action.caller === state.creator) {
-state.evolve = action.input.value
-}
-return { state }
-}
-...
-}
-
----
-
-# 59. Transaction Bundles  Cooking with the Permaweb
-
-Document Number: 59
+Document Number: 51
 Source: https://cookbook.arweave.net/concepts/bundles.html
 Words: 296
 Quality Score: 0.400
@@ -1778,9 +1466,9 @@ Transaction Bundles What is a Bundle? A transaction bundle is a special type of 
 
 ---
 
-# 60. Glossary  Cooking with the Permaweb
+# 52. Glossary  Cooking with the Permaweb
 
-Document Number: 60
+Document Number: 52
 Source: https://cookbook.arweave.net/references/glossary.html
 Words: 33
 Quality Score: 0.389
@@ -1791,9 +1479,9 @@ Glossary The following is an embedded glossary tool for the permaweb ecosystem. 
 
 ---
 
-# 61. Search Indexing Service  Cooking with the Permaweb
+# 53. Search Indexing Service  Cooking with the Permaweb
 
-Document Number: 61
+Document Number: 53
 Source: https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html
 Words: 595
 Quality Score: 0.382
@@ -1930,9 +1618,9 @@ count
 
 ---
 
-# 62. Cooking with the Permaweb
+# 54. Cooking with the Permaweb
 
-Document Number: 62
+Document Number: 54
 Source: https://cookbook.arweave.net/guides/deploying-manifests/arweave-app.html
 Words: 51
 Quality Score: 0.277
@@ -1943,22 +1631,9 @@ Arweave.app Uploading a directory through Arweave.app open in new window will au
 
 ---
 
-# 63. Permaweb Cookbook - Legacy  Cooking with the Permaweb
+# 55. Starter Kits  Cooking with the Permaweb
 
-Document Number: 63
-Source: https://cookbook.arweave.net/legacy/index.html
-Words: 23
-Quality Score: 0.253
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Legacy The following concepts and guides have been deprecated.Concepts Smartweave Guides Smartweave Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 64. Starter Kits  Cooking with the Permaweb
-
-Document Number: 64
+Document Number: 55
 Source: https://cookbook.arweave.net/kits/index.html
 Words: 11
 Quality Score: 0.241
@@ -1972,9 +1647,9 @@ Arweave.org
 
 ---
 
-# 65. Permaweb Cookbook - Community  Cooking with the Permaweb
+# 56. Permaweb Cookbook - Community  Cooking with the Permaweb
 
-Document Number: 65
+Document Number: 56
 Source: https://cookbook.arweave.net/community/index.html
 Words: 11
 Quality Score: 0.241
