@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-03T17:23:03.463Z
+Generated on: 2025-07-31T17:29:14.651Z
 Total documents: 39
-Total words: 19150
+Total words: 19629
 
 ## Table of Contents
 
@@ -10,31 +10,31 @@ Total words: 19150
 
 1. [Running a HyperBEAM Node](https://hyperbeam.arweave.net/run/running-a-hyperbeam-node.html)
 2. [Overview](https://hyperbeam.arweave.net/build/devices/hyperbeam-devices.html)
-3. [JoiningRunning a Router](https://hyperbeam.arweave.net/run/joining-running-a-router.html)
+3. [TEE Nodes](https://hyperbeam.arweave.net/run/tee-nodes.html)
 4. [Module dev_snperl](https://hyperbeam.arweave.net/build/devices/source-code/dev_snp.html)
-5. [Configuring Your Machine](https://hyperbeam.arweave.net/run/configuring-your-machine.html)
-6. [Module dev_codec_httpsigerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_httpsig.html)
-7. [Module dev_metaerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html)
-8. [Core Capabilities](https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html)
-9. [Module dev_routererl](https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html)
-10. [Module dev_fafferl](https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html)
-11. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html)
-12. [TEE Nodes](https://hyperbeam.arweave.net/run/tee-nodes.html)
+5. [JoiningRunning a Router](https://hyperbeam.arweave.net/run/joining-running-a-router.html)
+6. [Configuring Your Machine](https://hyperbeam.arweave.net/run/configuring-your-machine.html)
+7. [Module dev_codec_httpsigerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_httpsig.html)
+8. [Module dev_metaerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html)
+9. [Core Capabilities](https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html)
+10. [Module dev_routererl](https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html)
+11. [Module dev_fafferl](https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html)
+12. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html)
 13. [Building Devices](https://hyperbeam.arweave.net/build/devices/building-devices.html)
 14. [Intro to HyperBEAM](https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html)
 15. [Building ao Processes](https://hyperbeam.arweave.net/build/building-on-ao.html)
-16. [FAQ](https://hyperbeam.arweave.net/run/reference/faq.html)
-17. [Module hb_singletonerl](https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html)
-18. [Module dev_p4erl](https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html)
-19. [relay10](https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html)
-20. [process10](https://hyperbeam.arweave.net/build/devices/process-at-1-0.html)
-21. [Module dev_stackerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html)
-22. [meta10](https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html)
-23. [Glossary](https://hyperbeam.arweave.net/run/reference/glossary.html)
-24. [FAQ](https://hyperbeam.arweave.net/build/reference/faq.html)
-25. [Module dev_monitorerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_monitor.html)
-26. [Module dev_patcherl](https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html)
-27. [Fuel Your LLM](https://hyperbeam.arweave.net/llms.html)
+16. [Fuel Your LLM](https://hyperbeam.arweave.net/llms.html)
+17. [FAQ](https://hyperbeam.arweave.net/run/reference/faq.html)
+18. [Module hb_singletonerl](https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html)
+19. [Module dev_p4erl](https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html)
+20. [relay10](https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html)
+21. [process10](https://hyperbeam.arweave.net/build/devices/process-at-1-0.html)
+22. [Module dev_stackerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html)
+23. [meta10](https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html)
+24. [Glossary](https://hyperbeam.arweave.net/run/reference/glossary.html)
+25. [FAQ](https://hyperbeam.arweave.net/build/reference/faq.html)
+26. [Module dev_monitorerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_monitor.html)
+27. [Module dev_patcherl](https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html)
 28. [lua53a](https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html)
 29. [Home](https://hyperbeam.arweave.net/)
 30. [Glossary](https://hyperbeam.arweave.net/build/reference/glossary.html)
@@ -103,58 +103,83 @@ HyperBEAM Devices In AO-Core and its implementation HyperBEAM, Devices are modul
 
 ---
 
-# 3. JoiningRunning a Router - HyperBEAM - Documentation
+# 3. TEE Nodes - HyperBEAM - Documentation
 
 Document Number: 3
-Source: https://hyperbeam.arweave.net/run/joining-running-a-router.html
-Words: 568
-Quality Score: 0.628
+Source: https://hyperbeam.arweave.net/run/tee-nodes.html
+Words: 680
+Quality Score: 0.633
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Router Networks: Joining vs Running Router networks in HyperBEAM have two distinct roles that are often confused:Two Different Concepts Joining a router = Registering your worker node with an existing router to receive work Running a router = Operating a router that manages and distributes work to other nodes Joining a Router Network (Worker Node) Most users want to join an existing router to offer computational services. This is what the configuration below accomplishes.Recommended Approach Use HyperBEAM OS for the simplest setup with built-in TEE security and automatic configuration.Quick Start with HyperBEAM OS The fastest way to join a router network is using HyperBEAM OS, which creates a measured VM image with everything pre-configured:# Clone and build the worker node image
+Trusted Execution Environment (TEE) Recommended Setup Use HyperBEAM OS for the easiest TEE deployment with pre-configured AMD SEV-SNP support. Note: HB-OS is typically used for TEE operations, but is not necessary for router registration.Overview HyperBEAM supports Trusted Execution Environments (TEEs) through the ~snp@1.0 device, enabling secure, verifiable computation on remote machines. TEEs provide hardware-level isolation and cryptographic attestation that allows users to verify their code is running in a protected environment exactly as intended, even on untrusted hardware.The ~snp@1.0 device generates and validates attestation reports that prove:Code is running inside a genuine AMD SEV-SNP TEE The execution environment hasn't been tampered with Specific software components (firmware, kernel, initramfs) match trusted hashes Debug mode is disabled for security Configuration Files Configuration can be set in either config.json (JSON) or config.flat (flat) format. For full details and examples of both formats, see Configuration Reference.The examples below use JSON for clarity.When to use HB-OS Operation Use HB-OS?Purpose TEE Node (SNP) Recommended Secure, attested computation (hardware isolation) Router Registration Optional Registering/joining a router (TEE not required) If you are registering or running a router, you can do so without HB-OS.If you want to run a TEE node, HB-OS or an equivalent TEE setup is recommended for convenience and security.Quick Start: TEE Node with HyperBEAM OS Prerequisites AMD EPYC processor with SEV-SNP support (Milan generation or newer) Host system with SEV-SNP enabled in BIOS Setup TEE Node # Clone and build TEE-enabled HyperBEAM
+# (Only needed for TEE nodes if you choose HB-OS)
 git clone https://github.com/permaweb/hb-os.git && cd hb-os
-./run init && ./run build_base && ./run build_guest Configure Your Worker Node Edit resources/hyperbeam/config.flat to set your worker node registration:port: 10000
-operator: your-wallet-address
-router-peer-location: https://forward.computer
-router-prefix: /my-unique-node~
-router-template: /my-unique-node~process@1.0/.*
-router-price: 100 Launch Your Worker Node./run start # Starts the TEE-protected worker node Your node will automatically register with the specified router network and begin receiving work.Using Routers as a Client Make requests to any router URL: https://forward.computer/~/...Configuration Options Your worker node can be customized with these key parameters in config.flat:router-peer-location: Target router to register with (e.g., https://forward.computer) router-prefix: Unique identifier for your node (e.g., /my-node~) router-template: Path pattern to handle (e.g., /my-node~process@1.0/.*) router-price: Cost per computation unit (competitive pricing recommended) operator: Your wallet address to receive payments How Registration Works When your worker node starts, it automatically:Registers with the target router using your configured parameters Gets validated by the router's admissibility checks (most routers accept all nodes) Starts receiving requests routed to your prefix Reports performance metrics back to the router for load balancing Monitoring Your Worker Node Check your worker node's status with:# View logs for registration confirmation
-DEBUG=HB_PRINT ./run start
-# Look for messages like:
-# [info] Router registration successful
-# [debug] Route added to routing table Running Your Own Router If you want to operate a router that manages other worker nodes (advanced use case):Router Requirements Deploy the dynamic router Lua process to handle registrations Configure trusted software hashes for TEE validation Set up load balancing and performance monitoring Manage worker node admissibility policies Basic Router Setup % Start a node that can act as a router
-hb:start_mainnet(#{
-% Standard node configuration
-port => 8080,
-% Router-specific configuration
-routes => [
-#{template => "/~meta@1.0/.*", target => self},
-#{template => "/.*", target => "http://default-worker.com"}
+./run init && ./run setup_host && ./run build_base_image && ./run build_guest_image
+# Launch TEE-protected node
+./run start The VM boots with dm-verity protection, measured boot, and automatic attestation report generation.Using the SNP Device Generate Attestation Report Request an attestation report from a TEE node:curl https://your-tee-node.com/~snp@1.0/generate Returns a signed attestation report containing:
+- Nonce: Unique identifier preventing re attacks
+- Address: Node's ephemeral public key (only exists inside TEE)
+- Measurement: Cryptographic hash of the execution environment
+- Report: AMD SEV-SNP hardware attestation with certificate chain Verify Attestation Report The verification process validates:
+1. Nonce integrity: Ensures report freshness and prevents re2. Signature validity: Confirms the report was signed by the claimed address
+3. Address authenticity: Verifies the signing key exists only in the TEE
+4. Debug disabled: Ensures no debugging capabilities that could compromise security
+5. Trusted software: Validates firmware, kernel, and initramfs hashes match approved versions
+6. Measurement accuracy: Confirms the reported environment matches actual execution
+7. Hardware attestation: Verifies AMD's cryptographic signature on the report Configuration Trusted Software Hashes (config.json example) Configure which software components are trusted by setting snp_trusted in your node options:"snp_trusted": [
+// Trusted software hashes here
+] Custom Trust Validation Implement custom trust policies by specifying an is-trusted-device:curl -X POST https://your-node.com/~snp@1.0/verify \
+-H "is-trusted-device: my-custom-validator@1.0" \
+-d '{"report": "...", "target": "self"}' Security Considerations SEV-SNP capable CPU: AMD EPYC Milan or newer Firmware support: Recent AMD firmware with SEV-SNP enabled Memory encryption: SME (Secure Memory Encryption) recommended RMP table: Sufficient memory reserved for Reverse Map Page Table Attestation Tools HyperBEAM OS includes several attestation utilities:get_report: Generate attestation reports with custom data verify_report: Validate attestation report signatures sev_feature_info: Check host SEV-SNP capabilities idblock_generator: Create signed VM configuration blocks Integration Examples Router Registration with TEE (Advanced, config.json example) If you want to register a TEE-protected router node, use the following configuration (see also the router registration guide):{
+"operator": "trustless",
+"initialized": "permanent",
+"snp_trusted": [ /* ... */ ],
+"on": {
+"request": {
+"device": "p4@1.0",
+"ledger-device": "lua@5.3a",
+"pricing-device": "simple-pay@1.0",
+"ledger-path": "/ledger~node-process@1.0",
+"module": ""
+},
+"response": {
+"device": "p4@1.0",
+"ledger-device": "lua@5.3a",
+"pricing-device": "simple-pay@1.0",
+"ledger-path": "/ledger~node-process@1.0",
+"module": ""
+}
+},
+"p4_non_chargable_routes": [
+{"template": "/.*~node-process@1.0/.*"},
+{"template": "/.*~greenzone@1.0/.*"},
+{"template": "/.*~router@1.0/.*"},
+{"template": "/.*~meta@1.0/.*"},
+{"template": "/schedule"},
+{"template": "/push"},
+{"template": "/~hyperbuddy@1.0/.*"}
 ],
-% Trust and validation settings
-snp_trusted => [#{
-% Trusted software configurations for TEE validation
-}]
-}).Advanced Configuration Running a production router requires careful consideration of security, performance, and economic incentives. Most users should join existing routers rather than run their own.Alternative: Manual Setup Advanced users can set up HyperBEAM manually (click to expand) Direct Installation # Clone HyperBEAM
-git clone https://github.com/permaweb/HyperBEAM.git && cd HyperBEAM
-rebar3 compile
-# Create config.flat with router settings
-cat > config.flat << EOF
-port: 10000
-operator: your-wallet-address
-router-peer-location: https://forward.computer
-router-prefix: /my-node~
-router-template: /my-node~process@1.0/.*
-router-price: 100
-EOF
-# Start the node
-rebar3 shell --eval "hb:start_mainnet()." Environment Variables # Alternative: use environment variables
-export ROUTER_PEER_LOCATION="https://forward.computer"
-export ROUTER_PREFIX="/my-prefix~"
-export ROUTER_TEMPLATE="/my-prefix~process@1.0/.*"
-export ROUTER_PRICE=100
-rebar3 shell --eval "hb:start_mainnet()." Further Exploration Examine the dev_router.erl source code for detailed implementation.Review the scripts/dynamic-router.lua for router-side logic.Review the available configuration options in hb_opts.erl related to routing (routes, strategies, etc.).Consult community channels for best practices on deploying production routers.
+"node_process_spawn_codec": "ans104@1.0",
+"node_processes": {
+"ledger": {
+"device": "process@1.0",
+"execution-device": "lua@5.3a",
+"scheduler-device": "scheduler@1.0",
+"authority-match": 1,
+"admin": "",
+"token": "",
+"module": "",
+"authority": ""
+}
+},
+"router_opts": {
+"offered": [ /* ... */ ]
+},
+"green_zone_peer_location": "",
+"green_zone_peer_id": "",
+"p4_recipient": ""
+} TEE attestation TEE-protected computation Trusted software validation HyperBEAM OS Repository See the router registration guide for non-TEE router setup.Configuration Reference
 
 ---
 
@@ -194,9 +219,149 @@ measurement, are trusted.
 
 ---
 
-# 5. Configuring Your Machine - HyperBEAM - Documentation
+# 5. JoiningRunning a Router - HyperBEAM - Documentation
 
 Document Number: 5
+Source: https://hyperbeam.arweave.net/run/joining-running-a-router.html
+Words: 906
+Quality Score: 0.562
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Router Networks: Joining vs Running Router networks in HyperBEAM have two distinct roles that are often confused:Two Different Concepts Joining a router = Registering your worker node with an existing router to receive work Running a router = Operating a router that manages and distributes work to other nodes When to use HB-OS Operation Use HB-OS?Purpose TEE Node (SNP) Recommended Secure, attested computation (hardware isolation) Router Registration Optional Registering/joining a router (TEE not required) You can join or run a router without HB-OS.If you want to run a TEE node, HB-OS or an equivalent TEE setup is recommended for convenience and security.Configuration Files: config.json vs config.flat Configuration can be set in either config.json (JSON syntax) or config.flat (flat syntax). The examples below use JSON for clarity, but you can use either format depending on your deployment. The syntax differs:config.json uses standard JSON structure (see examples below) config.flat uses key-value pairs Joining a Router Network (Worker Node) Most users want to join an existing router to offer computational services. This does NOT require HB-OS or TEE unless you specifically want TEE security.1. Prepare Your Configuration (config.json example) Use the following configuration as a template for your worker node:{
+// ─── Initial Configuration ─────────────────────────────────────────────────
+// Lock this configuration so it cannot be changed again
+"operator": "trustless",
+"initialized": "permanent",
+// ─── SNP-Based TEE Attestation Parameters ──────────────────────────────────
+// These values let the TEE verify its own environment—and any other VM
+// instantiated from the same image—before granting access.
+"snp_trusted": [],
+// ─── Request/Response Processing Configuration ─────────────────────────────
+// Defines how requests and responses are processed through the p4 device
+"on": {
+"request": {
+"device": "p4@1.0",
+"ledger-device": "lua@5.3a",
+"pricing-device": "simple-pay@1.0",
+"ledger-path": "/ledger~node-process@1.0",
+"module": "" // Automatically injected
+},
+"response": {
+"device": "p4@1.0",
+"ledger-device": "lua@5.3a",
+"pricing-device": "simple-pay@1.0",
+"ledger-path": "/ledger~node-process@1.0",
+"module": "" // Automatically injected
+}
+},
+// ─── Non-Chargeable Routes Configuration ──────────────────────────────────
+// Routes that should not incur charges when accessed through p4
+"p4_non_chargable_routes": [
+{ "template": "/.*~node-process@1.0/.*" },
+{ "template": "/.*~greenzone@1.0/.*" },
+{ "template": "/.*~router@1.0/.*" },
+{ "template": "/.*~meta@1.0/.*" },
+{ "template": "/schedule" },
+{ "template": "/push" },
+{ "template": "/~hyperbuddy@1.0/.*" }
+],
+// ─── Node Process Spawn Configuration ─────────────────────────────────────
+// Codec used for spawning new node processes
+"node_process_spawn_codec": "ans104@1.0",
+// ─── Node Process Definitions ─────────────────────────────────────────────
+// Configuration for individual node processes
+"node_processes": {
+"ledger": {
+"device": "process@1.0",
+"execution-device": "lua@5.3a",
+"scheduler-device": "scheduler@1.0",
+"authority-match": 1,
+"admin": "", // Automatically injected
+"token": "", // Automatically injected
+"module": "", // Automatically injected
+"authority": "" // Automatically injected
+}
+},
+// ─── Router Registration Options ──────────────────────────────────────────
+// Configuration for how processes register with the router
+"router_opts": {
+"offered": [
+// {
+// "registration-peer": {}, // Automatically injected
+// "template": "/*~process@1.0/*", // The routes that the node will register with
+// "prefix": "", // Automatically injected
+// "price": 4500000 // Registration fee in smallest units
+// }
+]
+},
+// ─── Greenzone Registration Options ────────────────────────────────────────
+// Configuration for how processes register with the greenzone
+"green_zone_peer_location": "", // Automatically injected
+"green_zone_peer_id": "", // Automatically injected
+// ─── P4 Recipient ──────────────────────────────────────────────────────────
+// The Address of the node that will receive the P4 messages
+"p4_recipient": "" // Automatically injected
+} Perform the following API calls in order:Meta Info Post:Endpoint: ~meta@1.0/info POST Example:
+Join Green Zone:Endpoint: ~greenzone@1.0/join GET Become Green Zone Member:Endpoint: ~greenzone@1.0/become GET Register as Router:Endpoint: ~router@1.0/register GET 3. Verify Registration Check your node's status in the network Confirm green zone membership Test routing functionality 4. Troubleshooting If registration fails:
+1. Verify all configuration parameters are correct
+2. Check network connectivity to the node URL
+3. Ensure proper headers are set in API requests
+4. Review logs for specific error messages
+5. Confirm green zone availability and accessibility Running Your Own Router (Advanced) If you want to operate a router that manages other worker nodes:Deploy the dynamic router Lua process to handle registrations Configure trusted software hashes for TEE validation (if using TEE) Set up load balancing and performance monitoring Manage worker node admissibility policies Example Router Configuration (config.json example) {
+// ─── Router Node Preprocessing Settings ───────────────────────────────────
+// Defines the router process and how it preprocesses incoming requests
+"on": {
+"request": {
+"device": "router@1.0",
+"path": "preprocess",
+"commit-request": true // Enable request commitment for routing
+}
+},
+// ─── Route Provider Configuration ─────────────────────────────────────────
+// Specifies where to get routing information from the router node process
+"router_opts": {
+"provider": {
+"path": "/router~node-process@1.0/compute/routes~message@1.0"
+},
+"registrar": {
+"path": "/router~node-process@1.0"
+},
+"registrar-path": "schedule"
+},
+// ─── Relay Configuration ──────────────────────────────────────────────────
+// Allow the relay to commit requests when forwarding
+"relay_allow_commit_request": true,
+// ─── Router Node Process Configuration ────────────────────────────────────
+// Specifies the Lua-based router logic, weights for scoring, and admission check
+"node_processes": {
+"router": {
+"type": "Process",
+"device": "process@1.0",
+"execution-device": "lua@5.3a",
+"scheduler-device": "scheduler@1.0",
+"pricing-weight": 9, // Weight for pricing in routing decisions
+"performance-weight": 1, // Weight for performance in routing decisions
+"score-preference": 4, // Preference scoring for route selection
+"performance-period": 2, // Period for performance measurement
+"initial-performance": 1000, // Initial performance score
+// Default admission policy (currently set to false)
+"is-admissible": {
+"path": "default",
+"default": "false"
+},
+"module": "", // Automatically injected
+"trusted-peer": "", // Automatically injected
+"trusted": "" // Automatically injected
+}
+}
+} Advanced Configuration Running a production router requires careful consideration of security, performance, and economic incentives. Most users should join existing routers rather than run their own.Further Exploration Examine the dev_router.erl source code for detailed implementation.Review the scripts/dynamic-router.lua for router-side logic.Review the available configuration options in hb_opts.erl related to routing (routes, strategies, etc.).Consult community channels for best practices on deploying production routers.
+
+---
+
+# 6. Configuring Your Machine - HyperBEAM - Documentation
+
+Document Number: 6
 Source: https://hyperbeam.arweave.net/run/configuring-your-machine.html
 Words: 801
 Quality Score: 0.561
@@ -215,9 +380,9 @@ priv_key_location = "/path/to/your/wallet.json".
 
 ---
 
-# 6. Module dev_codec_httpsigerl - HyperBEAM - Documentation
+# 7. Module dev_codec_httpsigerl - HyperBEAM - Documentation
 
-Document Number: 6
+Document Number: 7
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_httpsig.html
 Words: 645
 Quality Score: 0.558
@@ -252,9 +417,9 @@ message that is sent over HTTP, signed with the codec.verify/3 verify(Base, Req,
 
 ---
 
-# 7. Module dev_metaerl - HyperBEAM - Documentation
+# 8. Module dev_metaerl - HyperBEAM - Documentation
 
-Document Number: 7
+Document Number: 8
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html
 Words: 1162
 Quality Score: 0.557
@@ -309,9 +474,9 @@ allow them to update the node message.
 
 ---
 
-# 8. Core Capabilities - HyperBEAM - Documentation
+# 9. Core Capabilities - HyperBEAM - Documentation
 
-Document Number: 8
+Document Number: 9
 Source: https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html
 Words: 681
 Quality Score: 0.555
@@ -322,9 +487,9 @@ HyperBEAM: Your Decentralized Development Toolkit HyperBEAM is a versatile, mult
 
 ---
 
-# 9. Module dev_routererl - HyperBEAM - Documentation
+# 10. Module dev_routererl - HyperBEAM - Documentation
 
-Document Number: 9
+Document Number: 10
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html
 Words: 1355
 Quality Score: 0.552
@@ -393,9 +558,9 @@ function, taking only the request message and the Opts map.route/3 route(X1, Msg
 
 ---
 
-# 10. Module dev_fafferl - HyperBEAM - Documentation
+# 11. Module dev_fafferl - HyperBEAM - Documentation
 
-Document Number: 10
+Document Number: 11
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html
 Words: 180
 Quality Score: 0.540
@@ -411,9 +576,9 @@ for both the pricing and ledger P4 APIs.Function Index charge/3 Charge the user'
 
 ---
 
-# 11. Pathing in HyperBEAM - HyperBEAM - Documentation
+# 12. Pathing in HyperBEAM - HyperBEAM - Documentation
 
-Document Number: 11
+Document Number: 12
 Source: https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html
 Words: 844
 Quality Score: 0.534
@@ -421,40 +586,6 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Pathing in HyperBEAM Overview Understanding how to construct and interpret paths in AO-Core is fundamental to working with HyperBEAM. This guide explains the structure and components of AO-Core paths, enabling you to effectively interact with processes and access their data.HyperBEAM Path Structure Let's examine a typical HyperBEAM endpoint piece-by-piece:https://forward.computer/~process@1.0/now Node URL (forward.computer) The HTTP response from this node includes a signature from the host's key. By accessing the ~snp@1.0 device, you can verify that the node is running in a genuine Trusted Execution Environment (TEE), ensuring computation integrity. You can replace forward.computer with any HyperBEAM TEE node operated by any party while maintaining trustless guarantees.Process Path (/~process@1.0) Every path in AO-Core represents a program. Think of the URL bar as a Unix-style command-line interface, providing access to AO's trustless and verifiable compute. Each path component (between / characters) represents a step in the computation. In this example, we instruct the AO-Core node to:Load a specific message from its caches (local, another node, or Arweave) Interpret it with the ~process@1.0 device The process device implements a shared computing environment with consistent state between users State Access (/now or /compute) Devices in AO-Core expose keys accessible via path components. Each key executes a function on the device:now: Calculates real-time process state compute: Serves the latest known state (faster than checking for new messages) Under the surface, these keys represent AO-Core messages. As we progress through the path, AO-Core applies each message to the existing state. You can access the full process state by visiting:/~process@1.0/now State Navigation You can browse through sub-messages and data fields by accessing them as keys. For example, if a process stores its interaction count in a field named cache, you can access it like this:/~process@1.0/compute/cache This shows the 'cache' of your process. Each response is:A message with a signature attesting to its correctness A hashpath describing its generation Transferable to other AO-Core nodes for uninterrupted execution Query Parameters and Type Casting Beyond path segments, HyperBEAM URLs can include query parameters that utilize a special type casting syntax. This allows specifying the desired data type for a parameter directly within the URL using the format key+type=value.Syntax: A + symbol separates the parameter key from its intended type (e.g., count+integer=42, items+list="apple",7).Mechanism: The HyperBEAM node identifies the +type suffix (e.g., +integer, +list, +map, +float, +atom, +resolve). It then uses internal functions (hb_singleton:maybe_typed and dev_codec_structured:decode_value) to decode and cast the provided value string into the corresponding Erlang data type before incorporating it into the message.Supported Types: Common types include integer, float, list, map, atom, binary (often implicit), and resolve (for path resolution). List values often follow the HTTP Structured Fields format (RFC 8941).This powerful feature enables the expression of complex data structures directly in URLs.Examples The following examples illustrate using HTTP paths with various AO-Core processes and devices. While these cover a few specific use cases, HyperBEAM's extensible nature allows interaction with any device or process via HTTP paths. For a deeper understanding, we encourage exploring the source code and experimenting with different paths.Example 1: Accessing Full Process State To get the complete, real-time state of a process identified by , use the /now path component with the ~process@1.0 device:GET /~process@1.0/now This instructs the AO-Core node to load the process and execute the now function on the ~process@1.0 device.Example 2: Navigating to Specific Process Data If a process maintains its state in a map and you want to access a specific field, like at-slot, using the faster /compute endpoint:GET /~process@1.0/compute/cache This accesses the compute key on the ~process@1.0 device and then navigates to the cache key within the resulting state map. Using this path, you will see the latest 'cache' of your process (the number of interactions it has received). Every piece of relevant information about your process can be accessed similarly, effectively providing a native API.(Note: This represents direct navigation within the process state structure. For accessing data specifically published via the ~patch@1.0 device, see the documentation on Exposing Process State, which typically uses the /cache/ path.) Example 3: Basic ~message@1.0 Usage Here's a simple example of using ~message@1.0 to create a message and retrieve a value:GET /~message@1.0&greeting="Hello"&count+integer=42/count Base:/ - The base URL of the HyperBEAM node.Root Device:~message@1.0 Query Params:greeting="Hello" (binary) and count+integer=42 (integer), forming the message #{ <<"greeting">> => <<"Hello">>, <<"count">> => 42 }.Path:/count tells ~message@1.0 to retrieve the value associated with the key count.Response: The integer 42.Example 4: Using the ~message@1.0 Device with Type Casting The ~message@1.0 device can be used to construct and query transient messages, utilizing type casting in query parameters.Consider the following URL:GET /~message@1.0&name="Alice"&age+integer=30&items+list="apple",1,"banana"&config+map=key1="val1";key2=true/[PATH] HyperBEAM processes this as follows:Base:/ - The base URL of the HyperBEAM node.Root Device:~message@1.0 Query Parameters (with type casting):name="Alice" -> #{ <<"name">> => <<"Alice">> } (binary) age+integer=30 -> #{ <<"age">> => 30 } (integer) items+list="apple",1,"banana" -> #{ <<"items">> => [<<"apple">>, 1, <<"banana">>] } (list) config+map=key1="val1";key2=true -> #{ <<"config">> => #{<<"key1">> => <<"val1">>, <<"key2">> => true} } (map) Initial Message Map: A combination of the above key-value pairs.Path Evaluation:If [PATH] is /items/1, the response is the integer 1.If [PATH] is /config/key1, the response is the binary <<"val1">>.
-
----
-
-# 12. TEE Nodes - HyperBEAM - Documentation
-
-Document Number: 12
-Source: https://hyperbeam.arweave.net/run/tee-nodes.html
-Words: 557
-Quality Score: 0.515
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Trusted Execution Environment (TEE) Recommended Setup Use HyperBEAM OS for the easiest TEE deployment with pre-configured AMD SEV-SNP support.Overview HyperBEAM supports Trusted Execution Environments (TEEs) through the ~snp@1.0 device, enabling secure, verifiable computation on remote machines. TEEs provide hardware-level isolation and cryptographic attestation that allows users to verify their code is running in a protected environment exactly as intended, even on untrusted hardware.The ~snp@1.0 device generates and validates attestation reports that prove:Code is running inside a genuine AMD SEV-SNP TEE The execution environment hasn't been tampered with Specific software components (firmware, kernel, initramfs) match trusted hashes Debug mode is disabled for security Quick Start with HyperBEAM OS Prerequisites AMD EPYC processor with SEV-SNP support (Milan generation or newer) Host system with SEV-SNP enabled in BIOS:Secure Nested Paging enabled Secure Memory Encryption enabled SNP Memory Coverage enabled Minimum SEV non-ES ASID > 1 Setup TEE Node # Clone and build TEE-enabled HyperBEAM
-git clone https://github.com/permaweb/hb-os.git && cd hb-os
-./run init && ./run setup_host && ./run build_base_image && ./run build_guest_image
-# Launch TEE-protected node
-./run start The VM boots with dm-verity protection, measured boot, and automatic attestation report generation.Using the SNP Device Generate Attestation Report Request an attestation report from a TEE node:curl https://your-tee-node.com/~snp@1.0/generate Returns a signed attestation report containing:Nonce: Unique identifier preventing re attacks Address: Node's ephemeral public key (only exists inside TEE) Measurement: Cryptographic hash of the execution environment Report: AMD SEV-SNP hardware attestation with certificate chain Verify Attestation Report The verification process validates:Nonce integrity: Ensures report freshness and prevents re Signature validity: Confirms the report was signed by the claimed address Address authenticity: Verifies the signing key exists only in the TEE Debug disabled: Ensures no debugging capabilities that could compromise security Trusted software: Validates firmware, kernel, and initramfs hashes match approved versions Measurement accuracy: Confirms the reported environment matches actual execution Hardware attestation: Verifies AMD's cryptographic signature on the report Configuration Trusted Software Hashes Configure which software components are trusted by setting snp_trusted in your node options:{snp_trusted, [#{
-vcpus => 1,
-vcpu_type => 5,
-vmm_type => 1,
-guest_features => 1,
-firmware => <<"b8c5d4082d5738db6b0fb0294174992738645df70c44cdecf7fad3a62244b788e7e408c582ee48a74b289f3acec78510">>,
-kernel => <<"69d0cd7d13858e4fcef6bc7797aebd258730f215bc5642c4ad8e4b893cc67576">>,
-initrd => <<"853ebf56bc6ba5f08bd5583055a457898ffa3545897bee00103d3066b8766f5c">>,
-append => <<"6cb8a0082b483849054f93b203aa7d98439736e44163d614f79380ca368cc77e">>
-}]} Custom Trust Validation Implement custom trust policies by specifying an is-trusted-device:curl -X POST https://your-node.com/~snp@1.0/verify \
--H "is-trusted-device: my-custom-validator@1.0" \
--d '{"report": "...", "target": "self"}' Security Considerations Hardware Requirements SEV-SNP capable CPU: AMD EPYC Milan or newer Firmware support: Recent AMD firmware with SEV-SNP enabled Memory encryption: SME (Secure Memory Encryption) recommended RMP table: Sufficient memory reserved for Reverse Map Page Table Verification Best Practices Always verify reports: Never trust unverified attestation claims Check certificate chains: Validate AMD's hardware root of trust Monitor debug flags: Reject reports with debug mode enabled Validate measurements: Ensure software hashes match your trusted versions Use fresh nonces: Prevent re attacks with unique identifiers Limitations Performance overhead: TEE operations have computational cost Hardware dependency: Requires specific AMD processor features Measurement sensitivity: Any software change invalidates measurements Key management: Ephemeral keys are lost on VM restart Attestation Tools HyperBEAM OS includes several attestation utilities:get_report: Generate attestation reports with custom data verify_report: Validate attestation report signatures sev_feature_info: Check host SEV-SNP capabilities idblock_generator: Create signed VM configuration blocks Integration Examples Router Registration with TEE Process with TEE Attestation -- Request computation with TEE verification
-ao.send({
-Target = "TEE_PROCESS_ID",
-Action = "compute",
-Data = "sensitive_data",
-["Require-TEE"] = "true"
-}) HyperBEAM OS Repository
 
 ---
 
@@ -499,9 +630,22 @@ Building on HyperBEAM with ao The guides for building applications on HyperBEAM 
 
 ---
 
-# 16. FAQ - HyperBEAM - Documentation
+# 16. Fuel Your LLM - HyperBEAM - Documentation
 
 Document Number: 16
+Source: https://hyperbeam.arweave.net/llms.html
+Words: 166
+Quality Score: 0.503
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+LLM Context Files This section provides access to specially formatted files intended for consumption by Large Language Models (LLMs) to provide context about the HyperBEAM documentation.LLM Summary (llms.txt) Content: Contains a brief summary of the HyperBEAM documentation structure and a list of relative file paths for all markdown documents included in the build.Usage: Useful for providing an LLM with a high-level overview and the available navigation routes within the documentation.LLM Full Content (llms-full.txt) Content: A single text file containing the complete, concatenated content of all markdown documents from the specified documentation directories (begin, run, guides, devices, resources). Each file's content is clearly demarcated.Usage: Ideal for feeding the entire documentation content into an LLM for comprehensive context, analysis, or question-answering based on the full documentation set.Generation Process These files are automatically generated by the docs/build-all.sh script during the documentation build process. They consolidate information from the following directories:docs/run docs/build Permaweb LLMs.txt An interactive tool for selecting and curating Permaweb documentation into llms.txt format for feeding to LLMs.
+
+---
+
+# 17. FAQ - HyperBEAM - Documentation
+
+Document Number: 17
 Source: https://hyperbeam.arweave.net/run/reference/faq.html
 Words: 327
 Quality Score: 0.500
@@ -512,9 +656,9 @@ Node Operator FAQ This page answers common questions about running and maintaini
 
 ---
 
-# 17. Module hb_singletonerl - HyperBEAM - Documentation
+# 18. Module hb_singletonerl - HyperBEAM - Documentation
 
-Document Number: 17
+Document Number: 18
 Source: https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html
 Words: 1095
 Quality Score: 0.499
@@ -575,9 +719,9 @@ segments that are too long.path_parts_test/0 * path_parts_test() -> any() scoped
 
 ---
 
-# 18. Module dev_p4erl - HyperBEAM - Documentation
+# 19. Module dev_p4erl - HyperBEAM - Documentation
 
-Document Number: 18
+Document Number: 19
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html
 Words: 550
 Quality Score: 0.497
@@ -608,9 +752,9 @@ not set is to proceed, so it is important that a user initialize them.response/3
 
 ---
 
-# 19. relay10 - HyperBEAM - Documentation
+# 20. relay10 - HyperBEAM - Documentation
 
-Document Number: 19
+Document Number: 20
 Source: https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html
 Words: 365
 Quality Score: 0.491
@@ -621,9 +765,9 @@ Device: ~relay@1.0 Overview The ~relay@1.0 device enables HyperBEAM nodes to sen
 
 ---
 
-# 20. process10 - HyperBEAM - Documentation
+# 21. process10 - HyperBEAM - Documentation
 
-Document Number: 20
+Document Number: 21
 Source: https://hyperbeam.arweave.net/build/devices/process-at-1-0.html
 Words: 545
 Quality Score: 0.488
@@ -646,9 +790,9 @@ Quorum: 2 This defines a process that uses:
 
 ---
 
-# 21. Module dev_stackerl - HyperBEAM - Documentation
+# 22. Module dev_stackerl - HyperBEAM - Documentation
 
-Document Number: 21
+Document Number: 22
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html
 Words: 1145
 Quality Score: 0.475
@@ -714,9 +858,9 @@ keyInDevice executed on DeviceName against Msg1.
 
 ---
 
-# 22. meta10 - HyperBEAM - Documentation
+# 23. meta10 - HyperBEAM - Documentation
 
-Document Number: 22
+Document Number: 23
 Source: https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html
 Words: 346
 Quality Score: 0.475
@@ -727,9 +871,9 @@ Device: ~meta@1.0 Overview The ~meta@1.0 device provides access to metadata and 
 
 ---
 
-# 23. Glossary - HyperBEAM - Documentation
+# 24. Glossary - HyperBEAM - Documentation
 
-Document Number: 23
+Document Number: 24
 Source: https://hyperbeam.arweave.net/run/reference/glossary.html
 Words: 286
 Quality Score: 0.473
@@ -741,9 +885,9 @@ Node Operator Glossary This glossary provides definitions for terms and concepts
 
 ---
 
-# 24. FAQ - HyperBEAM - Documentation
+# 25. FAQ - HyperBEAM - Documentation
 
-Document Number: 24
+Document Number: 25
 Source: https://hyperbeam.arweave.net/build/reference/faq.html
 Words: 275
 Quality Score: 0.472
@@ -754,9 +898,9 @@ Developer FAQ This page answers common questions about building applications and
 
 ---
 
-# 25. Module dev_monitorerl - HyperBEAM - Documentation
+# 26. Module dev_monitorerl - HyperBEAM - Documentation
 
-Document Number: 25
+Document Number: 26
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_monitor.html
 Words: 42
 Quality Score: 0.465
@@ -767,9 +911,9 @@ Module dev_monitor.erl Function Index add_monitor/2 end_of_schedule/1 execute/2 
 
 ---
 
-# 26. Module dev_patcherl - HyperBEAM - Documentation
+# 27. Module dev_patcherl - HyperBEAM - Documentation
 
-Document Number: 26
+Document Number: 27
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html
 Words: 375
 Quality Score: 0.462
@@ -788,19 +932,6 @@ request.req_prefix_test/0* snapshot/3 uninitialized_patch_test/0* Function Detai
 the new source to the value found.all_mode_test/0 * all_mode_test() -> any() compute/3 compute(Msg1, Msg2, Opts) -> any() init/3 init(Msg1, Msg2, Opts) -> any() Necessary hooks for compliance with the execution-device standard.move/4 * move(Mode, Msg1, Msg2, Opts) -> any() Unified executor for the all and patches modes.normalize/3 normalize(Msg1, Msg2, Opts) -> any() patch_to_submessage_test/0 * patch_to_submessage_test() -> any() patches/3 patches(Msg1, Msg2, Opts) -> any() Find relevant PATCH messages in the given source key of the execution
 and request messages, and apply them to the given destination key of the
 request.req_prefix_test/0 * req_prefix_test() -> any() snapshot/3 snapshot(Msg1, Msg2, Opts) -> any() uninitialized_patch_test/0 * uninitialized_patch_test() -> any()
-
----
-
-# 27. Fuel Your LLM - HyperBEAM - Documentation
-
-Document Number: 27
-Source: https://hyperbeam.arweave.net/llms.html
-Words: 148
-Quality Score: 0.462
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-LLM Context Files This section provides access to specially formatted files intended for consumption by Large Language Models (LLMs) to provide context about the HyperBEAM documentation.LLM Summary (llms.txt) Content: Contains a brief summary of the HyperBEAM documentation structure and a list of relative file paths for all markdown documents included in the build.Usage: Useful for providing an LLM with a high-level overview and the available navigation routes within the documentation.LLM Full Content (llms-full.txt) Content: A single text file containing the complete, concatenated content of all markdown documents from the specified documentation directories (begin, run, guides, devices, resources). Each file's content is clearly demarcated.Usage: Ideal for feeding the entire documentation content into an LLM for comprehensive context, analysis, or question-answering based on the full documentation set.Generation Process These files are automatically generated by the docs/build-all.sh script during the documentation build process. They consolidate information from the following directories:docs/run docs/build
 
 ---
 

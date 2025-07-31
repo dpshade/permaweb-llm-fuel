@@ -3,7 +3,7 @@
 
 Site: AO Cookbook
 Base URL: https://cookbook_ao.arweave.net
-Generated: 2025-07-03T17:23:32.862Z
+Generated: 2025-07-31T17:29:37.800Z
 
 📈 EXTRACTION STATISTICS
 ------------------------------
@@ -11,10 +11,10 @@ Total pages: 90
 Successful: 90
 Failed: 0
 Quality filtered: 0
-Total words: 36784
+Total words: 36805
 Average words per page: 409
 
-Average quality score: 0.468
+Average quality score: 0.469
 
 🔧 EXTRACTION METHODS
 -------------------------

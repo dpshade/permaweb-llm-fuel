@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-03T17:24:19.217Z
+Generated on: 2025-07-31T17:30:37.550Z
 Total documents: 1
-Total words: 9710
+Total words: 9868
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Total words: 9710
 
 Document Number: 1
 Source: https://glossary.arweave.net/glossary.txt
-Words: 9710
+Words: 9868
 Quality Score: 1.000
 Extraction Method: plain-text
 Extraction Reason: plain-text-file
@@ -136,7 +136,6 @@ aoconnect: A JavaScript/TypeScript library that enables interaction with the AO 
 AO Dev-Cli: A command-line tool for building AO WebAssembly modules, supporting both Lua and C/C++ development. It provides a streamlined workflow for initializing projects, building modules, and deploying them to the AO network. The tool features configurable build settings, external library support, and predefined memory presets for different use cases.
 aos console: A command-line interface tool for interacting with AO networks. It allows developers to deploy processes, send messages, and manage AO resources through terminal commands.
 DataItemSigner: A function used to cryptographically sign data items before they're submitted to the AO network, ensuring authenticity and ownership.
-dryrun Parameter: An API parameter that allows execution of operations without committing them to the blockchain, useful for testing and validation.
 Relay Operator: An entity that facilitates message transmission in the AO network, often requiring payment in the form of tokens to relay messages.
 Tag System: The structured protocol for message routing in AO using key-value pairs. Common patterns include Action-Target-Quantity for token transfers and other operations.
 Balances Implementation: The pattern for implementing token balances within AO processes, typically using a Lua table with wallet addresses as keys.
@@ -249,4 +248,8 @@ Token Sink: A mechanism in the Arweave ecosystem that removes tokens from circul
 TabM: A unified data format in HyperBEAM standing for 'Type Annotated Binary Messages'. TabM serves as the intermediary representation that all message formats can convert to and from, enabling seamless communication between different encoding schemes. It includes type annotations that preserve the data types of fields (such as integers, strings, and binaries), allowing for accurate message transformation across the system. TabM is a core component of HyperBEAM's message processing pipeline, bridging the gap between various message formats while preserving data integrity.
 Codecs: Modular components in HyperBEAM that convert between different message formats and the unified TabM format. Codecs solve interoperability challenges in distributed systems by using TabM as an intermediate format, reducing complexity from N² direct conversions to N codecs for N formats. This maintains data integrity and type safety while supporting various encodings (ANS-104, HTTP Signatures, JSON, flat formats). The architecture makes the system extensible - adding a new format only requires one codec that converts to/from TabM, rather than creating conversions for every existing format. This enables HyperBEAM to seamlessly communicate across different systems while maintaining consistent message semantics.
 Flat Format: A simple key-value encoding scheme in HyperBEAM where data is represented as a series of 'key: value' pairs, each on a new line. This format is particularly used in configuration files and certain message types due to its simplicity and human readability. For example, a flat format message might look like 'Content-Type: text/plain\nAction: update\nValue: 123'. Unlike nested formats like JSON, flat formats have no hierarchy or nesting capabilities, making them easier to parse but less expressive. In HyperBEAM, flat formats are often used for configuration files and basic message headers where nested structures aren't necessary.
-PATCH: A method in HyperBEAM that enables efficient state updates by modifying only specific parts of data structures rather than replacing entire objects. When sent with method=patch in AO, it allows processes to update their state incrementally, significantly reducing latency and computational overhead. PATCH works with HyperBEAM's caching system to provide high-performance state management even for legacy processes. This mechanism is particularly valuable for applications handling large datasets or requiring frequent small updates, as it minimizes network traffic and processing time by transmitting only the changed portions of state.
+~patch@1.0: A HyperBEAM device that enables AO processes to expose specific parts of their internal state for direct HTTP access. It allows developers to make selected data immediately readable via a standardized URL path, improving performance for web frontends and data services by replacing slower dryrun calls with immediate state reading.
+Permaweb Deploy: A Node.js command-line tool designed to streamline the deployment of web applications to the Arweave permaweb. It automates the process of uploading build folders using Turbo, creating manifests, and updating ArNS (Arweave Name Service) records. The tool supports both mainnet and testnet deployments and integrates easily with GitHub Actions for continuous deployment workflows.
+~lua@5.3a: A HyperBEAM device (lua@5.3a) that enables dynamic, on-the-fly computation of process state using Lua scripts. It allows transformation of process state without altering the underlying data, supporting pipeline-style processing where state is passed as a base message and custom Lua functions are executed to return computed results.
+Wayfinder SDK: A client-side routing and verification library for decentralized data access on the Arweave network. It provides intelligent gateway routing based on performance and availability, cryptographic data verification to ensure content integrity, and seamless access to permaweb content by automatically selecting optimal gateways and verifying data authenticity.
+dryrun: A simulation of an operation without committing it to the blockchain, allowing you to test and validate interactions on process state before applying them permanently. This method is being deprecated for HyperBEAM processes in favor of the state patching mechanism (~patch@1.0 device) for better performance, as dryrun calls caused bottlenecks on Legacynet. Still useful for testing token balances, transfers, and other operations locally before execution.

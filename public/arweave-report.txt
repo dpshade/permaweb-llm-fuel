@@ -3,20 +3,21 @@
 
 Site: Arweave Cookbook
 Base URL: https://cookbook.arweave.net
-Generated: 2025-07-03T17:24:18.637Z
+Generated: 2025-07-31T17:30:36.844Z
 
 📈 EXTRACTION STATISTICS
 ------------------------------
-Total pages: 65
-Successful: 65
+Total pages: 115
+Successful: 72
 Failed: 0
-Quality filtered: 0
-Total words: 21106
-Average words per page: 325
+Quality filtered: 43
+Total words: 30564
+Average words per page: 425
 
-Average quality score: 0.476
+Average quality score: 0.486
 
 🔧 EXTRACTION METHODS
 -------------------------
-defuddle_semantic: 65 (100.0%)
+defuddle_semantic: 71 (98.6%)
+defuddle: 1 (1.4%)
 

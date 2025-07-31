@@ -119,6 +119,59 @@
       "/kit/index.html"
     ]
   },
+  "wao": {
+    "name": "WAO Documentation",
+    "baseUrl": "https://docs.wao.eco",
+    "maxDepth": 4,
+    "maxPages": 100,
+    "selectors": {
+      "title": "h1.vocs_H1, .vocs_Header h1",
+      "content": "article.vocs_Content"
+    },
+    "excludePatterns": [
+      "/\\.(pdf|zip|tar|gz|js|css)$/",
+      "/mailto:/",
+      "/discord\\.gg/",
+      "/github\\.com/",
+      "/twitter\\.com/",
+      "/llms\\.txt$/",
+      "/llms-full\\.txt$/"
+    ],
+    "contentFilters": {
+      "removeScripts": true,
+      "removeStyles": true,
+      "removeComments": true,
+      "removeEmptyElements": true,
+      "minWordCount": 30,
+      "maxCodeBlockLength": 2000
+    },
+    "seedUrls": [
+      "/getting-started",
+      "/hyperbeam",
+      "/hyperbeam/decoding-from-scratch",
+      "/hyperbeam/installing-hb-wao",
+      "/hyperbeam/devices-pathing",
+      "/hyperbeam/custom-devices-codecs",
+      "/tutorials/legacynet-aos",
+      "/tutorials/mainnet-aos",
+      "/tutorials/creating-devices",
+      "/tutorials/devices-rust",
+      "/tutorials/devices-cpp",
+      "/tutorials/running-llms",
+      "/api/ao",
+      "/api/process",
+      "/api/function-piping",
+      "/api/ar",
+      "/api/gql",
+      "/api/armem",
+      "/api/hb",
+      "/api/hyperbeam",
+      "/api/hbsig",
+      "/legacynet",
+      "/web",
+      "/hub"
+    ]
+  },
   "permaweb-glossary": {
     "name": "Permaweb Glossary",
     "baseUrl": "https://glossary.arweave.net",

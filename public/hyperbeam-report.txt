@@ -3,7 +3,7 @@
 
 Site: Hyperbeam
 Base URL: https://hyperbeam.arweave.net
-Generated: 2025-07-03T17:23:03.464Z
+Generated: 2025-07-31T17:29:14.652Z
 
 📈 EXTRACTION STATISTICS
 ------------------------------
@@ -11,10 +11,10 @@ Total pages: 39
 Successful: 39
 Failed: 0
 Quality filtered: 0
-Total words: 19150
-Average words per page: 491
+Total words: 19629
+Average words per page: 503
 
-Average quality score: 0.500
+Average quality score: 0.502
 
 🔧 EXTRACTION METHODS
 -------------------------

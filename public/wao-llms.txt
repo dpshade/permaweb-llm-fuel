@@ -1,0 +1,3074 @@
+# Permaweb Documentation Collection
+
+Generated on: 2025-07-31T17:30:45.234Z
+Total documents: 31
+Total words: 21865
+
+## Table of Contents
+
+### Included Documents
+
+1. [Installing HyperBEAM and WAO](https://docs.wao.eco/hyperbeam/installing-hb-wao)
+2. [Get started WAO](https://docs.wao.eco/getting-started)
+3. [HyperBEAM WAO](https://docs.wao.eco/api/hyperbeam)
+4. [Legacynet AOS WAO](https://docs.wao.eco/legacynet)
+5. [Legacynet Compatible AOS WAO](https://docs.wao.eco/hyperbeam/legacynet-aos)
+6. [ArMem WAO](https://docs.wao.eco/api/armem)
+7. [HBSig WAO](https://docs.wao.eco/api/hbsig)
+8. [AO WAO](https://docs.wao.eco/api/ao)
+9. [Legacynet AOS on HyperBEAM WAO](https://docs.wao.eco/tutorials/legacynet-aos)
+10. [Devices and Pathing WAO](https://docs.wao.eco/hyperbeam/devices-pathing)
+11. [Structured Codec WAO](https://docs.wao.eco/hyperbeam/codec-structured)
+12. [Flat Codec WAO](https://docs.wao.eco/hyperbeam/codec-flat)
+13. [Running LLMs on AOS (Highly Experimental) WAO](https://docs.wao.eco/tutorials/running-llms)
+14. [Device Composition WAO](https://docs.wao.eco/hyperbeam/device-composition)
+15. [Custom Devices and Codecs WAO](https://docs.wao.eco/hyperbeam/custom-devices-codecs)
+16. [Hashpaths WAO](https://docs.wao.eco/hyperbeam/hashpaths)
+17. [Process WAO](https://docs.wao.eco/api/process)
+18. [HyperBEAM WAO](https://docs.wao.eco/hyperbeam)
+19. [Httpsig Codec WAO](https://docs.wao.eco/hyperbeam/codec-httpsig)
+20. [Payment System WAO](https://docs.wao.eco/hyperbeam/payment-system)
+21. [AR WAO](https://docs.wao.eco/api/ar)
+22. [Custom Devices in Rust WAO](https://docs.wao.eco/tutorials/devices-rust)
+23. [Custom Devices in C WAO](https://docs.wao.eco/tutorials/devices-cpp)
+24. [HTTP Message Signatures WAO](https://docs.wao.eco/hyperbeam/http-message-signatures)
+25. [WAO Hub](https://docs.wao.eco/hub)
+26. [Creating Custom HyperBEAM Devices WAO](https://docs.wao.eco/tutorials/creating-devices)
+27. [Function Piping WAO](https://docs.wao.eco/api/function-piping)
+28. [Processes and Scheduler WAO](https://docs.wao.eco/hyperbeam/processes-scheduler)
+29. [AO The Web WAO](https://docs.wao.eco/web)
+30. [GQL WAO](https://docs.wao.eco/api/gql)
+31. [Decoding HyperBEAM from Scratch WAO](https://docs.wao.eco/hyperbeam/decoding-from-scratch)
+
+---
+
+# 1. Installing HyperBEAM and WAO
+
+Document Number: 1
+Source: https://docs.wao.eco/hyperbeam/installing-hb-wao
+Words: 510
+Quality Score: 0.692
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Installing HyperBEAM Follow the HyperBEAM docs and install HyperBEAM on your local machine. You could use one of the existing remote nodes, but you'll miss many important details in these tutorials since we'll literally crack open the internals.Installing WAO Create a WAO project that comes with the wao SDK and testing framework:Terminal Terminal npx wao create myapp && cd myapp You can also create an empty directory and install wao and hbsig:Terminal Terminal mkdir myapp && cd myapp && yarn init && yarn add wao hbsig
+mkdir test && touch test/hyperbeam.js Edit package.json to enable ESM and test commands with the --experimental-wasm-memory64 flag and disable concurrency so the test won't try running multiple HyperBEAM nodes:/package.json {
+"name": "myapp",
+"version": "0.0.1",
+"type": "module",
+"scripts": {
+"test": "node --experimental-wasm-memory64 --test --test-concurrency=1",
+"test-only": "node --experimental-wasm-memory64 --test-only --test-concurrency=1",
+"test-all": "node --experimental-wasm-memory64 --test --test-concurrency=1 test/**/*.test.js"
+},
+"dependencies": {
+"hbsig": "^0.0.7",
+"wao": "^0.33.3"
+}
+} Writing Tests Import the HyperBEAM and HB classes from wao to interact with your HyperBEAM node.Make sure you have an Arweave wallet JWK at HyperBEAM/.wallet.json for the node operator account.Also, set CWD in .env.hyperbeam, which should be the HyperBEAM node directory path relative to the root directory of your app./.env.hyperbeam CWD=../HyperBEAM Here's the minimum viable test code. The HyperBEAM class starts up a HyperBEAM node and kills it once your tests complete, creating a sandbox environment for each test suite./test/hyperbeam.test.js import assert from "assert"
+import { describe, it, before, after, beforeEach } from "node:test"
+import { HyperBEAM } from "wao/test"
+
+describe("HyperBEAM", function () {
+let hbeam, hb
+
+// start a hyperbeam node and wait till it's ready, reset node storage
+before(async () => {
+hbeam = await new HyperBEAM({ reset: true }).ready()
+hb = hbeam.hb
+})
+
+// kill the node after testing
+after(async () => hbeam.kill())
+
+it("should run a HyperBEAM node", async () => {
+// change config
+await hb.post({ path: "/~meta@1.0/info", test_config: "abc" })
+
+// get config
+const { out } = await hb.get({ path: "/~meta@1.0/info" })
+assert.equal(out.test_config, "abc")
+})
+}) You can interact with any HyperBEAM node from JS using the HB class.With these two classes, you can write complete test suites for your HyperBEAM node, devices, processes, and modules running on top (such as AOS) using only JavaScript.If you can't run HyperBEAM on your local machine, skip the HyperBEAM class and pass the remote node url to HB:/test/hb.test.js import assert from "assert"
+import { describe, it, before, after } from "node:test"
+import { acc } from "wao/test"
+import { HB } from "wao"
+
+describe("HyperBEAM", function () {
+let hb
+
+// using one of the pre-generated non-operator accounts for test
+before(async () => {
+hb = new HB({ jwk: acc[0].jwk, url: "http://localhost:10001" })
+})
+
+it("should connect to a HyperBEAM node", async () => {
+// get build info
+const build = await hb.g("/~meta@1.0/build")
+assert.equal(build.node, "HyperBEAM")
+})
+}) Running Tests You can find the working test files for this chapter here:hyperbeam.test.js hb.test.js Run tests:Terminal Terminal yarn test test/hyperbeam.test.js
+# yarn test test/hb.testjs Now we're ready to decode HyperBEAM.References General HyperBEAM Installation Guide WAO API HyperBEAM Class API HB Class API
+
+---
+
+# 2. Get started  WAO
+
+Document Number: 2
+Source: https://docs.wao.eco/getting-started
+Words: 201
+Quality Score: 0.559
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Lightning Fast AO Testing Framework WAO SDK streamlines Arweave/AO development with elegant syntax enhancements and seamless message piping for enjoyable coding experiences. GraphQL operations are also made super easy.Succinct AO SDK with Syntactic Sugar Additionally, it includes a drop-in replacement for aoconnect, allowing the testing of lua scripts 1000x faster than the mainnet by emulating AO units in memory. It's even 100x faster than testing with arlocal and ao-localnet.Standalone Local AO Units WAO is not only for in-memory testing, but also for lightweight standanoe AO units and web embeddable AO units. You can type a simple command npx wao, and you will have your own AO units on your local computer.AO in the Browser You can open up a browser at preview.wao.eco and you will have all the AO units (MU/SU/CU/Gateway) right in your browser with an AOS terminal, a coding editor, and a local AO explorer to make debugging easier.HyperBEAM SDK WAO is also compatible with HyperBEAM and Mainnet AOS processes. You can launch a HyperBEAM node from withing JS test code and create a sandbox environment for the test.HyperBEAM Custom Device Testing You can also create custom HyperBEAM devices in Erlang, Rust, and C++, then test them in JS.
+
+---
+
+# 3. HyperBEAM  WAO
+
+Document Number: 3
+Source: https://docs.wao.eco/api/hyperbeam
+Words: 666
+Quality Score: 0.553
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+HperBEAM class can start and manage a HyperBEAM node from within JS code for testing.You should first install HyperBEAM on your local machine by following the official docs.Basic Usage import { HyperBEAM } from "wao/test"
+import { describe, it, before, after } from "node:test"
+
+describe("HyperBEAM", function () {
+let hbeam
+before(async () => {
+hbeam = await new HyperBEAM({
+port: 10001,
+wallet: ".wallet.json",
+cwd: "./HyperBEAM",
+reset: true,
+bundler: 4001,
+gateway: 4000,
+logs: true,
+shell: true,
+as: [ "genesis_wasm" ],
+devices: [ "flat", "structured", "httpsig", "json", "meta" ],
+faff: [ addr, addr2, addr3 ],
+simple_pay: true,
+simple_pay_price: 3,
+p4_lua: { processor: pid, client: cid },
+operator: addr
+}).ready()
+})
+after(() => hbeam.kill())
+it("should run", async () => {
+// run some tests
+})
+})
+
+hbeam.kill() Parameters Name Default Description port 10001 Port number for the HyperBEAM node cwd../HyperBEAM node directory relative to current working directory wallet.wallet.json node operator jwk location relative to cwd reset false clear storage to start fresh bundler - bundler service port gateway - gateway service port logs true set false to disable HyperBEAM logs shell true false to not auto-start rebar3 shell as [] rocksdb, genesis_wasm, http3 devices - array of preloaded devices, undefined to load everything faff - array of addresses (likely for funding/faucet) simple_pay false enable simple-pay@1.0 simple_pay_price - base price for transactions p4_lua - { processor: pid, client: cid } operator - payment operator address Environment Variables If your installation requires environment variables to run rebar3, define then in .env.hyperbeam.cwd can also be set in .env.hyperbeam to apply globally across all test files..env.hyperbeam CWD=./HyperBEAM
+CC=gcc-12
+CXX=g++-12
+CMAKE_POLICY_VERSION_MINIMUM=3.5 Preloaded Devices Key Name Module meta meta@1.0 dev_meta json json@1.0 dev_codec_json flat flat@1.0 dev_codec_flat httpsig httpsig@1.0 dev_codec_httpsig structured structured@1.0 dev_codec_structured process process@1.0 dev_process message message@1.0 dev_message scheduler scheduler@1.0 dev_scheduler delegated-compute delegated-compute@1.0 dev_delegated_compute genesis-wasm genesis-wasm@1.0 dev_genesis_wasm lua lua@5.3a dev_lua wasi wasi@1.0 dev_wasi wasm-64 wasm-64@1.0 dev_wasm json-iface json-iface@1.0 dev_json_iface test-device test-device@1.0 dev_test patch patch@1.0 dev_patch push push@1.0 dev_push stack stack@1.0 dev_stack multipass multipass@1.0 dev_multipass faff faff@1.0 dev_faff p4 p4@1.0 dev_p4 node-process node-process@1.0 dev_node_process simple-pay simple-pay@1.0 dev_simple_pay cron cron@1.0 dev_cron relay relay@1.0 dev_relay router router@1.0 dev_router cache cache@1.0 dev_cache local-name local-name@1.0 dev_local_name lookup lookup@1.0 dev_lookup name name@1.0 dev_name compute compute@1.0 dev_cu dedup dedup@1.0 dev_dedup manifest manifest@1.0 dev_manifest monitor monitor@1.0 dev_monitor snp snp@1.0 dev_snp @1.0 dev_ poda poda@1.0 dev_poda greenzone greenzone@1.0 dev_green_zone hyperbuddy hyperbuddy@1.0 dev_hyperbuddy ans104 ans104@1.0 dev_codec_ans104 cacheviz cacheviz@1.0 dev_cacheviz wao wao@1.0 dev_wao If the device is not listed, you need to define it yourself.device = { name, module } const hbeam = await new HyperBEAM({
+devices: [
+"flat",
+"structured",
+"httpsig",
+"json",
+"meta",
+{ name: "mydev@1.0", module: "dev_mydev" }
+]
+}).ready() Node Operator Address You can use HyperBEAM.OPERATOR as a placeholder for the node operator address before instantiation.const hbeam = await new HyperBEAM({
+operator: HyperBEAM.OPERATOR,
+faff: [ HyperBEAM.OPERATOR, addr2, addr3 ]
+}).ready() HyperBEAM.OPERATOR will be replaced with the actual node operator address on instantiation.Eunit Testing You can run Erlang eunit tests from JS.import assert from "assert"
+import { after, describe, it, before, beforeEach } from "node:test"
+import HyperBEAM from "../../src/hyperbeam.js"
+
+describe("Hyperbeam Eunit", function () {
+let hbeam
+before(async () => {
+hbeam = new HyperBEAM({ reset: true, shell: false }))
+})
+beforeEach(async () => (hb = hbeam.hb))
+
+it("should run a single module test", async () => {
+await hbeam.eunit("dev_message")
+})
+
+it("should run multiple module tests", async () => {
+await hbeam.eunit([ "dev_message", "dev_process", "dev_schduler" ])
+})
+
+it("should run a specific test", async () => {
+await hbeam.eunit("dev_message", "verify_test")
+})
+
+it("should run multiple tests", async () => {
+await hbeam.eunit([
+"dev_message:verify_test",
+"dev_process:persistent_process_test"
+)
+})
+}) Reading Local Files You can read local files under the HyperBEAM cwd directory with the file method.The following is reading lua scripts and caching them to the HyperBEAM node, then starting another node process on port 10002 with the p4 payment service using the cached Lua scripts.const process = hbeam.file("scripts/p4-payment-process.lua")
+const pid = await hb.cacheScript(process)
+const client = hbeam.file("scripts/p4-payment-client.lua")
+const cid = await hb.cacheScript(client)
+const hbeam2 = await new HyperBEAM({
+port: 10002,
+operator: hb.addr,
+p4_lua: { processor: pid, client: cid },
+}).ready()
+
+---
+
+# 4. Legacynet AOS  WAO
+
+Document Number: 4
+Source: https://docs.wao.eco/legacynet
+Words: 1804
+Quality Score: 0.549
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+WAO is still actively being developed; please use it at your discretion.Installation yarn add wao Drop-in aoconnect Replacement for Tests By replacing aoconnect with WAO connect, everything runs in memory with zero latency and your tests are executed 1000x faster. The APIs are identical. So, there's no need to change anything else in your code.//import { spawn, message, dryrun, assign, result } from "@permaweb/aoconnect"
+import { connect, acc } from "wao/test"
+const { spawn, message, dryrun, assign, result } = connect() Setting up a Project It's super easy to set up a test AO project manually.mkdir wao-test && cd wao-test
+yarn init && yarn add wao Add test and test-only commands to your package.json.{
+"scripts": {
+"test": "node --experimental-wasm-memory64",
+"test-only": "node --experimental-wasm-memory64 --test-only"
+}
+} Create test directory and test.js file.mkdir test && touch test/test.js Writing Tests Write a simple test in test.js.import assert from "assert"
+import { describe, it } from "node:test"
+import { connect, acc } from "wao/test"
+const { spawn, message, dryrun } = connect()
+const signer = acc[0].signer
+const src_data = `
+Handlers.add("Hello", "Hello", function (msg)
+msg.reply({ Data = "Hello, World!" })
+end)
+`
+describe("WAO", function () {
+it("should spawn a process and send messages", async () => {
+const pid = await spawn({
+signer,
+module: "Do_Uc2Sju_ffp6Ev0AnLVdPtot15rvMjP-a9VVaA5fM",
+scheduler: "_GQ33BkPtZrqxA84vM8Zk-N2aO0toNNu_C-l-rawrBA"
+})
+
+// on mainnet, you need to wait till the process becomes available.
+// WAO automatically handles it. No need with in-memory tests.
+// await wait({ pid })
+
+await message({
+process: pid,
+tags: [{ name: "Action", value: "Eval" }],
+data: src_data,
+signer,
+})
+const res = await dryrun({
+process: pid,
+tags: [{ name: "Action", value: "Hello" }],
+signer,
+})
+assert.equal(res.Messages[0].Data, "Hello, World!")
+})
+}) Note that generating random Arweave wallets for every test takes time and slows down your test executions, so Wao connect provides pre-generated accounts for your tests, which saves hours if you are to run your tests thousands of times.acc[0] = { jwk, addr, signer } Run the test.yarn test test/test.js Using WAO SDK WAO comes with elegant syntactic sugar and makes writing AO projects an absolute joy.The same test can be written as follows.import assert from "assert"
+import { describe, it } from "node:test"
+import { AO, acc } from "wao/test"
+
+const src_data = `
+Handlers.add("Hello", "Hello", function (msg)
+msg.reply({ Data = "Hello, World!" })
+end)
+`
+describe("WAO", function () {
+it("should spawn a process and send messages", async () => {
+const ao = await new AO().init(acc[0])
+const { p } = await ao.deploy({ src_data })
+assert.equal(await p.d("Hello", false), "Hello, World!")
+})
+}) The AO class is not only for in-memory tests, but also for production code. You just need to import from a different path.import { AR, AO, GQL } from "wao" Cherry-Picking Outputs You often need to pick a specific piece of data from returned results with multiple spawned messages. You need to go through all the returned messages and further go through tags and data to find it. That's too much code to write. AO comes with get parameter to simplify it.Consider the following Lua handlers.local json = require('json')
+
+Handlers.add("Hello", "Hello", function (msg)
+msg.reply({ Data = json.encode({ Name = "Bob" })})
+end)
+
+Handlers.add("Hello2", "Hello2", function (msg)
+msg.reply({ Data = "Hello, World!", Name = "Bob", Age = "30" })
+end)
+
+Handlers.add("Hello3", "Hello3", function (msg)
+msg.reply({ Profile = json.encode({ Name = "Bob", Age = "30" })})
+end) // by default it extracts string Data
+const out = await p.d("Hello")
+assert.deepEqual(out, { Name: "Bob" })
+
+// equivalent
+const out2 = await p.d("Hello", { get: false })
+assert.deepEqual(out2, { Name: "Bob" })
+
+// get JSON decoded Data
+const out3 = await p.d("Hello2", { get: true })
+assert.equal(out3, "Hello, World!")
+
+// get a tag
+const out4 = await p.d("Hello2", { get: "Age" })
+assert.equal(out4, "30")
+
+// get multiple tags
+const out5 = await p.d("Hello2", { get: { obj: { firstname: "Name", age: "Age" }}})
+assert.deepEqual(out5, { firstname: "Bob", age: "30" })
+
+// shortcut if keys don't include name, data, from, json
+const out6 = await p.d("Hello2", { get: { firstname: "Name", age: "Age" }})
+assert.deepEqual(out6, { firstname: "Bob", age: "30" })
+
+// await p.d("Hello2", { get: { name: "Name", age: "Age" } }) doesn't work
+
+// handle tag as json
+const out7 = await p.d("Hello3", { get: { prof: { name: "Profile", json: true }}})
+assert.deepEqual(out7, { prof: { Name: "Bob", Age: "30" }}) Determining Message Success To determine if your message is successful, you often need to track down a chain of asynchronous messages and examine resulted tags and data. This is actually a fairy complex operation and too much code to write. Luckily for you, AO comes with check parameter to extremely simplify it. check tracks down messages and lazy-evaluates if your check conditions are met.// check if Data exists
+await p.m("Hello2", { check: true })
+
+// check if Data is a certain value
+await p.m("Hello2", { check: "Hello, World! })
+
+// check if a tag exists
+await p.m("Hello2", { check: "Name" })
+
+// check if tags are certain values
+await p.m("Hello2", { check: { Name: "Bob", Age: "30" } })
+
+// it throws an Error if the conditions are not met
+try{
+await p.m("Hello2", { check: { Name: "Bob", Age: "20" } })
+}catch(e){
+console.log("something went wrong!")
+}
+
+// check if Name is Bob and Age exists, then get Age
+const age = await p.m("Hello2", { check: { Name: "Bob", Age: true }, get : "Age" })
+assert.equal(age, "30", "Bob is not 30 yo!") Async Message Tracking with receive() AOS2 introduced a handy function receive() to send a message to another process and receive a reply in the same handler.Handlers.add("Hello3", "Hello3", function (msg)
+msg.reply({ Data = "How old are you?" })
+local age = Send({
+Target = msg.To, Action = "Get-Age", Name = msg.Who
+}).receive().Data
+msg.reply({ Data = "got your age!", Name = msg.Who, Age = age })
+end) Since the second reply will be a part of another message triggerd by the Target process reply, you cannot get the final reply simply with the arconnect result function. You need to keep pinging the process results or track down the chain of messages to examine what went wrong. The AO get and check automatically handle this complex operation in a lazy short-circuit manner in the background for you. A proper timeout (ms) should be specified.const age = await p.m(
+"Hello3",
+{ Who: "Bob", To: DB_PROCESS_ID }, // second argument can be tags
+{ get: "Age", check: "got your age!", timeout: 5000 }
+)
+assert.equal(age, "30") There are so many more powerful tricks you can utilize to make complex AO development easier.Read on to the API reference section to find out!Logging WAO hot-patches the core AOS module code so ao.log automatically is forwarded to JS console.log and whatever you log will be directly dised in your terminal. Lua tables will be auto-converted to JSON objects. It doesn't affect your production code, it only hot-paches the module during testing. This makes complex debugging so easy.Handlers.add("Hello4", "Hello4", function (msg)
+ao.log("Hello, Wordl!") -- will be dised in the terminal
+ao.log({ Hello = "World!" }) -- will be auto-converted to JSON
+
+-- passing multiple values
+ao.log("Hi", 3, true, [ 1, 2, 3 ], { Hello = "World!" })
+end) You can get logs even when an error occurs in the handler, which is extremely handy to identify the error causes.Fork Wasm Memory You can fork wasm memory to a new process. This could come in handy to create checkpoints for tests.It only works with in-memory testing.const src_counter = `
+local count = 0
+Handlers.add("Add", "Add", function (msg)
+count = count + tonumber(msg.Plus)
+end)
+Handlers.add("Get", "Get", function (msg)
+msg.reply({ Data = tostring(count) })
+end)
+`
+const ao = await new AO().init(acc[0])
+const { p, pid } = await ao.deploy({ boot: true, src_data: src_counter })
+await p.m("Add", { Plus: 3 })
+assert.equal(await p.d("Get"), "3")
+
+const ao2 = await new AO().init(acc[0])
+// pass the exisiting wasm memory to a new process
+const { p: p2 } = await ao2.spwn({ memory: ao.mem.env[pid].memory })
+assert.equal(await p2.d("Get"), "3")
+await p2.m("Add", { Plus: 2 })
+assert.equal(await p2.d("Get"), "5") You can also get mainnet process memory from the CU endpoint (GET /state/{pid}) and fork it for tests.WeaveDrive The WeaveDrive extension is fully emulated with WAO. You can use attest and avail functions from AO.import { blueprint, AO, acc } from "wao/test"
+const attestor = acc[0]
+const handler = `
+apm.install('@rakis/WeaveDrive')
+Drive = require('@rakis/WeaveDrive')
+Handlers.add("Get", "Get", function (msg)
+msg.reply({ Data = Drive.getData(msg.id) })
+end)`
+
+describe("WeaveDrive", () => {
+it("should load Arweave tx data", async () => {
+const ao = await new AO().init(attestor)
+
+const { p } = await ao.deploy({
+tags: { Extension: "WeaveDrive", Attestor: attestor.addr },
+loads: [ await blueprint("apm"), handler ],
+})
+
+const { id } = await ao.ar.post({ data: "Hello" })
+await ao.attest({ id })
+
+assert.equal(await p.d("Get", { id }), "Hello")
+})
+}) Local Persistent Server You can run a local WAO server with persistent storage, which enables connections with outside components such as frontend apps.npx wao port: Arweave port, the ports of AO units are based on this port (default to 4000) AR: localhost:4000 MU: localhost:4002 SU: localhost:4003 CU: localhost:4004 db: a directory to store data (default to .cache) reset: to reset the database npx wao --port 5000 --db .custom_cache_dir --reset In this case, the ports will be, AR => 5000, MU => 5002, SU => 5003, CU => 5004.You can use WAO SDK or AOConnect to connect with the WAO units, but the following tags will be automatically set with WAO SDK.AOS2.0.1 Module: Do_Uc2Sju_ffp6Ev0AnLVdPtot15rvMjP-a9VVaA5fM Scheduler: _GQ33BkPtZrqxA84vM8Zk-N2aO0toNNu_C-l-rawrBA Authority: eNaLJLsMiWCSWvQKNbk_YT-9ydeWl9lrWwXxLVp9kcg import { describe, it } from "node:test"
+import assert from "assert"
+import { AO } from "wao"
+
+const src_data = `
+Handlers.add("Hello", "Hello", function (msg)
+msg.reply({ Data = "Hello, World!" })
+end)`
+
+describe("WAO Server", ()=>{
+it("should connect with WAO SDK", async ()=>{
+const ao = await new AO(4000).init(YOUR_JWK)
+const { p } = await ao.deploy({ src_data })
+assert.equal(await p.d("Hello"), "Hello, World!")
+})
+}) With AOConnect,import { describe, it } from "node:test"
+import assert from "assert"
+import { connect, createDataItemSigner } from "@permaweb/aoconnect"
+const { spawn, message, dryrun, assign, result } = connect({
+MU_URL: `http://localhost:4002,
+CU_URL: http://localhost:4003,
+GATEWAY_URL: http://localhost:4000`
+})
+
+const src_data = `
+Handlers.add("Hello", "Hello", function (msg)
+msg.reply({ Data = "Hello, World!" })
+end)`
+
+describe("WAO Server", () => {
+it("should connect with WAO SDK", async () => {
+const pid = await spawn({
+module: "Do_Uc2Sju_ffp6Ev0AnLVdPtot15rvMjP-a9VVaA5fM",
+scheduler: "_GQ33BkPtZrqxA84vM8Zk-N2aO0toNNu_C-l-rawrBA",
+tags: [
+{
+name: "Authority",
+value: "eNaLJLsMiWCSWvQKNbk_YT-9ydeWl9lrWwXxLVp9kcg",
+},
+],
+signer: createDataItemSigner(YOUR_JWK),
+})
+
+// wait till the process becomes available
+
+const mid = await message({
+process: pid,
+tags: [{ name: "Action", value: "Eval" }],
+data: src_data,
+signer: createDataItemSigner(acc[0].jwk),
+})
+
+console.log(await result({ process: pid, message: mid }))
+
+const res = await dryrun({
+process: pid,
+data: "",
+tags: [{ name: "Action", value: "Hello" }],
+anchor: "1234",
+})
+
+assert.equal(res.Messages[0].Data, "Hello, World!")
+})
+}) Connecting with the AOS terminal,aos \
+--gateway-url http://localhost:4000 \
+--cu-url http://localhost:4004 \
+--mu-url http://localhost:4002 \
+--tag-name Authority \
+--tag-value eNaLJLsMiWCSWvQKNbk_YT-9ydeWl9lrWwXxLVp9kcg
+
+---
+
+# 5. Legacynet Compatible AOS  WAO
+
+Document Number: 5
+Source: https://docs.wao.eco/hyperbeam/legacynet-aos
+Words: 582
+Quality Score: 0.544
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Legacynet compatible AOS uses genesis-wasm@1.0 to delegate compute to an external local CU. You can use wasm modules stored on the Arweave Mainnet storage, or you could create a helper method to locally store wasm modules for testing. You should also pass as = ["genesis_wasm"] to the test HyperBEAM node to auto-start a local CU server with HyperBEAM.Let's use the production AOS2.0.6 module stored at ISShJH1ij-hPPt9St5UFFr_8Ys3Kj5cyg7zrMGt7H9s for now./test/legacynet-aos.test.js import assert from "assert"
+import { describe, it, before, after } from "node:test"
+import { HyperBEAM } from "wao/test"
+
+const seed = num => {
+const array = new Array(num)
+for (let i = 0; i < num; i++) array[i] = Math.floor(Math.random() * 256)
+return Buffer.from(array).toString("base64")
+}
+
+const data = `
+local count = 0
+Handlers.add("Inc", "Inc", function (msg)
+count = count + 1
+msg.reply({ Data = "Count: "..tostring(count) })
+end)
+
+Handlers.add("Get", "Get", function (msg)
+msg.reply({ Data = "Count: "..tostring(count) })
+end)`
+
+describe("Processes and Scheduler", function () {
+let hbeam, hb
+before(async () => {
+hbeam = await new HyperBEAM({
+reset: true,
+as: ["genesis_wasm"]
+}).ready()
+hb = hbeam.hb
+})
+after(async () => hbeam.kill())
+
+it("should spawn a legacynet AOS process", async () => {
+const { process: pid } = await hb.p(
+"/schedule",
+{
+device: "process@1.0",
+type: "Process",
+"data-protocol": "ao",
+variant: "ao.TN.1",
+scheduler: hb.addr,
+"scheduler-location": hb.addr,
+authority: hb.addr,
+"random-seed": seed(16),
+module: "ISShJH1ij-hPPt9St5UFFr_8Ys3Kj5cyg7zrMGt7H9s",
+"scheduler-device": "scheduler@1.0",
+"execution-device": "stack@1.0",
+"device-stack": ["genesis-wasm@1.0", "patch@1.0"],
+"push-device": "push@1.0",
+"patch-from": "/results/outbox",
+},
+{ path: false }
+)
+
+await hb.p(
+`/${pid}/schedule`,
+{ type: "Message", target: pid, action: "Eval", data },
+{ path: false }
+)
+
+await hb.p(
+`/${pid}/schedule`,
+{ type: "Message", target: pid, action: "Inc" },
+{ path: false }
+)
+const { slot } = await hb.p(
+`/${pid}/schedule`,
+{ type: "Message", target: pid, action: "Inc" },
+{ path: false }
+)
+const { results } = await hb.g(`/${pid}/compute, { slot })
+assert.equal("Count: 2", results.outbox["1"].data)
+
+const { body } = await hb.post({
+path: "/~relay@1.0/call",
+method: "POST",
+"relay-path": http://localhost:6363/dry-run?process-id=${pid}`,
+"content-type": "application/json",
+"relay-body": JSON.stringify({
+Tags: [{ name: "Action", value: "Get" }],
+Owner: hb.addr,
+}),
+})
+assert.equal(JSON.parse(body).Messages[0].Data, "Count: 2")
+})
+}) Dryruns HyperBEAM introduces the patch@1.0 device and disables the traditional dryruns for performance reasons, but we can use the call method on the relay@1.0 device to access the http://localhost:6363/dry-run endpoint on the local CU server./test/legacynet-aos.test.js const { body } = await hb.post({
+path: "/~relay@1.0/call",
+method: "POST",
+"relay-path": `http://localhost:6363/dry-run?process-id=${pid}`,
+"content-type": "application/json",
+"relay-body": JSON.stringify({
+Tags: [{ name: "Action", value: "Get" }],
+Owner: addr,
+}),
+})
+assert.equal(JSON.parse(body).Messages[0].Data, "Count: 2") WAO SDK The HB class has convenient methods for legacynet AOS. To write the same tests:/test/legacynet-aos.test.js const { pid } = await hb.spawnLegacy()
+await hb.scheduleLegacy({ pid, data })
+const { slot } = await hb.scheduleLegacy({ pid, action: "Inc" })
+const res = await hb.computeLegacy({ pid, slot })
+assert.equal(res.Messages[0].Data, "Count: 1")
+const { res: res2 } = await hb.messageLegacy({ pid, action: "Inc" })
+assert.equal(res2.Messages[0].Data, "Count: 2")
+const res3 = await hb.dryrun({ pid, action: "Get" })
+assert.equal(res3.Messages[0].Data, "Count: 2") The AO class makes the code even more concise./test/legacynet-aos.test.js import { AO } from "wao"
+
+const ao = await new AO({ module_type: "mainnet", hb: hbeam.url }).init(
+hbeam.jwk
+)
+const { p } = await ao.deploy({ src_data: data })
+await p.m("Inc")
+assert.equal(await p.d("Get"), "Count: 1")
+await p.m("Inc")
+assert.equal(await p.d("Get"), "Count: 2") Running Tests You can find the working test file for this chapter here:legacynet-aos.test.js Run tests:Terminal Terminal yarn test test/legacynet-aos.test.js References General Building ao Processes AO Cookbook Device Docs Device: ~relay@1.0 Device API dev_stack.erl dev_message.erl dev_process.erl dev_scheduler.erl dev_patch.erl dev_relay.erl dev_genesis_wasm.erl WAO API AO Class API Process Class API HyperBEAM Class API HB Class API
+
+---
+
+# 6. ArMem  WAO
+
+Document Number: 6
+Source: https://docs.wao.eco/api/armem
+Words: 209
+Quality Score: 0.541
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+ArMem stands for Arweave in memory and is a class to emulate an Arweave node and AO units in memory, which is internally used in the WAO testing framework. You can instantiate ArMem and control multiple emulators by passing it between other classes.Instantiate Instantiate When you instantiate WAO connect or AO from wao/test, it automatically and internally instantiates ArMem.import { connect } from "wao/test"
+const { spawn, message, dryrun, assign, result, mem } = connect() // aoconnect APIs import { AO } from "wao/test"
+const ao = new AO() // ao.mem Shared Memory You can instantiate ArMem and pass it to other classes.import { ArMem, AO, AR, connect } from "wao/test"
+const mem = new ArMem()
+const { spawn, message, dryrun, assign, result } = connect(mem)
+const ao = new AO({ mem })
+const ar = new AR({ mem }) If you don't pass the same ArMem instance, the two AO instances will have different environments.import { AO } from "wao/test"
+const ao = new AO() // ao.mem
+const ao2 = new AO() // ao2.mem ao.mem and ao2.mem are not connected. They are on different networks.import { AO } from "wao/test"
+const ao = new AO()
+const ao2 = new AO({ mem: ao.mem }) This will connect the two.
+
+---
+
+# 7. HBSig  WAO
+
+Document Number: 7
+Source: https://docs.wao.eco/api/hbsig
+Words: 887
+Quality Score: 0.536
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+HyperBEAM / AO-Core requires complex encoding and signing involving multiple codecs and HTTP Message Signatures. However, it is not 100% compatible with the standard http-message-signatures libraries, and aoconnect only provides basic encoding for AOS messages.hbsig handles encoding of arbitrarily complex objects, which works on HyperBEAM. It is built by emulating the HyperBEAM codec devices as well as creating workaround encoding strategies using a custom device for extensive tests with LLMs.Installation hbsig is a standalone package providing utility methods for HyperBEAM codecs, signatures, encoding and hash algorithms.yarn add hbsig Sign Message createSigner import { createSigner } from "hbsig"
+
+const hyperbeam_url = "http://localhost:10001"
+const sign = createSigner(jwk, hyperbeam_url) Sign and Send Message hbsig can encode and sign almost any complex objects combining layers of HyperBEAM codecs and http-message-signatures. While there are a few edge cases where HyperBEAM's decoder has limitations, hbsig intelligently provides workarounds for many of these scenarios. The encoding strategies were refined through extensive battle-testing with LLMs.import { send } from "hbsig"
+
+const msg = { str: "abc", num: 123, bin: Buffer.from([1,2,3]) }
+const signed = await sign({ path: "/~hbsig@1.0/msg2", ...msg })
+const { out } = await send(signed) Exclude @path @path is automatically included in the signed components. To exclude @path, set path=false in the 2nd argument. There are some cases you want to exclude @path due to HyperBEAM's non-standard handing of the path field. HyperBEAM strips off the leading / from path, and also removes @ from the field name in the signed body, which might not be compatible with the Http Message Signatures standard, and invalidates signatures in some scenarios.const msg = await sign(
+{ path: "/~hbsig@1.0/msg2", key: "value" },
+{ path: false }
+) Verify Message You can verify signed messages while decoding signature-input.import { verify } from "hbsig"
+
+const {
+valid, // should be true
+verified,
+signatureName,
+keyId,
+algorithm,
+decodedSignatureInput : { components, params: { alg, keyid, tag }, raw }
+} = await verify(signed) Commitments You can sign a message and create commitments with the signature.import { commit } from "hbsig"
+const committed = await commit({path, ...msg}, { signer: sign }) Commit IDs A commitment needs to include two IDs, which are sha256 hash of the signature hmac-sha256 hash of the signed components You can explicitly get these IDs from a signed message.Message ID You can calculate the ID from committed message.import { id } from "hbsig"
+
+const msg_id = id(committed) Hashpath You can calculate the next hashpath from the current hashpath and a new message.import { hashpath } from "hbsig"
+
+const next_hashpath = hashpath(current_hashpath, committed) base A hashpath consists of the hash of the current hashpath and the new message ID joined by /. You can independently calculate the base hash with base.import { base, id } from "hbsig"
+const next_hashpath = `${base(current_hashpath)}/${id(committed)}` Utilities toAddr Synchronously calculate Arweave address from a public key. arweave.js provides only asynchronous method for this. You can extract a public key from jwk.n as well as verify(signed), which gives you keyId from signature-input.import { toAddr } from "hbsig"
+const address = toAddr(jwk.n) // toAddr(jwk) works too Codecs hbsig internally handles many different representations of the same object using multiple codecs from HyperBEAM (flat structured httpsig) and 2 added codecs to achieve seamless data exchange between JS and Erlang (erljson erlstr).hbsig@1.0 Device hbsig comes with an accompanying device (hbsig@1.0) on HyperBEAM to validate various encoding strategies.git clone https://github.com/weavedb/wao.git && cd wao
+git submodule update --init --recursive json_to_erl/3: convert stringified JSON to an Erlang object to_erl/1: convert stringified JSON in body to an Erlang object to_str/1: convert an Erlang object to ErlStr structured_from/3: expose structured@1.0:from structured_to/3: expose structured@1.0:to httpsig_from/3: expose httpsig@1.0:from httpsig_to/3: expose httpsig@1.0:to flat_from/3: expose flat@1.0:from flat_to/3: expose flat@1.0:to msg2/3: return Msg2 as ErlStr so we can check the decoded message ErlJSON JSON and erlang objects have different types such as null, boolean, and atom. ErlJSON normalized JSON objects to Erlang compatible structures.import { normalize, erl_json_from, erl_json_to } from "hbsig" ErlStr Erlang doesn't differentiate between strings and buffers, and the built-in format method loses precision when converting binary data containing non-standard characters. To address this, ErlStr maintains both binary and stringified formats for accurate Erlang-to-JSON conversion.import { erl_str_from, erl_str_to } from "hbsig" ErlJSON and ErlStr enable seamless conversions between JSON and Erlang objects, allowing precise encoding tests across both environments.flat import { flat_from, flat_to } from "hbsig" structured import { structured_from, structured_to } from "hbsig" httpsig import { httpsig_from, httpsig_to } from "hbsig" Example Test You can find comprehensive encoding tests here.import { structured_from, structured_to } from "../src/structured.js"
+import { normalize, erl_json_to } from "../src/erl_json.js"
+import { httpsig_from, httpsig_to } from "../src/httpsig.js"
+
+describe(desc, function () {
+let hbeam, sign
+before(async () => {
+hbeam = await new HyperBEAM({ reset: true }).ready()
+sign = createSigner(hbeam.jwk, hbeam.url)
+})
+after(async () => hbeam.kill())
+it("should validate", async ()=>{
+const msg = { str: "abc", num: 123, bin: Buffer.from([1, 2, 3]) }
+const structured = structured_from(normalize(msg))
+const json = erl_json_to(structured)
+const signed = await sign({
+path: "/~hbsig@1.0/httpsig_to",
+body: JSON.stringify(json)
+})
+const { out } = await send(signed)
+const input = httpsig_to(normalize(structured))
+const output = erl_str_from(out)
+const expected = normalize(input, true)
+const output_b = erl_str_from(out, true) // true for binary format
+assert.deepEqual(expected, output_b) // compare in binary format
+})
+}) To run all tests, you need to clone wao branch of HyperBEAM, compile it, add .wallet.json, and set CWD in .env.hyperbeam.yarn test-all
+
+---
+
+# 8. AO  WAO
+
+Document Number: 8
+Source: https://docs.wao.eco/api/ao
+Words: 1354
+Quality Score: 0.535
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Instantiate You can initialize AO in the same way as AR.import { AO } from "wao"
+const ao = await new AO().init(jwk || arweaveWallet) If you need to pass AR settings, use ar. ao.ar will be automatically available.const ao = await new AO({ ar: { port: 4000 }}).init(jwk || arweaveWallet)
+const addr = ao.ar.addr
+await ao.ar.post({ data, tags }) AO Core Functions deploy Spawn a process, get a Lua source, and eval the script. src is an Arweave txid of the Lua script.const { err, res, pid, p } = await ao.deploy({ data, tags, src, fills }) You can directly pass the Lua script with src_data instead of src.const { err, res, pid, p } = await ao.deploy({ data, tags, src_data, fills }) boot will use On-Boot tag to initialize the process instead of Eval action. You can set either true to use src_data, or set a txid of an existing script. In case of true, data should be undefined so the src_data can fill it with spawn.const { err, res, pid, p } = await ao.deploy({ boot: true, tags, src_data, fills }) fills replace the Lua source script from src.local replace_me = ''
+local replace_me_again = ''
+local replace_me_with_hello_again = '' const fills = { REPLACE_ME: "hello", REPLACE_ME_AGAIN: "world" } This will end up in the following lua script.local replace_me = 'hello'
+local replace_me_again = 'world'
+local replace_me_with_hello_again = 'hello' In case you have multiple scripts, use loads and pass src and fills respectively.await ao.deploy({ tags, loads: [ { src, fills }, { src: src2, fills: fills2 } ] }) You can also pass an array of string data to loads.const num = `num = 0
+const inc = Handlers.add("Inc", "Inc", function () num = num + 1 end)`
+const get = `Handlers.add("Get", "Get", function (m) m.reply({ Data = num }) end)`
+
+const { p } = await ao.deploy({ tags, loads: [ num, inc, get ] })
+await p.m("Inc")
+assert.equal(await p.d("Get"), 1) msg Send a message.const { err, mid, res, out } = await ao.msg({
+pid, data, act, tags, check, get, mode, limit
+}) check determins if the message call is successful by checking through Tags in Messages in res.When using from either in check or get, mode needs to be set gql. mode defaults to aoconnect which uses the aoconnect.results function to track down results, which cannot tell where results come from. gql mode doesn't sometimes catch all results if used with AO/Arweave mainnet since there are lags due to the block finality time. limit specifies how many transactions or results to fetch for the check.const check = { Status : "Success" } // succeeds if Status tag is "Success"
+const check2 = { Status : true } // succeeds if Status tag exists Assigning either a string or boolean value checks Data field instead of Tags.const check3 = "Success" // succeeds if Data field is "Success"
+const check4 = true // succeeds if Data field exists
+const check5 = /ok/ // succeeds if Data field is string containing "ok"
+const check6 = (n)=> +n > 10 // succeeds if Data field is bigger than 10
+const check7 = { json: { a: 3 } } // succeeds if Data field is JSON and a is 3
+const check8 = { json: { a: 3, b: 4 }, eq: true } // deep equal JSON
+const check9 = { data: true, tags: { Status: true, Balance: (n)=> +n > 10 } }
+const check10 = { data: true, from: PID } // specify message sender process Use an array to check multiple conditions.const check11 = ["Success", { Age: "30" }] // Data is Success and Age tag is 30
+const check12 = [{ data: "Success", from: PID }, { Age: "30", from: PID2 }] get will return specified data via out.const get = "ID" // returns the value of "ID" tag
+const get2 = { name: "Profile", json: true } // "Profile" tag with JSON.parse()
+const get3 = { data: true, json: true } // returns Data field with JSON.parse()
+const get4 = true // => { data: true, json: true }
+const get5 = false // => { data: true, json: false }
+const get6 = { obj: { age: "Age", who: "Name" }} // => { age: 30, who: "Bob" }
+const get7 = { age: "Age", who: "Name" } // same as get6
+const get8 = { name: "Profile", json: true, from: PID } // specify sender process
+const get9 = { age: { name: "Age", from: PID }, who: "Name" } // another example
+const get10 = { data: true, json: true, match: (val, index, res)=> val.Age < 10 } check and get lazy-evaluate tags and data by tracking down async messages. As soon as the conditions are met, they won't track further messages. With receive() added with AOS 2.0, you can only get spawned messages up to the receive() function from result. But WAO automatically tracks down further messages and determines if check conditions are met beyond the receive() function.For example, consider the following handler.Handlers.add("Hello", "Hello", function (msg)
+msg.reply({ Data = "Hello, World!" })
+local name = Send({ Target = msg.to, Action = "Reply" }).receive().Data
+msg.reply({ Data = "Hello, " .. name .. "!" })
+end) you can only get the first Hello, World!, but not the second "Hello, " .. name .. "!" from the aoconnect result function.dry Dryrun a message without writing to Arweave.const { err, res, out } = await ao.dry({ pid, data, action, tags, check, get }) res res does the same thing as msg but for an existing result with mid.const { err, res, out } = await ao.res({ pid, mid, check, get }) ress ress gets multiple results from a process.next() will be returned for pagenation if there are more messages.const { err, out: msgs, res, next } = await ao.ress({ pid, limit, asc, from })
+
+if(next){
+const { out: msgs2 } = await next()
+} pid: process ID limit: how many to get asc: messages are sorted descendingly by default, set asc=true to reverse from: cursor to get from asgn Assign an existing message to a process.const { err, mid, res, out } = await ao.asgn({ pid, mid, check, get }) load Get a Lua source script from Arweave and eval it on a process.const { err, res, mid } = await ao.load({ src, fills, pid }) eval Eval a Lua script on a process.const { err, res, mid } = await ao.eval({ pid, data }) spwn Spawn a process. module and scheduler are auto-set if omitted.const { err, res, pid } = await ao.spwn({ module, scheduler, tags, data }) aoconnect Functions The original aoconnect functions message | spawn | result | assign | dryrun are also available. createDataItemSigner is available as toSigner.const signer = ao.toSigner(jwk)
+const process = await ao.spawn({ module, scheduler, signer, tags, data })
+const message = await ao.message({ process, signer, tags, data })
+const result = await ao.result({ process, message }) Advanced Functions postModule data should be wasm binary. overwrite to replace the default module set to the AO instance.const { err, id: module } = await ao.postModule({ data, jwk, tags, overwrite }) postScheduler This will post Scheduler-Location with the jwk address as the returning scheduler.const { err, scheduler } = await ao.postScheduler({ url, jwk, tags, overwrite }) attest Attest Arweave transactions for WeaveDrive.const { err, res, id } = await ao.attest({ id, tags, jwk }) avail Make Arweave transactions available for WeaveDrive.const { err, res, id } = await ao.avail({ ids, tags, jwk }) wait wait until the process becomes available after spwn. This is mostly used internally with deploy.const { err } = await ao.wait({ pid }) var var reads a Lua variable from the current state with dryrun.const { pid } = await ao.deploy({
+src_data: `Table = { String = "Hello", Array = { "str", 3, true } }`,
+})
+
+const table = await ao.var({ pid, data: "Table" }) It strips off pretty tags from the output and auto-converts Lua tables to JSON, you can disable it with json and pretty.const table = await ao.var({ pid, data: "Table", json: false, pretty: true })
+
+---
+
+# 9. Legacynet AOS on HyperBEAM  WAO
+
+Document Number: 9
+Source: https://docs.wao.eco/tutorials/legacynet-aos
+Words: 253
+Quality Score: 0.531
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Currently, testing legacynet aos processes works much better without HyperBEAM.You can check out Legacynet AOS guide to test with legacy AO units.Legacynet AOS on HyperBEAM uses genesis-wasm@1.0 device and an external CU for computation. The standalone WAO server works as a local CU.spawnLegacy, schedule, and computeLegacy manages the process for you.import assert from "assert"
+import { describe, it, before, after, beforeEach } from "node:test"
+import { HyperBEAM } from "wao"
+
+const cwd = "../HyperBEAM" // HyperBEAM directory
+
+const lua = `
+local count = 0
+Handlers.add("Inc", "Inc", function (msg)
+count = count + 1
+msg.reply({ Data = "Count: "..tostring(count) })
+end)
+
+Handlers.add("Get", "Get", function (msg)
+msg.reply({ Data = "Count: "..tostring(count) })
+end)`
+
+describe("Hyperbeam Legacynet", function () {
+let hbeam, hb
+before(async () => {
+hbeam = await new HyperBEAM({
+cwd,
+reset: true,
+as: ["genesis_wasm"],
+}).ready()
+})
+
+beforeEach(async () => (hb = hbeam.hb))
+after(async () => hbeam.kill())
+
+it("should run a legacynet AOS process with a local CU", async () => {
+const { pid } = await hb.spawnLegacy()
+const { slot } = await hb.schedule({
+pid,
+data: lua,
+tags: { Action: "Eval" },
+})
+const res = await hb.computeLegacy({ pid, slot })
+
+let i = 0
+while (i < 10) {
+const { slot } = await hb.schedule({
+pid,
+tags: { Action: "Inc" },
+})
+const res2 = await hb.computeLegacy({ pid, slot })
+assert.equal(res2.Messages[0].Data, `Count: ${++i}`)
+}
+
+const res3 = await ao.hb.dryrun({ pid, action: "Get" })
+assert.equal(res3.Messages[0].Data, `Count: ${i}`)
+
+const res4 = await hb.messages({ pid, from: 0 })
+assert.equal(res4.edges.length, i + 2)
+})
+})
+
+---
+
+# 10. Devices and Pathing  WAO
+
+Document Number: 10
+Source: https://docs.wao.eco/hyperbeam/devices-pathing
+Words: 1452
+Quality Score: 0.528
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+The first thing to understand is that HyperBEAM consists of a collection of devices, and you can access specific methods on specific devices via URL endpoints.For instance, the meta@1.0 device lets you get and set node configurations with its info method.Let's get the info with bare JS fetch. http://localhost:10001 is the default hostname when running a node with WAO.The minimum viable devices to run a HyperBEAM node are flat@1.0, httpsig@1.0, structured@1.0, json@1.0, and meta@1.0. These are codec devices except for meta@1.0, which handles node configuration and is the starting point of device resolution in the system. To gain deep understanding of AO-Core and HyperBEAM, we should understand these codecs first.You can pass these device names to the WAO HyperBEAM class to preload only specific devices./test/devices-pathing.test.js import assert from "assert"
+import { describe, it, before, after } from "node:test"
+import { HyperBEAM } from "wao/test"
+
+const devices = ["json", "structured", "httpsig", "flat", "meta"]
+
+describe("HyperBEAM", function () {
+let hbeam, hb
+before(async () => {
+hbeam = await new HyperBEAM({ cwd, devices, reset: true }).ready()
+hb = hbeam.hb
+})
+after(async () => hbeam.kill())
+
+it("should run a test case", async () => {
+/* write your test here */
+})
+}) HyperBEAM Responses From this point on, we'll assume you're writing any scripts within a test case code block.You can execute a method on a device by NODE_URL/~DEVICE/METHOD. Don't forget the ~ before the device name. So to execute info on the meta@1.0 device on a node running at http://localhost:10001, the URL will be http://localhost:10001/~meta@1.0/info.This is the headers you get:HTTP Headers Headers {
+host: 'localhost',
+debug_print_indent: '2',
+mode: '"debug"',
+load_remote_devices: '"false"',
+port: '10001',
+debug_committers: '"false"',
+commitment_device: 'httpsig@1.0',
+ans104_trust_gql: '"true"',
+'access-control-allow-methods': 'GET, POST, PUT, DELETE, OPTIONS',
+store_all_signed: '"true"',
+wasm_allow_aot: '"false"',
+debug_stack_depth: '40',
+relay_http_client: '"httpc"',
+debug_ids: '"true"',
+'transfer-encoding': 'chunked',
+debug_print_binary_max: '60',
+http_server: 'Tbun4iRRQW93gUiSAmTmZJ2PGI-_yYaXsX69ETgzSRE',
+signature: 'http-sig-bba7e22451416f77=:Cmv+kNvUX7qNHwpeW/bCZ98V3LO95fjio3lS1JnzsIN1nqSu+yUm5DR1+hOtNyYU1fuGirfN4zYXgK9CCTEj/Cbc+MBdK24DpCarng2LK+fbuPPc/QFR8posZDbYiOxuokzH/qpwSpcH5ctf9Ss0NbDTv27vKJkZnQHa1bRIk3Qh7GjXUxaXdRzTWbrxbOFno9CTEBH1GzCDmrpE3QFek4gwFopnREtZ0B6bQEAmClfvVo9XoQtIMix0h+Ba6PiczBPmGurHdT1Fy2aZlZt9v7yAUGa8+rvdlIwgBNPnG/1agZvSIeqUYTBr8Rb4D5ai4wHeCYrUhlp9rPS+SNZUnyNcck9KkpEocz9RrF7G8Donr7JVfi/NTT3OtQwYdtRFnzu56ggVUwrWlYSQHhVqzoLVYlpVPBtlTMhYeSahIwfbymB/9bRbybIFxWQr6QJWw/NBoV3OSiy2yC9bcE52A2OFbK1uxO092d/KEav7b9b/O5sh3KbsNkWZP7hjyM5G5urcyR6nholwNVVhqYxbQPzGJN1BvbJhqLjXIA2OReJwqylDjLnMKO1XuHVDPUJ5XnTBJWE8Xet3XdmAm98VITW2hiUfyOR6k/PZugPv9QM5E2rY1fIl5F8ZPjCX/RRU4i6azyxhcCvGaURxsmmmpFuNvq8tFt8ABWQgNajEChk=:',
+scheduling_mode: '"local_confirmation"',
+status: '200',
+'access-control-allow-origin': '*',
+http_connect_timeout: '5000',
+'body-keys': '"http_extra_opts", "preloaded_devices/1", "preloaded_devices/2", "preloaded_devices/3", "preloaded_devices/4", "preloaded_devices/5", "routes/1", "routes/1/node", "routes/2", "routes/2/nodes/1", "routes/2/nodes/1/opts", "routes/2/nodes/2", "routes/2/nodes/2/opts", "routes/3", "routes/3/node", "routes/3/node/opts", "stack_print_prefixes", "store"',
+await_inprogress: '"named"',
+'content-digest': 'sha-256=:4J6aEWuLwZg2wbsns7pEnKDAy0JfdLfU4SLen3z2fgQ=:',
+access_remote_cache_for_client: '"false"',
+server: 'Cowboy',
+'ao-types': 'access_remote_cache_for_client="atom", ans104_trust_gql="atom", await_inprogress="atom", cache_lookup_hueristics="atom", client_error_strategy="atom", compute_mode="atom", debug_committers="atom", debug_ids="atom", debug_metadata="atom", debug_print="atom", debug_print_binary_max="integer", debug_print_indent="integer", debug_print_map_line_threshold="integer", debug_print_trace="atom", debug_show_priv="atom", debug_stack_depth="integer", force_signed="atom", http_client="atom", http_connect_timeout="integer", http_keepalive="integer", http_request_send_timeout="integer", initialized="atom", load_remote_devices="atom", mode="atom", node_history="empty-list", only="atom", port="integer", preloaded_devices="list", process_now_from_cache="atom", process_workers="atom", relay_http_client="atom", routes="list", scheduler_location_ttl="integer", scheduling_mode="atom", short_trace_len="integer", snp_trusted="empty-list", stack_print_prefixes="list", status="integer", store_all_signed="atom", trusted_device_signers="empty-list", wasm_allow_aot="atom"',
+force_signed: '"true"',
+http_request_send_timeout: '60000',
+client_error_strategy: '"throw"',
+bundler_ans104: 'https://up.arweave.net:443',
+debug_print: '"false"',
+debug_show_priv: '"false"',
+address: 'Tbun4iRRQW93gUiSAmTmZJ2PGI-_yYaXsX69ETgzSRE',
+cache_lookup_hueristics: '"false"',
+only: '"local"',
+initialized: '"true"',
+process_workers: '"false"',
+hb_config_location: 'config.flat',
+'content-type': 'multipart/form-data; boundary="Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A"',
+'signature-input': 'http-sig-bba7e22451416f77=("access_remote_cache_for_client" "address" "ans104_trust_gql" "ao-types" "await_inprogress" "bundler_ans104" "cache_lookup_hueristics" "client_error_strategy" "commitment_device" "compute_mode" "content-digest" "content-type" "debug_committers" "debug_ids" "debug_metadata" "debug_print" "debug_print_binary_max" "debug_print_indent" "debug_print_map_line_threshold" "debug_print_trace" "debug_show_priv" "debug_stack_depth" "force_signed" "gateway" "hb_config_location" "host" "http_client" "http_connect_timeout" "http_keepalive" "http_request_send_timeout" "http_server" "initialized" "load_remote_devices" "mode" "only" "port" "process_now_from_cache" "process_workers" "relay_http_client" "scheduler_location_ttl" "scheduling_mode" "short_trace_len" "@status" "store_all_signed" "wasm_allow_aot");alg="rsa-pss-sha512";keyid="o1kvTqZQ0wbS_WkdwX70TFCk7UF76ldnJ85l8iRV7t6mSlzkXBYCecb-8RXsNEQQmO0KergtHOvhuBJmB6YXaYe_UftI_gendojfIa6jlTgw-qmH6g4_oErI8djDRbQSm-5nCfGVRuYxsNZLYDeqw4gFb9K3b1h7tuMoLd6-d5pkaLfTMUNcvs2OqpkLo0i_av746FieaURdWozwFqO0APtdA7pLHDqQZDMNdTmsUBJFszL6SOa1bKe5cUWnrq4uaW4NAN3JAQniILKGsKZENeKtfXwiKVaFJtriWWsbhOaNT0JLcuBAwXQAP59RXzcr8bRY6XFn8zBmEmZBGszOD9c9ssDENRFDa5uyVhk8XgIgQjErAWYd9T6edrYcIp3R78jhNK_nLiIBBz8_Oz3bLjL5i_aiV2gpfIbd44DCHihuuxSWRAPJxhEy9TS0_QbVOIWhcDTIeEJE3aRPTwSTMt1_Fec7i9HJWN0mvMbAAJw8k6HxjA3pFZiCowZJw7FBwMAeYgEwIeB82f-S2-PtFLwR9i0tExo36hEBHqaS4Y-O3NGgQ8mKnhT7Z1EfxEbA2BpR9oL8rJFEnPIrHHu7B88OHDDfnfRD3D79fKktnisC7XOuwbHG3TQo0_j4_mElH7xj_7IyAbmCUHDd-eRa482wOYXBB01DGnad901qaHU";tag="bU-F-WCfOMjeKPG4yVd4BIZIvR-ZRDXLi6AW5Da5kDo/jNI0FLgi9Lz2UT_l1sK2TCPZMCIwFpPcOK3e3cqdRwo"',
+compute_mode: '"lazy"',
+scheduler_location_ttl: '604800000',
+date: 'Sat, 12 Jul 2025 08:15:38 GMT',
+debug_print_trace: '"short"',
+short_trace_len: '5',
+http_keepalive: '120000',
+http_client: '"gun"',
+debug_print_map_line_threshold: '30',
+process_now_from_cache: '"false"',
+gateway: 'https://arweave.net',
+debug_metadata: '"true"'
+} And this is the body you get:HTTP Body --Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: cache_control="list", force_message="atom"
+cache_control: "always"
+content-disposition: form-data;name="http_extra_opts"
+force_message: "true"
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: module="atom"
+content-disposition: form-data;name="preloaded_devices/1"
+module: "dev_codec_json"
+name: json@1.0
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: module="atom"
+content-disposition: form-data;name="preloaded_devices/2"
+module: "dev_codec_structured"
+name: structured@1.0
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: module="atom"
+content-disposition: form-data;name="preloaded_devices/3"
+module: "dev_codec_httpsig"
+name: httpsig@1.0
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: module="atom"
+content-disposition: form-data;name="preloaded_devices/4"
+module: "dev_codec_flat"
+name: flat@1.0
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: module="atom"
+content-disposition: form-data;name="preloaded_devices/5"
+module: "dev_meta"
+name: meta@1.0
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+content-disposition: form-data;name="routes/1"
+template: /result/.*
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+content-disposition: form-data;name="routes/1/node"
+prefix: http://localhost:6363
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: nodes="list"
+content-disposition: form-data;name="routes/2"
+template: /graphql
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+content-disposition: form-data;name="routes/2/nodes/1"
+prefix: https://arweave-search.goldsky.com
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: http_client="atom", protocol="atom"
+content-disposition: form-data;name="routes/2/nodes/1/opts"
+http_client: "httpc"
+protocol: "http2"
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+content-disposition: form-data;name="routes/2/nodes/2"
+prefix: https://arweave.net
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: http_client="atom", protocol="atom"
+content-disposition: form-data;name="routes/2/nodes/2/opts"
+http_client: "gun"
+protocol: "http2"
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+content-disposition: form-data;name="routes/3"
+template: /raw
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+content-disposition: form-data;name="routes/3/node"
+prefix: https://arweave.net
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: http_client="atom", protocol="atom"
+content-disposition: form-data;name="routes/3/node/opts"
+http_client: "gun"
+protocol: "http2"
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+1: "(ao-type-integer) 104", "(ao-type-integer) 98"
+2: "(ao-type-integer) 100", "(ao-type-integer) 101", "(ao-type-integer) 118"
+3: "(ao-type-integer) 97", "(ao-type-integer) 114"
+ao-types: 1="list", 2="list", 3="list"
+content-disposition: form-data;name="stack_print_prefixes"
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A
+ao-types: store-module="atom"
+content-disposition: form-data;name="store"
+prefix: cache-mainnet
+store-module: "hb_store_fs"
+--Z9Om0uN1Z81Q-Sp3G0Mptr4AewbZNf_drHF9PkmdB8A-- Neither reading headers nor body alone gives you the complete picture of the response. These two components need to be combined to decode the message. By decoding responses from HyperBEAM nodes, you'll gain deep understanding of AO Core and HyperBEAM. So we'll decipher this together in the next chapters.But for now, let's say WAO handles everything behind the scenes for you so you can get the final output with the following snippet. You only need to pass path without the node hostname./test/devices-pathing.test.js const { out } = await hb.get({ path: '/~meta@1.0/info' })
+console.log(out) This is the decoded output. HyperBEAM internally uses TABM (Type Annotated Binary Message) and it contains the Erlang atom type. So we convert it to Symbol when dealing with JS. Erlang doesn't have boolean and null types, so JS true, false, and null are all atom on the Erlang side.Decoded Response {
+access_remote_cache_for_client: false,
+address: 'Tbun4iRRQW93gUiSAmTmZJ2PGI-_yYaXsX69ETgzSRE',
+ans104_trust_gql: true,
+await_inprogress: Symbol(named),
+bundler_ans104: 'https://up.arweave.net:443',
+cache_lookup_hueristics: false,
+client_error_strategy: Symbol(throw),
+commitment_device: 'httpsig@1.0',
+compute_mode: Symbol(lazy),
+debug_committers: false,
+debug_ids: true,
+debug_metadata: true,
+debug_print: false,
+debug_print_binary_max: 60,
+debug_print_indent: 2,
+debug_print_map_line_threshold: 30,
+debug_print_trace: Symbol(short),
+debug_show_priv: false,
+debug_stack_depth: 40,
+force_signed: true,
+gateway: 'https://arweave.net',
+hb_config_location: 'config.flat',
+host: 'localhost',
+http_client: Symbol(gun),
+http_connect_timeout: 5000,
+http_extra_opts: { cache_control: [ 'always' ], force_message: true },
+http_keepalive: 120000,
+http_request_send_timeout: 60000,
+http_server: 'Tbun4iRRQW93gUiSAmTmZJ2PGI-_yYaXsX69ETgzSRE',
+initialized: true,
+load_remote_devices: false,
+mode: Symbol(debug),
+node_history: [],
+only: Symbol(local),
+port: 10001,
+preloaded_devices: [
+{ module: Symbol(dev_codec_json), name: 'json@1.0' },
+{ module: Symbol(dev_codec_structured), name: 'structured@1.0' },
+{ module: Symbol(dev_codec_httpsig), name: 'httpsig@1.0' },
+{ module: Symbol(dev_codec_flat), name: 'flat@1.0' },
+{ module: Symbol(dev_meta), name: 'meta@1.0' }
+],
+process_now_from_cache: false,
+process_workers: false,
+relay_http_client: Symbol(httpc),
+routes: [
+{ template: '/result/.*', node: [Object] },
+{ template: '/graphql', nodes: [Array] },
+{ template: '/raw', node: [Object] }
+],
+scheduler_location_ttl: 604800000,
+scheduling_mode: Symbol(local_confirmation),
+short_trace_len: 5,
+snp_trusted: [],
+stack_print_prefixes: [ [ 104, 98 ], [ 100, 101, 118 ], [ 97, 114 ] ],
+store: { prefix: 'cache-mainnet', 'store-module': Symbol(hb_store_fs) },
+store_all_signed: true,
+trusted_device_signers: [],
+wasm_allow_aot: false
+} meta@1.0 You can change the node configuration with POST method on /~meta@1.0/info. You must be the node operator to sign the message.To send a POST message, you need to construct the encoded headers and body just like above, and sign it with the HTTP message signature scheme, which is a web standard specification (RFC 9421).We'll dig into it later, but it's too complex for now, so WAO handles the complex message signing for you./test/devices-pathing.test.js // set a new config
+await hb.post({
+path: '/~meta@1.0/info',
+test_config: "abc",
+test_config2: 123,
+test_config3: { abc: 123 }
+})
+
+// get info
+const { out } = await hb.get({ path: '/~meta@1.0/info' })
+assert.equal(out.test_config, "abc")
+assert.equal(out.test_config2, 123)
+assert.deepEqual(out.test_config3, { abc: 123 }) You can also get a specific key only:/test/devices-pathing.test.js // getting the node operator wallet address
+const { out: address } = await hb.get({ path: "/~meta@1.0/info/address" })
+assert.equal(address, hb.addr) When a certain path like /~meta@1.0/info returns an object, you can chain a key like address and access the value at /~meta@1.0/info/address.Once you set initialized to permanent, you'll no longer be able to change any config./test/devices-pathing.test.js await hb.post({ path: "/~meta@1.0/info", initialized: "permanent" })
+
+// this should fail
+await assert.rejects(
+hb.post({ path: "/~meta@1.0/info", test_config: "def" })
+)
+
+const { out: test_config } = await hb.get({
+path: '/~meta@1.0/info/test_config'
+})
+assert.equal(test_config, "abc") Shortcut Methods for get and post WAO provices shortcut methods for get and post to make your codebase even more consice.With g and p, the 1st argument is the path and the 2nd is the rest, which returns only the decoded resonse. So, const { out, headers, body, hashpath } = hb.post({ path, ...rest }) becomes const out = hb.p(path, rest) and the same goes with get and g, too./test/devices-pathing.test.js // set a new config
+await hb.p("/~meta@1.0/info", { test_config4: "def" })
+
+// get info
+const { test_config4 } = await hb.g("/~meta@1.0/info")
+assert.equal(test_config4, "def") We are going to use these shortcut formats from this point on.json@1.0 You can also chain another method and device in the URL. For instance, json@1.0 converts TABM to JSON with serialize./test/devices-pathing.test.js const { body: json } = await hb.g("/~meta@1.0/info/~json@1.0/serialize")
+console.log(JSON.parse(json)) Chaining /~json@1.0/serialize comes in handy in certain cases, but sometimes the response comes back malformed with additional data attached due to complex message mutation and HTTP transport. hb.get | hb.g and hb.post | hb.p produce cleaner results, so you won't need /~json@1.0/serialize externally. It's still an essential codec device used internally on HyperBEAM.Basic Pathing Summary In this chapter, you saw three basic URL schemes to access HyperBEAM:1. Device and Method /~device_name@version/method_name /~meta@1.0/info /~meta@1.0/build 2. Accessing Key /~meta@1.0/info/address /~meta@1.0/info/preloaded_devices 3. Chaining Another Device /~meta@1.0/info/~json@1.0/serialize These patterns are the same with any other devices.Running Tests You can find the working test file for this chapter here:devices-pathing.test.js Run tests:Terminal Terminal yarn test test/devices-pathing.test.js References General Intro to HyperBEAM Intro to AO-Core HyperBEAM Core Capabilities Pathing in HyperBEAM HyperBEAM Devices Device Docs Device: ~meta@1.0 Device: ~json@1.0 Device API dev_meta.erl dev_codec_json.erl WAO API HyperBEAM Class API HB Class API
+
+---
+
+# 11. Structured Codec  WAO
+
+Document Number: 11
+Source: https://docs.wao.eco/hyperbeam/codec-structured
+Words: 408
+Quality Score: 0.528
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+structured@1.0 turns complex objects into strings with extended ao-types according to the HTTP Structured Field Values (RFC-9651) specification.This object type is called TABM (Type Annotated Binary Message) in HyperBEAM.ao-types has the following types:integer: 123 float: 3.14 binary: "abc" | Buffer.from([1,2,3]) atom: true | false | null | Symbol("abc") list: [1, 2, 3] empty-binary: "" | Buffer.from([]) empty-list: [] empty-message: {} /HyperBEAM/src/dev_mydev.erl -export([ structured_to/3, structured_from/3 ]).
+
+structured_to(Msg1, Msg2, Opts) ->
+Body = maps:get(<<"body">>, Msg1),
+OBJ = dev_codec_json:from(Body),
+TABM = dev_codec_structured:to(OBJ),
+JSON = dev_codec_json:to(TABM),
+{ok, JSON}.
+
+structured_from(Msg1, Msg2, Opts) ->
+Body = maps:get(<<"body">>, Msg1),
+TABM = dev_codec_json:from(Body),
+OBJ = dev_codec_structured:from(TABM),
+JSON = dev_codec_json:to(OBJ),
+{ok, JSON}.Encode JSON with dev_codec_structured:from./test/codec-structured.test.js const cases = [
+{ list: [1, true, "abc"] },
+{ nested_list: [1, [2, 3]] },
+{ a: { b: [1, 2, 3] } },
+{ a: [1, 2], b: [3, 4] },
+{ empty_list: [], empty_binary: "", empty_message: {} },
+]
+for (const v of cases) {
+const { out } = await hb.post({
+path: "/~mydev@1.0/structured_from",
+body: JSON.stringify(v),
+})
+console.log(JSON.parse(out))
+} { list: [1, true, "abc"] } {
+'ao-types': 'list="list"',
+list: '"(ao-type-integer) 1", "(ao-type-atom) \\"true\\"", "abc"'
+} { nested_list: [1, [2, 3]] } {
+'ao-types': 'nested_list="list"',
+nested_list: '"(ao-type-integer) 1", "(ao-type-list) \\"(ao-type-integer) 2\\", \\"(ao-type-integer) 3\\""'
+} { a: { b: [1, 2, 3] } } {
+a: {
+'ao-types': 'b="list"',
+b: '"(ao-type-integer) 1", "(ao-type-integer) 2", "(ao-type-integer) 3"'
+}
+} { a: [1, 2], b: [3, 4] } {
+a: '"(ao-type-integer) 1", "(ao-type-integer) 2"',
+'ao-types': 'a="list", b="list"',
+b: '"(ao-type-integer) 3", "(ao-type-integer) 4"'
+} { empty_list: [], empty_binary: "", empty_message: {} } {
+'ao-types': 'empty_binary="empty-binary", empty_list="empty-list", empty_message="empty-message"'
+} You can specify ao-types of the values at the same level, annotate keys with (ao-type-[type]), and join multiple entries with , .Let's decode the encoded values./test/codec-structured.test.js const cases = [
+{
+'ao-types': 'list="list"',
+list: '"(ao-type-integer) 1", "(ao-type-atom) \\"true\\"", "abc"'
+},
+{
+'ao-types': 'nested_list="list"',
+nested_list: '"(ao-type-integer) 1", "(ao-type-list) \\"(ao-type-integer) 2\\", \\"(ao-type-integer) 3\\""'
+},
+{
+a: {
+'ao-types': 'b="list"',
+b: '"(ao-type-integer) 1", "(ao-type-integer) 2", "(ao-type-integer) 3"'
+}
+},
+{
+a: '"(ao-type-integer) 1", "(ao-type-integer) 2"',
+'ao-types': 'a="list", b="list"',
+b: '"(ao-type-integer) 3", "(ao-type-integer) 4"'
+},
+{
+'ao-types': 'empty_binary="empty-binary", empty_list="empty-list", empty_message="empty-message"'
+}
+]
+for (const v of cases) {
+const { out } = await hb.post({
+path: "/~mydev@1.0/structured_to",
+body: JSON.stringify(v),
+})
+console.log(JSON.parse(out))
+} Running Tests You can find the working test file for this chapter here:codec-structured.test.js Run tests:Terminal Terminal yarn test test/codec-structured.test.js References Specs Structured Field Values for HTTP [RFC-9651] Device API dev_codec_structured.erl WAO API HyperBEAM Class API HB Class API
+
+---
+
+# 12. Flat Codec  WAO
+
+Document Number: 12
+Source: https://docs.wao.eco/hyperbeam/codec-flat
+Words: 360
+Quality Score: 0.522
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+flat@1.0 is a simple codec device to flatten/unflatten object paths since HTTP headers and body cannot handle nested object structures. It's internally used by httpsig@1.0 to resolve object paths.Codec devices have to and from methods to encode and decode, but they are not exposed to external URLs. We can create custom methods for our custom device to expose them./HyperBEAM/src/dev_mydev.erl -export([ flat_to/3, flat_from/3 ]).
+
+flat_to(Msg1, Msg2, Opts) ->
+Body = maps:get(<<"body">>, Msg1),
+OBJ = dev_codec_json:from(Body),
+FLAT = dev_codec_flat:to(OBJ),
+JSON = dev_codec_json:to(FLAT),
+{ok, JSON}.
+
+flat_from(Msg1, Msg2, Opts) ->
+Body = maps:get(<<"body">>, Msg1),
+OBJ = dev_codec_json:from(Body),
+FLAT = dev_codec_flat:from(OBJ),
+JSON = dev_codec_json:to(FLAT),
+{ok, JSON}.One thing to note is that HTTP header keys cannot contain /, so if you ever need to send keys with / you need to push them into multipart body. We will handle this in the next chapter with Httpsig Codec. Flat codec only handles map structures. List structures are handled by Structured Codec. Also Flat Codec is an intermediary step used by Httpsig Codec, so values also have to be strings with dev_codec_flat:to./test/codec-flat.test.js const cases = [
+{ a: { b: "v" } },
+{ a: "v", b: { c: "v2", d: "v3" } },
+{ a: { b: { c: { d: "v" } } } },
+]
+for (const v of cases) {
+const { body } = await hb.post({
+path: "/~mydev@1.0/flat_to",
+body: JSON.stringify(v),
+})
+console.log(JSON.parse(body))
+} { a: { b: "v" } } -> { "a/b": "v" } { a: "v", b: { c: "v2", d: "v3" } } -> { a: "v", "b/c": "v2", "b/d": "v3" } { a: { b: { c: { d: "v" } } } } -> { "a/b/c/d": "v" } /test/codec-flat.test.js const cases = [
+{ "a/b": "v" },
+{ a: "v", "b/c": "v2", "b/d": "v3" },
+{ "a/b/c/d": "v" },
+]
+for (const v of cases) {
+const { body } = await hb.post({
+path: "/~mydev@1.0/flat_from",
+body: JSON.stringify(v),
+})
+console.log(JSON.parse(body))
+} Running Tests You can find the working test file for this chapter here:codec-flat.test.js Run tests:Terminal Terminal yarn test test/codec-flat.test.js References General HyperBEAM Class API HB Class API Device API dev_codec_flat.erl WAO API HyperBEAM Class API HB Class API
+
+---
+
+# 13. Running LLMs on AOS (Highly Experimental)  WAO
+
+Document Number: 13
+Source: https://docs.wao.eco/tutorials/running-llms
+Words: 339
+Quality Score: 0.499
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+You can run LLMs on top of AOS using the right module.First create a test project.npx wao create llm && cd llm Create a directory and download one of the tiny models from Hugging Face.We will try TinyLlama-1.1B-Chat-v1.0-GGUF for this tutorial.mkdir test/models
+curl -L -o test/models/tinyllama.gguf "https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q2_K.gguf?download=true" Write tests with WAO.import assert from "assert"
+import { resolve } from "path"
+import { readFileSync } from "fs"
+import { afterEach, after, describe, it, before, beforeEach } from "node:test"
+import { AO, acc } from "wao/test"
+const __dirname = import.meta.dirname
+const src_data = `
+Llama = require(".Llama")
+Llama.logLevel = 4
+
+Handlers.add("Load", "Load", function (msg)
+Llama.load("/data/" .. msg.ModelID)
+msg.reply({ Data = "true" })
+end)
+
+Handlers.add("Ask", "Ask", function (msg)
+Llama.setPrompt(msg.Q)
+msg.reply({ Data = Llama.run(50) })
+end)`
+
+describe("LLM", function () {
+it("should infer with Tinyllama", async () => {
+const ao = await new AO().init(acc[0])
+const model = readFileSync(resolve(__dirname, "models/tinyllama.gguf"))
+const { id } = await ao.ar.post({ data: model })
+const data = readFileSync(
+resolve(__dirname, "../node_modules/wao/esm/lua/llama.wasm"),
+)
+const { id: modid } = await ao.postModule({
+data,
+tags: { "Memory-Limit": "1-gb" },
+})
+const { p, pid, err } = await ao.deploy({
+tags: { Extension: "WeaveDrive", Attestor: ao.ar.addr },
+module: modid,
+src_data,
+})
+await ao.attest({ id })
+await p.m("Load", { ModelID: id })
+console.log(await p.d("Ask", { Q: "How are you?" }, false))
+})
+}) phi-2-GGUF would be a much better model for chat, but a bit too heavy for CPU.mkdir test/models
+curl -L -o test/models/phi2.gguf "https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q2_K.gguf?download=true" it("should infer with Phi2", async () => {
+const ao = await new AO().init(acc[0])
+const model = readFileSync(resolve(__dirname, "models/phi2.gguf"))
+const { id } = await ao.ar.post({ data: model })
+const data = readFileSync(
+resolve(__dirname, "../node_modules/wao/esm/lua/llama.wasm"),
+)
+const { id: modid } = await ao.postModule({
+data,
+tags: { "Memory-Limit": "2-gb" }, // the model size is more than 1GB
+})
+const { p, pid, err } = await ao.deploy({
+tags: { Extension: "WeaveDrive", Attestor: ao.ar.addr },
+module: modid,
+src_data,
+})
+await ao.attest({ id })
+await p.m("Load", { ModelID: id })
+console.log(await p.d("Ask", { Q: "How are you?" }, false))
+})
+
+---
+
+# 14. Device Composition  WAO
+
+Document Number: 14
+Source: https://docs.wao.eco/hyperbeam/device-composition
+Words: 836
+Quality Score: 0.495
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+So far, we've learned about HyperBEAM devices and URL pathing, the core codecs, HTTP message signatures, and hashpaths. You already know the fundamentals of how HyperBEAM works.Chaining Device Methods with URL Path Let's around with device composition to build something powerful. We can access any cached messages with an ID or a hashpath at /[id | hashpath]. And we can also chain device methods like /~meta@1.0/info/~json@1.0/serialize.Could we chain our own device methods like the following?/[hashpath]/~mydev@1.0/inc/~mydev@1.0/double/~mydev@1.0/square Let's find out!Our goal is to pass an existing message with num, and compute num through the device method chaining. So if the initial message with a hashpath has num=6,=> /~mydev@1.0/inc => 6 + 1 => num=7 => /~mydev@1.0/double => 7 * 2 => num=14 => /~mydev@1.0/square => 14 * 14 => num=196 is what we need to end up with./HyperBEAM/src/dev_mydev.erl -export([ inc/3, double/3, square/3 ]).
+
+inc(Msg1, Msg2, Opts)->
+Num = maps:get(<<"num">>, Msg1),
+{ok, #{ <<"num">> => Num + 1 }}.
+
+double(Msg1, Msg2, Opts)->
+Num = maps:get(<<"num">>, Msg1),
+{ok, #{ <<"num">> => Num * 2 }}.
+
+square(Msg1, Msg2, Opts)->
+Num = maps:get(<<"num">>, Msg1),
+{ok, #{ <<"num">> => Num * Num }}.We can use the resolve3 method from the previous chapter to create the base num with the hashpath cached. /~mydev@1.0/resolve3 returns num=6 with out.hashpath_7./test/device-composition.test.js const out = await hb.p("/~mydev@1.0/resolve3")
+const { num } = await hb.g(
+`/${out.hashpath_7}/~mydev@1.0/inc/~mydev@1.0/double/~mydev@1.0/square`
+)
+assert.equal(num, 196) Voila! It works! But there are 3 caveats to this.First of all, during this pipeline, the Msg2 passed to each device method of inc/3, double/3, and square/3 stays the same and is the original committed Msg2 to the first method in the chain, which in this case is deviceless since we start the pipeline with /${out.hashpath_7}.If we were to start the chain with /~mydev@1.0/inc/~mydev@1.0/double/~mydev@1.0/square, the Msg2 would always be the same as what is passed to /~mydev@1.0/inc. So to evolve the state, you need to use the values from Msg1.Secondly, as we learned in an earlier chapter, Msg1 contains inter-decoded values, and not the final decoded values, which means even if you pass integer, Msg1 will have stringified num. You need to take the initial values from Msg2.Lastly, during the pipeline, you cannot overwrite the fields initially passed to Msg2. So you cannot pass num and update num during the pipeline. The initial Msg2 always overwrites the updated num and it ends up unchanged. So you need to pass something other than num, then update num during the pipeline. The case with /[hashpath]/~mydev@1.0/inc/~mydev@1.0/double/~mydev@1.0/square works since we're not passing num to the initial /[hashpath] execution.One way to solve this is to create an entry method like calc to take a different field such as init_num from Msg2, then pass it down to the pipeline as num./HyperBEAM/src/dev_mydev.erl -export([ calc/3 ]).
+
+calc(Msg1, Msg2, Opts)->
+Num = maps:get(<<"init_num">>, Msg2),
+{ok, #{ <<"num">> => Num}}.Now we can POST to /~mydev@1.0/calc/~mydev@1.0/inc/~mydev@1.0/double/~mydev@1.0/square, and get the correct output./test/device-composition.test.js const { num } = await hb.p(
+"/~mydev@1.0/calc/~mydev@1.0/inc/~mydev@1.0/double/~mydev@1.0/square",
+{ init_num: 1 }
+)
+assert.equal(num, 16) Stacking Devices There is a built-in device called stack@1.0 to make device composition easy. It's supposed to be used with process@1.0, so it's limited in a certain way, but we can still use it without processes.Let's modify our methods to make them compatible with stack@1.0. We just need to forward device-stack from Msg1./HyperBEAM/src/dev_mydev.erl -export([ inc2/3, double2/3, square2/3 ]).
+
+inc2(Msg1, Msg2, Opts)->
+io:format("Inc: ~p~n", [Msg1]),
+Num = maps:get(<<"num">>, Msg1),
+{ok, #{
+<<"num">> => Num + 1,
+<<"device-stack">> => maps:get(<<"device-stack">>, Msg1)
+}}.
+
+double2(Msg1, Msg2, Opts)->
+Num = maps:get(<<"num">>, Msg1),
+{ok, #{
+<<"num">> => Num * 2,
+<<"device-stack">> => maps:get(<<"device-stack">>, Msg1)
+}}.
+
+square2(Msg1, Msg2, Opts)->
+Num = maps:get(<<"num">>, Msg1),
+{ok, #{
+<<"num">> => Num * Num,
+<<"device-stack">> => maps:get(<<"device-stack">>, Msg1)
+}}.Add the stack@1.0 device to the HyperBEAM class in our test file./test/device-composition.test.js import assert from "assert"
+import { describe, it, before, after } from "node:test"
+import { HyperBEAM } from "wao/test"
+import { id } from "hbsig"
+
+const devices = [
+"json",
+"structured",
+"httpsig",
+"flat",
+"meta",
+"stack",
+{ name: "mydev@1.0", module: "dev_mydev" },
+]
+
+describe("Device Composition", function () {
+let hbeam, hb
+before(async () => {
+hbeam = await new HyperBEAM({ devices, reset: true }).ready()
+hb = hbeam.hb
+})
+after(async () => hbeam.kill())
+
+it("should stack devices", async () => {
+const msg_base = {
+device: "stack@1.0",
+"device-stack": { 1: "mydev@1.0", 2: "mydev@1.0", 3: "mydev@1.0" },
+mode: "Fold",
+num: 3,
+}
+
+const out = await hb.p("inc2", msg_base)
+assert.equal(out.num, 6) // 3 + 1 + 1 + 1
+
+const out2 = await hb.p("double2", msg_base)
+assert.equal(out2.num, 24) // 3 * 2 * 2 * 2
+
+const out3 = await hb.p("square2", msg_base)
+assert.equal(out3.num, 6561) // 3 * 3 * 9 * 81
+})
+}) You can stack multiple devices in device-stack, but the limitation is it executes the same method on each device specified in path. With process@1.0, it executes the compute method, which we'll talk about in the next chapter.Running Tests You can find the working test file for this chapter here:device-composition.test.js Run tests:Terminal Terminal yarn test test/device-composition.test.js References Device API dev_stack.erl WAO API HyperBEAM Class API HB Class API HBSig API
+
+---
+
+# 15. Custom Devices and Codecs  WAO
+
+Document Number: 15
+Source: https://docs.wao.eco/hyperbeam/custom-devices-codecs
+Words: 1375
+Quality Score: 0.489
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+We are going to learn the core codecs such as path flattening, HTTP message signatures, and AO types while building a custom HyperBEAM device.Accessible Device Methods If you look into any dev_ prefixed Erlang files under HyperBEAM/src, device methods are defined and exported in method_name/arity format. HyperBEAM automatically routes HTTP requests to device methods defined with arity of 3. So any methods exported as method_name/3 are automatically accessible.For instance, the dev_meta.erl file has these lines, which make /~meta@1.0/info and /~meta@1.0/build accessible via URL endpoints./HyperBEAM/src/dev_meta.erl -export([info/1, info/3, build/3, handle/2, adopt_node_message/2, is/2, is/3]).
+
+info(_, Request, NodeMsg) ->
+
+build(, , _NodeMsg) -> Another example is dev_codec_json.erl with deserialize/3 and serialize/3 exposed./HyperBEAM/src/dev_codec_json.erl -export([deserialize/3, serialize/3]).
+
+deserialize(Base, Req, Opts) ->
+
+serialize(Base, _Msg, _Opts) -> The device names are defined in hb_opt.erl under preloaded_devices./HyperBEAM/src/hb_opts.erl preloaded_devices => [
+...
+#{<<"name">> => <<"json@1.0">>, <<"module">> => dev_codec_json},
+...
+#{<<"name">> => <<"meta@1.0">>, <<"module">> => dev_meta},
+...
+],This is exactly how you can build your own custom devices.Building Custom Devices Create dev_mydev.erl under /HyperBEAM/src, and define the info/3 method.The following is the minimum viable HyperBEAM device implementation./HyperBEAM/src/dev_mydev.erl -module(dev_mydev).
+-export([ info/3 ]).
+-include_lib("eunit/include/eunit.hrl").
+-include("include/hb.hrl").
+
+info(Msg1, Msg2_, Opts) ->
+{ok, #{ <<"version">> => <<"1.0">> }}.Also, add the device to preloaded_devices in hb_opts.erl./HyperBEAM/src/hb_opts.erl preloaded_devices => [
+...
+#{<<"name">> => <<"json@1.0">>, <<"module">> => dev_codec_json},
+...
+#{<<"name">> => <<"meta@1.0">>, <<"module">> => dev_meta},
+...
+#{<<"name">> => <<"mydev@1.0">>, <<"module">> => dev_mydev}
+],Now you can test your device using WAO. Don't forget to preload your mydev device.WAO can handle what we are going to learn and decode through the next few chapters, but we will intentionally work with the standard HTTP headers and body.Let's look into the returned headers. You receive what you return from the info method, but it also comes with extra metadata since it's just an HTTP message and goes through a pipeline of data mutation before it gets back to you.The following is what you would get in the response headers.Erlang <-> JSON One way to purify the return value is to return stringified JSON using the json@1.0 device internally. The device has a dev_codec_json:to/1 method to convert an Erlang object to JSON.The internal device names are defined with preloaded_devices in hb_opts.erl.#{<<"name">> => <<"json@1.0">>, <<"module">> => dev_codec_json} And you can internally execute all exposed methods./HyperBEAM/src/dev_codec_json.erl -module(dev_codec_json).
+-export([to/1, from/1, commit/3, verify/3, committed/1, content_type/1]).
+-export([deserialize/3, serialize/3]).When you define a new method, don't forget to export it from mydev@1.0.From this point on, we'll always assume you're correctly exporting new methods./HyperBEAM/src/dev_mydev.erl -export([ info_json/3 ]).
+
+info_json(Msg1, Msg2_, Opts) ->
+JSON = dev_codec_json:to(#{ <<"version">> => <<"1.0">> }),
+{ok, JSON}.Now stringified JSON is returned in body, and you can just JSON.parse(body) to get exactly what you return./test/custom-devices-codecs.test.js const { body } = await hb.get({ path: "/~mydev@1.0/info_json" })
+const json = JSON.parse(body)
+assert.deepEqual(json, { version: "1.0" }) You can also pass JSON using dev_codec_json:from/1, too. Let's create an hello/3 method to convert stringified JSON in body to an Erlang object, add Hello to the name field, and return it as JSON again./HyperBEAM/src/dev_mydev.erl -export([ hello/3 ]).
+
+hello(Msg1, Msg2_, Opts) ->
+Body = maps:get(<<"body">>, Msg1),
+OBJ = dev_codec_json:from(Body),
+Name = maps:get(<<"name">>, OBJ),
+Hello = <<<<"Hello, ">>/binary, Name/binary, <<"!">>/binary>>,
+JSON = dev_codec_json:to(#{ <<"hello">> => Hello }),
+{ok, JSON}.When you send data in body, you need the POST method./test/custom-devices-codecs.test.js const { body } = await hb.post({
+path: "/~mydev@1.0/hello",
+body: JSON.stringify({ name: "Wao" }),
+})
+const { hello } = JSON.parse(body)
+assert.equal(hello, "Hello, Wao!") An HTTP message consists of headers and body, and AO Core and HyperBEAM utilize both of them in messages. GET method doesn't have body and headers only support flat string values. So when you need to send a message with complex data, you almost always need POST. The AO codecs with flat, structured, and httpsig devices exist to circumvent these HTTP header limitations.Device Methods You can create any arbitrary methods in a device, but methods to expose via URL endpoints need to be in a specific format.Minimum Viable URL Exposed Method method(Msg1, Msg2_, Opts) ->
+% write method logic here
+{ok, Ret}.Let's create a forward method to just forward Msg1, Msg2, and Opts in JSON format and examine what they are. We filter out private keys from Opts with hb_private:reset as it contains sensitive data and incompatible data types to convert to JSON. We can also log these objects with io:format./HyperBEAM/src/dev_mydev.erl -export([ forward/3 ]).
+
+forward(Msg1, Msg2, Opts) ->
+io:format("Msg1: ~p~n~nMsg2: ~p~n~nOpts: ~p~n", [Msg1, Msg2, Opts]),
+JSON = dev_codec_json:to(#{
+<<"msg1">> => Msg1,
+<<"msg2">> => Msg2,
+<<"opts">> => hb_private:reset(Opts)
+}),
+{ok, JSON}.Let's send something very simple with GET. You can only send string parameters with GET./test/custom-devices-codecs.test.js const { body } = await hb.get({ path: "/~mydev@1.0/forward", key: "abc" })
+console.log(JSON.parse(body)) This is the response.JSON Response {
+"msg1": {
+"accept": "*/*",
+"accept-encoding": "gzip, deflate",
+"accept-language": "*",
+"connection": "keep-alive",
+"device": "mydev@1.0",
+"host": "localhost:10001",
+"key": "abc",
+"method": "GET",
+"sec-fetch-mode": "cors",
+"user-agent": "node"
+},
+"msg2": {
+"accept": "*/*",
+"accept-encoding": "gzip, deflate",
+"accept-language": "*",
+"commitments": {
+"jNI0FLgi9Lz2UT_l1sK2TCPZMCIwFpPcOK3e3cqdRwo": {
+"alg": "hmac-sha256",
+"commitment-device": "httpsig@1.0"
+}
+},
+"connection": "keep-alive",
+"host": "localhost:10001",
+"key": "abc",
+"method": "GET",
+"path": "forward",
+"sec-fetch-mode": "cors",
+"user-agent": "node"
+},
+"opts": {
+"mode": "debug",
+"hb_config_location": "config.flat",
+"http_server": "Tbun4iRRQW93gUiSAmTmZJ2PGI-_yYaXsX69ETgzSRE",
+...
+}
+} You can tell opts is the node configuration, and msg1 and msg2 are very similar except that msg1 has device, and msg2 has commitments and path. They both have key="abc", which is what we sent as a parameter. Other fields in msg1 and msg2 are the same metadata about the HTTP protocol.We can strip the metadata down to these minimum differences.{
+"msg1": {
+"device": "mydev@1.0",
+"key": "abc",
+},
+"msg2": {
+"commitments": {
+"jNI0FLgi9Lz2UT_l1sK2TCPZMCIwFpPcOK3e3cqdRwo": {
+"alg": "hmac-sha256",
+"commitment-device": "httpsig@1.0"
+}
+},
+"key": "abc",
+"path": "forward",
+}
+} Things will be clearer when we send complex data with POST./test/custom-devices-codecs.test.js const { out } = await hb.post({
+path: "/~wao@1.0/forward",
+key: "abc",
+list: [1, 2, 3],
+map: { abc: "123" },
+bool: true,
+body: "test_body",
+})
+console.log(JSON.parse(out)) And this is the response.JSON Response {
+"msg1": {
+"body": "test_body",
+"bool": "\"true\"",
+"content-length": "253",
+"content-type": "multipart/form-data; boundary=\"eyja4UA4reu5SLEKVqY67NG8Q-jMdqEFmleD-hhSJKM\"",
+"device": "mydev@1.0",
+"key": "abc",
+"list": "\"(ao-type-integer) 1\", \"(ao-type-integer) 2\", \"(ao-type-integer) 3\"",
+"map": { "abc": "123" },
+"method": "POST"
+},
+"msg2": {
+"body": "test_body",
+"bool": true,
+"commitments": {
+"ovgxZflZZcY_kXWpV6yWf_ilaGuMDh7PUGC1YNhJQ90": {
+"alg": "hmac-sha256",
+"commitment-device": "httpsig@1.0",
+"signature": "http-sig-bba7e22451416f77=:kqtatfcnCrmmJiEc1GT3hKKU6tUVRy34hDN6z1vN5UHCwNZ4f+tu9FafZ/mOx8loq11DgdV8S7Xvxk5LzytMAtV1SmAArEQ1VbMJkS+bIiNksd4qmU13JkQjz+a90FYVUDKn0uU+cRUDx+7wVh4Rco27WEBj/E5yVreKcmG0fpORHi4DMV219cb0zUAdDEqY/FdvdlC+Xr91xQzDwcwS8goeHS879P6FLRo5BubLWx/bbJXoS2BEGowkWAORP1jooWe+oNIcWbMWA1CUpPTih2VXbUQcdRto5DDjwXw90nxD3UVPLegweGOZrASuccG9oFg/++mJeFFz3W6cy3Eg84WmrMjfbzsUb6WVcKti83YZYTo7onUDwad2wVUe2WDCuMLm8TFhwP8zwU/MHSfcahRnZasnroPwxvYRjFNWa5USyqGaZ7uM/wqArGKL/2dlh3bIphEmTjtYBc9q2tlosNgPngwnPu6qbEFQpcDEzsODQQBYrnP9HA6HIqsC+dWPINw0xueFqnhu5bv3Y+Y17vFc4zOraBpVCZUEMKEDPgNHe2vMjFVfgIbKp9I9Xu+8vYd8sL+2p+lgkrXVjNCS07XYjVHj855GKCmIZHs9fZa0dfLghOdDfnbexzCpSDIVnfstZx5yniXh00Rk3g2wUAWB7Sq7nRG86BiOQP+EcHY=:",
+"signature-input": "http-sig-bba7e22451416f77=(\"key\" \"list\" \"bool\" \"ao-types\" \"content-type\" \"content-digest\" \"content-length\");alg=\"rsa-pss-sha512\";keyid=\"o1kvTqZQ0wbS_WkdwX70TFCk7UF76ldnJ85l8iRV7t6mSlzkXBYCecb-8RXsNEQQmO0KergtHOvhuBJmB6YXaYe_UftI_gendojfIa6jlTgw-qmH6g4_oErI8djDRbQSm-5nCfGVRuYxsNZLYDeqw4gFb9K3b1h7tuMoLd6-d5pkaLfTMUNcvs2OqpkLo0i_av746FieaURdWozwFqO0APtdA7pLHDqQZDMNdTmsUBJFszL6SOa1bKe5cUWnrq4uaW4NAN3JAQniILKGsKZENeKtfXwiKVaFJtriWWsbhOaNT0JLcuBAwXQAP59RXzcr8bRY6XFn8zBmEmZBGszOD9c9ssDENRFDa5uyVhk8XgIgQjErAWYd9T6edrYcIp3R78jhNK_nLiIBBz8_Oz3bLjL5i_aiV2gpfIbd44DCHihuuxSWRAPJxhEy9TS0_QbVOIWhcDTIeEJE3aRPTwSTMt1_Fec7i9HJWN0mvMbAAJw8k6HxjA3pFZiCowZJw7FBwMAeYgEwIeB82f-S2-PtFLwR9i0tExo36hEBHqaS4Y-O3NGgQ8mKnhT7Z1EfxEbA2BpR9oL8rJFEnPIrHHu7B88OHDDfnfRD3D79fKktnisC7XOuwbHG3TQo0_j4_mElH7xj_7IyAbmCUHDd-eRa482wOYXBB01DGnad901qaHU\""
+},
+"we4Z3weGpJUUEwgeWmkIQsRJBTCfaB1s75LfgudSC1I": {
+"alg": "rsa-pss-sha512",
+"commitment-device": "httpsig@1.0",
+"committer": "Tbun4iRRQW93gUiSAmTmZJ2PGI-_yYaXsX69ETgzSRE",
+"signature": "http-sig-bba7e22451416f77=:kqtatfcnCrmmJiEc1GT3hKKU6tUVRy34hDN6z1vN5UHCwNZ4f+tu9FafZ/mOx8loq11DgdV8S7Xvxk5LzytMAtV1SmAArEQ1VbMJkS+bIiNksd4qmU13JkQjz+a90FYVUDKn0uU+cRUDx+7wVh4Rco27WEBj/E5yVreKcmG0fpORHi4DMV219cb0zUAdDEqY/FdvdlC+Xr91xQzDwcwS8goeHS879P6FLRo5BubLWx/bbJXoS2BEGowkWAORP1jooWe+oNIcWbMWA1CUpPTih2VXbUQcdRto5DDjwXw90nxD3UVPLegweGOZrASuccG9oFg/++mJeFFz3W6cy3Eg84WmrMjfbzsUb6WVcKti83YZYTo7onUDwad2wVUe2WDCuMLm8TFhwP8zwU/MHSfcahRnZasnroPwxvYRjFNWa5USyqGaZ7uM/wqArGKL/2dlh3bIphEmTjtYBc9q2tlosNgPngwnPu6qbEFQpcDEzsODQQBYrnP9HA6HIqsC+dWPINw0xueFqnhu5bv3Y+Y17vFc4zOraBpVCZUEMKEDPgNHe2vMjFVfgIbKp9I9Xu+8vYd8sL+2p+lgkrXVjNCS07XYjVHj855GKCmIZHs9fZa0dfLghOdDfnbexzCpSDIVnfstZx5yniXh00Rk3g2wUAWB7Sq7nRG86BiOQP+EcHY=:",
+"signature-input": "http-sig-bba7e22451416f77=(\"key\" \"list\" \"bool\" \"ao-types\" \"content-type\" \"content-digest\" \"content-length\");alg=\"rsa-pss-sha512\";keyid=\"o1kvTqZQ0wbS_WkdwX70TFCk7UF76ldnJ85l8iRV7t6mSlzkXBYCecb-8RXsNEQQmO0KergtHOvhuBJmB6YXaYe_UftI_gendojfIa6jlTgw-qmH6g4_oErI8djDRbQSm-5nCfGVRuYxsNZLYDeqw4gFb9K3b1h7tuMoLd6-d5pkaLfTMUNcvs2OqpkLo0i_av746FieaURdWozwFqO0APtdA7pLHDqQZDMNdTmsUBJFszL6SOa1bKe5cUWnrq4uaW4NAN3JAQniILKGsKZENeKtfXwiKVaFJtriWWsbhOaNT0JLcuBAwXQAP59RXzcr8bRY6XFn8zBmEmZBGszOD9c9ssDENRFDa5uyVhk8XgIgQjErAWYd9T6edrYcIp3R78jhNK_nLiIBBz8_Oz3bLjL5i_aiV2gpfIbd44DCHihuuxSWRAPJxhEy9TS0_QbVOIWhcDTIeEJE3aRPTwSTMt1_Fec7i9HJWN0mvMbAAJw8k6HxjA3pFZiCowZJw7FBwMAeYgEwIeB82f-S2-PtFLwR9i0tExo36hEBHqaS4Y-O3NGgQ8mKnhT7Z1EfxEbA2BpR9oL8rJFEnPIrHHu7B88OHDDfnfRD3D79fKktnisC7XOuwbHG3TQo0_j4_mElH7xj_7IyAbmCUHDd-eRa482wOYXBB01DGnad901qaHU\""
+}
+},
+"content-length": "253",
+"content-type": "multipart/form-data; boundary=\"eyja4UA4reu5SLEKVqY67NG8Q-jMdqEFmleD-hhSJKM\"",
+"key": "abc",
+"list": [ 1, 2, 3 ],
+"map": {
+"abc": "123"
+},
+"method": "POST",
+"path": "forward"
+},
+"opts": {
+"mode": "debug",
+"store": {
+"prefix": "cache-mainnet",
+"store-module": "hb_store_fs"
+},
+"hb_config_location": "config.flat",
+...
+}
+} TABM (Type Annotated Binary Message) We'll explain the commitments later, but now, if you strip down the 2 msgs:{
+"msg1": {
+"body": "test_body",
+"bool": "\"true\"",
+"device": "wao@1.0",
+"key": "abc",
+"list": "\"(ao-type-integer) 1\", \"(ao-type-integer) 2\", \"(ao-type-integer) 3\"",
+"map": { "abc": "123" },
+"method": "POST",
+"num": "123"
+},
+"msg2": {
+"body": "test_body",
+"bool": true,
+"key": "abc",
+"list": [1, 2, 3],
+"map": { "abc": "123" },
+"method": "POST",
+"num": 123,
+"path": "forward"
+}
+} You can observe that bool, list, and num are encoded in some string form. The msg1 fields are encoded by structured@1.0 and msg2 fields are decoded. FYI, msg1 is also different from the form we sent; msg1 is already decoded by httpsig@1.0 device.The msg1 object type is called TABM (Type Annotated Binary Message) and this is what HyperBEAM internally uses to circumvent the limitation that we can only pass flattened strings in the HTTP headers.Encoding / Decoding Steps So a client encodes a message with httpsig@1.0, then structured@1.0 into TABM, then signs it with http-message-signatures, then sends it to a HyperBEAM node.DATA = { path: "/~wao@1.0/forward", key: "abc" } TABM = encode_by_structured(DATA) HTTP_MSG = encode_by_httpsig(TABM) = Headers + Body SIGNED_HTTP_MSG = sign(HTTP_MSG) send(SIGNED_HTTP_MSG) The node receives it, verifies the signature, then decodes it first with structured@1.0 (msg1), then with httpsig@1.0 (msg2).Msg0 + Commitments = dev_codec_httpsig:verify(SIGNED_HTTP_MSG) Msg1(TABM) = dev_codec_httpsig:to(Msg0) + Device Msg2 = dev_codec_structured:to(Msg1) + Commitments + Path flat@1.0 is used to flatten and unflatten nested object paths in the httpsig@1.0 device since HTTP headers and body can only handle string values, not nested structures.Running Tests You can find the working test file for this chapter here:custom-devices-codecs.test.js Run tests:Terminal Terminal yarn test test/custom-devices-codecs.test.js Reference General Extending HyperBEAM with Devices Device Docs Device: ~json@1.0 Device API dev_codec_json.erl WAO API HyperBEAM Class API HB Class API
+
+---
+
+# 16. Hashpaths  WAO
+
+Document Number: 16
+Source: https://docs.wao.eco/hyperbeam/hashpaths
+Words: 1129
+Quality Score: 0.486
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Hashpath is a mechanism to make compute steps verifiable with chained hashes.Message ID Each message has an ID.For signed messages, the ID is the sha256 hash of all commitment IDs except for hmac joined with , .For unsigned messages, the ID is the hmac-sha256 hash of the message content with ao as the key.You can use hb_message:id on HyperBEAM.ID = hb_message:id(Msg) Or you can use id from hbsig.import { id } from "hbisg"
+const msg_id = id(msg) Message Resolving As we've learned so far, URLs like http://localhost:10001/~mydev@1.0/forward are automatically resolved to the forward method of the mydev@1.0 device with 3 arguments (Msg1, Msg2, Opts).We can internally do the same with hb_ao:resolve(Msg1, Msg2, Opts) to result in a new message Msg3.But recall from the previous chapter, Msg1 needs to contain device, and Msg2 has to contain path to be resolved.Let's create an add/3 method, which takes a message with num and plus, then executes num = num + plus. It returns device in addition to the new num since this will be chained and the first message to hb_ao:resolve needs to contain device./HyperBEAM/src/dev_mydev.erl -export([ add/3 ]).
+
+add(Msg1, Msg2, Opts)->
+Num = maps:get(<<"num">>, Msg1),
+Plus = maps:get(<<"plus">>, Msg2),
+{ok, #{ <<"device">> => <<"mydev@1.0">>, <<"num">> => Num + Plus }}.Also, create a resolve method that chains messages and resolves to add 3 times with incremental plus./HyperBEAM/src/dev_mydev.erl -export([ resolve/3 ]).
+
+resolve(, , Opts)->
+Msg1 = #{ <<"device">> => <<"mydev@1.0">>, <<"num">> => 0 },
+io:format("Msg1 ID: ~p~n", [hb_message:id(Msg1)]),
+
+Msg2 = #{ <<"path">> => <<"add">>, <<"plus">> => 1 },
+io:format("Msg2 ID: ~p~n", [hb_message:id(Msg2)]),
+{ok, Msg3} = hb_ao:resolve(Msg1, Msg2, Opts),
+io:format("Msg3: ~p~n", [Msg3]),
+io:format("Msg3 ID: ~p~n", [hb_message:id(Msg3)]),
+
+Msg4 = #{ <<"path">> => <<"add">>, <<"plus">> => 2 },
+io:format("Msg4 ID: ~p~n", [hb_message:id(Msg4)]),
+
+{ok, Msg5} = hb_ao:resolve(Msg3, Msg4, Opts),
+io:format("Msg5: ~p~n", [Msg5]),
+io:format("Msg5 ID: ~p~n", [hb_message:id(Msg5)]),
+
+Msg6 = #{ <<"path">> => <<"add">>, <<"plus">> => 3 },
+io:format("Msg6 ID: ~p~n", [Msg6]),
+
+{ok, Msg7} = hb_ao:resolve(Msg5, Msg6, Opts),
+io:format("Msg7: ~p~n", [Msg7]),
+io:format("Msg7 ID: ~p~n", [Msg7]),
+
+{ok, Msg7}.It's supposed to go...Msg1: { device: "mydev@1.0", num: 0 } Msg2: { path: "add", plus: 1 } Msg3 = resolve(Msg1, Msg2, Opts): { device: "mydev@1.0", num: 1 } Msg4: { path: "add", plus: 2 } Msg5 = resolve(Msg3, Msg4, Opts): { device: "mydev@1.0", num: 3 } Msg6: { path: "add", plus: 3 } Msg7 = resolve(Msg5, Msg6, Opts): { device: "mydev@1.0", num: 6 } Let's execute it:/test/hashpaths.test.js await hb.p("/~mydev@1.0/resolve") and we get the logs.Msg1 ID: <<"M3yMP4CqvdUkLXMM2tWQN8PnbT8iy0y70Pf3Mv_x2oA">>
+
+Msg2 ID: <<"MFHRUaRJM96_-rtuJ5fEvQXZB5upG1FEQTnWAVoSLOc">>
+
+Msg3: #{<<"device">> => <<"mydev@1.0">>,<<"num">> => 1,
+<<"priv">> =>
+#{<<"hashpath">> =>
+<<"M3yMP4CqvdUkLXMM2tWQN8PnbT8iy0y70Pf3Mv_x2oA/MFHRUaRJM96_-rtuJ5fEvQXZB5upG1FEQTnWAVoSLOc">>}}
+
+Msg3 ID: <<"SGXsgupRFDL40G5-rQQBIVRQ9eIJUoxx6g3xfMbASqE">>
+
+Msg4 ID: <<"Yf4umWKkjUe4MaBN_ya7DOixRCUrSTG2jqE0DlicC2Q">>
+
+Msg5: #{<<"device">> => <<"mydev@1.0">>,<<"num">> => 3,
+<<"priv">> =>
+#{<<"hashpath">> =>
+<<"20vIiC-SsCktGvR3UeU6zrYkBS8GALoL5jRWKcB1QTo/Yf4umWKkjUe4MaBN_ya7DOixRCUrSTG2jqE0DlicC2Q">>}}
+
+Msg5 ID: <<"IEb0vP4sXNGmsTgL1cvN-uo4ulD9uAz7y9cSUiD7Yxw">>
+
+Msg6 ID: #{<<"path">> => <<"add">>,<<"plus">> => 3}
+
+Msg7: #{<<"device">> => <<"mydev@1.0">>,<<"num">> => 6,
+<<"priv">> =>
+#{<<"hashpath">> =>
+<<"McDwn8fpdVA4UORmdqvhzYxIn3sEytmK4IrNeE-aDrk/02-Vjx59gbI2vdl5fJNfCSlKDmmj9p0KKGZGn0fi7V4">>}}
+
+Msg7 ID: #{<<"device">> => <<"mydev@1.0">>,<<"num">> => 6,
+<<"priv">> =>
+#{<<"hashpath">> =>
+<<"McDwn8fpdVA4UORmdqvhzYxIn3sEytmK4IrNeE-aDrk/02-Vjx59gbI2vdl5fJNfCSlKDmmj9p0KKGZGn0fi7V4">>}} Msg7 gets num = 6, so it's working as expected, but what's interesting is each resolved message got hashpath under priv. These hashpaths are the core of the AO Core protocol and HyperBEAM, which keep track of compute steps and make execution verifiable.You can observe the pattern with hashpaths.Msg3_Hashpath: Msg1_ID + / + Msg2_ID Msg5_Hashpath: 20vIiC-SsCktGvR3UeU6zrYkBS8GALoL5jRWKcB1QTo + / + Msg4_ID Msg7_Hashpath: McDwn8fpdVA4UORmdqvhzYxIn3sEytmK4IrNeE-aDrk + / + Msg6_ID 20vIiC-SsCktGvR3UeU6zrYkBS8GALoL5jRWKcB1QTo is actually the sha256 hash of Msg1_ID/Msg2_ID (Msg3_Hashpath), and McDwn8fpdVA4UORmdqvhzYxIn3sEytmK4IrNeE-aDrk is the sha256 hash of Msg3_hashpath/Msg5_ID (Msg5_Hashpath).So the hashpaths evolve like the following.Msg3_Hashpath: Msg1_ID + / + Msg2_ID Msg5_Hashpath: hash(Msg3_Hashpath) + / + Msg4_ID Msg7_Hashpath: hash(Msg5_Hashpath) + / + Msg6_ID The formula is:New_Hashpath = hash(Prev_Hashpath)/New_Msg_ID Now, if you sign the 2nd messages to hb_ao:resolve, a new hashpath contains the previous hashpath and the new message ID, which usually contains commitments with the sha256 hash of the signatures, which verifies the message content.You can sign a message with the operator wallet using hb_message:commit(Msg, Opts)./HyperBEAM/src/dev_mydev.erl -export([ resolve2/3 ]).
+
+resolve2(, , Opts)->
+Msg1 = #{ <<"device">> => <<"mydev@1.0">>, <<"num">> => 0 },
+io:format("Msg1 ID: ~p~n", [hb_message:id(Msg1)]),
+
+Msg2 = hb_message:commit(#{ <<"path">> => <<"add">>, <<"plus">> => 1 }, Opts),
+io:format("Msg2 ID: ~p~n", [hb_message:id(Msg2)]),
+
+{ok, Msg3} = hb_ao:resolve(Msg1, Msg2, Opts),
+io:format("Msg3: ~p~n", [Msg3]),
+io:format("Msg3 ID: ~p~n", [hb_message:id(Msg3)]),
+
+Msg4 = hb_message:commit(#{ <<"path">> => <<"add">>, <<"plus">> => 2 }, Opts),
+io:format("Msg4 ID: ~p~n", [hb_message:id(Msg4)]),
+
+{ok, Msg5} = hb_ao:resolve(Msg3, Msg4, Opts),
+io:format("Msg5: ~p~n", [Msg5]),
+io:format("Msg5 ID: ~p~n", [hb_message:id(Msg5)]),
+
+Msg6 = hb_message:commit(#{ <<"path">> => <<"add">>, <<"plus">> => 3 }, Opts),
+io:format("Msg6 ID: ~p~n", [Msg6]),
+
+{ok, Msg7} = hb_ao:resolve(Msg5, Msg6, Opts),
+io:format("Msg7: ~p~n", [Msg7]),
+io:format("Msg7 ID: ~p~n", [Msg7]),
+
+{ok, Msg7}.External messages passed via URLs are automatically cached with their IDs and readable with hb_cache:read(ID).You can also internally cache messages with their hashpaths using hb_cache:write_hashpath(Msg, Opts) or with their IDs using hb_cache:write(Msg, Opts)./HyperBEAM/src/dev_mydev.erl -export([ resolve3/3 ]).
+
+resolve3(, , Opts)->
+Msg1 = #{ <<"device">> => <<"mydev@1.0">>, <<"num">> => 0 },
+io:format("Msg1 ID: ~p~n", [hb_message:id(Msg1)]),
+
+Msg2 = hb_message:commit(#{ <<"path">> => <<"add">>, <<"plus">> => 1 }, Opts),
+io:format("Msg2 ID: ~p~n", [hb_message:id(Msg2)]),
+
+{ok, Msg3} = hb_ao:resolve(Msg1, Msg2, Opts),
+io:format("Msg3: ~p~n", [Msg3]),
+io:format("Msg3 ID: ~p~n", [hb_message:id(Msg3)]),
+hb_cache:write_hashpath(Msg3, Opts),
+
+Msg4 = hb_message:commit(#{ <<"path">> => <<"add">>, <<"plus">> => 2 }, Opts),
+io:format("Msg4 ID: ~p~n", [hb_message:id(Msg4)]),
+
+{ok, Msg5} = hb_ao:resolve(Msg3, Msg4, Opts),
+io:format("Msg5: ~p~n", [Msg5]),
+io:format("Msg5 ID: ~p~n", [hb_message:id(Msg5)]),
+hb_cache:write_hashpath(Msg5, Opts),
+
+Msg6 = hb_message:commit(#{ <<"path">> => <<"add">>, <<"plus">> => 3 }, Opts),
+io:format("Msg6 ID: ~p~n", [Msg6]),
+
+{ok, Msg7} = hb_ao:resolve(Msg5, Msg6, Opts),
+io:format("Msg7: ~p~n", [Msg7]),
+io:format("Msg7 ID: ~p~n", [Msg7]),
+hb_cache:write_hashpath(Msg7, Opts),
+
+{ok, Msg7#{
+<<"hashpath_3">> => maps:get(<<"hashpath">>, maps:get(<<"priv">>, Msg3)),
+<<"hashpath_5">> => maps:get(<<"hashpath">>, maps:get(<<"priv">>, Msg5)),
+<<"hashpath_7">> => maps:get(<<"hashpath">>, maps:get(<<"priv">>, Msg7))
+}}.Reading Cached Messages with ID / Hashpath You can internally read any cached messages with hb_cache:read(ID, Opts) or hb_cache:read(Hashpath, Opts).But also, HyperBEAM makes cached messages accessible from external URL paths with /[msg_id] and /[hashpath] format./test/hashpaths.test.js const out = await hb.p("/~mydev@1.0/resolve3")
+const msg3 = await hb.g(`/${out.hashpath_3}`)
+const msg5 = await hb.g(`/${out.hashpath_5}`)
+const msg7 = await hb.g(`/${out.hashpath_7}`)
+
+assert.deepEqual({ device: "mydev@1.0", num: 1 }, msg3)
+assert.deepEqual({ device: "mydev@1.0", num: 3 }, msg5)
+assert.deepEqual({ device: "mydev@1.0", num: 6 }, msg7) You can chain compute steps using this URL schema, but we'll talk about it in the next chapter.Hashpath of Signed Requests Any signed request to a HyperBEAM node returns a hashpath as tag in signature-input in the HTTP headers, which is the hashpath of the passed messages to the resolved device method.hb.post automatically extracts it from the response for you./test/hashpaths.test.js import { id } from "hbsig"
+
+const { out, hashpath } = await hb.post({ path: "/~mydev@1.0/forward" })
+const { msg1, msg2 } = JSON.parse(out)
+assert.equal(`${id(msg1)}/${id(msg2)}`, hashpath) This hashpath contains the IDs of the messages passed to our forward method in this case.hashpath: _msg1_id/_msg2_id This would be extremely useful if the hashpaths were automatically cached as they contain the compute results, but unfortunately, this doesn't seem to be the case with the current HyperBEAM implementation.Running Tests You can find the working test file for this chapter here:hashpaths.test.js Run tests:Terminal Terminal yarn test test/hashpaths.test.js References WAO API HyperBEAM Class API HB Class API HBSig API
+
+---
+
+# 17. Process  WAO
+
+Document Number: 17
+Source: https://docs.wao.eco/api/process
+Words: 369
+Quality Score: 0.480
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+You can go for even more concise syntax with Process class.Instantiate const p = ao.p(pid) or const { p, pid } = await ao.deploy({ data, tags, src, fills }) msg The first argument is Action, the second argument is Tags, and the third argument is the rest of the options.const { mid, res, out, err } = await p.msg(
+"Action",
+{ Tag1: "value1", Tag2: "value2" },
+{ get: true, check: { TagA: "valueA" }, jwk }
+) The default third argument is { get: false } to return the text Data.const { mid, out } = await p.msg("Action", { Tag1: "value1", Tag2: "value2" }) The third parameter defaults to get if it's not an object.const { mid, out } = await p.msg("Action", { Tag1: "value1" }, "TagA") is equivalent to const { mid, out } = await p.msg("Action", { Tag1: "value1" }, "TagA") You can omit the second argument if there is no tag to pass to.const { mid, out } = await p.msg("Action", { check: "success!" }} m You can only get out with m. This is the most extreme form.const out = await p.m("Action", { Tag1: "value1", Tag2: "value2" }) This is a quite common pattern during testing. Doing the same with aoconnect requires an enormous amount of code, especially if it involves async/await receive().const { p } = await ao.deploy({ tags, src_data, fills })
+const out = await p.m("Action", { Tag1: "value1", Tag2: "value2" }) // get Data
+assert.equal(out, EXPECTED_JSON) dry const { mid, out } = await p.dry("Action", { Tag1: "value1", Tag2: "value2" }) d const out = await p.d("Action", { Tag1: "value1", Tag2: "value2" }) res const { err, res, out } = await p.res({ mid, check, get }) r const out = await p.r({ mid, check, get }) v v is a shortcut for var to get a Lua variable with dryrun.const { p } = await ao.deploy({
+src_data: `Table = { String = "Hello", Array = { "str", 3, true } }`,
+})
+const table = await p.v("Table") // { String: "Hello", Array: [ "str", 3, true ] } To disable the auto JSON conversion and enable pretty print, use the 2nd and the 3rd arguments.const table = await p.v("Table", false, true)
+
+---
+
+# 18. HyperBEAM  WAO
+
+Document Number: 18
+Source: https://docs.wao.eco/hyperbeam
+Words: 1077
+Quality Score: 0.479
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Install WAO & HyperBEAM yarn add wao In addition to the WAO SDK, you will need to install HyperBEAM on your local computer (recommended) or a cloud server. The required systems are not the only ones you can install HyperBEAM on. I was, for example, able to install HyperBEAM on Arch Linux by installing the necessary dependencies. You could throw installation errors at LLMs like ChatGPT and Claude and likely be able to figure it out.If you want to test Mainnet AOS modules, you need to install the WAO fork of HyperBEAM, which includes a custom helper device for testing.git clone --branch wao https://github.com/weavedb/HyperBEAM.git Make sure you compiled it and are able to run rebar3 shell, but you don't need to have it running yet. You might need to add environment variables depending on how you installed it on your system. WAO SDK handles that too.CMAKE_POLICY_VERSION_MINIMUM=3.5 CC=gcc-12 CXX=g++-12 rebar3 shell Create a Project To create a project, you could use npx wao create APP_NAME,npx wao create myapp && cd myapp or you could manually install wao into your project.mkdir myapp && cd myapp && yarn init && yarn add wao
+mkdir test && touch test/test.js Make sure your package.json looks something like the following to enable ES6 and test commands with wasm64. The wasm64 flag is unnecessary for NodeJS v24 and later. Also, you need to disable concurrency so the test won't try to run multiple HyperBEAM nodes on duplicate ports./package.json {
+"name": "myapp",
+"version": "1.0.0",
+"type": "module",
+"scripts": {
+"test": "node --experimental-wasm-memory64 --test --test-concurrency=1",
+"test-only": "node --experimental-wasm-memory64 --test-only --test-concurrency=1",
+"test-all": "node --experimental-wasm-memory64 --test --test-concurrency=1 test/**/*.test.js"
+},
+"dependencies": {
+"wao": "^0.22.1"
+}
+} If your HyperBEAM installation requires environment variables, define them in .env.hyperbeam./.env.hyperbeam CC=gcc-12
+CXX=g++-12
+CMAKE_POLICY_VERSION_MINIMUM=3.5 Write Tests HyperBEAM class let you create a HyperBEAM sandbox by starting a fresh HyperBEAM node before testing and shutting it down when tests are complete.
+You can interact with the HyperBEAM node with HB (hbeam.hb)./test/hyperbeam.test.js import assert from "assert"
+import { describe, it, before, after, beforeEach } from "node:test"
+import { HyperBEAM } from "wao/test"
+
+/*
+The link to your HyperBEAM node directory.
+It's relative to your app root folder, not the test folder.
+*/
+const cwd = "../HyperBEAM"
+
+describe("HyperBEAM", function () {
+let hbeam, hb
+
+// start a hyperbeam node and wait till it's ready, reset storage for test
+before(async () => {
+hbeam = await new HyperBEAM({ cwd, reset: true }).ready()
+})
+
+beforeEach(async () => (hb = hbeam.hb))
+
+// kill the node after testing
+after(async () => hbeam.kill())
+
+it("should run a HyperBEAM node", async () => {
+// change config
+await hb.post({ path: "/~meta@1.0/info", test_config: "abc" })
+
+// get config
+const { out } = await hb.get({ path: "/~meta@1.0/info" })
+assert.equal(out.test_config, "abc")
+})
+}) You can also skip the HyperBEAM class and connect with an already running remote node by specifying the node url to HB./test/hb.test.js import assert from "assert"
+import { describe, it, before, after, beforeEach } from "node:test"
+import { acc } from "wao/test"
+import { HB } from "wao"
+
+const cwd = "../HyperBEAM"
+
+describe("HyperBEAM", function () {
+let hb
+
+// using one of the pre-generated accounts from acc for test
+beforeEach(async () => {
+hb = new HB({ jwk: acc[0].jwk, url: "http://localhost:10001" })
+})
+
+it("should connect to a HyperBEAM node", async () => {
+// get build info
+const build = await hb.g("/~meta@1.0/build")
+assert.equal(build.node, "HyperBEAM")
+})
+}) HyperBEAM has a test device to test basic features with the HB methods.spawn: spawn a process schedule: schedule a message to a process compute: compute the result of a slot messages: list messages in a process it("should test test-device@1.0", async () => {
+const { pid } = await hb.spawn({ "execution-device": "test-device@1.0" })
+const { slot } = await hb.schedule({ pid })
+const res = await hb.compute({ pid, slot })
+assert.equal(res.results["assignment-slot"], 1)
+const {
+edges: [ edge0, { node: { assignment, message } }]
+} = await hb.messages({ pid, from: 0, to: 1 })
+assert.equal(message.Target, pid)
+}) AO-Core Pathing and HTTP Message Signatures It is extremely important to understand the pathing scheme of AO-Core protocol and HTTP Message Signature (RFC 9421) when interacting with HyperBEAM nodes.get and post help you to construct complex messages and send signed requests to HyperBEAM nodes.it("should interact with meta@1.0", async () => {
+// change node configuration
+await hb.post({ path: "/~meta@1.0/info", test_config: 123 })
+
+const { out } = await hb.get({ path: "/~meta@1.0/info" })
+assert.equal(out.test_config, 123)
+}) g and p are the shortcut methods for get and post.it("should interact with meta@1.0 #2", async () => {
+await hb.p("/~meta@1.0/info", { test_config2: "abc" })
+
+const out = await hb.g("/~meta@1.0/info")
+assert.equal(out.test_config2, "abc")
+}) Spawn AOS Processes You can also spawn and interact with AOS processes on HyperBEAM.const data = `
+local count = 0
+Handlers.add("Inc", "Inc", function (msg)
+count = count + 1
+msg.reply({ Data = "Count: "..tostring(count) })
+end)
+
+Handlers.add("Get", "Get", function (msg)
+msg.reply({ Data = "Count: "..tostring(count) })
+end)`
+
+it("should spawn a legacynet compatible AOS process", async () => {
+const { pid } = await hb.spawnLegacy()
+const { slot } = await hb.scheduleLegacy({ pid, data })
+const r = await hb.computeLegacy({ pid, slot })
+const { slot: slot2 } = await hb.scheduleLegacy({ pid, action: "Inc" })
+const r2 = await hb.computeLegacy({ pid, slot: slot2 })
+assert.equal(r2.Messages[0].Data, "Count: 1")
+const { slot: slot3 } = await hb.scheduleLegacy({ pid, action: "Inc" })
+const r4 = await hb.computeLegacy({ pid, slot: slot3 })
+const r3 = await hb.dryrun({ pid, action: "Get" })
+assert.equal(r3.Messages[0].Data, "Count: 2")
+}) Create Custom Devices You can create your own custom devices in Erlang, Rust, and C++.Create your device under /HyperBEAM/src./HyperBEAM/src/dev_foo.erl const data = `
+local count = 0
+Handlers.add("Inc", "Inc", function (msg)
+count = count + 1
+msg.reply({ Data = "Count: "..tostring(count) })
+end)
+
+Handlers.add("Get", "Get", function (msg)
+msg.reply({ Data = "Count: "..tostring(count) })
+end)`
+``
+`
+Define it in `preloaded_devices` in `/HyperBEAM/src/hb_opts.erl`
+
+```erlang [/HyperBEAM/src/hb_opts.erl]
+preloaded_devices => [
+#{<<"name">> => <<"ans104@1.0">>, <<"module">> => dev_codec_ans104},
+#{<<"name">> => <<"compute@1.0">>, <<"module">> => dev_cu},
+...
+#{<<"name">> => <<"foo@1.0">>, <<"module">> => dev_foo}
+],Test the device with WAO.import assert from "assert"
+import { describe, it, before, after, beforeEach } from "node:test"
+import { HyperBEAM } from "wao"
+
+const cwd = "../HyperBEAM" // HyperBEAM directory
+
+describe("Hyperbeam Custom Devices", function () {
+let hbeam, hb
+before(async () => {
+hbeam = await new HyperBEAM({ cwd, reset: true }).ready()
+})
+beforeEach(async () => (hb = hbeam.hb))
+after(async () => hbeam.kill())
+
+it("should query a custom device", async () => {
+const { version } = await hb.g("/~foo@1.0/info")
+assert.equal("1.0", version)
+})
+})
+
+---
+
+# 19. Httpsig Codec  WAO
+
+Document Number: 19
+Source: https://docs.wao.eco/hyperbeam/codec-httpsig
+Words: 619
+Quality Score: 0.476
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+httpsig@1.0 turns structured encoded objects into HTTP signature-ready objects. It flattens map structures into strings with the flat@1.0 device, and puts complex structures into the multipart body format.Create custom methods to expose dev_codec_httpsig:from and dev_codec_httpsig:to./HyperBEAM/src/dev_mydev.erl -export([ httpsig_to/3, httpsig_from/3 ]).
+
+httpsig_to(Msg1, Msg2, Opts) ->
+Body = maps:get(<<"body">>, Msg1),
+TABM = dev_codec_json:from(Body),
+HTTPSIG = dev_codec_httpsig:to(TABM),
+JSON = dev_codec_json:to(HTTPSIG),
+{ok, JSON}.
+
+httpsig_from(Msg1, Msg2, Opts) ->
+Body = maps:get(<<"body">>, Msg1),
+HTTPSIG = dev_codec_json:from(Body),
+TABM = dev_codec_httpsig:from(HTPSIHG),
+JSON = dev_codec_json:to(TABM),
+{ok, JSON}.Let's convert one complex object.{ a: { b: [1, 2, 3]}, c: { d: [3.14, true, "str"] } } The structured encoded representation is the following./test/codec-httpsig.test.js const cases = [{
+a: {
+"ao-types": 'b="list"',
+b: '"(ao-type-integer) 1", "(ao-type-integer) 2", "(ao-type-integer) 3"',
+},
+c: {
+"ao-types": 'd="list"',
+d: '"(ao-type-float) 3.14", "(ao-type-atom) \\"true\\"", "str"',
+},
+}]
+
+for (const v of cases) {
+const { body } = await hb.post({
+path: "/~mydev@1.0/httpsig_to",
+body: JSON.stringify(v),
+})
+console.log(JSON.parse(body))
+} We get an httpsig-encoded value ready to be signed.{
+body: '--rqDK_isKBhMozuATy4K6NFgdADGNHedXoUEDN10AANo\r\n' +
+'ao-types: b="list"\r\n' +
+'b: "(ao-type-integer) 1", "(ao-type-integer) 2", "(ao-type-integer) 3"\r\n' +
+'content-disposition: form-data;name="a"\r\n' +
+'--rqDK_isKBhMozuATy4K6NFgdADGNHedXoUEDN10AANo\r\n' +
+'ao-types: d="list"\r\n' +
+'content-disposition: form-data;name="c"\r\n' +
+'d: "(ao-type-float) 3.14", "(ao-type-atom) \\"true\\"", "str"\r\n' +
+'--rqDK_isKBhMozuATy4K6NFgdADGNHedXoUEDN10AANo--',
+'body-keys': '"a", "c"',
+'content-digest': 'sha-256=:mv08FUN7TpjmiHhagrxwqgjS7kQ/HY2+If2hIUq/y54=:',
+'content-type': 'multipart/form-data; boundary="rqDK_isKBhMozuATy4K6NFgdADGNHedXoUEDN10AANo"'
+} The encoding gives you 3 pieces of metadata. Fields other than body go into the HTTP headers.content-digest: the sha256 hash of body content, only required if body exists content-type: multipart/form-data with boundary body-keys: allocated key of each body part So you can split the body by the boundary of rqDK_isKBhMozuATy4K6NFgdADGNHedXoUEDN10AANo.content-disposition: form-data;: tells which path the part falls into name could be a flattened path like a/b/c const parts = {
+a: 'ao-types: b="list"\r\n' +
+'b: "(ao-type-integer) 1", "(ao-type-integer) 2", "(ao-type-integer) 3"\r\n' +
+'content-disposition: form-data;name="a"\r\n',
+c: 'ao-types: d="list"\r\n' +
+'content-disposition: form-data;name="c"\r\n' +
+'d: "(ao-type-float) 3.14", "(ao-type-atom) \\"true\\"", "str"\r\n`
+} You can decode the encoded value with dev_codec_structured:to./test/codec-httpsig.test.js const cases = [
+{
+body: '--rqDK_isKBhMozuATy4K6NFgdADGNHedXoUEDN10AANo\r\n' +
+'ao-types: b="list"\r\n' +
+'b: "(ao-type-integer) 1", "(ao-type-integer) 2", "(ao-type-integer) 3"\r\n' +
+'content-disposition: form-data;name="a"\r\n' +
+'--rqDK_isKBhMozuATy4K6NFgdADGNHedXoUEDN10AANo\r\n' +
+'ao-types: d="list"\r\n' +
+'content-disposition: form-data;name="c"\r\n' +
+'d: "(ao-type-float) 3.14", "(ao-type-atom) \\"true\\"", "str"\r\n' +
+'--rqDK_isKBhMozuATy4K6NFgdADGNHedXoUEDN10AANo--',
+'body-keys': '"a", "c"',
+'content-digest': 'sha-256=:mv08FUN7TpjmiHhagrxwqgjS7kQ/HY2+If2hIUq/y54=:',
+'content-type': 'multipart/form-data; boundary="rqDK_isKBhMozuATy4K6NFgdADGNHedXoUEDN10AANo"'
+}
+]
+for (const v of cases) {
+const { body } = await hb.post({
+path: "/~mydev@1.0/httpsig_from",
+body: JSON.stringify(v),
+})
+console.log(JSON.parse(body))
+} Another example reveals a couple of special fields.{ data: "abc", "Tbun4iRRQW93gUiSAmTmZJ2PGI-_yYaXsX69ETgzSRE": 123 } The encoded value is:{
+'ao-ids': 'Tbun4iRRQW93gUiSAmTmZJ2PGI-_yYaXsX69ETgzSRE="123"',
+'ao-types': '%54bun4i%52%52%51%5793g%55i%53%41m%54m%5a%4a2%50%47%49-_y%59a%58s%5869%45%54gz%53%52%45="integer"',
+body: 'abc',
+'content-digest': 'sha-256=:ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=:',
+'inline-body-key': 'data'
+} ao-ids: all keys get lower-cased during the encoding, but Arweave addresses are kept case-sensitive inline-body-key: the entire body will become the value of the specified key Encoding / Decoding Pipeline You can validate the encoding-decoding of any value with the following pipeline./test/codec-httpsig.test.js const cases = [
+{ list: [1, true, "abc"] },
+{ nested_list: [1, [2, 3]] },
+{ a: { b: [1, 2, 3] } },
+{ a: [1, 2], b: [3, 4] },
+{ empty_list: [], empty_binary: "", empty_message: {} },
+{ data: "abc", [hb.addr]: 123 },
+{ list: [1, 2, 3], map: { a: { b: { c: 4 } } } },
+]
+for(const json of cases){
+const res = await hb.post({
+path: "/~mydev@1.0/structured_from",
+body: JSON.stringify(json),
+})
+const structured = JSON.parse(res.body)
+console.log(structured)
+const res2 = await hb.post({
+path: "/~mydev@1.0/httpsig_to",
+body: JSON.stringify(structured),
+})
+const encoded = JSON.parse(res2.body)
+console.log(encoded)
+const res3 = await hb.post({
+path: "/~mydev@1.0/httpsig_from",
+body: JSON.stringify(encoded),
+})
+
+// omit: body-keys, content-type, inline-body-key
+const {
+"body-keys": _,
+"content-type": ,
+"inline-body-key": _,
+...decoded
+} = JSON.parse(res3.body)
+console.log(decoded)
+const res4 = await hb.post({
+path: "/~mydev@1.0/structured_to",
+body: JSON.stringify(decoded),
+})
+const json2 = JSON.parse(res4.body)
+assert.deepEqual(json,json2)
+} Running Tests You can find the working test file for this chapter here:codec-httpsig.test.js Run tests:Terminal Terminal yarn test test/codec-httpsig.test.js References Device API dev_codec_httpsig.erl WAO API HyperBEAM Class API HB Class API
+
+---
+
+# 20. Payment System  WAO
+
+Document Number: 20
+Source: https://docs.wao.eco/hyperbeam/payment-system
+Words: 2197
+Quality Score: 0.473
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+faff@1.0 faff@1.0 restricts node access to whitelisted accounts. You can pass a list of allowed accounts to your test HyperBEAM node. It only restricts POST requests. GET still works for all accounts.The node operator can update faff_allow_list via /~meta@1.0/info to manage the allowed accounts./test/payment-system.test.js import assert from "assert"
+import { describe, it, before, after } from "node:test"
+import { HyperBEAM, acc } from "wao/test"
+import HB from "wao"
+import { rsaid, hmacid } from "hbsig"
+
+describe("Payment System faff@1.0", function () {
+let hbeam, hb, operator
+let allowed_user = acc[0]
+let disallowed_user = acc[1]
+
+before(async () => {
+hbeam = await new HyperBEAM({
+reset: true,
+faff: [HyperBEAM.OPERATOR, allowed_user.addr],
+}).ready()
+operator = hbeam
+allowed_user.hb = new HB({ jwk: allowed_user.jwk })
+disallowed_user.hb = new HB({ jwk: disallowed_user.jwk })
+})
+after(async () => hbeam.kill())
+
+it("should test faff@1.0", async () => {
+const msg = ["/~message@1.0/set/hello", { hello: "world" }]
+
+// GET
+assert(await operator.hb.g(...msg))
+assert(await allowed_user.hb.g(...msg))
+assert(await disallowed_user.hb.g(...msg))
+
+// POST
+assert(await operator.hb.p(...msg))
+assert(await allowed_user.hb.p(...msg))
+await assert.rejects(disallowed_user.hb.p(...msg))
+
+const info = await operator.hb.g("/~meta@1.0/info")
+assert.deepEqual(info.faff_allow_list, [operator.addr, allowed_user.addr])
+
+// remove allowed_user
+await operator.hb.p("/~meta@1.0/info", { faff_allow_list: [operator.addr] })
+const info2 = await operator.hb.g("/~meta@1.0/info")
+assert.deepEqual(info2.faff_allow_list, [operator.addr])
+
+// now previously allowed_user fails too
+await assert.rejects(allowed_user.hb.p(...msg))
+})
+}) simple-pay@1.0 simple-pay@1.0 allows you to set the base price for all requests.You can set simple_pay_price and simple_pay=true on your test HyperBEAM node.You also need to explicitly set the payment operator address who can change the payment settings.The node operator can topup users and change the simple_pay_price via /~meta@1.0/info.Users can view their own balances at /~simple-pay@1.0/balance with POST.simple-pay@1.0 uses p4@1.0 underneath, which charges for all POST access except for the endpoints on the p4_non_chargable_routes list.The HyperBEAM SDK automatically puts the following paths onto the p4_non_chargable_routes list, but you can also set it explicitly./~meta@1.0/* /~simple-pay@1.0/topup /~simple-pay@1.0/balance /test/payment-system.test.js describe("Payment System simple-pay@1.0", function () {
+let hbeam, hb, operator
+let user = acc[0]
+before(async () => {
+hbeam = await new HyperBEAM({
+reset: true,
+operator: HyperBEAM.OPERATOR,
+simple_pay: true,
+simple_pay_price: 2,
+}).ready()
+operator = hbeam
+user.hb = await new HB({}).init(user.jwk)
+})
+after(async () => hbeam.kill())
+
+it("should test simple-pay@1.0", async () => {
+// cost = simplePayPrice * 3
+const msg = ["/~message@1.0/set/hello", { hello: "world" }]
+
+// balance is non_chargable
+const balance = "/~simple-pay@1.0/balance"
+
+// topup user
+await operator.hb.p("/~simple-pay@1.0/topup", {
+amount: 15,
+recipient: user.addr,
+})
+assert.equal(await user.hb.p(balance), "15")
+assert(await user.hb.p(...msg)) // cost = 2 * 3 = 6
+assert.equal(await user.hb.p(balance), "9")
+
+const info1 = await operator.hb.g("/~meta@1.0/info")
+assert.equal(info1.simple_pay_price, 2)
+
+// change simple_pay_price
+assert(await operator.hb.p("/~meta@1.0/info", { simple_pay_price: 3 }))
+
+const info2 = await operator.hb.g("/~meta@1.0/info")
+assert.equal(info2.simple_pay_price, 3)
+
+assert(await user.hb.p(...msg)) // cost = 3 * 3 = 9
+assert.equal(await user.hb.p(balance), "0")
+
+// this should fail for insufficient fund
+await assert.rejects(user.hb.p(...msg)) // cost = 3 * 3 = 9
+})
+}) p4@1.0 p4@1.0 allows you to use Lua scripts with node-process@1.0 to manage node access.p4@1.0 requires a complex setup with a few hacks to test externally with JS code, so we'll go over it step by step.Required Configurations p4@1.0 requires a handful of configurations when starting up a HyperBEAM node with hb:start_mainnet.on: defines hooks p4_non_chargable_routes: defines free-of-charge endpoints node_processes: defines Lua scripts to be executed with hooks Basically, we need to create 2 Lua scripts, one for the processor and the other for the clients, store them on Arweave or a local store to get the message IDs, then pass the IDs to the on settings of the hook device.Caching Lua Scripts There are 3 ways to cache Lua scripts to use with node-process@1.0:upload to the production Arweave storage create a custom device method to internally cache with hb_cache on HyperBEAM create a process and upload with a message We don't want to upload our test scripts to Arweave. So we're going with the 3rd hack since it produces the least conflict and the most flexibility without creating a custom HyperBEAM device. This only works with text-based scripts like Lua due to how messages are processed internally, but won't work for binary scripts like Wasm. For wasm modules for AOS processes, we need to go with the 2nd hack.We need 2 Lua scripts (processor and client) for p4@1.0 to work. For now, we can use the test Lua scripts HyperBEAM uses in their GitHub repo.p4-payment-process.lua --- A ledger that allows account balances to be debited and credited by a
+--- specified address.
+
+-- Check if the request is a valid debit/credit request by checking if one of
+-- the committers is the operator.
+local function is_valid_request(base, assignment)
+-- First, validate that the assignment is signed by the scheduler.
+local scheduler = base.scheduler
+local status, res = ao.resolve(assignment, "committers")
+ao.event({
+"assignment committers resp:",
+{ status = status, res = res, scheduler = scheduler }
+})
+
+if status ~= "ok" then
+return false
+end
+
+local valid = false
+for _, committer in ipairs(res) do
+if committer == scheduler then
+valid = true
+end
+end
+
+if not valid then
+return false
+end
+
+-- Next, validate that the request is signed by the operator.
+local operator = base.operator
+status, res = ao.resolve(assignment.body, "committers")
+ao.event({
+"request committers resp:",
+{ status = status, res = res, operator = operator }
+})
+
+if status ~= "ok" then
+return false
+end
+
+for _, committer in ipairs(res) do
+if committer == operator then
+return true
+end
+end
+
+return false
+end
+
+-- Debit the specified account by the given amount.
+function debit(base, assignment)
+ao.event({ "process debit starting", { assignment = assignment } })
+if not is_valid_request(base, assignment) then
+base.result = { status = "error", error = "Operator signature required." }
+ao.event({ "debit error", base.result })
+return "ok", base
+end
+ao.event({ "process debit valid", { assignment = assignment } })
+base.balance = base.balance or {}
+base.balance[assignment.body.account] =
+(base.balance[assignment.body.account] or 0) - assignment.body.quantity
+
+ao.event({ "process debit success", { balances = base.balance } })
+return "ok", base
+end
+
+-- Credit the specified account by the given amount.
+_G["credit-notice"] = function (base, assignment)
+ao.event({ "credit-notice", { assignment = assignment }, { balances = base.balance } })
+if not is_valid_request(base, assignment) then
+base.result = { status = "error", error = "Operator signature required." }
+return "ok", base
+end
+ao.event({ "is valid", { req = assignment.body } })
+base.balance = base.balance or {}
+base.balance[assignment.body.recipient] =
+(base.balance[assignment.body.recipient] or 0) + assignment.body.quantity
+ao.event({ "credit", { ["new balances"] = base.balance } })
+return "ok", base
+end
+
+--- Index function, called by the `~process@1.0` device for scheduled messages.
+--- We route each to the appropriate function based on the request path.
+function compute(base, assignment, opts)
+ao.event({ "compute", { assignment = assignment }, { balances = base.balance } })
+if assignment.body.path == "debit" then
+return debit(base, assignment.body)
+elseif assignment.body.path == "credit-notice" then
+return _G"credit-notice"
+elseif assignment.body.path == "balance" then
+return balance(base, assignment.body)
+elseif assignment.slot == 0 then
+base.balance = base.balance or {}
+return "ok", base
+end
+end p4-payment-client.lua --- A simple script that can be used as a `~p4@1.0` ledger device, marshalling
+--- requests to a local process.
+
+-- Find the user's balance in the current ledger state.
+function balance(base, request)
+local status, res = ao.resolve({
+path =
+base["ledger-path"]
+.. "/now/balance/"
+.. request["target"]
+})
+ao.event({ "client received balance response",
+{ status = status, res = res, target = request["target"] } }
+)
+-- If the balance request fails (most likely because the user has no balance),
+-- return a balance of 0.
+if status ~= "ok" then
+return "ok", 0
+end
+
+-- We have successfully retrieved the balance, so return it.
+return "ok", res
+end
+
+-- Debit the user's balance in the current ledger state.
+function debit(base, request)
+ao.event({ "client starting debit", { request = request, base = base } })
+local status, res = ao.resolve({
+path = "(" .. base["ledger-path"] .. ")/schedule",
+method = "POST",
+body = request
+})
+ao.event({ "client received schedule response", { status = status, res = res } })
+status, res = ao.resolve({
+path = base["ledger-path"] .. "/compute/balance/" .. request["account"],
+slot = res.slot
+})
+ao.event({ "confirmed balance", { status = status, res = res } })
+return "ok"
+end
+
+--- Poll an external ledger for credit events. If new credit noticess have been
+--- sent by the external ledger, push them to the local ledger.
+function poll(base, req)
+local status, local_last_credit = ao.resolve({
+path = base["ledger-path"] .. "/now/last-credit"
+})
+if status ~= "ok" then
+ao.event(
+{ "error getting local last credit",
+{ status = status, res = local_last_credit } }
+)
+return "error", base
+end
+
+local status, external_last_credit = ao.resolve({
+path = base["external-ledger"] .. "/now/last-credit"
+})
+if status ~= "ok" then
+ao.event({ "error getting external last credit",
+{ status = status, res = external_last_credit } })
+return "error", base
+end
+
+ao.event({ "Retreived sync data. Last credit info:",
+{
+local_last_credit = local_last_credit,
+external_last_credit = external_last_credit }
+}
+)
+while local_last_credit < external_last_credit do
+status, res = ao.resolve({
+path = base["external-ledger"] .. "/push",
+slot = local_last_credit + 1
+})
+if status ~= "ok" then
+ao.event({ "error pushing slot", { status = status, res = res } })
+return "error", base
+end
+local_last_credit = local_last_credit + 1
+end
+
+return "ok", base
+end You can spawn a process and upload these 2 scripts as messages.schedule only returns slot and not the message ID. You can get message IDs via /~scheduler@1.0/schedule, which returns a list of scheduled messages for the target process and contains IDs./test/payment-system.test.js const process = hbeam.file("scripts/p4-payment-process.lua")
+const { pid: cache_pid } = await hb.spawn({})
+const { slot } = await hb.schedule({
+pid: cache_pid,
+data: process,
+"content-type": "application/lua",
+})
+const { body } = await hb.g("/~scheduler@1.0/schedule", {
+target: cache_pid,
+from: slot,
+accept: "application/aos-2",
+})
+const {
+edges: [msg],
+} = JSON.parse(body)
+const pid = msg.node.message.Id
+assert(pid)
+const client = hbeam.file("scripts/p4-payment-client.lua")
+const { slot: slot2 } = await hb.schedule({
+pid: cache_pid,
+data: client,
+"content-type": "application/lua",
+})
+const { body: body2 } = await hb.g("/~scheduler@1.0/schedule", {
+target: cache_pid,
+from: slot2,
+accept: "application/aos-2",
+})
+const {
+edges: [msg2],
+} = JSON.parse(body2)
+const cid = msg2.node.message.Id
+assert(cid) HB has a convenient method for /~scheduler@1.0/schedule./test/payment-system.test.js const msgs = await this.messages({ pid, from: slot, to: slot })
+const pid = msgs.edges[0].node.message.Id
+
+const msgs2 = await this.messages({ pid, from: slot2, to: slot2 })
+const cid = msgs2.edges[0].node.message.Id Indeed, it has a convenient method to cache scripts./test/payment-system.test.js const process = readFileSync(`${hb_dir}/scripts/p4-payment-process.lua`)
+const pid = await hb.cacheScript(process)
+
+const client = readFileSync(`${hb_dir}/scripts/p4-payment-client.lua`)
+const cid = await hb.cacheScript(client) Starting Another Node with p4@1.0 Once you get script IDs, you need to start another HyperBEAM node with the same store configurations. We can do this by simply instantiating another HyperBEAM with a different port, and without clearing the cache storage.For p4@1.0 to work, we need to pass the payment operator address and p4_lua, and the complex settings will be handled for you./test/payment-system.test.js // comment out reset to use the same store where we cached Lua scripts
+const hbeam2 = await new HyperBEAM({
+//reset: true,
+port: 10002,
+operator: addr,
+p4_lua: { processor: pid, client: cid },
+}).ready() Now we have a new HyperBEAM node with the p4@1.0 Lua scripts running at http://localhost:10002.Let's set up 2 new HyperBEAM clients for the operator and a new user for the new node./test/payment-system.test.js const operator = hbeam2
+const user = acc[0]
+user.hb = await new HB({ url: hbeam2.url }).init(user.jwk) Now to topup the user account, we need to send credit-notice to the Lua script with the operator account. But this gets extra tricky since HyperBEAM first verifies the whole message sent to the node, then the Lua script extracts and verifies a nested message placed in body. So we need to somehow create a signed message with the correct commitment format internally used in HyperBEAM, then wrap that message in body and sign the parent message again. This is indeed extra complex, and the crux of this tutorial series where you need to put everything you learned so far together.Create Commitments If you recall from the previous chapter, HyperBEAM internally signs and creates 2 commitments with sha256 hash of the signature and hmac-sha256 hash of the signed content. We can first construct this internal message to be passed to the Lua script./test/payment-system.test.js const obj = {
+path: "credit-notice",
+quantity: 100,
+recipient: user.addr,
+}
+const lua_msg = await operator.hb.sign(obj) Now we got a signed message with path included in signature-input.We can get the 2 hashes required to construct commitments.Now, we can construct commitments and the wrapped message.WAO has, of course, a convenient method to create commitment.const committed_lua_msg = await operator.hb.commit(obj, { path: true }) Finally, we can send it to /ledger~node-process@1.0/schedule./test/payment-system.test.js await operator.hb.post({
+path: "/ledger~node-process@1.0/schedule",
+body: committed_lua_msg,
+}) Let's check the balance of the user./test/payment-system.test.js const { out: balance } = await operator.hb.get({
+path: `/ledger~node-process@1.0/now/balance/${user.addr}`,
+})
+assert.equal(balance, 100) Now try executing some messages with the user./test/payment-system.test.js // this costs 3
+const hello = { path: "/~message@1.0/set/hello", hello: "world" }
+assert(await user.hb.post(hello))
+
+const { out: balance2 } = await operator.hb.get({
+path: `/ledger~node-process@1.0/now/balance/${user.addr}`,
+})
+assert.equal(balance2, 97) It works!!Congratulations on having come this far!
+The p4@1.0 payment system with internal Lua scripts using node-processes@1.0 is one of the most advanced usages of HyperBEAM to be tested externally. If you got this to work, most other things are less complex, so you should be ready to build anything on top of HyperBEAM now.Running Tests You can find the working test file for this chapter here:payment-system.test.js Run tests:Terminal Terminal yarn test test/payment-system.test.js References Device Docs Device: ~lua@5.3a Device API dev_faff.erl dev_simple_pay.erl dev_p4.erl dev_node_process.erl dev_lua.erl WAO API HyperBEAM Class API HB Class API HBSig API
+
+---
+
+# 21. AR  WAO
+
+Document Number: 21
+Source: https://docs.wao.eco/api/ar
+Words: 654
+Quality Score: 0.469
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR handles operations on the base Arweave Storage layer as well as wallet connections.Instantiate import { AR } from "wao"
+const ar = new AR() host, port, and protocol can be set to access a specific gateway rather than https://arweave.net.const ar = new AR({ host: "localhost", port: 4000, protocol: "http" }) In the case of local gateways, you can only set port and the rest will be automatically figured out.const ar = new AR({ port: 4000 }) AO class auto-instantiates AR internally.import { AO } from "wao"
+const ao = new AO()
+const ar = ao.ar Set or Generate Wallet You can initialize AR with a wallet JWK or ArConnect.const ar = await new AR().init(jwk || arweaveWallet) Or you can generate a new wallet. In case of ArLocal, you can mint AR at the same time.const { jwk, addr, pub, balance } = await ar.gen("100") // mint 100 AR Once a wallet is set in one of these 3 ways, you cannot use the instance with another wallet unless you re-initialize it with another wallet. This is to prevent executing transactions with the wrong wallet when the browser connected active address has been changed unknowingly.You can go on without calling init or gen, in this case, AR generates a random wallet when needed, and also using different wallets will be allowed. This is useful, if you are only calling dryrun with AO, since AO requires a signature for dryrun too, but you don't want to bother the user by triggering the browser extension wallet for read only calls.Once a wallet is set, ar.jwk and ar.addr will be available.Token Related Methods toAddr Convert a jwk to the corresponding address.const addr = await ar.toAddr(jwk) mine Mine pending blocks (only for arlocal).await ar.mine() balance | toAR | toWinston Get the current balance of the specified address in AR. addr will be ar.addr if omitted.const balance_AR = await ar.balance() // get own balance
+const balance_Winston = ar.toWinston(balance_AR)
+const balance_AR2 = ar.toAR(balance_Winston)
+const balance_AR3 = await ar.balance(addr) // specify wallet address transfer Transfer AR token. amount is in AR, not in winston for simplicity.const { id } = await ar.transfer(amount, to) You can set a jwk to the 3rd parameter as a sender. Otherwise, the sender is ar.jwk.const { id } = await ar.transfer(amount, to, jwk) For most write functions, jwk can be specified as the last parameter or a field like { data, tags, jwk }.checkWallet checkWallet is mostly used internally, but it returns this.jwk if a wallet has been assigned with init, or else it generates a random wallet to use. The following pattern is used in many places. With this pattern, if a wallet is set with init and the jwk the user is passing is different, checkWallet produces an error to prevent the wrong wallet. If no wallet has been set with init or gen and the jwk is not passed, it generates and returns a random wallet.some_class_method({ jwk }){
+let err = null
+;({ err, jwk } = await ar.checkWallet({ jwk }))
+if(!err){
+// do something with the jwk
+}
+} Storage Related Methods post Post a data to Arweave.const { err, id } = await ar.post({ data, tags }) tags are not an Array but a hash map Object for brevity.const tags = { "Content-Type": "text/markdown", Type: "blog-post" } If you must use the same name for multiple tags, the value can be an Array.const tags = { Name: [ "name-tag-1", "name-tag-2" ] } tx Get a transaction.const tx = await ar.tx(txid) data Get a data.const data = await ar.data(txid, true) // true if string bundle Bundle ANS-104 dataitems.const { err, id } = await ar.bundle(dataitems) dataitems are [ [ data, tags ], [ data, tags ], [ data, tags ] ].const { err, id } = await ar.bundle([
+[ "this is text", { "Content-Type": "text/plain" }],
+[ "# this is markdown", { "Content-Type": "text/markdown" }],
+[ png_image, { "Content-Type": "image/png" }]
+])
+
+---
+
+# 22. Custom Devices in Rust  WAO
+
+Document Number: 22
+Source: https://docs.wao.eco/tutorials/devices-rust
+Words: 254
+Quality Score: 0.468
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Erlang can natively execute Rust functions with almost no overhead via NIF (Native Implemented Function).Creating a Rust Device Go to HyperBEAM/native directory and create a new Rust project.cargo new dev_add_nif --lib && cd dev_add_nif Step 1: Configure Cargo.toml Change crate-type and add rustler dependency in Cargo.toml:[package]
+name = "dev_add_nif"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+rustler = "0.36" Step 2: Implement the Rust NIF Create the NIF function in src/lib.rs:use rustler::{Env, NifResult, Term, Encoder};
+use rustler::types::atom::ok;
+
+#[rustler::nif]
+fn add<'a>(env: Env<'a>, a: i64, b: i64) -> NifResult> {
+Ok((ok(), a + b).encode(env))
+}
+
+rustler::init!("dev_add_nif", [add]);Step 3: Build the Rust Library Compile the Rust code:cargo build For release builds with optimizations:cargo build --release Step 4: Configure rebar.config Add the device to cargo_opts in HyperBEAM/rebar.config:{cargo_opts, [
+{src_dir, "native/dev_add_nif"},
+{src_dir, "native/dev_snp_nif"}
+]}.Step 5: Create the Erlang NIF Module Create HyperBEAM/src/dev_add_nif.erl:-module(dev_add_nif).
+-export([add/2]).
+-on_load(init/0).
+
+-include("include/cargo.hrl").
+-include_lib("eunit/include/eunit.hrl").
+
+init() ->
+?load_nif_from_crate(dev_add_nif, 0).
+
+add(, ) ->
+erlang:nif_error(nif_not_loaded).Step 6: Create the Erlang Device Module Create HyperBEAM/src/dev_add.erl:-module(dev_add).
+-export([add/3]).
+-include("include/hb.hrl").
+-include_lib("eunit/include/eunit.hrl").
+
+add(_M1, M2, _Opts) ->
+A = maps:get(<<"a">>, M2),
+B = maps:get(<<"b">>, M2),
+{ok, Sum} = dev_add_nif:add(A, B),
+{ok, #{ <<"sum">> => Sum }}.
+
+add_test() ->
+M1 = #{ <<"device">> => <<"add@1.0">> },
+M2 = #{ <<"path">> => <<"add">>, <<"a">> => 2, <<"b">> => 3 },
+{ok, #{ <<"sum">> := 5 }} = hb_ao:resolve(M1, M2, #{}).Step 7: Register the Device Add the device to HyperBEAM/hb_opt.erl:preloaded_devices => [
+...
+#{<<"name">> => <<"add@1.0">>, <<"module">> => dev_add},
+...
+],Step 8: Build and Test Run the unit tests:rebar3 eunit --module=dev_add Test the device with WAO:
+
+---
+
+# 23. Custom Devices in C  WAO
+
+Document Number: 23
+Source: https://docs.wao.eco/tutorials/devices-cpp
+Words: 374
+Quality Score: 0.466
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Erlang can natively execute C++ functions with almost no overhead via NIF (Native Implemented Function).Creating a C++ Device Go to HyperBEAM/native directory and create a new directory for your C++ device.mkdir -p dev_mul_nif/include && cd dev_mul_nif Step 1: Create the C++ Header File Create include/dev_mul.h:#pragma once
+
+extern "C" {
+int multiply(const int a, const int b);
+} The extern "C" linkage is crucial for making C++ functions callable from C/Erlang NIFs.Step 2: Implement the C++ Logic Create dev_mul.cpp:#include "include/dev_mul.h"
+
+int multiply(const int a, const int b) {
+return a * b;
+} Step 3: Create the NIF Wrapper Create dev_mul_nif.cpp:#include
+#include "include/dev_mul.h"
+
+static int load(ErlNifEnv* env, void** priv_data, ERL_NIF_TERM load_info) {
+return 0;
+}
+
+static void unload(ErlNifEnv* env, void* priv_data) {}
+
+static ERL_NIF_TERM mul_nif(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]) {
+int a, b;
+if (!enif_get_int(env, argv[0], &a) || !enif_get_int(env, argv[1], &b)) {
+return enif_make_badarg(env);
+}
+
+int result = multiply(a, b);
+return enif_make_int(env, result);
+}
+
+static ErlNifFunc nif_funcs[] = {
+{"multiply", 2, mul_nif}
+};
+
+ERL_NIF_INIT(dev_mul_nif, nif_funcs, load, NULL, NULL, unload) Step 4: Configure Build in rebar.config Add the C++ compilation settings to HyperBEAM/rebar.config:{port_env, [
+{"(linux|darwin|solaris)", "CXX", "g++"},
+{"(linux|darwin|solaris)", "CXXFLAGS",
+"$CXXFLAGS -std=c++17 -I${REBAR_ROOT_DIR}/native/dev_mul_nif/include -I/usr/local/lib/erlang/usr/include/"},
+{"(linux|darwin|solaris)", "LDFLAGS",
+"$LDFLAGS -lstdc++"}
+]}.Add the port specification:{port_specs, [
+...
+{"./priv/dev_mul.so", [
+"./native/dev_mul_nif/dev_mul_nif.cpp",
+"./native/dev_mul_nif/dev_mul.cpp"
+]}
+...
+]}.Add cleanup hooks:{post_hooks, [
+...
+{ compile, "rm -f native/dev_mul_nif/*.o native/dev_mul_nif/*.d"}
+...
+]}.Step 5: Create the Erlang NIF Module Create HyperBEAM/src/dev_mul_nif.erl:-module(dev_mul_nif).
+-export([multiply/2]).
+
+-include("include/hb.hrl").
+-include_lib("eunit/include/eunit.hrl").
+
+-on_load(init/0).
+
+-define(NOT_LOADED, not_loaded(?LINE)).
+not_loaded(Line) ->
+erlang:nif_error({not_loaded, [{module, ?MODULE}, {line, Line}]}).
+
+init() ->
+PrivDir = code:priv_dir(hb),
+Path = filename:join(PrivDir, "dev_mul"),
+case erlang:load_nif(Path, 0) of
+ok -> ok;
+{error, Reason} -> exit({load_failed, Reason})
+end.
+
+multiply(_A, _B) ->
+not_loaded(?LINE).Step 6: Create the Erlang Device Module Create HyperBEAM/src/dev_mul.erl:-module(dev_mul).
+-export([mul/3]).
+-include("include/hb.hrl").
+-include_lib("eunit/include/eunit.hrl").
+
+mul(_, M2, Opts) ->
+A = hb_ao:get(<<"a">>, M2, Opts),
+B = hb_ao:get(<<"b">>, M2, Opts),
+
+Product = dev_mul_nif:multiply(A, B),
+
+{ok, #{ <<"product">> => Product, <<"a">> => A, <<"b">> => B }}.
+
+multiply_test() ->
+M1 = #{<<"device">> => <<"mul@1.0">>},
+M2 = #{
+<<"path">> => <<"mul">>,
+<<"a">> => 2,
+<<"b">> => 3
+},
+{ok, Product} = hb_ao:resolve(M1, M2, #{}),
+?assertEqual(6, maps:get(<<"product">>, Product)).Step 7: Register the Device Add the device to HyperBEAM/hb_opt.erl:preloaded_devices => [
+...
+#{<<"name">> => <<"mul@1.0">>, <<"module">> => dev_mul},
+...
+],Step 8: Build and Test Run the unit tests:rebar3 eunit --module=dev_mul Test the device with WAO:
+
+---
+
+# 24. HTTP Message Signatures  WAO
+
+Document Number: 24
+Source: https://docs.wao.eco/hyperbeam/http-message-signatures
+Words: 797
+Quality Score: 0.465
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+So far, we've been virtually testing the encoding process by exposing internal codec methods and sending JSON stringified messages. But in practice, these methods are not available and we need to sign the httpsig encoded message before sending it to a remote node. AO Core / HyperBEAM uses the web standard protocol of HTTP Message Signatures (RFC-9421).Let's go back to the message tested in an earlier chapter and encode it with the pipeline from the previous chapter./test/http-message-signatures.test.js const msg = {
+path: "/~mydev@1.0/forward",
+key: "abc",
+list: [1, 2, 3],
+map: { abc: "123" },
+bool: true,
+body: "test_body",
+}
+const res = await hb.post({
+path: "/~mydev@1.0/structured_from",
+body: JSON.stringify(msg),
+})
+const structured = JSON.parse(res.body)
+console.log(structured)
+const res2 = await hb.post({
+path: "/~mydev@1.0/httpsig_to",
+body: JSON.stringify(structured),
+})
+const encoded = JSON.parse(res2.body)
+console.log(encoded) This is the encoded message:{
+'ao-types': 'bool="atom", list="list"',
+body: '--x8jUsRrtoRCInzE6Nwgl_uoK-D2Oe-9i_RKeFskZk8c\r\n' +
+'content-disposition: inline\r\n' +
+'\r\n' +
+'test_body\r\n' +
+'--x8jUsRrtoRCInzE6Nwgl_uoK-D2Oe-9i_RKeFskZk8c\r\n' +
+'abc: 123\r\n' +
+'content-disposition: form-data;name="map"\r\n' +
+'--x8jUsRrtoRCInzE6Nwgl_uoK-D2Oe-9i_RKeFskZk8c--',
+'body-keys': '"body", "map"',
+bool: '"true"',
+'content-digest': 'sha-256=:yrY11i+3uYmjCLzOaOeIijrNL/dyPWHNHJTJwvsKvsc=:',
+'content-type': 'multipart/form-data; boundary="x8jUsRrtoRCInzE6Nwgl_uoK-D2Oe-9i_RKeFskZk8c"',
+key: 'abc',
+list: '"(ao-type-integer) 1", "(ao-type-integer) 2", "(ao-type-integer) 3"',
+path: '/~mydev@1.0/forward'
+} You can sign it with hb.signEncoded./test/http-message-signatures.test.js const signed = await hb.signEncoded(encoded) This is the signed message:The signing added signature and signature-input to headers. Let's break down signature-input.You can also verify the signature with hbsig, which gives you the decomposition of the message if you ever need it./test/http-message-signatures.test.js import { verify } from "hbsig"
+const {
+valid, // should be true
+verified,
+signatureName,
+keyId,
+algorithm,
+decodedSignatureInput : { components, params: { alg, keyid, tag }, raw }
+} = await verify(signed) signatureName: http-sig-bba7e22451416f77 components: ("ao-types" "bool" "content-digest" "content-type" "key" "list" "content-length") alg: rsa-pss-sha512 keyid: o1kvTqZQ0wbS_WkdwX70TFCk7UF76ldnJ85l8iRV7t6mSlzkXBYCecb... The signer public key = jwk.n tag: hashpath (missing unless messages are chained) So the message is signed by the private key paired with keyid using the rsa-pss-sha512 method, and the signed fields must exist in the HTTP headers.Keys prefixed with @ get special treatment. For example, HyperBEAM uses the path field from headers for @path. We're not including @path on purpose for now since there's a discrepancy between the RFC-9421 spec and how HyperBEAM handles path, which produces signature verification errors. To be specific, the spec requires a full path with a leading /, but HyperBEAM strips off the slash and the device name from the path. We're currently investigating this issue.HyperBEAM also resolves the method and device to route the message to using the path field in the HTTP headers. So you should still send path even if you're not signing it. That's how the WAO signer handles it for now.@ prefixed keys with special behaviors are the following:@path @query @query-param @scheme @request-target @authority @target-uri @method You can now send the signed message with hb.send. We're sending it to /~mydev@1.0/forward./test/http-message-signatures.test.js const { body } = await hb.send(signed)
+const { msg1, msg2, opts } = JSON.parse(body)
+console.log(msg2) Let's see what we got back in msg2:{
+body: 'test_body',
+bool: true,
+commitments: {
+Fg0kC92eBhUH3t894aH0IHMBiGIlLU80gt5Zjyip_bU: {
+alg: 'rsa-pss-sha512',
+'commitment-device': 'httpsig@1.0',
+committer: 'Tbun4iRRQW93gUiSAmTmZJ2PGI-_yYaXsX69ETgzSRE',
+signature: 'http-sig-bba7e22451416f77=:INJ6uxI4aLR0YB6raM1SWkeQvPKld+0sFVSBdj7P32+FgJ8QJyDHumYs4HK18JNs/CnG7zfn4pV9gMI2Ce9AklqbIflYCrjfIL00FCtqJ5Q4icKLe9/3XawNCtw3LNr9gFaXyBHzGdV0TaKYPemp88IFuYJ75Ins9IblOBIDXKSB4al+WySbnWBzy7uMyP2mt7L8jBv8J/q8N5YoWTIlebcfasjECXeDs+bRE9idcjn5zi74JdDgwQGNV7nujwwtJm4eh+WiUQsbOVsPWtAH/DDiiXOW5GTPimQBRcMvDir06YVasioIu0zarcdyPq5p3+pTJB4Q8AvrUSrqGqTu9RGlzzs6Hsbydy+9FsWo4vyZqQWxcMx1JPlpyl32+GH9SttEHG89OV1PKzo7sCmGUKhSIoIp05NplA/mOJxGnJfu3lYXkEf26U4qLmACk6fYABwtMypCnjckKTH/xFcZ81V2KQ1qBm1M3OnRysBWKNyWFiqwxQ4x0EfqQEl+xz3+Bb1JBR5f+DTSHHlbX2NyTimjR0LHryCmNG4jKrYeNYz5qt4BwBr/cE7DSVpnrFfk3f7SOai6/KkIdg+QrcHfI6U5I0K72Wg4FKqa0WUKMaO08OfV03QllFu1OlggrmiRYVw5n8CgDmq2SBiqyua/zBJeHzItaQ1nXM1ZGDBal2I=:',
+'signature-input': 'http-sig-bba7e22451416f77=("ao-types" "bool" "content-digest" "content-type" "key" "list" "content-length");alg="rsa-pss-sha512";keyid="o1kvTqZQ0wbS_WkdwX70TFCk7UF76ldnJ85l8iRV7t6mSlzkXBYCecb-8RXsNEQQmO0KergtHOvhuBJmB6YXaYe_UftI_gendojfIa6jlTgw-qmH6g4_oErI8djDRbQSm-5nCfGVRuYxsNZLYDeqw4gFb9K3b1h7tuMoLd6-d5pkaLfTMUNcvs2OqpkLo0i_av746FieaURdWozwFqO0APtdA7pLHDqQZDMNdTmsUBJFszL6SOa1bKe5cUWnrq4uaW4NAN3JAQniILKGsKZENeKtfXwiKVaFJtriWWsbhOaNT0JLcuBAwXQAP59RXzcr8bRY6XFn8zBmEmZBGszOD9c9ssDENRFDa5uyVhk8XgIgQjErAWYd9T6edrYcIp3R78jhNK_nLiIBBz8_Oz3bLjL5i_aiV2gpfIbd44DCHihuuxSWRAPJxhEy9TS0_QbVOIWhcDTIeEJE3aRPTwSTMt1_Fec7i9HJWN0mvMbAAJw8k6HxjA3pFZiCowZJw7FBwMAeYgEwIeB82f-S2-PtFLwR9i0tExo36hEBHqaS4Y-O3NGgQ8mKnhT7Z1EfxEbA2BpR9oL8rJFEnPIrHHu7B88OHDDfnfRD3D79fKktnisC7XOuwbHG3TQo0_j4_mElH7xj_7IyAbmCUHDd-eRa482wOYXBB01DGnad901qaHU"'
+},
+RivrHRmpfYVEIH45TxQdW99NR34IgEcStLm467eea38: {
+alg: 'hmac-sha256',
+'commitment-device': 'httpsig@1.0',
+signature: 'http-sig-bba7e22451416f77=:INJ6uxI4aLR0YB6raM1SWkeQvPKld+0sFVSBdj7P32+FgJ8QJyDHumYs4HK18JNs/CnG7zfn4pV9gMI2Ce9AklqbIflYCrjfIL00FCtqJ5Q4icKLe9/3XawNCtw3LNr9gFaXyBHzGdV0TaKYPemp88IFuYJ75Ins9IblOBIDXKSB4al+WySbnWBzy7uMyP2mt7L8jBv8J/q8N5YoWTIlebcfasjECXeDs+bRE9idcjn5zi74JdDgwQGNV7nujwwtJm4eh+WiUQsbOVsPWtAH/DDiiXOW5GTPimQBRcMvDir06YVasioIu0zarcdyPq5p3+pTJB4Q8AvrUSrqGqTu9RGlzzs6Hsbydy+9FsWo4vyZqQWxcMx1JPlpyl32+GH9SttEHG89OV1PKzo7sCmGUKhSIoIp05NplA/mOJxGnJfu3lYXkEf26U4qLmACk6fYABwtMypCnjckKTH/xFcZ81V2KQ1qBm1M3OnRysBWKNyWFiqwxQ4x0EfqQEl+xz3+Bb1JBR5f+DTSHHlbX2NyTimjR0LHryCmNG4jKrYeNYz5qt4BwBr/cE7DSVpnrFfk3f7SOai6/KkIdg+QrcHfI6U5I0K72Wg4FKqa0WUKMaO08OfV03QllFu1OlggrmiRYVw5n8CgDmq2SBiqyua/zBJeHzItaQ1nXM1ZGDBal2I=:',
+'signature-input': 'http-sig-bba7e22451416f77=("ao-types" "bool" "content-digest" "content-type" "key" "list" "content-length");alg="rsa-pss-sha512";keyid="o1kvTqZQ0wbS_WkdwX70TFCk7UF76ldnJ85l8iRV7t6mSlzkXBYCecb-8RXsNEQQmO0KergtHOvhuBJmB6YXaYe_UftI_gendojfIa6jlTgw-qmH6g4_oErI8djDRbQSm-5nCfGVRuYxsNZLYDeqw4gFb9K3b1h7tuMoLd6-d5pkaLfTMUNcvs2OqpkLo0i_av746FieaURdWozwFqO0APtdA7pLHDqQZDMNdTmsUBJFszL6SOa1bKe5cUWnrq4uaW4NAN3JAQniILKGsKZENeKtfXwiKVaFJtriWWsbhOaNT0JLcuBAwXQAP59RXzcr8bRY6XFn8zBmEmZBGszOD9c9ssDENRFDa5uyVhk8XgIgQjErAWYd9T6edrYcIp3R78jhNK_nLiIBBz8_Oz3bLjL5i_aiV2gpfIbd44DCHihuuxSWRAPJxhEy9TS0_QbVOIWhcDTIeEJE3aRPTwSTMt1_Fec7i9HJWN0mvMbAAJw8k6HxjA3pFZiCowZJw7FBwMAeYgEwIeB82f-S2-PtFLwR9i0tExo36hEBHqaS4Y-O3NGgQ8mKnhT7Z1EfxEbA2BpR9oL8rJFEnPIrHHu7B88OHDDfnfRD3D79fKktnisC7XOuwbHG3TQo0_j4_mElH7xj_7IyAbmCUHDd-eRa482wOYXBB01DGnad901qaHU"'
+}
+},
+'content-length': '236',
+'content-type': 'multipart/form-data; boundary="x8jUsRrtoRCInzE6Nwgl_uoK-D2Oe-9i_RKeFskZk8c"',
+key: 'abc',
+list: [ 1, 2, 3 ],
+map: { abc: '123' },
+method: 'POST',
+path: 'forward'
+} Your signature is in the commitments. And there are 2 entries with different alg.Fg0kC92eBhUH3t894aH0IHMBiGIlLU80gt5Zjyip_bU: rsa-pss-sha512 RivrHRmpfYVEIH45TxQdW99NR34IgEcStLm467eea38: hmac-sha256 These commitment IDs are important for HyperBEAM to verify the message. The former is the sha-256 hash of the signature bytes, and the latter is the hmac-sha256 hash of the signed content with ao as the key. You can generate each ID with rsaid and hmacid methods from wao/utils. You can execute node internal scripts by manually creating commitments. We'll discuss this in a later chapter.FYI, you can use hb_message:commit to sign a message on HyperBEAM.% get operator wallet
+Wallet = hb_opts:get(priv_wallet, not_found, Opts),
+Signed = hb_message:commit( Msg, Wallet ),WAO HB SDK In practice, you don't have to go through all these steps to construct signed messages. hb.post handles everything for you. You can get the decoded message in out instead of headers and body./test/http-message-signatures.test.js const { out } = await hb.post({
+path: "/~mydev@1.0/forward",
+key: "abc",
+list: [1, 2, 3],
+map: { abc: "123" },
+bool: true,
+body: "test_body",
+}) get and g work the same.This is all you need to encode, sign, and send a message.p is a shortcut method for post to get only the decoded message./test/http-message-signatures.test.js const out = await hb.p("/~mydev@1.0/forward", {
+key: "abc",
+list: [1, 2, 3],
+map: { abc: "123" },
+bool: true,
+body: "test_body",
+}) Running Tests You can find the working test file for this chapter here:http-message-signatures.test.js Run tests:Terminal Terminal yarn test test/http-message-signatures.test.js References Specs HTTP Message Signatures [RFC-9421] WAO API HyperBEAM Class API HB Class API HBSig API
+
+---
+
+# 25. WAO Hub
+
+Document Number: 25
+Source: https://docs.wao.eco/hub
+Words: 70
+Quality Score: 0.463
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+WAO Hub is an ultra-lightweight ephemeral proxy that seamlessly connects different types of servers and browsers.Anyone can launch it both locally and remotely. WAO Hub:Connects the browser to remote HyperBEAM nodes via WebSockets Syncs your local file system to the browser via WebSockets Relays local AO tests to the browser via WebSockets Connects browsers with other browsers via WebRTC to create P2P mesh networks npx wao hub Usage Coming Soon!
+
+---
+
+# 26. Creating Custom HyperBEAM Devices  WAO
+
+Document Number: 26
+Source: https://docs.wao.eco/tutorials/creating-devices
+Words: 341
+Quality Score: 0.461
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+You can create your own HyperBEAM devices with Erlang, Rust or C++, and test them using WAO JS SDK.You should write unit tests in device's own language such as Erlang with eunit.Minimum Viable Device You can add an arbitrary device in the HyperBEAM/src directory.-module(dev_foo).
+-export([ info/3 ]).
+-include_lib("eunit/include/eunit.hrl").
+-include("include/hb.hrl").
+
+info(Msg, _, Opts) ->
+{ok, hb_ao:set(Msg, #{ <<"version">> => <<"1.0">> }, Opts)}.Then add your device to the preloaded_devices list in HyperBEAM/src/hb_ops.preloaded_devices => [
+#{<<"name">> => <<"ans104@1.0">>, <<"module">> => dev_codec_ans104},
+#{<<"name">> => <<"compute@1.0">>, <<"module">> => dev_cu},
+...
+#{<<"name">> => <<"foo@1.0">>, <<"module">> => dev_foo}
+],Now you can execute the functions using the WAO HB class.import assert from "assert"
+import { describe, it, before, after, beforeEach } from "node:test"
+import { HyperBEAM } from "wao"
+
+const cwd = "../HyperBEAM" // HyperBEAM directory
+
+describe("Hyperbeam Legacynet", function () {
+let hbeam, hb
+before(async () => {
+hbeam = await new HyperBEAM({ cwd, reset: true }).ready()
+})
+beforeEach(async () => (hb = hbeam.hb))
+after(async () => hbeam.kill())
+
+it("should query a custome device", async () => {
+const { version } = await hb.g("/~foo@1.0/info")
+assert.equal("1.0", version)
+})
+}) Execution Device for AO Process To create an execution device for AO process, you need to implement at least init/3, normalize/3, compute/3 and snapshot/3.-module(dev_foo).
+-export([ compute/3, init/3, snapshot/3, normalize/3 ]).
+-include_lib("eunit/include/eunit.hrl").
+-include("include/hb.hrl").
+
+compute(Msg1, Msg2, Opts) ->
+case hb_ao:get([<<"body">>,<<"Action">>], Msg2, Opts) of
+Other ->
+{ok, hb_ao:set( Msg1, #{ }, Opts )}
+end.
+
+init(Msg, Msg2, Opts) ->
+{ok, hb_ao:set(Msg, #{ }, Opts)}.
+
+snapshot(Msg, _Msg2, _Opts) -> {ok, Msg}.
+
+normalize(Msg, _Msg2, _Opts) -> {ok, Msg}.Now you can spawn a process by specifying execution-device.import assert from "assert"
+import { describe, it, before, after, beforeEach } from "node:test"
+
+const cwd = "../HyperBEAM" // HyperBEAM directory
+
+describe("Hyperbeam Legacynet", function () {
+let hbeam, hb
+before(async () => {
+hbeam = await new HyperBEAM({ cwd, reset: true }).ready()
+})
+beforeEach(async () => (hb = hbeam.hb))
+after(async () => hbeam.kill())
+
+it("should query a custom device", async () => {
+const { pid } = await hb.spawn({"excecution-device": "foo@1.0"})
+const { slot, res } = await hb.message({ pid })
+})
+})
+
+---
+
+# 27. Function Piping  WAO
+
+Document Number: 27
+Source: https://docs.wao.eco/api/function-piping
+Words: 527
+Quality Score: 0.459
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+pipe Most functions return in the format of { err, res, out, pid, mid, id }, and these function can be chained with pipe, which makes executing multiple messages a breeze.For example, the following is how deploy uses pipe internally. The execution will be immediately aborted if any of the functions in fns produces an error.let fns = [
+{
+fn: "spwn",
+args: { module, scheduler, tags, data },
+then: { "args.pid": "pid" },
+},
+{ fn: "wait", then: { "args.pid": "pid" } },
+{ fn: "load", args: { src, fills }, then: { "args.pid": "pid" } }
+]
+const { err, res, out, pid } = await this.pipe({ jwk, fns }) bind If the function comes from other instances rather than AO, use bind.const fns = [{ fn: "post", bind: this.ar, args: { data, tags }}] then You can pass values between functions with then. For instance, passing the result from the previous functions to the next function's arguments is a common operation.const fns = [
+{ fn: "post", bind: ao.ar, args: { data, tags }, then: ({ id, args, out })=>{
+args.tags.TxId = id // adding TxId tag to `msg args
+out.txid = id // out will be returned at last with pipe
+}},
+{ fn: "msg", args: { pid, tags }},
+]
+const { out: { txid } } = await ao.pipe({ fns, jwk }) If then returns a value, pipe will immediately return with that single value. You can also use err to abort pipe with an error.const fns = [
+{ fn: "msg", args: { pid, tags }, then: ({ inp })=>{
+if(inp.done) return inp.val
+}},
+{ fn: "msg", args: { pid, tags }, err: ({ inp })=>{
+if(!inp.done) return "something went wrong"
+}},
+]
+const val = await ao.pipe({ jwk, fns }) then has many useful parameters.res: res from the previous result args: args for the next function out: the final out result from the pipe sequence inp: out from the previous result : if values are assigned to the fields, pipe returns them as top-level fields in the end pid: pid will be passed if any previous functions return pid ( e.g. deploy ) mid: mid will be passed if any previous functions return mid ( e.g. msg ) id: id will be passed if any previous functions return id ( e.g. post ) then can be a simplified hashmap object.let fns = [
+{
+fn: "msg",
+args: { tags },
+then: { "args.mid": "mid", "out.key": "inp.a", "_.val": "inp.b" },
+},
+{ fn: "some_func", args: {} } // args.mid will be set from the previous then`
+]
+const { out: { key }, val } = await ao.pipe({ jwk, fns }) err err has the same signature as then. If err returns a value, pipe will throw an Error with that value.const fns = [
+{ fn: "msg", args: { pid, tags }, err: ({ inp })=>{
+if(!inp.done) return "something went wrong!"
+}}
+]
+const val = await ao.pipe({ jwk, fns }) cb cb can report the current progress of pipe after every function execution.await ao.pipe({ jwk, fns, cb: ({ i, fns, inp })=>{
+console.log(`${i} / ${fns.length} functions executed`)
+}})
+
+---
+
+# 28. Processes and Scheduler  WAO
+
+Document Number: 28
+Source: https://docs.wao.eco/hyperbeam/processes-scheduler
+Words: 1032
+Quality Score: 0.445
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Most things we've learned so far to do manually, such as device method composition, message caching, and commitments for message verification, are handled automatically by message@1.0, process@1.0, and scheduler@1.0.You can spawn a process, schedule messages to process slots, and compute the process state going through the allocated messages using multiple execution devices with stack@1.0.Let's create a new custom device dev_inc.erl. The minimum viable device to be compatible with process@1.0 requires 4 methods:init, normalize, compute, and snapshot./HyperBEAM/src/dev_inc.erl -module(dev_inc).
+-export([ compute/3, init/3, snapshot/3, normalize/3 ]).
+-include_lib("eunit/include/eunit.hrl").
+-include("include/hb.hrl").
+
+compute(Msg1, Msg2, Opts) ->
+Num = maps:get(<<"num">>, Msg1),
+{ok, hb_ao:set( Msg1, #{ <<"num">> => Num + 1 }, Opts )}.
+
+init(Msg, Msg2, Opts) ->
+{ok, hb_ao:set(Msg, #{ <<"num">> => 0 }, Opts)}.
+
+snapshot(Msg, _Msg2, _Opts) -> {ok, Msg}.
+
+normalize(Msg, _Msg2, _Opts) -> {ok, Msg}.Don't forget to add it to preloaded_devices in hb_opts.erl./HyperBEAM/src/hb_opts.erl preloaded_devices => [
+...
+#{ <<"name">> => <<"inc@1.0">>, <<"module">> => dev_inc }
+],Add message@1.0, process@1.0, scheduler@1.0, and inc@1.0 to our HyperBEAM node in the test file.You'll also need a random seed generation function, since message IDs are deterministic content hashes and it generates the same message ID if you send the same initialization message.To avoid this, you need to include a randomized value in the message content to spawn a new process.Also you need to nest the message in body without specifying path in the inner message.You can use the following paths to spawn, schedule, and compute:/~process@1.0/schedule: to spawn a process, requires scheduler=[operator_wallet_address] body device="process@1.0" scheduler=[operator_wallet_address] type="Process" execution-device /[pid]/schedule: to schedule a message to the pid body type="Message" /[pid]/compute?slot=[slot]: to compute the pid state up to the slot pid is the process message ID returned by the spawn message.At this point, you could simply remove the devices parameter and preload all existing devices in our test file./test/processes-scheduler.test.js import assert from "assert"
+import { describe, it, before, after } from "node:test"
+import { HyperBEAM } from "wao/test"
+
+const seed = num => {
+const array = new Array(num)
+for (let i = 0; i < num; i++) array[i] = Math.floor(Math.random() * 256)
+return Buffer.from(array).toString("base64")
+}
+
+describe("Processes and Scheduler", function () {
+let hbeam, hb
+before(async () => {
+hbeam = await new HyperBEAM({ reset: true }).ready()
+hb = hbeam.hb
+})
+after(async () => hbeam.kill())
+
+it("should spawn a process", async () => {
+const { process: pid } = await hb.p("/~process@1.0/schedule", {
+scheduler: hb.addr,
+body: {
+device: "process@1.0",
+type: "Process",
+scheduler: hb.addr,
+"random-seed": seed(16),
+"execution-device": "inc@1.0",
+},
+})
+console.log(`Process ID: ${pid}`)
+const { slot } = await hb.p(`/${pid}/schedule, {
+body: { type: "Message" },
+})
+console.log(Allocated Slot: ${slot}`)
+
+const out = await hb.g(`/${pid}/compute`, { slot })
+assert.equal(out.num, 2)
+
+const { slot: slot2 } = await hb.p(`/${pid}/schedule, {
+body: { type: "Message" },
+})
+console.log(Allocated Slot: ${slot2}`)
+
+const out2 = await hb.g(`/${pid}/compute`, { slot: slot2 })
+assert.equal(out2.num, 3)
+})
+}) now /[pid]/now gives you the latest process state./test/processes-scheduler.test.js const { slot: slot3 } = await hb.p(`/${pid}/schedule, {
+body: { type: "Message" },
+})
+console.log(Allocated Slot: ${slot3}`)
+
+const out3 = await hb.g(`/${pid}/now`)
+assert.equal(out3.num, 4) WAO SDK WAO has convenient APIs for process management./test/processes-scheduler.test.js const { pid } = await hb.spawn({ "execution-device": "inc@1.0" })
+const { slot } = await hb.schedule({ pid })
+const { num } = await hb.compute({ pid, slot })
+assert.equal(num, 2)
+
+const {
+res: { num: num2 },
+} = await hb.message({ pid }) // schedule + compute
+assert.equal(num2, 3)
+
+const { num: num3 } = await hb.now({ pid })
+assert.equal(num3, 3) stack@1.0 Just like the previous chapter, you can stack multiple devices and let the state transition go through each compute method.Let's create double@1.0 and square@1.0 devices./HyperBEAM/src/dev_double.erl -module(dev_double).
+-export([ compute/3, init/3, snapshot/3, normalize/3 ]).
+-include_lib("eunit/include/eunit.hrl").
+-include("include/hb.hrl").
+
+compute(Msg1, Msg2, Opts) ->
+Num = maps:get(<<"num">>, Msg1),
+{ok, hb_ao:set( Msg1, #{ <<"num">> => Num * 2 }, Opts )}.
+
+init(Msg, Msg2, Opts) ->
+{ok, hb_ao:set(Msg, #{ <<"num">> => 0 }, Opts)}.
+
+snapshot(Msg, _Msg2, _Opts) -> {ok, Msg}.
+
+normalize(Msg, _Msg2, _Opts) -> {ok, Msg}./HyperBEAM/src/dev_square.erl -module(dev_square).
+-export([ compute/3, init/3, snapshot/3, normalize/3 ]).
+-include_lib("eunit/include/eunit.hrl").
+-include("include/hb.hrl").
+
+compute(Msg1, Msg2, Opts) ->
+Num = maps:get(<<"num">>, Msg1),
+{ok, hb_ao:set( Msg1, #{ <<"num">> => Num * Num }, Opts )}.
+
+init(Msg, Msg2, Opts) ->
+{ok, hb_ao:set(Msg, #{ <<"num">> => 0 }, Opts)}.
+
+snapshot(Msg, _Msg2, _Opts) -> {ok, Msg}.
+
+normalize(Msg, _Msg2, _Opts) -> {ok, Msg}.Don't forget to add double@1.0 and square@1.0 to hb_opts.erl.Then test the stack@1.0 process with multiple devices./test/processes-scheduler.test.js const { pid } = await hb.spawn({
+"execution-device": "stack@1.0",
+"device-stack": ["inc@1.0", "double@1.0", "square@1.0"],
+})
+
+const { num } = await hb.now({ pid })
+assert.equal(num, 4) // ((0 + 1) * 2) * ((0 + 1) * 2)
+
+const { res: { num: num2 } } = await hb.message({ pid })
+assert.equal(num2, 100) // ((4 + 1) * 2) * ((4 + 1) * 2) patch@1.0 patch@1.0 allows you to cache any pieces of data to arbitrary URLs. You can pass patch-from to specify where the data to patch comes from in the resulting messages, and patch-to to specify a URL endpoint to expand the cache to. So let's set patch-from="/results" and patch-to="/cache".First, let's create a modified version of the inc device and call it inc2@1.0, which increments num and caches double and square values of num. We return these caches under results:1./HyperBEAM/src/dev_inc2.erl -module(dev_inc2).
+-export([ compute/3, init/3, snapshot/3, normalize/3 ]).
+-include_lib("eunit/include/eunit.hrl").
+-include("include/hb.hrl").
+
+compute(Msg1, Msg2, Opts) ->
+Num = maps:get(<<"num">>, Msg1) + 1,
+{ok, hb_ao:set(
+Msg1,
+#{
+<<"num">> => Num,
+<<"results">> => #{
+<<"1">> => #{
+<<"method">> => <<"PATCH">>,
+<<"double">> => Num * 2,
+<<"square">> => Num * Num
+}
+}
+},
+Opts
+)}.
+
+init(Msg, Msg2, Opts) ->
+{ok, hb_ao:set(Msg, #{ <<"num">> => 0 }, Opts)}.
+
+snapshot(Msg, _Msg2, _Opts) -> {ok, Msg}.
+
+normalize(Msg, _Msg2, _Opts) -> {ok, Msg}.Now /now/cache/double and /now/cache/square will be accessible with the cached latest values./test/processes-scheduler.test.js const { pid } = await hb.spawn({
+"execution-device": "stack@1.0",
+"device-stack": ["inc2@1.0", "patch@1.0"],
+"patch-from": "/results",
+"patch-to": "/cache",
+})
+await hb.schedule({ pid })
+await hb.schedule({ pid })
+const square = (await hb.now({ pid, path: "/cache/square" })).body
+const double = (await hb.now({ pid, path: "/cache/double" })).body
+assert.equal(square, 9)
+assert.equal(double, 6) Running Tests You can find the working test file for this chapter here:processes-scheduler.test.js Run tests:Terminal Terminal yarn test test/processes-scheduler.test.js References Device Docs Device: ~message@1.0 Device: ~process@1.0 Device: ~scheduler@1.0 Device API dev_stack.erl dev_message.erl dev_process.erl dev_scheduler.erl dev_patch.erl WAO API HyperBEAM Class API HB Class API
+
+---
+
+# 29. AO The Web  WAO
+
+Document Number: 29
+Source: https://docs.wao.eco/web
+Words: 70
+Quality Score: 0.435
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AO The Web brings AO units directly into the browser—completely standalone, with no external dependencies. It includes an integrated AOS terminal, a code editor, and a local AO explorer for seamless development and debugging.WAO is both a standalone AO unit emulator and a lightweight SDK, enabling you to embed fully functional AO units into any web application with just a single line of code.import { AO } from "wao/web" preview.wao.eco
+
+---
+
+# 30. GQL  WAO
+
+Document Number: 30
+Source: https://docs.wao.eco/api/gql
+Words: 682
+Quality Score: 0.414
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+GQL simplifies the Arwave GraphQL operations to query blocks and transactions.Instantiate You can instantiate the GQL class with an endpoint url.import { GQL } from "wao"
+const gql = new GQL({ url: "https://arweave.net/graphql" }) // the default url AR class auto-instantiates GQL internally.import { AO } from "wao"
+const ao = new AO()
+const gql = ao.ar.gql import { AR } from "wao"
+const ar = new AR()
+const gql = ar.gql Txs Get latest transactions.const txs = await gql.txs() asc Get transactions in ascending order.const txs = await gql.txs({ asc: true }) first Get the firxt X transactions.const txs = await gql.txs({ first: 3 }) after Get transactions after a specific one to paginate. Pass a cursor.const txs = await gql.txs({ first: 3 })
+const txs2 = await gql.txs({ first: 3, after: txs[2].cursor }) next Easier pagination with next.const { next, data: txs0_2 } = await gql.txs({ first: 3, next: true })
+const { next: next2, data: txs3_5 } = await next()
+const { next: next3, data: txs6_8 } = await next2() res.next will be null if there's no more transactions to paginate.block Get transactions within a block height range.const txs = await gql.txs({ block: { min: 0, max: 10 } }) or const txs = await gql.txs({ block: [0, 10] }) You can also specify only min or max.by Transaction IDs Get transactions by transaction ids.const txs = await gql.txs({ id: TXID }) or const txs = await gql.txs({ ids: [ TXID1, TXID2, TXID3 ] }) by Recipients Get transactions by recipients.const txs = await gql.txs({ recipient: ADDR }) or const txs = await gql.txs({ recipients: [ ADDR1, ADDR2, ADDR3 ] }) by Owners Get transactions by owners.const txs = await gql.txs({ owner: ADDR }) or const txs = await gql.txs({ owners: [ ADDR1, ADDR2, ADDR3 ] }) by Tags Get transactions that match tags.const txs = await gql.txs({ tags: { Name: "Bob", Age: "30" } }) fields Choose fields to be returned.const txs = await gql.txs({ fields: ["id", "recipient"] }) For nested objects,const txs = await gql.txs({ fields: ["id", { owner: ["address", "key"] }] }) You can use a hashmap to specify fields too.const txs = await gql.txs({
+fields: { id: true, { owner: { address: true, key: true } } }
+}) If you assign false, the other fields will be returned.const txs = await gql.txs({
+fields: { id: true, { block: { previous: false } } }
+}) For example, the above will exclude previous from block and return id, timestamp and height.The entire available fields for transactions as in a graphql query are as follows.const tx_fields = `{
+id
+anchor
+signature
+recipient
+owner { address key }
+fee { winston ar }
+quantity { winston ar }
+data { size type }
+tags { name value }
+block { id timestamp height previous }
+parent { id }
+bundledIn { id }
+}` Blocks Get latest blocks.const blocks = await gql.blocks() asc Get blocks in ascending order.const blocks = await gql.blocks({ asc: true }) first Get the firxt X blocks.const blocks = await gql.blocks({ first: 3 }) after Get blocks after a specific one to paginate. Pass a cursor.const blocks = await gql.blocks({ first: 3 })
+const blocks2 = await gql.blocks({ first: 3, after: blocks[2].cursor }) by Block IDs Get blocks by block ids.const blocks = await gql.blocks({ id: BLCID }) or const blocks = await gql.blocks({ ids: [ BLKID1, BLKID2, BLKID3 ] }) height Get blocks within a block height range.const blocks = await gql.blocks({ height: { min: 0, max: 10 } }) or const blocks = await gql.blocks({ height: [0, 10] }) next Easier pagination with next.const { next, data: blocks0_2 } = await gql.blocks({ first: 3, next: true })
+const { next: next2, data: blocks3_5 } = await next()
+const { next: next3, data: blocks6_8 } = await next2() res.next will be null if there's no more blocks to paginate.fields const blocks = await gql.blocks({
+fields: ["id", "timestamp", "height", "previous"]
+}) The entire available fields for blocks as in a graphql query are as follows.const block_fields = `{ id timestamp height previous }`
+
+---
+
+# 31. Decoding HyperBEAM from Scratch  WAO
+
+Document Number: 31
+Source: https://docs.wao.eco/hyperbeam/decoding-from-scratch
+Words: 437
+Quality Score: 0.402
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Welcome to the complete guide to understanding HyperBEAM from the ground up.What This Tutorial Is For This tutorial series takes you on a deep dive into HyperBEAM internals, teaching you everything from basic concepts to advanced implementations. You'll learn by doing - writing tests with WAO (HyperBEAM SDK in JS) that interact directly with HyperBEAM nodes.Why WAO + HyperBEAM?WAO transforms the complex world of HyperBEAM development into something approachable:JavaScript-First Development: Everything is JavaScript - no need to context-switch between languages during testing Sandbox Testing Environment: WAO automatically spins up isolated HyperBEAM nodes for each test suite, ensuring clean, reproducible tests Simplified APIs with Syntactic Sugar: WAO's succinct API abstracts away complexity while giving you full control when needed Automatic Codec & Signing Handling: Complex encoding/decoding pipelines and HTTP message signatures are handled seamlessly in the background What You'll Master By working through this tutorial series, you'll gain:Deep Protocol Knowledge: Understand how messages flow through HyperBEAM's codec pipeline, from structured encoding to HTTP signatures Device Development Skills: Build custom HyperBEAM devices that extend the platform's capabilities Process Management Expertise: Learn to spawn, schedule, and manage stateful computations AOS Integration Know-How: Connect HyperBEAM with the broader AO ecosystem Payment System Understanding: Implement complex payment flows using HyperBEAM's built-in devices This isn't just theoretical knowledge - you'll have practical tools and patterns to build production-ready applications on HyperBEAM and interact seamlessly with AOS processes.The Journey Ahead This series follows a carefully crafted path from basics to advanced topics. Each chapter builds on the previous ones, so it's important to follow them in order:Part 1: Foundations Chapter Topic 1 Installing HyperBEAM and WAO - Setting up your development environment 2 Devices and Pathing - Understanding HyperBEAM's URL routing and device system 3 Custom Devices and Codecs - Building your first custom device and learning about codecs Part 2: The Codec System Chapter Topic 4 Flat Codec - Deep dive into path flattening for HTTP compatibility 5 Structured Codec - Handling complex data types with AO's type system 6 Httpsig Codec - Preparing messages for HTTP signatures Part 3: Security & Verification Chapter Topic 7 HTTP Message Signatures - Implementing RFC-9421 for message verification 8 Hashpaths - Understanding compute verification through chained hashes Part 4: Advanced Concepts Chapter Topic 9 Device Composition - Combining devices for powerful workflows 10 Processes and Scheduler - Managing stateful computations 11 Legacynet Compatible AOS - Integrating with the AOS ecosystem 12 Payment System - Building complex payment systems with p4@1.0 Resources Working Test Suite - Complete test files for all chapters HyperBEAM Implementation with Tutorial Devices - HyperBEAM fork with all custom devices from this tutorial

@@ -1,5 +1,5 @@
 {
-  "generated": "2025-07-03T18:20:00.491Z",
+  "generated": "2025-07-31T17:28:38.316Z",
   "sites": {
     "hyperbeam": {
       "name": "Hyperbeam",
@@ -590,14 +590,14 @@
           "crawledAt": "2025-07-02T15:08:55.100Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:20:00.491Z",
+      "lastCrawled": "2025-07-31T17:28:38.316Z",
       "stats": {
         "totalPages": 39,
         "averageWords": 546,
-        "duration": 1138,
+        "duration": 1783,
         "requestCount": 3,
-        "averageResponseTime": 134.66666666666666,
-        "pagesPerSecond": 34.27065026362039
+        "averageResponseTime": 153.66666666666666,
+        "pagesPerSecond": 21.873247335950644
       }
     },
     "ao": {
@@ -1934,14 +1934,14 @@
           "crawledAt": "2025-07-02T15:09:56.128Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:20:00.491Z",
+      "lastCrawled": "2025-07-31T17:28:38.316Z",
       "stats": {
         "totalPages": 90,
         "averageWords": 576,
-        "duration": 2792,
+        "duration": 3288,
         "requestCount": 5,
-        "averageResponseTime": 238,
-        "pagesPerSecond": 32.23495702005731
+        "averageResponseTime": 299.6,
+        "pagesPerSecond": 27.37226277372263
       }
     },
     "ario": {
@@ -3893,14 +3893,14 @@
           "crawledAt": "2025-07-02T15:10:01.784Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:20:00.491Z",
+      "lastCrawled": "2025-07-31T17:28:38.316Z",
       "stats": {
         "totalPages": 125,
         "averageWords": 556,
-        "duration": 4062,
+        "duration": 3935,
         "requestCount": 0,
         "averageResponseTime": 0,
-        "pagesPerSecond": 30.77301821762678
+        "pagesPerSecond": 31.766200762388817
       }
     },
     "arweave": {
@@ -4858,16 +4858,778 @@
           "siteName": "Arweave Cookbook",
           "depth": 3,
           "crawledAt": "2025-07-02T15:10:50.356Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/ans/ANS-105.html",
+          "title": "ANS-105 License Tagsopen in new window",
+          "estimatedWords": 443,
+          "lastModified": "2025-07-31T17:22:22.864Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "ans",
+            "ans 105"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:22.864Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/ans/ANS-104.html",
+          "title": "ANS-104 Bundled Data v20 - Binary Serializationopen in new window",
+          "estimatedWords": 1473,
+          "lastModified": "2025-07-31T17:22:23.429Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "ans",
+            "ans 104"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:23.429Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/ans/ANS-103.html",
+          "title": "ANS-103 Succinct Proofs of Random Accessopen in new window",
+          "estimatedWords": 1160,
+          "lastModified": "2025-07-31T17:22:24.029Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "ans",
+            "ans 103"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:24.029Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/ans/ANS-102.html",
+          "title": "ANS-102 Bundled Data - JSON Serializationopen in new window",
+          "estimatedWords": 684,
+          "lastModified": "2025-07-31T17:22:24.542Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "ans",
+            "ans 102"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:24.542Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/ans/ANS-101.html",
+          "title": "ANS-101 Gateway Capabilities Endpointopen in new window",
+          "estimatedWords": 256,
+          "lastModified": "2025-07-31T17:22:25.023Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "ans",
+            "ans 101"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:25.023Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/deployment/github-action.html",
+          "title": "Github Action",
+          "estimatedWords": 593,
+          "lastModified": "2025-07-31T17:22:25.555Z",
+          "breadcrumbs": [
+            "tooling",
+            "deployment",
+            "github action"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:25.556Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/deployment/arkb.html",
+          "title": "arkb",
+          "estimatedWords": 248,
+          "lastModified": "2025-07-31T17:22:26.170Z",
+          "breadcrumbs": [
+            "tooling",
+            "deployment",
+            "arkb"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:26.170Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/deployment/permaweb-deploy.html",
+          "title": "Permaweb Deploy",
+          "estimatedWords": 654,
+          "lastModified": "2025-07-31T17:22:26.721Z",
+          "breadcrumbs": [
+            "tooling",
+            "deployment",
+            "permaweb deploy"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:26.721Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/graphql/ar-gql.html",
+          "title": "ar-gql",
+          "estimatedWords": 122,
+          "lastModified": "2025-07-31T17:22:27.307Z",
+          "breadcrumbs": [
+            "tooling",
+            "graphql",
+            "ar gql"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:27.307Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/graphql/search-indexing-service.html",
+          "title": "Goldsky Search GraphQL Gateway",
+          "estimatedWords": 613,
+          "lastModified": "2025-07-31T17:22:27.921Z",
+          "breadcrumbs": [
+            "tooling",
+            "graphql",
+            "search indexing service"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:27.921Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/querying-arweave.html",
+          "title": "Querying Arweave with GraphQL",
+          "estimatedWords": 839,
+          "lastModified": "2025-07-31T17:22:28.487Z",
+          "breadcrumbs": [
+            "tooling",
+            "querying arweave"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:22:28.487Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/graphql/index.html",
+          "title": "GraphQL Tools",
+          "estimatedWords": 225,
+          "lastModified": "2025-07-31T17:22:28.986Z",
+          "breadcrumbs": [
+            "tooling",
+            "graphql",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:28.986Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/bundlers.html",
+          "title": "Bundling Services",
+          "estimatedWords": 1284,
+          "lastModified": "2025-07-31T17:22:29.641Z",
+          "breadcrumbs": [
+            "tooling",
+            "bundlers"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:22:29.641Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/index.html",
+          "title": "Tooling",
+          "estimatedWords": 121,
+          "lastModified": "2025-07-31T17:22:30.161Z",
+          "breadcrumbs": [
+            "tooling",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:22:30.161Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/kits/vue/create-vue.html",
+          "title": "Create Vue Starter Kit",
+          "estimatedWords": 705,
+          "lastModified": "2025-07-31T17:22:30.628Z",
+          "breadcrumbs": [
+            "kits",
+            "vue",
+            "create vue"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:30.628Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/kits/svelte/vite.html",
+          "title": "SvelteVite Starter Kit",
+          "estimatedWords": 657,
+          "lastModified": "2025-07-31T17:22:31.233Z",
+          "breadcrumbs": [
+            "kits",
+            "svelte",
+            "vite"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:31.233Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/kits/svelte/minimal.html",
+          "title": "Minimal Svelte Starter Kit",
+          "estimatedWords": 557,
+          "lastModified": "2025-07-31T17:22:31.741Z",
+          "breadcrumbs": [
+            "kits",
+            "svelte",
+            "minimal"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:31.741Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/kits/react/create-react-app.html",
+          "title": "Create React App Starter Kit",
+          "estimatedWords": 751,
+          "lastModified": "2025-07-31T17:22:32.313Z",
+          "breadcrumbs": [
+            "kits",
+            "react",
+            "create react app"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:32.313Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/kits/react/turbo.html",
+          "title": "React Starter Kit wvite  ArDrive",
+          "estimatedWords": 435,
+          "lastModified": "2025-07-31T17:22:32.841Z",
+          "breadcrumbs": [
+            "kits",
+            "react",
+            "turbo"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:32.841Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html",
+          "title": "HyperBEAM Devices",
+          "estimatedWords": 1608,
+          "lastModified": "2025-07-31T17:22:33.362Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "decentralized computing",
+            "hyperbeam",
+            "hyperbeam devices"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:33.362Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/lua-serverless.html",
+          "title": "Lua Serverless Functions",
+          "estimatedWords": 140,
+          "lastModified": "2025-07-31T17:22:33.876Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "decentralized computing",
+            "hyperbeam",
+            "lua serverless"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:33.876Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html",
+          "title": "Exposing Process State to HyperBEAM",
+          "estimatedWords": 456,
+          "lastModified": "2025-07-31T17:22:34.399Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "decentralized computing",
+            "hyperbeam",
+            "getting ao state"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:34.400Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html",
+          "title": "HyperBEAM Introduction",
+          "estimatedWords": 860,
+          "lastModified": "2025-07-31T17:22:35.043Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "decentralized computing",
+            "hyperbeam",
+            "hyperbeam introduction"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:35.043Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html",
+          "title": "What are AO Processes",
+          "estimatedWords": 1495,
+          "lastModified": "2025-07-31T17:22:35.644Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "decentralized computing",
+            "ao processes",
+            "what are ao processes"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:35.644Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/decentralized-computing/index.html",
+          "title": "Decentralized Computing",
+          "estimatedWords": 844,
+          "lastModified": "2025-07-31T17:22:36.225Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "decentralized computing",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:36.225Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/accessing-arweave-data/arns.html",
+          "title": "ArNS - Arweave Name System",
+          "estimatedWords": 536,
+          "lastModified": "2025-07-31T17:22:37.091Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "accessing arweave data",
+            "arns"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:37.091Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/accessing-arweave-data/manifests.html",
+          "title": "Path Manifests",
+          "estimatedWords": 390,
+          "lastModified": "2025-07-31T17:22:37.638Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "accessing arweave data",
+            "manifests"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:37.638Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/accessing-arweave-data/graphql.html",
+          "title": "GraphQL Queries",
+          "estimatedWords": 262,
+          "lastModified": "2025-07-31T17:22:38.149Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "accessing arweave data",
+            "graphql"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:38.149Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/accessing-arweave-data/gateways.html",
+          "title": "Gateways in the Arweave Network",
+          "estimatedWords": 293,
+          "lastModified": "2025-07-31T17:22:38.648Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "accessing arweave data",
+            "gateways"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:38.648Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/accessing-arweave-data/index.html",
+          "title": "Accessing Arweave Data",
+          "estimatedWords": 363,
+          "lastModified": "2025-07-31T17:22:39.113Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "accessing arweave data",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:39.113Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/transactions/bundles.html",
+          "title": "Transaction Bundles",
+          "estimatedWords": 309,
+          "lastModified": "2025-07-31T17:22:39.783Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "transactions",
+            "bundles"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:39.783Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/transactions/tags.html",
+          "title": "Transaction Metadata (Tags)",
+          "estimatedWords": 548,
+          "lastModified": "2025-07-31T17:22:40.336Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "transactions",
+            "tags"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:40.336Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/transactions/post-transactions.html",
+          "title": "Posting Transactions",
+          "estimatedWords": 637,
+          "lastModified": "2025-07-31T17:22:40.837Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "transactions",
+            "post transactions"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:40.837Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/transactions/transaction-types.html",
+          "title": "Transactions",
+          "estimatedWords": 149,
+          "lastModified": "2025-07-31T17:22:41.425Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "transactions",
+            "transaction types"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:41.425Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/creating-a-wallet.html",
+          "title": "Cooking with the Permaweb",
+          "estimatedWords": 158,
+          "lastModified": "2025-07-31T17:22:41.950Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "wallets and keyfiles",
+            "creating a wallet"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:41.950Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/index.html",
+          "title": "Wallets and Keys",
+          "estimatedWords": 527,
+          "lastModified": "2025-07-31T17:22:42.435Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "wallets and keyfiles",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:42.435Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/fundamentals/index.html",
+          "title": "Core Concepts",
+          "estimatedWords": 99,
+          "lastModified": "2025-07-31T17:22:43.055Z",
+          "breadcrumbs": [
+            "fundamentals",
+            "index"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:22:43.055Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/getting-started/quick-starts/hw-code.html",
+          "title": "Hello World (Code)",
+          "estimatedWords": 204,
+          "lastModified": "2025-07-31T17:22:43.669Z",
+          "breadcrumbs": [
+            "getting started",
+            "quick starts",
+            "hw code"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:43.669Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/ans/ANS-106.html",
+          "title": "ANS-106 Do-Not-Store Requestopen in new window",
+          "estimatedWords": 318,
+          "lastModified": "2025-07-31T17:22:44.364Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "ans",
+            "ans 106"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:44.364Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/ans/ANS-109.html",
+          "title": "ANS-109 Vouch-For (Assertion of Identity)open in new window",
+          "estimatedWords": 290,
+          "lastModified": "2025-07-31T17:22:44.891Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "ans",
+            "ans 109"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:44.891Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/ans/ANS-110.html",
+          "title": "ANS-110 Asset Discoverabilityopen in new window",
+          "estimatedWords": 373,
+          "lastModified": "2025-07-31T17:22:45.440Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "ans",
+            "ans 110"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:45.440Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/arfs/arfs.html",
+          "title": "ArFS Protocol A Decentralized File System on Arweave",
+          "estimatedWords": 423,
+          "lastModified": "2025-07-31T17:22:46.045Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "arfs",
+            "arfs"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:46.045Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/arfs/data-model.html",
+          "title": "Data Model",
+          "estimatedWords": 359,
+          "lastModified": "2025-07-31T17:22:46.653Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "arfs",
+            "data model"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:46.653Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/arfs/entity-types.html",
+          "title": "Entity Types",
+          "estimatedWords": 1263,
+          "lastModified": "2025-07-31T17:22:47.224Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "arfs",
+            "entity types"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:47.224Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/arfs/content-types.html",
+          "title": "Content Types",
+          "estimatedWords": 190,
+          "lastModified": "2025-07-31T17:22:47.780Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "arfs",
+            "content types"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:47.780Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/arfs/privacy.html",
+          "title": "Privacy",
+          "estimatedWords": 720,
+          "lastModified": "2025-07-31T17:22:48.391Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "arfs",
+            "privacy"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:48.391Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/specs/arfs/schema-diagrams.html",
+          "title": "Cooking with the Permaweb",
+          "estimatedWords": 55,
+          "lastModified": "2025-07-31T17:22:49.005Z",
+          "breadcrumbs": [
+            "tooling",
+            "specs",
+            "arfs",
+            "schema diagrams"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:49.005Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/references/glossary.html",
+          "title": "Glossary",
+          "estimatedWords": 20,
+          "lastModified": "2025-07-31T17:22:49.490Z",
+          "breadcrumbs": [
+            "references",
+            "glossary"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:49.490Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/references/llms-txt.html",
+          "title": "LLMstxt",
+          "estimatedWords": 31,
+          "lastModified": "2025-07-31T17:22:50.038Z",
+          "breadcrumbs": [
+            "references",
+            "llms txt"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 4,
+          "crawledAt": "2025-07-31T17:22:50.038Z"
+        },
+        {
+          "url": "https://cookbook.arweave.net/tooling/deployment.html",
+          "title": "Deployment  Publishing Tools",
+          "estimatedWords": 56,
+          "lastModified": "2025-07-31T17:22:54.210Z",
+          "breadcrumbs": [
+            "tooling",
+            "deployment"
+          ],
+          "siteKey": "arweave",
+          "siteName": "Arweave Cookbook",
+          "depth": 3,
+          "crawledAt": "2025-07-31T17:22:54.210Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:20:00.491Z",
+      "lastCrawled": "2025-07-31T17:28:38.316Z",
       "stats": {
-        "totalPages": 65,
-        "averageWords": 339,
-        "duration": 4758,
-        "requestCount": 11,
-        "averageResponseTime": 304.3636363636364,
-        "pagesPerSecond": 13.66120218579235
+        "totalPages": 115,
+        "averageWords": 416,
+        "duration": 2400,
+        "requestCount": 1,
+        "averageResponseTime": 403,
+        "pagesPerSecond": 47.91666666666667
       }
     },
     "permaweb-glossary": {
@@ -4888,7 +5650,7 @@
           "crawledAt": "2025-07-02T15:10:50.792Z"
         }
       ],
-      "lastCrawled": "2025-07-03T18:20:00.491Z",
+      "lastCrawled": "2025-07-31T17:28:38.316Z",
       "stats": {
         "totalPages": 1,
         "averageWords": 9712,
@@ -4896,6 +5658,450 @@
         "requestCount": 0,
         "averageResponseTime": 0,
         "pagesPerSecond": 0
+      }
+    },
+    "wao": {
+      "name": "WAO Documentation",
+      "baseUrl": "https://docs.wao.eco",
+      "pages": [
+        {
+          "url": "https://docs.wao.eco/hyperbeam/payment-system",
+          "title": "Payment System",
+          "estimatedWords": 260,
+          "lastModified": "2025-07-31T17:23:14.383Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "payment system"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:14.383Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/legacynet-aos",
+          "title": "Legacynet Compatible AOS",
+          "estimatedWords": 297,
+          "lastModified": "2025-07-31T17:23:14.600Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "legacynet aos"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:14.600Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/processes-scheduler",
+          "title": "Processes and Scheduler",
+          "estimatedWords": 521,
+          "lastModified": "2025-07-31T17:23:14.983Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "processes scheduler"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:14.983Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/device-composition",
+          "title": "Device Composition",
+          "estimatedWords": 716,
+          "lastModified": "2025-07-31T17:23:15.179Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "device composition"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:15.179Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/hashpaths",
+          "title": "Hashpaths",
+          "estimatedWords": 94,
+          "lastModified": "2025-07-31T17:23:15.572Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "hashpaths"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:15.572Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/http-message-signatures",
+          "title": "HTTP Message Signatures",
+          "estimatedWords": 189,
+          "lastModified": "2025-07-31T17:23:15.751Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "http message signatures"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:15.751Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/codec-httpsig",
+          "title": "Httpsig Codec",
+          "estimatedWords": 460,
+          "lastModified": "2025-07-31T17:23:16.167Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "codec httpsig"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:16.167Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/codec-structured",
+          "title": "Structured Codec",
+          "estimatedWords": 422,
+          "lastModified": "2025-07-31T17:23:16.313Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "codec structured"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:16.313Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/codec-flat",
+          "title": "Flat Codec",
+          "estimatedWords": 363,
+          "lastModified": "2025-07-31T17:23:16.751Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "codec flat"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:16.751Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hub",
+          "title": "WAO Hub",
+          "estimatedWords": 74,
+          "lastModified": "2025-07-31T17:23:17.324Z",
+          "breadcrumbs": [
+            "hub"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 1,
+          "crawledAt": "2025-07-31T17:23:17.324Z"
+        },
+        {
+          "url": "https://docs.wao.eco/web",
+          "title": "AO The Web",
+          "estimatedWords": 75,
+          "lastModified": "2025-07-31T17:23:17.410Z",
+          "breadcrumbs": [
+            "web"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 1,
+          "crawledAt": "2025-07-31T17:23:17.410Z"
+        },
+        {
+          "url": "https://docs.wao.eco/legacynet",
+          "title": "Legacynet AOS",
+          "estimatedWords": 59,
+          "lastModified": "2025-07-31T17:23:17.919Z",
+          "breadcrumbs": [
+            "legacynet"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 1,
+          "crawledAt": "2025-07-31T17:23:17.919Z"
+        },
+        {
+          "url": "https://docs.wao.eco/api/hbsig",
+          "title": "HBSig",
+          "estimatedWords": 105,
+          "lastModified": "2025-07-31T17:23:18.046Z",
+          "breadcrumbs": [
+            "api",
+            "hbsig"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:18.046Z"
+        },
+        {
+          "url": "https://docs.wao.eco/api/hyperbeam",
+          "title": "HyperBEAM",
+          "estimatedWords": 413,
+          "lastModified": "2025-07-31T17:23:18.557Z",
+          "breadcrumbs": [
+            "api",
+            "hyperbeam"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:18.557Z"
+        },
+        {
+          "url": "https://docs.wao.eco/api/armem",
+          "title": "ArMem",
+          "estimatedWords": 78,
+          "lastModified": "2025-07-31T17:23:19.122Z",
+          "breadcrumbs": [
+            "api",
+            "armem"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:19.122Z"
+        },
+        {
+          "url": "https://docs.wao.eco/api/function-piping",
+          "title": "Function Piping",
+          "estimatedWords": 409,
+          "lastModified": "2025-07-31T17:23:19.763Z",
+          "breadcrumbs": [
+            "api",
+            "function piping"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:19.763Z"
+        },
+        {
+          "url": "https://docs.wao.eco/api/process",
+          "title": "Process",
+          "estimatedWords": 246,
+          "lastModified": "2025-07-31T17:23:20.387Z",
+          "breadcrumbs": [
+            "api",
+            "process"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:20.387Z"
+        },
+        {
+          "url": "https://docs.wao.eco/api/ao",
+          "title": "AO",
+          "estimatedWords": 448,
+          "lastModified": "2025-07-31T17:23:20.464Z",
+          "breadcrumbs": [
+            "api",
+            "ao"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:20.464Z"
+        },
+        {
+          "url": "https://docs.wao.eco/tutorials/running-llms",
+          "title": "Running LLMs on AOS (Highly Experimental)",
+          "estimatedWords": 57,
+          "lastModified": "2025-07-31T17:23:20.834Z",
+          "breadcrumbs": [
+            "tutorials",
+            "running llms"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:20.834Z"
+        },
+        {
+          "url": "https://docs.wao.eco/tutorials/devices-cpp",
+          "title": "Custom Devices in C",
+          "estimatedWords": 373,
+          "lastModified": "2025-07-31T17:23:21.044Z",
+          "breadcrumbs": [
+            "tutorials",
+            "devices cpp"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:21.044Z"
+        },
+        {
+          "url": "https://docs.wao.eco/tutorials/devices-rust",
+          "title": "Custom Devices in Rust",
+          "estimatedWords": 233,
+          "lastModified": "2025-07-31T17:23:21.405Z",
+          "breadcrumbs": [
+            "tutorials",
+            "devices rust"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:21.405Z"
+        },
+        {
+          "url": "https://docs.wao.eco/tutorials/creating-devices",
+          "title": "Creating Custom HyperBEAM Devices",
+          "estimatedWords": 136,
+          "lastModified": "2025-07-31T17:23:21.614Z",
+          "breadcrumbs": [
+            "tutorials",
+            "creating devices"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:21.614Z"
+        },
+        {
+          "url": "https://docs.wao.eco/tutorials/legacynet-aos",
+          "title": "Legacynet AOS on HyperBEAM",
+          "estimatedWords": 82,
+          "lastModified": "2025-07-31T17:23:22.192Z",
+          "breadcrumbs": [
+            "tutorials",
+            "legacynet aos"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:22.192Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/custom-devices-codecs",
+          "title": "Custom Devices and Codecs",
+          "estimatedWords": 813,
+          "lastModified": "2025-07-31T17:23:22.627Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "custom devices codecs"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:22.627Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/devices-pathing",
+          "title": "Devices and Pathing",
+          "estimatedWords": 54,
+          "lastModified": "2025-07-31T17:23:22.802Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "devices pathing"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:22.802Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/installing-hb-wao",
+          "title": "Installing HyperBEAM and WAO",
+          "estimatedWords": 261,
+          "lastModified": "2025-07-31T17:23:23.201Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "installing hb wao"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:23.201Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam/decoding-from-scratch",
+          "title": "Decoding HyperBEAM from Scratch",
+          "estimatedWords": 450,
+          "lastModified": "2025-07-31T17:23:23.378Z",
+          "breadcrumbs": [
+            "hyperbeam",
+            "decoding from scratch"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:23:23.378Z"
+        },
+        {
+          "url": "https://docs.wao.eco/hyperbeam",
+          "title": "HyperBEAM",
+          "estimatedWords": 107,
+          "lastModified": "2025-07-31T17:23:23.813Z",
+          "breadcrumbs": [
+            "hyperbeam"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 1,
+          "crawledAt": "2025-07-31T17:23:23.813Z"
+        },
+        {
+          "url": "https://docs.wao.eco/getting-started",
+          "title": "Get started",
+          "estimatedWords": 208,
+          "lastModified": "2025-07-31T17:23:23.926Z",
+          "breadcrumbs": [
+            "getting started"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 1,
+          "crawledAt": "2025-07-31T17:23:23.926Z"
+        },
+        {
+          "url": "https://docs.wao.eco/api/gql",
+          "title": "GQL",
+          "estimatedWords": 36,
+          "lastModified": "2025-07-31T17:28:37.751Z",
+          "breadcrumbs": [
+            "api",
+            "gql"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:28:37.752Z"
+        },
+        {
+          "url": "https://docs.wao.eco/api/ar",
+          "title": "AR",
+          "estimatedWords": 32,
+          "lastModified": "2025-07-31T17:28:38.197Z",
+          "breadcrumbs": [
+            "api",
+            "ar"
+          ],
+          "siteKey": "wao",
+          "siteName": "WAO Documentation",
+          "depth": 2,
+          "crawledAt": "2025-07-31T17:28:38.197Z"
+        }
+      ],
+      "lastCrawled": "2025-07-31T17:28:38.316Z",
+      "stats": {
+        "totalPages": 31,
+        "averageWords": 260,
+        "duration": 8456,
+        "requestCount": 5,
+        "averageResponseTime": 259.4,
+        "pagesPerSecond": 3.666035950804163
       }
     }
   }

@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-03T17:23:32.861Z
+Generated on: 2025-07-31T17:29:37.800Z
 Total documents: 90
-Total words: 36784
+Total words: 36805
 
 ## Table of Contents
 
@@ -70,12 +70,12 @@ Total words: 36784
 60. [Voting Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/voting.html)
 61. [ao Token and Subledger Specification](https://cookbook_ao.arweave.net/references/token.html)
 62. [Spawning a Process](https://cookbook_ao.arweave.net/guides/aoconnect/spawning-processes.html)
-63. [Mechanics of the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/arena-mechanics.html)
-64. [References](https://cookbook_ao.arweave.net/references/index.html)
-65. [Welcome to ao](https://cookbook_ao.arweave.net/welcome/index.html)
-66. [Begin An Interactive Tutorial](https://cookbook_ao.arweave.net/tutorials/begin/index.html)
-67. [Accessing Data from Arweave with ao](https://cookbook_ao.arweave.net/references/data.html)
-68. [LLMs Documentation](https://cookbook_ao.arweave.net/llms-explanation.html)
+63. [LLMs Documentation](https://cookbook_ao.arweave.net/llms-explanation.html)
+64. [Mechanics of the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/arena-mechanics.html)
+65. [References](https://cookbook_ao.arweave.net/references/index.html)
+66. [Welcome to ao](https://cookbook_ao.arweave.net/welcome/index.html)
+67. [Begin An Interactive Tutorial](https://cookbook_ao.arweave.net/tutorials/begin/index.html)
+68. [Accessing Data from Arweave with ao](https://cookbook_ao.arweave.net/references/data.html)
 69. [Home](https://cookbook_ao.arweave.net/)
 70. [Expanding the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html)
 71. [Utils](https://cookbook_ao.arweave.net/guides/aos/modules/utils.html)
@@ -1543,9 +1543,22 @@ Skip to content Spawning a Process A deep dive into the concept of Processes can
 
 ---
 
-# 63. Mechanics of the Arena  Cookbook
+# 63. LLMs Documentation  Cookbook
 
 Document Number: 63
+Source: https://cookbook_ao.arweave.net/llms-explanation.html
+Words: 84
+Quality Score: 0.450
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Skip to content LLMs Documentation llms.txt:Structured overview of the ao ecosystem.Ideal for AI tools navigating documentation or answering general questions.Suited for agents with web search capabilities.llms-full.txt:Complete technical documentation.Designed for in-depth analysis, troubleshooting, or chatbot integration.Provides exhaustive details for complex queries.INFO The llms-full.txt file only contains content from references and release notes, as testing showed this focused approach performs better with current AI models.Permaweb LLMs.txt:The following is a tool that allows you to build your own LLMs.txt files based on docs from the permaweb ecosystem.
+
+---
+
+# 64. Mechanics of the Arena  Cookbook
+
+Document Number: 64
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/arena-mechanics.html
 Words: 1908
 Quality Score: 0.448
@@ -1854,9 +1867,9 @@ end
 
 ---
 
-# 64. References  Cookbook
+# 65. References  Cookbook
 
-Document Number: 64
+Document Number: 65
 Source: https://cookbook_ao.arweave.net/references/index.html
 Words: 202
 Quality Score: 0.447
@@ -1867,9 +1880,9 @@ References This section provides detailed technical references for AO components
 
 ---
 
-# 65. Welcome to ao  Cookbook
+# 66. Welcome to ao  Cookbook
 
-Document Number: 65
+Document Number: 66
 Source: https://cookbook_ao.arweave.net/welcome/index.html
 Words: 210
 Quality Score: 0.444
@@ -1880,9 +1893,9 @@ Welcome to ao AO is a decentralized compute system where countless parallel proc
 
 ---
 
-# 66. Begin An Interactive Tutorial  Cookbook
+# 67. Begin An Interactive Tutorial  Cookbook
 
-Document Number: 66
+Document Number: 67
 Source: https://cookbook_ao.arweave.net/tutorials/begin/index.html
 Words: 130
 Quality Score: 0.443
@@ -1893,9 +1906,9 @@ Skip to content Begin: An Interactive Tutorial In this tutorial series, you'll w
 
 ---
 
-# 67. Accessing Data from Arweave with ao  Cookbook
+# 68. Accessing Data from Arweave with ao  Cookbook
 
-Document Number: 67
+Document Number: 68
 Source: https://cookbook_ao.arweave.net/references/data.html
 Words: 1254
 Quality Score: 0.440
@@ -1980,19 +1993,6 @@ Data = tostring(result)
 PendingRequests[txId] = nil
 end
 ) To use this example:This example demonstrates:Processing arbitrary Arweave transactions Maintaining state between requests using a pending requests table Sending results back to the original requester Error handling and request cleanup WARNING When using Assign to bridge Arweave data into AO, you must ensure that:The Arweave transaction you're assigning matches one of your defined assignables You have a corresponding handler or receiver set up to process that transaction type The handler's pattern matching matches the assigned transaction's tags/properties For example, if you're assigning a transaction with Action = "Number", you need:An assignable that accepts msg.Tags["Action"] == "Number" Either a Receive function or a handler that matches the same pattern Both the assignable and handler must use consistent pattern matching Important Limitations There are critical limitations to be aware of when working with assignables:Matching is Required: Transactions must match at least one of your defined assignable patterns to be accepted.Blacklisting is Permanent: If you attempt to assign a transaction before defining an appropriate assignable, it will be permanently blacklisted. Even if you later add a matching assignable, that transaction will never be accepted.One-time Assignment: Each Arweave transaction can only be assigned once to a given process. Subsequent assignments of the same transaction will be ignored.Proper Sequence for Assigning Arweave Transactions For successful assignment of Arweave transactions, follow these steps:Define assignables to specify which Arweave transactions your process will accept Wait for any transaction confirmations (by default, 20 confirmations are required) Set up handlers or listeners with Receive or Handlers.add to process the data Assign the Arweave transaction to your process (see Assignment Methods) The order of steps 3 and 4 can be interchanged based on your needs:When using Receive in a script loaded with .load, ensure Assign is placed before Receive to prevent the process from hanging, as Receive is blocking.When using handlers or running commands separately in the shell, the order doesn't matter as handlers will catch messages whenever they arrive Why Access Data from Arweave?There are several practical reasons to access Arweave data from your ao process:Efficient Handling of Large Data: For larger content, directly accessing Arweave is more efficient:Reference large media files (images, videos, documents) without storing them in your process Work with datasets too large to fit in process memory Maintain a lightweight process that can access substantial external resources External Data for Decision-Making: Your process may need data stored on Arweave to make informed decisions. For example:Reading token price data stored by an oracle Accessing verified identity information Retrieving voting records or governance data Dynamic Loading of Features: Rather than including all functionality in your initial process code:Load modules or plugins from Arweave as needed Update configuration without redeploying your entire process Implement upgradable components with new versions stored on Arweave This approach allows you to create more sophisticated applications that leverage Arweave's permanent storage while maintaining efficient process execution in the ao environment.When another process Assigns a transaction to this process, you can also use handlers to process the data asynchronously.
-
----
-
-# 68. LLMs Documentation  Cookbook
-
-Document Number: 68
-Source: https://cookbook_ao.arweave.net/llms-explanation.html
-Words: 63
-Quality Score: 0.433
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Skip to content LLMs Documentation llms.txt:Structured overview of the ao ecosystem.Ideal for AI tools navigating documentation or answering general questions.Suited for agents with web search capabilities.llms-full.txt:Complete technical documentation.Designed for in-depth analysis, troubleshooting, or chatbot integration.Provides exhaustive details for complex queries.INFO The llms-full.txt file only contains content from references and release notes, as testing showed this focused approach performs better with current AI models.
 
 ---
 
