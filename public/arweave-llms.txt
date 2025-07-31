@@ -1,6 +1,6 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-31T17:30:36.843Z
+Generated on: 2025-07-31T17:38:27.247Z
 Total documents: 72
 Total words: 30564
 
@@ -84,46 +84,46 @@ Total words: 30564
 ### Excluded Documents (Quality Filtered)
 
 1. https://cookbook.arweave.net/guides/querying-arweave/queryingArweave.html
-2. https://cookbook.arweave.net/guides/deployment/github-action.html
-3. https://cookbook.arweave.net/guides/deploying-manifests/deployingManifests.html
-4. https://cookbook.arweave.net/concepts/vouch.html
-5. https://cookbook.arweave.net/guides/deployment/arkb.html
+2. https://cookbook.arweave.net/guides/deploying-manifests/deployingManifests.html
+3. https://cookbook.arweave.net/guides/deployment/github-action.html
+4. https://cookbook.arweave.net/guides/deployment/arkb.html
+5. https://cookbook.arweave.net/concepts/vouch.html
 6. https://cookbook.arweave.net/concepts/arfs/privacy.html
-7. https://cookbook.arweave.net/concepts/arfs/schema-diagrams.html
-8. https://cookbook.arweave.net/concepts/arfs/content-types.html
-9. https://cookbook.arweave.net/concepts/arfs/entity-types.html
-10. https://cookbook.arweave.net/concepts/arfs/data-model.html
-11. https://cookbook.arweave.net/concepts/arfs/arfs.html
-12. https://cookbook.arweave.net/concepts/bundlers.html
-13. https://cookbook.arweave.net/concepts/gateways.html
-14. https://cookbook.arweave.net/concepts/permawebApplications.html
-15. https://cookbook.arweave.net/concepts/permaweb.html
-16. https://cookbook.arweave.net/concepts/manifests.html
-17. https://cookbook.arweave.net/concepts/keyfiles-and-wallets.html
+7. https://cookbook.arweave.net/concepts/arfs/content-types.html
+8. https://cookbook.arweave.net/concepts/arfs/schema-diagrams.html
+9. https://cookbook.arweave.net/concepts/arfs/data-model.html
+10. https://cookbook.arweave.net/concepts/arfs/arfs.html
+11. https://cookbook.arweave.net/concepts/arfs/entity-types.html
+12. https://cookbook.arweave.net/concepts/permawebApplications.html
+13. https://cookbook.arweave.net/concepts/bundlers.html
+14. https://cookbook.arweave.net/concepts/gateways.html
+15. https://cookbook.arweave.net/concepts/manifests.html
+16. https://cookbook.arweave.net/concepts/keyfiles-and-wallets.html
+17. https://cookbook.arweave.net/concepts/permaweb.html
 18. https://cookbook.arweave.net/concepts/queryTransactions.html
 19. https://cookbook.arweave.net/concepts/bundles.html
 20. https://cookbook.arweave.net/concepts/tags.html
 21. https://cookbook.arweave.net/concepts/post-transactions.html
 22. https://cookbook.arweave.net/concepts/index.html
-23. https://cookbook.arweave.net/guides/querying-arweave/ardb.html
+23. https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html
 24. https://cookbook.arweave.net/guides/querying-arweave/ar-gql.html
-25. https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html
-26. https://cookbook.arweave.net/guides/vouch.html
-27. https://cookbook.arweave.net/guides/testing/arlocal.html
-28. https://cookbook.arweave.net/references/bundling.html
-29. https://cookbook.arweave.net/references/http-api.html
-30. https://cookbook.arweave.net/references/gql.html
-31. https://cookbook.arweave.net/concepts/arns.html
-32. https://cookbook.arweave.net/guides/smartweave/atomic-assets/index.html
-33. https://cookbook.arweave.net/concepts/smartweave.html
-34. https://cookbook.arweave.net/legacy/index.html
-35. https://cookbook.arweave.net/guides/smartweave/atomic-assets/ardrive-cli.html
+25. https://cookbook.arweave.net/guides/querying-arweave/ardb.html
+26. https://cookbook.arweave.net/guides/testing/arlocal.html
+27. https://cookbook.arweave.net/references/bundling.html
+28. https://cookbook.arweave.net/guides/vouch.html
+29. https://cookbook.arweave.net/references/gql.html
+30. https://cookbook.arweave.net/references/http-api.html
+31. https://cookbook.arweave.net/guides/smartweave/atomic-assets/index.html
+32. https://cookbook.arweave.net/concepts/arns.html
+33. https://cookbook.arweave.net/legacy/index.html
+34. https://cookbook.arweave.net/guides/smartweave/atomic-assets/ardrive-cli.html
+35. https://cookbook.arweave.net/concepts/smartweave.html
 36. https://cookbook.arweave.net/guides/smartweave/warp/intro.html
 37. https://cookbook.arweave.net/concepts/psts.html
 38. https://cookbook.arweave.net/guides/atomic-tokens/intro.html
-39. https://cookbook.arweave.net/guides/smartweave/warp/readstate.html
+39. https://cookbook.arweave.net/guides/smartweave/warp/write-interactions.html
 40. https://cookbook.arweave.net/guides/smartweave/warp/deploying-contracts.html
-41. https://cookbook.arweave.net/guides/smartweave/warp/write-interactions.html
+41. https://cookbook.arweave.net/guides/smartweave/warp/readstate.html
 42. https://cookbook.arweave.net/guides/smartweave/warp/evolve.html
 43. https://cookbook.arweave.net/getting-started/quick-starts/hw-nodejs.html
 
