@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-31T17:34:35.569Z
-Total documents: 39
-Total words: 19629
+Generated on: 2025-08-01T12:13:12.041Z
+Total documents: 37
+Total words: 18942
 
 ## Table of Contents
 
@@ -14,39 +14,37 @@ Total words: 19629
 4. [Module dev_snperl](https://hyperbeam.arweave.net/build/devices/source-code/dev_snp.html)
 5. [JoiningRunning a Router](https://hyperbeam.arweave.net/run/joining-running-a-router.html)
 6. [Configuring Your Machine](https://hyperbeam.arweave.net/run/configuring-your-machine.html)
-7. [Module dev_codec_httpsigerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_httpsig.html)
-8. [Module dev_metaerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html)
-9. [Core Capabilities](https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html)
-10. [Module dev_routererl](https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html)
-11. [Module dev_fafferl](https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html)
-12. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html)
-13. [Building Devices](https://hyperbeam.arweave.net/build/devices/building-devices.html)
-14. [Intro to HyperBEAM](https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html)
-15. [Building ao Processes](https://hyperbeam.arweave.net/build/building-on-ao.html)
-16. [Fuel Your LLM](https://hyperbeam.arweave.net/llms.html)
-17. [FAQ](https://hyperbeam.arweave.net/run/reference/faq.html)
-18. [Module hb_singletonerl](https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html)
-19. [Module dev_p4erl](https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html)
-20. [relay10](https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html)
-21. [process10](https://hyperbeam.arweave.net/build/devices/process-at-1-0.html)
-22. [Module dev_stackerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html)
-23. [meta10](https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html)
-24. [Glossary](https://hyperbeam.arweave.net/run/reference/glossary.html)
-25. [FAQ](https://hyperbeam.arweave.net/build/reference/faq.html)
-26. [Module dev_monitorerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_monitor.html)
-27. [Module dev_patcherl](https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html)
-28. [lua53a](https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html)
-29. [Home](https://hyperbeam.arweave.net/)
-30. [Glossary](https://hyperbeam.arweave.net/build/reference/glossary.html)
-31. [wasm6410](https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html)
-32. [Module dev_codec_structurederl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html)
-33. [scheduler10](https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html)
-34. [json10](https://hyperbeam.arweave.net/build/devices/json-at-1-0.html)
-35. [Module dev_cronerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html)
-36. [Intro to AO-Core](https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html)
-37. [message10](https://hyperbeam.arweave.net/build/devices/message-at-1-0.html)
-38. [Troubleshooting](https://hyperbeam.arweave.net/run/reference/troubleshooting.html)
-39. [Troubleshooting](https://hyperbeam.arweave.net/build/reference/troubleshooting.html)
+7. [Module dev_metaerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html)
+8. [Core Capabilities](https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html)
+9. [Module dev_routererl](https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html)
+10. [Module dev_fafferl](https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html)
+11. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html)
+12. [Building Devices](https://hyperbeam.arweave.net/build/devices/building-devices.html)
+13. [Intro to HyperBEAM](https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html)
+14. [Building ao Processes](https://hyperbeam.arweave.net/build/building-on-ao.html)
+15. [Fuel Your LLM](https://hyperbeam.arweave.net/llms.html)
+16. [FAQ](https://hyperbeam.arweave.net/run/reference/faq.html)
+17. [Module hb_singletonerl](https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html)
+18. [Module dev_p4erl](https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html)
+19. [relay10](https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html)
+20. [process10](https://hyperbeam.arweave.net/build/devices/process-at-1-0.html)
+21. [Module dev_stackerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html)
+22. [meta10](https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html)
+23. [Glossary](https://hyperbeam.arweave.net/run/reference/glossary.html)
+24. [FAQ](https://hyperbeam.arweave.net/build/reference/faq.html)
+25. [Module dev_patcherl](https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html)
+26. [lua53a](https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html)
+27. [Home](https://hyperbeam.arweave.net/)
+28. [Glossary](https://hyperbeam.arweave.net/build/reference/glossary.html)
+29. [wasm6410](https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html)
+30. [Module dev_codec_structurederl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html)
+31. [scheduler10](https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html)
+32. [json10](https://hyperbeam.arweave.net/build/devices/json-at-1-0.html)
+33. [Module dev_cronerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html)
+34. [Intro to AO-Core](https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html)
+35. [message10](https://hyperbeam.arweave.net/build/devices/message-at-1-0.html)
+36. [Troubleshooting](https://hyperbeam.arweave.net/run/reference/troubleshooting.html)
+37. [Troubleshooting](https://hyperbeam.arweave.net/build/reference/troubleshooting.html)
 
 ---
 
@@ -380,46 +378,9 @@ priv_key_location = "/path/to/your/wallet.json".
 
 ---
 
-# 7. Module dev_codec_httpsigerl - HyperBEAM - Documentation
+# 7. Module dev_metaerl - HyperBEAM - Documentation
 
 Document Number: 7
-Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_httpsig.html
-Words: 645
-Quality Score: 0.558
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Module dev_codec_httpsig.erl This module implements HTTP Message Signatures as described in RFC-9421
-(https://datatracker.ietf.org/doc/html/rfc9421), as an AO-Core device.Description It implements the codec standard (from/1, to/1), as well as the optional
-commitment functions (id/3, sign/3, verify/3). The commitment functions
-are found in this module, while the codec functions are relayed to the dev_codec_httpsig_conv module.Function Index add_content_digest/2 If the body key is present and a binary, replace it with a
-content-digest.commit/3 Commit to a message using the HTTP-Signature format.committed_id_test/0* from/3 key_present/2* Calculate if a key or its +link TABM variant is present in a message.keys_to_commit/3* Derive the set of keys to commit to from a commit request and a
-base message.maybe_bundle_tag_commitment/3* Annotate the commitment with the bundle key if the request contains
-it.multicommitted_id_test/0* normalize_for_encoding/3 Given a base message and a commitment, derive the message and commitment
-normalized for encoding.opts/1* Generate the Opts to use during AO-Core operations in the codec.serialize/2 A helper utility for creating a direct encoding of a HTTPSig message.serialize/3 sign_and_verify_link_test/0* Test that we can sign and verify a message with a link.signature_base/3* create the signature base that will be signed in order to create the
-Signature and SignatureInput.signature_components_line/3* Given a list of Component Identifiers and a Request/Response Message
-context, create the "signature-base-line" portion of the signature base.signature_params_line/2* construct the "signature-params-line" part of the signature base.to/3 validate_large_message_from_http_test/0* Ensure that we can validate a signature on an extremely large and complex
-message that is sent over HTTP, signed with the codec.verify/3 Function Details add_content_digest/2 add_content_digest(Msg, Opts) -> any() If the body key is present and a binary, replace it with a
-content-digest.commit/3 commit(Msg, Req, Opts) -> any() Commit to a message using the HTTP-Signature format. We use the type parameter to determine the type of commitment to use. If the type parameter
-is signed, we default to the rsa-pss-sha512 algorithm. If the type parameter is unsigned, we default to the hmac-sha256 algorithm.committed_id_test/0 * committed_id_test() -> any() from/3 from(Msg, Req, Opts) -> any() key_present/2 * key_present(Key, Msg) -> any() Calculate if a key or its +link TABM variant is present in a message.keys_to_commit/3 * keys_to_commit(Base, Req, Opts) -> any() Derive the set of keys to commit to from a commit request and a
-base message.maybe_bundle_tag_commitment/3 * maybe_bundle_tag_commitment(Commitment, Req, Opts) -> any() Annotate the commitment with the bundle key if the request contains
-it.multicommitted_id_test/0 * multicommitted_id_test() -> any() normalize_for_encoding/3 normalize_for_encoding(Msg, Commitment, Opts) -> any() Given a base message and a commitment, derive the message and commitment
-normalized for encoding.opts/1 * opts(RawOpts) -> any() Generate the Opts to use during AO-Core operations in the codec.serialize/2 serialize(Msg, Opts) -> any() A helper utility for creating a direct encoding of a HTTPSig message.This function supports two modes of operation:
-1. format: binary, yielding a raw binary HTTP/1.1-style response that can
-either be stored or emitted raw accross a transport medium.
-2. format: components, yielding a message containing headers and body keys, suitable for use in connecting to HTTP-response flows implemented
-by other servers.Optionally, the index key can be set to override resolution of the default
-index page into HTTP responses that do not contain their own body field.serialize/3 serialize(Msg, Req, Opts) -> any() sign_and_verify_link_test/0 * sign_and_verify_link_test() -> any() Test that we can sign and verify a message with a link. We use signature_base/3 * signature_base(EncodedMsg, Commitment, Opts) -> any() create the signature base that will be signed in order to create the
-Signature and SignatureInput.This implements a portion of RFC-9421 see:
-https://datatracker.ietf.org/doc/html/rfc9421#name-creating-the-signature-base signature_components_line/3 * signature_components_line(Req, Commitment, Opts) -> any() Given a list of Component Identifiers and a Request/Response Message
-context, create the "signature-base-line" portion of the signature base signature_params_line/2 * signature_params_line(RawCommitment, Opts) -> any() construct the "signature-params-line" part of the signature base.See https://datatracker.ietf.org/doc/html/rfc9421#section-2.5-7.3.2.4 to/3 to(Msg, Req, Opts) -> any() validate_large_message_from_http_test/0 * validate_large_message_from_http_test() -> any() Ensure that we can validate a signature on an extremely large and complex
-message that is sent over HTTP, signed with the codec.verify/3 verify(Base, Req, RawOpts) -> any()
-
----
-
-# 8. Module dev_metaerl - HyperBEAM - Documentation
-
-Document Number: 8
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_meta.html
 Words: 1162
 Quality Score: 0.557
@@ -474,9 +435,9 @@ allow them to update the node message.
 
 ---
 
-# 9. Core Capabilities - HyperBEAM - Documentation
+# 8. Core Capabilities - HyperBEAM - Documentation
 
-Document Number: 9
+Document Number: 8
 Source: https://hyperbeam.arweave.net/build/hyperbeam-capabilities.html
 Words: 681
 Quality Score: 0.555
@@ -487,9 +448,9 @@ HyperBEAM: Your Decentralized Development Toolkit HyperBEAM is a versatile, mult
 
 ---
 
-# 10. Module dev_routererl - HyperBEAM - Documentation
+# 9. Module dev_routererl - HyperBEAM - Documentation
 
-Document Number: 10
+Document Number: 9
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_router.html
 Words: 1355
 Quality Score: 0.552
@@ -558,9 +519,9 @@ function, taking only the request message and the Opts map.route/3 route(X1, Msg
 
 ---
 
-# 11. Module dev_fafferl - HyperBEAM - Documentation
+# 10. Module dev_fafferl - HyperBEAM - Documentation
 
-Document Number: 11
+Document Number: 10
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html
 Words: 180
 Quality Score: 0.540
@@ -576,9 +537,9 @@ for both the pricing and ledger P4 APIs.Function Index charge/3 Charge the user'
 
 ---
 
-# 12. Pathing in HyperBEAM - HyperBEAM - Documentation
+# 11. Pathing in HyperBEAM - HyperBEAM - Documentation
 
-Document Number: 12
+Document Number: 11
 Source: https://hyperbeam.arweave.net/build/pathing-in-hyperbeam.html
 Words: 844
 Quality Score: 0.534
@@ -589,9 +550,9 @@ Pathing in HyperBEAM Overview Understanding how to construct and interpret paths
 
 ---
 
-# 13. Building Devices - HyperBEAM - Documentation
+# 12. Building Devices - HyperBEAM - Documentation
 
-Document Number: 13
+Document Number: 12
 Source: https://hyperbeam.arweave.net/build/devices/building-devices.html
 Words: 150
 Quality Score: 0.513
@@ -602,9 +563,9 @@ Extending HyperBEAM with Devices We encourage you to extend HyperBEAM with devic
 
 ---
 
-# 14. Intro to HyperBEAM - HyperBEAM - Documentation
+# 13. Intro to HyperBEAM - HyperBEAM - Documentation
 
-Document Number: 14
+Document Number: 13
 Source: https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html
 Words: 307
 Quality Score: 0.509
@@ -617,9 +578,9 @@ computations across a network of distributed nodes. Messages Modular Data Packet
 
 ---
 
-# 15. Building ao Processes - HyperBEAM - Documentation
+# 14. Building ao Processes - HyperBEAM - Documentation
 
-Document Number: 15
+Document Number: 14
 Source: https://hyperbeam.arweave.net/build/building-on-ao.html
 Words: 92
 Quality Score: 0.508
@@ -630,9 +591,9 @@ Building on HyperBEAM with ao The guides for building applications on HyperBEAM 
 
 ---
 
-# 16. Fuel Your LLM - HyperBEAM - Documentation
+# 15. Fuel Your LLM - HyperBEAM - Documentation
 
-Document Number: 16
+Document Number: 15
 Source: https://hyperbeam.arweave.net/llms.html
 Words: 166
 Quality Score: 0.503
@@ -643,9 +604,9 @@ LLM Context Files This section provides access to specially formatted files inte
 
 ---
 
-# 17. FAQ - HyperBEAM - Documentation
+# 16. FAQ - HyperBEAM - Documentation
 
-Document Number: 17
+Document Number: 16
 Source: https://hyperbeam.arweave.net/run/reference/faq.html
 Words: 327
 Quality Score: 0.500
@@ -656,9 +617,9 @@ Node Operator FAQ This page answers common questions about running and maintaini
 
 ---
 
-# 18. Module hb_singletonerl - HyperBEAM - Documentation
+# 17. Module hb_singletonerl - HyperBEAM - Documentation
 
-Document Number: 18
+Document Number: 17
 Source: https://hyperbeam.arweave.net/build/devices/source-code/hb_singleton.html
 Words: 1095
 Quality Score: 0.499
@@ -719,9 +680,9 @@ segments that are too long.path_parts_test/0 * path_parts_test() -> any() scoped
 
 ---
 
-# 19. Module dev_p4erl - HyperBEAM - Documentation
+# 18. Module dev_p4erl - HyperBEAM - Documentation
 
-Document Number: 19
+Document Number: 18
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html
 Words: 550
 Quality Score: 0.497
@@ -752,9 +713,9 @@ not set is to proceed, so it is important that a user initialize them.response/3
 
 ---
 
-# 20. relay10 - HyperBEAM - Documentation
+# 19. relay10 - HyperBEAM - Documentation
 
-Document Number: 20
+Document Number: 19
 Source: https://hyperbeam.arweave.net/build/devices/relay-at-1-0.html
 Words: 365
 Quality Score: 0.491
@@ -765,9 +726,9 @@ Device: ~relay@1.0 Overview The ~relay@1.0 device enables HyperBEAM nodes to sen
 
 ---
 
-# 21. process10 - HyperBEAM - Documentation
+# 20. process10 - HyperBEAM - Documentation
 
-Document Number: 21
+Document Number: 20
 Source: https://hyperbeam.arweave.net/build/devices/process-at-1-0.html
 Words: 545
 Quality Score: 0.488
@@ -790,9 +751,9 @@ Quorum: 2 This defines a process that uses:
 
 ---
 
-# 22. Module dev_stackerl - HyperBEAM - Documentation
+# 21. Module dev_stackerl - HyperBEAM - Documentation
 
-Document Number: 22
+Document Number: 21
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html
 Words: 1145
 Quality Score: 0.475
@@ -858,9 +819,9 @@ keyInDevice executed on DeviceName against Msg1.
 
 ---
 
-# 23. meta10 - HyperBEAM - Documentation
+# 22. meta10 - HyperBEAM - Documentation
 
-Document Number: 23
+Document Number: 22
 Source: https://hyperbeam.arweave.net/build/devices/meta-at-1-0.html
 Words: 346
 Quality Score: 0.475
@@ -871,9 +832,9 @@ Device: ~meta@1.0 Overview The ~meta@1.0 device provides access to metadata and 
 
 ---
 
-# 24. Glossary - HyperBEAM - Documentation
+# 23. Glossary - HyperBEAM - Documentation
 
-Document Number: 24
+Document Number: 23
 Source: https://hyperbeam.arweave.net/run/reference/glossary.html
 Words: 286
 Quality Score: 0.473
@@ -885,9 +846,9 @@ Node Operator Glossary This glossary provides definitions for terms and concepts
 
 ---
 
-# 25. FAQ - HyperBEAM - Documentation
+# 24. FAQ - HyperBEAM - Documentation
 
-Document Number: 25
+Document Number: 24
 Source: https://hyperbeam.arweave.net/build/reference/faq.html
 Words: 275
 Quality Score: 0.472
@@ -898,22 +859,9 @@ Developer FAQ This page answers common questions about building applications and
 
 ---
 
-# 26. Module dev_monitorerl - HyperBEAM - Documentation
+# 25. Module dev_patcherl - HyperBEAM - Documentation
 
-Document Number: 26
-Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_monitor.html
-Words: 42
-Quality Score: 0.465
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Module dev_monitor.erl Function Index add_monitor/2 end_of_schedule/1 execute/2 init/3 signal/2* uses/0 Function Details add_monitor/2 add_monitor(Mon, State) -> any() end_of_schedule/1 end_of_schedule(State) -> any() execute/2 execute(Message, State) -> any() init/3 init(State, X2, InitState) -> any() signal/2 * signal(State, Signal) -> any() uses/0 uses() -> any()
-
----
-
-# 27. Module dev_patcherl - HyperBEAM - Documentation
-
-Document Number: 27
+Document Number: 25
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html
 Words: 375
 Quality Score: 0.462
@@ -935,9 +883,9 @@ request.req_prefix_test/0 * req_prefix_test() -> any() snapshot/3 snapshot(Msg1,
 
 ---
 
-# 28. lua53a - HyperBEAM - Documentation
+# 26. lua53a - HyperBEAM - Documentation
 
-Document Number: 28
+Document Number: 26
 Source: https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html
 Words: 541
 Quality Score: 0.461
@@ -952,9 +900,9 @@ Sandbox: true This device offers a lightweight, integrated scripting capability 
 
 ---
 
-# 29. HyperBEAM - Documentation
+# 27. HyperBEAM - Documentation
 
-Document Number: 29
+Document Number: 27
 Source: https://hyperbeam.arweave.net/
 Words: 140
 Quality Score: 0.458
@@ -977,9 +925,9 @@ Sorry, your browser doesn’t support embedded video.
 
 ---
 
-# 30. Glossary - HyperBEAM - Documentation
+# 28. Glossary - HyperBEAM - Documentation
 
-Document Number: 30
+Document Number: 28
 Source: https://hyperbeam.arweave.net/build/reference/glossary.html
 Words: 250
 Quality Score: 0.458
@@ -991,9 +939,9 @@ Developer Glossary This glossary provides definitions for terms and concepts rel
 
 ---
 
-# 31. wasm6410 - HyperBEAM - Documentation
+# 29. wasm6410 - HyperBEAM - Documentation
 
-Document Number: 31
+Document Number: 29
 Source: https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html
 Words: 537
 Quality Score: 0.450
@@ -1007,9 +955,9 @@ WASM-Image: This setup allows AO processes to leverage the computational power a
 
 ---
 
-# 32. Module dev_codec_structurederl - HyperBEAM - Documentation
+# 30. Module dev_codec_structurederl - HyperBEAM - Documentation
 
-Document Number: 32
+Document Number: 30
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html
 Words: 338
 Quality Score: 0.448
@@ -1031,9 +979,9 @@ is a list.linkify_mode/2 * linkify_mode(Req, Opts) -> any() Discern the linkify 
 
 ---
 
-# 33. scheduler10 - HyperBEAM - Documentation
+# 31. scheduler10 - HyperBEAM - Documentation
 
-Document Number: 33
+Document Number: 31
 Source: https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html
 Words: 671
 Quality Score: 0.448
@@ -1044,9 +992,9 @@ Device: ~scheduler@1.0 Overview The ~scheduler@1.0 device manages the queueing a
 
 ---
 
-# 34. json10 - HyperBEAM - Documentation
+# 32. json10 - HyperBEAM - Documentation
 
-Document Number: 34
+Document Number: 32
 Source: https://hyperbeam.arweave.net/build/devices/json-at-1-0.html
 Words: 198
 Quality Score: 0.447
@@ -1057,9 +1005,9 @@ Device: ~json@1.0 Overview The ~json@1.0 device provides a mechanism to interact
 
 ---
 
-# 35. Module dev_cronerl - HyperBEAM - Documentation
+# 33. Module dev_cronerl - HyperBEAM - Documentation
 
-Document Number: 35
+Document Number: 33
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html
 Words: 300
 Quality Score: 0.441
@@ -1074,9 +1022,9 @@ It is used to increment a counter and update the state of the worker.test_worker
 
 ---
 
-# 36. Intro to AO-Core - HyperBEAM - Documentation
+# 34. Intro to AO-Core - HyperBEAM - Documentation
 
-Document Number: 36
+Document Number: 34
 Source: https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html
 Words: 435
 Quality Score: 0.440
@@ -1087,9 +1035,9 @@ What is AO-Core? Your browser does not support the video tag.AO-Core is a protoc
 
 ---
 
-# 37. message10 - HyperBEAM - Documentation
+# 35. message10 - HyperBEAM - Documentation
 
-Document Number: 37
+Document Number: 35
 Source: https://hyperbeam.arweave.net/build/devices/message-at-1-0.html
 Words: 472
 Quality Score: 0.435
@@ -1100,9 +1048,9 @@ Device: ~message@1.0 Overview The ~message@1.0 device is a fundamental built-in 
 
 ---
 
-# 38. Troubleshooting - HyperBEAM - Documentation
+# 36. Troubleshooting - HyperBEAM - Documentation
 
-Document Number: 38
+Document Number: 36
 Source: https://hyperbeam.arweave.net/run/reference/troubleshooting.html
 Words: 330
 Quality Score: 0.418
@@ -1113,9 +1061,9 @@ Node Operator Troubleshooting Guide This guide addresses common issues you might
 
 ---
 
-# 39. Troubleshooting - HyperBEAM - Documentation
+# 37. Troubleshooting - HyperBEAM - Documentation
 
-Document Number: 39
+Document Number: 37
 Source: https://hyperbeam.arweave.net/build/reference/troubleshooting.html
 Words: 146
 Quality Score: 0.385

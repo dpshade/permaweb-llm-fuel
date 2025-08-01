@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-31T17:38:27.247Z
-Total documents: 72
-Total words: 30564
+Generated on: 2025-08-01T12:16:23.941Z
+Total documents: 62
+Total words: 27974
 
 ## Table of Contents
 
@@ -23,109 +23,53 @@ Total words: 30564
 13. [Permaweb Deploy](https://cookbook.arweave.net/tooling/deployment/permaweb-deploy.html)
 14. [ANS-109 Vouch-For (Assertion of Identity)](https://cookbook.arweave.net/tooling/specs/ans/ANS-109.html)
 15. [GraphQL Queries](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/graphql.html)
-16. [Arseeding Js](https://cookbook.arweave.net/guides/deploying-manifests/arseeding-js.html)
-17. [Create React App Starter Kit](https://cookbook.arweave.net/kits/react/create-react-app.html)
-18. [Create Vue Starter Kit](https://cookbook.arweave.net/kits/vue/create-vue.html)
-19. [Posting Transactions](https://cookbook.arweave.net/fundamentals/transactions/post-transactions.html)
-20. [ar-gql](https://cookbook.arweave.net/tooling/graphql/ar-gql.html)
-21. [Svelte Starter Kits](https://cookbook.arweave.net/kits/svelte/index.html)
-22. [ServerSide DNS Integration](https://cookbook.arweave.net/guides/dns-integration/server-side.html)
-23. [Transaction Metadata (Tags)](https://cookbook.arweave.net/fundamentals/transactions/tags.html)
-24. [Vue Starter Kits](https://cookbook.arweave.net/kits/vue/index.html)
-25. [ANS-103 Succinct Proofs of Random Access](https://cookbook.arweave.net/tooling/specs/ans/ANS-103.html)
-26. [ANS-106 Do-Not-Store Request](https://cookbook.arweave.net/tooling/specs/ans/ANS-106.html)
-27. [ANS-110 Asset Discoverability](https://cookbook.arweave.net/tooling/specs/ans/ANS-110.html)
-28. [Posting Transactions using arseedingjs](https://cookbook.arweave.net/guides/posting-transactions/arseeding-js.html)
-29. [Querying Arweave with GraphQL](https://cookbook.arweave.net/tooling/querying-arweave.html)
-30. [React Starter Kits](https://cookbook.arweave.net/kits/react/index.html)
-31. [Posting Transactions using arweave-js](https://cookbook.arweave.net/guides/posting-transactions/arweave-js.html)
-32. [arkb](https://cookbook.arweave.net/tooling/deployment/arkb.html)
-33. [Entity Types](https://cookbook.arweave.net/tooling/specs/arfs/entity-types.html)
-34. [Posting Transactions using Ardrive Turbo](https://cookbook.arweave.net/guides/posting-transactions/turbo.html)
-35. [Accessing Arweave Data](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/index.html)
-36. [Community](https://cookbook.arweave.net/community/index.html)
-37. [Cooking with the Permaweb](https://cookbook.arweave.net/index.html)
-38. [Fetching Transaction Data](https://cookbook.arweave.net/guides/http-api.html)
-39. [ArNS - Arweave Name System](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/arns.html)
-40. [ANS-105 License Tags](https://cookbook.arweave.net/tooling/specs/ans/ANS-105.html)
-41. [Gateways in the Arweave Network](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/gateways.html)
-42. [Creating A Wallet](https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/creating-a-wallet.html)
-43. [Index](https://cookbook.arweave.net/getting-started/index.html)
-44. [Privacy](https://cookbook.arweave.net/tooling/specs/arfs/privacy.html)
-45. [ANS-102 Bundled Data - JSON Serialization](https://cookbook.arweave.net/tooling/specs/ans/ANS-102.html)
-46. [Developing on the Permaweb](https://cookbook.arweave.net/getting-started/welcome.html)
-47. [Wallets and Keys](https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/index.html)
-48. [Path Manifests](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/manifests.html)
-49. [ANS-101 Gateway Capabilities Endpoint](https://cookbook.arweave.net/tooling/specs/ans/ANS-101.html)
-50. [ANS-104 Bundled Data v20 - Binary Serialization](https://cookbook.arweave.net/tooling/specs/ans/ANS-104.html)
-51. [References](https://cookbook.arweave.net/references/index.html)
-52. [ArFS Protocol A Decentralized File System on Arweave](https://cookbook.arweave.net/tooling/specs/arfs/arfs.html)
-53. [Contributing Workflow](https://cookbook.arweave.net/getting-started/contributing.html)
-54. [Ardrive](https://cookbook.arweave.net/guides/deploying-manifests/ardrive.html)
-55. [Posting a Transaction using Dispatch](https://cookbook.arweave.net/guides/posting-transactions/dispatch.html)
-56. [GraphQL Tools](https://cookbook.arweave.net/tooling/graphql/index.html)
-57. [Decentralized Computing](https://cookbook.arweave.net/fundamentals/decentralized-computing/index.html)
-58. [Content Types](https://cookbook.arweave.net/tooling/specs/arfs/content-types.html)
-59. [Guides](https://cookbook.arweave.net/guides/index.html)
-60. [Hello World (No Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html)
-61. [Transactions](https://cookbook.arweave.net/fundamentals/transactions/transaction-types.html)
-62. [Schema Diagrams](https://cookbook.arweave.net/tooling/specs/arfs/schema-diagrams.html)
-63. [LLMstxt](https://cookbook.arweave.net/references/llms-txt.html)
-64. [Bundling Services](https://cookbook.arweave.net/tooling/bundlers.html)
-65. [Transaction Bundles](https://cookbook.arweave.net/fundamentals/transactions/bundles.html)
-66. [Deployment Publishing Tools](https://cookbook.arweave.net/tooling/deployment.html)
-67. [Goldsky Search GraphQL Gateway](https://cookbook.arweave.net/tooling/graphql/search-indexing-service.html)
-68. [Tooling](https://cookbook.arweave.net/tooling/index.html)
-69. [Arweave App](https://cookbook.arweave.net/guides/deploying-manifests/arweave-app.html)
-70. [Core Concepts](https://cookbook.arweave.net/fundamentals/index.html)
-71. [Glossary](https://cookbook.arweave.net/references/glossary.html)
-72. [Starter Kits](https://cookbook.arweave.net/kits/index.html)
-
-### Excluded Documents (Quality Filtered)
-
-1. https://cookbook.arweave.net/guides/querying-arweave/queryingArweave.html
-2. https://cookbook.arweave.net/guides/deploying-manifests/deployingManifests.html
-3. https://cookbook.arweave.net/guides/deployment/github-action.html
-4. https://cookbook.arweave.net/guides/deployment/arkb.html
-5. https://cookbook.arweave.net/concepts/vouch.html
-6. https://cookbook.arweave.net/concepts/arfs/privacy.html
-7. https://cookbook.arweave.net/concepts/arfs/content-types.html
-8. https://cookbook.arweave.net/concepts/arfs/schema-diagrams.html
-9. https://cookbook.arweave.net/concepts/arfs/data-model.html
-10. https://cookbook.arweave.net/concepts/arfs/arfs.html
-11. https://cookbook.arweave.net/concepts/arfs/entity-types.html
-12. https://cookbook.arweave.net/concepts/permawebApplications.html
-13. https://cookbook.arweave.net/concepts/bundlers.html
-14. https://cookbook.arweave.net/concepts/gateways.html
-15. https://cookbook.arweave.net/concepts/manifests.html
-16. https://cookbook.arweave.net/concepts/keyfiles-and-wallets.html
-17. https://cookbook.arweave.net/concepts/permaweb.html
-18. https://cookbook.arweave.net/concepts/queryTransactions.html
-19. https://cookbook.arweave.net/concepts/bundles.html
-20. https://cookbook.arweave.net/concepts/tags.html
-21. https://cookbook.arweave.net/concepts/post-transactions.html
-22. https://cookbook.arweave.net/concepts/index.html
-23. https://cookbook.arweave.net/guides/querying-arweave/search-indexing-service.html
-24. https://cookbook.arweave.net/guides/querying-arweave/ar-gql.html
-25. https://cookbook.arweave.net/guides/querying-arweave/ardb.html
-26. https://cookbook.arweave.net/guides/testing/arlocal.html
-27. https://cookbook.arweave.net/references/bundling.html
-28. https://cookbook.arweave.net/guides/vouch.html
-29. https://cookbook.arweave.net/references/gql.html
-30. https://cookbook.arweave.net/references/http-api.html
-31. https://cookbook.arweave.net/guides/smartweave/atomic-assets/index.html
-32. https://cookbook.arweave.net/concepts/arns.html
-33. https://cookbook.arweave.net/legacy/index.html
-34. https://cookbook.arweave.net/guides/smartweave/atomic-assets/ardrive-cli.html
-35. https://cookbook.arweave.net/concepts/smartweave.html
-36. https://cookbook.arweave.net/guides/smartweave/warp/intro.html
-37. https://cookbook.arweave.net/concepts/psts.html
-38. https://cookbook.arweave.net/guides/atomic-tokens/intro.html
-39. https://cookbook.arweave.net/guides/smartweave/warp/write-interactions.html
-40. https://cookbook.arweave.net/guides/smartweave/warp/deploying-contracts.html
-41. https://cookbook.arweave.net/guides/smartweave/warp/readstate.html
-42. https://cookbook.arweave.net/guides/smartweave/warp/evolve.html
-43. https://cookbook.arweave.net/getting-started/quick-starts/hw-nodejs.html
+16. [Create React App Starter Kit](https://cookbook.arweave.net/kits/react/create-react-app.html)
+17. [Create Vue Starter Kit](https://cookbook.arweave.net/kits/vue/create-vue.html)
+18. [Posting Transactions](https://cookbook.arweave.net/fundamentals/transactions/post-transactions.html)
+19. [ar-gql](https://cookbook.arweave.net/tooling/graphql/ar-gql.html)
+20. [Svelte Starter Kits](https://cookbook.arweave.net/kits/svelte/index.html)
+21. [Transaction Metadata (Tags)](https://cookbook.arweave.net/fundamentals/transactions/tags.html)
+22. [Vue Starter Kits](https://cookbook.arweave.net/kits/vue/index.html)
+23. [ANS-103 Succinct Proofs of Random Access](https://cookbook.arweave.net/tooling/specs/ans/ANS-103.html)
+24. [ANS-106 Do-Not-Store Request](https://cookbook.arweave.net/tooling/specs/ans/ANS-106.html)
+25. [ANS-110 Asset Discoverability](https://cookbook.arweave.net/tooling/specs/ans/ANS-110.html)
+26. [Querying Arweave with GraphQL](https://cookbook.arweave.net/tooling/querying-arweave.html)
+27. [React Starter Kits](https://cookbook.arweave.net/kits/react/index.html)
+28. [arkb](https://cookbook.arweave.net/tooling/deployment/arkb.html)
+29. [Entity Types](https://cookbook.arweave.net/tooling/specs/arfs/entity-types.html)
+30. [Accessing Arweave Data](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/index.html)
+31. [Community](https://cookbook.arweave.net/community/index.html)
+32. [Cooking with the Permaweb](https://cookbook.arweave.net/index.html)
+33. [ArNS - Arweave Name System](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/arns.html)
+34. [ANS-105 License Tags](https://cookbook.arweave.net/tooling/specs/ans/ANS-105.html)
+35. [Gateways in the Arweave Network](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/gateways.html)
+36. [Creating A Wallet](https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/creating-a-wallet.html)
+37. [Index](https://cookbook.arweave.net/getting-started/index.html)
+38. [Privacy](https://cookbook.arweave.net/tooling/specs/arfs/privacy.html)
+39. [ANS-102 Bundled Data - JSON Serialization](https://cookbook.arweave.net/tooling/specs/ans/ANS-102.html)
+40. [Developing on the Permaweb](https://cookbook.arweave.net/getting-started/welcome.html)
+41. [Wallets and Keys](https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/index.html)
+42. [Path Manifests](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/manifests.html)
+43. [ANS-101 Gateway Capabilities Endpoint](https://cookbook.arweave.net/tooling/specs/ans/ANS-101.html)
+44. [ANS-104 Bundled Data v20 - Binary Serialization](https://cookbook.arweave.net/tooling/specs/ans/ANS-104.html)
+45. [References](https://cookbook.arweave.net/references/index.html)
+46. [ArFS Protocol A Decentralized File System on Arweave](https://cookbook.arweave.net/tooling/specs/arfs/arfs.html)
+47. [Contributing Workflow](https://cookbook.arweave.net/getting-started/contributing.html)
+48. [GraphQL Tools](https://cookbook.arweave.net/tooling/graphql/index.html)
+49. [Decentralized Computing](https://cookbook.arweave.net/fundamentals/decentralized-computing/index.html)
+50. [Content Types](https://cookbook.arweave.net/tooling/specs/arfs/content-types.html)
+51. [Guides](https://cookbook.arweave.net/guides/index.html)
+52. [Hello World (No Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html)
+53. [Transactions](https://cookbook.arweave.net/fundamentals/transactions/transaction-types.html)
+54. [Schema Diagrams](https://cookbook.arweave.net/tooling/specs/arfs/schema-diagrams.html)
+55. [LLMstxt](https://cookbook.arweave.net/references/llms-txt.html)
+56. [Bundling Services](https://cookbook.arweave.net/tooling/bundlers.html)
+57. [Transaction Bundles](https://cookbook.arweave.net/fundamentals/transactions/bundles.html)
+58. [Deployment Publishing Tools](https://cookbook.arweave.net/tooling/deployment.html)
+59. [Goldsky Search GraphQL Gateway](https://cookbook.arweave.net/tooling/graphql/search-indexing-service.html)
+60. [Tooling](https://cookbook.arweave.net/tooling/index.html)
+61. [Core Concepts](https://cookbook.arweave.net/fundamentals/index.html)
+62. [Glossary](https://cookbook.arweave.net/references/glossary.html)
 
 ---
 
@@ -1333,39 +1277,9 @@ const results = await arweave.api.post('/graphql', queryObject);Public Indexing 
 
 ---
 
-# 16. Cooking with the Permaweb
+# 16. Create React App Starter Kit  Cooking with the Permaweb
 
 Document Number: 16
-Source: https://cookbook.arweave.net/guides/deploying-manifests/arseeding-js.html
-Words: 371
-Quality Score: 0.525
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Arseeding JS SDK The guide of how to easily use the Manifest feature in Arseeding.Getting Started Installing the SDK npm i arseeding-js Create a demo.js, and copy the following code into it.import {uploadFolderAndPay} from "arseeding-js/cjs/uploadFolder";
-const run = async () => {
-const path = 'Your Folder path'
-const priv = 'YOUR PRIVATE KEY'
-const arseedUrl = 'https://arseed.web3infra.dev'
-const tag = '' // everpay supported all token tag (chainType-symbol-id)
-const indexFile = ''
-const res = await uploadFolderAndPay(path,priv,arseedUrl,tag, indexFile)
-console.log(res)
-}
-// review manifest Data
-curl --location --request GET 'https://arseed.web3infra.dev/{res.maniId}' Configuration Notes:Populate your ECC key with YOUR PRIVATE KEY. Make sure that the wallet corresponding to the private key has assets in everPay.arseedUrl is the URL of the Arseeding backend service, here we use the public Arseeding service provided by permadao: https://arseed.web3infra.dev.payUrl is the URL of the everPay service that needs to be configured: https://api.everpay.io path is the path to the folder you want to upload, for example, to deploy a static website, the front-end project will generate a build or dist folder after the project is compiled, just choose the path to that folder.tag is the payment token tag you need to select, if your MetaMask address held in everPay is usdc, you can get the usdc tag via getTokenTagByEver('usdc'),If you want to pay with another token, just fill in the token name to get the specified tag.indexFile is optional,if you don't pass it, index.html (if exist) or null will be default value, if the folder is a front-end project build folder you don't need pass indexFile.After preparing the configuration, call uploadFolderAndPay (path,priv,url,payCurrency) to upload all the files under your folder to web3infra's Arseeding node by means of manifest.node demo.js return:{
-fee: '0.004218',
-maniId: 'EHeDa8b428L38b972qyHI87YELuZKue1jDI_JWC-aGE',
-everHash:[
-'0x46744320be6529c48bf18c348fa181facef3d9d6d920a24687dc9964ba3ead0a'
-]
-} Download data-Access page The maniId can be found in the returned result, the maniId above is EHeDa8b428L38b972qyHI87YELuZKue1jDI_JWC-aGE In this tutorial, we are uploading a Docusaurus front-end project, and running yarn build under that project will generate a build folder, which is the one we uploaded. Now, we can access the site via maniId!In your browser, enter:https://arseed.web3infra.dev/EHeDa8b428L38b972qyHI87YELuZKue1jDI_JWC-aGE You can now access this website, and it will be permanently available! References and Further Reading:Arseeding Documentation Follow the Arseeding Upload Manifest tutorial here 。
-
----
-
-# 17. Create React App Starter Kit  Cooking with the Permaweb
-
-Document Number: 17
 Source: https://cookbook.arweave.net/kits/react/create-react-app.html
 Words: 693
 Quality Score: 0.524
@@ -1392,9 +1306,9 @@ turbo top-up --wallet-file wallet.json --currency USD --value 10 Be sure to repl
 
 ---
 
-# 18. Create Vue Starter Kit  Cooking with the Permaweb
+# 17. Create Vue Starter Kit  Cooking with the Permaweb
 
-Document Number: 18
+Document Number: 17
 Source: https://cookbook.arweave.net/kits/vue/create-vue.html
 Words: 705
 Quality Score: 0.522
@@ -1441,9 +1355,9 @@ turbo top-up --wallet-file wallet.json --currency USD --value 10 Be sure to repl
 
 ---
 
-# 19. Posting Transactions  Cooking with the Permaweb
+# 18. Posting Transactions  Cooking with the Permaweb
 
-Document Number: 19
+Document Number: 18
 Source: https://cookbook.arweave.net/fundamentals/transactions/post-transactions.html
 Words: 635
 Quality Score: 0.519
@@ -1454,9 +1368,9 @@ Posting Transactions There are several ways to post transactions to Arweave. Eac
 
 ---
 
-# 20. ar-gql  Cooking with the Permaweb
+# 19. ar-gql  Cooking with the Permaweb
 
-Document Number: 20
+Document Number: 19
 Source: https://cookbook.arweave.net/tooling/graphql/ar-gql.html
 Words: 127
 Quality Score: 0.515
@@ -1506,9 +1420,9 @@ console.log(results);
 
 ---
 
-# 21. Svelte Starter Kits  Cooking with the Permaweb
+# 20. Svelte Starter Kits  Cooking with the Permaweb
 
-Document Number: 21
+Document Number: 20
 Source: https://cookbook.arweave.net/kits/svelte/index.html
 Words: 115
 Quality Score: 0.512
@@ -1519,22 +1433,9 @@ Svelte Starter Kits Svelte is a framework that compiles to a JavaScript bundle a
 
 ---
 
-# 22. ServerSide DNS Integration  Cooking with the Permaweb
+# 21. Transaction Metadata (Tags)  Cooking with the Permaweb
 
-Document Number: 22
-Source: https://cookbook.arweave.net/guides/dns-integration/server-side.html
-Words: 399
-Quality Score: 0.511
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-ServerSide DNS Integration So you have a permaweb application and it is on the permaweb, but you also have a specific domain that you want users to use to access this app. mydomain.com, to connect your domain to a permaweb app, you have several options, this option we will show here is a called a server-side redirect. The redirect occurs as a reverse proxy so that the user remains on mydomain.com in their browser, while behind the scenes the application is being served from the permaweb.TIP You can use any reverse proxy to setup a server-side redirect, in this guide we will be using deno and deno.com a lightweight edge hosting service.What you will need to setup a reverse proxy using deno.com A deno.com account, which at the time of this writting is free.A domain with access to the DNS Settings A permaweb application identifier and is deployed on the permaweb Create proxy on Deno.com Deno Deploy is a distributed system that runs at the edge. 35 regions worldwide. Open your browser to https://deno.com and click sign in or sign up if you do not have an account.Click on New Project and Click The deno ground will allow us to create a proxy without having to leave the browser.Copy the following code:This proxy server will receive requests from mydomain.com and proxy the request to arweave.net/APP_ID and then return the response as mydomain.com. Your APP_ID is the TX_ID identifier for you permaweb application.Click Save and Deploy Connecting to DNS In Project Settings go to the domains section and click to add a domain.Enter mydomain.com domain and follow the instructions to modify your DNS settings to point to the deno deploy edge network.It may take a few minutes to resolve to the dns, but once resolved your app will now be rendering from mydomain.com.🎉 Congrats you have published a server-side redirect to your permaweb application.WARNING Note that any changes to your application will generate a new TX_ID and you will need to modify that TX_ID to publish the new changes to your domain.Automating the Deploy If you would like to automate new deploys of your permaweb app, look into github actions and using the deno deploy github action: https://github.com/denoland/deployctl/blob/main/action/README.md Summary Server Side redirects are great for providing your users a Domain Name System URL to access your permaweb application. We hope you found this guide useful in your permaweb development journey!
-
----
-
-# 23. Transaction Metadata (Tags)  Cooking with the Permaweb
-
-Document Number: 23
+Document Number: 21
 Source: https://cookbook.arweave.net/fundamentals/transactions/tags.html
 Words: 559
 Quality Score: 0.510
@@ -1552,9 +1453,9 @@ await arweave.transactions.post(tx);Summary Understanding how Transaction Tags f
 
 ---
 
-# 24. Vue Starter Kits  Cooking with the Permaweb
+# 22. Vue Starter Kits  Cooking with the Permaweb
 
-Document Number: 24
+Document Number: 22
 Source: https://cookbook.arweave.net/kits/vue/index.html
 Words: 117
 Quality Score: 0.509
@@ -1565,9 +1466,9 @@ Vue Starter Kits Vue.js is a progressive JavaScript framework that allows buildi
 
 ---
 
-# 25. ANS-103 Succinct Proofs of Random Access  Cooking with the Permaweb
+# 23. ANS-103 Succinct Proofs of Random Access  Cooking with the Permaweb
 
-Document Number: 25
+Document Number: 23
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-103.html
 Words: 1126
 Quality Score: 0.503
@@ -1603,9 +1504,9 @@ return AbsoluteSubspaceStart + remainder(SearchSubspaceStart + SearchSubspaceByt
 
 ---
 
-# 26. ANS-106 Do-Not-Store Request  Cooking with the Permaweb
+# 24. ANS-106 Do-Not-Store Request  Cooking with the Permaweb
 
-Document Number: 26
+Document Number: 24
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-106.html
 Words: 324
 Quality Score: 0.503
@@ -1616,9 +1517,9 @@ ANS-106: Do-Not-Store Request Status: Draft-1 Authors: Abhav Kedia abhav@arweave
 
 ---
 
-# 27. ANS-110 Asset Discoverability  Cooking with the Permaweb
+# 25. ANS-110 Asset Discoverability  Cooking with the Permaweb
 
-Document Number: 27
+Document Number: 25
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-110.html
 Words: 379
 Quality Score: 0.503
@@ -1649,34 +1550,9 @@ value
 
 ---
 
-# 28. Posting Transactions using arseedingjs  Cooking with the Permaweb
+# 26. Querying Arweave with GraphQL  Cooking with the Permaweb
 
-Document Number: 28
-Source: https://cookbook.arweave.net/guides/posting-transactions/arseeding-js.html
-Words: 223
-Quality Score: 0.500
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Posting Transactions using arseeding.js You can use the arseeding-js JavaScript SDK package to publish transactions on the Arweave network. Arseeding automatically broadcasts the transaction to all Arweave nodes in the network, ensuring that the transaction is promptly received in the pending pool of all Arweave nodes, thus increasing the transaction's packaging speed.Installing arseeding.js To install arseeding.js run:npm install arseeding-js yarn add arseeding-js Transaction for Uploading Data When using Arseeding, you must pre-fund your account on everpay open in new window. This balance can be funded with $AR tokens or other cryptocurrencies. Another distinction is that the Arseeding service ensures that your data will make it onto the blockchain.const { genNodeAPI } = require('arseeding-js')
-const run = async () => {
-const instance = genNodeAPI('YOUR PRIVATE KEY')
-const arseedUrl = 'https://arseed.web3infra.dev'
-const data = Buffer.from('........')
-const payCurrencyTag = 'ethereum-usdc-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48' // everPay supported token tag (chainType-symbol-id)
-const options = {
-tags: [{ name: 'Content-Type', value: 'image/png' }]
-}
-const res = await instance.sendAndPay(arseedUrl, data, payCurrencyTag, options)
-console.log('res', res)
-}
-run() Resources For an overview of all methods for publishing transactions, please refer to the Publishing Transactions section in the operation manual.You can find the complete Arseeding documentation on the Arseeding website open in new window.Follow the Arseeding Upload Manifest tutorial here open in new window.Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 29. Querying Arweave with GraphQL  Cooking with the Permaweb
-
-Document Number: 29
+Document Number: 26
 Source: https://cookbook.arweave.net/tooling/querying-arweave.html
 Words: 812
 Quality Score: 0.498
@@ -1779,9 +1655,9 @@ address
 
 ---
 
-# 30. React Starter Kits  Cooking with the Permaweb
+# 27. React Starter Kits  Cooking with the Permaweb
 
-Document Number: 30
+Document Number: 27
 Source: https://cookbook.arweave.net/kits/react/index.html
 Words: 100
 Quality Score: 0.497
@@ -1792,50 +1668,9 @@ React Starter Kits React is a popular library used for building user interfaces.
 
 ---
 
-# 31. Posting Transactions using arweave-js  Cooking with the Permaweb
+# 28. arkb  Cooking with the Permaweb
 
-Document Number: 31
-Source: https://cookbook.arweave.net/guides/posting-transactions/arweave-js.html
-Words: 375
-Quality Score: 0.495
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Posting Transactions using arweave-js Arweave native transactions can be posted directly to a node or gateway using the arweave-js package.Arweave scales though the use of transaction bundles. These bundles make it possible for each block to contain a nearly unlimited number of transactions. Without the use of bundles, Arweave blocks are limited 1000 transactions per block (with new blocks produced every ~2 minutes). If your use case exceeds this capacity you may experience dropped transactions. Under these circumstances please consider using irys.xyz or similar services to bundle your transactions.Installing the arweave-js Package To install arweave-js run npm install --save arweave yarn add arweave When working with NodeJS a minimum version of NodeJS 18 or higher is required.Initializing arweave-js Direct Layer 1 transactions are posted using the arweave-js library.import Arweave from 'arweave';
-import fs from "fs";
-// load the JWK wallet key file from disk
-let key = JSON.parse(fs.readFileSync("walletFile.txt").toString());
-// initialize an arweave instance
-const arweave = Arweave.init({});Posting a wallet-to-wallet Transaction A basic transaction to move AR tokens from one wallet address to another.// create a wallet-to-wallet transaction sending 10.5AR to the target address
-let transaction = await arweave.createTransaction({
-target: '1seRanklLU_1VTGkEk7P0xAwMJfA7owA1JHW5KyZKlY',
-quantity: arweave.ar.arToWinston('10.5')
-}, key);
-// you must sign the transaction with your key before posting
-await arweave.transactions.sign(transaction, key);
-// post the transaction
-const response = await arweave.transactions.post(transaction);Posting a Data Transaction This example illustrates how load a file from disk and create a transaction to store its data on the network. You can find the current price the network is charging at https://ar-fees.arweave.net // load the data from disk
-const imageData = fs.readFileSync(`iamges/myImage.png`);
-// create a data transaction
-let transaction = await arweave.createTransaction({
-data: imageData
-}, key);
-// add a custom tag that tells the gateway how to serve this data to a browser
-transaction.addTag('Content-Type', 'image/png');
-// you must sign the transaction with your key before posting
-await arweave.transactions.sign(transaction, key);
-// create an uploader that will seed your data to the network
-let uploader = await arweave.transactions.getUploader(transaction);
-// run the uploader until it completes the upload.
-while (!uploader.isComplete) {
-await uploader.uploadChunk();
-} Resources For an overview of all the ways you can post transactions, see the Posting Transactions section of the cookbook.For a more detailed description of all arweave-js 's features see the documentation on github
-
----
-
-# 32. arkb  Cooking with the Permaweb
-
-Document Number: 32
+Document Number: 28
 Source: https://cookbook.arweave.net/tooling/deployment/arkb.html
 Words: 243
 Quality Score: 0.495
@@ -1849,9 +1684,9 @@ arkb Requirements An Arweave wallet is required to deploy using arkb for coverin
 
 ---
 
-# 33. Entity Types  Cooking with the Permaweb
+# 29. Entity Types  Cooking with the Permaweb
 
-Document Number: 33
+Document Number: 29
 Source: https://cookbook.arweave.net/tooling/specs/arfs/entity-types.html
 Words: 1168
 Quality Score: 0.491
@@ -1908,93 +1743,9 @@ Data-Start: "" Snapshot Transaction GQL tags example Snapshot Entity Data A JSON
 
 ---
 
-# 34. Posting Transactions using Ardrive Turbo  Cooking with the Permaweb
+# 30. Accessing Arweave Data  Cooking with the Permaweb
 
-Document Number: 34
-Source: https://cookbook.arweave.net/guides/posting-transactions/turbo.html
-Words: 377
-Quality Score: 0.488
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Posting Transactions using Ardrive Turbo Posting transactions using Turbo can be accomplished using the @ardrive/turbo-sdk JavaScript package.Installing the @ardrive/turbo-sdk To install @ardrive/turbo-sdk run npm install @ardrive/turbo-sdk yarn add @ardrive/turbo-sdk Initializing Turbo Client There are multiple ways to upload data using the turbo sdk. You can:upload simple data upload a file upload a data-item ArDrive Turbo's documentation provides a quick start for any of these methods.The recommended way of posting transactions and uploading data to Arweave is with DataItems.Quick Start import { ArweaveSigner, TurboFactory } from '@ardrive/turbo-sdk';
-import Arweave from 'arweave';
-import fs from 'fs';
-import open from 'open';
-import path from 'path';
-async function uploadWithTurbo() {
-const jwk = JSON.parse(fs.readFileSync('./my-jwk.json', 'utf-8'));
-const signer = new ArweaveSigner(jwk);
-const turbo = TurboFactory.authenticated({ signer });
-try {
-// upload some simple data - log upload progress events
-const { id, owner, dataCaches, fastFinalityIndexes } = await turbo.upload({
-data: 'Hello, world!',
-events: {
-// overall events (includes signing and upload events)
-onProgress: ({ totalBytes, processedBytes, step }) => {
-console.log('Overall progress:', { totalBytes, processedBytes, step });
-},
-onError: ({ error, step }) => {
-console.log('Overall error:', { error, step });
-},
-},
-});
-// upload a file - log signing and upload progress events
-const filePath = path.join(__dirname, './my-image.png');
-const fileSize = fs.statSync(filePath).size;
-const { id, owner, dataCaches, fastFinalityIndexes } =
-await turbo.uploadFile({
-fileStreamFactory: () => fs.createReadStream(filePath),
-fileSizeFactory: () => fileSize,
-events: {
-// overall events (includes signing and upload events)
-onProgress: ({ totalBytes, processedBytes, step }) => {
-console.log('Overall progress:', { totalBytes, processedBytes, step });
-},
-onError: ({ error, step }) => {
-console.log('Overall error:', { error, step });
-},
-// signing events
-onSigningProgress: ({ totalBytes, processedBytes }) => {
-console.log('Signing progress:', { totalBytes, processedBytes });
-},
-onSigningError: (error) => {
-console.log('Signing error:', { error });
-},
-onSigningSuccess: () => {
-console.log('Signing success!');
-},
-// upload events
-onUploadProgress: ({ totalBytes, processedBytes }) => {
-console.log('Upload progress:', { totalBytes, processedBytes });
-},
-onUploadError: (error) => {
-console.log('Upload error:', { error });
-},
-onUploadSuccess: () => {
-console.log('Upload success!');
-},
-},
-});
-// upload complete!
-console.log('Successfully upload data item!', {
-id,
-owner,
-dataCaches,
-fastFinalityIndexes,
-});
-} catch (error) {
-// upload failed
-console.error('Failed to upload data item!', error);
-}
-} Resources Dive into the Code Join the discussion in the ArDrive Discord
-
----
-
-# 35. Accessing Arweave Data  Cooking with the Permaweb
-
-Document Number: 35
+Document Number: 30
 Source: https://cookbook.arweave.net/fundamentals/accessing-arweave-data/index.html
 Words: 385
 Quality Score: 0.488
@@ -2005,9 +1756,9 @@ Accessing Arweave Data One of Arweave's core strengths is permanent data storage
 
 ---
 
-# 36. Community  Cooking with the Permaweb
+# 31. Community  Cooking with the Permaweb
 
-Document Number: 36
+Document Number: 31
 Source: https://cookbook.arweave.net/community/index.html
 Words: 109
 Quality Score: 0.481
@@ -2018,9 +1769,9 @@ Community Resources for the Permaweb developer community and archived content.De
 
 ---
 
-# 37. Cooking with the Permaweb  Cooking with the Permaweb
+# 32. Cooking with the Permaweb  Cooking with the Permaweb
 
-Document Number: 37
+Document Number: 32
 Source: https://cookbook.arweave.net/index.html
 Words: 227
 Quality Score: 0.479
@@ -2031,66 +1782,9 @@ Cooking with the Permaweb The Permaweb Cookbook is a developer resource that pro
 
 ---
 
-# 38. Fetching Transaction Data  Cooking with the Permaweb
+# 33. ArNS - Arweave Name System  Cooking with the Permaweb
 
-Document Number: 38
-Source: https://cookbook.arweave.net/guides/http-api.html
-Words: 563
-Quality Score: 0.477
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Fetching Transaction Data While indexing services allow querying of transaction metadata they don't provide access to the transaction data itself. This is because caching transaction data and indexing metadata have different resource requirements. Indexing services primarily rely on compute resources to perform queries on a database while transaction data is better suited to deployment on a Content Delivery Network (CDN) to optimize storage and bandwidth.A Transaction data caching service is offered by most gateways though a set of HTTP endpoints. Any HTTP client/package can be used to request transaction data from these endpoints. For example Axios or Fetch for JavaScript, Guzzle for PHP, etc.If you wanted to bypass a transaction data caching service and get data directly from the Arweave peers/nodes you could, but it's a lot of work!Transaction data is stored on Arweave as a contiguous sequence of 256KB chunks, from the very beginning of the network until the current block. This format is optimized to support the SPoRA mining mechanism miners participate in to prove they are storing Arweave data.Retrieve a list of peers from a well known peer.Ask the peer for the chunk offsets which contain your transactions data.Ask the peer to for the chunks. If the peer provides the chunks, combine them back into their original format.(If the peer does not have the chunks) walk the peer list asking for the chunks.For each peer you visit, check their peer list and add peers not already in your list.Repeat from step 3 until you have all of the chunks.This is a fairly large amount of work to perform each time you want to retrieve data from the Arweave network. Imagine if you were trying to dis a timeline of tweets like https://public-square.arweave.net does. The user experience would be terrible with long load times and spinners. Because data on Arweave is permanent, it's safe to cache in its original form to make retrieval of transaction data much quicker and easier.The following is how to access cached transaction data in the arweave.net Transaction data caching service.Get cached TX data https://arweave.net/TX_ID const res = await axios.get(`https://arweave.net/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8)
-console.log(res) Click to view example result Each Arweave peer/node also exposes some HTTP endpoints which are often replicated gateways. You can read more about Arweave peer's HTTP endpoints here.Get raw transaction https://arweave.net/raw/TX_ID const result = await fetch('https://arweave.net/raw/rLyni34aYMmliemI8OjqtkE_JHHbFMb24YTQHGe9geo')
-.then(res => res.json())
-console.log(JSON.stringify(result)) Click to view example result {
-"manifest": "arweave/paths",
-"version": "0.1.0",
-"index": {
-"path": "index.html"
-},
-"paths": {
-"index.html": {
-"id": "FOPrEoqqk184Bnk9KrnQ0MTZFOM1oXb0JZjJqhluv78"
-}
-}
-} Get by field https://arweave.net/tx/TX_ID/FIELD Available fields: id | last_tx | owner | target | quantity | data | reward | signature const result = await fetch('https://arweave.net/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8/data')
-.then(res => res.json())
-console.log(JSON.stringify(result)) Click to view example result {
-"ticker":"ANT-PENDING",
-"name":"pending",
-"owner":"NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0",
-"controller":"NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0",
-"evolve":null,
-"records": {
-"@":"As-g0fqvO_ALZpSI8yKfCZaFtnmuwWasY83BQ520Duw"
-},
-"balances":{"NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0":1}
-} Get Wallet Balance The returned balance is in Winston. To get balance in $AR, divide the balance by 1000000000000 https://arweave.net/wallet/ADDRESS/balance const res = await axios.get(https://arweave.net/wallet/NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0/balance`)
-console.log(res)
-console.log(res.data / 1000000000000)
-6638463438702 // Winston
-6.638463438702 // $AR Get transaction status https://arweave.net/tx/TX_ID/status TIP This endpoint only supports native Arweave transactions. Transactions must be confirmed before getting a successful response.const result = await fetch('https://arweave.net/tx/EiRSQExb5HvSynpn0S7_dDnwcws1AJMxoYx4x7nWoho/status').then(res => res.json())
-console.log(JSON.stringify(result)) Click to view example result {
-"block_height":1095552,"block_indep_hash":"hyhLEyOw5WcIhZxq-tlnxhnEFgKChKHFrMoUdgIg2Sw0WoBMbdx6uSJKjxnQWon3","number_of_confirmations":10669
-} Get network information const res = await axios.get('https://arweave.net/info')
-console.log(res.data) Click to view example result {
-"network": "arweave.N.1",
-"version": 5,
-"release": 53,
-"height": 1106211,
-"current": "bqPU_7t-TdRIxgsja0ftgEMNnlGL6OX621LPJJzYP12w-uB_PN4F7qRYD-DpIuRu",
-"blocks": 1092577,
-"peers": 13922,
-"queue_length": 0,
-"node_state_latency": 0
-}
-
----
-
-# 39. ArNS - Arweave Name System  Cooking with the Permaweb
-
-Document Number: 39
+Document Number: 33
 Source: https://cookbook.arweave.net/fundamentals/accessing-arweave-data/arns.html
 Words: 523
 Quality Score: 0.475
@@ -2112,9 +1806,9 @@ ticker:"ANT-ARDRIVE-OG-LOGO"
 
 ---
 
-# 40. ANS-105 License Tags  Cooking with the Permaweb
+# 34. ANS-105 License Tags  Cooking with the Permaweb
 
-Document Number: 40
+Document Number: 34
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-105.html
 Words: 453
 Quality Score: 0.473
@@ -2125,9 +1819,9 @@ Authors: Sam Williams sam@arweave.org, Abhav Kedia abhav@arweave.org Abstract Th
 
 ---
 
-# 41. Gateways in the Arweave Network  Cooking with the Permaweb
+# 35. Gateways in the Arweave Network  Cooking with the Permaweb
 
-Document Number: 41
+Document Number: 35
 Source: https://cookbook.arweave.net/fundamentals/accessing-arweave-data/gateways.html
 Words: 275
 Quality Score: 0.473
@@ -2138,9 +1832,9 @@ Gateways in the Arweave Network Gateways serve as the interface between the Arwe
 
 ---
 
-# 42. Cooking with the Permaweb
+# 36. Cooking with the Permaweb
 
-Document Number: 42
+Document Number: 36
 Source: https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/creating-a-wallet.html
 Words: 167
 Quality Score: 0.471
@@ -2160,9 +1854,9 @@ ardrive generate-wallet > /path/to/wallet/file.json Built with ❤️ by the Arw
 
 ---
 
-# 43. Getting Started  Cooking with the Permaweb
+# 37. Getting Started  Cooking with the Permaweb
 
-Document Number: 43
+Document Number: 37
 Source: https://cookbook.arweave.net/getting-started/index.html
 Words: 160
 Quality Score: 0.471
@@ -2173,9 +1867,9 @@ Getting Started Welcome to the Permaweb Cookbook! This guide will help you get s
 
 ---
 
-# 44. Privacy  Cooking with the Permaweb
+# 38. Privacy  Cooking with the Permaweb
 
-Document Number: 44
+Document Number: 38
 Source: https://cookbook.arweave.net/tooling/specs/arfs/privacy.html
 Words: 700
 Quality Score: 0.467
@@ -2188,9 +1882,9 @@ Cipher-IV?: "<12 byte initialization vector as Base64>" Just like drives, privat
 
 ---
 
-# 45. ANS-102 Bundled Data - JSON Serialization  Cooking with the Permaweb
+# 39. ANS-102 Bundled Data - JSON Serialization  Cooking with the Permaweb
 
-Document Number: 45
+Document Number: 39
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-102.html
 Words: 708
 Quality Score: 0.467
@@ -2218,9 +1912,9 @@ data
 
 ---
 
-# 46. Developing on the Permaweb  Cooking with the Permaweb
+# 40. Developing on the Permaweb  Cooking with the Permaweb
 
-Document Number: 46
+Document Number: 40
 Source: https://cookbook.arweave.net/getting-started/welcome.html
 Words: 203
 Quality Score: 0.465
@@ -2231,9 +1925,9 @@ Developing on the Permaweb Welcome to the Permaweb Creating applications on the 
 
 ---
 
-# 47. Wallets and Keys  Cooking with the Permaweb
+# 41. Wallets and Keys  Cooking with the Permaweb
 
-Document Number: 47
+Document Number: 41
 Source: https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/index.html
 Words: 515
 Quality Score: 0.459
@@ -2255,9 +1949,9 @@ Wallets and Keys Arweave wallets serve as the gateway to interact with the Arwea
 
 ---
 
-# 48. Path Manifests  Cooking with the Permaweb
+# 42. Path Manifests  Cooking with the Permaweb
 
-Document Number: 48
+Document Number: 42
 Source: https://cookbook.arweave.net/fundamentals/accessing-arweave-data/manifests.html
 Words: 370
 Quality Score: 0.456
@@ -2297,9 +1991,9 @@ Path Manifests Overview When uploading files to Arweave each file is assigned it
 
 ---
 
-# 49. ANS-101 Gateway Capabilities Endpoint  Cooking with the Permaweb
+# 43. ANS-101 Gateway Capabilities Endpoint  Cooking with the Permaweb
 
-Document Number: 49
+Document Number: 43
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-101.html
 Words: 248
 Quality Score: 0.454
@@ -2319,9 +2013,9 @@ ANS-101: Gateway Capabilities Endpoint Status: Draft Version: - Abstract This do
 
 ---
 
-# 50. ANS-104 Bundled Data v20 - Binary Serialization  Cooking with the Permaweb
+# 44. ANS-104 Bundled Data v20 - Binary Serialization  Cooking with the Permaweb
 
-Document Number: 50
+Document Number: 44
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-104.html
 Words: 1589
 Quality Score: 0.454
@@ -2373,9 +2067,9 @@ data
 
 ---
 
-# 51. References  Cooking with the Permaweb
+# 45. References  Cooking with the Permaweb
 
-Document Number: 51
+Document Number: 45
 Source: https://cookbook.arweave.net/references/index.html
 Words: 85
 Quality Score: 0.449
@@ -2386,9 +2080,9 @@ References Reference documentation, specifications, and resources for Permaweb d
 
 ---
 
-# 52. ArFS Protocol A Decentralized File System on Arweave  Cooking with the Permaweb
+# 46. ArFS Protocol A Decentralized File System on Arweave  Cooking with the Permaweb
 
-Document Number: 52
+Document Number: 46
 Source: https://cookbook.arweave.net/tooling/specs/arfs/arfs.html
 Words: 404
 Quality Score: 0.446
@@ -2399,9 +2093,9 @@ ArFS Protocol: A Decentralized File System on Arweave Arweave File System, or �
 
 ---
 
-# 53. Contributing Workflow  Cooking with the Permaweb
+# 47. Contributing Workflow  Cooking with the Permaweb
 
-Document Number: 53
+Document Number: 47
 Source: https://cookbook.arweave.net/getting-started/contributing.html
 Words: 315
 Quality Score: 0.443
@@ -2412,45 +2106,9 @@ Contributing Workflow Anyone in the community is welcome to contribute to the Pe
 
 ---
 
-# 54. Cooking with the Permaweb
+# 48. GraphQL Tools  Cooking with the Permaweb
 
-Document Number: 54
-Source: https://cookbook.arweave.net/guides/deploying-manifests/ardrive.html
-Words: 69
-Quality Score: 0.431
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-ArDrive You can create a manifest for a folder or group of folders with ardrive create-manifest using the ArDrive CLI open in new window.Further Reading: ArDrive CLI Docs open in new window Alternatively, you can create a manifest using the ArDrive open in new window web app by selecting New → Create manifest while inside of a drive. Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 55. Posting a Transaction using Dispatch  Cooking with the Permaweb
-
-Document Number: 55
-Source: https://cookbook.arweave.net/guides/posting-transactions/dispatch.html
-Words: 151
-Quality Score: 0.428
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Posting a Transaction using Dispatch Arweave Browser wallets have the concept of dispatching transactions. If the transaction is under 100KB in size it can be posted for free!Dispatching a Transaction This can be done without any package dependencies for the client app. As long as the user has a browser wallet active and the data is less than 100KB, dispatched transactions are free and guaranteed to be confirmed on the network.// use arweave-js to create a transaction
-let tx = await arweave.createTransaction({ data:"Hello World!" })
-// add some custom tags to the transaction
-tx.addTag('App-Name', 'PublicSquare')
-tx.addTag('Content-Type', 'text/plain')
-tx.addTag('Version', '1.0.1')
-tx.addTag('Type', 'post')
-// use the browser wallet to dispatch() the transaction
-let result = await window.arweaveWallet.dispatch(tx);
-// log out the transactino id
-console.log(result.id);Resources For an overview of all the ways you can post transactions, see the Posting Transactions section of the cookbook.Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 56. GraphQL Tools  Cooking with the Permaweb
-
-Document Number: 56
+Document Number: 48
 Source: https://cookbook.arweave.net/tooling/graphql/index.html
 Words: 253
 Quality Score: 0.418
@@ -2482,9 +2140,9 @@ value
 
 ---
 
-# 57. Decentralized Computing  Cooking with the Permaweb
+# 49. Decentralized Computing  Cooking with the Permaweb
 
-Document Number: 57
+Document Number: 49
 Source: https://cookbook.arweave.net/fundamentals/decentralized-computing/index.html
 Words: 921
 Quality Score: 0.418
@@ -2511,9 +2169,9 @@ Decentralized Computing Network:
 
 ---
 
-# 58. Content Types  Cooking with the Permaweb
+# 50. Content Types  Cooking with the Permaweb
 
-Document Number: 58
+Document Number: 50
 Source: https://cookbook.arweave.net/tooling/specs/arfs/content-types.html
 Words: 159
 Quality Score: 0.417
@@ -2524,9 +2182,9 @@ Content Types All transaction types in ArFS leverage a specific metadata tag for
 
 ---
 
-# 59. Guides  Cooking with the Permaweb
+# 51. Guides  Cooking with the Permaweb
 
-Document Number: 59
+Document Number: 51
 Source: https://cookbook.arweave.net/guides/index.html
 Words: 142
 Quality Score: 0.416
@@ -2537,9 +2195,9 @@ Guides Step-by-step tutorials and practical guides for building on the Permaweb.
 
 ---
 
-# 60. Hello World (No Code)  Cooking with the Permaweb
+# 52. Hello World (No Code)  Cooking with the Permaweb
 
-Document Number: 60
+Document Number: 52
 Source: https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html
 Words: 90
 Quality Score: 0.415
@@ -2550,9 +2208,9 @@ Hello World (No Code) In this quick start we are going to upload an image to the
 
 ---
 
-# 61. Transactions  Cooking with the Permaweb
+# 53. Transactions  Cooking with the Permaweb
 
-Document Number: 61
+Document Number: 53
 Source: https://cookbook.arweave.net/fundamentals/transactions/transaction-types.html
 Words: 149
 Quality Score: 0.412
@@ -2563,9 +2221,9 @@ Transactions Transactions are the fundamental building blocks of the Arweave net
 
 ---
 
-# 62. Cooking with the Permaweb
+# 54. Cooking with the Permaweb
 
-Document Number: 62
+Document Number: 54
 Source: https://cookbook.arweave.net/tooling/specs/arfs/schema-diagrams.html
 Words: 62
 Quality Score: 0.411
@@ -2576,9 +2234,9 @@ Schema Diagrams The following diagrams show complete examples of Drive, Folder, 
 
 ---
 
-# 63. LLMstxt  Cooking with the Permaweb
+# 55. LLMstxt  Cooking with the Permaweb
 
-Document Number: 63
+Document Number: 55
 Source: https://cookbook.arweave.net/references/llms-txt.html
 Words: 36
 Quality Score: 0.403
@@ -2589,9 +2247,9 @@ LLMs.txt The following is a tool open in new window that allows you to build you
 
 ---
 
-# 64. Bundling Services  Cooking with the Permaweb
+# 56. Bundling Services  Cooking with the Permaweb
 
-Document Number: 64
+Document Number: 56
 Source: https://cookbook.arweave.net/tooling/bundlers.html
 Words: 523
 Quality Score: 0.402
@@ -2602,9 +2260,9 @@ Bundling Services With bundling services users can post their data transactions 
 
 ---
 
-# 65. Transaction Bundles  Cooking with the Permaweb
+# 57. Transaction Bundles  Cooking with the Permaweb
 
-Document Number: 65
+Document Number: 57
 Source: https://cookbook.arweave.net/fundamentals/transactions/bundles.html
 Words: 296
 Quality Score: 0.400
@@ -2615,9 +2273,9 @@ Transaction Bundles What is a Bundle? A transaction bundle is a special type of 
 
 ---
 
-# 66. Deployment  Publishing Tools  Cooking with the Permaweb
+# 58. Deployment  Publishing Tools  Cooking with the Permaweb
 
-Document Number: 66
+Document Number: 58
 Source: https://cookbook.arweave.net/tooling/deployment.html
 Words: 62
 Quality Score: 0.396
@@ -2628,9 +2286,9 @@ Deployment & Publishing Tools Tools for deploying applications and publishing co
 
 ---
 
-# 67. Goldsky Search GraphQL Gateway  Cooking with the Permaweb
+# 59. Goldsky Search GraphQL Gateway  Cooking with the Permaweb
 
-Document Number: 67
+Document Number: 59
 Source: https://cookbook.arweave.net/tooling/graphql/search-indexing-service.html
 Words: 616
 Quality Score: 0.386
@@ -2767,9 +2425,9 @@ count
 
 ---
 
-# 68. Tooling  Cooking with the Permaweb
+# 60. Tooling  Cooking with the Permaweb
 
-Document Number: 68
+Document Number: 60
 Source: https://cookbook.arweave.net/tooling/index.html
 Words: 135
 Quality Score: 0.375
@@ -2780,22 +2438,9 @@ Tooling Tools and services organized by the problems they solve for Permaweb dev
 
 ---
 
-# 69. Cooking with the Permaweb
+# 61. Core Concepts  Cooking with the Permaweb
 
-Document Number: 69
-Source: https://cookbook.arweave.net/guides/deploying-manifests/arweave-app.html
-Words: 51
-Quality Score: 0.277
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Arweave.app Uploading a directory through Arweave.app open in new window will automatically create a manifest for all of the files in the directory. Alternatively, you can upload your own manifest file manually, add the following tag, and submit the transaction. Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 70. Core Concepts  Cooking with the Permaweb
-
-Document Number: 70
+Document Number: 61
 Source: https://cookbook.arweave.net/fundamentals/index.html
 Words: 116
 Quality Score: 0.269
@@ -2806,9 +2451,9 @@ Core Concepts Understanding the fundamental concepts of Arweave and the Permaweb
 
 ---
 
-# 71. Glossary  Cooking with the Permaweb
+# 62. Glossary  Cooking with the Permaweb
 
-Document Number: 71
+Document Number: 62
 Source: https://cookbook.arweave.net/references/glossary.html
 Words: 26
 Quality Score: 0.257
@@ -2816,19 +2461,3 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Glossary The following is an embedded glossary tool open in new window for the permaweb ecosystem.Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 72. Starter Kits  Cooking with the Permaweb
-
-Document Number: 72
-Source: https://cookbook.arweave.net/kits/index.html
-Words: 11
-Quality Score: 0.241
-Extraction Method: defuddle
-Extraction Reason: success_clean_text
-
-Built with
-❤️
-by the Arweave community. Learn more at
-Arweave.org

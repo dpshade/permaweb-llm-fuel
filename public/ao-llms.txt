@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-07-31T17:35:48.035Z
-Total documents: 90
-Total words: 36805
+Generated on: 2025-08-01T12:14:19.933Z
+Total documents: 89
+Total words: 36761
 
 ## Table of Contents
 
@@ -76,28 +76,27 @@ Total words: 36805
 66. [Welcome to ao](https://cookbook_ao.arweave.net/welcome/index.html)
 67. [Begin An Interactive Tutorial](https://cookbook_ao.arweave.net/tutorials/begin/index.html)
 68. [Accessing Data from Arweave with ao](https://cookbook_ao.arweave.net/references/data.html)
-69. [Home](https://cookbook_ao.arweave.net/)
-70. [Expanding the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html)
-71. [Utils](https://cookbook_ao.arweave.net/guides/aos/modules/utils.html)
-72. [Base64](https://cookbook_ao.arweave.net/guides/aos/modules/base64.html)
-73. [Bringing it Together](https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html)
-74. [Staking Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html)
-75. [Interpreting Announcements](https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html)
-76. [Strategic Decisions](https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html)
-77. [Blueprints](https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html)
-78. [Load Lua Files with load filename](https://cookbook_ao.arweave.net/guides/aos/load.html)
-79. [CRED Utils Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html)
-80. [Installing aos](https://cookbook_ao.arweave.net/guides/aos/installing.html)
-81. [Monitoring Cron](https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html)
-82. [Guides](https://cookbook_ao.arweave.net/guides/index.html)
-83. [Concepts](https://cookbook_ao.arweave.net/concepts/index.html)
-84. [Cron Messages](https://cookbook_ao.arweave.net/references/cron.html)
-85. [CLI](https://cookbook_ao.arweave.net/guides/aos/cli.html)
-86. [Modules](https://cookbook_ao.arweave.net/guides/aos/modules/index.html)
-87. [Why Migrate to HyperBEAM](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/why-migrate.html)
-88. [crypto](https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html)
-89. [Release Notes](https://cookbook_ao.arweave.net/releasenotes/index.html)
-90. [Sending an Assignment to a Process](https://cookbook_ao.arweave.net/guides/aoconnect/assign-data.html)
+69. [Expanding the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html)
+70. [Utils](https://cookbook_ao.arweave.net/guides/aos/modules/utils.html)
+71. [Base64](https://cookbook_ao.arweave.net/guides/aos/modules/base64.html)
+72. [Bringing it Together](https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html)
+73. [Staking Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html)
+74. [Interpreting Announcements](https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html)
+75. [Strategic Decisions](https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html)
+76. [Blueprints](https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html)
+77. [Load Lua Files with load filename](https://cookbook_ao.arweave.net/guides/aos/load.html)
+78. [CRED Utils Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html)
+79. [Installing aos](https://cookbook_ao.arweave.net/guides/aos/installing.html)
+80. [Monitoring Cron](https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html)
+81. [Guides](https://cookbook_ao.arweave.net/guides/index.html)
+82. [Concepts](https://cookbook_ao.arweave.net/concepts/index.html)
+83. [Cron Messages](https://cookbook_ao.arweave.net/references/cron.html)
+84. [CLI](https://cookbook_ao.arweave.net/guides/aos/cli.html)
+85. [Modules](https://cookbook_ao.arweave.net/guides/aos/modules/index.html)
+86. [Why Migrate to HyperBEAM](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/why-migrate.html)
+87. [crypto](https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html)
+88. [Release Notes](https://cookbook_ao.arweave.net/releasenotes/index.html)
+89. [Sending an Assignment to a Process](https://cookbook_ao.arweave.net/guides/aoconnect/assign-data.html)
 
 ---
 
@@ -1996,22 +1995,9 @@ end
 
 ---
 
-# 69. Cookbook
+# 69. Expanding the Arena  Cookbook
 
 Document Number: 69
-Source: https://cookbook_ao.arweave.net/
-Words: 44
-Quality Score: 0.433
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Skip to content The hyper parallel computer.Decentralized compute at any scale. Only possible on Arweave.Let's Go!AO-Core Learn about the protocol and standard that powers the AO computer.AO Processes Build smart contracts and autonomous agents using AO Processes.HyperBEAM The future of AO, written in Erlang.
-
----
-
-# 70. Expanding the Arena  Cookbook
-
-Document Number: 70
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html
 Words: 1791
 Quality Score: 0.432
@@ -2209,9 +2195,9 @@ Handlers.add("erAttack", { Action = "erAttack" }, attack) Once you've written yo
 
 ---
 
-# 71. Utils  Cookbook
+# 70. Utils  Cookbook
 
-Document Number: 71
+Document Number: 70
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/utils.html
 Words: 541
 Quality Score: 0.432
@@ -2222,9 +2208,9 @@ Utils A utility library for generic table manipulation and validation. It suppor
 
 ---
 
-# 72. Base64  Cookbook
+# 71. Base64  Cookbook
 
-Document Number: 72
+Document Number: 71
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/base64.html
 Words: 231
 Quality Score: 0.431
@@ -2235,9 +2221,9 @@ Base64 A small base64 module to encode or decode base64 text.Note: It is recomme
 
 ---
 
-# 73. Bringing it Together  Cookbook
+# 72. Bringing it Together  Cookbook
 
-Document Number: 73
+Document Number: 72
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html
 Words: 966
 Quality Score: 0.428
@@ -2381,9 +2367,9 @@ end
 
 ---
 
-# 74. Staking Blueprint  Cookbook
+# 73. Staking Blueprint  Cookbook
 
-Document Number: 74
+Document Number: 73
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html
 Words: 423
 Quality Score: 0.426
@@ -2445,9 +2431,9 @@ Handlers.add("finalize", function (msg) return -1 end, finalizationHandler)
 
 ---
 
-# 75. Interpreting Announcements  Cookbook
+# 74. Interpreting Announcements  Cookbook
 
-Document Number: 75
+Document Number: 74
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html
 Words: 353
 Quality Score: 0.426
@@ -2458,9 +2444,9 @@ Interpreting Announcements Welcome back to your coding journey. It's time to use
 
 ---
 
-# 76. Strategic Decisions  Cookbook
+# 75. Strategic Decisions  Cookbook
 
-Document Number: 76
+Document Number: 75
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html
 Words: 552
 Quality Score: 0.425
@@ -2544,9 +2530,9 @@ end
 
 ---
 
-# 77. Blueprints  Cookbook
+# 76. Blueprints  Cookbook
 
-Document Number: 77
+Document Number: 76
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html
 Words: 38
 Quality Score: 0.424
@@ -2557,9 +2543,9 @@ Skip to content Blueprints Blueprints are predesigned templates that help you qu
 
 ---
 
-# 78. Load Lua Files with load filename  Cookbook
+# 77. Load Lua Files with load filename  Cookbook
 
-Document Number: 78
+Document Number: 77
 Source: https://cookbook_ao.arweave.net/guides/aos/load.html
 Words: 100
 Quality Score: 0.416
@@ -2570,9 +2556,9 @@ Skip to content Load Lua Files with.load This feature allows you to load lua cod
 
 ---
 
-# 79. CRED Utils Blueprint  Cookbook
+# 78. CRED Utils Blueprint  Cookbook
 
-Document Number: 79
+Document Number: 78
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html
 Words: 661
 Quality Score: 0.416
@@ -2683,9 +2669,9 @@ end
 
 ---
 
-# 80. Installing aos  Cookbook
+# 79. Installing aos  Cookbook
 
-Document Number: 80
+Document Number: 79
 Source: https://cookbook_ao.arweave.net/guides/aos/installing.html
 Words: 33
 Quality Score: 0.415
@@ -2696,9 +2682,9 @@ Skip to content Installing aos Installing aos only requires NodeJS - https://nod
 
 ---
 
-# 81. Monitoring Cron  Cookbook
+# 80. Monitoring Cron  Cookbook
 
-Document Number: 81
+Document Number: 80
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html
 Words: 73
 Quality Score: 0.413
@@ -2709,9 +2695,9 @@ Skip to content Monitoring Cron When using cron messages, ao users need a way to
 
 ---
 
-# 82. Guides  Cookbook
+# 81. Guides  Cookbook
 
-Document Number: 82
+Document Number: 81
 Source: https://cookbook_ao.arweave.net/guides/index.html
 Words: 215
 Quality Score: 0.402
@@ -2722,9 +2708,9 @@ Guides This section provides detailed guides and documentation to help you build
 
 ---
 
-# 83. Concepts  Cookbook
+# 82. Concepts  Cookbook
 
-Document Number: 83
+Document Number: 82
 Source: https://cookbook_ao.arweave.net/concepts/index.html
 Words: 200
 Quality Score: 0.397
@@ -2735,9 +2721,9 @@ Skip to content Concepts This section explains the core concepts and architectur
 
 ---
 
-# 84. Cron Messages  Cookbook
+# 83. Cron Messages  Cookbook
 
-Document Number: 84
+Document Number: 83
 Source: https://cookbook_ao.arweave.net/references/cron.html
 Words: 249
 Quality Score: 0.375
@@ -2748,9 +2734,9 @@ Cron Messages ao has the ability to generate messages on a specified interval, t
 
 ---
 
-# 85. CLI  Cookbook
+# 84. CLI  Cookbook
 
-Document Number: 85
+Document Number: 84
 Source: https://cookbook_ao.arweave.net/guides/aos/cli.html
 Words: 178
 Quality Score: 0.368
@@ -2761,9 +2747,9 @@ Skip to content CLI There are some command-line arguments you pass to aos to do 
 
 ---
 
-# 86. Modules  Cookbook
+# 85. Modules  Cookbook
 
-Document Number: 86
+Document Number: 85
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/index.html
 Words: 11
 Quality Score: 0.368
@@ -2774,9 +2760,9 @@ Modules Documentation on all the built-in modules for aos.Available Modules JSON
 
 ---
 
-# 87. Why Migrate to HyperBEAM  Cookbook
+# 86. Why Migrate to HyperBEAM  Cookbook
 
-Document Number: 87
+Document Number: 86
 Source: https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/why-migrate.html
 Words: 137
 Quality Score: 0.367
@@ -2787,9 +2773,9 @@ Skip to content Why Migrate to HyperBEAM?Migrating processes from legacynet to H
 
 ---
 
-# 88. crypto  Cookbook
+# 87. crypto  Cookbook
 
-Document Number: 88
+Document Number: 87
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html
 Words: 2302
 Quality Score: 0.362
@@ -2800,9 +2786,9 @@ crypto Overview The crypto module provides a set of cryptographic primitives lik
 
 ---
 
-# 89. Release Notes  Cookbook
+# 88. Release Notes  Cookbook
 
-Document Number: 89
+Document Number: 88
 Source: https://cookbook_ao.arweave.net/releasenotes/index.html
 Words: 181
 Quality Score: 0.349
@@ -2813,9 +2799,9 @@ Skip to content Release Notes This section provides detailed information about u
 
 ---
 
-# 90. Sending an Assignment to a Process  Cookbook
+# 89. Sending an Assignment to a Process  Cookbook
 
-Document Number: 90
+Document Number: 89
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/assign-data.html
 Words: 202
 Quality Score: 0.324
