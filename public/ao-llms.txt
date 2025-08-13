@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-08-12T12:13:42.362Z
+Generated on: 2025-08-13T12:13:32.408Z
 Total documents: 89
-Total words: 36761
+Total words: 36735
 
 ## Table of Contents
 
@@ -73,22 +73,22 @@ Total words: 36761
 63. [LLMs Documentation](https://cookbook_ao.arweave.net/llms-explanation.html)
 64. [Mechanics of the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/arena-mechanics.html)
 65. [References](https://cookbook_ao.arweave.net/references/index.html)
-66. [Welcome to ao](https://cookbook_ao.arweave.net/welcome/index.html)
-67. [Begin An Interactive Tutorial](https://cookbook_ao.arweave.net/tutorials/begin/index.html)
-68. [Accessing Data from Arweave with ao](https://cookbook_ao.arweave.net/references/data.html)
-69. [Expanding the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html)
-70. [Utils](https://cookbook_ao.arweave.net/guides/aos/modules/utils.html)
-71. [Base64](https://cookbook_ao.arweave.net/guides/aos/modules/base64.html)
-72. [Bringing it Together](https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html)
-73. [Staking Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html)
-74. [Interpreting Announcements](https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html)
-75. [Strategic Decisions](https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html)
-76. [Blueprints](https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html)
-77. [Load Lua Files with load filename](https://cookbook_ao.arweave.net/guides/aos/load.html)
-78. [CRED Utils Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html)
-79. [Installing aos](https://cookbook_ao.arweave.net/guides/aos/installing.html)
-80. [Monitoring Cron](https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html)
-81. [Guides](https://cookbook_ao.arweave.net/guides/index.html)
+66. [Begin An Interactive Tutorial](https://cookbook_ao.arweave.net/tutorials/begin/index.html)
+67. [Accessing Data from Arweave with ao](https://cookbook_ao.arweave.net/references/data.html)
+68. [Expanding the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html)
+69. [Utils](https://cookbook_ao.arweave.net/guides/aos/modules/utils.html)
+70. [Base64](https://cookbook_ao.arweave.net/guides/aos/modules/base64.html)
+71. [Bringing it Together](https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html)
+72. [Staking Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html)
+73. [Interpreting Announcements](https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html)
+74. [Strategic Decisions](https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html)
+75. [Blueprints](https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html)
+76. [Load Lua Files with load filename](https://cookbook_ao.arweave.net/guides/aos/load.html)
+77. [CRED Utils Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html)
+78. [Installing aos](https://cookbook_ao.arweave.net/guides/aos/installing.html)
+79. [Monitoring Cron](https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html)
+80. [Guides](https://cookbook_ao.arweave.net/guides/index.html)
+81. [Welcome to ao](https://cookbook_ao.arweave.net/welcome/index.html)
 82. [Concepts](https://cookbook_ao.arweave.net/concepts/index.html)
 83. [Cron Messages](https://cookbook_ao.arweave.net/references/cron.html)
 84. [CLI](https://cookbook_ao.arweave.net/guides/aos/cli.html)
@@ -1879,22 +1879,9 @@ References This section provides detailed technical references for AO components
 
 ---
 
-# 66. Welcome to ao  Cookbook
+# 66. Begin An Interactive Tutorial  Cookbook
 
 Document Number: 66
-Source: https://cookbook_ao.arweave.net/welcome/index.html
-Words: 210
-Quality Score: 0.444
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Welcome to ao AO is a decentralized compute system where countless parallel processes interact within a single, cohesive environment. Each process operates independently, yet they are seamlessly connected through a native message-passing layer, similar to how websites form the World Wide Web.AO + AOS: The rocket and your rocket fuel.Typically when you use AO, you will interact with it through its operating system: AOS.AOS is an abstraction layer that runs in your processes, making it easy to use the full functionality of the AO computer. In this cookbook, you will learn everything you need to know about getting started with the AO computer using AOS.Mainnet and Legacynet AO Mainnet launched on February 8, 2025, introducing AO Core and enabling onchain computation with payments and relays.AO Legacynet launched on February 27, 2024, providing a fee-free environment for early adopters to experiment with AO’s hyper-parallel architecture.Mainnet Documentation Phase 1 of Mainnet AO Core is now live in relay mode through HyperBEAM nodes, which serve as payment gateways to AO. See the guide below to get started.AO Core Relay Legacynet Documentation These tutorials explore AO Legacynet, covering everything from building chatrooms to developing autonomous, decentralized bots. It’s a great starting point for experimenting with AO’s hyper-parallel architecture.Legacynet Tutorials Further References Guides Concepts References
-
----
-
-# 67. Begin An Interactive Tutorial  Cookbook
-
-Document Number: 67
 Source: https://cookbook_ao.arweave.net/tutorials/begin/index.html
 Words: 130
 Quality Score: 0.443
@@ -1905,9 +1892,9 @@ Skip to content Begin: An Interactive Tutorial In this tutorial series, you'll w
 
 ---
 
-# 68. Accessing Data from Arweave with ao  Cookbook
+# 67. Accessing Data from Arweave with ao  Cookbook
 
-Document Number: 68
+Document Number: 67
 Source: https://cookbook_ao.arweave.net/references/data.html
 Words: 1254
 Quality Score: 0.440
@@ -1995,9 +1982,9 @@ end
 
 ---
 
-# 69. Expanding the Arena  Cookbook
+# 68. Expanding the Arena  Cookbook
 
-Document Number: 69
+Document Number: 68
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html
 Words: 1791
 Quality Score: 0.432
@@ -2195,9 +2182,9 @@ Handlers.add("erAttack", { Action = "erAttack" }, attack) Once you've written yo
 
 ---
 
-# 70. Utils  Cookbook
+# 69. Utils  Cookbook
 
-Document Number: 70
+Document Number: 69
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/utils.html
 Words: 541
 Quality Score: 0.432
@@ -2208,9 +2195,9 @@ Utils A utility library for generic table manipulation and validation. It suppor
 
 ---
 
-# 71. Base64  Cookbook
+# 70. Base64  Cookbook
 
-Document Number: 71
+Document Number: 70
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/base64.html
 Words: 231
 Quality Score: 0.431
@@ -2221,9 +2208,9 @@ Base64 A small base64 module to encode or decode base64 text.Note: It is recomme
 
 ---
 
-# 72. Bringing it Together  Cookbook
+# 71. Bringing it Together  Cookbook
 
-Document Number: 72
+Document Number: 71
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html
 Words: 966
 Quality Score: 0.428
@@ -2367,9 +2354,9 @@ end
 
 ---
 
-# 73. Staking Blueprint  Cookbook
+# 72. Staking Blueprint  Cookbook
 
-Document Number: 73
+Document Number: 72
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html
 Words: 423
 Quality Score: 0.426
@@ -2431,9 +2418,9 @@ Handlers.add("finalize", function (msg) return -1 end, finalizationHandler)
 
 ---
 
-# 74. Interpreting Announcements  Cookbook
+# 73. Interpreting Announcements  Cookbook
 
-Document Number: 74
+Document Number: 73
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html
 Words: 353
 Quality Score: 0.426
@@ -2444,9 +2431,9 @@ Interpreting Announcements Welcome back to your coding journey. It's time to use
 
 ---
 
-# 75. Strategic Decisions  Cookbook
+# 74. Strategic Decisions  Cookbook
 
-Document Number: 75
+Document Number: 74
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html
 Words: 552
 Quality Score: 0.425
@@ -2530,9 +2517,9 @@ end
 
 ---
 
-# 76. Blueprints  Cookbook
+# 75. Blueprints  Cookbook
 
-Document Number: 76
+Document Number: 75
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html
 Words: 38
 Quality Score: 0.424
@@ -2543,9 +2530,9 @@ Skip to content Blueprints Blueprints are predesigned templates that help you qu
 
 ---
 
-# 77. Load Lua Files with load filename  Cookbook
+# 76. Load Lua Files with load filename  Cookbook
 
-Document Number: 77
+Document Number: 76
 Source: https://cookbook_ao.arweave.net/guides/aos/load.html
 Words: 100
 Quality Score: 0.416
@@ -2556,9 +2543,9 @@ Skip to content Load Lua Files with.load This feature allows you to load lua cod
 
 ---
 
-# 78. CRED Utils Blueprint  Cookbook
+# 77. CRED Utils Blueprint  Cookbook
 
-Document Number: 78
+Document Number: 77
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html
 Words: 661
 Quality Score: 0.416
@@ -2669,9 +2656,9 @@ end
 
 ---
 
-# 79. Installing aos  Cookbook
+# 78. Installing aos  Cookbook
 
-Document Number: 79
+Document Number: 78
 Source: https://cookbook_ao.arweave.net/guides/aos/installing.html
 Words: 33
 Quality Score: 0.415
@@ -2682,9 +2669,9 @@ Skip to content Installing aos Installing aos only requires NodeJS - https://nod
 
 ---
 
-# 80. Monitoring Cron  Cookbook
+# 79. Monitoring Cron  Cookbook
 
-Document Number: 80
+Document Number: 79
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html
 Words: 73
 Quality Score: 0.413
@@ -2695,9 +2682,9 @@ Skip to content Monitoring Cron When using cron messages, ao users need a way to
 
 ---
 
-# 81. Guides  Cookbook
+# 80. Guides  Cookbook
 
-Document Number: 81
+Document Number: 80
 Source: https://cookbook_ao.arweave.net/guides/index.html
 Words: 215
 Quality Score: 0.402
@@ -2705,6 +2692,19 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Guides This section provides detailed guides and documentation to help you build and deploy applications on the AO ecosystem. Whether you're creating chatrooms, autonomous bots, or complex decentralized applications, you'll find step-by-step instructions here.Core Technologies Comprehensive guides for AO's main technologies:AOS: Compute on AO - Learn how to use the AO operating system for distributed computing Introduction to AOS - Get started with the AOS environment Installation Guide - Set up AOS on your system CLI Usage - Learn the command-line interface And more...AO Connect: JavaScript Library - Interact with AO using JavaScript Installation - Set up the AO Connect library Connecting to AO - Establish connections Sending Messages - Communicate with processes And more...Development Tools AO Module Builder CLI - Build WebAssembly modules for AO Installation - Install the development CLI Project Setup - Create your first project Building & Deployment - Compile and deploy modules Utilities & Storage Helpful tools and storage solutions:Using WeaveDrive - Store and manage data with WeaveDrive Using SQLite - Integrate SQLite databases with your AO projects Additional Resources Community Resources - Connect with the AO community Release Notes - Stay updated on the latest changes and features Use the sidebar to browse through specific guides. Each guide provides detailed instructions and examples to help you build on AO.
+
+---
+
+# 81. Welcome to ao  Cookbook
+
+Document Number: 81
+Source: https://cookbook_ao.arweave.net/welcome/index.html
+Words: 184
+Quality Score: 0.402
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Skip to content Welcome to ao AO is a decentralized compute system where countless parallel processes interact within a single, cohesive environment. Each process operates independently, yet they are seamlessly connected through a native message-passing layer, similar to how websites form the World Wide Web.AO + AOS: The rocket and your rocket fuel.Typically when you use AO, you will interact with it through its operating system: AOS.AOS is an abstraction layer that runs in your processes, making it easy to use the full functionality of the AO computer. In this cookbook, you will learn everything you need to know about getting started with the AO computer using AOS.Mainnet and Legacynet AO Mainnet launched on February 8, 2025, paving the way for a decentralized, open-access supercomputer directly connected to the internet with HyperBEAM.AO Legacynet launched on February 27, 2024, providing a fee-free environment for early adopters to experiment with AO’s hyper-parallel architecture.Legacynet Documentation These tutorials explore AO Legacynet, covering everything from building chatrooms to developing autonomous, decentralized bots. It’s a great starting point for experimenting with AO’s hyper-parallel architecture.Legacynet Tutorials Further References Guides Concepts References
 
 ---
 
