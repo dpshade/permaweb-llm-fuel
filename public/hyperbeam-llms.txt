@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-08-14T12:13:15.779Z
-Total documents: 36
-Total words: 18401
+Generated on: 2025-08-15T12:12:04.891Z
+Total documents: 37
+Total words: 18942
 
 ## Table of Contents
 
@@ -33,17 +33,18 @@ Total words: 18401
 23. [Glossary](https://hyperbeam.arweave.net/run/reference/glossary.html)
 24. [FAQ](https://hyperbeam.arweave.net/build/reference/faq.html)
 25. [Module dev_patcherl](https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html)
-26. [Home](https://hyperbeam.arweave.net/)
-27. [Glossary](https://hyperbeam.arweave.net/build/reference/glossary.html)
-28. [wasm6410](https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html)
-29. [Module dev_codec_structurederl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html)
-30. [scheduler10](https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html)
-31. [json10](https://hyperbeam.arweave.net/build/devices/json-at-1-0.html)
-32. [Module dev_cronerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html)
-33. [Intro to AO-Core](https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html)
-34. [message10](https://hyperbeam.arweave.net/build/devices/message-at-1-0.html)
-35. [Troubleshooting](https://hyperbeam.arweave.net/run/reference/troubleshooting.html)
-36. [Troubleshooting](https://hyperbeam.arweave.net/build/reference/troubleshooting.html)
+26. [lua53a](https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html)
+27. [Home](https://hyperbeam.arweave.net/)
+28. [Glossary](https://hyperbeam.arweave.net/build/reference/glossary.html)
+29. [wasm6410](https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html)
+30. [Module dev_codec_structurederl](https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html)
+31. [scheduler10](https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html)
+32. [json10](https://hyperbeam.arweave.net/build/devices/json-at-1-0.html)
+33. [Module dev_cronerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html)
+34. [Intro to AO-Core](https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html)
+35. [message10](https://hyperbeam.arweave.net/build/devices/message-at-1-0.html)
+36. [Troubleshooting](https://hyperbeam.arweave.net/run/reference/troubleshooting.html)
+37. [Troubleshooting](https://hyperbeam.arweave.net/build/reference/troubleshooting.html)
 
 ---
 
@@ -882,9 +883,26 @@ request.req_prefix_test/0 * req_prefix_test() -> any() snapshot/3 snapshot(Msg1,
 
 ---
 
-# 26. HyperBEAM - Documentation
+# 26. lua53a - HyperBEAM - Documentation
 
 Document Number: 26
+Source: https://hyperbeam.arweave.net/build/devices/lua-at-5-3a.html
+Words: 541
+Quality Score: 0.461
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Device: ~lua@5.3a Overview The ~lua@5.3a device enables the execution of Lua scripts within the HyperBEAM environment. It provides an isolated sandbox where Lua code can process incoming messages, interact with other devices, and manage state.Core Concept: Lua Script Execution This device allows processes to perform computations defined in Lua scripts. Similar to the ~wasm64@1.0 device, it manages the lifecycle of a Lua execution state associated with the process.Key Functions (Keys) These keys are typically used within an execution stack (managed by dev_stack) for an AO process.init Action: Initializes the Lua environment for the process. It finds and loads the Lua script(s) associated with the process, creates a luerl state, applies sandboxing rules if specified, installs the dev_lua_lib (providing AO-specific functions like ao.send), and stores the initialized state in the process's private area (priv/state).Inputs (Expected in Process Definition or init Message):script: Can be:An Arweave Transaction ID of the Lua script file.A list of script IDs or script message maps.A message map containing the Lua script in its body tag (Content-Type application/lua or text/x-lua).A map where keys are module names and values are script IDs/messages.sandbox: (Optional) Controls Lua sandboxing. Can be true (uses default sandbox list), false (no sandbox), or a map/list specifying functions to disable and their return values.Outputs (Stored in priv/):state: The initialized luerl state handle. (Default Handler - compute) Action: Executes a specific function within the loaded Lua script(s). This is the default handler; if a key matching a Lua function name is called on the device, this logic runs.Inputs (Expected in Process State or Incoming Message):priv/state: The Lua state obtained during init.The key being accessed (used as the default function name).function or body/function: (Optional) Overrides the function name derived from the key.parameters or body/parameters: (Optional) Arguments to pass to the Lua function. Defaults to a list containing the process message, the request message, and an empty options map.Response: The results returned by the Lua function call, typically encoded. The device also updates the priv/state with the Lua state after execution.snapshot Action: Captures the current state of the running Lua environment. luerl state is serializable.Inputs:priv/state.Outputs: A message containing the serialized Lua state, typically tagged with [Prefix]/State.normalize (Internal Helper) Action: Ensures a consistent state representation by loading a Lua state from a snapshot ([Prefix]/State) if a live state (priv/state) isn't already present.functions Action: Returns a list of all globally defined functions within the current Lua state.Inputs:priv/state.Response: A list of function names.Sandboxing The sandbox option in the process definition restricts potentially harmful Lua functions (like file I/O, OS commands, loading arbitrary code). By default (sandbox = true), common dangerous functions are disabled. You can customize the sandbox rules.AO Library (dev_lua_lib) The init function automatically installs a helper library (dev_lua_lib) into the Lua state. This library typically provides functions for interacting with the AO environment from within the Lua script, such as:ao.send({ Target = ..., ... }): To send messages from the process.Access to message tags and data.Usage within dev_stack Like ~wasm64@1.0, the ~lua@5.3a device is typically used within an execution stack.# Example Process Definition Snippet
+Execution-Device: stack@1.0
+Execution-Stack: scheduler@1.0, lua@5.3a
+Script:
+Sandbox: true This device offers a lightweight, integrated scripting capability for AO processes, suitable for a wide range of tasks from simple logic to more complex state management and interactions.lua module
+
+---
+
+# 27. HyperBEAM - Documentation
+
+Document Number: 27
 Source: https://hyperbeam.arweave.net/
 Words: 140
 Quality Score: 0.458
@@ -907,9 +925,9 @@ Sorry, your browser doesn’t support embedded video.
 
 ---
 
-# 27. Glossary - HyperBEAM - Documentation
+# 28. Glossary - HyperBEAM - Documentation
 
-Document Number: 27
+Document Number: 28
 Source: https://hyperbeam.arweave.net/build/reference/glossary.html
 Words: 250
 Quality Score: 0.458
@@ -921,9 +939,9 @@ Developer Glossary This glossary provides definitions for terms and concepts rel
 
 ---
 
-# 28. wasm6410 - HyperBEAM - Documentation
+# 29. wasm6410 - HyperBEAM - Documentation
 
-Document Number: 28
+Document Number: 29
 Source: https://hyperbeam.arweave.net/build/devices/wasm64-at-1-0.html
 Words: 537
 Quality Score: 0.450
@@ -937,9 +955,9 @@ WASM-Image: This setup allows AO processes to leverage the computational power a
 
 ---
 
-# 29. Module dev_codec_structurederl - HyperBEAM - Documentation
+# 30. Module dev_codec_structurederl - HyperBEAM - Documentation
 
-Document Number: 29
+Document Number: 30
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_codec_structured.html
 Words: 338
 Quality Score: 0.448
@@ -961,9 +979,9 @@ is a list.linkify_mode/2 * linkify_mode(Req, Opts) -> any() Discern the linkify 
 
 ---
 
-# 30. scheduler10 - HyperBEAM - Documentation
+# 31. scheduler10 - HyperBEAM - Documentation
 
-Document Number: 30
+Document Number: 31
 Source: https://hyperbeam.arweave.net/build/devices/scheduler-at-1-0.html
 Words: 671
 Quality Score: 0.448
@@ -974,9 +992,9 @@ Device: ~scheduler@1.0 Overview The ~scheduler@1.0 device manages the queueing a
 
 ---
 
-# 31. json10 - HyperBEAM - Documentation
+# 32. json10 - HyperBEAM - Documentation
 
-Document Number: 31
+Document Number: 32
 Source: https://hyperbeam.arweave.net/build/devices/json-at-1-0.html
 Words: 198
 Quality Score: 0.447
@@ -987,9 +1005,9 @@ Device: ~json@1.0 Overview The ~json@1.0 device provides a mechanism to interact
 
 ---
 
-# 32. Module dev_cronerl - HyperBEAM - Documentation
+# 33. Module dev_cronerl - HyperBEAM - Documentation
 
-Document Number: 32
+Document Number: 33
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html
 Words: 300
 Quality Score: 0.441
@@ -1004,9 +1022,9 @@ It is used to increment a counter and update the state of the worker.test_worker
 
 ---
 
-# 33. Intro to AO-Core - HyperBEAM - Documentation
+# 34. Intro to AO-Core - HyperBEAM - Documentation
 
-Document Number: 33
+Document Number: 34
 Source: https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html
 Words: 435
 Quality Score: 0.440
@@ -1017,9 +1035,9 @@ What is AO-Core? Your browser does not support the video tag.AO-Core is a protoc
 
 ---
 
-# 34. message10 - HyperBEAM - Documentation
+# 35. message10 - HyperBEAM - Documentation
 
-Document Number: 34
+Document Number: 35
 Source: https://hyperbeam.arweave.net/build/devices/message-at-1-0.html
 Words: 472
 Quality Score: 0.435
@@ -1030,9 +1048,9 @@ Device: ~message@1.0 Overview The ~message@1.0 device is a fundamental built-in 
 
 ---
 
-# 35. Troubleshooting - HyperBEAM - Documentation
+# 36. Troubleshooting - HyperBEAM - Documentation
 
-Document Number: 35
+Document Number: 36
 Source: https://hyperbeam.arweave.net/run/reference/troubleshooting.html
 Words: 330
 Quality Score: 0.418
@@ -1043,9 +1061,9 @@ Node Operator Troubleshooting Guide This guide addresses common issues you might
 
 ---
 
-# 36. Troubleshooting - HyperBEAM - Documentation
+# 37. Troubleshooting - HyperBEAM - Documentation
 
-Document Number: 36
+Document Number: 37
 Source: https://hyperbeam.arweave.net/build/reference/troubleshooting.html
 Words: 146
 Quality Score: 0.385
