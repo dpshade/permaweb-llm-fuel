@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-08-25T12:14:47.092Z
+Generated on: 2025-08-26T12:14:53.261Z
 Total documents: 142
-Total words: 76503
+Total words: 76698
 
 ## Table of Contents
 
@@ -13,8 +13,8 @@ Total words: 76503
 3. [AO Compute Unit (CU)](https://docs.ar.io/gateways/cu)
 4. [Arns Viewer](https://docs.ar.io/guides/arns-viewer)
 5. [Deploy a dApp with ArDrive web](https://docs.ar.io/guides/ardrive-web)
-6. [Permaweb Deploy](https://docs.ar.io/guides/permaweb-deploy)
-7. [Linux Setup](https://docs.ar.io/gateways/linux-setup)
+6. [Linux Setup](https://docs.ar.io/gateways/linux-setup)
+7. [Permaweb Deploy](https://docs.ar.io/guides/permaweb-deploy)
 8. [Advanced](https://docs.ar.io/gateways/advanced)
 9. [Advanced Config](https://docs.ar.io/gateways/ar-io-node/advanced-config.html)
 10. [Token Faucet](https://docs.ar.io/ar-io-sdk/faucet)
@@ -58,81 +58,81 @@ Total words: 76503
 48. [getGateways](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateways)
 49. [Gateway Architecture](https://docs.ar.io/gateways)
 50. [Wayfinder](https://docs.ar.io/wayfinder)
-51. [Decrease Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake)
-52. [Content Moderation](https://docs.ar.io/gateways/moderation)
-53. [Get Gateway Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates)
-54. [Core](https://docs.ar.io/wayfinder/core)
-55. [accessControlList](https://docs.ar.io/ar-io-sdk/ant-registry/access-control-list)
-56. [Get Demand Factor](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor)
-57. [getRecords](https://docs.ar.io/ar-io-sdk/ants/get-records)
-58. [Set Ticker](https://docs.ar.io/ar-io-sdk/ants/set-ticker)
-59. [upgradeRecord](https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record)
-60. [getInfo](https://docs.ar.io/ar-io-sdk/ants/get-info)
-61. [getState](https://docs.ar.io/ar-io-sdk/ants/get-state)
-62. [The ARIO Token](https://docs.ar.io/token)
-63. [addController](https://docs.ar.io/ar-io-sdk/ants/add-controller)
-64. [transfer](https://docs.ar.io/ar-io-sdk/ants/transfer)
-65. [Get Arns Returned Name](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-name)
-66. [getLatestANTVersion](https://docs.ar.io/ar-io-sdk/ant-versions/get-latest-ant-version)
-67. [Glossary](https://docs.ar.io/glossary)
-68. [Instant Withdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/instant-withdrawal)
-69. [setKeywords](https://docs.ar.io/ar-io-sdk/ants/set-keywords)
-70. [Extend Lease](https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease)
-71. [Redelegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/redelegate-stake)
-72. [Get Delegations](https://docs.ar.io/ar-io-sdk/ario/gateways/get-delegations)
-73. [Release Name](https://docs.ar.io/ar-io-sdk/ants/release-name)
-74. [Reassign Name](https://docs.ar.io/ar-io-sdk/ants/reassign-name)
-75. [Remove Primary Names](https://docs.ar.io/ar-io-sdk/ants/remove-primary-names)
-76. [getANTVersions](https://docs.ar.io/ar-io-sdk/ant-versions/get-ant-versions)
-77. [createVault](https://docs.ar.io/ar-io-sdk/ario/vaults/create-vault)
-78. [Increase Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake)
-79. [Get Redelegation Fee](https://docs.ar.io/ar-io-sdk/ario/gateways/get-redelegation-fee)
-80. [Get Allowed Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-allowed-delegates)
-81. [Gateway ArNS Resolution](https://docs.ar.io/gateways/arns-resolution)
-82. [getCostDetails](https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details)
-83. [Remove Controller](https://docs.ar.io/ar-io-sdk/ants/remove-controller)
-84. [Increase Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake)
-85. [Getting Started](https://docs.ar.io/ar-io-sdk/getting-started)
-86. [getInfo](https://docs.ar.io/ar-io-sdk/ario/general/get-info)
-87. [getHandlers](https://docs.ar.io/ar-io-sdk/ants/get-handlers)
-88. [Update Gateway Settings](https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings)
-89. [getGatewayVaults](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults)
-90. [getArNSReservedNames](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names)
-91. [getGateway](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway)
-92. [Set Logo](https://docs.ar.io/ar-io-sdk/ants/set-logo)
-93. [Managing Primary Names](https://docs.ar.io/guides/primary-names)
-94. [Data Root Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/data-root-verification)
-95. [addVersion](https://docs.ar.io/ar-io-sdk/ant-versions/add-version)
-96. [ARIO Node Filtering System](https://docs.ar.io/gateways/filters)
-97. [Set Name](https://docs.ar.io/ar-io-sdk/ants/set-name)
-98. [Set Description](https://docs.ar.io/ar-io-sdk/ants/set-description)
-99. [Static](https://docs.ar.io/wayfinder/core/gateway-providers/static)
-100. [getCurrentEpoch](https://docs.ar.io/ar-io-sdk/ario/epochs/get-current-epoch)
-101. [removeUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/remove-undername-record)
-102. [getArNSNamesForAddress](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-names-for-address)
-103. [getArNSRecord](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record)
-104. [Normalized Addresses](https://docs.ar.io/concepts/normalized-addresses)
-105. [Leave Network](https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network)
-106. [joinNetwork](https://docs.ar.io/ar-io-sdk/ario/gateways/join-network)
-107. [Get Arns Returned Names](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-names)
-108. [cancelWithdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal)
-109. [Get Primary Name](https://docs.ar.io/ar-io-sdk/ario/primary-names/get-primary-name)
-110. [ARIO Gateway Environment Variables](https://docs.ar.io/gateways/env)
-111. [Optimizing Data Handling in ARIO Gateway](https://docs.ar.io/gateways/optimize-data)
-112. [Increase Undername Limit](https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit)
-113. [removeRecord](https://docs.ar.io/ar-io-sdk/ants/remove-record)
-114. [ANTgetLogo()](https://docs.ar.io/ar-io-sdk/ants/get-logo)
-115. [approvePrimaryNameRequest](https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request)
-116. [Decrease Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake)
-117. [Signature Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/signature-verification)
-118. [Gateway Providers](https://docs.ar.io/wayfinder/core/gateway-providers)
-119. [ARIO SDK Release Notes](https://docs.ar.io/ar-io-sdk/release-notes)
-120. [getAntsForAddress](https://docs.ar.io/ar-io-sdk/ant-registry/get-ants-for-address)
-121. [register](https://docs.ar.io/ar-io-sdk/ant-registry/register)
-122. [Wayfinder Core Release Notes](https://docs.ar.io/wayfinder/release-notes/core)
-123. [ARIO Documentation](https://docs.ar.io/)
-124. [ARIO Documentation](https://docs.ar.io/wayfinder/core/gateway-providers/network)
-125. [ARIO Documentation](https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache)
+51. [Network](https://docs.ar.io/wayfinder/core/gateway-providers/network)
+52. [Decrease Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake)
+53. [Content Moderation](https://docs.ar.io/gateways/moderation)
+54. [Get Gateway Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates)
+55. [Core](https://docs.ar.io/wayfinder/core)
+56. [accessControlList](https://docs.ar.io/ar-io-sdk/ant-registry/access-control-list)
+57. [Get Demand Factor](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor)
+58. [getRecords](https://docs.ar.io/ar-io-sdk/ants/get-records)
+59. [Set Ticker](https://docs.ar.io/ar-io-sdk/ants/set-ticker)
+60. [upgradeRecord](https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record)
+61. [getInfo](https://docs.ar.io/ar-io-sdk/ants/get-info)
+62. [getState](https://docs.ar.io/ar-io-sdk/ants/get-state)
+63. [The ARIO Token](https://docs.ar.io/token)
+64. [addController](https://docs.ar.io/ar-io-sdk/ants/add-controller)
+65. [transfer](https://docs.ar.io/ar-io-sdk/ants/transfer)
+66. [Get Arns Returned Name](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-name)
+67. [getLatestANTVersion](https://docs.ar.io/ar-io-sdk/ant-versions/get-latest-ant-version)
+68. [Glossary](https://docs.ar.io/glossary)
+69. [Instant Withdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/instant-withdrawal)
+70. [setKeywords](https://docs.ar.io/ar-io-sdk/ants/set-keywords)
+71. [Extend Lease](https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease)
+72. [Redelegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/redelegate-stake)
+73. [Get Delegations](https://docs.ar.io/ar-io-sdk/ario/gateways/get-delegations)
+74. [Release Name](https://docs.ar.io/ar-io-sdk/ants/release-name)
+75. [Reassign Name](https://docs.ar.io/ar-io-sdk/ants/reassign-name)
+76. [Remove Primary Names](https://docs.ar.io/ar-io-sdk/ants/remove-primary-names)
+77. [getANTVersions](https://docs.ar.io/ar-io-sdk/ant-versions/get-ant-versions)
+78. [createVault](https://docs.ar.io/ar-io-sdk/ario/vaults/create-vault)
+79. [Increase Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake)
+80. [Simple Cache](https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache)
+81. [Get Redelegation Fee](https://docs.ar.io/ar-io-sdk/ario/gateways/get-redelegation-fee)
+82. [Get Allowed Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-allowed-delegates)
+83. [Gateway ArNS Resolution](https://docs.ar.io/gateways/arns-resolution)
+84. [getCostDetails](https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details)
+85. [Remove Controller](https://docs.ar.io/ar-io-sdk/ants/remove-controller)
+86. [Increase Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake)
+87. [Getting Started](https://docs.ar.io/ar-io-sdk/getting-started)
+88. [getInfo](https://docs.ar.io/ar-io-sdk/ario/general/get-info)
+89. [getHandlers](https://docs.ar.io/ar-io-sdk/ants/get-handlers)
+90. [Update Gateway Settings](https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings)
+91. [getGatewayVaults](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults)
+92. [getArNSReservedNames](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names)
+93. [getGateway](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway)
+94. [Set Logo](https://docs.ar.io/ar-io-sdk/ants/set-logo)
+95. [Managing Primary Names](https://docs.ar.io/guides/primary-names)
+96. [Data Root Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/data-root-verification)
+97. [addVersion](https://docs.ar.io/ar-io-sdk/ant-versions/add-version)
+98. [ARIO Node Filtering System](https://docs.ar.io/gateways/filters)
+99. [Set Name](https://docs.ar.io/ar-io-sdk/ants/set-name)
+100. [Set Description](https://docs.ar.io/ar-io-sdk/ants/set-description)
+101. [Static](https://docs.ar.io/wayfinder/core/gateway-providers/static)
+102. [getCurrentEpoch](https://docs.ar.io/ar-io-sdk/ario/epochs/get-current-epoch)
+103. [removeUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/remove-undername-record)
+104. [getArNSNamesForAddress](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-names-for-address)
+105. [getArNSRecord](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record)
+106. [Normalized Addresses](https://docs.ar.io/concepts/normalized-addresses)
+107. [Leave Network](https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network)
+108. [joinNetwork](https://docs.ar.io/ar-io-sdk/ario/gateways/join-network)
+109. [Get Arns Returned Names](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-names)
+110. [cancelWithdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal)
+111. [Get Primary Name](https://docs.ar.io/ar-io-sdk/ario/primary-names/get-primary-name)
+112. [ARIO Gateway Environment Variables](https://docs.ar.io/gateways/env)
+113. [Optimizing Data Handling in ARIO Gateway](https://docs.ar.io/gateways/optimize-data)
+114. [Increase Undername Limit](https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit)
+115. [removeRecord](https://docs.ar.io/ar-io-sdk/ants/remove-record)
+116. [ANTgetLogo()](https://docs.ar.io/ar-io-sdk/ants/get-logo)
+117. [approvePrimaryNameRequest](https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request)
+118. [Decrease Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake)
+119. [Signature Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/signature-verification)
+120. [Gateway Providers](https://docs.ar.io/wayfinder/core/gateway-providers)
+121. [ARIO SDK Release Notes](https://docs.ar.io/ar-io-sdk/release-notes)
+122. [getAntsForAddress](https://docs.ar.io/ar-io-sdk/ant-registry/get-ants-for-address)
+123. [register](https://docs.ar.io/ar-io-sdk/ant-registry/register)
+124. [Wayfinder Core Release Notes](https://docs.ar.io/wayfinder/release-notes/core)
+125. [ARIO Documentation](https://docs.ar.io/)
 126. [ANTs on Bazar](https://docs.ar.io/guides/ants-on-bazar)
 127. [Verification Strategies](https://docs.ar.io/wayfinder/core/verification-strategies)
 128. [Gateway Apex Domain Content Resolution](https://docs.ar.io/gateways/apex)
@@ -667,6 +667,21 @@ your manifest if you want to assign one. If you do not, you can purchase one fro
 # 6. ARIO Docs
 
 Document Number: 6
+Source: https://docs.ar.io/gateways/linux-setup
+Words: 1272
+Quality Score: 0.554
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Linux Installation Instructions Overview The following instructions will guide you through the process of installing the AR.IO node on a Linux machine, specifically Ubuntu 22.04.3 desktop on a home computer. Actual steps may differ slightly on different versions or distributions. This guide will cover how to set up your node, point a domain name to your home network, and create an nginx server for routing traffic to your node. No prior coding experience is required.System Requirements Please note, The AR.IO Node software is still in development and testing, all system requirements are subject to change.External storage devices should be formatted as ext4.Minimum requirements The hardware specifications listed below represent the minimum system requirements at which the AR.IO Node has been tested. While your Node may still operate on systems with lesser specifications, please note that AR.IO cannot guarantee performance or functionality under those conditions. Use below-minimum hardware at your own risk.4 core CPU 4 GB Ram 500 GB storage (SSD recommended) Stable 50 Mbps internet connection Recommended 12 core CPU 32 GB Ram 2 TB SSD storage Stable 1 Gbps internet connection Install Packages If you would like to quickly install all required and suggested packages, you can run the following 4 commands in your terminal, and skip to installing the Node.Required packages Update your software:Enable your firewall and open necessary ports:Install nginx:Install git:Install Docker:Test Docker installation:Install Certbot:Suggested packages These packages are not required to run a node in its basic form. However, they will become necessary for more advanced usage or customization.Install ssh (optional, for remote access to your Linux machine):Install NVM (Node Version Manager):Install Node.js:Install Yarn:Install build tools:Install SQLite:Install the Node Navigate to the desired installation location:NOTE: Your indexing databases will be created in the project directory unless otherwise specified in your.env file, not your Docker environment. So, if you are using an external hard drive, you should install the node directly to that external drive.Clone the ar-io-node repository and navigate into it:Create an environment file:Paste the following content into the new file, replacing with the domain address you are using to access the node, and with the public address of your Arweave wallet, save, and exit:The GRAPHQL values set the proxy for GQL queries to arweave.net, You may use any available gateway that supports GQL queries. If omitted, your node can support GQL queries on locally indexed transactions, but only L1 transactions are indexed by default.START_HEIGHT is an optional line. It sets the block number where your node will start downloading and indexing transactions headers. Omitting this line will begin indexing at block 0.RUN_OBSERVER turns on the Observer to generate Network Compliance Reports. This is required for full participation in the AR.IO Network. Set to false to run your gateway without Observer.ARNS_ROOT_HOST sets the starting point for resolving ARNS names, which are accessed as a subdomain of a gateway. It should be set to the url you are pointing to your node, excluding any protocol prefix. For example, use node-ar.io and not https://node-ar.io. If you are using a subdomain to access your node and do not set this value, the node will not understand incoming requests.AR_IO_WALLET is optional, and sets the wallet you want associated with your Gateway. An associated wallet is required to join the AR.IO network.OBSERVER_WALLET is the public address of the wallet used to sign Observer transactions. This is required for Observer to run, but may be omitted if you are running a gateway outside of the AR.IO network and do not plan to run Observer. You will need to supply the keyfile to this wallet in the next step.More advanced configuration options can be found here Supply Your Observer Wallet Keyfile:If you are running Observer, you need to provide a wallet keyfile in order to sign report upload transactions. The keyfile must be saved in the wallets directory in the root of the repository. Name the file .json, replacing "" with the public address of the wallet. This should match your OBSERVER_WALLET environmental variable. Arweave wallets and obtaining keyfiles here Payment For Observer Report Uploads By default, the Observer will use Turbo Credits to pay for uploading reports to Arweave. This allows reports under 100kb to be uploaded for free, but larger reports will fail if the Observer wallet does not contain Credits. Including REPORT_DATA_SINK=arweave in your .env file will configure the Observer to use AR tokens instead of Turbo Credits, without any free limit.Start the Docker container:Explanation of flags:up: Start the Docker containers.-d: Run the containers as background processes (detached mode).NOTE: Effective with Release #3, it is no longer required to include the --build flag when starting your gateway. Docker will automatically build using the image specified in the docker-compose.yaml file.To ensure your node is running correctly, follow the next two steps.Check the logs for errors:Explanation of flags:-f: Follow the logs in real time.--tail=0: Ignore all logs from before running the command.NOTE: Previous versions of these instructions advised checking a gateway's ability to fetch content using localhost. Subsequent security updates prevent this without first unsetting ARNS_ROOT_HOST in your .env.Set up Networking The following guide assumes you are running your node on a local home computer.Register a Domain Name:
+Choose a domain registrar (e.g., Namecheap) to register a domain name.Point the Domain at Your Home Internet:Obtain your public IP address by visiting https://www.whatsmyip.org/ or running:Create an A record with your registrar for your domain and wildcard subdomains, using your public IP address. For example, if your domain is "ar.io," create a record for "ar.io" and "*.ar.io." Set up Port Forwarding:Obtain the local IP address of the machine where the node is installed by running:If there are multiple lines of output, choose the one starting with 192 (usually).Enter your router's IP address in the address bar of a browser (e.g., 192.168.0.1).If you're unsure of your router's IP address, consult your router's documentation or contact your Internet Service Provider (ISP).Navigate to the port forwarding settings in your router configuration.The exact steps may vary depending on your router model. Consult your router's documentation or support for detailed steps.Set up port forwarding rules to forward incoming traffic on ports 80 (HTTP) and 443 (HTTPS) to the same ports on the machine running your node. You may also forward port 22 if you want to enable SSH access to your node from outside your home network.Create SSL (HTTPS) Certificates for Your Domain:Follow the instructions to create the required TXT records for your domain in your chosen registrar. Use a DNS checker to verify the propagation of each record.Email Notifications Previous versions of these instructions advised providing an email address to Certbot. As of June 2025, LetsEncrypt (the certificate authority used by Certbot) no longer supports email notifications.IMPORTANT: Wild card subdomain (*..com) cannot auto renew without obtaining an API key from your domain registrar. Not all registrars offer this. Certbot certificates expire every 90 days. Be sure to consult with your chosen registrar to see if they offer an API for this purpose, or run the above command again to renew your certificates. You will receive an email warning at the address you provided to remind you when it is time to renew.Configure nginx:
+nginx is a free and open-source web server and reverse proxy server. It will handle incoming traffic, provide SSL certificates, and redirect the traffic to your node.Open the default configuration file:Replace the file's contents with the following configuration (replace "" when necessary):Save and exit nano.Test the configuration:If there are no errors, restart nginx:Your node should now be running and connected to the internet. Test it by entering https:///3lyxgbgEvqNSvJrTX2J7CfRychUD5KClFhhVLyTPNCQ in your browser.Note: If you encounter any issues during the installation process, please seek assistance from the AR.IO community.
+
+---
+
+# 7. ARIO Docs
+
+Document Number: 7
 Source: https://docs.ar.io/guides/permaweb-deploy
 Words: 1059
 Quality Score: 0.554
@@ -674,21 +689,6 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Deploy a Website or Application Overview With the growing popularity of permanently deployed apps, hosted on Arweave, along with the growing list of tools offered by AR.IO, several methods have been developed to automate the process of deploying a website and updating the ArNS name pointed at it. A particularly useful tool for this is permaweb-deploy from Forward Research.permaweb-deploy is a cli tool that handles uploading a build folder to Arweave using Turbo, creating a manifest, and then updating an ArNS name to point at the new manifest. It being a cli tool makes it very easy to incorporate into a github actions flow. Setting up an automated deployment with permaweb-deploy is simple, but does require a few steps.ENV Security Before automating your deployments, be sure to build your app and check for exposed environmental secrets. Some app frameworks or build flows will build your app with the secrets exposed, and if you are using a tool like permaweb-deploy, those secrets will be uploaded to Arweave. Since the permaweb is permanent, this could pose a security risk, especially with a copy of your wallet keyfile required for the deployment automation.Getting Started Installing package permaweb-deploy is an npm package, and must be installed in any project before it can be used. If you are using npm, you can install the package with the below command:If you prefer yarn for your package installations, the process is slightly more involved. permaweb-deploy is not designed for installation with yarn, so you must provide the additional argument ignore-engines in order to skip over the yarn version error you would normally get with installation. There are two methods for doing so:Directly in the install command In a .yarnc file You can provide a file, named .yarnc in the same directory as your package.json in order to assign specific instructions to all of your yarn commands. Creating a .yarnc file with the line will have the same effect as providing the flag directly in your yarn command Adding a Deploy Script The simplest way to utilize the permaweb-deploy tool is to build it into a script in your package.json. Here you will provide all of the variables that permaweb-deploy needs in order to function properly, as well as ensure that your app is statically built before being uploaded.Be sure to replace with the name of the ArNS name you want to deploy to.The above example shows a build script for a vuepress app, which will build the app into a static folder for deployment, and a deploy script which runs build and then permaweb-deploy. Your build script will look different depending on the framework you are using, but most will provide that for you when you create your app.The permaweb-deploy command has two required arguments:--deploy-folder This is the relative path (from your package.json) to the build folder you want to upload. In a vuepress app, that will be ./src/.vuepress/dist unless you manually specify otherwise in your vuepress configuration. It will be different depending on your chosen framework and if you have modified the default location.--arns-name This is the ArNS name you want to deploy to. It must be an ArNS name that the wallet used to authenticate has ownership or controller privileges over, otherwise the deployment will fail at authentication in the ao process that controls the ArNS name.Undernames The --arns-name flag MUST be the top level name, not and undername. That is, if you want to deploy to undername_arnsname you must set --arns-name arnsname and not --arns-name undername_arnsname.There is the additional, optional flag --undername. If you want to deploy your app to an undername on an ArNS name, provide that name with this flag.--arns-name arnsname --undername undername Testnet Permaweb-deploy supports both Mainnet and Testnet deployments. By default, it will deploy to Mainnet. To deploy to Testnet, you can provide the --ario-process flag as "testnet". If not provided, deployments will default to Mainnet.Providing Arweave Wallet Keys While using permaweb-deploy, you will be uploading data to Arweave using Turbo, as well as performing protected actions on an Arweave Name Token. Because of this, you will need to provide the keys to an Arweave wallet in order for the actions to be successful. The wallet must contain Turbo Credits to pay for the upload, and it must either be a controller or the owner of the ArNS name you are trying to update.permaweb-deploy requires your wallet keyfile be encoded in base64 format. You can convert a local keyfile to base64, and copy the new value to your clipboard by using one of the below commands, depending on your operating system:Linux Mac Windows (CMD) Be sure to replace wallet.json with the path to your chosen wallet keyfile. Once you have this value saved to your clipboard, you can move on to the next step.Create Github Secrets Anyone who has your wallet keyfile (including the base64 formatted keyfile) has full control over your wallet and any of its assets. Because of this, you do not want to include it directly in your package.json script. Instead, keep the value safe by storing it in a github secret. You will create the secrets in the settings tab on your github repo, and the secrets will act as environmental variables in the github actions workflow.You will need to create 1 secret DEPLOY_KEY: This is the base64 encoded version of your Arweave wallet keyfile.Create Action Workflow Github Actions allow you to perform specific actions whenever you push code to github. They are handled by using .yaml files provided in /.github/workflows.To get started, create a new file named deploy.yaml in the workflows directory, then paste the below inside of it:The above tells github to perform these actions when you push new code to the branch main It then sets up a vps with nodejs v 20. When that is complete, it installs dependencies for your project using npm (You will need to add a step to install yarn if that is your preferred package manager), and runs your deploy script, which builds your static folder and then runs permaweb-deploy. It also loads your github secrets into environmental variables that can be used by your deploy script.Deploying App With the above setup complete, the only thing you need to do to deploy a new version of a permasite app to Arweave is push the updated code to branch main on github. Everything else is fully automated.
-
----
-
-# 7. ARIO Docs
-
-Document Number: 7
-Source: https://docs.ar.io/gateways/linux-setup
-Words: 1273
-Quality Score: 0.554
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Linux Installation Instructions Overview The following instructions will guide you through the process of installing the AR.IO node on a Linux machine, specifically Ubuntu 22.04.3 desktop on a home computer. Actual steps may differ slightly on different versions or distributions. This guide will cover how to set up your node, point a domain name to your home network, and create an nginx server for routing traffic to your node. No prior coding experience is required.System Requirements Please note, The AR.IO Node software is still in development and testing, all system requirements are subject to change.External storage devices should be formatted as ext4.Minimum requirements The hardware specifications listed below represent the minimum system requirements at which the AR.IO Node has been tested. While your Node may still operate on systems with lesser specifications, please note that AR.IO cannot guarantee performance or functionality under those conditions. Use below-minimum hardware at your own risk.4 core CPU 4 GB Ram 500 GB storage (SSD recommended) Stable 50 Mbps internet connection Recommended 12 core CPU 32 GB Ram 2 TB SSD storage Stable 1 Gbps internet connection Install Packages If you would like to quickly install all required and suggested packages, you can run the following 4 commands in your terminal, and skip to installing the Node.Required packages Update your software:Enable your firewall and open necessary ports:Install nginx:Install git:Install Docker:Test Docker installation:Install Certbot:Suggested packages These packages are not required to run a node in its basic form. However, they will become necessary for more advanced usage or customization.Install ssh (optional, for remote access to your Linux machine):Install NVM (Node Version Manager):Install Node.js:Install Yarn:Install build tools:Install SQLite:Install the Node Navigate to the desired installation location:NOTE: Your indexing databases will be created in the project directory unless otherwise specified in your.env file, not your Docker environment. So, if you are using an external hard drive, you should install the node directly to that external drive.Clone the ar-io-node repository and navigate into it:Create an environment file:Paste the following content into the new file, replacing with the domain address you are using to access the node, and with the public address of your Arweave wallet, save, and exit:The GRAPHQL values set the proxy for GQL queries to arweave.net, You may use any available gateway that supports GQL queries. If omitted, your node can support GQL queries on locally indexed transactions, but only L1 transactions are indexed by default.START_HEIGHT is an optional line. It sets the block number where your node will start downloading and indexing transactions headers. Omitting this line will begin indexing at block 0.RUN_OBSERVER turns on the Observer to generate Network Compliance Reports. This is required for full participation in the AR.IO Network. Set to false to run your gateway without Observer.ARNS_ROOT_HOST sets the starting point for resolving ARNS names, which are accessed as a subdomain of a gateway. It should be set to the url you are pointing to your node, excluding any protocol prefix. For example, use node-ar.io and not https://node-ar.io. If you are using a subdomain to access your node and do not set this value, the node will not understand incoming requests.AR_IO_WALLET is optional, and sets the wallet you want associated with your Gateway. An associated wallet is required to join the AR.IO network.OBSERVER_WALLET is the public address of the wallet used to sign Observer transactions. This is required for Observer to run, but may be omitted if you are running a gateway outside of the AR.IO network and do not plan to run Observer. You will need to supply the keyfile to this wallet in the next step.More advanced configuration options can be found at ar.io/docs Supply Your Observer Wallet Keyfile:If you are running Observer, you need to provide a wallet keyfile in order to sign report upload transactions. The keyfile must be saved in the wallets directory in the root of the repository. Name the file .json, replacing "" with the public address of the wallet. This should match your OBSERVER_WALLET environmental variable. Arweave wallets and obtaining keyfiles here Payment For Observer Report Uploads By default, the Observer will use Turbo Credits to pay for uploading reports to Arweave. This allows reports under 100kb to be uploaded for free, but larger reports will fail if the Observer wallet does not contain Credits. Including REPORT_DATA_SINK=arweave in your .env file will configure the Observer to use AR tokens instead of Turbo Credits, without any free limit.Start the Docker container:Explanation of flags:up: Start the Docker containers.-d: Run the containers as background processes (detached mode).NOTE: Effective with Release #3, it is no longer required to include the --build flag when starting your gateway. Docker will automatically build using the image specified in the docker-compose.yaml file.To ensure your node is running correctly, follow the next two steps.Check the logs for errors:Explanation of flags:-f: Follow the logs in real time.--tail=0: Ignore all logs from before running the command.NOTE: Previous versions of these instructions advised checking a gateway's ability to fetch content using localhost. Subsequent security updates prevent this without first unsetting ARNS_ROOT_HOST in your .env.Set up Networking The following guide assumes you are running your node on a local home computer.Register a Domain Name:
-Choose a domain registrar (e.g., Namecheap) to register a domain name.Point the Domain at Your Home Internet:Obtain your public IP address by visiting https://www.whatsmyip.org/ or running:Create an A record with your registrar for your domain and wildcard subdomains, using your public IP address. For example, if your domain is "ar.io," create a record for "ar.io" and "*.ar.io." Set up Port Forwarding:Obtain the local IP address of the machine where the node is installed by running:If there are multiple lines of output, choose the one starting with 192 (usually).Enter your router's IP address in the address bar of a browser (e.g., 192.168.0.1).If you're unsure of your router's IP address, consult your router's documentation or contact your Internet Service Provider (ISP).Navigate to the port forwarding settings in your router configuration.The exact steps may vary depending on your router model. Consult your router's documentation or support for detailed steps.Set up port forwarding rules to forward incoming traffic on ports 80 (HTTP) and 443 (HTTPS) to the same ports on the machine running your node. You may also forward port 22 if you want to enable SSH access to your node from outside your home network.Create SSL (HTTPS) Certificates for Your Domain:Follow the instructions to create the required TXT records for your domain in your chosen registrar. Use a DNS checker to verify the propagation of each record.Email Notifications Previous versions of these instructions advised providing an email address to Certbot. As of June 2025, LetsEncrypt (the certificate authority used by Certbot) no longer supports email notifications.IMPORTANT: Wild card subdomain (*..com) cannot auto renew without obtaining an API key from your domain registrar. Not all registrars offer this. Certbot certificates expire every 90 days. Be sure to consult with your chosen registrar to see if they offer an API for this purpose, or run the above command again to renew your certificates. You will receive an email warning at the address you provided to remind you when it is time to renew.Configure nginx:
-nginx is a free and open-source web server and reverse proxy server. It will handle incoming traffic, provide SSL certificates, and redirect the traffic to your node.Open the default configuration file:Replace the file's contents with the following configuration (replace "" when necessary):Save and exit nano.Test the configuration:If there are no errors, restart nginx:Your node should now be running and connected to the internet. Test it by entering https:///3lyxgbgEvqNSvJrTX2J7CfRychUD5KClFhhVLyTPNCQ in your browser.Note: If you encounter any issues during the installation process, please seek assistance from the AR.IO community.
 
 ---
 
@@ -1332,12 +1332,12 @@ that accepts Honeycomb headers. The dataset is currently fixed to wayfinder-core
 
 Document Number: 28
 Source: https://docs.ar.io/gateways/release-notes
-Words: 8763
+Words: 8916
 Quality Score: 0.504
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-AR.IO Release Notes Overview Welcome to the documentation page for the AR.IO gateway release notes. Here, you will find detailed information about each version of the AR.IO gateway, including the enhancements, bug fixes, and any other changes introduced in every release. This page serves as a comprehensive resource to keep you informed about the latest developments and updates in the AR.IO gateway. For those interested in exploring the source code, each release's code is readily accessible at our GitHub repository: AR.IO gateway change logs. Stay updated with the continuous improvements and advancements in the AR.IO gateway by referring to this page for all release-related information.[Release 46] - 2025-08-18 This is a recommended release that introduces AR.IO network chunk retrieval with cryptographic validation and enhanced observability. Gateway operators can now retrieve chunks directly from AR.IO peers with the same security guarantees as Arweave network chunks, significantly improving chunk caching and retrieval performance.Added Added AR.IO network chunk source enabling chunk retrieval from AR.IO peers with weighted peer selection, retry logic, and cryptographic validation to prevent serving of corrupted or malicious data.Added comprehensive OpenTelemetry tracing for chunk retrieval operations providing visibility into performance, cache behavior, and source attribution across the entire pipeline.Added HEAD request support to /chunk/{offset} endpoint with ETag headers for efficient caching and conditional request handling with If-None-Match support.Added chunk source headers for traceability: X-AR-IO-Chunk-Source-Type indicating data source, X-AR-IO-Chunk-Host with peer hostname, and X-Cache for cache status.Added RFC 9530 Content-Digest header support for standard-compliant content integrity verification in data and chunk responses.Added configurable composite chunk sources with parallelism control via CHUNK_DATA_RETRIEVAL_ORDER and CHUNK_METADATA_RETRIEVAL_ORDER environment variables supporting comma-separated source ordering.Added OpenAPI documentation for /ar-io/peers endpoint.Changed Renamed ar-io-peers to ar-io-network as the preferred configuration name while maintaining backwards compatibility.Enhanced /ar-io/peers endpoint to include both data and chunk weights for AR.IO gateway peers.Fixed Fixed ArNS custom 404 pages to prevent incorrect ArNS headers from being propagated to other gateways.[Release 45] - 2025-08-11 This is an optional release that enhances chunk broadcasting with improved preferred peer management, adds a hash-based partitioning filter for distributed data processing, fixes ArNS basename cache refresh issues, and includes comprehensive documentation improvements with a new glossary of AR.IO Node terminology.Added Added hash partitioning filter (MatchHashPartition) for distributing transaction and data item processing across multiple nodes with configurable partition ranges.Added comprehensive glossary documentation covering AR.IO Node terminology, concepts, and architectural components.Changed Improved chunk broadcasting preferred peer management with doubled default per-node queue depth threshold and ensured preferred peers are always prioritized first.Enhanced circuit breaker metrics with more detailed labels for better monitoring of data source failures.Improved ArNS resolution to properly propagate 404 errors from trusted gateway resolution (a more complete fix is coming in the next release).Expanded OTEL tracing to include ArNS cache operations for improved observability of name resolution and cache hydration.Fixed Fixed unreliable ArNS basename cache refreshes by adding retry logic for pagination failures and replacing p-debounce with timestamp-based debouncing for more predictable behavior.Fixed undefined headers handling in data requests.Fixed invalid cache hits by ensuring base64url encoded IDs are properly validated before use.Fixed routes data handling for undefined IDs in validity checks.[Release 44] - 2025-07-28 This is a recommended release that introduces efficient range request support for contiguous data retrieval from chunks, adds bundle metadata columns with offset indexing to improve offset availability throughout the network, enhances Merkle path parsing compatibility, and includes comprehensive documentation for offsets and Merkle paths.Added Added efficient range request support for chunk data retrieval, enabling optimized verifiable contiguous data fetching directly from Arweave nodes.Added bundle metadata columns to data.db to improve offset availability across the gateway network.Added OTEL (OpenTelemetry) tracing support for chunk POST operations, providing better observability for chunk broadcasting performance.Added OTEL environment variables to docker-compose.yaml for easier configuration of distributed tracing.Added comprehensive Arweave Merkle tree structure documentation detailing the data organization and validation rules.Added detailed documentation explaining Arweave transaction and chunk offset calculations.Added merkle-path-parser with full Arweave compatibility for improved Merkle proof validation.Changed Implemented promise-based chunk caching system replacing the previous WeakMap implementation, improving memory efficiency and cache reliability.Extended CompositeChunkSource to implement all chunk interfaces, providing a more unified chunk data access layer.[Release 43] - 2025-07-21 This is a recommended release that enables data verification by default for data items linked to ArNS names, improves chunk broadcasting efficiency, and adds automatic chunk data cache cleanup.Added Added automatic chunk data cache cleanup functionality with configurable retention period. Chunks are now automatically removed after 4 hours by default (configurable via CHUNK_DATA_CACHE_CLEANUP_THRESHOLD). The cleanup can be disabled by setting ENABLE_CHUNK_DATA_CACHE_CLEANUP=false. This helps manage disk space usage while maintaining cache performance benefits.Added demand-driven opt-out background verification for ArNS data. When ArNS names are requested, the system now proactively verifies the underlying data asynchronously in the background by unbundling verified chunk data retrieved directly from Arweave nodes. This ensures ArNS-served content is prioritized for verification, improving data integrity guarantees for frequently accessed named content.Changed Simplified chunk data storage by removing the dual-storage approach (by-hash and by-dataroot with symlinks). Chunks are now stored directly by data root only, reducing complexity and improving performance.Revamped chunk broadcasting architecture from 3-tier system to unified peer-based approach. Chunk broadcasting now uses individual fastq queues per peer with configurable concurrency and queue depth protection. Added support for preferred chunk POST peers via PREFERRED_CHUNK_POST_URLS environment variable. Configuration defaults have been optimized: CHUNK_POST_PEER_CONCURRENCY now defaults to match CHUNK_POST_MIN_SUCCESS_COUNT (3) to avoid over-broadcasting, and CHUNK_POST_PER_NODE_CONCURRENCY defaults to match CHUNK_POST_QUEUE_DEPTH_THRESHOLD (10) for consistent per-node load management. This change improves broadcast reliability and performance while simplifying the codebase by removing circuit breakers and tier-based logic.Modified DataVerificationWorker to ensure data item IDs (not just root IDs) have their retry count incremented, preventing IDs from being stuck without retry attempts. This improves the reliability of the data verification process.Fixed Fixed experiment bash Parquet export script generating filenames with count_star() instead of actual row counts for blocks and tags files. The script now correctly uses the -noheader flag when retrieving counts for filename generation.Fixed missing directory existence checks in FsCleanupWorker to prevent errors when attempting to scan non-existent directories during filesystem cleanup operations.[Release 42] - 2025-07-14 This is an optional release that improves peer request traceability, adds HyperBEAM URL support, and includes draft AI-generated technical documentation.Added Added support for optional HyperBEAM URL configuration via AO_ANT_HYPERBEAM_URL environment variable. In the future this allows ANT processes to use HyperBEAM nodes for caching and serving state, reducing pressure on compute units for simple read requests.Added AI-generated technical documentation covering AR.IO gateway architecture, data retrieval, Arweave connectivity, ArNS name resolution system, centralization analysis, and database architecture. These guides in docs/drafts/ are generally correct but should not be considered authoritative.Added origin and release information to query string parameters in outbound requests to both peer gateways and trusted gateways. Data requests now include ar-io-hops, ar-io-origin, ar-io-origin-release, ar-io-arns-record, and ar-io-arns-basename as query parameters, improving network observability and request tracing across the entire gateway network.Changed Implemented X-AR-IO header initialization for outbound peer requests while removing x-ar-io-origin and x-ar-io-origin-node-release headers from responses. This change maintains necessary header functionality for peer communication while reducing unnecessary header overhead in responses.Updated @ar.io/sdk dependency to support optional HyperBEAM URL functionality.[Release 41] - 2025-06-30 Added Added preferred chunk GET node URLs configuration via PREFERRED_CHUNK_GET_NODE_URLS environment variable to enable chunk-specific peer prioritization. Preferred URLs receive a weight of 100 for prioritization and the system selects 10 peers per attempt by default.Added hash validation for peer data fetching by including X-AR-IO-Expected-Digest header in peer requests when hash is available, validating peer responses against expected hash, and immediately rejecting mismatched data.Added DOCKER_NETWORK_NAME environment variable to configure the Docker network name used by Docker Compose.Added draft guide for running a community gateway.Added draft data verification architecture document.Changed Removed trusted node fallback for chunk retrieval. Chunks are now retrieved exclusively from peers, with the retry count increased from 3 to 50 to ensure reliability without the trusted node fallback.Fixed Fixed inverted logic preventing symlink creation in FsChunkDataStore.Fixed Content-Length header for range requests and 304 responses, properly setting header for single and multipart range requests and removing entity headers from 304 Not Modified responses per RFC 7232.Fixed MaxListenersExceeded warnings by adding setMaxListeners to read-through data cache.Fixed potential memory leaks in read-through data cache by using once instead of on for error and end event listeners.[Release 40] - 2025-06-23 This is an optional release that primarily improves caching when data is fetched from peers.Added Added experimental flush-to-stable script for manual database maintenance. This script allows operators to manually flush stable chain and data item tables, mirroring the logic of StandaloneSqliteDatabase.flushStableDataItems. WARNING: This script is experimental and directly modifies database contents. Use with caution and ensure proper backups before running.Changed Replaced yesql with custom SQL loader that handles comments better, improving SQL file parsing and maintenance.Switched to SPDX license headers to reduce LLM token usage, making the codebase more efficient for AI-assisted development.Improved untrusted data handling and hash validation in cache operations. The cache now allows caching when a hash is available for validation even for untrusted data sources, but only finalizes the cache when the computed hash matches a known trusted hash. This prevents cache poisoning while still allowing data caching from untrusted sources when the data can be validated.[Release 39] - 2025-06-17 This release enhances observability and reliability with new cache metrics, improved data verification capabilities, and automatic failover between chain data sources. The addition of ArNS-aware headers enables better data prioritization across the gateway network. This is a recommended but not urgent upgrade.Added Added filesystem cache metrics with cycle-based tracking. Two new Prometheus metrics track cache utilization: cache_objects_total (number of objects in cache) and cache_size_bytes (total cache size in bytes). Both metrics include store_type and data_type labels to differentiate between cache types (e.g., headers, contiguous_data). Metrics are updated after each complete cache scan cycle, providing accurate visibility into filesystem cache usage.Added X-AR-IO-Data-Id header to all data responses. This header shows the actual data ID being served, whether from a direct ID request or manifest path resolution, providing transparency about the content being delivered.Added automatic data item indexing when data verification is enabled. When ENABLE_BACKGROUND_DATA_VERIFICATION is set to true, the system now automatically enables data item indexing (ANS104_UNBUNDLE_FILTER) with an always: true filter if no filter is explicitly configured. This ensures bundles are unbundled to verify that data items are actually contained in the bundle associated with the Arweave transaction's data root.Added ArNS headers to outbound gateway requests to enable data prioritization. The generateRequestAttributes function now includes ArNS context headers (X-ArNS-Name, X-ArNS-Basename, X-ArNS-Record) in requests to other gateways and Arweave nodes, allowing downstream gateways to effectively prioritize ArNS data requests.Added configurable Docker Compose host port environment variables (CORE_PORT, ENVOY_PORT, CLICKHOUSE_PORT, CLICKHOUSE_PORT_2, CLICKHOUSE_PORT_3, OBSERVER_PORT) to allow flexible port mapping while maintaining container-internal port compatibility and security.Added Envoy aggregate cluster configuration for automatic failover between primary and fallback chain data sources. The primary cluster (default: arweave.net:443) uses passive outlier detection while the fallback cluster (default: peers.arweave.xyz:1984) uses active health checks. This enables zero-downtime failover between HTTPS and HTTP endpoints with configurable FALLBACK_NODE_HOST and FALLBACK_NODE_PORT environment variables.Changed Streamlined background data retrieval to reduce reliance on centralized sources. The default BACKGROUND_RETRIEVAL_ORDER now only includes chunks,s3, removing trusted-gateways and tx-data from the default configuration. This prioritizes verifiable chunk data and S3 storage for background operations like unbundling.Removed ar-io.net from default trusted gateways list and removed TRUSTED_GATEWAY_URL default value to reduce load on ar-io.net now that P2P data retrieval is re-enabled. Existing deployments with TRUSTED_GATEWAY_URL explicitly set will continue to work for backwards compatibility.[Release 38] - 2025-06-09 This release focuses on data integrity and security improvements, introducing trusted data verification and enhanced header information for data requests. Upgrading to this release is recommended but not urgent.Added Added X-AR-IO-Trusted header to indicate data source trustworthiness in responses. This header helps clients understand whether data comes from a trusted source and works alongside the existing X-AR-IO-Verified header to provide data integrity information. The system now filters peer data by requiring peers to indicate their content is either verified or trusted, protecting against misconfigured peers that may inadvertently serve unintended content (e.g., provider default landing pages) instead of actual Arweave data.Added If-None-Match header support for HTTP conditional requests enabling better client-side caching efficiency. When clients send an If-None-Match header that matches the ETag, the gateway returns a 304 Not Modified response with an empty body, reducing bandwidth usage and improving performance.Added digest and hash headers for data HEAD requests to enable client-side data integrity verification.Added EC2 IMDS (instance-profile) credential support for S3 data access, improving AWS authentication in cloud environments.Added trusted data flag to prevent caching of data from untrusted sources, ensuring only verified and reliable content is stored locally while still allowing serving of untrusted data when necessary.Changed Re-enabled ar-io-peers as fallback data source in configuration for improved data availability.Updated trusted node configuration to use arweave.net as the default trusted node URL.Updated ETag header format to use properly quoted strings (e.g., "hash" instead of hash) following HTTP/1.1 specification standards for improved compatibility with caching proxies and clients.[Release 37] - 2025-06-03 This is a recommended release due to the included observer robustness improvements. It also adds an important new feature - data verification for preferred ArNS names. When preferred ArNS names are set, the bundles containing the data they point to will be locally unbundled (verifying data item signatures), and the data root for the bundle will be compared to the data root in the Arweave chain (establishing that the data is on Arweave). To enable this feature, set your preferred ArNS names, turn on unbundling by setting ANS104_DOWNLOAD_WORKERS and ANS104_UNBUNDLE_WORKERS both to 1, and set your ANS104_INDEX_FILTER to a filter that will match the data items for your preferred names. If you don't know the filter, use {"always": true}, but be aware this will index the entire bundle for the IDs related to your preferred names.Note: this release contains migrations to data.db. If your node appears unresponsive please check core service logs to determine whether migrations are running and wait for them to finish.Added Added prioritized data verification system for preferred ArNS names, focusing computational resources on high-priority content while enabling flexible root transaction discovery through GraphQL fallback support.Added verification retry prioritization system with tracking of retry counts, priority levels, and attempt timestamps to ensure bundles do not get stuck retrying forever.Added improved observer functionality with best-of-2 observations and higher compression for more reliable network monitoring.Added MAX_VERIFICATION_RETRIES environment variable (default: 5) to limit verification retry attempts and prevent infinite loops for consistently failing data items.Added retry logic with exponential backoff for GraphQL queries to handle rate limiting (429) and server errors with improved resilience when querying trusted gateways for root bundle IDs.Changed Updated dependencies: replaced deprecated express-prometheus-middleware with the actively maintained express-prom-bundle library and updated prom-client to v15.1.3 for better compatibility and security.Updated Linux setup documentation to use modern package installation methods, replacing apt-key yarn installation with npm global install and updating Node.js/nvm versions.Improved route metrics normalization with explicit whitelist function for better granularity and proper handling of dynamic segments.Fixed Fixed docker-compose configuration to use correct NODE_MAX_OLD_SPACE_SIZE environment variable name.Fixed production TypeScript build configuration to exclude correct "test" directory path.Fixed Parquet exporter to properly handle data item block_transaction_index exports, preventing NULL value issues.Fixed bundles system to copy root_parent_offset when flushing data items to maintain data integrity.Fixed ClickHouse auto-import script to handle Parquet export not_started status properly.Fixed docker-compose ClickHouse configuration to not pass conflicting PARQUET_PATH environment variable to container scripts.Fixed verification process for data items that have not been unbundled by adding queue bundle support and removing bundle join constraint to ensure proper verification of data items without indexed root parents.[Release 36] - 2025-05-27 This is a recommended but not essential upgrade. The most important changes are the preferred ArNS caching feature for improved performance on frequently accessed content and the observer's 80% failure threshold to prevent invalid reports during network issues.Added Added preferred ArNS caching functionality that allows configuring lists of ArNS names to be cached longer via PREFERRED_ARNS_NAMES and PREFERRED_ARNS_BASE_NAMES environment variables. When configured, these names will be cleaned from the filesystem cache after PREFERRED_ARNS_CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD instead of the standard cleanup threshold (CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD). This is accomplished by maintaining an MRU (Most Recently Used) list of ArNS names in the contiguous metadata cache. When filesystem cleanup runs, it checks this list to determine which cleanup threshold to apply. This feature enables gateway operators to ensure popular or important ArNS names remain cached longer, improving performance for frequently accessed content.Added ArNS headers to responses: X-ArNS-Name, X-ArNS-Basename, and X-ArNS-Record to help identify which ArNS names were used in the resolution.Changed Updated observer to prevent report submission when failure rate exceeds 80%. This threshold helps guard against both poorly operated observers and widespread network issues. In the case of a widespread network issue, the assumption is that most gateway operators are well intentioned and will work together to troubleshoot and restore both observations and network stability, rather than submitting reports that would penalize functioning gateways.Updated default trusted gateway in docker-compose Envoy configuration to ar-io.net for improved robustness and alignment with core service configuration.Improved range request performance by passing ranges directly to getData implementations rather than streaming all data and extracting ranges.Fixed Fixed missing cache headers (X-Cache and other data headers) in range request responses to ensure consistent cache header behavior across all request types.Fixed async streaming for multipart range requests by using async iteration instead of synchronous reads, preventing potential data loss.Fixed ArNS resolution to properly exclude www subdomain from resolution logic.Fixed test reliability issues by properly awaiting stream completion before making assertions.Fixed chunk broadcasting to not await peer broadcasts, as they are best-effort operations.[Release 35] - 2025-05-19 This is a low upgrade priority release. It contains a small caching improvement and routing fix. Upgrading to help test it is appreciated but not essential.Changed Adjusted filesystem data expiration to be based on last request times rather than file access times which may be inaccurate.Adjusted CORS headers to include content-* headers.Fixed Fixed regex used to expose /api-docs when an apex ArNS name is set.[Release 34] - 2025-05-05 Given the resilience provided by adding a second trusted gateway URL, it is recommended that everyone upgrade to this release.Added Added peer list endpoints for retrieving information about Arweave peers and ar.io gateway peers.Added ar-io.net as a secondary trusted gateway to increase data retrieval resilience by eliminating a single point of failure.Added circuit breaker for Arweave peer chunk posting.Changed Created directories for DuckDB and Parquet to help avoid permission issues by the directories being created by containers.Fixed Fixed GraphQL ClickHouse error when returning block ID and timestamp.Fixed the tx-chunks-data-source to throw a proper error (resulting in a 404) when the first chunk is missing rather than streaming a partial response.[Release 33] - 2025-05-05 Added Added a [Parquet and ClickHouse usage guide]. Using ArDrive as an example, it provides step by step instructions about how to bulk load Parquet and configure continuous ingest of bundled data items into ClickHouse. This allows the ar-io-node to support performant GraphQL queries on larger data sets and facilitates sharing indexing work across gateways via distribution of Parquet files.Added support for configurable ArNS 404 pages using either:ARNS_NOT_FOUND_TX_ID: Transaction ID for custom 404 content ARNS_NOT_FOUND_ARNS_NAME: ArNS name to resolve for 404 content Added experimental /chunk/ GET route for serving chunk data by absolute offset either the local cache.Added support for AWS_SESSION_TOKEN in the S3 client configuration.Expanded ArNS OTEL tracing to improve resolution behavior observability.Added support for setting a ClickHouse username and password via the CLICKHOUSE_USERNAME and CLICKHOUSE_PASSWORD environment variable. When using ClickHouse, CLICKHOUSE_PASSWORD should always be set. However, CLICKHOUSE_USERNAME can be left unset. The username default will be used in that case.Added support for configuring the port used to connect to ClickHouse via the CLICKHOUSE_PORT environment variable.Changed Disabled ClickHouse import timing logging by default. It can be enabled via environment variable - DEBUG when running the service standalone or CLICKHOUSE_DEBUG when using Docker Compose Upgraded to ClickHouse 25.4.Fixed Ensure .env is read in clickhouse-import script.[Release 32] - 2025-04-22 Changed Reenabled parallel ArNS resolution with removal of misplaced global limit. Refer to release 30 notes for more details on configuration and rationale.Added a timeout for the last ArNS resolver in ARNS_RESOLVER_PRIORITY_ORDER. It defaults to 30 seconds and is configurable using ARNS_COMPOSITE_LAST_RESOLVER_TIMEOUT_MS. This helps prevent promise build up if the last resolver stalls.Fixed Fixed apex ArNS name handling when a subdomain is present in ARNS_ROOT_HOST.Fixed a case where fork recovery could stall due to early flushing of unstable chain data.Restored observer logs by removing unintentional default log level override in docker-compose.yaml.[Release 31] - 2025-04-11 Changed Improved peer TX header fetching by fetching from a wider range of peers and up/down weighting peers based on success/failure.Fixed Rolled back parallel ArNS resolution changes that were causing ArNS resolution to slow down over time.[Release 30] - 2025-04-04 Added Added support for filtering Winston logs with a new LOG_FILTER environment variable.Example filter: {"attributes":{"class":"ArweaveCompositeClient"}} to only show logs from that class.Use CORE_LOG_FILTER environment variable when running with docker-compose.Added parallel ArNS resolution capability.Configured via ARNS_MAX_CONCURRENT_RESOLUTIONS (default: 1).This foundation enables future enhancements to ArNS resolution and should generally not be adjusted at present.Changed Improved ClickHouse auto-import script with better error handling and continuous operation through errors.Reduced maximum header request rate per second to trusted node to load on community gateways.Optimized single owner and recipient queries on ClickHouse with specialized sorted tables.Used ID sorted ClickHouse table for ID queries to improve performance.Fixed Fixed data alignment in Parquet file name height boundaries to ensure consistent import boundaries.Removed trailing slashes from AO URLs to prevent issues when passing them to the SDK.Only prune SQLite data when ClickHouse import succeeds to prevent data loss during exports.[Release 29] - 2025-03-21 Changed Temporarily default to trusted gateway ArNS resolution to reduce CU load as much possible. On-demand CU resolution is still available as a fallback and the order can be modified by setting ARNS_RESOLVER_PRIORITY_ORDER.Remove duplicate network process call in on-demand resolver.Don't wait for network process debounces in the on-demand resolver.Slow network process dry runs no longer block fallback to next resolver.Added Added support for separate CUs URLs for the network and ANT processes via the NETWORK_AO_CU_URL and ANT_AO_CU_URL process URLs respectively. If either is missing the AO_CU_URL is used instead with a fallback to the SDK default URL if AO_CU_URL is also unspecified.Added CU URLs to on-demand ArNS resolver logs.Added circuit breakers for AR.IO network process CU dry runs. By default they use a 1 minute timeout and open after 30% failure over a 10 minute window and reset after 20 minutes.Fixed Owners in GraphQL results are now correctly retrieved from data based on offsets when using ClickHouse.[Release 28] - 2025-03-17 Changed Raised name not found name list refresh interval to 2 minutes to reduce load on CUs. This increases the maximum amount of time a user may wait for a new name to be available. Future releases will introduce other changes to mitigate this delay.Adjusted composite ArNS resolver to never timeout resolutions from the last ArNS resolver in the resolution list.Added Added support for serving a given ID or ArNS name from the apex domain of a gateway. If using an ID, set the APEX_TX_ID environment variable. If using an ArNS name, set the APEX_ARNS_NAME environment variable.Added BUNDLE_REPAIR_UPDATE_TIMESTAMPS_INTERVAL_SECONDS, BUNDLE_REPAIR_BACKFILL_INTERVAL_SECONDS, and BUNDLE_REPAIR_FILTER_REPROCESS_INTERVAL_SECONDS environment variables to control the interval for retrying failed bundles, backfilling bundle records, and reprocessing bundles after a filter change. Note: the latter two are rarely used. Queuing bundles for reprocessing via the /ar-io/admin/queue-bundle endpoint is usually preferable to automatic reprocessing as it is faster and offers more control over the reprocessing behavior.Fixed Signatures in GraphQL results are now correctly retrieved from data based on offsets when using ClickHouse.Adjusted exported Parquet file names to align with expectations of ClickHouse import script.Ensured that bundle indexing status is properly reset when bundles are manually queued after an unbundling filter change has been made.[Release 27] - 2025-02-20 Changed Set process IDs for mainnet.Increase default AO CU WASM memory limit to 17179869184 to support mainnet
+AR.IO Release Notes Overview Welcome to the documentation page for the AR.IO gateway release notes. Here, you will find detailed information about each version of the AR.IO gateway, including the enhancements, bug fixes, and any other changes introduced in every release. This page serves as a comprehensive resource to keep you informed about the latest developments and updates in the AR.IO gateway. For those interested in exploring the source code, each release's code is readily accessible at our GitHub repository: AR.IO gateway change logs. Stay updated with the continuous improvements and advancements in the AR.IO gateway by referring to this page for all release-related information.[Release 47] - 2025-08-25 This is an optional release that lays the groundwork for the gateway network to become completely independent of the legacy arweave.net gateway by enabling data item retrieval directly from chunks using root transaction ID lookups. It also introduces comprehensive distributed tracing for improved observability.Added Added comprehensive OpenTelemetry distributed tracing with proper span linking across all data request operations, providing end-to-end visibility from HTTP requests through data source failovers, cache operations, and peer retrievals with hierarchical parent-child span relationships.Added RootParentDataSource and Ans104OffsetSource to enable retrieving data items by ID directly from chunks when only the root transaction ID is indexed, transparently resolving data items to their root transactions and calculating correct byte ranges within ANS-104 bundles (temporarily disabled pending additional offset sources).Changed Fixed Removed incorrect Content-Digest header from chunk endpoint which was misleadingly representing only chunk data hash instead of complete JSON response body hash (will be reintroduced with correct semantics).[Release 46] - 2025-08-18 This is a recommended release that introduces AR.IO network chunk retrieval with cryptographic validation and enhanced observability. Gateway operators can now retrieve chunks directly from AR.IO peers with the same security guarantees as Arweave network chunks, significantly improving chunk caching and retrieval performance.Added Added AR.IO network chunk source enabling chunk retrieval from AR.IO peers with weighted peer selection, retry logic, and cryptographic validation to prevent serving of corrupted or malicious data.Added comprehensive OpenTelemetry tracing for chunk retrieval operations providing visibility into performance, cache behavior, and source attribution across the entire pipeline.Added HEAD request support to /chunk/{offset} endpoint with ETag headers for efficient caching and conditional request handling with If-None-Match support.Added chunk source headers for traceability: X-AR-IO-Chunk-Source-Type indicating data source, X-AR-IO-Chunk-Host with peer hostname, and X-Cache for cache status.Added RFC 9530 Content-Digest header support for standard-compliant content integrity verification in data and chunk responses.Added configurable composite chunk sources with parallelism control via CHUNK_DATA_RETRIEVAL_ORDER and CHUNK_METADATA_RETRIEVAL_ORDER environment variables supporting comma-separated source ordering.Added OpenAPI documentation for /ar-io/peers endpoint.Changed Renamed ar-io-peers to ar-io-network as the preferred configuration name while maintaining backwards compatibility.Enhanced /ar-io/peers endpoint to include both data and chunk weights for AR.IO gateway peers.Fixed Fixed ArNS custom 404 pages to prevent incorrect ArNS headers from being propagated to other gateways.[Release 45] - 2025-08-11 This is an optional release that enhances chunk broadcasting with improved preferred peer management, adds a hash-based partitioning filter for distributed data processing, fixes ArNS basename cache refresh issues, and includes comprehensive documentation improvements with a new glossary of AR.IO Node terminology.Added Added hash partitioning filter (MatchHashPartition) for distributing transaction and data item processing across multiple nodes with configurable partition ranges.Added comprehensive glossary documentation covering AR.IO Node terminology, concepts, and architectural components.Changed Improved chunk broadcasting preferred peer management with doubled default per-node queue depth threshold and ensured preferred peers are always prioritized first.Enhanced circuit breaker metrics with more detailed labels for better monitoring of data source failures.Improved ArNS resolution to properly propagate 404 errors from trusted gateway resolution (a more complete fix is coming in the next release).Expanded OTEL tracing to include ArNS cache operations for improved observability of name resolution and cache hydration.Fixed Fixed unreliable ArNS basename cache refreshes by adding retry logic for pagination failures and replacing p-debounce with timestamp-based debouncing for more predictable behavior.Fixed undefined headers handling in data requests.Fixed invalid cache hits by ensuring base64url encoded IDs are properly validated before use.Fixed routes data handling for undefined IDs in validity checks.[Release 44] - 2025-07-28 This is a recommended release that introduces efficient range request support for contiguous data retrieval from chunks, adds bundle metadata columns with offset indexing to improve offset availability throughout the network, enhances Merkle path parsing compatibility, and includes comprehensive documentation for offsets and Merkle paths.Added Added efficient range request support for chunk data retrieval, enabling optimized verifiable contiguous data fetching directly from Arweave nodes.Added bundle metadata columns to data.db to improve offset availability across the gateway network.Added OTEL (OpenTelemetry) tracing support for chunk POST operations, providing better observability for chunk broadcasting performance.Added OTEL environment variables to docker-compose.yaml for easier configuration of distributed tracing.Added comprehensive Arweave Merkle tree structure documentation detailing the data organization and validation rules.Added detailed documentation explaining Arweave transaction and chunk offset calculations.Added merkle-path-parser with full Arweave compatibility for improved Merkle proof validation.Changed Implemented promise-based chunk caching system replacing the previous WeakMap implementation, improving memory efficiency and cache reliability.Extended CompositeChunkSource to implement all chunk interfaces, providing a more unified chunk data access layer.[Release 43] - 2025-07-21 This is a recommended release that enables data verification by default for data items linked to ArNS names, improves chunk broadcasting efficiency, and adds automatic chunk data cache cleanup.Added Added automatic chunk data cache cleanup functionality with configurable retention period. Chunks are now automatically removed after 4 hours by default (configurable via CHUNK_DATA_CACHE_CLEANUP_THRESHOLD). The cleanup can be disabled by setting ENABLE_CHUNK_DATA_CACHE_CLEANUP=false. This helps manage disk space usage while maintaining cache performance benefits.Added demand-driven opt-out background verification for ArNS data. When ArNS names are requested, the system now proactively verifies the underlying data asynchronously in the background by unbundling verified chunk data retrieved directly from Arweave nodes. This ensures ArNS-served content is prioritized for verification, improving data integrity guarantees for frequently accessed named content.Changed Simplified chunk data storage by removing the dual-storage approach (by-hash and by-dataroot with symlinks). Chunks are now stored directly by data root only, reducing complexity and improving performance.Revamped chunk broadcasting architecture from 3-tier system to unified peer-based approach. Chunk broadcasting now uses individual fastq queues per peer with configurable concurrency and queue depth protection. Added support for preferred chunk POST peers via PREFERRED_CHUNK_POST_URLS environment variable. Configuration defaults have been optimized: CHUNK_POST_PEER_CONCURRENCY now defaults to match CHUNK_POST_MIN_SUCCESS_COUNT (3) to avoid over-broadcasting, and CHUNK_POST_PER_NODE_CONCURRENCY defaults to match CHUNK_POST_QUEUE_DEPTH_THRESHOLD (10) for consistent per-node load management. This change improves broadcast reliability and performance while simplifying the codebase by removing circuit breakers and tier-based logic.Modified DataVerificationWorker to ensure data item IDs (not just root IDs) have their retry count incremented, preventing IDs from being stuck without retry attempts. This improves the reliability of the data verification process.Fixed Fixed experiment bash Parquet export script generating filenames with count_star() instead of actual row counts for blocks and tags files. The script now correctly uses the -noheader flag when retrieving counts for filename generation.Fixed missing directory existence checks in FsCleanupWorker to prevent errors when attempting to scan non-existent directories during filesystem cleanup operations.[Release 42] - 2025-07-14 This is an optional release that improves peer request traceability, adds HyperBEAM URL support, and includes draft AI-generated technical documentation.Added Added support for optional HyperBEAM URL configuration via AO_ANT_HYPERBEAM_URL environment variable. In the future this allows ANT processes to use HyperBEAM nodes for caching and serving state, reducing pressure on compute units for simple read requests.Added AI-generated technical documentation covering AR.IO gateway architecture, data retrieval, Arweave connectivity, ArNS name resolution system, centralization analysis, and database architecture. These guides in docs/drafts/ are generally correct but should not be considered authoritative.Added origin and release information to query string parameters in outbound requests to both peer gateways and trusted gateways. Data requests now include ar-io-hops, ar-io-origin, ar-io-origin-release, ar-io-arns-record, and ar-io-arns-basename as query parameters, improving network observability and request tracing across the entire gateway network.Changed Implemented X-AR-IO header initialization for outbound peer requests while removing x-ar-io-origin and x-ar-io-origin-node-release headers from responses. This change maintains necessary header functionality for peer communication while reducing unnecessary header overhead in responses.Updated @ar.io/sdk dependency to support optional HyperBEAM URL functionality.[Release 41] - 2025-06-30 Added Added preferred chunk GET node URLs configuration via PREFERRED_CHUNK_GET_NODE_URLS environment variable to enable chunk-specific peer prioritization. Preferred URLs receive a weight of 100 for prioritization and the system selects 10 peers per attempt by default.Added hash validation for peer data fetching by including X-AR-IO-Expected-Digest header in peer requests when hash is available, validating peer responses against expected hash, and immediately rejecting mismatched data.Added DOCKER_NETWORK_NAME environment variable to configure the Docker network name used by Docker Compose.Added draft guide for running a community gateway.Added draft data verification architecture document.Changed Removed trusted node fallback for chunk retrieval. Chunks are now retrieved exclusively from peers, with the retry count increased from 3 to 50 to ensure reliability without the trusted node fallback.Fixed Fixed inverted logic preventing symlink creation in FsChunkDataStore.Fixed Content-Length header for range requests and 304 responses, properly setting header for single and multipart range requests and removing entity headers from 304 Not Modified responses per RFC 7232.Fixed MaxListenersExceeded warnings by adding setMaxListeners to read-through data cache.Fixed potential memory leaks in read-through data cache by using once instead of on for error and end event listeners.[Release 40] - 2025-06-23 This is an optional release that primarily improves caching when data is fetched from peers.Added Added experimental flush-to-stable script for manual database maintenance. This script allows operators to manually flush stable chain and data item tables, mirroring the logic of StandaloneSqliteDatabase.flushStableDataItems. WARNING: This script is experimental and directly modifies database contents. Use with caution and ensure proper backups before running.Changed Replaced yesql with custom SQL loader that handles comments better, improving SQL file parsing and maintenance.Switched to SPDX license headers to reduce LLM token usage, making the codebase more efficient for AI-assisted development.Improved untrusted data handling and hash validation in cache operations. The cache now allows caching when a hash is available for validation even for untrusted data sources, but only finalizes the cache when the computed hash matches a known trusted hash. This prevents cache poisoning while still allowing data caching from untrusted sources when the data can be validated.[Release 39] - 2025-06-17 This release enhances observability and reliability with new cache metrics, improved data verification capabilities, and automatic failover between chain data sources. The addition of ArNS-aware headers enables better data prioritization across the gateway network. This is a recommended but not urgent upgrade.Added Added filesystem cache metrics with cycle-based tracking. Two new Prometheus metrics track cache utilization: cache_objects_total (number of objects in cache) and cache_size_bytes (total cache size in bytes). Both metrics include store_type and data_type labels to differentiate between cache types (e.g., headers, contiguous_data). Metrics are updated after each complete cache scan cycle, providing accurate visibility into filesystem cache usage.Added X-AR-IO-Data-Id header to all data responses. This header shows the actual data ID being served, whether from a direct ID request or manifest path resolution, providing transparency about the content being delivered.Added automatic data item indexing when data verification is enabled. When ENABLE_BACKGROUND_DATA_VERIFICATION is set to true, the system now automatically enables data item indexing (ANS104_UNBUNDLE_FILTER) with an always: true filter if no filter is explicitly configured. This ensures bundles are unbundled to verify that data items are actually contained in the bundle associated with the Arweave transaction's data root.Added ArNS headers to outbound gateway requests to enable data prioritization. The generateRequestAttributes function now includes ArNS context headers (X-ArNS-Name, X-ArNS-Basename, X-ArNS-Record) in requests to other gateways and Arweave nodes, allowing downstream gateways to effectively prioritize ArNS data requests.Added configurable Docker Compose host port environment variables (CORE_PORT, ENVOY_PORT, CLICKHOUSE_PORT, CLICKHOUSE_PORT_2, CLICKHOUSE_PORT_3, OBSERVER_PORT) to allow flexible port mapping while maintaining container-internal port compatibility and security.Added Envoy aggregate cluster configuration for automatic failover between primary and fallback chain data sources. The primary cluster (default: arweave.net:443) uses passive outlier detection while the fallback cluster (default: peers.arweave.xyz:1984) uses active health checks. This enables zero-downtime failover between HTTPS and HTTP endpoints with configurable FALLBACK_NODE_HOST and FALLBACK_NODE_PORT environment variables.Changed Streamlined background data retrieval to reduce reliance on centralized sources. The default BACKGROUND_RETRIEVAL_ORDER now only includes chunks,s3, removing trusted-gateways and tx-data from the default configuration. This prioritizes verifiable chunk data and S3 storage for background operations like unbundling.Removed ar-io.net from default trusted gateways list and removed TRUSTED_GATEWAY_URL default value to reduce load on ar-io.net now that P2P data retrieval is re-enabled. Existing deployments with TRUSTED_GATEWAY_URL explicitly set will continue to work for backwards compatibility.[Release 38] - 2025-06-09 This release focuses on data integrity and security improvements, introducing trusted data verification and enhanced header information for data requests. Upgrading to this release is recommended but not urgent.Added Added X-AR-IO-Trusted header to indicate data source trustworthiness in responses. This header helps clients understand whether data comes from a trusted source and works alongside the existing X-AR-IO-Verified header to provide data integrity information. The system now filters peer data by requiring peers to indicate their content is either verified or trusted, protecting against misconfigured peers that may inadvertently serve unintended content (e.g., provider default landing pages) instead of actual Arweave data.Added If-None-Match header support for HTTP conditional requests enabling better client-side caching efficiency. When clients send an If-None-Match header that matches the ETag, the gateway returns a 304 Not Modified response with an empty body, reducing bandwidth usage and improving performance.Added digest and hash headers for data HEAD requests to enable client-side data integrity verification.Added EC2 IMDS (instance-profile) credential support for S3 data access, improving AWS authentication in cloud environments.Added trusted data flag to prevent caching of data from untrusted sources, ensuring only verified and reliable content is stored locally while still allowing serving of untrusted data when necessary.Changed Re-enabled ar-io-peers as fallback data source in configuration for improved data availability.Updated trusted node configuration to use arweave.net as the default trusted node URL.Updated ETag header format to use properly quoted strings (e.g., "hash" instead of hash) following HTTP/1.1 specification standards for improved compatibility with caching proxies and clients.[Release 37] - 2025-06-03 This is a recommended release due to the included observer robustness improvements. It also adds an important new feature - data verification for preferred ArNS names. When preferred ArNS names are set, the bundles containing the data they point to will be locally unbundled (verifying data item signatures), and the data root for the bundle will be compared to the data root in the Arweave chain (establishing that the data is on Arweave). To enable this feature, set your preferred ArNS names, turn on unbundling by setting ANS104_DOWNLOAD_WORKERS and ANS104_UNBUNDLE_WORKERS both to 1, and set your ANS104_INDEX_FILTER to a filter that will match the data items for your preferred names. If you don't know the filter, use {"always": true}, but be aware this will index the entire bundle for the IDs related to your preferred names.Note: this release contains migrations to data.db. If your node appears unresponsive please check core service logs to determine whether migrations are running and wait for them to finish.Added Added prioritized data verification system for preferred ArNS names, focusing computational resources on high-priority content while enabling flexible root transaction discovery through GraphQL fallback support.Added verification retry prioritization system with tracking of retry counts, priority levels, and attempt timestamps to ensure bundles do not get stuck retrying forever.Added improved observer functionality with best-of-2 observations and higher compression for more reliable network monitoring.Added MAX_VERIFICATION_RETRIES environment variable (default: 5) to limit verification retry attempts and prevent infinite loops for consistently failing data items.Added retry logic with exponential backoff for GraphQL queries to handle rate limiting (429) and server errors with improved resilience when querying trusted gateways for root bundle IDs.Changed Updated dependencies: replaced deprecated express-prometheus-middleware with the actively maintained express-prom-bundle library and updated prom-client to v15.1.3 for better compatibility and security.Updated Linux setup documentation to use modern package installation methods, replacing apt-key yarn installation with npm global install and updating Node.js/nvm versions.Improved route metrics normalization with explicit whitelist function for better granularity and proper handling of dynamic segments.Fixed Fixed docker-compose configuration to use correct NODE_MAX_OLD_SPACE_SIZE environment variable name.Fixed production TypeScript build configuration to exclude correct "test" directory path.Fixed Parquet exporter to properly handle data item block_transaction_index exports, preventing NULL value issues.Fixed bundles system to copy root_parent_offset when flushing data items to maintain data integrity.Fixed ClickHouse auto-import script to handle Parquet export not_started status properly.Fixed docker-compose ClickHouse configuration to not pass conflicting PARQUET_PATH environment variable to container scripts.Fixed verification process for data items that have not been unbundled by adding queue bundle support and removing bundle join constraint to ensure proper verification of data items without indexed root parents.[Release 36] - 2025-05-27 This is a recommended but not essential upgrade. The most important changes are the preferred ArNS caching feature for improved performance on frequently accessed content and the observer's 80% failure threshold to prevent invalid reports during network issues.Added Added preferred ArNS caching functionality that allows configuring lists of ArNS names to be cached longer via PREFERRED_ARNS_NAMES and PREFERRED_ARNS_BASE_NAMES environment variables. When configured, these names will be cleaned from the filesystem cache after PREFERRED_ARNS_CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD instead of the standard cleanup threshold (CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD). This is accomplished by maintaining an MRU (Most Recently Used) list of ArNS names in the contiguous metadata cache. When filesystem cleanup runs, it checks this list to determine which cleanup threshold to apply. This feature enables gateway operators to ensure popular or important ArNS names remain cached longer, improving performance for frequently accessed content.Added ArNS headers to responses: X-ArNS-Name, X-ArNS-Basename, and X-ArNS-Record to help identify which ArNS names were used in the resolution.Changed Updated observer to prevent report submission when failure rate exceeds 80%. This threshold helps guard against both poorly operated observers and widespread network issues. In the case of a widespread network issue, the assumption is that most gateway operators are well intentioned and will work together to troubleshoot and restore both observations and network stability, rather than submitting reports that would penalize functioning gateways.Updated default trusted gateway in docker-compose Envoy configuration to ar-io.net for improved robustness and alignment with core service configuration.Improved range request performance by passing ranges directly to getData implementations rather than streaming all data and extracting ranges.Fixed Fixed missing cache headers (X-Cache and other data headers) in range request responses to ensure consistent cache header behavior across all request types.Fixed async streaming for multipart range requests by using async iteration instead of synchronous reads, preventing potential data loss.Fixed ArNS resolution to properly exclude www subdomain from resolution logic.Fixed test reliability issues by properly awaiting stream completion before making assertions.Fixed chunk broadcasting to not await peer broadcasts, as they are best-effort operations.[Release 35] - 2025-05-19 This is a low upgrade priority release. It contains a small caching improvement and routing fix. Upgrading to help test it is appreciated but not essential.Changed Adjusted filesystem data expiration to be based on last request times rather than file access times which may be inaccurate.Adjusted CORS headers to include content-* headers.Fixed Fixed regex used to expose /api-docs when an apex ArNS name is set.[Release 34] - 2025-05-05 Given the resilience provided by adding a second trusted gateway URL, it is recommended that everyone upgrade to this release.Added Added peer list endpoints for retrieving information about Arweave peers and ar.io gateway peers.Added ar-io.net as a secondary trusted gateway to increase data retrieval resilience by eliminating a single point of failure.Added circuit breaker for Arweave peer chunk posting.Changed Created directories for DuckDB and Parquet to help avoid permission issues by the directories being created by containers.Fixed Fixed GraphQL ClickHouse error when returning block ID and timestamp.Fixed the tx-chunks-data-source to throw a proper error (resulting in a 404) when the first chunk is missing rather than streaming a partial response.[Release 33] - 2025-05-05 Added Added a [Parquet and ClickHouse usage guide]. Using ArDrive as an example, it provides step by step instructions about how to bulk load Parquet and configure continuous ingest of bundled data items into ClickHouse. This allows the ar-io-node to support performant GraphQL queries on larger data sets and facilitates sharing indexing work across gateways via distribution of Parquet files.Added support for configurable ArNS 404 pages using either:ARNS_NOT_FOUND_TX_ID: Transaction ID for custom 404 content ARNS_NOT_FOUND_ARNS_NAME: ArNS name to resolve for 404 content Added experimental /chunk/ GET route for serving chunk data by absolute offset either the local cache.Added support for AWS_SESSION_TOKEN in the S3 client configuration.Expanded ArNS OTEL tracing to improve resolution behavior observability.Added support for setting a ClickHouse username and password via the CLICKHOUSE_USERNAME and CLICKHOUSE_PASSWORD environment variable. When using ClickHouse, CLICKHOUSE_PASSWORD should always be set. However, CLICKHOUSE_USERNAME can be left unset. The username default will be used in that case.Added support for configuring the port used to connect to ClickHouse via the CLICKHOUSE_PORT environment variable.Changed Disabled ClickHouse import timing logging by default. It can be enabled via environment variable - DEBUG when running the service standalone or CLICKHOUSE_DEBUG when using Docker Compose Upgraded to ClickHouse 25.4.Fixed Ensure .env is read in clickhouse-import script.[Release 32] - 2025-04-22 Changed Reenabled parallel ArNS resolution with removal of misplaced global limit. Refer to release 30 notes for more details on configuration and rationale.Added a timeout for the last ArNS resolver in ARNS_RESOLVER_PRIORITY_ORDER. It defaults to 30 seconds and is configurable using ARNS_COMPOSITE_LAST_RESOLVER_TIMEOUT_MS. This helps prevent promise build up if the last resolver stalls.Fixed Fixed apex ArNS name handling when a subdomain is present in ARNS_ROOT_HOST.Fixed a case where fork recovery could stall due to early flushing of unstable chain data.Restored observer logs by removing unintentional default log level override in docker-compose.yaml.[Release 31] - 2025-04-11 Changed Improved peer TX header fetching by fetching from a wider range of peers and up/down weighting peers based on success/failure.Fixed Rolled back parallel ArNS resolution changes that were causing ArNS resolution to slow down over time.[Release 30] - 2025-04-04 Added Added support for filtering Winston logs with a new LOG_FILTER environment variable.Example filter: {"attributes":{"class":"ArweaveCompositeClient"}} to only show logs from that class.Use CORE_LOG_FILTER environment variable when running with docker-compose.Added parallel ArNS resolution capability.Configured via ARNS_MAX_CONCURRENT_RESOLUTIONS (default: 1).This foundation enables future enhancements to ArNS resolution and should generally not be adjusted at present.Changed Improved ClickHouse auto-import script with better error handling and continuous operation through errors.Reduced maximum header request rate per second to trusted node to load on community gateways.Optimized single owner and recipient queries on ClickHouse with specialized sorted tables.Used ID sorted ClickHouse table for ID queries to improve performance.Fixed Fixed data alignment in Parquet file name height boundaries to ensure consistent import boundaries.Removed trailing slashes from AO URLs to prevent issues when passing them to the SDK.Only prune SQLite data when ClickHouse import succeeds to prevent data loss during exports.[Release 29] - 2025-03-21 Changed Temporarily default to trusted gateway ArNS resolution to reduce CU load as much possible. On-demand CU resolution is still available as a fallback and the order can be modified by setting ARNS_RESOLVER_PRIORITY_ORDER.Remove duplicate network process call in on-demand resolver.Don't wait for network process debounces in the on-demand resolver.Slow network process dry runs no longer block fallback to next resolver.Added Added support for separate CUs URLs for the network and ANT processes via the NETWORK_AO_CU_URL and ANT_AO_CU_URL process URLs respectively. If either is missing the AO_CU_URL is used instead with a fallback to the SDK default URL if AO_CU_URL is also unspecified.Added CU URLs to on-demand ArNS resolver logs.Added circuit breakers for AR.IO network process CU dry runs. By default they use a 1 minute timeout and open after 30% failure over a 10 minute window and reset after 20 minutes.Fixed Owners in GraphQL results are now correctly retrieved from data based on offsets when using ClickHouse.[Release 28] - 2025-03-17 Changed Raised name not found name list refresh interval to 2 minutes to reduce load on CUs. This increases the maximum amount of time a user may wait for a new name to be available. Future releases will introduce other changes to mitigate this delay.Adjusted composite ArNS resolver to never timeout resolutions from the last ArNS resolver in the resolution list.Added Added support for serving a given ID or ArNS name from the apex domain of a gateway. If using an ID, set the APEX_TX_ID environment variable. If using an ArNS name, set the APEX_ARNS_NAME environment variable.Added BUNDLE_REPAIR_UPDATE_TIMESTAMPS_INTERVAL_SECONDS, BUNDLE_REPAIR_BACKFILL_INTERVAL_SECONDS, and BUNDLE_REPAIR_FILTER_REPROCESS_INTERVAL_SECONDS environment variables to control the interval for retrying failed bundles, backfilling bundle records, and reprocessing bundles after a filter change. Note: the latter two are rarely used. Queuing bundles for reprocessing via the /ar-io/admin/queue-bundle endpoint is usually preferable to automatic reprocessing as it is faster and offers more control over the reprocessing behavior.Fixed Signatures in GraphQL results are now correctly retrieved from data based on offsets when using ClickHouse.Adjusted exported Parquet file names to align with expectations of ClickHouse import script.Ensured that bundle indexing status is properly reset when bundles are manually queued after an unbundling filter change has been made.[Release 27] - 2025-02-20 Changed Set process IDs for mainnet.Increase default AO CU WASM memory limit to 17179869184 to support mainnet
 process.[Release 26] - 2025-02-13 Added Added a per resolver timeout in the composite ArNS resolver. When the
 composite resolver attempts resolution it is applied to each resolution
 attempt. It is configurable via the ARNS_COMPOSITE_RESOLVER_TIMEOUT_MS and
@@ -1420,12 +1420,12 @@ containers exit with a success status even when they shouldn't.Fixed Added missi
 
 Document Number: 29
 Source: https://docs.ar.io/gateways/release-notes#
-Words: 8763
+Words: 8916
 Quality Score: 0.504
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-AR.IO Release Notes Overview Welcome to the documentation page for the AR.IO gateway release notes. Here, you will find detailed information about each version of the AR.IO gateway, including the enhancements, bug fixes, and any other changes introduced in every release. This page serves as a comprehensive resource to keep you informed about the latest developments and updates in the AR.IO gateway. For those interested in exploring the source code, each release's code is readily accessible at our GitHub repository: AR.IO gateway change logs. Stay updated with the continuous improvements and advancements in the AR.IO gateway by referring to this page for all release-related information.[Release 46] - 2025-08-18 This is a recommended release that introduces AR.IO network chunk retrieval with cryptographic validation and enhanced observability. Gateway operators can now retrieve chunks directly from AR.IO peers with the same security guarantees as Arweave network chunks, significantly improving chunk caching and retrieval performance.Added Added AR.IO network chunk source enabling chunk retrieval from AR.IO peers with weighted peer selection, retry logic, and cryptographic validation to prevent serving of corrupted or malicious data.Added comprehensive OpenTelemetry tracing for chunk retrieval operations providing visibility into performance, cache behavior, and source attribution across the entire pipeline.Added HEAD request support to /chunk/{offset} endpoint with ETag headers for efficient caching and conditional request handling with If-None-Match support.Added chunk source headers for traceability: X-AR-IO-Chunk-Source-Type indicating data source, X-AR-IO-Chunk-Host with peer hostname, and X-Cache for cache status.Added RFC 9530 Content-Digest header support for standard-compliant content integrity verification in data and chunk responses.Added configurable composite chunk sources with parallelism control via CHUNK_DATA_RETRIEVAL_ORDER and CHUNK_METADATA_RETRIEVAL_ORDER environment variables supporting comma-separated source ordering.Added OpenAPI documentation for /ar-io/peers endpoint.Changed Renamed ar-io-peers to ar-io-network as the preferred configuration name while maintaining backwards compatibility.Enhanced /ar-io/peers endpoint to include both data and chunk weights for AR.IO gateway peers.Fixed Fixed ArNS custom 404 pages to prevent incorrect ArNS headers from being propagated to other gateways.[Release 45] - 2025-08-11 This is an optional release that enhances chunk broadcasting with improved preferred peer management, adds a hash-based partitioning filter for distributed data processing, fixes ArNS basename cache refresh issues, and includes comprehensive documentation improvements with a new glossary of AR.IO Node terminology.Added Added hash partitioning filter (MatchHashPartition) for distributing transaction and data item processing across multiple nodes with configurable partition ranges.Added comprehensive glossary documentation covering AR.IO Node terminology, concepts, and architectural components.Changed Improved chunk broadcasting preferred peer management with doubled default per-node queue depth threshold and ensured preferred peers are always prioritized first.Enhanced circuit breaker metrics with more detailed labels for better monitoring of data source failures.Improved ArNS resolution to properly propagate 404 errors from trusted gateway resolution (a more complete fix is coming in the next release).Expanded OTEL tracing to include ArNS cache operations for improved observability of name resolution and cache hydration.Fixed Fixed unreliable ArNS basename cache refreshes by adding retry logic for pagination failures and replacing p-debounce with timestamp-based debouncing for more predictable behavior.Fixed undefined headers handling in data requests.Fixed invalid cache hits by ensuring base64url encoded IDs are properly validated before use.Fixed routes data handling for undefined IDs in validity checks.[Release 44] - 2025-07-28 This is a recommended release that introduces efficient range request support for contiguous data retrieval from chunks, adds bundle metadata columns with offset indexing to improve offset availability throughout the network, enhances Merkle path parsing compatibility, and includes comprehensive documentation for offsets and Merkle paths.Added Added efficient range request support for chunk data retrieval, enabling optimized verifiable contiguous data fetching directly from Arweave nodes.Added bundle metadata columns to data.db to improve offset availability across the gateway network.Added OTEL (OpenTelemetry) tracing support for chunk POST operations, providing better observability for chunk broadcasting performance.Added OTEL environment variables to docker-compose.yaml for easier configuration of distributed tracing.Added comprehensive Arweave Merkle tree structure documentation detailing the data organization and validation rules.Added detailed documentation explaining Arweave transaction and chunk offset calculations.Added merkle-path-parser with full Arweave compatibility for improved Merkle proof validation.Changed Implemented promise-based chunk caching system replacing the previous WeakMap implementation, improving memory efficiency and cache reliability.Extended CompositeChunkSource to implement all chunk interfaces, providing a more unified chunk data access layer.[Release 43] - 2025-07-21 This is a recommended release that enables data verification by default for data items linked to ArNS names, improves chunk broadcasting efficiency, and adds automatic chunk data cache cleanup.Added Added automatic chunk data cache cleanup functionality with configurable retention period. Chunks are now automatically removed after 4 hours by default (configurable via CHUNK_DATA_CACHE_CLEANUP_THRESHOLD). The cleanup can be disabled by setting ENABLE_CHUNK_DATA_CACHE_CLEANUP=false. This helps manage disk space usage while maintaining cache performance benefits.Added demand-driven opt-out background verification for ArNS data. When ArNS names are requested, the system now proactively verifies the underlying data asynchronously in the background by unbundling verified chunk data retrieved directly from Arweave nodes. This ensures ArNS-served content is prioritized for verification, improving data integrity guarantees for frequently accessed named content.Changed Simplified chunk data storage by removing the dual-storage approach (by-hash and by-dataroot with symlinks). Chunks are now stored directly by data root only, reducing complexity and improving performance.Revamped chunk broadcasting architecture from 3-tier system to unified peer-based approach. Chunk broadcasting now uses individual fastq queues per peer with configurable concurrency and queue depth protection. Added support for preferred chunk POST peers via PREFERRED_CHUNK_POST_URLS environment variable. Configuration defaults have been optimized: CHUNK_POST_PEER_CONCURRENCY now defaults to match CHUNK_POST_MIN_SUCCESS_COUNT (3) to avoid over-broadcasting, and CHUNK_POST_PER_NODE_CONCURRENCY defaults to match CHUNK_POST_QUEUE_DEPTH_THRESHOLD (10) for consistent per-node load management. This change improves broadcast reliability and performance while simplifying the codebase by removing circuit breakers and tier-based logic.Modified DataVerificationWorker to ensure data item IDs (not just root IDs) have their retry count incremented, preventing IDs from being stuck without retry attempts. This improves the reliability of the data verification process.Fixed Fixed experiment bash Parquet export script generating filenames with count_star() instead of actual row counts for blocks and tags files. The script now correctly uses the -noheader flag when retrieving counts for filename generation.Fixed missing directory existence checks in FsCleanupWorker to prevent errors when attempting to scan non-existent directories during filesystem cleanup operations.[Release 42] - 2025-07-14 This is an optional release that improves peer request traceability, adds HyperBEAM URL support, and includes draft AI-generated technical documentation.Added Added support for optional HyperBEAM URL configuration via AO_ANT_HYPERBEAM_URL environment variable. In the future this allows ANT processes to use HyperBEAM nodes for caching and serving state, reducing pressure on compute units for simple read requests.Added AI-generated technical documentation covering AR.IO gateway architecture, data retrieval, Arweave connectivity, ArNS name resolution system, centralization analysis, and database architecture. These guides in docs/drafts/ are generally correct but should not be considered authoritative.Added origin and release information to query string parameters in outbound requests to both peer gateways and trusted gateways. Data requests now include ar-io-hops, ar-io-origin, ar-io-origin-release, ar-io-arns-record, and ar-io-arns-basename as query parameters, improving network observability and request tracing across the entire gateway network.Changed Implemented X-AR-IO header initialization for outbound peer requests while removing x-ar-io-origin and x-ar-io-origin-node-release headers from responses. This change maintains necessary header functionality for peer communication while reducing unnecessary header overhead in responses.Updated @ar.io/sdk dependency to support optional HyperBEAM URL functionality.[Release 41] - 2025-06-30 Added Added preferred chunk GET node URLs configuration via PREFERRED_CHUNK_GET_NODE_URLS environment variable to enable chunk-specific peer prioritization. Preferred URLs receive a weight of 100 for prioritization and the system selects 10 peers per attempt by default.Added hash validation for peer data fetching by including X-AR-IO-Expected-Digest header in peer requests when hash is available, validating peer responses against expected hash, and immediately rejecting mismatched data.Added DOCKER_NETWORK_NAME environment variable to configure the Docker network name used by Docker Compose.Added draft guide for running a community gateway.Added draft data verification architecture document.Changed Removed trusted node fallback for chunk retrieval. Chunks are now retrieved exclusively from peers, with the retry count increased from 3 to 50 to ensure reliability without the trusted node fallback.Fixed Fixed inverted logic preventing symlink creation in FsChunkDataStore.Fixed Content-Length header for range requests and 304 responses, properly setting header for single and multipart range requests and removing entity headers from 304 Not Modified responses per RFC 7232.Fixed MaxListenersExceeded warnings by adding setMaxListeners to read-through data cache.Fixed potential memory leaks in read-through data cache by using once instead of on for error and end event listeners.[Release 40] - 2025-06-23 This is an optional release that primarily improves caching when data is fetched from peers.Added Added experimental flush-to-stable script for manual database maintenance. This script allows operators to manually flush stable chain and data item tables, mirroring the logic of StandaloneSqliteDatabase.flushStableDataItems. WARNING: This script is experimental and directly modifies database contents. Use with caution and ensure proper backups before running.Changed Replaced yesql with custom SQL loader that handles comments better, improving SQL file parsing and maintenance.Switched to SPDX license headers to reduce LLM token usage, making the codebase more efficient for AI-assisted development.Improved untrusted data handling and hash validation in cache operations. The cache now allows caching when a hash is available for validation even for untrusted data sources, but only finalizes the cache when the computed hash matches a known trusted hash. This prevents cache poisoning while still allowing data caching from untrusted sources when the data can be validated.[Release 39] - 2025-06-17 This release enhances observability and reliability with new cache metrics, improved data verification capabilities, and automatic failover between chain data sources. The addition of ArNS-aware headers enables better data prioritization across the gateway network. This is a recommended but not urgent upgrade.Added Added filesystem cache metrics with cycle-based tracking. Two new Prometheus metrics track cache utilization: cache_objects_total (number of objects in cache) and cache_size_bytes (total cache size in bytes). Both metrics include store_type and data_type labels to differentiate between cache types (e.g., headers, contiguous_data). Metrics are updated after each complete cache scan cycle, providing accurate visibility into filesystem cache usage.Added X-AR-IO-Data-Id header to all data responses. This header shows the actual data ID being served, whether from a direct ID request or manifest path resolution, providing transparency about the content being delivered.Added automatic data item indexing when data verification is enabled. When ENABLE_BACKGROUND_DATA_VERIFICATION is set to true, the system now automatically enables data item indexing (ANS104_UNBUNDLE_FILTER) with an always: true filter if no filter is explicitly configured. This ensures bundles are unbundled to verify that data items are actually contained in the bundle associated with the Arweave transaction's data root.Added ArNS headers to outbound gateway requests to enable data prioritization. The generateRequestAttributes function now includes ArNS context headers (X-ArNS-Name, X-ArNS-Basename, X-ArNS-Record) in requests to other gateways and Arweave nodes, allowing downstream gateways to effectively prioritize ArNS data requests.Added configurable Docker Compose host port environment variables (CORE_PORT, ENVOY_PORT, CLICKHOUSE_PORT, CLICKHOUSE_PORT_2, CLICKHOUSE_PORT_3, OBSERVER_PORT) to allow flexible port mapping while maintaining container-internal port compatibility and security.Added Envoy aggregate cluster configuration for automatic failover between primary and fallback chain data sources. The primary cluster (default: arweave.net:443) uses passive outlier detection while the fallback cluster (default: peers.arweave.xyz:1984) uses active health checks. This enables zero-downtime failover between HTTPS and HTTP endpoints with configurable FALLBACK_NODE_HOST and FALLBACK_NODE_PORT environment variables.Changed Streamlined background data retrieval to reduce reliance on centralized sources. The default BACKGROUND_RETRIEVAL_ORDER now only includes chunks,s3, removing trusted-gateways and tx-data from the default configuration. This prioritizes verifiable chunk data and S3 storage for background operations like unbundling.Removed ar-io.net from default trusted gateways list and removed TRUSTED_GATEWAY_URL default value to reduce load on ar-io.net now that P2P data retrieval is re-enabled. Existing deployments with TRUSTED_GATEWAY_URL explicitly set will continue to work for backwards compatibility.[Release 38] - 2025-06-09 This release focuses on data integrity and security improvements, introducing trusted data verification and enhanced header information for data requests. Upgrading to this release is recommended but not urgent.Added Added X-AR-IO-Trusted header to indicate data source trustworthiness in responses. This header helps clients understand whether data comes from a trusted source and works alongside the existing X-AR-IO-Verified header to provide data integrity information. The system now filters peer data by requiring peers to indicate their content is either verified or trusted, protecting against misconfigured peers that may inadvertently serve unintended content (e.g., provider default landing pages) instead of actual Arweave data.Added If-None-Match header support for HTTP conditional requests enabling better client-side caching efficiency. When clients send an If-None-Match header that matches the ETag, the gateway returns a 304 Not Modified response with an empty body, reducing bandwidth usage and improving performance.Added digest and hash headers for data HEAD requests to enable client-side data integrity verification.Added EC2 IMDS (instance-profile) credential support for S3 data access, improving AWS authentication in cloud environments.Added trusted data flag to prevent caching of data from untrusted sources, ensuring only verified and reliable content is stored locally while still allowing serving of untrusted data when necessary.Changed Re-enabled ar-io-peers as fallback data source in configuration for improved data availability.Updated trusted node configuration to use arweave.net as the default trusted node URL.Updated ETag header format to use properly quoted strings (e.g., "hash" instead of hash) following HTTP/1.1 specification standards for improved compatibility with caching proxies and clients.[Release 37] - 2025-06-03 This is a recommended release due to the included observer robustness improvements. It also adds an important new feature - data verification for preferred ArNS names. When preferred ArNS names are set, the bundles containing the data they point to will be locally unbundled (verifying data item signatures), and the data root for the bundle will be compared to the data root in the Arweave chain (establishing that the data is on Arweave). To enable this feature, set your preferred ArNS names, turn on unbundling by setting ANS104_DOWNLOAD_WORKERS and ANS104_UNBUNDLE_WORKERS both to 1, and set your ANS104_INDEX_FILTER to a filter that will match the data items for your preferred names. If you don't know the filter, use {"always": true}, but be aware this will index the entire bundle for the IDs related to your preferred names.Note: this release contains migrations to data.db. If your node appears unresponsive please check core service logs to determine whether migrations are running and wait for them to finish.Added Added prioritized data verification system for preferred ArNS names, focusing computational resources on high-priority content while enabling flexible root transaction discovery through GraphQL fallback support.Added verification retry prioritization system with tracking of retry counts, priority levels, and attempt timestamps to ensure bundles do not get stuck retrying forever.Added improved observer functionality with best-of-2 observations and higher compression for more reliable network monitoring.Added MAX_VERIFICATION_RETRIES environment variable (default: 5) to limit verification retry attempts and prevent infinite loops for consistently failing data items.Added retry logic with exponential backoff for GraphQL queries to handle rate limiting (429) and server errors with improved resilience when querying trusted gateways for root bundle IDs.Changed Updated dependencies: replaced deprecated express-prometheus-middleware with the actively maintained express-prom-bundle library and updated prom-client to v15.1.3 for better compatibility and security.Updated Linux setup documentation to use modern package installation methods, replacing apt-key yarn installation with npm global install and updating Node.js/nvm versions.Improved route metrics normalization with explicit whitelist function for better granularity and proper handling of dynamic segments.Fixed Fixed docker-compose configuration to use correct NODE_MAX_OLD_SPACE_SIZE environment variable name.Fixed production TypeScript build configuration to exclude correct "test" directory path.Fixed Parquet exporter to properly handle data item block_transaction_index exports, preventing NULL value issues.Fixed bundles system to copy root_parent_offset when flushing data items to maintain data integrity.Fixed ClickHouse auto-import script to handle Parquet export not_started status properly.Fixed docker-compose ClickHouse configuration to not pass conflicting PARQUET_PATH environment variable to container scripts.Fixed verification process for data items that have not been unbundled by adding queue bundle support and removing bundle join constraint to ensure proper verification of data items without indexed root parents.[Release 36] - 2025-05-27 This is a recommended but not essential upgrade. The most important changes are the preferred ArNS caching feature for improved performance on frequently accessed content and the observer's 80% failure threshold to prevent invalid reports during network issues.Added Added preferred ArNS caching functionality that allows configuring lists of ArNS names to be cached longer via PREFERRED_ARNS_NAMES and PREFERRED_ARNS_BASE_NAMES environment variables. When configured, these names will be cleaned from the filesystem cache after PREFERRED_ARNS_CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD instead of the standard cleanup threshold (CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD). This is accomplished by maintaining an MRU (Most Recently Used) list of ArNS names in the contiguous metadata cache. When filesystem cleanup runs, it checks this list to determine which cleanup threshold to apply. This feature enables gateway operators to ensure popular or important ArNS names remain cached longer, improving performance for frequently accessed content.Added ArNS headers to responses: X-ArNS-Name, X-ArNS-Basename, and X-ArNS-Record to help identify which ArNS names were used in the resolution.Changed Updated observer to prevent report submission when failure rate exceeds 80%. This threshold helps guard against both poorly operated observers and widespread network issues. In the case of a widespread network issue, the assumption is that most gateway operators are well intentioned and will work together to troubleshoot and restore both observations and network stability, rather than submitting reports that would penalize functioning gateways.Updated default trusted gateway in docker-compose Envoy configuration to ar-io.net for improved robustness and alignment with core service configuration.Improved range request performance by passing ranges directly to getData implementations rather than streaming all data and extracting ranges.Fixed Fixed missing cache headers (X-Cache and other data headers) in range request responses to ensure consistent cache header behavior across all request types.Fixed async streaming for multipart range requests by using async iteration instead of synchronous reads, preventing potential data loss.Fixed ArNS resolution to properly exclude www subdomain from resolution logic.Fixed test reliability issues by properly awaiting stream completion before making assertions.Fixed chunk broadcasting to not await peer broadcasts, as they are best-effort operations.[Release 35] - 2025-05-19 This is a low upgrade priority release. It contains a small caching improvement and routing fix. Upgrading to help test it is appreciated but not essential.Changed Adjusted filesystem data expiration to be based on last request times rather than file access times which may be inaccurate.Adjusted CORS headers to include content-* headers.Fixed Fixed regex used to expose /api-docs when an apex ArNS name is set.[Release 34] - 2025-05-05 Given the resilience provided by adding a second trusted gateway URL, it is recommended that everyone upgrade to this release.Added Added peer list endpoints for retrieving information about Arweave peers and ar.io gateway peers.Added ar-io.net as a secondary trusted gateway to increase data retrieval resilience by eliminating a single point of failure.Added circuit breaker for Arweave peer chunk posting.Changed Created directories for DuckDB and Parquet to help avoid permission issues by the directories being created by containers.Fixed Fixed GraphQL ClickHouse error when returning block ID and timestamp.Fixed the tx-chunks-data-source to throw a proper error (resulting in a 404) when the first chunk is missing rather than streaming a partial response.[Release 33] - 2025-05-05 Added Added a [Parquet and ClickHouse usage guide]. Using ArDrive as an example, it provides step by step instructions about how to bulk load Parquet and configure continuous ingest of bundled data items into ClickHouse. This allows the ar-io-node to support performant GraphQL queries on larger data sets and facilitates sharing indexing work across gateways via distribution of Parquet files.Added support for configurable ArNS 404 pages using either:ARNS_NOT_FOUND_TX_ID: Transaction ID for custom 404 content ARNS_NOT_FOUND_ARNS_NAME: ArNS name to resolve for 404 content Added experimental /chunk/ GET route for serving chunk data by absolute offset either the local cache.Added support for AWS_SESSION_TOKEN in the S3 client configuration.Expanded ArNS OTEL tracing to improve resolution behavior observability.Added support for setting a ClickHouse username and password via the CLICKHOUSE_USERNAME and CLICKHOUSE_PASSWORD environment variable. When using ClickHouse, CLICKHOUSE_PASSWORD should always be set. However, CLICKHOUSE_USERNAME can be left unset. The username default will be used in that case.Added support for configuring the port used to connect to ClickHouse via the CLICKHOUSE_PORT environment variable.Changed Disabled ClickHouse import timing logging by default. It can be enabled via environment variable - DEBUG when running the service standalone or CLICKHOUSE_DEBUG when using Docker Compose Upgraded to ClickHouse 25.4.Fixed Ensure .env is read in clickhouse-import script.[Release 32] - 2025-04-22 Changed Reenabled parallel ArNS resolution with removal of misplaced global limit. Refer to release 30 notes for more details on configuration and rationale.Added a timeout for the last ArNS resolver in ARNS_RESOLVER_PRIORITY_ORDER. It defaults to 30 seconds and is configurable using ARNS_COMPOSITE_LAST_RESOLVER_TIMEOUT_MS. This helps prevent promise build up if the last resolver stalls.Fixed Fixed apex ArNS name handling when a subdomain is present in ARNS_ROOT_HOST.Fixed a case where fork recovery could stall due to early flushing of unstable chain data.Restored observer logs by removing unintentional default log level override in docker-compose.yaml.[Release 31] - 2025-04-11 Changed Improved peer TX header fetching by fetching from a wider range of peers and up/down weighting peers based on success/failure.Fixed Rolled back parallel ArNS resolution changes that were causing ArNS resolution to slow down over time.[Release 30] - 2025-04-04 Added Added support for filtering Winston logs with a new LOG_FILTER environment variable.Example filter: {"attributes":{"class":"ArweaveCompositeClient"}} to only show logs from that class.Use CORE_LOG_FILTER environment variable when running with docker-compose.Added parallel ArNS resolution capability.Configured via ARNS_MAX_CONCURRENT_RESOLUTIONS (default: 1).This foundation enables future enhancements to ArNS resolution and should generally not be adjusted at present.Changed Improved ClickHouse auto-import script with better error handling and continuous operation through errors.Reduced maximum header request rate per second to trusted node to load on community gateways.Optimized single owner and recipient queries on ClickHouse with specialized sorted tables.Used ID sorted ClickHouse table for ID queries to improve performance.Fixed Fixed data alignment in Parquet file name height boundaries to ensure consistent import boundaries.Removed trailing slashes from AO URLs to prevent issues when passing them to the SDK.Only prune SQLite data when ClickHouse import succeeds to prevent data loss during exports.[Release 29] - 2025-03-21 Changed Temporarily default to trusted gateway ArNS resolution to reduce CU load as much possible. On-demand CU resolution is still available as a fallback and the order can be modified by setting ARNS_RESOLVER_PRIORITY_ORDER.Remove duplicate network process call in on-demand resolver.Don't wait for network process debounces in the on-demand resolver.Slow network process dry runs no longer block fallback to next resolver.Added Added support for separate CUs URLs for the network and ANT processes via the NETWORK_AO_CU_URL and ANT_AO_CU_URL process URLs respectively. If either is missing the AO_CU_URL is used instead with a fallback to the SDK default URL if AO_CU_URL is also unspecified.Added CU URLs to on-demand ArNS resolver logs.Added circuit breakers for AR.IO network process CU dry runs. By default they use a 1 minute timeout and open after 30% failure over a 10 minute window and reset after 20 minutes.Fixed Owners in GraphQL results are now correctly retrieved from data based on offsets when using ClickHouse.[Release 28] - 2025-03-17 Changed Raised name not found name list refresh interval to 2 minutes to reduce load on CUs. This increases the maximum amount of time a user may wait for a new name to be available. Future releases will introduce other changes to mitigate this delay.Adjusted composite ArNS resolver to never timeout resolutions from the last ArNS resolver in the resolution list.Added Added support for serving a given ID or ArNS name from the apex domain of a gateway. If using an ID, set the APEX_TX_ID environment variable. If using an ArNS name, set the APEX_ARNS_NAME environment variable.Added BUNDLE_REPAIR_UPDATE_TIMESTAMPS_INTERVAL_SECONDS, BUNDLE_REPAIR_BACKFILL_INTERVAL_SECONDS, and BUNDLE_REPAIR_FILTER_REPROCESS_INTERVAL_SECONDS environment variables to control the interval for retrying failed bundles, backfilling bundle records, and reprocessing bundles after a filter change. Note: the latter two are rarely used. Queuing bundles for reprocessing via the /ar-io/admin/queue-bundle endpoint is usually preferable to automatic reprocessing as it is faster and offers more control over the reprocessing behavior.Fixed Signatures in GraphQL results are now correctly retrieved from data based on offsets when using ClickHouse.Adjusted exported Parquet file names to align with expectations of ClickHouse import script.Ensured that bundle indexing status is properly reset when bundles are manually queued after an unbundling filter change has been made.[Release 27] - 2025-02-20 Changed Set process IDs for mainnet.Increase default AO CU WASM memory limit to 17179869184 to support mainnet
+AR.IO Release Notes Overview Welcome to the documentation page for the AR.IO gateway release notes. Here, you will find detailed information about each version of the AR.IO gateway, including the enhancements, bug fixes, and any other changes introduced in every release. This page serves as a comprehensive resource to keep you informed about the latest developments and updates in the AR.IO gateway. For those interested in exploring the source code, each release's code is readily accessible at our GitHub repository: AR.IO gateway change logs. Stay updated with the continuous improvements and advancements in the AR.IO gateway by referring to this page for all release-related information.[Release 47] - 2025-08-25 This is an optional release that lays the groundwork for the gateway network to become completely independent of the legacy arweave.net gateway by enabling data item retrieval directly from chunks using root transaction ID lookups. It also introduces comprehensive distributed tracing for improved observability.Added Added comprehensive OpenTelemetry distributed tracing with proper span linking across all data request operations, providing end-to-end visibility from HTTP requests through data source failovers, cache operations, and peer retrievals with hierarchical parent-child span relationships.Added RootParentDataSource and Ans104OffsetSource to enable retrieving data items by ID directly from chunks when only the root transaction ID is indexed, transparently resolving data items to their root transactions and calculating correct byte ranges within ANS-104 bundles (temporarily disabled pending additional offset sources).Changed Fixed Removed incorrect Content-Digest header from chunk endpoint which was misleadingly representing only chunk data hash instead of complete JSON response body hash (will be reintroduced with correct semantics).[Release 46] - 2025-08-18 This is a recommended release that introduces AR.IO network chunk retrieval with cryptographic validation and enhanced observability. Gateway operators can now retrieve chunks directly from AR.IO peers with the same security guarantees as Arweave network chunks, significantly improving chunk caching and retrieval performance.Added Added AR.IO network chunk source enabling chunk retrieval from AR.IO peers with weighted peer selection, retry logic, and cryptographic validation to prevent serving of corrupted or malicious data.Added comprehensive OpenTelemetry tracing for chunk retrieval operations providing visibility into performance, cache behavior, and source attribution across the entire pipeline.Added HEAD request support to /chunk/{offset} endpoint with ETag headers for efficient caching and conditional request handling with If-None-Match support.Added chunk source headers for traceability: X-AR-IO-Chunk-Source-Type indicating data source, X-AR-IO-Chunk-Host with peer hostname, and X-Cache for cache status.Added RFC 9530 Content-Digest header support for standard-compliant content integrity verification in data and chunk responses.Added configurable composite chunk sources with parallelism control via CHUNK_DATA_RETRIEVAL_ORDER and CHUNK_METADATA_RETRIEVAL_ORDER environment variables supporting comma-separated source ordering.Added OpenAPI documentation for /ar-io/peers endpoint.Changed Renamed ar-io-peers to ar-io-network as the preferred configuration name while maintaining backwards compatibility.Enhanced /ar-io/peers endpoint to include both data and chunk weights for AR.IO gateway peers.Fixed Fixed ArNS custom 404 pages to prevent incorrect ArNS headers from being propagated to other gateways.[Release 45] - 2025-08-11 This is an optional release that enhances chunk broadcasting with improved preferred peer management, adds a hash-based partitioning filter for distributed data processing, fixes ArNS basename cache refresh issues, and includes comprehensive documentation improvements with a new glossary of AR.IO Node terminology.Added Added hash partitioning filter (MatchHashPartition) for distributing transaction and data item processing across multiple nodes with configurable partition ranges.Added comprehensive glossary documentation covering AR.IO Node terminology, concepts, and architectural components.Changed Improved chunk broadcasting preferred peer management with doubled default per-node queue depth threshold and ensured preferred peers are always prioritized first.Enhanced circuit breaker metrics with more detailed labels for better monitoring of data source failures.Improved ArNS resolution to properly propagate 404 errors from trusted gateway resolution (a more complete fix is coming in the next release).Expanded OTEL tracing to include ArNS cache operations for improved observability of name resolution and cache hydration.Fixed Fixed unreliable ArNS basename cache refreshes by adding retry logic for pagination failures and replacing p-debounce with timestamp-based debouncing for more predictable behavior.Fixed undefined headers handling in data requests.Fixed invalid cache hits by ensuring base64url encoded IDs are properly validated before use.Fixed routes data handling for undefined IDs in validity checks.[Release 44] - 2025-07-28 This is a recommended release that introduces efficient range request support for contiguous data retrieval from chunks, adds bundle metadata columns with offset indexing to improve offset availability throughout the network, enhances Merkle path parsing compatibility, and includes comprehensive documentation for offsets and Merkle paths.Added Added efficient range request support for chunk data retrieval, enabling optimized verifiable contiguous data fetching directly from Arweave nodes.Added bundle metadata columns to data.db to improve offset availability across the gateway network.Added OTEL (OpenTelemetry) tracing support for chunk POST operations, providing better observability for chunk broadcasting performance.Added OTEL environment variables to docker-compose.yaml for easier configuration of distributed tracing.Added comprehensive Arweave Merkle tree structure documentation detailing the data organization and validation rules.Added detailed documentation explaining Arweave transaction and chunk offset calculations.Added merkle-path-parser with full Arweave compatibility for improved Merkle proof validation.Changed Implemented promise-based chunk caching system replacing the previous WeakMap implementation, improving memory efficiency and cache reliability.Extended CompositeChunkSource to implement all chunk interfaces, providing a more unified chunk data access layer.[Release 43] - 2025-07-21 This is a recommended release that enables data verification by default for data items linked to ArNS names, improves chunk broadcasting efficiency, and adds automatic chunk data cache cleanup.Added Added automatic chunk data cache cleanup functionality with configurable retention period. Chunks are now automatically removed after 4 hours by default (configurable via CHUNK_DATA_CACHE_CLEANUP_THRESHOLD). The cleanup can be disabled by setting ENABLE_CHUNK_DATA_CACHE_CLEANUP=false. This helps manage disk space usage while maintaining cache performance benefits.Added demand-driven opt-out background verification for ArNS data. When ArNS names are requested, the system now proactively verifies the underlying data asynchronously in the background by unbundling verified chunk data retrieved directly from Arweave nodes. This ensures ArNS-served content is prioritized for verification, improving data integrity guarantees for frequently accessed named content.Changed Simplified chunk data storage by removing the dual-storage approach (by-hash and by-dataroot with symlinks). Chunks are now stored directly by data root only, reducing complexity and improving performance.Revamped chunk broadcasting architecture from 3-tier system to unified peer-based approach. Chunk broadcasting now uses individual fastq queues per peer with configurable concurrency and queue depth protection. Added support for preferred chunk POST peers via PREFERRED_CHUNK_POST_URLS environment variable. Configuration defaults have been optimized: CHUNK_POST_PEER_CONCURRENCY now defaults to match CHUNK_POST_MIN_SUCCESS_COUNT (3) to avoid over-broadcasting, and CHUNK_POST_PER_NODE_CONCURRENCY defaults to match CHUNK_POST_QUEUE_DEPTH_THRESHOLD (10) for consistent per-node load management. This change improves broadcast reliability and performance while simplifying the codebase by removing circuit breakers and tier-based logic.Modified DataVerificationWorker to ensure data item IDs (not just root IDs) have their retry count incremented, preventing IDs from being stuck without retry attempts. This improves the reliability of the data verification process.Fixed Fixed experiment bash Parquet export script generating filenames with count_star() instead of actual row counts for blocks and tags files. The script now correctly uses the -noheader flag when retrieving counts for filename generation.Fixed missing directory existence checks in FsCleanupWorker to prevent errors when attempting to scan non-existent directories during filesystem cleanup operations.[Release 42] - 2025-07-14 This is an optional release that improves peer request traceability, adds HyperBEAM URL support, and includes draft AI-generated technical documentation.Added Added support for optional HyperBEAM URL configuration via AO_ANT_HYPERBEAM_URL environment variable. In the future this allows ANT processes to use HyperBEAM nodes for caching and serving state, reducing pressure on compute units for simple read requests.Added AI-generated technical documentation covering AR.IO gateway architecture, data retrieval, Arweave connectivity, ArNS name resolution system, centralization analysis, and database architecture. These guides in docs/drafts/ are generally correct but should not be considered authoritative.Added origin and release information to query string parameters in outbound requests to both peer gateways and trusted gateways. Data requests now include ar-io-hops, ar-io-origin, ar-io-origin-release, ar-io-arns-record, and ar-io-arns-basename as query parameters, improving network observability and request tracing across the entire gateway network.Changed Implemented X-AR-IO header initialization for outbound peer requests while removing x-ar-io-origin and x-ar-io-origin-node-release headers from responses. This change maintains necessary header functionality for peer communication while reducing unnecessary header overhead in responses.Updated @ar.io/sdk dependency to support optional HyperBEAM URL functionality.[Release 41] - 2025-06-30 Added Added preferred chunk GET node URLs configuration via PREFERRED_CHUNK_GET_NODE_URLS environment variable to enable chunk-specific peer prioritization. Preferred URLs receive a weight of 100 for prioritization and the system selects 10 peers per attempt by default.Added hash validation for peer data fetching by including X-AR-IO-Expected-Digest header in peer requests when hash is available, validating peer responses against expected hash, and immediately rejecting mismatched data.Added DOCKER_NETWORK_NAME environment variable to configure the Docker network name used by Docker Compose.Added draft guide for running a community gateway.Added draft data verification architecture document.Changed Removed trusted node fallback for chunk retrieval. Chunks are now retrieved exclusively from peers, with the retry count increased from 3 to 50 to ensure reliability without the trusted node fallback.Fixed Fixed inverted logic preventing symlink creation in FsChunkDataStore.Fixed Content-Length header for range requests and 304 responses, properly setting header for single and multipart range requests and removing entity headers from 304 Not Modified responses per RFC 7232.Fixed MaxListenersExceeded warnings by adding setMaxListeners to read-through data cache.Fixed potential memory leaks in read-through data cache by using once instead of on for error and end event listeners.[Release 40] - 2025-06-23 This is an optional release that primarily improves caching when data is fetched from peers.Added Added experimental flush-to-stable script for manual database maintenance. This script allows operators to manually flush stable chain and data item tables, mirroring the logic of StandaloneSqliteDatabase.flushStableDataItems. WARNING: This script is experimental and directly modifies database contents. Use with caution and ensure proper backups before running.Changed Replaced yesql with custom SQL loader that handles comments better, improving SQL file parsing and maintenance.Switched to SPDX license headers to reduce LLM token usage, making the codebase more efficient for AI-assisted development.Improved untrusted data handling and hash validation in cache operations. The cache now allows caching when a hash is available for validation even for untrusted data sources, but only finalizes the cache when the computed hash matches a known trusted hash. This prevents cache poisoning while still allowing data caching from untrusted sources when the data can be validated.[Release 39] - 2025-06-17 This release enhances observability and reliability with new cache metrics, improved data verification capabilities, and automatic failover between chain data sources. The addition of ArNS-aware headers enables better data prioritization across the gateway network. This is a recommended but not urgent upgrade.Added Added filesystem cache metrics with cycle-based tracking. Two new Prometheus metrics track cache utilization: cache_objects_total (number of objects in cache) and cache_size_bytes (total cache size in bytes). Both metrics include store_type and data_type labels to differentiate between cache types (e.g., headers, contiguous_data). Metrics are updated after each complete cache scan cycle, providing accurate visibility into filesystem cache usage.Added X-AR-IO-Data-Id header to all data responses. This header shows the actual data ID being served, whether from a direct ID request or manifest path resolution, providing transparency about the content being delivered.Added automatic data item indexing when data verification is enabled. When ENABLE_BACKGROUND_DATA_VERIFICATION is set to true, the system now automatically enables data item indexing (ANS104_UNBUNDLE_FILTER) with an always: true filter if no filter is explicitly configured. This ensures bundles are unbundled to verify that data items are actually contained in the bundle associated with the Arweave transaction's data root.Added ArNS headers to outbound gateway requests to enable data prioritization. The generateRequestAttributes function now includes ArNS context headers (X-ArNS-Name, X-ArNS-Basename, X-ArNS-Record) in requests to other gateways and Arweave nodes, allowing downstream gateways to effectively prioritize ArNS data requests.Added configurable Docker Compose host port environment variables (CORE_PORT, ENVOY_PORT, CLICKHOUSE_PORT, CLICKHOUSE_PORT_2, CLICKHOUSE_PORT_3, OBSERVER_PORT) to allow flexible port mapping while maintaining container-internal port compatibility and security.Added Envoy aggregate cluster configuration for automatic failover between primary and fallback chain data sources. The primary cluster (default: arweave.net:443) uses passive outlier detection while the fallback cluster (default: peers.arweave.xyz:1984) uses active health checks. This enables zero-downtime failover between HTTPS and HTTP endpoints with configurable FALLBACK_NODE_HOST and FALLBACK_NODE_PORT environment variables.Changed Streamlined background data retrieval to reduce reliance on centralized sources. The default BACKGROUND_RETRIEVAL_ORDER now only includes chunks,s3, removing trusted-gateways and tx-data from the default configuration. This prioritizes verifiable chunk data and S3 storage for background operations like unbundling.Removed ar-io.net from default trusted gateways list and removed TRUSTED_GATEWAY_URL default value to reduce load on ar-io.net now that P2P data retrieval is re-enabled. Existing deployments with TRUSTED_GATEWAY_URL explicitly set will continue to work for backwards compatibility.[Release 38] - 2025-06-09 This release focuses on data integrity and security improvements, introducing trusted data verification and enhanced header information for data requests. Upgrading to this release is recommended but not urgent.Added Added X-AR-IO-Trusted header to indicate data source trustworthiness in responses. This header helps clients understand whether data comes from a trusted source and works alongside the existing X-AR-IO-Verified header to provide data integrity information. The system now filters peer data by requiring peers to indicate their content is either verified or trusted, protecting against misconfigured peers that may inadvertently serve unintended content (e.g., provider default landing pages) instead of actual Arweave data.Added If-None-Match header support for HTTP conditional requests enabling better client-side caching efficiency. When clients send an If-None-Match header that matches the ETag, the gateway returns a 304 Not Modified response with an empty body, reducing bandwidth usage and improving performance.Added digest and hash headers for data HEAD requests to enable client-side data integrity verification.Added EC2 IMDS (instance-profile) credential support for S3 data access, improving AWS authentication in cloud environments.Added trusted data flag to prevent caching of data from untrusted sources, ensuring only verified and reliable content is stored locally while still allowing serving of untrusted data when necessary.Changed Re-enabled ar-io-peers as fallback data source in configuration for improved data availability.Updated trusted node configuration to use arweave.net as the default trusted node URL.Updated ETag header format to use properly quoted strings (e.g., "hash" instead of hash) following HTTP/1.1 specification standards for improved compatibility with caching proxies and clients.[Release 37] - 2025-06-03 This is a recommended release due to the included observer robustness improvements. It also adds an important new feature - data verification for preferred ArNS names. When preferred ArNS names are set, the bundles containing the data they point to will be locally unbundled (verifying data item signatures), and the data root for the bundle will be compared to the data root in the Arweave chain (establishing that the data is on Arweave). To enable this feature, set your preferred ArNS names, turn on unbundling by setting ANS104_DOWNLOAD_WORKERS and ANS104_UNBUNDLE_WORKERS both to 1, and set your ANS104_INDEX_FILTER to a filter that will match the data items for your preferred names. If you don't know the filter, use {"always": true}, but be aware this will index the entire bundle for the IDs related to your preferred names.Note: this release contains migrations to data.db. If your node appears unresponsive please check core service logs to determine whether migrations are running and wait for them to finish.Added Added prioritized data verification system for preferred ArNS names, focusing computational resources on high-priority content while enabling flexible root transaction discovery through GraphQL fallback support.Added verification retry prioritization system with tracking of retry counts, priority levels, and attempt timestamps to ensure bundles do not get stuck retrying forever.Added improved observer functionality with best-of-2 observations and higher compression for more reliable network monitoring.Added MAX_VERIFICATION_RETRIES environment variable (default: 5) to limit verification retry attempts and prevent infinite loops for consistently failing data items.Added retry logic with exponential backoff for GraphQL queries to handle rate limiting (429) and server errors with improved resilience when querying trusted gateways for root bundle IDs.Changed Updated dependencies: replaced deprecated express-prometheus-middleware with the actively maintained express-prom-bundle library and updated prom-client to v15.1.3 for better compatibility and security.Updated Linux setup documentation to use modern package installation methods, replacing apt-key yarn installation with npm global install and updating Node.js/nvm versions.Improved route metrics normalization with explicit whitelist function for better granularity and proper handling of dynamic segments.Fixed Fixed docker-compose configuration to use correct NODE_MAX_OLD_SPACE_SIZE environment variable name.Fixed production TypeScript build configuration to exclude correct "test" directory path.Fixed Parquet exporter to properly handle data item block_transaction_index exports, preventing NULL value issues.Fixed bundles system to copy root_parent_offset when flushing data items to maintain data integrity.Fixed ClickHouse auto-import script to handle Parquet export not_started status properly.Fixed docker-compose ClickHouse configuration to not pass conflicting PARQUET_PATH environment variable to container scripts.Fixed verification process for data items that have not been unbundled by adding queue bundle support and removing bundle join constraint to ensure proper verification of data items without indexed root parents.[Release 36] - 2025-05-27 This is a recommended but not essential upgrade. The most important changes are the preferred ArNS caching feature for improved performance on frequently accessed content and the observer's 80% failure threshold to prevent invalid reports during network issues.Added Added preferred ArNS caching functionality that allows configuring lists of ArNS names to be cached longer via PREFERRED_ARNS_NAMES and PREFERRED_ARNS_BASE_NAMES environment variables. When configured, these names will be cleaned from the filesystem cache after PREFERRED_ARNS_CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD instead of the standard cleanup threshold (CONTIGUOUS_DATA_CACHE_CLEANUP_THRESHOLD). This is accomplished by maintaining an MRU (Most Recently Used) list of ArNS names in the contiguous metadata cache. When filesystem cleanup runs, it checks this list to determine which cleanup threshold to apply. This feature enables gateway operators to ensure popular or important ArNS names remain cached longer, improving performance for frequently accessed content.Added ArNS headers to responses: X-ArNS-Name, X-ArNS-Basename, and X-ArNS-Record to help identify which ArNS names were used in the resolution.Changed Updated observer to prevent report submission when failure rate exceeds 80%. This threshold helps guard against both poorly operated observers and widespread network issues. In the case of a widespread network issue, the assumption is that most gateway operators are well intentioned and will work together to troubleshoot and restore both observations and network stability, rather than submitting reports that would penalize functioning gateways.Updated default trusted gateway in docker-compose Envoy configuration to ar-io.net for improved robustness and alignment with core service configuration.Improved range request performance by passing ranges directly to getData implementations rather than streaming all data and extracting ranges.Fixed Fixed missing cache headers (X-Cache and other data headers) in range request responses to ensure consistent cache header behavior across all request types.Fixed async streaming for multipart range requests by using async iteration instead of synchronous reads, preventing potential data loss.Fixed ArNS resolution to properly exclude www subdomain from resolution logic.Fixed test reliability issues by properly awaiting stream completion before making assertions.Fixed chunk broadcasting to not await peer broadcasts, as they are best-effort operations.[Release 35] - 2025-05-19 This is a low upgrade priority release. It contains a small caching improvement and routing fix. Upgrading to help test it is appreciated but not essential.Changed Adjusted filesystem data expiration to be based on last request times rather than file access times which may be inaccurate.Adjusted CORS headers to include content-* headers.Fixed Fixed regex used to expose /api-docs when an apex ArNS name is set.[Release 34] - 2025-05-05 Given the resilience provided by adding a second trusted gateway URL, it is recommended that everyone upgrade to this release.Added Added peer list endpoints for retrieving information about Arweave peers and ar.io gateway peers.Added ar-io.net as a secondary trusted gateway to increase data retrieval resilience by eliminating a single point of failure.Added circuit breaker for Arweave peer chunk posting.Changed Created directories for DuckDB and Parquet to help avoid permission issues by the directories being created by containers.Fixed Fixed GraphQL ClickHouse error when returning block ID and timestamp.Fixed the tx-chunks-data-source to throw a proper error (resulting in a 404) when the first chunk is missing rather than streaming a partial response.[Release 33] - 2025-05-05 Added Added a [Parquet and ClickHouse usage guide]. Using ArDrive as an example, it provides step by step instructions about how to bulk load Parquet and configure continuous ingest of bundled data items into ClickHouse. This allows the ar-io-node to support performant GraphQL queries on larger data sets and facilitates sharing indexing work across gateways via distribution of Parquet files.Added support for configurable ArNS 404 pages using either:ARNS_NOT_FOUND_TX_ID: Transaction ID for custom 404 content ARNS_NOT_FOUND_ARNS_NAME: ArNS name to resolve for 404 content Added experimental /chunk/ GET route for serving chunk data by absolute offset either the local cache.Added support for AWS_SESSION_TOKEN in the S3 client configuration.Expanded ArNS OTEL tracing to improve resolution behavior observability.Added support for setting a ClickHouse username and password via the CLICKHOUSE_USERNAME and CLICKHOUSE_PASSWORD environment variable. When using ClickHouse, CLICKHOUSE_PASSWORD should always be set. However, CLICKHOUSE_USERNAME can be left unset. The username default will be used in that case.Added support for configuring the port used to connect to ClickHouse via the CLICKHOUSE_PORT environment variable.Changed Disabled ClickHouse import timing logging by default. It can be enabled via environment variable - DEBUG when running the service standalone or CLICKHOUSE_DEBUG when using Docker Compose Upgraded to ClickHouse 25.4.Fixed Ensure .env is read in clickhouse-import script.[Release 32] - 2025-04-22 Changed Reenabled parallel ArNS resolution with removal of misplaced global limit. Refer to release 30 notes for more details on configuration and rationale.Added a timeout for the last ArNS resolver in ARNS_RESOLVER_PRIORITY_ORDER. It defaults to 30 seconds and is configurable using ARNS_COMPOSITE_LAST_RESOLVER_TIMEOUT_MS. This helps prevent promise build up if the last resolver stalls.Fixed Fixed apex ArNS name handling when a subdomain is present in ARNS_ROOT_HOST.Fixed a case where fork recovery could stall due to early flushing of unstable chain data.Restored observer logs by removing unintentional default log level override in docker-compose.yaml.[Release 31] - 2025-04-11 Changed Improved peer TX header fetching by fetching from a wider range of peers and up/down weighting peers based on success/failure.Fixed Rolled back parallel ArNS resolution changes that were causing ArNS resolution to slow down over time.[Release 30] - 2025-04-04 Added Added support for filtering Winston logs with a new LOG_FILTER environment variable.Example filter: {"attributes":{"class":"ArweaveCompositeClient"}} to only show logs from that class.Use CORE_LOG_FILTER environment variable when running with docker-compose.Added parallel ArNS resolution capability.Configured via ARNS_MAX_CONCURRENT_RESOLUTIONS (default: 1).This foundation enables future enhancements to ArNS resolution and should generally not be adjusted at present.Changed Improved ClickHouse auto-import script with better error handling and continuous operation through errors.Reduced maximum header request rate per second to trusted node to load on community gateways.Optimized single owner and recipient queries on ClickHouse with specialized sorted tables.Used ID sorted ClickHouse table for ID queries to improve performance.Fixed Fixed data alignment in Parquet file name height boundaries to ensure consistent import boundaries.Removed trailing slashes from AO URLs to prevent issues when passing them to the SDK.Only prune SQLite data when ClickHouse import succeeds to prevent data loss during exports.[Release 29] - 2025-03-21 Changed Temporarily default to trusted gateway ArNS resolution to reduce CU load as much possible. On-demand CU resolution is still available as a fallback and the order can be modified by setting ARNS_RESOLVER_PRIORITY_ORDER.Remove duplicate network process call in on-demand resolver.Don't wait for network process debounces in the on-demand resolver.Slow network process dry runs no longer block fallback to next resolver.Added Added support for separate CUs URLs for the network and ANT processes via the NETWORK_AO_CU_URL and ANT_AO_CU_URL process URLs respectively. If either is missing the AO_CU_URL is used instead with a fallback to the SDK default URL if AO_CU_URL is also unspecified.Added CU URLs to on-demand ArNS resolver logs.Added circuit breakers for AR.IO network process CU dry runs. By default they use a 1 minute timeout and open after 30% failure over a 10 minute window and reset after 20 minutes.Fixed Owners in GraphQL results are now correctly retrieved from data based on offsets when using ClickHouse.[Release 28] - 2025-03-17 Changed Raised name not found name list refresh interval to 2 minutes to reduce load on CUs. This increases the maximum amount of time a user may wait for a new name to be available. Future releases will introduce other changes to mitigate this delay.Adjusted composite ArNS resolver to never timeout resolutions from the last ArNS resolver in the resolution list.Added Added support for serving a given ID or ArNS name from the apex domain of a gateway. If using an ID, set the APEX_TX_ID environment variable. If using an ArNS name, set the APEX_ARNS_NAME environment variable.Added BUNDLE_REPAIR_UPDATE_TIMESTAMPS_INTERVAL_SECONDS, BUNDLE_REPAIR_BACKFILL_INTERVAL_SECONDS, and BUNDLE_REPAIR_FILTER_REPROCESS_INTERVAL_SECONDS environment variables to control the interval for retrying failed bundles, backfilling bundle records, and reprocessing bundles after a filter change. Note: the latter two are rarely used. Queuing bundles for reprocessing via the /ar-io/admin/queue-bundle endpoint is usually preferable to automatic reprocessing as it is faster and offers more control over the reprocessing behavior.Fixed Signatures in GraphQL results are now correctly retrieved from data based on offsets when using ClickHouse.Adjusted exported Parquet file names to align with expectations of ClickHouse import script.Ensured that bundle indexing status is properly reset when bundles are manually queued after an unbundling filter change has been made.[Release 27] - 2025-02-20 Changed Set process IDs for mainnet.Increase default AO CU WASM memory limit to 17179869184 to support mainnet
 process.[Release 26] - 2025-02-13 Added Added a per resolver timeout in the composite ArNS resolver. When the
 composite resolver attempts resolution it is applied to each resolution
 attempt. It is configurable via the ARNS_COMPOSITE_RESOLVER_TIMEOUT_MS and
@@ -2173,6 +2173,19 @@ Wayfinder Wayfinder is a client-side routing and verification protocol that prov
 # 51. ARIO Docs
 
 Document Number: 51
+Source: https://docs.ar.io/wayfinder/core/gateway-providers/network
+Words: 96
+Quality Score: 0.479
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+NetworkGatewaysProvider Overview The NetworkGatewaysProvider discovers AR.IO gateways from the AR.IO Network using the AR.IO SDK. It provides dynamic access to the full network of verified gateways, making it the recommended choice for production applications.Important To avoid rate limits and improve performance, consider wrapping NetworkGatewaysProvider with SimpleCacheGatewaysProvider (for Node.js/server environments) or LocalStorageGatewaysProvider (for browser environments). This enables caching of gateway lists and reduces unnecessary network requests.Basic Usage Configuration Options NetworkGatewaysProviderOptions Related Documentation Gateway Providers Overview: Compare all gateway providers StaticGatewaysProvider: Static gateway configuration SimpleCacheGatewaysProvider: Caching wrapper Wayfinder Configuration: Main wayfinder setup Routing Strategies: How gateways are selected
+
+---
+
+# 52. ARIO Docs
+
+Document Number: 52
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake
 Words: 66
 Quality Score: 0.479
@@ -2184,9 +2197,9 @@ network minimum) Yes tags array An array of GQL tag objects to attach to the tra
 
 ---
 
-# 52. Content Moderation - ARIO Docs
+# 53. Content Moderation - ARIO Docs
 
-Document Number: 52
+Document Number: 53
 Source: https://docs.ar.io/gateways/moderation
 Words: 543
 Quality Score: 0.479
@@ -2200,9 +2213,9 @@ Sqlite3 is able to interact with a hexadecimal representation of the BLOB, by us
 
 ---
 
-# 53. ARIO Docs
+# 54. ARIO Docs
 
-Document Number: 53
+Document Number: 54
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates
 Words: 93
 Quality Score: 0.479
@@ -2213,9 +2226,9 @@ getGatewayDelegates getGatewayDelegates is a method on the ARIO class that retri
 
 ---
 
-# 54. ARIO Docs
+# 55. ARIO Docs
 
-Document Number: 54
+Document Number: 55
 Source: https://docs.ar.io/wayfinder/core
 Words: 298
 Quality Score: 0.478
@@ -2288,9 +2301,9 @@ console.error(`[WAYFINDER] ${message}`, ...args),
 
 ---
 
-# 55. accessControlList - ARIO Docs
+# 56. accessControlList - ARIO Docs
 
-Document Number: 55
+Document Number: 56
 Source: https://docs.ar.io/ar-io-sdk/ant-registry/access-control-list
 Words: 48
 Quality Score: 0.476
@@ -2301,9 +2314,9 @@ accessControlList is a method on the ANTRegistry class that retrieves the access
 
 ---
 
-# 56. ARIO Docs
+# 57. ARIO Docs
 
-Document Number: 56
+Document Number: 57
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor
 Words: 53
 Quality Score: 0.472
@@ -2314,9 +2327,9 @@ getDemandFactor getDemandFactor is a method on the ARIO class that retrieves the
 
 ---
 
-# 57. getRecords - ARIO Docs
+# 58. getRecords - ARIO Docs
 
-Document Number: 57
+Document Number: 58
 Source: https://docs.ar.io/ar-io-sdk/ants/get-records
 Words: 39
 Quality Score: 0.471
@@ -2327,9 +2340,9 @@ getRecords is a method on the ANT class that retrieves all the records stored in
 
 ---
 
-# 58. ARIO Docs
+# 59. ARIO Docs
 
-Document Number: 58
+Document Number: 59
 Source: https://docs.ar.io/ar-io-sdk/ants/set-ticker
 Words: 53
 Quality Score: 0.467
@@ -2340,9 +2353,9 @@ setTicker setTicker is a method on the ANT class that updates the ticker symbol 
 
 ---
 
-# 59. upgradeRecord - ARIO Docs
+# 60. upgradeRecord - ARIO Docs
 
-Document Number: 59
+Document Number: 60
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record
 Words: 94
 Quality Score: 0.467
@@ -2354,9 +2367,9 @@ upgradeRecord is a method on the ARIO class that upgrades an existing ArNS recor
 
 ---
 
-# 60. getInfo - ARIO Docs
+# 61. getInfo - ARIO Docs
 
-Document Number: 60
+Document Number: 61
 Source: https://docs.ar.io/ar-io-sdk/ants/get-info
 Words: 37
 Quality Score: 0.467
@@ -2367,9 +2380,9 @@ getInfo is a method on the ANT class that retrieves general information about th
 
 ---
 
-# 61. getState - ARIO Docs
+# 62. getState - ARIO Docs
 
-Document Number: 61
+Document Number: 62
 Source: https://docs.ar.io/ar-io-sdk/ants/get-state
 Words: 37
 Quality Score: 0.467
@@ -2380,9 +2393,9 @@ getState is a method on the ANT class that retrieves the complete state of the A
 
 ---
 
-# 62. The ARIO Token - ARIO Docs
+# 63. The ARIO Token - ARIO Docs
 
-Document Number: 62
+Document Number: 63
 Source: https://docs.ar.io/token
 Words: 250
 Quality Score: 0.467
@@ -2393,9 +2406,9 @@ Overview ARIO is the multifunction AO Computer based token that powers the AR.IO
 
 ---
 
-# 63. addController - ARIO Docs
+# 64. addController - ARIO Docs
 
-Document Number: 63
+Document Number: 64
 Source: https://docs.ar.io/ar-io-sdk/ants/add-controller
 Words: 72
 Quality Score: 0.465
@@ -2406,9 +2419,9 @@ addController is a method on the ANT class that adds a new controller to the ANT
 
 ---
 
-# 64. transfer - ARIO Docs
+# 65. transfer - ARIO Docs
 
-Document Number: 64
+Document Number: 65
 Source: https://docs.ar.io/ar-io-sdk/ants/transfer
 Words: 54
 Quality Score: 0.465
@@ -2419,9 +2432,9 @@ transfer is a method on the ANT class that transfers ownership of the ANT proces
 
 ---
 
-# 65. ARIO Docs
+# 66. ARIO Docs
 
-Document Number: 65
+Document Number: 66
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-name
 Words: 51
 Quality Score: 0.465
@@ -2432,9 +2445,9 @@ getArNSReturnedName getArNSReturnedName is a method on the ARIO class that retri
 
 ---
 
-# 66. getLatestANTVersion - ARIO Docs
+# 67. getLatestANTVersion - ARIO Docs
 
-Document Number: 66
+Document Number: 67
 Source: https://docs.ar.io/ar-io-sdk/ant-versions/get-latest-ant-version
 Words: 36
 Quality Score: 0.465
@@ -2445,9 +2458,9 @@ getLatestANTVersion is a method on the ANTVersions class that retrieves the late
 
 ---
 
-# 67. Glossary - ARIO Docs
+# 68. Glossary - ARIO Docs
 
-Document Number: 67
+Document Number: 68
 Source: https://docs.ar.io/glossary
 Words: 1405
 Quality Score: 0.465
@@ -2458,9 +2471,9 @@ Many novel terms and acronyms are used by the Arweave ecosystem as well as some 
 
 ---
 
-# 68. ARIO Docs
+# 69. ARIO Docs
 
-Document Number: 68
+Document Number: 69
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/instant-withdrawal
 Words: 73
 Quality Score: 0.464
@@ -2471,9 +2484,9 @@ instantWithdrawal instantWithdrawal is a method on the ARIO class that instantly
 
 ---
 
-# 69. setKeywords - ARIO Docs
+# 70. setKeywords - ARIO Docs
 
-Document Number: 69
+Document Number: 70
 Source: https://docs.ar.io/ar-io-sdk/ants/set-keywords
 Words: 55
 Quality Score: 0.464
@@ -2484,9 +2497,9 @@ setKeywords is a method on the ANT class that updates the list of keywords assoc
 
 ---
 
-# 70. ARIO Docs
+# 71. ARIO Docs
 
-Document Number: 70
+Document Number: 71
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease
 Words: 121
 Quality Score: 0.463
@@ -2498,9 +2511,9 @@ extendLease extendLease is a method on the ARIO class that extends the lease dur
 
 ---
 
-# 71. ARIO Docs
+# 72. ARIO Docs
 
-Document Number: 71
+Document Number: 72
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/redelegate-stake
 Words: 149
 Quality Score: 0.463
@@ -2511,9 +2524,9 @@ redelegateStake redelegateStake is a method on the ARIO class that moves staked 
 
 ---
 
-# 72. ARIO Docs
+# 73. ARIO Docs
 
-Document Number: 72
+Document Number: 73
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-delegations
 Words: 107
 Quality Score: 0.463
@@ -2524,9 +2537,9 @@ getDelegations getDelegations is a method on the ARIO class that retrieves all a
 
 ---
 
-# 73. ARIO Docs
+# 74. ARIO Docs
 
-Document Number: 73
+Document Number: 74
 Source: https://docs.ar.io/ar-io-sdk/ants/release-name
 Words: 111
 Quality Score: 0.463
@@ -2537,9 +2550,9 @@ releaseName releaseName is a method on the ANT class that releases an ArNS name 
 
 ---
 
-# 74. ARIO Docs
+# 75. ARIO Docs
 
-Document Number: 74
+Document Number: 75
 Source: https://docs.ar.io/ar-io-sdk/ants/reassign-name
 Words: 82
 Quality Score: 0.462
@@ -2550,9 +2563,9 @@ reassignName reassignName is a method on the ANT class that transfers ownership 
 
 ---
 
-# 75. ARIO Docs
+# 76. ARIO Docs
 
-Document Number: 75
+Document Number: 76
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-primary-names
 Words: 75
 Quality Score: 0.461
@@ -2563,9 +2576,9 @@ removePrimaryNames removePrimaryNames is a method on the ANT class that removes 
 
 ---
 
-# 76. getANTVersions - ARIO Docs
+# 77. getANTVersions - ARIO Docs
 
-Document Number: 76
+Document Number: 77
 Source: https://docs.ar.io/ar-io-sdk/ant-versions/get-ant-versions
 Words: 33
 Quality Score: 0.460
@@ -2576,9 +2589,9 @@ getANTVersions is a method on the ANTVersions class that retrieves all versions 
 
 ---
 
-# 77. createVault - ARIO Docs
+# 78. createVault - ARIO Docs
 
-Document Number: 77
+Document Number: 78
 Source: https://docs.ar.io/ar-io-sdk/ario/vaults/create-vault
 Words: 89
 Quality Score: 0.458
@@ -2589,9 +2602,9 @@ createVault is a method on the ARIO class that creates a new vault to lock ARIO 
 
 ---
 
-# 78. ARIO Docs
+# 79. ARIO Docs
 
-Document Number: 78
+Document Number: 79
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake
 Words: 58
 Quality Score: 0.458
@@ -2602,9 +2615,22 @@ increaseDelegateStake increaseDelegateStake is a method on the ARIO class that i
 
 ---
 
-# 79. ARIO Docs
+# 80. ARIO Docs
 
-Document Number: 79
+Document Number: 80
+Source: https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache
+Words: 76
+Quality Score: 0.457
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+SimpleCacheGatewaysProvider Overview The SimpleCacheGatewaysProvider holds the resulting gateways in memory for the provided TTL, making it ideal for Node environments. This helps avoid rate-limits and unnecessary network requests to the underlying gateways provider.Important SimpleCacheGatewaysProvider is ideal for Node.js/server environments. For browser-based web applications, use LocalStorageGatewaysProvider instead to persist gateway lists across sessions.Basic Usage Configuration Options Related Documentation Gateway Providers: Compare all gateway providers NetworkGatewaysProvider: Dynamic network discovery StaticGatewaysProvider: Static gateway configuration Wayfinder Configuration: Main wayfinder setup
+
+---
+
+# 81. ARIO Docs
+
+Document Number: 81
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-redelegation-fee
 Words: 61
 Quality Score: 0.455
@@ -2615,9 +2641,9 @@ getRedelegationFee getRedelegationFee is a method on the ARIO class that retriev
 
 ---
 
-# 80. ARIO Docs
+# 82. ARIO Docs
 
-Document Number: 80
+Document Number: 82
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-allowed-delegates
 Words: 91
 Quality Score: 0.455
@@ -2628,9 +2654,9 @@ getAllowedDelegates getAllowedDelegates is a method on the ARIO class that retri
 
 ---
 
-# 81. Gateway ArNS Resolution - ARIO Docs
+# 83. Gateway ArNS Resolution - ARIO Docs
 
-Document Number: 81
+Document Number: 83
 Source: https://docs.ar.io/gateways/arns-resolution
 Words: 624
 Quality Score: 0.455
@@ -2653,9 +2679,9 @@ always respects the TTL when serving it)
 
 ---
 
-# 82. getCostDetails - ARIO Docs
+# 84. getCostDetails - ARIO Docs
 
-Document Number: 82
+Document Number: 84
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details
 Words: 137
 Quality Score: 0.455
@@ -2666,9 +2692,9 @@ getCostDetails is a method on the ARIO class that calculates detailed cost infor
 
 ---
 
-# 83. ARIO Docs
+# 85. ARIO Docs
 
-Document Number: 83
+Document Number: 85
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-controller
 Words: 60
 Quality Score: 0.454
@@ -2679,9 +2705,9 @@ removeController removeController is a method on the ANT class that removes a sp
 
 ---
 
-# 84. ARIO Docs
+# 86. ARIO Docs
 
-Document Number: 84
+Document Number: 86
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake
 Words: 60
 Quality Score: 0.454
@@ -2692,9 +2718,9 @@ increaseOperatorStake increaseOperatorStake is a method on the ARIO class that i
 
 ---
 
-# 85. Getting Started - ARIO Docs
+# 87. Getting Started - ARIO Docs
 
-Document Number: 85
+Document Number: 87
 Source: https://docs.ar.io/ar-io-sdk/getting-started
 Words: 120
 Quality Score: 0.454
@@ -2709,9 +2735,9 @@ documentation for more information on how to provide the necessary polyfills.Out
 
 ---
 
-# 86. getInfo - ARIO Docs
+# 88. getInfo - ARIO Docs
 
-Document Number: 86
+Document Number: 88
 Source: https://docs.ar.io/ar-io-sdk/ario/general/get-info
 Words: 39
 Quality Score: 0.452
@@ -2722,9 +2748,9 @@ getInfo is a method on the ARIO class that retrieves general information about t
 
 ---
 
-# 87. getHandlers - ARIO Docs
+# 89. getHandlers - ARIO Docs
 
-Document Number: 87
+Document Number: 89
 Source: https://docs.ar.io/ar-io-sdk/ants/get-handlers
 Words: 29
 Quality Score: 0.452
@@ -2735,9 +2761,9 @@ getHandlers is a method on the ANT class that retrieves the handlers supported b
 
 ---
 
-# 88. ARIO Docs
+# 90. ARIO Docs
 
-Document Number: 88
+Document Number: 90
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings
 Words: 187
 Quality Score: 0.452
@@ -2752,9 +2778,9 @@ network participation.true tags array An array of GQL tag objects to attach to t
 
 ---
 
-# 89. getGatewayVaults - ARIO Docs
+# 91. getGatewayVaults - ARIO Docs
 
-Document Number: 89
+Document Number: 91
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults
 Words: 43
 Quality Score: 0.450
@@ -2765,9 +2791,9 @@ getGatewayVaults is a method on the ARIO class that retrieves all vault informat
 
 ---
 
-# 90. getArNSReservedNames - ARIO Docs
+# 92. getArNSReservedNames - ARIO Docs
 
-Document Number: 90
+Document Number: 92
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names
 Words: 95
 Quality Score: 0.449
@@ -2778,9 +2804,9 @@ getArNSReservedNames is a method on the ARIO class that retrieves all reserved A
 
 ---
 
-# 91. getGateway - ARIO Docs
+# 93. getGateway - ARIO Docs
 
-Document Number: 91
+Document Number: 93
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway
 Words: 42
 Quality Score: 0.448
@@ -2791,9 +2817,9 @@ getGateway is a method on the ARIO class that retrieves detailed information abo
 
 ---
 
-# 92. ARIO Docs
+# 94. ARIO Docs
 
-Document Number: 92
+Document Number: 94
 Source: https://docs.ar.io/ar-io-sdk/ants/set-logo
 Words: 69
 Quality Score: 0.447
@@ -2804,9 +2830,9 @@ setLogo setLogo is a method on the ANT class that updates the logo of the ANT pr
 
 ---
 
-# 93. Managing Primary Names - ARIO Docs
+# 95. Managing Primary Names - ARIO Docs
 
-Document Number: 93
+Document Number: 95
 Source: https://docs.ar.io/guides/primary-names
 Words: 716
 Quality Score: 0.447
@@ -2819,9 +2845,9 @@ owner (ANT) must approve who can claim their name as an identifier. Setting a Pr
 
 ---
 
-# 94. Data Root Verification Strategy - ARIO Docs
+# 96. Data Root Verification Strategy - ARIO Docs
 
-Document Number: 94
+Document Number: 96
 Source: https://docs.ar.io/wayfinder/core/verification-strategies/data-root-verification
 Words: 196
 Quality Score: 0.445
@@ -2836,9 +2862,9 @@ required data indexed, verification will fail.How It Works Compute Data Root: Ch
 
 ---
 
-# 95. addVersion - ARIO Docs
+# 97. addVersion - ARIO Docs
 
-Document Number: 95
+Document Number: 97
 Source: https://docs.ar.io/ar-io-sdk/ant-versions/add-version
 Words: 72
 Quality Score: 0.444
@@ -2849,9 +2875,9 @@ addVersion is a method on the ANTVersions class that adds a new version to an AN
 
 ---
 
-# 96. ARIO Node Filtering System - ARIO Docs
+# 98. ARIO Node Filtering System - ARIO Docs
 
-Document Number: 96
+Document Number: 98
 Source: https://docs.ar.io/gateways/filters
 Words: 541
 Quality Score: 0.444
@@ -2862,9 +2888,9 @@ The AR.IO Node filtering system provides a flexible way to match and filter item
 
 ---
 
-# 97. ARIO Docs
+# 99. ARIO Docs
 
-Document Number: 97
+Document Number: 99
 Source: https://docs.ar.io/ar-io-sdk/ants/set-name
 Words: 52
 Quality Score: 0.443
@@ -2875,9 +2901,9 @@ setName setName is a method on the ANT class that updates the dis name of the AN
 
 ---
 
-# 98. ARIO Docs
+# 100. ARIO Docs
 
-Document Number: 98
+Document Number: 100
 Source: https://docs.ar.io/ar-io-sdk/ants/set-description
 Words: 52
 Quality Score: 0.443
@@ -2888,9 +2914,9 @@ setDescription setDescription is a method on the ANT class that updates the desc
 
 ---
 
-# 99. ARIO Docs
+# 101. ARIO Docs
 
-Document Number: 99
+Document Number: 101
 Source: https://docs.ar.io/wayfinder/core/gateway-providers/static
 Words: 66
 Quality Score: 0.443
@@ -2901,9 +2927,9 @@ StaticGatewaysProvider Overview The StaticGatewaysProvider uses a predefined lis
 
 ---
 
-# 100. getCurrentEpoch - ARIO Docs
+# 102. getCurrentEpoch - ARIO Docs
 
-Document Number: 100
+Document Number: 102
 Source: https://docs.ar.io/ar-io-sdk/ario/epochs/get-current-epoch
 Words: 32
 Quality Score: 0.442
@@ -2914,9 +2940,9 @@ getCurrentEpoch is a method on the ARIO class that retrieves information about t
 
 ---
 
-# 101. removeUndernameRecord - ARIO Docs
+# 103. removeUndernameRecord - ARIO Docs
 
-Document Number: 101
+Document Number: 103
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-undername-record
 Words: 58
 Quality Score: 0.440
@@ -2927,9 +2953,9 @@ removeUndernameRecord is a method on the ANT class that removes a specified unde
 
 ---
 
-# 102. getArNSNamesForAddress - ARIO Docs
+# 104. getArNSNamesForAddress - ARIO Docs
 
-Document Number: 102
+Document Number: 104
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-names-for-address
 Words: 37
 Quality Score: 0.439
@@ -2940,9 +2966,9 @@ getArNSNamesForAddress is a method on the ARIO class that retrieves ArNS names o
 
 ---
 
-# 103. getArNSRecord - ARIO Docs
+# 105. getArNSRecord - ARIO Docs
 
-Document Number: 103
+Document Number: 105
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record
 Words: 49
 Quality Score: 0.438
@@ -2953,9 +2979,9 @@ getArNSRecord is a method on the ARIO class that retrieves the details of a spec
 
 ---
 
-# 104. Normalized Addresses - ARIO Docs
+# 106. Normalized Addresses - ARIO Docs
 
-Document Number: 104
+Document Number: 106
 Source: https://docs.ar.io/concepts/normalized-addresses
 Words: 638
 Quality Score: 0.438
@@ -2969,9 +2995,9 @@ respectively.Arweave The public key for an Arweave wallet is the n field of the 
 
 ---
 
-# 105. ARIO Docs
+# 107. ARIO Docs
 
-Document Number: 105
+Document Number: 107
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network
 Words: 71
 Quality Score: 0.436
@@ -2982,9 +3008,9 @@ leaveNetwork leaveNetwork is a method on the ARIO class that sets a gateway's st
 
 ---
 
-# 106. joinNetwork - ARIO Docs
+# 108. joinNetwork - ARIO Docs
 
-Document Number: 106
+Document Number: 108
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/join-network
 Words: 158
 Quality Score: 0.435
@@ -2995,9 +3021,9 @@ joinNetwork is a method on the ARIO class that joins a gateway to the ar.io netw
 
 ---
 
-# 107. ARIO Docs
+# 109. ARIO Docs
 
-Document Number: 107
+Document Number: 109
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-names
 Words: 106
 Quality Score: 0.434
@@ -3008,9 +3034,9 @@ getArNSReturnedNames getArNSReturnedNames is a method on the ARIO class that ret
 
 ---
 
-# 108. cancelWithdrawal - ARIO Docs
+# 110. cancelWithdrawal - ARIO Docs
 
-Document Number: 108
+Document Number: 110
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal
 Words: 71
 Quality Score: 0.433
@@ -3021,9 +3047,9 @@ cancelWithdrawal is a method on the ARIO class that cancels a pending withdrawal
 
 ---
 
-# 109. ARIO Docs
+# 111. ARIO Docs
 
-Document Number: 109
+Document Number: 111
 Source: https://docs.ar.io/ar-io-sdk/ario/primary-names/get-primary-name
 Words: 56
 Quality Score: 0.432
@@ -3034,9 +3060,9 @@ getPrimaryName getPrimaryName is a method on the ARIO class that retrieves the p
 
 ---
 
-# 110. ARIO Gateway Environment Variables - ARIO Docs
+# 112. ARIO Gateway Environment Variables - ARIO Docs
 
-Document Number: 110
+Document Number: 112
 Source: https://docs.ar.io/gateways/env
 Words: 1238
 Quality Score: 0.432
@@ -3094,9 +3120,9 @@ specified filter PROMETHEUS_METRICS_ENABLED Boolean false If true, the gateway w
 
 ---
 
-# 111. Optimizing Data Handling in ARIO Gateway - ARIO Docs
+# 113. Optimizing Data Handling in ARIO Gateway - ARIO Docs
 
-Document Number: 111
+Document Number: 113
 Source: https://docs.ar.io/gateways/optimize-data
 Words: 968
 Quality Score: 0.432
@@ -3107,9 +3133,9 @@ The AR.IO Gateway provides powerful tools for optimizing how you access and serv
 
 ---
 
-# 112. ARIO Docs
+# 114. ARIO Docs
 
-Document Number: 112
+Document Number: 114
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit
 Words: 120
 Quality Score: 0.430
@@ -3122,9 +3148,9 @@ total) false fundFrom string The source of funds: 'balance', 'stakes', 'any', or
 
 ---
 
-# 113. removeRecord - ARIO Docs
+# 115. removeRecord - ARIO Docs
 
-Document Number: 113
+Document Number: 115
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-record
 Words: 64
 Quality Score: 0.429
@@ -3136,9 +3162,9 @@ for more details.removeRecord is a method on the ANT class that removes a record
 
 ---
 
-# 114. ANTgetLogo() - ARIO Docs
+# 116. ANTgetLogo() - ARIO Docs
 
-Document Number: 114
+Document Number: 116
 Source: https://docs.ar.io/ar-io-sdk/ants/get-logo
 Words: 53
 Quality Score: 0.429
@@ -3149,9 +3175,9 @@ getLogo getLogo is a method on the ANT class that retrieves the transaction ID (
 
 ---
 
-# 115. approvePrimaryNameRequest - ARIO Docs
+# 117. approvePrimaryNameRequest - ARIO Docs
 
-Document Number: 115
+Document Number: 117
 Source: https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request
 Words: 74
 Quality Score: 0.429
@@ -3162,9 +3188,9 @@ approvePrimaryNameRequest is a method on the ANT class that approves a primary n
 
 ---
 
-# 116. ARIO Docs
+# 118. ARIO Docs
 
-Document Number: 116
+Document Number: 118
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake
 Words: 74
 Quality Score: 0.427
@@ -3175,9 +3201,9 @@ decreaseDelegateStake decreaseDelegateStake is a method on the ARIO class that d
 
 ---
 
-# 117. Signature Verification Strategy - ARIO Docs
+# 119. Signature Verification Strategy - ARIO Docs
 
-Document Number: 117
+Document Number: 119
 Source: https://docs.ar.io/wayfinder/core/verification-strategies/signature-verification
 Words: 148
 Quality Score: 0.427
@@ -3192,9 +3218,9 @@ required data indexed, verification will fail.How It Works Fetch Metadata: Retri
 
 ---
 
-# 118. ARIO Docs
+# 120. ARIO Docs
 
-Document Number: 118
+Document Number: 120
 Source: https://docs.ar.io/wayfinder/core/gateway-providers
 Words: 100
 Quality Score: 0.425
@@ -3205,9 +3231,9 @@ Gateway Providers Overview Gateway providers are responsible for discovering and
 
 ---
 
-# 119. ARIO SDK Release Notes - ARIO Docs
+# 121. ARIO SDK Release Notes - ARIO Docs
 
-Document Number: 119
+Document Number: 121
 Source: https://docs.ar.io/ar-io-sdk/release-notes
 Words: 6816
 Quality Score: 0.420
@@ -3218,9 +3244,9 @@ AR.IO SDK Changelog Overview Welcome to the documentation page for the AR.IO SDK
 
 ---
 
-# 120. getAntsForAddress - ARIO Docs
+# 122. getAntsForAddress - ARIO Docs
 
-Document Number: 120
+Document Number: 122
 Source: https://docs.ar.io/ar-io-sdk/ant-registry/get-ants-for-address
 Words: 120
 Quality Score: 0.414
@@ -3231,9 +3257,9 @@ getAntsForAddress is a method on the ANTRegistry class that provides a cleaner A
 
 ---
 
-# 121. register - ARIO Docs
+# 123. register - ARIO Docs
 
-Document Number: 121
+Document Number: 123
 Source: https://docs.ar.io/ar-io-sdk/ant-registry/register
 Words: 25
 Quality Score: 0.408
@@ -3244,9 +3270,9 @@ register is a method on the ANTRegistry class that registers a new ANT process w
 
 ---
 
-# 122. Wayfinder Core Release Notes - ARIO Docs
+# 124. Wayfinder Core Release Notes - ARIO Docs
 
-Document Number: 122
+Document Number: 124
 Source: https://docs.ar.io/wayfinder/release-notes/core
 Words: 514
 Quality Score: 0.405
@@ -3257,36 +3283,10 @@ Wayfinder Core Changelog Overview Welcome to the documentation page for the Wayf
 
 ---
 
-# 123. ARIO Documentation
-
-Document Number: 123
-Source: https://docs.ar.io/
-Words: 141
-Quality Score: 0.404
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-🚀 Get Started Quickly: Explore Our Quick Start Guides → Welcome to the Permaweb Data in paradise. The AR.IO ecosystem is dedicated to cultivating products and protocols for sustaining access to digital permanence, making the permaweb available to everyone. Powered by the ARIO Token, this global network of Gateways connects users to permanently stored data, files, applications, and web pages on the Arweave decentralized storage network.Guides Run a Gateway Get your AR.IO Gateway up and running correctly and quickly.Read more Use ArNS Learn the process of purchasing and managing an ArNS name.Read more Deploy a dApp Learn how to easily deploy a website or application on the permaweb.Read more ANTs on Bazar In a few simple steps, learn how to make an ANT tradable on Bazar.Read more GraphQL Learn how to leverage GraphQL to efficiently fetch data via AR.IO gateways.Read more
-
----
-
-# 124. ARIO Documentation
-
-Document Number: 124
-Source: https://docs.ar.io/wayfinder/core/gateway-providers/network
-Words: 141
-Quality Score: 0.404
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-🚀 Get Started Quickly: Explore Our Quick Start Guides → Welcome to the Permaweb Data in paradise. The AR.IO ecosystem is dedicated to cultivating products and protocols for sustaining access to digital permanence, making the permaweb available to everyone. Powered by the ARIO Token, this global network of Gateways connects users to permanently stored data, files, applications, and web pages on the Arweave decentralized storage network.Guides Run a Gateway Get your AR.IO Gateway up and running correctly and quickly.Read more Use ArNS Learn the process of purchasing and managing an ArNS name.Read more Deploy a dApp Learn how to easily deploy a website or application on the permaweb.Read more ANTs on Bazar In a few simple steps, learn how to make an ANT tradable on Bazar.Read more GraphQL Learn how to leverage GraphQL to efficiently fetch data via AR.IO gateways.Read more
-
----
-
 # 125. ARIO Documentation
 
 Document Number: 125
-Source: https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache
+Source: https://docs.ar.io/
 Words: 141
 Quality Score: 0.404
 Extraction Method: defuddle_semantic
