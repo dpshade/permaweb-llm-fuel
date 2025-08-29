@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-08-28T12:14:21.665Z
+Generated on: 2025-08-29T12:16:59.228Z
 Total documents: 142
-Total words: 76698
+Total words: 76808
 
 ## Table of Contents
 
@@ -58,81 +58,81 @@ Total words: 76698
 48. [getGateways](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateways)
 49. [Gateway Architecture](https://docs.ar.io/gateways)
 50. [Wayfinder](https://docs.ar.io/wayfinder)
-51. [Network](https://docs.ar.io/wayfinder/core/gateway-providers/network)
-52. [Decrease Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake)
-53. [Content Moderation](https://docs.ar.io/gateways/moderation)
-54. [Get Gateway Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates)
-55. [Core](https://docs.ar.io/wayfinder/core)
-56. [accessControlList](https://docs.ar.io/ar-io-sdk/ant-registry/access-control-list)
-57. [Get Demand Factor](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor)
-58. [getRecords](https://docs.ar.io/ar-io-sdk/ants/get-records)
-59. [Set Ticker](https://docs.ar.io/ar-io-sdk/ants/set-ticker)
-60. [upgradeRecord](https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record)
-61. [getInfo](https://docs.ar.io/ar-io-sdk/ants/get-info)
-62. [getState](https://docs.ar.io/ar-io-sdk/ants/get-state)
-63. [The ARIO Token](https://docs.ar.io/token)
-64. [addController](https://docs.ar.io/ar-io-sdk/ants/add-controller)
-65. [transfer](https://docs.ar.io/ar-io-sdk/ants/transfer)
-66. [Get Arns Returned Name](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-name)
-67. [getLatestANTVersion](https://docs.ar.io/ar-io-sdk/ant-versions/get-latest-ant-version)
-68. [Glossary](https://docs.ar.io/glossary)
-69. [Instant Withdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/instant-withdrawal)
-70. [setKeywords](https://docs.ar.io/ar-io-sdk/ants/set-keywords)
-71. [Extend Lease](https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease)
-72. [Redelegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/redelegate-stake)
-73. [Get Delegations](https://docs.ar.io/ar-io-sdk/ario/gateways/get-delegations)
-74. [Release Name](https://docs.ar.io/ar-io-sdk/ants/release-name)
-75. [Reassign Name](https://docs.ar.io/ar-io-sdk/ants/reassign-name)
-76. [Remove Primary Names](https://docs.ar.io/ar-io-sdk/ants/remove-primary-names)
-77. [getANTVersions](https://docs.ar.io/ar-io-sdk/ant-versions/get-ant-versions)
-78. [createVault](https://docs.ar.io/ar-io-sdk/ario/vaults/create-vault)
-79. [Increase Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake)
-80. [Simple Cache](https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache)
-81. [Get Redelegation Fee](https://docs.ar.io/ar-io-sdk/ario/gateways/get-redelegation-fee)
-82. [Get Allowed Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-allowed-delegates)
-83. [Gateway ArNS Resolution](https://docs.ar.io/gateways/arns-resolution)
-84. [getCostDetails](https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details)
-85. [Remove Controller](https://docs.ar.io/ar-io-sdk/ants/remove-controller)
-86. [Increase Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake)
-87. [Getting Started](https://docs.ar.io/ar-io-sdk/getting-started)
-88. [getInfo](https://docs.ar.io/ar-io-sdk/ario/general/get-info)
-89. [getHandlers](https://docs.ar.io/ar-io-sdk/ants/get-handlers)
-90. [Update Gateway Settings](https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings)
-91. [getGatewayVaults](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults)
-92. [getArNSReservedNames](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names)
-93. [getGateway](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway)
-94. [Set Logo](https://docs.ar.io/ar-io-sdk/ants/set-logo)
-95. [Managing Primary Names](https://docs.ar.io/guides/primary-names)
-96. [Data Root Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/data-root-verification)
-97. [addVersion](https://docs.ar.io/ar-io-sdk/ant-versions/add-version)
-98. [ARIO Node Filtering System](https://docs.ar.io/gateways/filters)
-99. [Set Name](https://docs.ar.io/ar-io-sdk/ants/set-name)
-100. [Set Description](https://docs.ar.io/ar-io-sdk/ants/set-description)
-101. [Static](https://docs.ar.io/wayfinder/core/gateway-providers/static)
-102. [getCurrentEpoch](https://docs.ar.io/ar-io-sdk/ario/epochs/get-current-epoch)
-103. [removeUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/remove-undername-record)
-104. [getArNSNamesForAddress](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-names-for-address)
-105. [getArNSRecord](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record)
-106. [Normalized Addresses](https://docs.ar.io/concepts/normalized-addresses)
-107. [Leave Network](https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network)
-108. [joinNetwork](https://docs.ar.io/ar-io-sdk/ario/gateways/join-network)
-109. [Get Arns Returned Names](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-names)
-110. [cancelWithdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal)
-111. [Get Primary Name](https://docs.ar.io/ar-io-sdk/ario/primary-names/get-primary-name)
-112. [ARIO Gateway Environment Variables](https://docs.ar.io/gateways/env)
-113. [Optimizing Data Handling in ARIO Gateway](https://docs.ar.io/gateways/optimize-data)
-114. [Increase Undername Limit](https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit)
-115. [removeRecord](https://docs.ar.io/ar-io-sdk/ants/remove-record)
-116. [ANTgetLogo()](https://docs.ar.io/ar-io-sdk/ants/get-logo)
-117. [approvePrimaryNameRequest](https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request)
-118. [Decrease Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake)
-119. [Signature Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/signature-verification)
-120. [Gateway Providers](https://docs.ar.io/wayfinder/core/gateway-providers)
-121. [ARIO SDK Release Notes](https://docs.ar.io/ar-io-sdk/release-notes)
-122. [getAntsForAddress](https://docs.ar.io/ar-io-sdk/ant-registry/get-ants-for-address)
-123. [register](https://docs.ar.io/ar-io-sdk/ant-registry/register)
-124. [Wayfinder Core Release Notes](https://docs.ar.io/wayfinder/release-notes/core)
-125. [ARIO Documentation](https://docs.ar.io/)
+51. [Decrease Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake)
+52. [Content Moderation](https://docs.ar.io/gateways/moderation)
+53. [Get Gateway Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates)
+54. [Core](https://docs.ar.io/wayfinder/core)
+55. [accessControlList](https://docs.ar.io/ar-io-sdk/ant-registry/access-control-list)
+56. [Get Demand Factor](https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor)
+57. [getRecords](https://docs.ar.io/ar-io-sdk/ants/get-records)
+58. [Set Ticker](https://docs.ar.io/ar-io-sdk/ants/set-ticker)
+59. [upgradeRecord](https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record)
+60. [getInfo](https://docs.ar.io/ar-io-sdk/ants/get-info)
+61. [getState](https://docs.ar.io/ar-io-sdk/ants/get-state)
+62. [The ARIO Token](https://docs.ar.io/token)
+63. [addController](https://docs.ar.io/ar-io-sdk/ants/add-controller)
+64. [transfer](https://docs.ar.io/ar-io-sdk/ants/transfer)
+65. [Get Arns Returned Name](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-name)
+66. [getLatestANTVersion](https://docs.ar.io/ar-io-sdk/ant-versions/get-latest-ant-version)
+67. [Glossary](https://docs.ar.io/glossary)
+68. [Instant Withdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/instant-withdrawal)
+69. [setKeywords](https://docs.ar.io/ar-io-sdk/ants/set-keywords)
+70. [Extend Lease](https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease)
+71. [Redelegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/redelegate-stake)
+72. [Get Delegations](https://docs.ar.io/ar-io-sdk/ario/gateways/get-delegations)
+73. [Release Name](https://docs.ar.io/ar-io-sdk/ants/release-name)
+74. [Reassign Name](https://docs.ar.io/ar-io-sdk/ants/reassign-name)
+75. [Remove Primary Names](https://docs.ar.io/ar-io-sdk/ants/remove-primary-names)
+76. [getANTVersions](https://docs.ar.io/ar-io-sdk/ant-versions/get-ant-versions)
+77. [createVault](https://docs.ar.io/ar-io-sdk/ario/vaults/create-vault)
+78. [Increase Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake)
+79. [Get Redelegation Fee](https://docs.ar.io/ar-io-sdk/ario/gateways/get-redelegation-fee)
+80. [Get Allowed Delegates](https://docs.ar.io/ar-io-sdk/ario/gateways/get-allowed-delegates)
+81. [Gateway ArNS Resolution](https://docs.ar.io/gateways/arns-resolution)
+82. [getCostDetails](https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details)
+83. [Remove Controller](https://docs.ar.io/ar-io-sdk/ants/remove-controller)
+84. [Increase Operator Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake)
+85. [Getting Started](https://docs.ar.io/ar-io-sdk/getting-started)
+86. [getInfo](https://docs.ar.io/ar-io-sdk/ario/general/get-info)
+87. [getHandlers](https://docs.ar.io/ar-io-sdk/ants/get-handlers)
+88. [Update Gateway Settings](https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings)
+89. [getGatewayVaults](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults)
+90. [getArNSReservedNames](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names)
+91. [getGateway](https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway)
+92. [Set Logo](https://docs.ar.io/ar-io-sdk/ants/set-logo)
+93. [Managing Primary Names](https://docs.ar.io/guides/primary-names)
+94. [Data Root Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/data-root-verification)
+95. [addVersion](https://docs.ar.io/ar-io-sdk/ant-versions/add-version)
+96. [ARIO Node Filtering System](https://docs.ar.io/gateways/filters)
+97. [Set Name](https://docs.ar.io/ar-io-sdk/ants/set-name)
+98. [Set Description](https://docs.ar.io/ar-io-sdk/ants/set-description)
+99. [Static](https://docs.ar.io/wayfinder/core/gateway-providers/static)
+100. [getCurrentEpoch](https://docs.ar.io/ar-io-sdk/ario/epochs/get-current-epoch)
+101. [removeUndernameRecord](https://docs.ar.io/ar-io-sdk/ants/remove-undername-record)
+102. [getArNSNamesForAddress](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-names-for-address)
+103. [getArNSRecord](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record)
+104. [Normalized Addresses](https://docs.ar.io/concepts/normalized-addresses)
+105. [Leave Network](https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network)
+106. [joinNetwork](https://docs.ar.io/ar-io-sdk/ario/gateways/join-network)
+107. [Get Arns Returned Names](https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-names)
+108. [cancelWithdrawal](https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal)
+109. [Get Primary Name](https://docs.ar.io/ar-io-sdk/ario/primary-names/get-primary-name)
+110. [ARIO Gateway Environment Variables](https://docs.ar.io/gateways/env)
+111. [Optimizing Data Handling in ARIO Gateway](https://docs.ar.io/gateways/optimize-data)
+112. [Increase Undername Limit](https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit)
+113. [removeRecord](https://docs.ar.io/ar-io-sdk/ants/remove-record)
+114. [ANTgetLogo()](https://docs.ar.io/ar-io-sdk/ants/get-logo)
+115. [approvePrimaryNameRequest](https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request)
+116. [Decrease Delegate Stake](https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake)
+117. [Signature Verification Strategy](https://docs.ar.io/wayfinder/core/verification-strategies/signature-verification)
+118. [Gateway Providers](https://docs.ar.io/wayfinder/core/gateway-providers)
+119. [ARIO SDK Release Notes](https://docs.ar.io/ar-io-sdk/release-notes)
+120. [getAntsForAddress](https://docs.ar.io/ar-io-sdk/ant-registry/get-ants-for-address)
+121. [register](https://docs.ar.io/ar-io-sdk/ant-registry/register)
+122. [Wayfinder Core Release Notes](https://docs.ar.io/wayfinder/release-notes/core)
+123. [ARIO Documentation](https://docs.ar.io/)
+124. [ARIO Documentation](https://docs.ar.io/wayfinder/core/gateway-providers/network)
+125. [ARIO Documentation](https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache)
 126. [ANTs on Bazar](https://docs.ar.io/guides/ants-on-bazar)
 127. [Verification Strategies](https://docs.ar.io/wayfinder/core/verification-strategies)
 128. [Gateway Apex Domain Content Resolution](https://docs.ar.io/gateways/apex)
@@ -2173,19 +2173,6 @@ Wayfinder Wayfinder is a client-side routing and verification protocol that prov
 # 51. ARIO Docs
 
 Document Number: 51
-Source: https://docs.ar.io/wayfinder/core/gateway-providers/network
-Words: 96
-Quality Score: 0.479
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-NetworkGatewaysProvider Overview The NetworkGatewaysProvider discovers AR.IO gateways from the AR.IO Network using the AR.IO SDK. It provides dynamic access to the full network of verified gateways, making it the recommended choice for production applications.Important To avoid rate limits and improve performance, consider wrapping NetworkGatewaysProvider with SimpleCacheGatewaysProvider (for Node.js/server environments) or LocalStorageGatewaysProvider (for browser environments). This enables caching of gateway lists and reduces unnecessary network requests.Basic Usage Configuration Options NetworkGatewaysProviderOptions Related Documentation Gateway Providers Overview: Compare all gateway providers StaticGatewaysProvider: Static gateway configuration SimpleCacheGatewaysProvider: Caching wrapper Wayfinder Configuration: Main wayfinder setup Routing Strategies: How gateways are selected
-
----
-
-# 52. ARIO Docs
-
-Document Number: 52
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-operator-stake
 Words: 66
 Quality Score: 0.479
@@ -2197,9 +2184,9 @@ network minimum) Yes tags array An array of GQL tag objects to attach to the tra
 
 ---
 
-# 53. Content Moderation - ARIO Docs
+# 52. Content Moderation - ARIO Docs
 
-Document Number: 53
+Document Number: 52
 Source: https://docs.ar.io/gateways/moderation
 Words: 543
 Quality Score: 0.479
@@ -2213,9 +2200,9 @@ Sqlite3 is able to interact with a hexadecimal representation of the BLOB, by us
 
 ---
 
-# 54. ARIO Docs
+# 53. ARIO Docs
 
-Document Number: 54
+Document Number: 53
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-delegates
 Words: 93
 Quality Score: 0.479
@@ -2226,9 +2213,9 @@ getGatewayDelegates getGatewayDelegates is a method on the ARIO class that retri
 
 ---
 
-# 55. ARIO Docs
+# 54. ARIO Docs
 
-Document Number: 55
+Document Number: 54
 Source: https://docs.ar.io/wayfinder/core
 Words: 298
 Quality Score: 0.478
@@ -2301,9 +2288,9 @@ console.error(`[WAYFINDER] ${message}`, ...args),
 
 ---
 
-# 56. accessControlList - ARIO Docs
+# 55. accessControlList - ARIO Docs
 
-Document Number: 56
+Document Number: 55
 Source: https://docs.ar.io/ar-io-sdk/ant-registry/access-control-list
 Words: 48
 Quality Score: 0.476
@@ -2314,9 +2301,9 @@ accessControlList is a method on the ANTRegistry class that retrieves the access
 
 ---
 
-# 57. ARIO Docs
+# 56. ARIO Docs
 
-Document Number: 57
+Document Number: 56
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-demand-factor
 Words: 53
 Quality Score: 0.472
@@ -2327,9 +2314,9 @@ getDemandFactor getDemandFactor is a method on the ARIO class that retrieves the
 
 ---
 
-# 58. getRecords - ARIO Docs
+# 57. getRecords - ARIO Docs
 
-Document Number: 58
+Document Number: 57
 Source: https://docs.ar.io/ar-io-sdk/ants/get-records
 Words: 39
 Quality Score: 0.471
@@ -2340,9 +2327,9 @@ getRecords is a method on the ANT class that retrieves all the records stored in
 
 ---
 
-# 59. ARIO Docs
+# 58. ARIO Docs
 
-Document Number: 59
+Document Number: 58
 Source: https://docs.ar.io/ar-io-sdk/ants/set-ticker
 Words: 53
 Quality Score: 0.467
@@ -2353,9 +2340,9 @@ setTicker setTicker is a method on the ANT class that updates the ticker symbol 
 
 ---
 
-# 60. upgradeRecord - ARIO Docs
+# 59. upgradeRecord - ARIO Docs
 
-Document Number: 60
+Document Number: 59
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/upgrade-record
 Words: 94
 Quality Score: 0.467
@@ -2367,9 +2354,9 @@ upgradeRecord is a method on the ARIO class that upgrades an existing ArNS recor
 
 ---
 
-# 61. getInfo - ARIO Docs
+# 60. getInfo - ARIO Docs
 
-Document Number: 61
+Document Number: 60
 Source: https://docs.ar.io/ar-io-sdk/ants/get-info
 Words: 37
 Quality Score: 0.467
@@ -2380,9 +2367,9 @@ getInfo is a method on the ANT class that retrieves general information about th
 
 ---
 
-# 62. getState - ARIO Docs
+# 61. getState - ARIO Docs
 
-Document Number: 62
+Document Number: 61
 Source: https://docs.ar.io/ar-io-sdk/ants/get-state
 Words: 37
 Quality Score: 0.467
@@ -2393,9 +2380,9 @@ getState is a method on the ANT class that retrieves the complete state of the A
 
 ---
 
-# 63. The ARIO Token - ARIO Docs
+# 62. The ARIO Token - ARIO Docs
 
-Document Number: 63
+Document Number: 62
 Source: https://docs.ar.io/token
 Words: 250
 Quality Score: 0.467
@@ -2406,9 +2393,9 @@ Overview ARIO is the multifunction AO Computer based token that powers the AR.IO
 
 ---
 
-# 64. addController - ARIO Docs
+# 63. addController - ARIO Docs
 
-Document Number: 64
+Document Number: 63
 Source: https://docs.ar.io/ar-io-sdk/ants/add-controller
 Words: 72
 Quality Score: 0.465
@@ -2419,9 +2406,9 @@ addController is a method on the ANT class that adds a new controller to the ANT
 
 ---
 
-# 65. transfer - ARIO Docs
+# 64. transfer - ARIO Docs
 
-Document Number: 65
+Document Number: 64
 Source: https://docs.ar.io/ar-io-sdk/ants/transfer
 Words: 54
 Quality Score: 0.465
@@ -2432,9 +2419,9 @@ transfer is a method on the ANT class that transfers ownership of the ANT proces
 
 ---
 
-# 66. ARIO Docs
+# 65. ARIO Docs
 
-Document Number: 66
+Document Number: 65
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-name
 Words: 51
 Quality Score: 0.465
@@ -2445,9 +2432,9 @@ getArNSReturnedName getArNSReturnedName is a method on the ARIO class that retri
 
 ---
 
-# 67. getLatestANTVersion - ARIO Docs
+# 66. getLatestANTVersion - ARIO Docs
 
-Document Number: 67
+Document Number: 66
 Source: https://docs.ar.io/ar-io-sdk/ant-versions/get-latest-ant-version
 Words: 36
 Quality Score: 0.465
@@ -2458,9 +2445,9 @@ getLatestANTVersion is a method on the ANTVersions class that retrieves the late
 
 ---
 
-# 68. Glossary - ARIO Docs
+# 67. Glossary - ARIO Docs
 
-Document Number: 68
+Document Number: 67
 Source: https://docs.ar.io/glossary
 Words: 1405
 Quality Score: 0.465
@@ -2471,9 +2458,9 @@ Many novel terms and acronyms are used by the Arweave ecosystem as well as some 
 
 ---
 
-# 69. ARIO Docs
+# 68. ARIO Docs
 
-Document Number: 69
+Document Number: 68
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/instant-withdrawal
 Words: 73
 Quality Score: 0.464
@@ -2484,9 +2471,9 @@ instantWithdrawal instantWithdrawal is a method on the ARIO class that instantly
 
 ---
 
-# 70. setKeywords - ARIO Docs
+# 69. setKeywords - ARIO Docs
 
-Document Number: 70
+Document Number: 69
 Source: https://docs.ar.io/ar-io-sdk/ants/set-keywords
 Words: 55
 Quality Score: 0.464
@@ -2497,9 +2484,9 @@ setKeywords is a method on the ANT class that updates the list of keywords assoc
 
 ---
 
-# 71. ARIO Docs
+# 70. ARIO Docs
 
-Document Number: 71
+Document Number: 70
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/extend-lease
 Words: 121
 Quality Score: 0.463
@@ -2511,9 +2498,9 @@ extendLease extendLease is a method on the ARIO class that extends the lease dur
 
 ---
 
-# 72. ARIO Docs
+# 71. ARIO Docs
 
-Document Number: 72
+Document Number: 71
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/redelegate-stake
 Words: 149
 Quality Score: 0.463
@@ -2524,9 +2511,9 @@ redelegateStake redelegateStake is a method on the ARIO class that moves staked 
 
 ---
 
-# 73. ARIO Docs
+# 72. ARIO Docs
 
-Document Number: 73
+Document Number: 72
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-delegations
 Words: 107
 Quality Score: 0.463
@@ -2537,9 +2524,9 @@ getDelegations getDelegations is a method on the ARIO class that retrieves all a
 
 ---
 
-# 74. ARIO Docs
+# 73. ARIO Docs
 
-Document Number: 74
+Document Number: 73
 Source: https://docs.ar.io/ar-io-sdk/ants/release-name
 Words: 111
 Quality Score: 0.463
@@ -2550,9 +2537,9 @@ releaseName releaseName is a method on the ANT class that releases an ArNS name 
 
 ---
 
-# 75. ARIO Docs
+# 74. ARIO Docs
 
-Document Number: 75
+Document Number: 74
 Source: https://docs.ar.io/ar-io-sdk/ants/reassign-name
 Words: 82
 Quality Score: 0.462
@@ -2563,9 +2550,9 @@ reassignName reassignName is a method on the ANT class that transfers ownership 
 
 ---
 
-# 76. ARIO Docs
+# 75. ARIO Docs
 
-Document Number: 76
+Document Number: 75
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-primary-names
 Words: 75
 Quality Score: 0.461
@@ -2576,9 +2563,9 @@ removePrimaryNames removePrimaryNames is a method on the ANT class that removes 
 
 ---
 
-# 77. getANTVersions - ARIO Docs
+# 76. getANTVersions - ARIO Docs
 
-Document Number: 77
+Document Number: 76
 Source: https://docs.ar.io/ar-io-sdk/ant-versions/get-ant-versions
 Words: 33
 Quality Score: 0.460
@@ -2589,9 +2576,9 @@ getANTVersions is a method on the ANTVersions class that retrieves all versions 
 
 ---
 
-# 78. createVault - ARIO Docs
+# 77. createVault - ARIO Docs
 
-Document Number: 78
+Document Number: 77
 Source: https://docs.ar.io/ar-io-sdk/ario/vaults/create-vault
 Words: 89
 Quality Score: 0.458
@@ -2602,9 +2589,9 @@ createVault is a method on the ARIO class that creates a new vault to lock ARIO 
 
 ---
 
-# 79. ARIO Docs
+# 78. ARIO Docs
 
-Document Number: 79
+Document Number: 78
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/increase-delegate-stake
 Words: 58
 Quality Score: 0.458
@@ -2615,22 +2602,9 @@ increaseDelegateStake increaseDelegateStake is a method on the ARIO class that i
 
 ---
 
-# 80. ARIO Docs
+# 79. ARIO Docs
 
-Document Number: 80
-Source: https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache
-Words: 76
-Quality Score: 0.457
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-SimpleCacheGatewaysProvider Overview The SimpleCacheGatewaysProvider holds the resulting gateways in memory for the provided TTL, making it ideal for Node environments. This helps avoid rate-limits and unnecessary network requests to the underlying gateways provider.Important SimpleCacheGatewaysProvider is ideal for Node.js/server environments. For browser-based web applications, use LocalStorageGatewaysProvider instead to persist gateway lists across sessions.Basic Usage Configuration Options Related Documentation Gateway Providers: Compare all gateway providers NetworkGatewaysProvider: Dynamic network discovery StaticGatewaysProvider: Static gateway configuration Wayfinder Configuration: Main wayfinder setup
-
----
-
-# 81. ARIO Docs
-
-Document Number: 81
+Document Number: 79
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-redelegation-fee
 Words: 61
 Quality Score: 0.455
@@ -2641,9 +2615,9 @@ getRedelegationFee getRedelegationFee is a method on the ARIO class that retriev
 
 ---
 
-# 82. ARIO Docs
+# 80. ARIO Docs
 
-Document Number: 82
+Document Number: 80
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-allowed-delegates
 Words: 91
 Quality Score: 0.455
@@ -2654,9 +2628,9 @@ getAllowedDelegates getAllowedDelegates is a method on the ARIO class that retri
 
 ---
 
-# 83. Gateway ArNS Resolution - ARIO Docs
+# 81. Gateway ArNS Resolution - ARIO Docs
 
-Document Number: 83
+Document Number: 81
 Source: https://docs.ar.io/gateways/arns-resolution
 Words: 624
 Quality Score: 0.455
@@ -2679,9 +2653,9 @@ always respects the TTL when serving it)
 
 ---
 
-# 84. getCostDetails - ARIO Docs
+# 82. getCostDetails - ARIO Docs
 
-Document Number: 84
+Document Number: 82
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-cost-details
 Words: 137
 Quality Score: 0.455
@@ -2692,9 +2666,9 @@ getCostDetails is a method on the ARIO class that calculates detailed cost infor
 
 ---
 
-# 85. ARIO Docs
+# 83. ARIO Docs
 
-Document Number: 85
+Document Number: 83
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-controller
 Words: 60
 Quality Score: 0.454
@@ -2705,9 +2679,9 @@ removeController removeController is a method on the ANT class that removes a sp
 
 ---
 
-# 86. ARIO Docs
+# 84. ARIO Docs
 
-Document Number: 86
+Document Number: 84
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/increase-operator-stake
 Words: 60
 Quality Score: 0.454
@@ -2718,9 +2692,9 @@ increaseOperatorStake increaseOperatorStake is a method on the ARIO class that i
 
 ---
 
-# 87. Getting Started - ARIO Docs
+# 85. Getting Started - ARIO Docs
 
-Document Number: 87
+Document Number: 85
 Source: https://docs.ar.io/ar-io-sdk/getting-started
 Words: 120
 Quality Score: 0.454
@@ -2735,9 +2709,9 @@ documentation for more information on how to provide the necessary polyfills.Out
 
 ---
 
-# 88. getInfo - ARIO Docs
+# 86. getInfo - ARIO Docs
 
-Document Number: 88
+Document Number: 86
 Source: https://docs.ar.io/ar-io-sdk/ario/general/get-info
 Words: 39
 Quality Score: 0.452
@@ -2748,9 +2722,9 @@ getInfo is a method on the ARIO class that retrieves general information about t
 
 ---
 
-# 89. getHandlers - ARIO Docs
+# 87. getHandlers - ARIO Docs
 
-Document Number: 89
+Document Number: 87
 Source: https://docs.ar.io/ar-io-sdk/ants/get-handlers
 Words: 29
 Quality Score: 0.452
@@ -2761,9 +2735,9 @@ getHandlers is a method on the ANT class that retrieves the handlers supported b
 
 ---
 
-# 90. ARIO Docs
+# 88. ARIO Docs
 
-Document Number: 90
+Document Number: 88
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/update-gateway-settings
 Words: 187
 Quality Score: 0.452
@@ -2778,9 +2752,9 @@ network participation.true tags array An array of GQL tag objects to attach to t
 
 ---
 
-# 91. getGatewayVaults - ARIO Docs
+# 89. getGatewayVaults - ARIO Docs
 
-Document Number: 91
+Document Number: 89
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway-vaults
 Words: 43
 Quality Score: 0.450
@@ -2791,9 +2765,9 @@ getGatewayVaults is a method on the ARIO class that retrieves all vault informat
 
 ---
 
-# 92. getArNSReservedNames - ARIO Docs
+# 90. getArNSReservedNames - ARIO Docs
 
-Document Number: 92
+Document Number: 90
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-reserved-names
 Words: 95
 Quality Score: 0.449
@@ -2804,9 +2778,9 @@ getArNSReservedNames is a method on the ARIO class that retrieves all reserved A
 
 ---
 
-# 93. getGateway - ARIO Docs
+# 91. getGateway - ARIO Docs
 
-Document Number: 93
+Document Number: 91
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/get-gateway
 Words: 42
 Quality Score: 0.448
@@ -2817,9 +2791,9 @@ getGateway is a method on the ARIO class that retrieves detailed information abo
 
 ---
 
-# 94. ARIO Docs
+# 92. ARIO Docs
 
-Document Number: 94
+Document Number: 92
 Source: https://docs.ar.io/ar-io-sdk/ants/set-logo
 Words: 69
 Quality Score: 0.447
@@ -2830,9 +2804,9 @@ setLogo setLogo is a method on the ANT class that updates the logo of the ANT pr
 
 ---
 
-# 95. Managing Primary Names - ARIO Docs
+# 93. Managing Primary Names - ARIO Docs
 
-Document Number: 95
+Document Number: 93
 Source: https://docs.ar.io/guides/primary-names
 Words: 716
 Quality Score: 0.447
@@ -2845,9 +2819,9 @@ owner (ANT) must approve who can claim their name as an identifier. Setting a Pr
 
 ---
 
-# 96. Data Root Verification Strategy - ARIO Docs
+# 94. Data Root Verification Strategy - ARIO Docs
 
-Document Number: 96
+Document Number: 94
 Source: https://docs.ar.io/wayfinder/core/verification-strategies/data-root-verification
 Words: 196
 Quality Score: 0.445
@@ -2862,9 +2836,9 @@ required data indexed, verification will fail.How It Works Compute Data Root: Ch
 
 ---
 
-# 97. addVersion - ARIO Docs
+# 95. addVersion - ARIO Docs
 
-Document Number: 97
+Document Number: 95
 Source: https://docs.ar.io/ar-io-sdk/ant-versions/add-version
 Words: 72
 Quality Score: 0.444
@@ -2875,9 +2849,9 @@ addVersion is a method on the ANTVersions class that adds a new version to an AN
 
 ---
 
-# 98. ARIO Node Filtering System - ARIO Docs
+# 96. ARIO Node Filtering System - ARIO Docs
 
-Document Number: 98
+Document Number: 96
 Source: https://docs.ar.io/gateways/filters
 Words: 541
 Quality Score: 0.444
@@ -2888,9 +2862,9 @@ The AR.IO Node filtering system provides a flexible way to match and filter item
 
 ---
 
-# 99. ARIO Docs
+# 97. ARIO Docs
 
-Document Number: 99
+Document Number: 97
 Source: https://docs.ar.io/ar-io-sdk/ants/set-name
 Words: 52
 Quality Score: 0.443
@@ -2901,9 +2875,9 @@ setName setName is a method on the ANT class that updates the dis name of the AN
 
 ---
 
-# 100. ARIO Docs
+# 98. ARIO Docs
 
-Document Number: 100
+Document Number: 98
 Source: https://docs.ar.io/ar-io-sdk/ants/set-description
 Words: 52
 Quality Score: 0.443
@@ -2914,9 +2888,9 @@ setDescription setDescription is a method on the ANT class that updates the desc
 
 ---
 
-# 101. ARIO Docs
+# 99. ARIO Docs
 
-Document Number: 101
+Document Number: 99
 Source: https://docs.ar.io/wayfinder/core/gateway-providers/static
 Words: 66
 Quality Score: 0.443
@@ -2927,9 +2901,9 @@ StaticGatewaysProvider Overview The StaticGatewaysProvider uses a predefined lis
 
 ---
 
-# 102. getCurrentEpoch - ARIO Docs
+# 100. getCurrentEpoch - ARIO Docs
 
-Document Number: 102
+Document Number: 100
 Source: https://docs.ar.io/ar-io-sdk/ario/epochs/get-current-epoch
 Words: 32
 Quality Score: 0.442
@@ -2940,9 +2914,9 @@ getCurrentEpoch is a method on the ARIO class that retrieves information about t
 
 ---
 
-# 103. removeUndernameRecord - ARIO Docs
+# 101. removeUndernameRecord - ARIO Docs
 
-Document Number: 103
+Document Number: 101
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-undername-record
 Words: 58
 Quality Score: 0.440
@@ -2953,9 +2927,9 @@ removeUndernameRecord is a method on the ANT class that removes a specified unde
 
 ---
 
-# 104. getArNSNamesForAddress - ARIO Docs
+# 102. getArNSNamesForAddress - ARIO Docs
 
-Document Number: 104
+Document Number: 102
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-names-for-address
 Words: 37
 Quality Score: 0.439
@@ -2966,9 +2940,9 @@ getArNSNamesForAddress is a method on the ARIO class that retrieves ArNS names o
 
 ---
 
-# 105. getArNSRecord - ARIO Docs
+# 103. getArNSRecord - ARIO Docs
 
-Document Number: 105
+Document Number: 103
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-record
 Words: 49
 Quality Score: 0.438
@@ -2979,9 +2953,9 @@ getArNSRecord is a method on the ARIO class that retrieves the details of a spec
 
 ---
 
-# 106. Normalized Addresses - ARIO Docs
+# 104. Normalized Addresses - ARIO Docs
 
-Document Number: 106
+Document Number: 104
 Source: https://docs.ar.io/concepts/normalized-addresses
 Words: 638
 Quality Score: 0.438
@@ -2995,9 +2969,9 @@ respectively.Arweave The public key for an Arweave wallet is the n field of the 
 
 ---
 
-# 107. ARIO Docs
+# 105. ARIO Docs
 
-Document Number: 107
+Document Number: 105
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/leave-network
 Words: 71
 Quality Score: 0.436
@@ -3008,9 +2982,9 @@ leaveNetwork leaveNetwork is a method on the ARIO class that sets a gateway's st
 
 ---
 
-# 108. joinNetwork - ARIO Docs
+# 106. joinNetwork - ARIO Docs
 
-Document Number: 108
+Document Number: 106
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/join-network
 Words: 158
 Quality Score: 0.435
@@ -3021,9 +2995,9 @@ joinNetwork is a method on the ARIO class that joins a gateway to the ar.io netw
 
 ---
 
-# 109. ARIO Docs
+# 107. ARIO Docs
 
-Document Number: 109
+Document Number: 107
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/get-arns-returned-names
 Words: 106
 Quality Score: 0.434
@@ -3034,9 +3008,9 @@ getArNSReturnedNames getArNSReturnedNames is a method on the ARIO class that ret
 
 ---
 
-# 110. cancelWithdrawal - ARIO Docs
+# 108. cancelWithdrawal - ARIO Docs
 
-Document Number: 110
+Document Number: 108
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/cancel-withdrawal
 Words: 71
 Quality Score: 0.433
@@ -3047,9 +3021,9 @@ cancelWithdrawal is a method on the ARIO class that cancels a pending withdrawal
 
 ---
 
-# 111. ARIO Docs
+# 109. ARIO Docs
 
-Document Number: 111
+Document Number: 109
 Source: https://docs.ar.io/ar-io-sdk/ario/primary-names/get-primary-name
 Words: 56
 Quality Score: 0.432
@@ -3060,9 +3034,9 @@ getPrimaryName getPrimaryName is a method on the ARIO class that retrieves the p
 
 ---
 
-# 112. ARIO Gateway Environment Variables - ARIO Docs
+# 110. ARIO Gateway Environment Variables - ARIO Docs
 
-Document Number: 112
+Document Number: 110
 Source: https://docs.ar.io/gateways/env
 Words: 1238
 Quality Score: 0.432
@@ -3120,9 +3094,9 @@ specified filter PROMETHEUS_METRICS_ENABLED Boolean false If true, the gateway w
 
 ---
 
-# 113. Optimizing Data Handling in ARIO Gateway - ARIO Docs
+# 111. Optimizing Data Handling in ARIO Gateway - ARIO Docs
 
-Document Number: 113
+Document Number: 111
 Source: https://docs.ar.io/gateways/optimize-data
 Words: 968
 Quality Score: 0.432
@@ -3133,9 +3107,9 @@ The AR.IO Gateway provides powerful tools for optimizing how you access and serv
 
 ---
 
-# 114. ARIO Docs
+# 112. ARIO Docs
 
-Document Number: 114
+Document Number: 112
 Source: https://docs.ar.io/ar-io-sdk/ario/arns/increase-undername-limit
 Words: 120
 Quality Score: 0.430
@@ -3148,9 +3122,9 @@ total) false fundFrom string The source of funds: 'balance', 'stakes', 'any', or
 
 ---
 
-# 115. removeRecord - ARIO Docs
+# 113. removeRecord - ARIO Docs
 
-Document Number: 115
+Document Number: 113
 Source: https://docs.ar.io/ar-io-sdk/ants/remove-record
 Words: 64
 Quality Score: 0.429
@@ -3162,9 +3136,9 @@ for more details.removeRecord is a method on the ANT class that removes a record
 
 ---
 
-# 116. ANTgetLogo() - ARIO Docs
+# 114. ANTgetLogo() - ARIO Docs
 
-Document Number: 116
+Document Number: 114
 Source: https://docs.ar.io/ar-io-sdk/ants/get-logo
 Words: 53
 Quality Score: 0.429
@@ -3175,9 +3149,9 @@ getLogo getLogo is a method on the ANT class that retrieves the transaction ID (
 
 ---
 
-# 117. approvePrimaryNameRequest - ARIO Docs
+# 115. approvePrimaryNameRequest - ARIO Docs
 
-Document Number: 117
+Document Number: 115
 Source: https://docs.ar.io/ar-io-sdk/ants/approve-primary-name-request
 Words: 74
 Quality Score: 0.429
@@ -3188,9 +3162,9 @@ approvePrimaryNameRequest is a method on the ANT class that approves a primary n
 
 ---
 
-# 118. ARIO Docs
+# 116. ARIO Docs
 
-Document Number: 118
+Document Number: 116
 Source: https://docs.ar.io/ar-io-sdk/ario/gateways/decrease-delegate-stake
 Words: 74
 Quality Score: 0.427
@@ -3201,9 +3175,9 @@ decreaseDelegateStake decreaseDelegateStake is a method on the ARIO class that d
 
 ---
 
-# 119. Signature Verification Strategy - ARIO Docs
+# 117. Signature Verification Strategy - ARIO Docs
 
-Document Number: 119
+Document Number: 117
 Source: https://docs.ar.io/wayfinder/core/verification-strategies/signature-verification
 Words: 148
 Quality Score: 0.427
@@ -3218,9 +3192,9 @@ required data indexed, verification will fail.How It Works Fetch Metadata: Retri
 
 ---
 
-# 120. ARIO Docs
+# 118. ARIO Docs
 
-Document Number: 120
+Document Number: 118
 Source: https://docs.ar.io/wayfinder/core/gateway-providers
 Words: 100
 Quality Score: 0.425
@@ -3231,9 +3205,9 @@ Gateway Providers Overview Gateway providers are responsible for discovering and
 
 ---
 
-# 121. ARIO SDK Release Notes - ARIO Docs
+# 119. ARIO SDK Release Notes - ARIO Docs
 
-Document Number: 121
+Document Number: 119
 Source: https://docs.ar.io/ar-io-sdk/release-notes
 Words: 6816
 Quality Score: 0.420
@@ -3244,9 +3218,9 @@ AR.IO SDK Changelog Overview Welcome to the documentation page for the AR.IO SDK
 
 ---
 
-# 122. getAntsForAddress - ARIO Docs
+# 120. getAntsForAddress - ARIO Docs
 
-Document Number: 122
+Document Number: 120
 Source: https://docs.ar.io/ar-io-sdk/ant-registry/get-ants-for-address
 Words: 120
 Quality Score: 0.414
@@ -3257,9 +3231,9 @@ getAntsForAddress is a method on the ANTRegistry class that provides a cleaner A
 
 ---
 
-# 123. register - ARIO Docs
+# 121. register - ARIO Docs
 
-Document Number: 123
+Document Number: 121
 Source: https://docs.ar.io/ar-io-sdk/ant-registry/register
 Words: 25
 Quality Score: 0.408
@@ -3270,9 +3244,9 @@ register is a method on the ANTRegistry class that registers a new ANT process w
 
 ---
 
-# 124. Wayfinder Core Release Notes - ARIO Docs
+# 122. Wayfinder Core Release Notes - ARIO Docs
 
-Document Number: 124
+Document Number: 122
 Source: https://docs.ar.io/wayfinder/release-notes/core
 Words: 514
 Quality Score: 0.405
@@ -3283,10 +3257,36 @@ Wayfinder Core Changelog Overview Welcome to the documentation page for the Wayf
 
 ---
 
+# 123. ARIO Documentation
+
+Document Number: 123
+Source: https://docs.ar.io/
+Words: 141
+Quality Score: 0.404
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+🚀 Get Started Quickly: Explore Our Quick Start Guides → Welcome to the Permaweb Data in paradise. The AR.IO ecosystem is dedicated to cultivating products and protocols for sustaining access to digital permanence, making the permaweb available to everyone. Powered by the ARIO Token, this global network of Gateways connects users to permanently stored data, files, applications, and web pages on the Arweave decentralized storage network.Guides Run a Gateway Get your AR.IO Gateway up and running correctly and quickly.Read more Use ArNS Learn the process of purchasing and managing an ArNS name.Read more Deploy a dApp Learn how to easily deploy a website or application on the permaweb.Read more ANTs on Bazar In a few simple steps, learn how to make an ANT tradable on Bazar.Read more GraphQL Learn how to leverage GraphQL to efficiently fetch data via AR.IO gateways.Read more
+
+---
+
+# 124. ARIO Documentation
+
+Document Number: 124
+Source: https://docs.ar.io/wayfinder/core/gateway-providers/network
+Words: 141
+Quality Score: 0.404
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+🚀 Get Started Quickly: Explore Our Quick Start Guides → Welcome to the Permaweb Data in paradise. The AR.IO ecosystem is dedicated to cultivating products and protocols for sustaining access to digital permanence, making the permaweb available to everyone. Powered by the ARIO Token, this global network of Gateways connects users to permanently stored data, files, applications, and web pages on the Arweave decentralized storage network.Guides Run a Gateway Get your AR.IO Gateway up and running correctly and quickly.Read more Use ArNS Learn the process of purchasing and managing an ArNS name.Read more Deploy a dApp Learn how to easily deploy a website or application on the permaweb.Read more ANTs on Bazar In a few simple steps, learn how to make an ANT tradable on Bazar.Read more GraphQL Learn how to leverage GraphQL to efficiently fetch data via AR.IO gateways.Read more
+
+---
+
 # 125. ARIO Documentation
 
 Document Number: 125
-Source: https://docs.ar.io/
+Source: https://docs.ar.io/wayfinder/core/gateway-providers/simple-cache
 Words: 141
 Quality Score: 0.404
 Extraction Method: defuddle_semantic
