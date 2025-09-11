@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-09-10T12:14:12.680Z
+Generated on: 2025-09-11T12:14:15.238Z
 Total documents: 89
-Total words: 36735
+Total words: 36754
 
 ## Table of Contents
 
@@ -18,14 +18,14 @@ Total words: 36735
 8. [AO Processes](https://cookbook_ao.arweave.net/welcome/ao-processes.html)
 9. [Connecting to specific ao nodes](https://cookbook_ao.arweave.net/guides/aoconnect/connecting.html)
 10. [Understanding the Inbox](https://cookbook_ao.arweave.net/guides/aos/inbox-and-handlers.html)
-11. [Automated Responses](https://cookbook_ao.arweave.net/tutorials/bots-and-games/attacking.html)
-12. [ao](https://cookbook_ao.arweave.net/guides/aos/modules/ao.html)
-13. [Fetching Game State](https://cookbook_ao.arweave.net/tutorials/bots-and-games/game-state.html)
-14. [DataItem Signers](https://cookbook_ao.arweave.net/guides/aoconnect/signers.html)
-15. [Handlers (Version 005)](https://cookbook_ao.arweave.net/references/handlers.html)
-16. [Messages](https://cookbook_ao.arweave.net/concepts/messages.html)
-17. [BetterIDEa](https://cookbook_ao.arweave.net/references/betteridea/index.html)
-18. [Connecting to HyperBEAM with aos](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/aos-with-hyperbeam.html)
+11. [Connecting to HyperBEAM with aos](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/aos-with-hyperbeam.html)
+12. [Automated Responses](https://cookbook_ao.arweave.net/tutorials/bots-and-games/attacking.html)
+13. [ao](https://cookbook_ao.arweave.net/guides/aos/modules/ao.html)
+14. [Fetching Game State](https://cookbook_ao.arweave.net/tutorials/bots-and-games/game-state.html)
+15. [DataItem Signers](https://cookbook_ao.arweave.net/guides/aoconnect/signers.html)
+16. [Handlers (Version 005)](https://cookbook_ao.arweave.net/references/handlers.html)
+17. [Messages](https://cookbook_ao.arweave.net/concepts/messages.html)
+18. [BetterIDEa](https://cookbook_ao.arweave.net/references/betteridea/index.html)
 19. [Customizing the Prompt in aos](https://cookbook_ao.arweave.net/guides/aos/prompt.html)
 20. [Messaging in ao](https://cookbook_ao.arweave.net/tutorials/begin/messaging.html)
 21. [Crafting a Token](https://cookbook_ao.arweave.net/tutorials/begin/token.html)
@@ -230,9 +230,22 @@ Understanding the Inbox In aos, processes are executed in response to messages v
 
 ---
 
-# 11. Automated Responses  Cookbook
+# 11. Connecting to HyperBEAM with aos  Cookbook
 
 Document Number: 11
+Source: https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/aos-with-hyperbeam.html
+Words: 273
+Quality Score: 0.517
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Connecting to HyperBEAM with aos This guide explains how to use aos, the command-line interface for AO, to connect to a HyperBEAM node for development.Installing aos The primary tool for interacting with AO and developing processes is aos, a command-line interface and development environment.Connecting to a HyperBEAM Node While you don't need to run a HyperBEAM node yourself, you do need to connect to one to interact with the network during development.To start aos and connect to a public HyperBEAM node, simply run the command in your terminal:This connects you to an interactive Lua environment running within a process on the AO network. This process acts as your command-line interface (CLI) to the AO network. When you specify --url , it connects to the genesis_wasm device running on the HyperBEAM node at the supplied URL, allowing you to interact with other processes, manage your wallet, and develop new AO processes.Running a Local HyperBEAM Node If you are running HyperBEAM locally and want to use that node when booting up aos, you must first start your local node with the genesis_wasm profile:Then, you can connect aos to it:Until aos is fully HyperBEAM native, the genesis_wasm profile is required to run a local Compute Unit (CU) for executing aos.Process Types Use --url when connecting to hyper-aos processes on HyperBEAM. For standard genesis_wasm processes, the flag is not needed.Interacting with Mainnet Processes Note on Blocking Calls Blocking message patterns, such as Receive and ao.send().receive(), are not available when running aos against a HyperBEAM process. HyperBEAM processes do not support the underlying wasm modules required for this functionality. You should rely on asynchronous patterns using handlers instead.
+
+---
+
+# 12. Automated Responses  Cookbook
+
+Document Number: 12
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/attacking.html
 Words: 438
 Quality Score: 0.516
@@ -312,9 +325,9 @@ end
 
 ---
 
-# 12. ao  Cookbook
+# 13. ao  Cookbook
 
-Document Number: 12
+Document Number: 13
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/ao.html
 Words: 94
 Quality Score: 0.516
@@ -325,9 +338,9 @@ Skip to content ao Built-in global library for process communication and managem
 
 ---
 
-# 13. Fetching Game State  Cookbook
+# 14. Fetching Game State  Cookbook
 
-Document Number: 13
+Document Number: 14
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/game-state.html
 Words: 438
 Quality Score: 0.515
@@ -338,9 +351,9 @@ Fetching Game State Now that you're seeing game announcements directly in your t
 
 ---
 
-# 14. DataItem Signers  Cookbook
+# 15. DataItem Signers  Cookbook
 
-Document Number: 14
+Document Number: 15
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/signers.html
 Words: 279
 Quality Score: 0.514
@@ -351,9 +364,9 @@ DataItem Signers Every message sent to AO MUST be signed, aoconnect provides a h
 
 ---
 
-# 15. Handlers (Version 005)  Cookbook
+# 16. Handlers (Version 005)  Cookbook
 
-Document Number: 15
+Document Number: 16
 Source: https://cookbook_ao.arweave.net/references/handlers.html
 Words: 942
 Quality Score: 0.513
@@ -364,9 +377,9 @@ Handlers (Version 0.0.5) Overview The Handlers library provides a flexible way t
 
 ---
 
-# 16. Messages  Cookbook
+# 17. Messages  Cookbook
 
-Document Number: 16
+Document Number: 17
 Source: https://cookbook_ao.arweave.net/concepts/messages.html
 Words: 310
 Quality Score: 0.512
@@ -377,9 +390,9 @@ Messages The Message serves as the fundamental data protocol unit within ao, cra
 
 ---
 
-# 17. BetterIDEa  Cookbook
+# 18. BetterIDEa  Cookbook
 
-Document Number: 17
+Document Number: 18
 Source: https://cookbook_ao.arweave.net/references/betteridea/index.html
 Words: 84
 Quality Score: 0.510
@@ -387,19 +400,6 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Skip to content BetterIDEa BetterIDEa is a custom web based IDE for developing on ao.It offers a built in Lua language server with ao definitions, so you don't need to install anything. Just open the IDE and start coding!Features include:Code completion Cell based notebook ui for rapid development Easy process management Markdown and Latex cell support Share projects with anyone through ao processes Tight integration with ao package manager Read detailed information about the various features and integrations of the IDE in the documentation.
-
----
-
-# 18. Connecting to HyperBEAM with aos  Cookbook
-
-Document Number: 18
-Source: https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/aos-with-hyperbeam.html
-Words: 254
-Quality Score: 0.509
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Connecting to HyperBEAM with aos This guide explains how to use aos, the command-line interface for AO, to connect to a HyperBEAM node for development.Installing aos The primary tool for interacting with AO and developing processes is aos, a command-line interface and development environment.Connecting to a HyperBEAM Node While you don't need to run a HyperBEAM node yourself, you do need to connect to one to interact with the network during development.To start aos and connect to a public HyperBEAM node, simply run the command in your terminal:This connects you to an interactive Lua environment running within a process on the AO network. This process acts as your command-line interface (CLI) to the AO network. When you specify --mainnet , it connects to the genesis_wasm device running on the HyperBEAM node at the supplied URL, allowing you to interact with other processes, manage your wallet, and develop new AO processes.Running a Local HyperBEAM Node If you are running HyperBEAM locally and want to use that node when booting up aos, you must first start your local node with the genesis_wasm profile:Then, you can connect aos to it:Until aos is fully HyperBEAM native, the genesis_wasm profile is required to run a local Compute Unit (CU) for executing aos.Interacting with Mainnet Processes Note on Blocking Calls Blocking message patterns, such as Receive and ao.send().receive(), are not available when running aos against a HyperBEAM process. HyperBEAM processes do not support the underlying wasm modules required for this functionality. You should rely on asynchronous patterns using handlers instead.
 
 ---
 
