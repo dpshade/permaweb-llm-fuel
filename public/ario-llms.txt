@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-03T12:15:55.597Z
+Generated on: 2025-10-04T12:14:53.199Z
 Total documents: 94
-Total words: 57185
+Total words: 57773
 
 ## Table of Contents
 
@@ -45,18 +45,18 @@ Total words: 57185
 35. [Automating SSL Certificate Renewal ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/ssl-certs)
 36. [Getting Started with Turbo ARIO Documentation](https://docs.ar.io/build/upload/bundling-services)
 37. [Reading Data ARIO Documentation](https://docs.ar.io/build/advanced/arfs/reading-data)
-38. [Wayfinder Protocol ARIO Documentation](https://docs.ar.io/learn/wayfinder)
-39. [Tagging ARIO Documentation](https://docs.ar.io/build/upload/tagging)
-40. [Get Started ARIO Documentation](https://docs.ar.io/build)
-41. [Gateway ARIO Documentation](https://docs.ar.io/apis/ar-io-node/gateway)
-42. [Events ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/events)
-43. [Privacy Encryption ARIO Documentation](https://docs.ar.io/build/advanced/arfs/privacy)
-44. [Upload Data ARIO Documentation](https://docs.ar.io/build/upload)
-45. [Pagination ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/pagination)
-46. [APIs Reference ARIO Documentation](https://docs.ar.io/apis)
-47. [Manifests ARIO Documentation](https://docs.ar.io/build/upload/manifests)
-48. [What is ARIO ARIO Documentation](https://docs.ar.io/learn/what-is-ario)
-49. [Pricing Model ARIO Documentation](https://docs.ar.io/learn/arns/pricing-model)
+38. [Pricing Model ARIO Documentation](https://docs.ar.io/learn/arns/pricing-model)
+39. [Wayfinder Protocol ARIO Documentation](https://docs.ar.io/learn/wayfinder)
+40. [Tagging ARIO Documentation](https://docs.ar.io/build/upload/tagging)
+41. [Get Started ARIO Documentation](https://docs.ar.io/build)
+42. [Gateway ARIO Documentation](https://docs.ar.io/apis/ar-io-node/gateway)
+43. [Events ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/events)
+44. [Privacy Encryption ARIO Documentation](https://docs.ar.io/build/advanced/arfs/privacy)
+45. [Upload Data ARIO Documentation](https://docs.ar.io/build/upload)
+46. [Pagination ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/pagination)
+47. [APIs Reference ARIO Documentation](https://docs.ar.io/apis)
+48. [Manifests ARIO Documentation](https://docs.ar.io/build/upload/manifests)
+49. [What is ARIO ARIO Documentation](https://docs.ar.io/learn/what-is-ario)
 50. [TurboAuthenticatedClient ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turboauthenticatedclient)
 51. [Data ARIO Documentation](https://docs.ar.io/apis/ar-io-node/data)
 52. [TurboFactory ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbofactory)
@@ -2606,9 +2606,124 @@ value
 
 ---
 
-# 38. Wayfinder Protocol  ARIO Documentation
+# 38. Pricing Model  ARIO Documentation
 
 Document Number: 38
+Source: https://docs.ar.io/learn/arns/pricing-model
+Words: 1071
+Quality Score: 0.486
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Arweave Name System (ArNS)Pricing ModelCopy MarkdownOpenAddressing Variable Market Conditions
+The future market landscape is unpredictable, and the AR.IO Network smart contract is designed to be immutable, operating without governance or manual intervention. Using a pricing oracle to fix name prices relative to a stable currency is not viable due to the infancy of available solutions and reliance on external dependencies.
+To address these challenges, ArNS is self-contained and adaptive, with name prices reflecting network activity and market conditions over time.
+To achieve this, ArNS incorporates:
+A dynamic pricing model that adjusts fees using a "Demand Factor" based on ArNS purchase activity
+A Returned Name Premium (RNP) system that applies a timed, descending multiplier to registration prices for names that have recently expired or been returned to the protocol
+This approach ensures that name valuations adapt to market conditions within the constraints of an immutable, maintenance-free smart contract framework.
+You can view current live pricing at ArNS.app to see these formulas in action.
+Key Definitions
+Protocol Revenue: Accumulated ARIO tokens from name registrations, lease extensions, and under_name sales
+Period (P): The time unit for DF adjustments, equivalent to one (1) day, denoted in milliseconds
+n: The current period indicator
+Price: The cost for permabuy or lease of a name
+Under_names: Subdomain equivalents, denoted by an underscore "_" prefixing the base domain
+Dynamic Pricing Model
+ArNS employs an adaptive pricing model to balance market demand with pricing fairness for name registration within the network. This model integrates static and dynamic elements, adjusting prices based on name length and purchase options like leasing, permanent acquisition, and undername amounts.
+Core Pricing Components
+Base Registration Fee (BRF)
+The fundamental price for names, varying by character length, adjusted periodically.
+Genesis Registration Fee (GRF)
+The starting price for name registrations varies by character length. This is superseded by Base Registration Fees as the protocol evolves.
+Table: Genesis Registration Fees
+Name LengthFee (ARIO)11,000,0002200,000320,000410,00052,50061,50078008500940010350113001225013-51200
+Demand Factor (DF)
+A global price multiplier, reflecting namespace demand, adjusted each period based on revenue trends.
+DF Mechanics:
+Intent: The Demand Factor adjusts based on protocol revenue comparison to the Revenue Moving Average (RMA)
+Increase DF: When recent revenue is higher than or equal to (but non-zero) the RMA, the DF increases by 5.0%
+Decrease DF: When recent revenue is less than the RMA or both are zero, the DF decreases by 1.5%
+Maximum DF Value: Unbounded
+Minimum DF Value: 0.5
+Starting Demand Factor: 1 (initial value at network launch)
+Revenue Moving Average (RMA)
+The average of protocol revenue from the past seven (7) periods.
+Pricing Formulas
+Adjusted Registration Fee (ARF)
+ARF=BRF×DFARF = BRF × DF
+ARF=BRF×DF
+Annual Fee
+Annual Fee=ARF×20Annual ~Fee = ARF × 20%
+Annual Fee=ARF×20
+Lease Pricing
+Lease Registration Price:
+Lease Price=ARF+(Annual Fee×Years)Lease ~Price = ARF + (Annual ~Fee × Years)
+Lease Price=ARF+(Annual Fee×Years)
+Lease Extension/Renewal Price:
+Lease Renewal Price=Annual Fee×Years(max5years)Lease ~Renewal ~Price = Annual ~Fee × Years (max 5 years)
+Lease Renewal Price=Annual Fee×Years(max5years)
+Grace period: Two (2) weeks
+Permanent Purchases
+Permabuy Price:
+Permabuy Price=ARF+(AnnualFee×20years)Permabuy ~Price = ARF + (Annual Fee × 20 years)
+Permabuy Price=ARF+(AnnualFee×20years)
+Lease to Permabuy Price: Same as above
+Under Name Fees
+Initial Allocation: 10 under_names are included with each name registration
+For Leases:
+Lease Under Name Fee=BRF×DF×0.1Lease ~Under ~Name ~Fee = BRF × DF × 0.1%
+Lease Under Name Fee=BRF×DF×0.1
+For Permabuys:
+Permabuy Under Name Fee=BRF×DF×0.5Permabuy ~Under ~Name ~Fee = BRF × DF × 0.5%
+Permabuy Under Name Fee=BRF×DF×0.5
+Primary Name Fee
+Set or change primary name: The fee is equal to the associated fee for a single under_name purchase of a 51-character name of equivalent purchase type to the new primary name, regardless of the new primary name's length.
+Step Pricing Mechanics
+Synchronizes BRF (Base Rate Factor) with ARF (Adjusted Rate Factor) after seven (7) consecutive periods at the minimum DF value
+Resets DF to 1 following a step pricing adjustment
+Returned Name Premiums (RNP)
+ArNS applies a Returned Name Premium (RNP) to names that re-enter the market after expiration or permanent return. This premium starts at a maximum value and decreases linearly over a predefined window, ensuring fair and transparent pricing for re-registered names.
+RNP Mechanics
+Intent
+The premium starts at its maximum and decreases linearly until the name is purchased. If the name is not purchased before the premium window closes, it reverts to standard pricing and is no longer classified as "recently returned."
+RNP Window
+Duration: Fourteen (14) periods
+Returned Name Premium Formula
+The premium multiplier follows a linearly declining function:
+RNP=50−(49/14)×tRNP = 50 - (49 / 14) × t
+RNP=50−(49/14)×t
+Where:
+RNP: The Returned Name Premium multiplier applied to the purchased name price
+t: Amount of time (or time-intervals) elapsed since the start of the return window
+RNP Registration Price
+Price=RNP×(Lease Or Permabuy) Registration PricePrice = RNP × (Lease~Or~Permabuy) ~Registration~ Price
+Price=RNP×(Lease Or Permabuy) Registration Price
+Permanent Name Return Proceeds Split
+50% goes to the returning name owner
+50% goes to the protocol balance
+The RNP multiplier is applied to the registration price of both permanently purchased and leased names.
+Gateway Operator ArNS Discount
+Gateway operators who demonstrate consistent, healthy participation in the network are eligible for a 20% discount on certain ArNS interactions.
+Qualification Requirements
+To qualify for the discount:
+The gateway must maintain a "Gateway Performance Ratio Weight" (GPRW) of 0.9 or higher
+The gateway must have a "Tenure Weight" (TW) of 1.0 or greater
+A gateway marked as "Leaving" shall not be eligible for this discount
+Eligible Discounted Interactions
+Purchasing a name
+Extending a lease
+Upgrading a lease to permabuy
+Increasing undernames capacity
+Next Steps
+Congratulations! You now understand the complete ArNS pricing system. Ready to get started?
+View Live PricingSee current ArNS pricing in real-time with the live pricing chart.Register a NameVisit ArNS.app to register your first name and explore the pricing in action.Explore GatewaysLearn about AR.IO gateways and how they integrate with ArNS.Build with ArNSStart building applications that leverage ArNS for decentralized naming.How is this guide?GoodBadArweave Name Tokens (ANTs)Learn about Arweave Name Tokens (ANTs) - the ownership and control system for ArNS namesWayfinder ProtocolLearn about the Wayfinder Protocol - a URI scheme for translating Arweave content requests into user-friendly ar:// URLsOn this pageAddressing Variable Market ConditionsKey DefinitionsDynamic Pricing ModelCore Pricing ComponentsBase Registration Fee (BRF)Genesis Registration Fee (GRF)Demand Factor (DF)Revenue Moving Average (RMA)Pricing FormulasAdjusted Registration Fee (ARF)Annual FeeLease PricingPermanent PurchasesUnder Name FeesPrimary Name FeeStep Pricing MechanicsReturned Name Premiums (RNP)RNP MechanicsIntentRNP WindowReturned Name Premium FormulaRNP Registration PricePermanent Name Return Proceeds SplitGateway Operator ArNS DiscountQualification RequirementsEligible Discounted InteractionsNext Steps
+
+---
+
+# 39. Wayfinder Protocol  ARIO Documentation
+
+Document Number: 39
 Source: https://docs.ar.io/learn/wayfinder
 Words: 604
 Quality Score: 0.485
@@ -2619,9 +2734,9 @@ The Problem: Centralized Gateway Reliance Today, most Arweave content is accesse
 
 ---
 
-# 39. Tagging  ARIO Documentation
+# 40. Tagging  ARIO Documentation
 
-Document Number: 39
+Document Number: 40
 Source: https://docs.ar.io/build/upload/tagging
 Words: 387
 Quality Score: 0.484
@@ -2657,9 +2772,9 @@ tags: [
 
 ---
 
-# 40. Get Started  ARIO Documentation
+# 41. Get Started  ARIO Documentation
 
-Document Number: 40
+Document Number: 41
 Source: https://docs.ar.io/build
 Words: 258
 Quality Score: 0.483
@@ -2670,9 +2785,9 @@ Welcome to AR.IO Network's developer documentation.This section will guide you t
 
 ---
 
-# 41. Gateway  ARIO Documentation
+# 42. Gateway  ARIO Documentation
 
-Document Number: 41
+Document Number: 42
 Source: https://docs.ar.io/apis/ar-io-node/gateway
 Words: 327
 Quality Score: 0.480
@@ -2727,9 +2842,9 @@ These metrics include various counters, gauges, and histograms tracking:HTTP req
 
 ---
 
-# 42. Events  ARIO Documentation
+# 43. Events  ARIO Documentation
 
-Document Number: 42
+Document Number: 43
 Source: https://docs.ar.io/sdks/turbo-sdk/events
 Words: 338
 Quality Score: 0.479
@@ -2784,9 +2899,9 @@ console.log('Signing success!');
 
 ---
 
-# 43. Privacy  Encryption  ARIO Documentation
+# 44. Privacy  Encryption  ARIO Documentation
 
-Document Number: 43
+Document Number: 44
 Source: https://docs.ar.io/build/advanced/arfs/privacy
 Words: 968
 Quality Score: 0.476
@@ -2799,9 +2914,9 @@ Cipher-IV?: "<12 byte initialization vector as Base64>" Just like drives, privat
 
 ---
 
-# 44. Upload Data  ARIO Documentation
+# 45. Upload Data  ARIO Documentation
 
-Document Number: 44
+Document Number: 45
 Source: https://docs.ar.io/build/upload
 Words: 391
 Quality Score: 0.475
@@ -2817,9 +2932,9 @@ fileStreamFactory: () => fs.createReadStream("./my-file.pdf"),
 
 ---
 
-# 45. Pagination  ARIO Documentation
+# 46. Pagination  ARIO Documentation
 
-Document Number: 45
+Document Number: 46
 Source: https://docs.ar.io/sdks/ar-io-sdk/pagination
 Words: 333
 Quality Score: 0.474
@@ -2846,9 +2961,9 @@ processId: [
 
 ---
 
-# 46. APIs Reference  ARIO Documentation
+# 47. APIs Reference  ARIO Documentation
 
-Document Number: 46
+Document Number: 47
 Source: https://docs.ar.io/apis
 Words: 347
 Quality Score: 0.473
@@ -2859,9 +2974,9 @@ Explore the REST APIs available in the AR.IO ecosystem. Our services are built w
 
 ---
 
-# 47. Manifests  ARIO Documentation
+# 48. Manifests  ARIO Documentation
 
-Document Number: 47
+Document Number: 48
 Source: https://docs.ar.io/build/upload/manifests
 Words: 647
 Quality Score: 0.473
@@ -2958,9 +3073,9 @@ tags: [
 
 ---
 
-# 48. What is ARIO  ARIO Documentation
+# 49. What is ARIO  ARIO Documentation
 
-Document Number: 48
+Document Number: 49
 Source: https://docs.ar.io/learn/what-is-ario
 Words: 633
 Quality Score: 0.473
@@ -2968,19 +3083,6 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Introduction The AR.IO Network is the first permanent cloud network.A decentralized infrastructure layer built on Arweave and AO, making permanent data accessible, discoverable, and usable. Think of it as the gateway to Arweave's permaweb, turning its tamper-proof storage into a fully functional, user-friendly ecosystem for apps, websites, and data. Features of The AR.IO Network Gateways AR.IO operates a network of gateways — nodes that serve as entry points to Arweave’s data. These gateways fetch and deliver data quickly, supporting everything from static files to dynamic web apps.Arweave Name System (ArNS) The Arweave Name System (ArNS) is a decentralized naming system for Arweave. It allows users to register and resolve human-readable names to Arweave transaction IDs.Data Access AR.IO offers a range of tools for accessing and querying data on Arweave, including:HTTP Requests via gateways GraphQL Queries for finding data by tags and metadata ArNS for human-readable URLs Wayfinder for decentralized content discovery The Problem Arweave stores data forever, but accessing and organizing that data isn't always straightforward. Without efficient tools, retrieving files, serving websites, or finding specific content on Arweave's blockweave can be slow or complex, limiting its potential for developers and users.The Solution The AR.IO Network builds on Arweave's permanent storage to create a decentralized, scalable access layer. It provides gateways, domain names, and indexing services, making it easy to interact with permaweb content as seamlessly as the traditional web.How It Works Decentralized Gateways: AR.IO operates a network of gateways—nodes that serve as entry points to Arweave’s data. These gateways fetch and deliver data quickly, supporting everything from static files to dynamic web apps.ArNS (Arweave Name Service): AR.IO introduces decentralized domain names (e.g., yourname.arweave), mapping human-readable names to Arweave’s data IDs. This makes content easy to find and share, like URLs on the traditional web.Indexing and Querying: AR.IO enables efficient data indexing, allowing developers to search and retrieve specific content from Arweave’s vast storage without scanning the entire blockweave.Routing and verification: AR.IO 's ar://wayfinder Protocol intelligently routes requests to available gateways in the network and verifies the data's authenticity.Observation and incentives: ARIO's Observation and Incentive Protocol (OIP), ensures gateway operators are serving the right data and rewards them in the protocol native token, $ARIO, to create a secure and self-sustaining network.In Simple Terms: Imagine Arweave as a massive, unerasable library. The AR.IO Network is the librarian who organizes the shelves, provides a catalog, and hands you the books you need—fast.Why It Matters Accessible: Gateways make permaweb content load as quickly as traditional websites.Discoverable: ArNS provides user-friendly domain names, simplifying navigation.Scalable: Supports growing permaweb usage, from small apps to global platforms.Decentralized: No single entity controls access, ensuring censorship resistance.Building on The AR.IO Network The AR.IO Network empowers developers to create permaweb apps with tools for hosting, querying, and monetizing content, all while leveraging Arweave's permanent storage.In Simple Terms: Arweave locks data forever; The AR.IO Network makes it ready for the world to use.Ready to Dive Deeper?The AR.IO Network transforms Arweave into a vibrant permaweb ecosystem. Ready to start building? Explore our comprehensive guides and start creating on the permanent web.Explore AR.IO Start Building Check out our SDKs and build guides to start creating on AR.IO Run a Gateway Learn how to deploy and operate your own AR.IO gateway ArNS Names Discover the decentralized naming system for the permaweb Gateway Architecture Understand how AR.IO gateways provide access to permanent data How is this guide?What is Arweave?Arweave is permanent information storage - a decentralized web inside an open ledger, like Bitcoin but for data What is the Permaweb?Understand how the permaweb works through its four-layer architecture: storage, compute, gateways, and applications On this page Features of The AR.IO Network Gateways Arweave Name System (ArNS) Data Access The Problem The Solution How It Works Why It Matters Building on The AR.IO Network Ready to Dive Deeper?Explore AR.IO
-
----
-
-# 49. Pricing Model  ARIO Documentation
-
-Document Number: 49
-Source: https://docs.ar.io/learn/arns/pricing-model
-Words: 483
-Quality Score: 0.470
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Arweave Name System (ArNS) Addressing Variable Market Conditions The future market landscape is unpredictable, and the AR.IO Network smart contract is designed to be immutable, operating without governance or manual intervention. Using a pricing oracle to fix name prices relative to a stable currency is not viable due to the infancy of available solutions and reliance on external dependencies.To address these challenges, ArNS is self-contained and adaptive, with name prices reflecting network activity and market conditions over time.To achieve this, ArNS incorporates:A dynamic pricing model that adjusts fees using a "Demand Factor" based on ArNS purchase activity A Returned Name Premium (RNP) system that applies a timed, descending multiplier to registration prices for names that have recently expired or been returned to the protocol This approach ensures that name valuations adapt to market conditions within the constraints of an immutable, maintenance-free smart contract framework.Dynamic Pricing Model ArNS employs an adaptive pricing model to balance market demand with pricing fairness for name registration within the network. This model integrates static and dynamic elements, adjusting prices based on name length and purchase options like leasing, permanent acquisition, and undername amounts.A key element is the Demand Factor (DF), which dynamically adjusts prices according to network activity and revenue trends, ensuring prices reflect market conditions while remaining accessible and affordable.A detailed description of the variables and formulas used for dynamic pricing can be found in the Appendix.Returned Name Premiums (RNP) ArNS applies a Returned Name Premium (RNP) to names that re-enter the market after expiration or permanent return. This premium starts at a maximum value and decreases linearly over a predefined window, ensuring fair and transparent pricing for re-registered names.The RNP multiplier is applied to the registration price of both permanently purchased and leased names.Gateway Operator ArNS Discount Gateway operators who demonstrate consistent, healthy participation in the network are eligible for a 20% discount on certain ArNS interactions.Qualification Requirements To qualify for the discount:The gateway must maintain a "Gateway Performance Ratio Weight" (GPRW) of 0.85 or higher The gateway must have a "Tenure Weight" (TW) of 0.5 or greater, indicating at least a 3-month prior commitment to the network A gateway marked as "Leaving" shall not be eligible for this discount Eligible Discounted Interactions Purchasing a name Extending a lease Upgrading a lease to permabuy Increasing undernames capacity Next Steps Congratulations! You now understand the complete ArNS system. Ready to get started?Register a Name → Visit ArNS.app to register your first name Explore Gateways → Gateway Documentation for technical details How is this guide?Arweave Name Tokens (ANTs) Learn about Arweave Name Tokens (ANTs) - the ownership and control system for ArNS names Wayfinder Protocol Learn about the Wayfinder Protocol - a URI scheme for translating Arweave content requests into user-friendly ar:// URLs On this page Addressing Variable Market Conditions Dynamic Pricing Model Returned Name Premiums (RNP) Gateway Operator ArNS Discount Qualification Requirements Eligible Discounted Interactions Next Steps
 
 ---
 
