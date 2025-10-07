@@ -1,108 +1,167 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-06T12:14:43.090Z
-Total documents: 89
-Total words: 36754
+Generated on: 2025-10-07T12:16:18.924Z
+Total documents: 92
+Total words: 38050
 
 ## Table of Contents
 
 ### Included Documents
 
-1. [Processes](https://cookbook_ao.arweave.net/concepts/processes.html)
-2. [HyperBEAM from AO Connect](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/ao-connect.html)
+1. [Web Serving](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/web-serving.html)
+2. [Processes](https://cookbook_ao.arweave.net/concepts/processes.html)
 3. [Editor setup](https://cookbook_ao.arweave.net/guides/aos/editor.html)
 4. [Editor setup](https://cookbook_ao.arweave.net/references/editor-setup.html)
-5. [Legacynet HyperBEAM](https://cookbook_ao.arweave.net/welcome/legacynet-info/index.html)
-6. [Creating a Pingpong Process in aos](https://cookbook_ao.arweave.net/guides/aos/pingpong.html)
-7. [Reading Dynamic State](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/reading-dynamic-state.html)
-8. [AO Processes](https://cookbook_ao.arweave.net/welcome/ao-processes.html)
-9. [Connecting to specific ao nodes](https://cookbook_ao.arweave.net/guides/aoconnect/connecting.html)
-10. [Understanding the Inbox](https://cookbook_ao.arweave.net/guides/aos/inbox-and-handlers.html)
-11. [Connecting to HyperBEAM with aos](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/aos-with-hyperbeam.html)
-12. [Automated Responses](https://cookbook_ao.arweave.net/tutorials/bots-and-games/attacking.html)
-13. [ao](https://cookbook_ao.arweave.net/guides/aos/modules/ao.html)
-14. [Fetching Game State](https://cookbook_ao.arweave.net/tutorials/bots-and-games/game-state.html)
-15. [DataItem Signers](https://cookbook_ao.arweave.net/guides/aoconnect/signers.html)
-16. [Handlers (Version 005)](https://cookbook_ao.arweave.net/references/handlers.html)
-17. [Messages](https://cookbook_ao.arweave.net/concepts/messages.html)
-18. [BetterIDEa](https://cookbook_ao.arweave.net/references/betteridea/index.html)
-19. [Customizing the Prompt in aos](https://cookbook_ao.arweave.net/guides/aos/prompt.html)
-20. [Messaging in ao](https://cookbook_ao.arweave.net/tutorials/begin/messaging.html)
-21. [Crafting a Token](https://cookbook_ao.arweave.net/tutorials/begin/token.html)
-22. [Building a Token in ao](https://cookbook_ao.arweave.net/guides/aos/token.html)
-23. [Troubleshooting using aolink](https://cookbook_ao.arweave.net/guides/aos/troubleshooting.html)
-24. [Preparations](https://cookbook_ao.arweave.net/tutorials/begin/preparations.html)
-25. [Exposing Process State to HyperBEAM](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/exposing-process-state.html)
-26. [How ao messaging works](https://cookbook_ao.arweave.net/concepts/how-it-works.html)
-27. [Get started in 5 minutes](https://cookbook_ao.arweave.net/welcome/getting-started.html)
-28. [Sending a Message to a Process](https://cookbook_ao.arweave.net/guides/aoconnect/sending-messages.html)
-29. [aoconnect](https://cookbook_ao.arweave.net/guides/aoconnect/aoconnect.html)
-30. [JSON](https://cookbook_ao.arweave.net/guides/aos/modules/json.html)
-31. [Getting started with SQLite](https://cookbook_ao.arweave.net/guides/snacks/sqlite.html)
-32. [AO Dev-Cli 01](https://cookbook_ao.arweave.net/guides/dev-cli/index.html)
-33. [Meet Web Assembly](https://cookbook_ao.arweave.net/references/wasm.html)
-34. [Building a Chatroom in aos](https://cookbook_ao.arweave.net/tutorials/begin/chatroom.html)
-35. [A whistle stop tour of Lua](https://cookbook_ao.arweave.net/concepts/lua.html)
-36. [Pretty](https://cookbook_ao.arweave.net/guides/aos/modules/pretty.html)
-37. [aos Brief Tour](https://cookbook_ao.arweave.net/concepts/tour.html)
-38. [FAQ](https://cookbook_ao.arweave.net/guides/aos/faq.html)
-39. [Reading results from an ao Process](https://cookbook_ao.arweave.net/guides/aoconnect/reading-results.html)
-40. [Bots and Games](https://cookbook_ao.arweave.net/tutorials/bots-and-games/index.html)
-41. [Eval](https://cookbook_ao.arweave.net/concepts/eval.html)
-42. [Introduction](https://cookbook_ao.arweave.net/guides/aos/intro.html)
-43. [Lets Play A Game](https://cookbook_ao.arweave.net/tutorials/bots-and-games/ao-effect.html)
-44. [Chatroom Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/chatroom.html)
-45. [Using WeaveDrive](https://cookbook_ao.arweave.net/guides/snacks/weavedrive.html)
-46. [Tokengating the Chatroom](https://cookbook_ao.arweave.net/tutorials/begin/tokengating.html)
-47. [Units](https://cookbook_ao.arweave.net/concepts/units.html)
-48. [Calling DryRun](https://cookbook_ao.arweave.net/guides/aoconnect/calling-dryrun.html)
-49. [Token Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/token.html)
-50. [Tutorials](https://cookbook_ao.arweave.net/tutorials/index.html)
-51. [Community Resources](https://cookbook_ao.arweave.net/references/community.html)
-52. [Installing ao connect](https://cookbook_ao.arweave.net/guides/aoconnect/installing-connect.html)
-53. [Lua Optimization Guide for AO Platform](https://cookbook_ao.arweave.net/references/lua-optimization.html)
-54. [Meet Lua](https://cookbook_ao.arweave.net/references/lua.html)
-55. [aos AO Operating System](https://cookbook_ao.arweave.net/guides/aos/index.html)
-56. [ao Module](https://cookbook_ao.arweave.net/references/ao.html)
-57. [Messaging Patterns in ao](https://cookbook_ao.arweave.net/references/messaging.html)
-58. [Introduction to AO-Core](https://cookbook_ao.arweave.net/welcome/ao-core-introduction.html)
-59. [ao Specs](https://cookbook_ao.arweave.net/concepts/specs.html)
-60. [Voting Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/voting.html)
-61. [ao Token and Subledger Specification](https://cookbook_ao.arweave.net/references/token.html)
-62. [Spawning a Process](https://cookbook_ao.arweave.net/guides/aoconnect/spawning-processes.html)
-63. [LLMs Documentation](https://cookbook_ao.arweave.net/llms-explanation.html)
-64. [Mechanics of the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/arena-mechanics.html)
-65. [References](https://cookbook_ao.arweave.net/references/index.html)
-66. [Begin An Interactive Tutorial](https://cookbook_ao.arweave.net/tutorials/begin/index.html)
-67. [Accessing Data from Arweave with ao](https://cookbook_ao.arweave.net/references/data.html)
-68. [Expanding the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html)
-69. [Utils](https://cookbook_ao.arweave.net/guides/aos/modules/utils.html)
-70. [Base64](https://cookbook_ao.arweave.net/guides/aos/modules/base64.html)
-71. [Bringing it Together](https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html)
-72. [Staking Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html)
-73. [Interpreting Announcements](https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html)
-74. [Strategic Decisions](https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html)
-75. [Blueprints](https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html)
-76. [Load Lua Files with load filename](https://cookbook_ao.arweave.net/guides/aos/load.html)
-77. [CRED Utils Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html)
-78. [Installing aos](https://cookbook_ao.arweave.net/guides/aos/installing.html)
-79. [Monitoring Cron](https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html)
-80. [Guides](https://cookbook_ao.arweave.net/guides/index.html)
-81. [Welcome to ao](https://cookbook_ao.arweave.net/welcome/index.html)
-82. [Concepts](https://cookbook_ao.arweave.net/concepts/index.html)
-83. [Cron Messages](https://cookbook_ao.arweave.net/references/cron.html)
-84. [CLI](https://cookbook_ao.arweave.net/guides/aos/cli.html)
-85. [Modules](https://cookbook_ao.arweave.net/guides/aos/modules/index.html)
-86. [Why Migrate to HyperBEAM](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/why-migrate.html)
-87. [crypto](https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html)
-88. [Release Notes](https://cookbook_ao.arweave.net/releasenotes/index.html)
-89. [Sending an Assignment to a Process](https://cookbook_ao.arweave.net/guides/aoconnect/assign-data.html)
+5. [External Data](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/external-data.html)
+6. [Legacynet HyperBEAM](https://cookbook_ao.arweave.net/welcome/legacynet-info/index.html)
+7. [Creating a Pingpong Process in aos](https://cookbook_ao.arweave.net/guides/aos/pingpong.html)
+8. [Calling DryRun](https://cookbook_ao.arweave.net/guides/aoconnect/calling-dryrun.html)
+9. [Dynamic Reads](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/dynamic-reads.html)
+10. [AO Processes](https://cookbook_ao.arweave.net/welcome/ao-processes.html)
+11. [Connecting to specific ao nodes](https://cookbook_ao.arweave.net/guides/aoconnect/connecting.html)
+12. [Understanding the Inbox](https://cookbook_ao.arweave.net/guides/aos/inbox-and-handlers.html)
+13. [Automated Responses](https://cookbook_ao.arweave.net/tutorials/bots-and-games/attacking.html)
+14. [ao](https://cookbook_ao.arweave.net/guides/aos/modules/ao.html)
+15. [Fetching Game State](https://cookbook_ao.arweave.net/tutorials/bots-and-games/game-state.html)
+16. [DataItem Signers](https://cookbook_ao.arweave.net/guides/aoconnect/signers.html)
+17. [Handlers (Version 005)](https://cookbook_ao.arweave.net/references/handlers.html)
+18. [Messages](https://cookbook_ao.arweave.net/concepts/messages.html)
+19. [BetterIDEa](https://cookbook_ao.arweave.net/references/betteridea/index.html)
+20. [Customizing the Prompt in aos](https://cookbook_ao.arweave.net/guides/aos/prompt.html)
+21. [Messaging in ao](https://cookbook_ao.arweave.net/tutorials/begin/messaging.html)
+22. [Crafting a Token](https://cookbook_ao.arweave.net/tutorials/begin/token.html)
+23. [Building a Token in ao](https://cookbook_ao.arweave.net/guides/aos/token.html)
+24. [AOS CLI](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/aos-cli.html)
+25. [Troubleshooting using aolink](https://cookbook_ao.arweave.net/guides/aos/troubleshooting.html)
+26. [Preparations](https://cookbook_ao.arweave.net/tutorials/begin/preparations.html)
+27. [State Exposure](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/state-exposure.html)
+28. [How ao messaging works](https://cookbook_ao.arweave.net/concepts/how-it-works.html)
+29. [Get started in 5 minutes](https://cookbook_ao.arweave.net/welcome/getting-started.html)
+30. [Sending a Message to a Process](https://cookbook_ao.arweave.net/guides/aoconnect/sending-messages.html)
+31. [aoconnect](https://cookbook_ao.arweave.net/guides/aoconnect/aoconnect.html)
+32. [JSON](https://cookbook_ao.arweave.net/guides/aos/modules/json.html)
+33. [Getting started with SQLite](https://cookbook_ao.arweave.net/guides/snacks/sqlite.html)
+34. [AO Dev-Cli 01](https://cookbook_ao.arweave.net/guides/dev-cli/index.html)
+35. [Meet Web Assembly](https://cookbook_ao.arweave.net/references/wasm.html)
+36. [Building a Chatroom in aos](https://cookbook_ao.arweave.net/tutorials/begin/chatroom.html)
+37. [A whistle stop tour of Lua](https://cookbook_ao.arweave.net/concepts/lua.html)
+38. [Pretty](https://cookbook_ao.arweave.net/guides/aos/modules/pretty.html)
+39. [aos Brief Tour](https://cookbook_ao.arweave.net/concepts/tour.html)
+40. [FAQ](https://cookbook_ao.arweave.net/guides/aos/faq.html)
+41. [Reading results from an ao Process](https://cookbook_ao.arweave.net/guides/aoconnect/reading-results.html)
+42. [Bots and Games](https://cookbook_ao.arweave.net/tutorials/bots-and-games/index.html)
+43. [Eval](https://cookbook_ao.arweave.net/concepts/eval.html)
+44. [Introduction](https://cookbook_ao.arweave.net/guides/aos/intro.html)
+45. [Lets Play A Game](https://cookbook_ao.arweave.net/tutorials/bots-and-games/ao-effect.html)
+46. [Chatroom Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/chatroom.html)
+47. [Using WeaveDrive](https://cookbook_ao.arweave.net/guides/snacks/weavedrive.html)
+48. [Tokengating the Chatroom](https://cookbook_ao.arweave.net/tutorials/begin/tokengating.html)
+49. [Units](https://cookbook_ao.arweave.net/concepts/units.html)
+50. [Token Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/token.html)
+51. [Tutorials](https://cookbook_ao.arweave.net/tutorials/index.html)
+52. [Community Resources](https://cookbook_ao.arweave.net/references/community.html)
+53. [Installing ao connect](https://cookbook_ao.arweave.net/guides/aoconnect/installing-connect.html)
+54. [Lua Optimization Guide for AO Platform](https://cookbook_ao.arweave.net/references/lua-optimization.html)
+55. [Meet Lua](https://cookbook_ao.arweave.net/references/lua.html)
+56. [aos AO Operating System](https://cookbook_ao.arweave.net/guides/aos/index.html)
+57. [ao Module](https://cookbook_ao.arweave.net/references/ao.html)
+58. [Messaging Patterns in ao](https://cookbook_ao.arweave.net/references/messaging.html)
+59. [Introduction to AO-Core](https://cookbook_ao.arweave.net/welcome/ao-core-introduction.html)
+60. [ao Specs](https://cookbook_ao.arweave.net/concepts/specs.html)
+61. [Voting Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/voting.html)
+62. [ao Token and Subledger Specification](https://cookbook_ao.arweave.net/references/token.html)
+63. [Spawning a Process](https://cookbook_ao.arweave.net/guides/aoconnect/spawning-processes.html)
+64. [LLMs Documentation](https://cookbook_ao.arweave.net/llms-explanation.html)
+65. [Mechanics of the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/arena-mechanics.html)
+66. [References](https://cookbook_ao.arweave.net/references/index.html)
+67. [Begin An Interactive Tutorial](https://cookbook_ao.arweave.net/tutorials/begin/index.html)
+68. [Accessing Data from Arweave with ao](https://cookbook_ao.arweave.net/references/data.html)
+69. [Expanding the Arena](https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html)
+70. [Utils](https://cookbook_ao.arweave.net/guides/aos/modules/utils.html)
+71. [Base64](https://cookbook_ao.arweave.net/guides/aos/modules/base64.html)
+72. [Bringing it Together](https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html)
+73. [Staking Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html)
+74. [Interpreting Announcements](https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html)
+75. [Strategic Decisions](https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html)
+76. [Blueprints](https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html)
+77. [Load Lua Files with load filename](https://cookbook_ao.arweave.net/guides/aos/load.html)
+78. [CRED Utils Blueprint](https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html)
+79. [Installing aos](https://cookbook_ao.arweave.net/guides/aos/installing.html)
+80. [Monitoring Cron](https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html)
+81. [Guides](https://cookbook_ao.arweave.net/guides/index.html)
+82. [Welcome to ao](https://cookbook_ao.arweave.net/welcome/index.html)
+83. [User-Owned Processes](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/user-owned-processes.html)
+84. [Deprecated Features](https://cookbook_ao.arweave.net/references/deprecated/index.html)
+85. [Concepts](https://cookbook_ao.arweave.net/concepts/index.html)
+86. [Cron Messages](https://cookbook_ao.arweave.net/references/cron.html)
+87. [CLI](https://cookbook_ao.arweave.net/guides/aos/cli.html)
+88. [Modules](https://cookbook_ao.arweave.net/guides/aos/modules/index.html)
+89. [Why Migrate to HyperBEAM](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/why-migrate.html)
+90. [crypto](https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html)
+91. [Release Notes](https://cookbook_ao.arweave.net/releasenotes/index.html)
+92. [Sending an Assignment to a Process](https://cookbook_ao.arweave.net/guides/aoconnect/assign-data.html)
 
 ---
 
-# 1. Processes  Cookbook
+# 1. Web Serving  Cookbook
 
 Document Number: 1
+Source: https://cookbook_ao.arweave.net/migrating-to-hyperbeam/web-serving.html
+Words: 491
+Quality Score: 0.629
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Web Serving Serve dynamic web content directly from AO processes using HyperBEAM. This guide shows how to host websites, serve HTML/CSS/JavaScript, and update content in real-time using an experimental Hyper AOS light implementation.Prerequisites HyperBeam server running locally rebar3 shell from your local HyperBeam repo Experimental Hyper AOS light module Setting Up the Environment First, export the AOS module and install the latest preview version of the AOS console:This installation enables the Lua device on HyperBeam to function as your process's virtual machine.Creating a Process To create a new process on your HyperBeam server:Spin up a new process using the AOS module as the initialization script export AOS_MODULE= Select the Lua device in the configuration options Verify the process is running with the experimental Hyper AOS File Structure For this demonstration, we'll use three main files:app.css.lua - CSS styling wrapped in a Lua file app.js.lua - JavaScript functionality wrapped in a Lua file now.html.lua - HTML content wrapped in a Lua file State Management Unlike Genesis WASM which requires sending messages to cache with the patch device, Hyper AOS makes state directly available:CSS File Load the CSS file into the process state:lua.load app.css.lua The CSS file sets the content type and body:luaState["app.css"] = {
+["content-type"] = "text/css",
+body = [[
+/* CSS styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: Arial, sans-serif;
+background: linear-gradient(180deg, #87CEEB 0%, #9980C8 100%);
+min-height: 100vh;
+overflow-x: hidden;
+dis: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+h1 {
+color: #333;
+margin-bottom: 2rem;
+text-align: center;
+font-size: 2.5rem;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+.marquee-container {
+width: 100%;
+height: 200px;
+background: rgba(255, 255, 255, 0.3);
+backdrop-filter: blur(10px);
+position: relative;
+overflow: hidden;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.marquee-track {
+dis: flex;
+position: absolute;
+animation: scroll 20s linear infinite;
+height: 100%;
+align-items: center;
+}
+]]
+} JavaScript File Similarly, load the JavaScript file:lua.load app.js.lua The JavaScript file follows the same pattern:HTML File Finally, load the HTML file:lua.load now.html.lua The HTML file is placed at the root of the state:Note that the HTML references other assets using the path now/app.css and now/app.js.Accessing Your Web Application Retrieve your process ID by examining the inbox commitments:luaInbox[1].commitments Look for the signed ID (RSAPS-SHA-256). This appears as a long alphanumeric string like 6oNYypU3EIeauMkTL4EEYKgzASYFebqTCLP8W1idmMB.Access your web application in a browser:localhost:8734/~process@1.0/now Replace the process ID with your actual process ID from the commitments Making Dynamic Updates To demonstrate the dynamic nature of this approach:Modify your HTML file (e.g., change a heading to "Elephant Parade on the beam") Save the changes Reload the file in the AOS console:lua.load now.html.lua Refresh your browser to see the changes Advanced Capabilities This approach allows for:Real-time updates to web content Processing incoming messages to modify the website Adding additional content dynamically Creating interactive web applications directly within HyperBeam processes Warning The Hyper AOS light implementation used in this guide is experimental and should not be used for production environments. It is intended for demonstration purposes only.
+
+---
+
+# 2. Processes  Cookbook
+
+Document Number: 2
 Source: https://cookbook_ao.arweave.net/concepts/processes.html
 Words: 316
 Quality Score: 0.544
@@ -110,19 +169,6 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Processes Processes possess the capability to engage in communication via message passing, both receiving and dispatching messages within the network. Additionally, they hold the potential to instantiate further processes, enhancing the network's computational fabric. This dynamic method of data dissemination and interaction within the network is referred to as a 'holographic state', underpinning the shared and persistent state of the network. When building a Process with aos you have the ability to add handlers, these handlers can be added by calling the Handlers.add function, passing a "name", a "match" function, and a "handle" function. The core module contains a helper library that gets injected into the handler function, this library is called ao.The main functions to look at in this ao helper is ao.send(Message) - sends a message to a process ao.spawn(Module, Message) - creates a new process Ethereum Signed Process or Module For an ao Process or Module, if the ANS-104 DataItem was signed using Ethereum keys, then the value in the env.Process.Owner or env.Module.Owner field, respectively, will be the EIP-55 Ethereum address of the signer. For example: 0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359 ao.send Example ao.spawn Example ao.env NOTE: ao.env is important context data that you may need as a developer creating processes.The ao.env property contains the Process and Module Reference Objects Both the Process and the Module contain the attributes of the ao Data-Protocol.Summary Processes in the network communicate through message passing and can create new processes, contributing to a 'holographic state' of shared and persistent data. Developers can build a Process using aos by adding handlers through the Handlers.add function with specific name, match, and handle functions. The ao helper library within the core module aids in this process, providing functions like ao.send to dispatch messages and ao.spawn to create new modules, as well as the important ao.env property which contains essential Process and Module information. The ao Data-Protocol outlines the structure and attributes of these elements.
-
----
-
-# 2. HyperBEAM from AO Connect  Cookbook
-
-Document Number: 2
-Source: https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/ao-connect.html
-Words: 211
-Quality Score: 0.543
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-HyperBEAM from AO Connect This guide explains how to interact with a process using HyperBEAM and aoconnect.Prerequisites Node.js environment @permaweb/aoconnect library The latest version of aos Wallet file (wallet.json) containing your cryptographic keys A HyperBEAM node running with the genesis_wasm profile The Process ID for a process created with genesis_wasm (this is the default in the latest version of aos).Step 1: Environment Setup Install necessary dependencies:Ensure your wallet file (wallet.json) is correctly formatted and placed in your project directory.INFO You can create a test wallet using this command: npx -y @permaweb/wallet > wallet.json Step 2: Establish Connection Create a new JavaScript file (e.g., index.js) and set up your Permaweb connection. You will need a processId of a process that you want to interact with.Step 3: Pushing a Message to a Process Use the request function to send a message to the process. In aoconnect, this is done by using the push path parameter.Full Example To run the full script, combine the snippets from Step 2 and 3 into index.js:Now, run it:bashnode index.js You should see an object logged to the console, containing the ID of the message that was sent.Conclusion Following these steps, you've successfully sent a message to a process. This is a fundamental interaction for building applications on hyperAOS.
 
 ---
 
@@ -152,9 +198,22 @@ Editor setup Remembering all the built in ao functions and utilities can sometim
 
 ---
 
-# 5. Legacynet  HyperBEAM  Cookbook
+# 5. External Data  Cookbook
 
 Document Number: 5
+Source: https://cookbook_ao.arweave.net/migrating-to-hyperbeam/external-data.html
+Words: 387
+Quality Score: 0.542
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+External Data HyperBEAM provides oracle functionality through its resolve mechanism, enabling AO processes to fetch and consume external data from web APIs. This creates a trustless bridge between on-chain processes and off-chain data sources.The oracle service works by taking a base message and combining it with external data fetched via HTTP requests. This "resolve" operation allows your AO processes to react to real-world data, price feeds, weather information, or any other web-accessible API.Key Concepts Oracle Requests: Fetch external data through HTTP calls to any web API Trustless Execution: Results are delivered directly to your process with cryptographic guarantees Relay Device: The ~relay@1.0 device acts as the oracle gateway to external services Making Oracle Requests The oracle service allows your process to query any web API and receive the response directly. Here's how to use it:Basic HTTP Request Example To fetch information from an Arweave node:This code:Sets the target to ao.id (the current process) to receive the response Specifies the external URL to query via relay-path Uses the resolve property with ~relay@1.0/call to execute the HTTP request Managing Trust When working with HyperBeam nodes, you may need to establish trust by adding the node's address to your authorities:luatable.insert(ao.authorities, "HYPERBEAM_NODE_ADDRESS") If you receive a "not trusted" response, this step is required before the resolve operation can succeed.Accessing Response Data After a successful resolve operation, you can access the response data from your inbox:luaInbox[3].Data This will dis the JSON data returned from the external API.Additional Example: JSON Placeholder API You can query any REST API using the same pattern:Technical Details The resolve mechanism works by:Creating a base message with the target and relay path Specifying the resolve function to use (in this case, the relay device's call function) Executing the HTTP request through the relay device Returning the response as a new message to the specified target Common Oracle Use Cases Price Feeds: Fetch cryptocurrency or asset prices for DeFi applications Weather Data: Build parametric insurance or prediction markets Sports Results: Create betting or fantasy sports applications Random Numbers: Access external randomness for games or lotteries IoT Data: Integrate real-world sensor data into smart contracts News & Events: React to real-world events in your processes Security Considerations Always ensure that HyperBeam nodes are trusted before using them for resolve operations. Add node addresses to your ao.authorities table to establish trust.
+
+---
+
+# 6. Legacynet  HyperBEAM  Cookbook
+
+Document Number: 6
 Source: https://cookbook_ao.arweave.net/welcome/legacynet-info/index.html
 Words: 383
 Quality Score: 0.537
@@ -165,9 +224,9 @@ Legacynet → HyperBEAM As the AO ecosystem evolves, we are transitioning from L
 
 ---
 
-# 6. Creating a Pingpong Process in aos  Cookbook
+# 7. Creating a Pingpong Process in aos  Cookbook
 
-Document Number: 6
+Document Number: 7
 Source: https://cookbook_ao.arweave.net/guides/aos/pingpong.html
 Words: 358
 Quality Score: 0.536
@@ -178,22 +237,35 @@ Creating a Pingpong Process in aos This tutorial will guide you through creating
 
 ---
 
-# 7. Reading Dynamic State  Cookbook
+# 8. Calling DryRun  Cookbook
 
-Document Number: 7
-Source: https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/reading-dynamic-state.html
-Words: 429
+Document Number: 8
+Source: https://cookbook_ao.arweave.net/guides/aoconnect/calling-dryrun.html
+Words: 215
 Quality Score: 0.525
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Reading Dynamic State Beyond reading static, cached state from your process, HyperBEAM allows you to perform on-the-fly computations on that state using Lua. This guide explains how to create and use "transformation functions" to return dynamic, computed data without altering the underlying state of your process.This is a powerful pattern for creating efficient data APIs for your applications, reducing client-side logic, and minimizing data transfer.This guide assumes you are already familiar with exposing static process state.How it Works: The Lua Device The magic behind this is the lua@5.3a device, which can execute a Lua script against a message. In this pattern, we use a HyperBEAM URL (hashpath) to construct a pipeline:First, we grab the latest state of an AO process.Then, we pipe that state as the base message into the lua@5.3a device.We tell the Lua device which script to load (from an Arweave transaction) and which function to execute.The function runs, processing the base state.Finally, the result of the function is returned over HTTP.Example: Calculating Circulating Supply Let's consider a practical example: a token process where we have patched the Balances table to be readable. Rather than forcing clients to download all balance data to compute the total supply, we can do it on the HyperBEAM node.1. The Transformation Function First, create a Lua script (sum.lua) with a function that takes the state (base) and calculates the sum of balances.The transformation function receives two arguments:base: The message being processed, which in our pipeline will be the cached state data from your process.req: The incoming request object, which contains parameters and other metadata.2. Publishing the Function Next, publish your Lua script to Arweave. The arx CLI tool is recommended for this.arx will return a transaction ID for your script. Let's say it's LUA_SCRIPT_TX_ID.3. Calling the Function With the process ID (YOUR_PROCESS_ID) and the script transaction ID (LUA_SCRIPT_TX_ID), you can construct a URL to call your function:HyperBEAMGET /~process@1.0/now/~lua@5.3a&module={LUA_SCRIPT_TX_ID}/sum/serialize~json@1.0 This URL breaks down as follows:/{YOUR_PROCESS_ID}~process@1.0: Targets the AO process and its state./now: Gets the most current state./~lua@5.3a&module={LUA_SCRIPT_TX_ID}: This is the key part. It tells HyperBEAM to take the output of the previous step (the process state) and process it with the lua@5.3a device, loading your script from the module transaction./sum: Calls the sum function within your Lua script./serialize~json@1.0: Takes the table returned by your function and serializes it into a JSON object.4. Integrating into an Application Here's how you could fetch this dynamic data in a JavaScript application:This approach significantly improves performance by offloading computation from the client to the HyperBEAM node and reducing the amount of data sent over the network.
+Calling DryRun URGENT DEPRECATION NOTICE Legacynet will supporting dry runs on October 10, 2025. If you are running processes on Legacynet, you must take action now.This method of reading state is being deprecated for all processes. After deprecation, you have two options:Recommended: Migrate to State Patching - Use the State Patching mechanism to expose state via HTTP for better performance. This is the recommended approach as dryrun was known to cause severe bottlenecks in web applications.Alternative: Run Your Own HyperBEAM Node - You can continue using dry runs by running your own HyperBEAM node infrastructure.Exception for Token Processes: If you have a token process, HyperBEAM can manage your balance state. You can still patch your token for improved performance.Important for User-Owned Processes: If your application spawns processes owned by users (not your app), users will need to patch their own processes. See the User-Owned Processes guide for implementation strategies.DryRun is the process of sending a message object to a specific process and getting the Result object back, but the memory is not saved, it is perfect to create a read message to return the current value of memory. For example, a balance of a token, or a result of a transfer, etc. You can use DryRun to obtain an output without sending an actual message.
 
 ---
 
-# 8. AO Processes  Cookbook
+# 9. Dynamic Reads  Cookbook
 
-Document Number: 8
+Document Number: 9
+Source: https://cookbook_ao.arweave.net/migrating-to-hyperbeam/dynamic-reads.html
+Words: 399
+Quality Score: 0.520
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Dynamic Reads Dynamic reads enable on-the-fly computations on your process state using Lua transformation functions. These functions process cached state and return computed results without modifying the underlying data.This pattern creates efficient data APIs by moving computation from clients to HyperBEAM nodes, reducing both network traffic and client-side complexity.This guide assumes you are already familiar with state exposure.How Dynamic Reads Work Dynamic reads leverage the lua@5.3a device to execute Lua scripts against cached state. The HyperBEAM URL constructs a processing pipeline:First, we grab the latest state of an AO process.Then, we pipe that state as the base message into the lua@5.3a device.We tell the Lua device which script to load (from an Arweave transaction) and which function to execute.The function runs, processing the base state.Finally, the result of the function is returned over HTTP.Example: Calculating Circulating Supply Let's consider a practical example: a token process where we have patched the Balances table to be readable. Rather than forcing clients to download all balance data to compute the total supply, we can do it on the HyperBEAM node.1. The Transformation Function First, create a Lua script (sum.lua) with a function that takes the state (base) and calculates the sum of balances.The transformation function receives two arguments:base: The message being processed, which in our pipeline will be the cached state data from your process.req: The incoming request object, which contains parameters and other metadata.2. Publishing the Function Next, publish your Lua script to Arweave. The arx CLI tool is recommended for this.arx will return a transaction ID for your script. Let's say it's LUA_SCRIPT_TX_ID.3. Calling the Function With the process ID (YOUR_PROCESS_ID) and the script transaction ID (LUA_SCRIPT_TX_ID), you can construct a URL to call your function:HyperBEAMGET /~process@1.0/now/~lua@5.3a&module={LUA_SCRIPT_TX_ID}/sum/serialize~json@1.0 This URL breaks down as follows:/{YOUR_PROCESS_ID}~process@1.0: Targets the AO process and its state./now: Gets the most current state./~lua@5.3a&module={LUA_SCRIPT_TX_ID}: This is the key part. It tells HyperBEAM to take the output of the previous step (the process state) and process it with the lua@5.3a device, loading your script from the module transaction./sum: Calls the sum function within your Lua script./serialize~json@1.0: Takes the table returned by your function and serializes it into a JSON object.4. Integrating into an Application Here's how you could fetch this dynamic data in a JavaScript application:This approach significantly improves performance by offloading computation from the client to the HyperBEAM node and reducing the amount of data sent over the network.
+
+---
+
+# 10. AO Processes  Cookbook
+
+Document Number: 10
 Source: https://cookbook_ao.arweave.net/welcome/ao-processes.html
 Words: 442
 Quality Score: 0.520
@@ -204,9 +276,9 @@ AO Processes AO Processes are persistent, programmable smart contracts that live
 
 ---
 
-# 9. Connecting to specific ao nodes  Cookbook
+# 11. Connecting to specific ao nodes  Cookbook
 
-Document Number: 9
+Document Number: 11
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/connecting.html
 Words: 176
 Quality Score: 0.518
@@ -217,9 +289,9 @@ Skip to content Connecting to specific ao nodes When including ao connect in you
 
 ---
 
-# 10. Understanding the Inbox  Cookbook
+# 12. Understanding the Inbox  Cookbook
 
-Document Number: 10
+Document Number: 12
 Source: https://cookbook_ao.arweave.net/guides/aos/inbox-and-handlers.html
 Words: 211
 Quality Score: 0.518
@@ -230,22 +302,9 @@ Understanding the Inbox In aos, processes are executed in response to messages v
 
 ---
 
-# 11. Connecting to HyperBEAM with aos  Cookbook
+# 13. Automated Responses  Cookbook
 
-Document Number: 11
-Source: https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/aos-with-hyperbeam.html
-Words: 273
-Quality Score: 0.517
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Connecting to HyperBEAM with aos This guide explains how to use aos, the command-line interface for AO, to connect to a HyperBEAM node for development.Installing aos The primary tool for interacting with AO and developing processes is aos, a command-line interface and development environment.Connecting to a HyperBEAM Node While you don't need to run a HyperBEAM node yourself, you do need to connect to one to interact with the network during development.To start aos and connect to a public HyperBEAM node, simply run the command in your terminal:This connects you to an interactive Lua environment running within a process on the AO network. This process acts as your command-line interface (CLI) to the AO network. When you specify --url , it connects to the genesis_wasm device running on the HyperBEAM node at the supplied URL, allowing you to interact with other processes, manage your wallet, and develop new AO processes.Running a Local HyperBEAM Node If you are running HyperBEAM locally and want to use that node when booting up aos, you must first start your local node with the genesis_wasm profile:Then, you can connect aos to it:Until aos is fully HyperBEAM native, the genesis_wasm profile is required to run a local Compute Unit (CU) for executing aos.Process Types Use --url when connecting to hyper-aos processes on HyperBEAM. For standard genesis_wasm processes, the flag is not needed.Interacting with Mainnet Processes Note on Blocking Calls Blocking message patterns, such as Receive and ao.send().receive(), are not available when running aos against a HyperBEAM process. HyperBEAM processes do not support the underlying wasm modules required for this functionality. You should rely on asynchronous patterns using handlers instead.
-
----
-
-# 12. Automated Responses  Cookbook
-
-Document Number: 12
+Document Number: 13
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/attacking.html
 Words: 438
 Quality Score: 0.516
@@ -325,9 +384,9 @@ end
 
 ---
 
-# 13. ao  Cookbook
+# 14. ao  Cookbook
 
-Document Number: 13
+Document Number: 14
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/ao.html
 Words: 94
 Quality Score: 0.516
@@ -338,9 +397,9 @@ Skip to content ao Built-in global library for process communication and managem
 
 ---
 
-# 14. Fetching Game State  Cookbook
+# 15. Fetching Game State  Cookbook
 
-Document Number: 14
+Document Number: 15
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/game-state.html
 Words: 438
 Quality Score: 0.515
@@ -351,9 +410,9 @@ Fetching Game State Now that you're seeing game announcements directly in your t
 
 ---
 
-# 15. DataItem Signers  Cookbook
+# 16. DataItem Signers  Cookbook
 
-Document Number: 15
+Document Number: 16
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/signers.html
 Words: 279
 Quality Score: 0.514
@@ -364,9 +423,9 @@ DataItem Signers Every message sent to AO MUST be signed, aoconnect provides a h
 
 ---
 
-# 16. Handlers (Version 005)  Cookbook
+# 17. Handlers (Version 005)  Cookbook
 
-Document Number: 16
+Document Number: 17
 Source: https://cookbook_ao.arweave.net/references/handlers.html
 Words: 942
 Quality Score: 0.513
@@ -377,9 +436,9 @@ Handlers (Version 0.0.5) Overview The Handlers library provides a flexible way t
 
 ---
 
-# 17. Messages  Cookbook
+# 18. Messages  Cookbook
 
-Document Number: 17
+Document Number: 18
 Source: https://cookbook_ao.arweave.net/concepts/messages.html
 Words: 310
 Quality Score: 0.512
@@ -390,9 +449,9 @@ Messages The Message serves as the fundamental data protocol unit within ao, cra
 
 ---
 
-# 18. BetterIDEa  Cookbook
+# 19. BetterIDEa  Cookbook
 
-Document Number: 18
+Document Number: 19
 Source: https://cookbook_ao.arweave.net/references/betteridea/index.html
 Words: 84
 Quality Score: 0.510
@@ -403,9 +462,9 @@ Skip to content BetterIDEa BetterIDEa is a custom web based IDE for developing o
 
 ---
 
-# 19. Customizing the Prompt in aos  Cookbook
+# 20. Customizing the Prompt in aos  Cookbook
 
-Document Number: 19
+Document Number: 20
 Source: https://cookbook_ao.arweave.net/guides/aos/prompt.html
 Words: 203
 Quality Score: 0.507
@@ -416,9 +475,9 @@ Customizing the Prompt in aos Step 1: Open aos and Start the Editor Launch the a
 
 ---
 
-# 20. Messaging in ao  Cookbook
+# 21. Messaging in ao  Cookbook
 
-Document Number: 20
+Document Number: 21
 Source: https://cookbook_ao.arweave.net/tutorials/begin/messaging.html
 Words: 996
 Quality Score: 0.506
@@ -429,9 +488,9 @@ Messaging in ao Learn how Messages gives ao Parallel Compute Capability In ao, e
 
 ---
 
-# 21. Crafting a Token  Cookbook
+# 22. Crafting a Token  Cookbook
 
-Document Number: 21
+Document Number: 22
 Source: https://cookbook_ao.arweave.net/tutorials/begin/token.html
 Words: 576
 Quality Score: 0.505
@@ -442,9 +501,9 @@ Crafting a Token INFO Diving deeper into the ao, you're now ready to create your
 
 ---
 
-# 22. Building a Token in ao  Cookbook
+# 23. Building a Token in ao  Cookbook
 
-Document Number: 22
+Document Number: 23
 Source: https://cookbook_ao.arweave.net/guides/aos/token.html
 Words: 1337
 Quality Score: 0.505
@@ -508,9 +567,22 @@ end) In summary, this code checks to make sure the Recipient and Quantity Tags h
 
 ---
 
-# 23. Troubleshooting using aolink  Cookbook
+# 24. AOS CLI  Cookbook
 
-Document Number: 23
+Document Number: 24
+Source: https://cookbook_ao.arweave.net/migrating-to-hyperbeam/aos-cli.html
+Words: 324
+Quality Score: 0.504
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AOS CLI Use the aos command-line interface to spawn and connect to processes on HyperBEAM mainnet.Understanding Legacy vs. HyperBEAM AO is currently maintaining two networks during the transition to HyperBEAM:Legacy Network (aos): The current stable network that most existing processes run on HyperBEAM Mainnet (hyper-aos): The new high-performance network being built out HyperAOS represents the future direction of AOS on HyperBEAM, offering improved performance and new capabilities.Installing aos The primary tool for interacting with AO and developing processes is aos, a command-line interface and development environment.Choosing Your Network After installing aos, when you spawn a new process you'll be presented with a selection menu:bashaos myProcess You'll see:Legacy Network Process (aos) Select aos to spawn a process on the legacy network (default). This creates a standard AO process on the existing stable network, compatible with all current tooling and processes.HyperBEAM Process (hyper-aos) Select hyper-aos to spawn a process directly on HyperBEAM. This is marked as experimental and should not be used for production workloads while HyperBEAM mainnet is being built out.Important The hyper-aos option is experimental and actively under development. Use aos (legacy network) for production processes.Connecting to a Specific HyperBEAM Node You can also connect directly to a specific HyperBEAM node:This connects you to an interactive Lua environment running within a process on the HyperBEAM network at the specified URL.Running a Local HyperBEAM Node If you are running HyperBEAM locally and want to use that node when booting up aos, you must first start your local node with the genesis_wasm profile:Then, you can connect aos to it:Until aos is fully HyperBEAM native, the genesis_wasm profile is required to run a local Compute Unit (CU) for executing aos.Interacting with Mainnet Processes Note on Blocking Calls Blocking message patterns, such as Receive and ao.send().receive(), are not available when running aos against a HyperBEAM process. HyperBEAM processes do not support the underlying wasm modules required for this functionality. You should rely on asynchronous patterns using handlers instead.
+
+---
+
+# 25. Troubleshooting using aolink  Cookbook
+
+Document Number: 25
 Source: https://cookbook_ao.arweave.net/guides/aos/troubleshooting.html
 Words: 337
 Quality Score: 0.504
@@ -521,9 +593,9 @@ Troubleshooting using ao.link Working with a decentralized computer and network,
 
 ---
 
-# 24. Preparations  Cookbook
+# 26. Preparations  Cookbook
 
-Document Number: 24
+Document Number: 26
 Source: https://cookbook_ao.arweave.net/tutorials/begin/preparations.html
 Words: 503
 Quality Score: 0.504
@@ -561,16 +633,16 @@ default@aos-0.2.2[Inbox:1]> Let's walk through the initial printout after runnin
 
 ---
 
-# 25. Exposing Process State to HyperBEAM  Cookbook
+# 27. State Exposure  Cookbook
 
-Document Number: 25
-Source: https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/exposing-process-state.html
-Words: 578
-Quality Score: 0.501
+Document Number: 27
+Source: https://cookbook_ao.arweave.net/migrating-to-hyperbeam/state-exposure.html
+Words: 699
+Quality Score: 0.503
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Exposing Process State to HyperBEAM HyperBEAM introduces a powerful feature for exposing parts of a process's state for immediate reading over HTTP. This improves performance for web frontends and data services by replacing the need for dryrun calls, which were a known bottleneck on legacynet.The Patch Device The ~patch@1.0 device is the mechanism that allows AO processes to make parts of their internal state readable via direct HTTP GET requests.How it Works Exposing state is a four-step process involving your process and HyperBEAM:Process Logic: From your process (e.g., in Lua or WASM), send an outbound message to the ~patch@1.0 device.Patch Message Format: The message must include device and cache tags.HyperBEAM Execution: HyperBEAM's dev_patch module processes this message, mapping the key-value pairs from the cache table to a URL path.HTTP Access: The exposed data is then immediately available via a standard HTTP GET request to the process's endpoint.HyperBEAMGET /~process@1.0/compute/cache/ Initial State Sync (Optional) To make data available immediately on process creation, you can patch its initial state. A common pattern is to use a flag to ensure this sync only runs once, as shown in this example for a token's Balances and TotalSupply.lua-- Place this logic at the top level of your process script,
+State Exposure ACTION REQUIRED Legacynet is deprecating dry runs on October 10, 2025. Migrating to state exposure is now urgent for all processes running on Legacynet. This guide shows you how to expose your process state for direct HTTP access, providing dramatically better performance than dry runs.HyperBEAM enables direct HTTP access to process state, eliminating the need for costly dryrun calls. This feature dramatically improves performance for web frontends and data services that need to read process data.The Patch Device The ~patch@1.0 device is the mechanism that allows AO processes to make parts of their internal state readable via direct HTTP GET requests.How State Exposure Works State exposure follows a simple four-step pattern:Process Logic: From your process (e.g., in Lua or WASM), send an outbound message to the ~patch@1.0 device.Patch Message Format: The message must include device and cache tags.HyperBEAM Execution: HyperBEAM's dev_patch module processes this message, mapping the key-value pairs from the cache table to a URL path.HTTP Access: The exposed data is then immediately available via a standard HTTP GET request to the process's endpoint.HyperBEAMGET /~process@1.0/compute/cache/ Initial State Sync (Optional) To make data available immediately on process creation, you can patch its initial state. A common pattern is to use a flag to ensure this sync only runs once, as shown in this example for a token's Balances and TotalSupply.lua-- Place this logic at the top level of your process script,
 -- outside of specific handlers, so it runs on load.
 Balances = { token1 = 100, token2 = 200 } -- A table of balances
 TotalSupply = 1984 -- A single total supply value
@@ -589,13 +661,13 @@ Send({ device = 'patch@1.0', cache = { balances = Balances, totalsupply = TotalS
 -- Updates the flag to prevent the sync from running again.
 InitialSync = 'COMPLETE'
 print("Initial state sync complete. Balances and TotalSupply patched.")
-end This pattern makes essential data queryable upon process creation, boosting application responsiveness.Example (Lua in aos) This handler exposes a currentstatus key that can be read via HTTP after the PublishData action is called.Avoiding Key Conflicts Keys in the cache table become URL path segments. To avoid conflicts with reserved HyperBEAM paths, use descriptive, specific keys. Avoid using reserved keywords such as:For instance, prefer a key like myappstate over a generic key like state.WARNING HTTP paths are case-insensitive. While the patch device stores keys with case sensitivity (e.g., MyKey vs mykey), HTTP access to paths like the following is ambiguous and may lead to unpredictable results.To prevent conflicts, always use lowercase keys in your cache table (e.g., mykey, usercount).HyperBEAMGET /~process@1.0/cache/mykey Key Points Path Structure: Data is exposed at a path structured like this, where is a key from your cache table:HyperBEAM/~process@1.0/cache/ Data Types: Basic data types like strings and numbers work best. Complex objects may require serialization.compute vs now: Accessing patched data can be done via two main paths:The compute endpoint serves the last known value quickly, while now may perform additional computation to get the most recent state.Read-Only Exposure: Patching is for efficient reads and does not replace your process's core state management logic.Using the patch device enables efficient, standard HTTP access to your process state, seamlessly connecting decentralized logic with web applications.Now that you know how to expose static state, learn how to perform on-the-fly computations on that state by reading dynamic state.
+end This pattern makes essential data queryable upon process creation, boosting application responsiveness.Example (Lua in aos) This handler exposes a currentstatus key that can be read via HTTP after the PublishData action is called.Avoiding Key Conflicts Keys in the cache table become URL path segments. To avoid conflicts with reserved HyperBEAM paths, use descriptive, specific keys. Avoid using reserved keywords such as:For instance, prefer a key like myappstate over a generic key like state.WARNING HTTP paths are case-insensitive. While the patch device stores keys with case sensitivity (e.g., MyKey vs mykey), HTTP access to paths like the following is ambiguous and may lead to unpredictable results.To prevent conflicts, always use lowercase keys in your cache table (e.g., mykey, usercount).HyperBEAMGET /~process@1.0/cache/mykey Key Points Path Structure: Data is exposed at a path structured like this, where is a key from your cache table:HyperBEAM/~process@1.0/cache/ Data Types: Basic data types like strings and numbers work best. Complex objects may require serialization.compute vs now: Accessing patched data can be done via two main paths:The compute endpoint serves the last known value quickly, while now may perform additional computation to get the most recent state.Read-Only Exposure: Patching is for efficient reads and does not replace your process's core state management logic.Using the patch device enables efficient, standard HTTP access to your process state, seamlessly connecting decentralized logic with web applications.Patching User-Owned Processes If your application spawns processes that are owned by users (not your application), you'll need to provide a way for users to patch their own processes. A common example is marketplace applications where each user has their own process instance.Implementation Strategy You can create UI components that allow users to update their processes. Here's an example approach:In your process code, add a handler that users can trigger:This allows users to maintain ownership of their processes while still benefiting from HyperBEAM's performance improvements.For a complete guide on implementing this pattern, see User-Owned Processes.With state exposure configured, you can now add dynamic reads to compute values on-the-fly without modifying your process state.
 
 ---
 
-# 26. How ao messaging works  Cookbook
+# 28. How ao messaging works  Cookbook
 
-Document Number: 26
+Document Number: 28
 Source: https://cookbook_ao.arweave.net/concepts/how-it-works.html
 Words: 395
 Quality Score: 0.499
@@ -606,9 +678,9 @@ How ao messaging works Before we dive in to ao, I want to share with you a littl
 
 ---
 
-# 27. Get started in 5 minutes  Cookbook
+# 29. Get started in 5 minutes  Cookbook
 
-Document Number: 27
+Document Number: 29
 Source: https://cookbook_ao.arweave.net/welcome/getting-started.html
 Words: 837
 Quality Score: 0.499
@@ -646,9 +718,9 @@ default@aos-0.2.2[Inbox:1]> Welcome to your new home in the ao computer! The pro
 
 ---
 
-# 28. Sending a Message to a Process  Cookbook
+# 30. Sending a Message to a Process  Cookbook
 
-Document Number: 28
+Document Number: 30
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/sending-messages.html
 Words: 384
 Quality Score: 0.498
@@ -707,9 +779,9 @@ data: "any data",
 
 ---
 
-# 29. aoconnect  Cookbook
+# 31. aoconnect  Cookbook
 
-Document Number: 29
+Document Number: 31
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/aoconnect.html
 Words: 44
 Quality Score: 0.497
@@ -720,9 +792,9 @@ Skip to content aoconnect ao connect is a Javascript/Typescript library to inter
 
 ---
 
-# 30. JSON  Cookbook
+# 32. JSON  Cookbook
 
-Document Number: 30
+Document Number: 32
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/json.html
 Words: 85
 Quality Score: 0.497
@@ -733,9 +805,9 @@ Skip to content JSON The JSON module allows you to encode and decode objects usi
 
 ---
 
-# 31. Getting started with SQLite  Cookbook
+# 33. Getting started with SQLite  Cookbook
 
-Document Number: 31
+Document Number: 33
 Source: https://cookbook_ao.arweave.net/guides/snacks/sqlite.html
 Words: 130
 Quality Score: 0.497
@@ -746,9 +818,9 @@ Skip to content Getting started with SQLite SQLite is a relational database engi
 
 ---
 
-# 32. AO Dev-Cli 01  Cookbook
+# 34. AO Dev-Cli 01  Cookbook
 
-Document Number: 32
+Document Number: 34
 Source: https://cookbook_ao.arweave.net/guides/dev-cli/index.html
 Words: 462
 Quality Score: 0.495
@@ -759,9 +831,9 @@ AO Dev-Cli 0.1 The AO dev-cli is a tool that is used to build ao wasm modules, t
 
 ---
 
-# 33. Meet Web Assembly  Cookbook
+# 35. Meet Web Assembly  Cookbook
 
-Document Number: 33
+Document Number: 35
 Source: https://cookbook_ao.arweave.net/references/wasm.html
 Words: 189
 Quality Score: 0.495
@@ -772,9 +844,9 @@ Skip to content Meet Web Assembly WebAssembly (often abbreviated as Wasm) is a m
 
 ---
 
-# 34. Building a Chatroom in aos  Cookbook
+# 36. Building a Chatroom in aos  Cookbook
 
-Document Number: 34
+Document Number: 36
 Source: https://cookbook_ao.arweave.net/tutorials/begin/chatroom.html
 Words: 733
 Quality Score: 0.495
@@ -785,9 +857,9 @@ Building a Chatroom in aos INFO If you've found yourself wanting to learn how to
 
 ---
 
-# 35. A whistle stop tour of Lua  Cookbook
+# 37. A whistle stop tour of Lua  Cookbook
 
-Document Number: 35
+Document Number: 37
 Source: https://cookbook_ao.arweave.net/concepts/lua.html
 Words: 869
 Quality Score: 0.493
@@ -798,9 +870,9 @@ A whistle tour of Lua.Before we can explore ao in greater depth, let's take a mo
 
 ---
 
-# 36. Pretty  Cookbook
+# 38. Pretty  Cookbook
 
-Document Number: 36
+Document Number: 38
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/pretty.html
 Words: 48
 Quality Score: 0.493
@@ -811,9 +883,9 @@ Skip to content Pretty This module allows printing formatted, human-friendly and
 
 ---
 
-# 37. aos Brief Tour  Cookbook
+# 39. aos Brief Tour  Cookbook
 
-Document Number: 37
+Document Number: 39
 Source: https://cookbook_ao.arweave.net/concepts/tour.html
 Words: 390
 Quality Score: 0.492
@@ -824,9 +896,9 @@ aos Brief Tour Welcome to a quick tour of aos! This tutorial will walk you throu
 
 ---
 
-# 38. FAQ  Cookbook
+# 40. FAQ  Cookbook
 
-Document Number: 38
+Document Number: 40
 Source: https://cookbook_ao.arweave.net/guides/aos/faq.html
 Words: 179
 Quality Score: 0.492
@@ -837,9 +909,9 @@ Skip to content FAQ Ownership Understanding Process Ownership Start a new proces
 
 ---
 
-# 39. Reading results from an ao Process  Cookbook
+# 41. Reading results from an ao Process  Cookbook
 
-Document Number: 39
+Document Number: 41
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/reading-results.html
 Words: 136
 Quality Score: 0.491
@@ -850,9 +922,9 @@ Skip to content Reading results from an ao Process In ao, messages produce resul
 
 ---
 
-# 40. Bots and Games  Cookbook
+# 42. Bots and Games  Cookbook
 
-Document Number: 40
+Document Number: 42
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/index.html
 Words: 176
 Quality Score: 0.491
@@ -863,9 +935,9 @@ Skip to content Bots and Games NOTE Build your own unique bot to complete Quest 
 
 ---
 
-# 41. Eval  Cookbook
+# 43. Eval  Cookbook
 
-Document Number: 41
+Document Number: 43
 Source: https://cookbook_ao.arweave.net/concepts/eval.html
 Words: 81
 Quality Score: 0.489
@@ -876,9 +948,9 @@ Skip to content Eval Each AO process includes an onboard Eval handler that evalu
 
 ---
 
-# 42. Introduction  Cookbook
+# 44. Introduction  Cookbook
 
-Document Number: 42
+Document Number: 44
 Source: https://cookbook_ao.arweave.net/guides/aos/intro.html
 Words: 524
 Quality Score: 0.487
@@ -889,9 +961,9 @@ Introduction aos introduces a new approach to building processes — asynchronou
 
 ---
 
-# 43. Lets Play A Game  Cookbook
+# 45. Lets Play A Game  Cookbook
 
-Document Number: 43
+Document Number: 45
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/ao-effect.html
 Words: 645
 Quality Score: 0.485
@@ -902,9 +974,9 @@ Let's A Game!You've been powering through tutorials like a champ! Now, let's tak
 
 ---
 
-# 44. Chatroom Blueprint  Cookbook
+# 46. Chatroom Blueprint  Cookbook
 
-Document Number: 44
+Document Number: 46
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/chatroom.html
 Words: 167
 Quality Score: 0.485
@@ -915,9 +987,9 @@ Skip to content Chatroom Blueprint The Chatroom Blueprint is a predesigned templ
 
 ---
 
-# 45. Using WeaveDrive  Cookbook
+# 47. Using WeaveDrive  Cookbook
 
-Document Number: 45
+Document Number: 47
 Source: https://cookbook_ao.arweave.net/guides/snacks/weavedrive.html
 Words: 253
 Quality Score: 0.481
@@ -928,9 +1000,9 @@ Using WeaveDrive WeaveDrive has been released on AO legacynet, which is great! B
 
 ---
 
-# 46. Tokengating the Chatroom  Cookbook
+# 48. Tokengating the Chatroom  Cookbook
 
-Document Number: 46
+Document Number: 48
 Source: https://cookbook_ao.arweave.net/tutorials/begin/tokengating.html
 Words: 493
 Quality Score: 0.478
@@ -941,9 +1013,9 @@ Tokengating the Chatroom INFO Now that we've created a token and sent it to Trin
 
 ---
 
-# 47. Units  Cookbook
+# 49. Units  Cookbook
 
-Document Number: 47
+Document Number: 49
 Source: https://cookbook_ao.arweave.net/concepts/units.html
 Words: 419
 Quality Score: 0.477
@@ -954,22 +1026,9 @@ Units What is a Unit?The ao Computer is composed of three Unit types, each type 
 
 ---
 
-# 48. Calling DryRun  Cookbook
+# 50. Token Blueprint  Cookbook
 
-Document Number: 48
-Source: https://cookbook_ao.arweave.net/guides/aoconnect/calling-dryrun.html
-Words: 121
-Quality Score: 0.475
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Skip to content Calling DryRun DEPRECATION NOTICE This method of reading state is in the process of being deprecated for processes running on HyperBEAM. It is recommended to use the State Patching mechanism to expose state via HTTP for better performance, as calling dryrun was known to cause severe bottlenecks in web applications on legacynet.DryRun is the process of sending a message object to a specific process and getting the Result object back, but the memory is not saved, it is perfect to create a read message to return the current value of memory. For example, a balance of a token, or a result of a transfer, etc. You can use DryRun to obtain an output without sending an actual message.
-
----
-
-# 49. Token Blueprint  Cookbook
-
-Document Number: 49
+Document Number: 50
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/token.html
 Words: 972
 Quality Score: 0.473
@@ -1178,9 +1237,9 @@ end)
 
 ---
 
-# 50. Tutorials  Cookbook
+# 51. Tutorials  Cookbook
 
-Document Number: 50
+Document Number: 51
 Source: https://cookbook_ao.arweave.net/tutorials/index.html
 Words: 52
 Quality Score: 0.467
@@ -1191,9 +1250,9 @@ Skip to content Tutorials Here, we've created a series of tutorials to help you 
 
 ---
 
-# 51. Community Resources  Cookbook
+# 52. Community Resources  Cookbook
 
-Document Number: 51
+Document Number: 52
 Source: https://cookbook_ao.arweave.net/references/community.html
 Words: 177
 Quality Score: 0.467
@@ -1204,9 +1263,9 @@ Skip to content Community Resources This page provides a comprehensive list of c
 
 ---
 
-# 52. Installing ao connect  Cookbook
+# 53. Installing ao connect  Cookbook
 
-Document Number: 52
+Document Number: 53
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/installing-connect.html
 Words: 46
 Quality Score: 0.465
@@ -1217,9 +1276,9 @@ Skip to content Installing ao connect Prerequisites In order to install ao conne
 
 ---
 
-# 53. Lua Optimization Guide for AO Platform  Cookbook
+# 54. Lua Optimization Guide for AO Platform  Cookbook
 
-Document Number: 53
+Document Number: 54
 Source: https://cookbook_ao.arweave.net/references/lua-optimization.html
 Words: 172
 Quality Score: 0.461
@@ -1263,9 +1322,9 @@ end Blockchain-Specific Optimizations State Management Additional Resources Lua 
 
 ---
 
-# 54. Meet Lua  Cookbook
+# 55. Meet Lua  Cookbook
 
-Document Number: 54
+Document Number: 55
 Source: https://cookbook_ao.arweave.net/references/lua.html
 Words: 293
 Quality Score: 0.459
@@ -1276,9 +1335,9 @@ Meet Lua Understanding Lua Background: Lua is a lightweight, high-level, multi-p
 
 ---
 
-# 55. aos AO Operating System  Cookbook
+# 56. aos AO Operating System  Cookbook
 
-Document Number: 55
+Document Number: 56
 Source: https://cookbook_ao.arweave.net/guides/aos/index.html
 Words: 396
 Quality Score: 0.458
@@ -1289,9 +1348,9 @@ aos: AO Operating System aos is a powerful operating system built on top of the 
 
 ---
 
-# 56. ao Module  Cookbook
+# 57. ao Module  Cookbook
 
-Document Number: 56
+Document Number: 57
 Source: https://cookbook_ao.arweave.net/references/ao.html
 Words: 590
 Quality Score: 0.458
@@ -1302,9 +1361,9 @@ ao Module version: 0.0.3 ao process communication is handled by messages, each p
 
 ---
 
-# 57. Messaging Patterns in ao  Cookbook
+# 58. Messaging Patterns in ao  Cookbook
 
-Document Number: 57
+Document Number: 58
 Source: https://cookbook_ao.arweave.net/references/messaging.html
 Words: 658
 Quality Score: 0.457
@@ -1345,9 +1404,9 @@ end
 
 ---
 
-# 58. Introduction to AO-Core  Cookbook
+# 59. Introduction to AO-Core  Cookbook
 
-Document Number: 58
+Document Number: 59
 Source: https://cookbook_ao.arweave.net/welcome/ao-core-introduction.html
 Words: 330
 Quality Score: 0.456
@@ -1358,9 +1417,9 @@ Introduction to AO-Core AO-Core is a protocol and standard for distributed compu
 
 ---
 
-# 59. ao Specs  Cookbook
+# 60. ao Specs  Cookbook
 
-Document Number: 59
+Document Number: 60
 Source: https://cookbook_ao.arweave.net/concepts/specs.html
 Words: 148
 Quality Score: 0.456
@@ -1371,9 +1430,9 @@ Skip to content ao Specs What is ao?The ao computer is the actor oriented machin
 
 ---
 
-# 60. Voting Blueprint  Cookbook
+# 61. Voting Blueprint  Cookbook
 
-Document Number: 60
+Document Number: 61
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/voting.html
 Words: 340
 Quality Score: 0.452
@@ -1423,9 +1482,9 @@ Handlers.add("finalize", function (msg) return -1 end, finalizationHandler)
 
 ---
 
-# 61. ao Token and Subledger Specification  Cookbook
+# 62. ao Token and Subledger Specification  Cookbook
 
-Document Number: 61
+Document Number: 62
 Source: https://cookbook_ao.arweave.net/references/token.html
 Words: 1111
 Quality Score: 0.452
@@ -1529,9 +1588,9 @@ end
 
 ---
 
-# 62. Spawning a Process  Cookbook
+# 63. Spawning a Process  Cookbook
 
-Document Number: 62
+Document Number: 63
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/spawning-processes.html
 Words: 160
 Quality Score: 0.451
@@ -1542,9 +1601,9 @@ Skip to content Spawning a Process A deep dive into the concept of Processes can
 
 ---
 
-# 63. LLMs Documentation  Cookbook
+# 64. LLMs Documentation  Cookbook
 
-Document Number: 63
+Document Number: 64
 Source: https://cookbook_ao.arweave.net/llms-explanation.html
 Words: 84
 Quality Score: 0.450
@@ -1555,9 +1614,9 @@ Skip to content LLMs Documentation llms.txt:Structured overview of the ao ecosys
 
 ---
 
-# 64. Mechanics of the Arena  Cookbook
+# 65. Mechanics of the Arena  Cookbook
 
-Document Number: 64
+Document Number: 65
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/arena-mechanics.html
 Words: 1908
 Quality Score: 0.448
@@ -1866,9 +1925,9 @@ end
 
 ---
 
-# 65. References  Cookbook
+# 66. References  Cookbook
 
-Document Number: 65
+Document Number: 66
 Source: https://cookbook_ao.arweave.net/references/index.html
 Words: 202
 Quality Score: 0.447
@@ -1879,9 +1938,9 @@ References This section provides detailed technical references for AO components
 
 ---
 
-# 66. Begin An Interactive Tutorial  Cookbook
+# 67. Begin An Interactive Tutorial  Cookbook
 
-Document Number: 66
+Document Number: 67
 Source: https://cookbook_ao.arweave.net/tutorials/begin/index.html
 Words: 130
 Quality Score: 0.443
@@ -1892,9 +1951,9 @@ Skip to content Begin: An Interactive Tutorial In this tutorial series, you'll w
 
 ---
 
-# 67. Accessing Data from Arweave with ao  Cookbook
+# 68. Accessing Data from Arweave with ao  Cookbook
 
-Document Number: 67
+Document Number: 68
 Source: https://cookbook_ao.arweave.net/references/data.html
 Words: 1254
 Quality Score: 0.440
@@ -1982,9 +2041,9 @@ end
 
 ---
 
-# 68. Expanding the Arena  Cookbook
+# 69. Expanding the Arena  Cookbook
 
-Document Number: 68
+Document Number: 69
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/build-game.html
 Words: 1791
 Quality Score: 0.432
@@ -2182,9 +2241,9 @@ Handlers.add("erAttack", { Action = "erAttack" }, attack) Once you've written yo
 
 ---
 
-# 69. Utils  Cookbook
+# 70. Utils  Cookbook
 
-Document Number: 69
+Document Number: 70
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/utils.html
 Words: 541
 Quality Score: 0.432
@@ -2195,9 +2254,9 @@ Utils A utility library for generic table manipulation and validation. It suppor
 
 ---
 
-# 70. Base64  Cookbook
+# 71. Base64  Cookbook
 
-Document Number: 70
+Document Number: 71
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/base64.html
 Words: 231
 Quality Score: 0.431
@@ -2208,9 +2267,9 @@ Base64 A small base64 module to encode or decode base64 text.Note: It is recomme
 
 ---
 
-# 71. Bringing it Together  Cookbook
+# 72. Bringing it Together  Cookbook
 
-Document Number: 71
+Document Number: 72
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/bringing-together.html
 Words: 966
 Quality Score: 0.428
@@ -2354,9 +2413,9 @@ end
 
 ---
 
-# 72. Staking Blueprint  Cookbook
+# 73. Staking Blueprint  Cookbook
 
-Document Number: 72
+Document Number: 73
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/staking.html
 Words: 423
 Quality Score: 0.426
@@ -2418,9 +2477,9 @@ Handlers.add("finalize", function (msg) return -1 end, finalizationHandler)
 
 ---
 
-# 73. Interpreting Announcements  Cookbook
+# 74. Interpreting Announcements  Cookbook
 
-Document Number: 73
+Document Number: 74
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/announcements.html
 Words: 353
 Quality Score: 0.426
@@ -2431,9 +2490,9 @@ Interpreting Announcements Welcome back to your coding journey. It's time to use
 
 ---
 
-# 74. Strategic Decisions  Cookbook
+# 75. Strategic Decisions  Cookbook
 
-Document Number: 74
+Document Number: 75
 Source: https://cookbook_ao.arweave.net/tutorials/bots-and-games/decisions.html
 Words: 552
 Quality Score: 0.425
@@ -2517,9 +2576,9 @@ end
 
 ---
 
-# 75. Blueprints  Cookbook
+# 76. Blueprints  Cookbook
 
-Document Number: 75
+Document Number: 76
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/index.html
 Words: 38
 Quality Score: 0.424
@@ -2530,9 +2589,9 @@ Skip to content Blueprints Blueprints are predesigned templates that help you qu
 
 ---
 
-# 76. Load Lua Files with load filename  Cookbook
+# 77. Load Lua Files with load filename  Cookbook
 
-Document Number: 76
+Document Number: 77
 Source: https://cookbook_ao.arweave.net/guides/aos/load.html
 Words: 100
 Quality Score: 0.416
@@ -2543,9 +2602,9 @@ Skip to content Load Lua Files with.load This feature allows you to load lua cod
 
 ---
 
-# 77. CRED Utils Blueprint  Cookbook
+# 78. CRED Utils Blueprint  Cookbook
 
-Document Number: 77
+Document Number: 78
 Source: https://cookbook_ao.arweave.net/guides/aos/blueprints/cred-utils.html
 Words: 661
 Quality Score: 0.416
@@ -2656,9 +2715,9 @@ end
 
 ---
 
-# 78. Installing aos  Cookbook
+# 79. Installing aos  Cookbook
 
-Document Number: 78
+Document Number: 79
 Source: https://cookbook_ao.arweave.net/guides/aos/installing.html
 Words: 33
 Quality Score: 0.415
@@ -2669,9 +2728,9 @@ Skip to content Installing aos Installing aos only requires NodeJS - https://nod
 
 ---
 
-# 79. Monitoring Cron  Cookbook
+# 80. Monitoring Cron  Cookbook
 
-Document Number: 79
+Document Number: 80
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/monitoring-cron.html
 Words: 73
 Quality Score: 0.413
@@ -2682,9 +2741,9 @@ Skip to content Monitoring Cron When using cron messages, ao users need a way to
 
 ---
 
-# 80. Guides  Cookbook
+# 81. Guides  Cookbook
 
-Document Number: 80
+Document Number: 81
 Source: https://cookbook_ao.arweave.net/guides/index.html
 Words: 215
 Quality Score: 0.402
@@ -2695,9 +2754,9 @@ Guides This section provides detailed guides and documentation to help you build
 
 ---
 
-# 81. Welcome to ao  Cookbook
+# 82. Welcome to ao  Cookbook
 
-Document Number: 81
+Document Number: 82
 Source: https://cookbook_ao.arweave.net/welcome/index.html
 Words: 184
 Quality Score: 0.402
@@ -2708,9 +2767,35 @@ Skip to content Welcome to ao AO is a decentralized compute system where countle
 
 ---
 
-# 82. Concepts  Cookbook
+# 83. User-Owned Processes  Cookbook
 
-Document Number: 82
+Document Number: 83
+Source: https://cookbook_ao.arweave.net/migrating-to-hyperbeam/user-owned-processes.html
+Words: 313
+Quality Score: 0.402
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+User-Owned Processes When building applications on AO, you may create architectures where users own their own processes rather than your application owning a centralized process. This pattern is common in decentralized marketplaces, user-specific vaults, and personal data stores.The Challenge With the deprecation of dry runs on Legacynet, you face a unique challenge: you cannot patch processes that you don't own. Only the process owner can send messages to update their process.Common Scenarios Marketplace Applications: Each vendor has their own process for managing inventory and sales User Vaults: Each user has a personal process for storing data or assets Decentralized Applications: Users spawn their own game characters, agents, or bots Token Pairs: DEX applications where users create their own trading pair processes In these scenarios, you need to provide a way for users to migrate their own processes to use state patching.General Approach The solution typically involves three key components:Process-side handler: Add a handler to your process template that allows the owner to enable state patching Detection mechanism: Check whether a user's process has patching enabled User interface: Provide a way for users to trigger the update You'll need to decide how to implement each of these based on your application's architecture and user experience requirements.Process Update Handler Your process needs a handler that allows the owner to enable state patching. Here's a minimal example:After enabling, you'll also need to update your existing handlers to patch state when it changes. For example:Detecting Patch Status You can check if a process has state patching enabled by attempting to access its cached state:Triggering the Update Users need to send a message to their own process to enable patching. The basic approach:How you present this to users is up to you - it could be a button in your UI, a banner notification, a setup wizard, or a CLI script.State Exposure Dynamic Reads Why Migrate to HyperBEAM
+
+---
+
+# 84. Deprecated Features  Cookbook
+
+Document Number: 84
+Source: https://cookbook_ao.arweave.net/references/deprecated/index.html
+Words: 81
+Quality Score: 0.397
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Skip to content Deprecated Features This section contains documentation for deprecated features and APIs in the AO ecosystem.Coming Soon After October 10, 2025, this section will include documentation for features that have been deprecated, including migration guides and alternatives.Current Deprecations For information about features being deprecated, please see:Calling DryRun - Includes urgent deprecation notice for Legacynet dry run support Migration Support If you need help migrating away from deprecated features:Review the Migrating to HyperBEAM guide Join the Discord community for support
+
+---
+
+# 85. Concepts  Cookbook
+
+Document Number: 85
 Source: https://cookbook_ao.arweave.net/concepts/index.html
 Words: 200
 Quality Score: 0.397
@@ -2721,9 +2806,9 @@ Skip to content Concepts This section explains the core concepts and architectur
 
 ---
 
-# 83. Cron Messages  Cookbook
+# 86. Cron Messages  Cookbook
 
-Document Number: 83
+Document Number: 86
 Source: https://cookbook_ao.arweave.net/references/cron.html
 Words: 249
 Quality Score: 0.375
@@ -2734,9 +2819,9 @@ Cron Messages ao has the ability to generate messages on a specified interval, t
 
 ---
 
-# 84. CLI  Cookbook
+# 87. CLI  Cookbook
 
-Document Number: 84
+Document Number: 87
 Source: https://cookbook_ao.arweave.net/guides/aos/cli.html
 Words: 178
 Quality Score: 0.368
@@ -2747,9 +2832,9 @@ Skip to content CLI There are some command-line arguments you pass to aos to do 
 
 ---
 
-# 85. Modules  Cookbook
+# 88. Modules  Cookbook
 
-Document Number: 85
+Document Number: 88
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/index.html
 Words: 11
 Quality Score: 0.368
@@ -2760,22 +2845,22 @@ Modules Documentation on all the built-in modules for aos.Available Modules JSON
 
 ---
 
-# 86. Why Migrate to HyperBEAM  Cookbook
+# 89. Why Migrate to HyperBEAM  Cookbook
 
-Document Number: 86
-Source: https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/why-migrate.html
-Words: 137
-Quality Score: 0.367
+Document Number: 89
+Source: https://cookbook_ao.arweave.net/migrating-to-hyperbeam/why-migrate.html
+Words: 136
+Quality Score: 0.366
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Skip to content Why Migrate to HyperBEAM?Migrating processes from legacynet to HyperBEAM is essential for leveraging significant advancements in performance, features, and developer experience on AO.HyperBEAM is a new, more robust foundation for decentralized applications on AO, offering several key advantages:Enhanced Performance: Built on an architecture optimized for concurrency, HyperBEAM provides faster message scheduling and more responsive applications.Direct State Access: HyperBEAM allows processes to expose their state directly via HTTP. This enables immediate reads of your process's data, eliminating the need for dry-run messages which were a common performance bottleneck.Easy Extensibility: It allows core feature extensibility through modular devices.The most impactful change when migrating is the ability to expose parts of your process state for immediate reading. This dramatically improves the performance of web frontends and data-driven services.To learn how to implement this, see Exposing Process State.
+Skip to content Why Migrate to HyperBEAM?Migrating processes from legacynet to HyperBEAM is essential for leveraging significant advancements in performance, features, and developer experience on AO.HyperBEAM is a new, more robust foundation for decentralized applications on AO, offering several key advantages:Enhanced Performance: Built on an architecture optimized for concurrency, HyperBEAM provides faster message scheduling and more responsive applications.Direct State Access: HyperBEAM allows processes to expose their state directly via HTTP. This enables immediate reads of your process's data, eliminating the need for dry-run messages which were a common performance bottleneck.Easy Extensibility: It allows core feature extensibility through modular devices.The most impactful change when migrating is the ability to expose parts of your process state for immediate reading. This dramatically improves the performance of web frontends and data-driven services.To learn how to implement this, see State Exposure.
 
 ---
 
-# 87. crypto  Cookbook
+# 90. crypto  Cookbook
 
-Document Number: 87
+Document Number: 90
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html
 Words: 2302
 Quality Score: 0.362
@@ -2786,9 +2871,9 @@ crypto Overview The crypto module provides a set of cryptographic primitives lik
 
 ---
 
-# 88. Release Notes  Cookbook
+# 91. Release Notes  Cookbook
 
-Document Number: 88
+Document Number: 91
 Source: https://cookbook_ao.arweave.net/releasenotes/index.html
 Words: 181
 Quality Score: 0.349
@@ -2799,9 +2884,9 @@ Skip to content Release Notes This section provides detailed information about u
 
 ---
 
-# 89. Sending an Assignment to a Process  Cookbook
+# 92. Sending an Assignment to a Process  Cookbook
 
-Document Number: 89
+Document Number: 92
 Source: https://cookbook_ao.arweave.net/guides/aoconnect/assign-data.html
 Words: 202
 Quality Score: 0.324
