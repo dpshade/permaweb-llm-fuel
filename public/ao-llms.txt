@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-07T12:16:18.924Z
+Generated on: 2025-10-08T12:16:00.963Z
 Total documents: 92
-Total words: 38050
+Total words: 38012
 
 ## Table of Contents
 
@@ -93,12 +93,12 @@ Total words: 38050
 83. [User-Owned Processes](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/user-owned-processes.html)
 84. [Deprecated Features](https://cookbook_ao.arweave.net/references/deprecated/index.html)
 85. [Concepts](https://cookbook_ao.arweave.net/concepts/index.html)
-86. [Cron Messages](https://cookbook_ao.arweave.net/references/cron.html)
-87. [CLI](https://cookbook_ao.arweave.net/guides/aos/cli.html)
-88. [Modules](https://cookbook_ao.arweave.net/guides/aos/modules/index.html)
-89. [Why Migrate to HyperBEAM](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/why-migrate.html)
-90. [crypto](https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html)
-91. [Release Notes](https://cookbook_ao.arweave.net/releasenotes/index.html)
+86. [Release Notes](https://cookbook_ao.arweave.net/releasenotes/index.html)
+87. [Cron Messages](https://cookbook_ao.arweave.net/references/cron.html)
+88. [CLI](https://cookbook_ao.arweave.net/guides/aos/cli.html)
+89. [Modules](https://cookbook_ao.arweave.net/guides/aos/modules/index.html)
+90. [Why Migrate to HyperBEAM](https://cookbook_ao.arweave.net/migrating-to-hyperbeam/why-migrate.html)
+91. [crypto](https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html)
 92. [Sending an Assignment to a Process](https://cookbook_ao.arweave.net/guides/aoconnect/assign-data.html)
 
 ---
@@ -2806,9 +2806,22 @@ Skip to content Concepts This section explains the core concepts and architectur
 
 ---
 
-# 86. Cron Messages  Cookbook
+# 86. Release Notes  Cookbook
 
 Document Number: 86
+Source: https://cookbook_ao.arweave.net/releasenotes/index.html
+Words: 143
+Quality Score: 0.395
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Skip to content Release Notes This section provides detailed information about updates, new features, bug fixes, and changes in each release of AO and its related tools. Release notes are essential for understanding what's changed between versions and how these changes might affect your projects.AOS Releases AOS is the operating system built on top of the AO computer. These release notes document changes and improvements to AOS:AOS v2.0.9 - Deduplication feature reverted and Hyper AOS integration with forward.computer AOS v2.0.8 - SDK mode for headless execution, token blueprint updates, and hyperbeam state-cache support AOS v2.0.7 - HyperBEAM support with state synchronization and API differences from standard AOS AOS 2.0.2 - Improved spawn process times and various bug fixes AOS 2.0.1 - Details about patch updates and fixes in the 2.0.1 release AOS 2.0.0 - Major release information, including new features and significant changes
+
+---
+
+# 87. Cron Messages  Cookbook
+
+Document Number: 87
 Source: https://cookbook_ao.arweave.net/references/cron.html
 Words: 249
 Quality Score: 0.375
@@ -2819,9 +2832,9 @@ Cron Messages ao has the ability to generate messages on a specified interval, t
 
 ---
 
-# 87. CLI  Cookbook
+# 88. CLI  Cookbook
 
-Document Number: 87
+Document Number: 88
 Source: https://cookbook_ao.arweave.net/guides/aos/cli.html
 Words: 178
 Quality Score: 0.368
@@ -2832,9 +2845,9 @@ Skip to content CLI There are some command-line arguments you pass to aos to do 
 
 ---
 
-# 88. Modules  Cookbook
+# 89. Modules  Cookbook
 
-Document Number: 88
+Document Number: 89
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/index.html
 Words: 11
 Quality Score: 0.368
@@ -2845,9 +2858,9 @@ Modules Documentation on all the built-in modules for aos.Available Modules JSON
 
 ---
 
-# 89. Why Migrate to HyperBEAM  Cookbook
+# 90. Why Migrate to HyperBEAM  Cookbook
 
-Document Number: 89
+Document Number: 90
 Source: https://cookbook_ao.arweave.net/migrating-to-hyperbeam/why-migrate.html
 Words: 136
 Quality Score: 0.366
@@ -2858,9 +2871,9 @@ Skip to content Why Migrate to HyperBEAM?Migrating processes from legacynet to H
 
 ---
 
-# 90. crypto  Cookbook
+# 91. crypto  Cookbook
 
-Document Number: 90
+Document Number: 91
 Source: https://cookbook_ao.arweave.net/guides/aos/modules/crypto.html
 Words: 2302
 Quality Score: 0.362
@@ -2868,19 +2881,6 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 crypto Overview The crypto module provides a set of cryptographic primitives like digests, ciphers and other cryptographic algorithms in pure Lua. It offers several functionalities to hash, encrypt and decrypt data, simplifying the development of secure communication and data storage. This document will guide you through the module's functionalities, installation, and usage.Usage Primitives Digests (sha1, sha2, sha3, keccak, blake2b, etc.) Ciphers (AES, ISSAC, Morus, NORX, etc.) Random Number Generators (ISAAC) MACs (HMAC) KDFs (PBKDF2) Utilities (Array, Stream, Queue, etc.) Digests MD2 Calculates the MD2 digest of a given message.Parameters:stream (Stream): The message in form of stream Returns: A table containing functions to get digest in different formats.asBytes(): The digest as byte table.asHex(): The digest as string in hexadecimal format.asString(): The digest as string format.Example:MD4 Calculates the MD4 digest of a given message.Parameters:stream (Stream): The message in form of stream Returns: A table containing functions to get digest in different formats.asBytes(): The digest as byte table.asHex(): The digest as string in hexadecimal format.asString(): The digest as string format.Example:MD5 Calculates the MD5 digest of a given message.Parameters:stream (Stream): The message in form of stream Returns: A table containing functions to get digest in different formats.asBytes(): The digest as byte table.asHex(): The digest as string in hexadecimal format.asString(): The digest as string format.Example:SHA1 Calculates the SHA1 digest of a given message.Parameters:stream (Stream): The message in form of stream Returns: A table containing functions to get digest in different formats.asBytes(): The digest as byte table.asHex(): The digest as string in hexadecimal format.asString(): The digest as string format.Example:SHA2_256 Calculates the SHA2-256 digest of a given message.Parameters:stream (Stream): The message in form of stream Returns: A table containing functions to get digest in different formats. asBytes(): The digest as byte table.asHex(): The digest as string in hexadecimal format.asString(): The digest as string format.Example:SHA2_512 Calculates the SHA2-512 digest of a given message.Parameters:msg (string): The message to calculate the digest Returns: A table containing functions to get digest in different formats. asBytes(): The digest as byte table.asHex(): The digest as string in hexadecimal format.asString(): The digest as string format.Example:SHA3 It contains the following functions:sha3_256 sha3_512 keccak256 keccak512 Each function calculates the respective digest of a given message.Parameters:msg (string): The message to calculate the digest Returns: A table containing functions to get digest in different formats.asBytes(): The digest as byte table.asHex(): The digest as string in hexadecimal format.asString(): The digest as string format.Example:Blake2b Calculates the Blake2b digest of a given message.Parameters:data (string): The data to be hashed.outlen (number): The length of the output hash (optional) default is 64.key (string): The key to be used for hashing (optional) default is "".Returns: A table containing functions to get digest in different formats.asBytes(): The digest as byte table.asHex(): The digest as string in hexadecimal format.asString(): The digest as string format.Example: Ciphers AES The Advanced Encryption Standard (AES) is a symmetric block cipher used to encrypt sensitive information. It has two functions encrypt and decrypt.Encrypt Encrypts a given message using the AES algorithm.Parameters:data (string): The data to be encrypted.key (string): The key to be used for encryption.iv (string) optional: The initialization vector to be used for encryption. default is "" mode (string) optional: The mode of operation to be used for encryption. default is "CBC". Available modes are CBC, ECB, CFB, OFB, CTR.keyLength (number) optional: The length of the key to use for encryption. default is 128.Returns: A table containing functions to get encrypted data in different formats.asBytes(): The encrypted data as byte table.asHex(): The encrypted data as string in hexadecimal format.asString(): The encrypted data as string format.Decrypt Decrypts a given message using the AES algorithm.Parameters:cipher (string): Hex Encoded encrypted data.key (string): The key to be used for decryption.iv (string) optional: The initialization vector to be used for decryption. default is "" mode (string) optional: The mode of operation to be used for decryption. default is "CBC". Available modes are CBC, ECB, CFB, OFB, CTR.keyLength (number) optional: The length of the key to use for decryption. default is 128.Returns: A table containing functions to get decrypted data in different formats.asBytes(): The decrypted data as byte table.asHex(): The decrypted data as string in hexadecimal format.asString(): The decrypted data as string format.Example:ISSAC Cipher ISAAC is a cryptographically secure pseudo-random number generator (CSPRNG) and stream cipher. It has the following functions seedIsaac: Seeds the ISAAC cipher with a given seed.getRandomChar: Generates a random character using the ISAAC cipher.random: Generates a random number between a given range using the ISAAC cipher.getRandom: Generates a random number using the ISAAC cipher.encrypt: Encrypts a given message using the ISAAC cipher.decrypt: Decrypts a given message using the ISAAC cipher.Encrypt Encrypts a given message using the ISAAC cipher.Parameters:msg (string): The message to be encrypted.key (string): The key to be used for encryption.Returns: A table containing functions to get encrypted data in different formats. asBytes(): The encrypted data as byte table.asHex(): The encrypted data as string in hexadecimal format.asString(): The encrypted data as string format.Decrypt Decrypts a given message using the ISAAC cipher.Parameters:cipher (string): Hex Encoded encrypted data.key (string): Key to be used for decryption.Returns: A table containing functions to get decrypted data in different formats. asBytes(): The decrypted data as byte table.asHex(): The decrypted data as string in hexadecimal format.asString(): The decrypted data as string format.Example:random Generates a random number using the ISAAC cipher.Parameters:min (number) optional: The minimum value of the random number. defaults to 0.max (number) optional: The maximum value of the random number. defaults to 2^31 - 1.seed (string) optional: The seed to be used for generating the random number. defaults to math.random(0,2^32 - 1).Returns: A random number between the given range.Example:Morus Cipher MORUS is a high-performance authenticated encryption algorithm submitted to the CAESAR competition, and recently selected as a finalist.Encrypt Encrypts a given message using the MORUS cipher.Parameters:key (string): The encryption key (16 or 32-byte string).iv (string): The nonce or initial value (16-byte string).msg (string): The message to encrypt (variable length string).ad (string) optional: The additional data (variable length string). defaults to "".Returns: A table containing functions to get encrypted data in different formats. asBytes(): The encrypted data as byte table.asHex(): The encrypted data as string in hexadecimal format.asString(): The encrypted data as string format.Decrypt Decrypts a given message using the MORUS cipher.Parameters:key (string): The encryption key (16 or 32-byte string).iv (string): The nonce or initial value (16-byte string).cipher (string): The encrypted message (variable length string).adLen (number) optional: The length of the additional data (variable length string). defaults to 0.Returns: A table containing functions to get decrypted data in different formats. asBytes(): The decrypted data as byte table.asHex(): The decrypted data as string in hexadecimal format.asString(): The decrypted data as string format.Example:NORX Cipher NORX is an authenticated encryption scheme with associated data that was selected, along with 14 other primitives, for the third phase of the ongoing CAESAR competition. It is based on the sponge construction and relies on a simple permutation that allows efficient and versatile implementations.Encrypt Encrypts a given message using the NORX cipher.Parameters:key (string): The encryption key (32-byte string).nonce (string): The nonce or initial value (32-byte string).plain (string): The message to encrypt (variable length string).header (string) optional: The additional data (variable length string). defaults to "".trailer (string) optional: The additional data (variable length string). defaults to "".Returns: A table containing functions to get encrypted data in different formats. asBytes(): The encrypted data as byte table.asHex(): The encrypted data as string in hexadecimal format.asString(): The encrypted data as string format.Decrypt Decrypts a given message using the NORX cipher.Parameters:key (string): The encryption key (32-byte string).nonce (string): The nonce or initial value (32-byte string).crypted (string): The encrypted message (variable length string).header (string) optional: The additional data (variable length string). defaults to "".trailer (string) optional: The additional data (variable length string). defaults to "".Returns: A table containing functions to get decrypted data in different formats. asBytes(): The decrypted data as byte table.asHex(): The decrypted data as string in hexadecimal format.asString(): The decrypted data as string format.Example: Random Number Generators The module contains a random number generator using ISAAC which is a cryptographically secure pseudo-random number generator (CSPRNG) and stream cipher.Parameters:min (number) optional: The minimum value of the random number. defaults to 0.max (number) optional: The maximum value of the random number. defaults to 2^31 - 1.seed (string) optional: The seed to be used for generating the random number. defaults to math.random(0,2^32 - 1).Returns: A random number between the given range.Example: MACs HMAC The Hash-based Message Authentication Code (HMAC) is a mechanism for message authentication using cryptographic hash functions. HMAC can be used with any iterative cryptographic hash function, e.g., MD5, SHA-1, in combination with a secret shared key.The modules exposes a function called createHmac which is used to create a HMAC instance.Parameters:data (Stream): The data to be hashed.key (Array): The key to be used for hashing.algorithm (string) optional: The algorithm to be used for hashing. default is "sha256". Available algorithms are "sha1", "sha256". default is "sha1".Returns: A table containing functions to get HMAC in different formats. asBytes(): The HMAC as byte table.asHex(): The HMAC as string in hexadecimal format.asString(): The HMAC as string format.Example: KDFs PBKDF2 The Password-Based Key Derivation Function 2 (PBKDF2) applies a pseudorandom function, such as hash-based message authentication code (HMAC), to the input password or passphrase along with a salt value and repeats the process many times to produce a derived key, which can then be used as a cryptographic key in subsequent operations.Parameters:password (Array): The password to derive the key from.salt (Array): The salt to use.iterations (number): The number of iterations to perform.keyLen (number): The length of the key to derive.digest (string) optional: The digest algorithm to use. default is "sha1". Available algorithms are "sha1", "sha256".Returns: A table containing functions to get derived key in different formats. asBytes(): The derived key as byte table.asHex(): The derived key as string in hexadecimal format.asString(): The derived key as string format.Example: Utilities Array Example Usage:size Returns the size of the array.Parameters:arr (Array): The array to get the size of.Returns: The size of the array.fromString Creates an array from a string.Parameters:str (string): The string to create the array from.Returns: The array created from the string.toString Converts an array to a string.Parameters:arr (Array): The array to convert to a string.Returns: The array as a string.fromStream Creates an array from a stream.Parameters:stream (Stream): The stream to create the array from.Returns: The array created from the stream.readFromQueue Reads data from a queue and stores it in the array.Parameters:queue (Queue): The queue to read data from.size (number): The size of the data to read.Returns: The array containing the data read from the queue.writeToQueue Writes data from the array to a queue.Parameters:queue (Queue): The queue to write data to.array (Array): The array to write data from.Returns: None toStream Converts an array to a stream.Parameters:arr (Array): The array to convert to a stream.Returns: (Stream) The array as a stream.fromHex Creates an array from a hexadecimal string.Parameters:hex (string): The hexadecimal string to create the array from.Returns: The array created from the hexadecimal string.toHex Converts an array to a hexadecimal string.Parameters:arr (Array): The array to convert to a hexadecimal string.Returns: The array as a hexadecimal string.concat Concatenates two arrays.Parameters:a (Array): The array to concatenate with.b (Array): The array to concatenate.Returns: The concatenated array.truncate Truncates an array to a given length.Parameters:a (Array): The array to truncate.newSize (number): The new size of the array.Returns: The truncated array.XOR Performs a bitwise XOR operation on two arrays.Parameters:a (Array): The first array.b (Array): The second array.Returns: The result of the XOR operation.substitute Creates a new array with keys of first array and values of second Parameters:input (Array): The array to substitute.sbox (Array): The array to substitute with.Returns: The substituted array.permute Creates a new array with keys of second array and values of first array.Parameters:input (Array): The array to permute.pbox (Array): The array to permute with.Returns: The permuted array.copy Creates a copy of an array.Parameters:input (Array): The array to copy.Returns: The copied array.slice Creates a slice of an array.Parameters:input (Array): The array to slice.start (number): The start index of the slice. (number): The end index of the slice.Returns: The sliced array. Stream Stream is a data structure that represents a sequence of bytes. It is used to store and manipulate data in a streaming fashion.Example Usage:fromString Creates a stream from a string.Parameters:str (string): The string to create the stream from.Returns: The stream created from the string.toString Converts a stream to a string.Parameters:stream (Stream): The stream to convert to a string.Returns: The stream as a string.fromArray Creates a stream from an array.Parameters:arr (Array): The array to create the stream from.Returns: The stream created from the array.toArray Converts a stream to an array.Parameters:stream (Stream): The stream to convert to an array.Returns: The stream as an array.fromHex Creates a stream from a hexadecimal string.Parameters:hex (string): The hexadecimal string to create the stream from.Returns: The stream created from the hexadecimal string.toHex Converts a stream to a hexadecimal string.Parameters:stream (Stream): The stream to convert to a hexadecimal string.Returns: The stream as a hexadecimal string. Hex Example Usage:hexToString Converts a hexadecimal string to a string.Parameters:hex (string): The hexadecimal string to convert to a string.Returns: The hexadecimal string as a string.stringToHex Converts a string to a hexadecimal string.Parameters:str (string): The string to convert to a hexadecimal string.Returns: The string as a hexadecimal string. Queue Queue is a data structure that represents a sequence of elements. It is used to store and manipulate data in a first-in, first-out (FIFO) fashion.Example Usage:push Pushes an element to the queue.Parameters:queue (Queue): The queue to push the element to.element (any): The element to push to the queue.Returns: None pop Pops an element from the queue.Parameters:queue (Queue): The queue to pop the element from.element (any): The element to pop from the queue.Returns: The popped element.size Returns the size of the queue.Parameters: None Returns: The size of the queue.getHead Returns the head of the queue.Parameters: None Returns: The head of the queue.getTail Returns the tail of the queue.Parameters: None Returns: The tail of the queue.reset Resets the queue.Parameters: None
-
----
-
-# 91. Release Notes  Cookbook
-
-Document Number: 91
-Source: https://cookbook_ao.arweave.net/releasenotes/index.html
-Words: 181
-Quality Score: 0.349
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Skip to content Release Notes This section provides detailed information about updates, new features, bug fixes, and changes in each release of AO and its related tools. Release notes are essential for understanding what's changed between versions and how these changes might affect your projects.AOS Releases AOS is the operating system built on top of the AO computer. These release notes document changes and improvements to AOS:AOS 2.0.2 - Improved spawn process times and various bug fixes AOS 2.0.1 - Details about patch updates and fixes in the 2.0.1 release AOS 2.0.0 - Major release information, including new features and significant changes Why Read Release Notes?Release notes provide valuable information for developers:Learn about new features that could enhance your applications Understand potential breaking changes that might affect existing code Discover bug fixes that resolve issues you may have encountered Stay informed about security updates and best practices We recommend reviewing release notes before upgrading to a new version to ensure a smooth transition.Use the sidebar to navigate between different release notes. Notes are organized chronologically with the most recent releases first.
 
 ---
 
