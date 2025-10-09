@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-08T12:17:02.135Z
+Generated on: 2025-10-09T12:16:47.788Z
 Total documents: 94
-Total words: 57773
+Total words: 57921
 
 ## Table of Contents
 
@@ -38,12 +38,12 @@ Total words: 57773
 28. [Upgrading your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway)
 29. [Run a Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway)
 30. [Fetch Data (via REST API) ARIO Documentation](https://docs.ar.io/build/access/fetch-data)
-31. [Payments ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/payments)
-32. [Logging ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/logging)
-33. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/build/access/arns)
-34. [Entity Types ARIO Documentation](https://docs.ar.io/build/advanced/arfs/entity-types)
-35. [Automating SSL Certificate Renewal ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/ssl-certs)
-36. [Getting Started with Turbo ARIO Documentation](https://docs.ar.io/build/upload/bundling-services)
+31. [Getting Started with Turbo ARIO Documentation](https://docs.ar.io/build/upload/bundling-services)
+32. [Payments ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/payments)
+33. [Logging ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/logging)
+34. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/build/access/arns)
+35. [Entity Types ARIO Documentation](https://docs.ar.io/build/advanced/arfs/entity-types)
+36. [Automating SSL Certificate Renewal ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/ssl-certs)
 37. [Reading Data ARIO Documentation](https://docs.ar.io/build/advanced/arfs/reading-data)
 38. [Pricing Model ARIO Documentation](https://docs.ar.io/learn/arns/pricing-model)
 39. [Wayfinder Protocol ARIO Documentation](https://docs.ar.io/learn/wayfinder)
@@ -2202,9 +2202,45 @@ Manifests For organized file collections, use manifests to create friendly path-
 
 ---
 
-# 31. Payments  ARIO Documentation
+# 31. Getting Started with Turbo  ARIO Documentation
 
 Document Number: 31
+Source: https://docs.ar.io/build/upload/bundling-services
+Words: 552
+Quality Score: 0.498
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Upload Data Upload data to Arweave using Turbo - the most reliable way to upload data to Arweave. Turbo provides enterprise-grade infrastructure with flexible payment options and optimized performance.What is Turbo?Turbo is a ultrahigh-throughput Permaweb service that streamlines the funding, indexing, and transmission of data to and from Arweave. It provides graphical and programmatic interfaces for payment options in fiat currency with credit or debit cards as well as cryptocurrencies such as ETH, SOL, USDC, and AR. It integrates two key components: a service that bundles uploads for efficiency and ease, and a payment system designed for straightforward transactions. Turbo Credits, which users can purchase within the ArDrive web app, the Turbo Top Up App, or by using the Turbo SDK/CLI, have the same storage purchasing power of AR tokens, along with the additional benefits provided by Turbo. These credits are meticulously calibrated, with the Winston Credit (winc) representing the smallest unit, ensuring users have precise control over their storage needs. As an open-source technology, Turbo encourages community engagement, allowing developers to contribute to its continuous enhancement.Get Started Install the SDK npm install @ardrive/turbo-sdk Set Up Your Wallet Create a new wallet or use an existing one:# Create a new wallet (easy way)
+npx permaweb/wallet > key.json Then load it in your code:import { TurboFactory, ArweaveSigner } from "@ardrive/turbo-sdk";
+import fs from "fs";
+// Load your wallet
+const jwk = JSON.parse(fs.readFileSync("./key.json", "utf-8"));
+const signer = new ArweaveSigner(jwk);
+// Initialize Turbo
+const turbo = TurboFactory.authenticated({ signer });Get Turbo Credits Purchase Turbo Credits to pay for uploads. When you upload, credits are automatically used and Turbo handles the payment to Arweave.Option 1: Via the Web Interface Go to turbo-topup.com Pay with fiat currencies (credit cards) or crypto tokens (ARIO, USDC, SOL, MATIC, AR) Option 2: Via the SDK // Purchase credits programmatically
+const fundResult = await turbo.topUpWithTokens({
+tokenAmount: TOKEN_AMOUNT,
+tokenType: "solana", // or 'ethereum', 'matic', 'arweave'
+});Check Your Balance const balance = await turbo.getBalance();
+console.log(`Balance: ${balance.winc} Winston Credits`);Upload Your Data const fileData = fs.readFileSync("./myfile.jpg");
+const result = await turbo.upload({
+data: fileData,
+dataItemOpts: {
+tags: [
+{ name: "Content-Type", value: "image/jpeg" },
+{ name: "Title", value: "My Image" },
+],
+},
+});
+console.log("Upload ID:", result.id);
+console.log("Owner:", result.owner);Advanced Features Turbo Credits System Learn about our flexible payment system that supports multiple currencies and payment methods.→ Understanding Turbo Credits Data Organization Tagging - Organize your data with metadata Manifests - Create folder structures and bundles Encryption - Secure your sensitive data ArFS - File system protocol for structured storage Production Ready Turbo implements the ANS-104 bundling specification, providing enterprise-grade infrastructure for permanent data storage.Feature Turbo Bundling Alternative Options Payment Options Fiat, ARIO, USDC, SOL, MATIC, AR AR tokens only Implementation Simple SDK integration Manual transaction handling Performance Optimized bundling & retry logic Depends on implementation Reliability Built-in redundancy Manual error handling Cost Optimized for large uploads Higher per-transaction costs Setup Complexity Easy with SDK Complex protocol knowledge Ready to Get Started?Launch Turbo Start building with Turbo's powerful bundling service.Turbo SDK Documentation Explore the full SDK documentation and examples.Learn About Tagging Organize your data with metadata and tags.How is this guide?Upload Data Start uploading to Arweave's permanent storage network with our recommended tools and best practices Advanced Uploading with Turbo Learn how to upload data to Arweave using the Turbo SDK, including authentication, purchasing credits, and file uploads
+
+---
+
+# 32. Payments  ARIO Documentation
+
+Document Number: 32
 Source: https://docs.ar.io/apis/turbo/payment-service/payments
 Words: 392
 Quality Score: 0.496
@@ -2288,9 +2324,9 @@ Turbo Payment Service Payment processing and top-up operations Get Top Up Quote 
 
 ---
 
-# 32. Logging  ARIO Documentation
+# 33. Logging  ARIO Documentation
 
-Document Number: 32
+Document Number: 33
 Source: https://docs.ar.io/sdks/turbo-sdk/logging
 Words: 52
 Quality Score: 0.494
@@ -2301,9 +2337,9 @@ Turbo SDK The SDK uses winston for logging. You can set the log level using the 
 
 ---
 
-# 33. Arweave Name System (ArNS)  ARIO Documentation
+# 34. Arweave Name System (ArNS)  ARIO Documentation
 
-Document Number: 33
+Document Number: 34
 Source: https://docs.ar.io/build/access/arns
 Words: 386
 Quality Score: 0.493
@@ -2328,9 +2364,9 @@ console.log(data);Why Use ArNS?ArNS provides significant advantages for accessin
 
 ---
 
-# 34. Entity Types  ARIO Documentation
+# 35. Entity Types  ARIO Documentation
 
-Document Number: 34
+Document Number: 35
 Source: https://docs.ar.io/build/advanced/arfs/entity-types
 Words: 1465
 Quality Score: 0.493
@@ -2394,9 +2430,9 @@ Data-Start: "" Snapshot Entity Data A JSON data object must also be uploaded wit
 
 ---
 
-# 35. Automating SSL Certificate Renewal  ARIO Documentation
+# 36. Automating SSL Certificate Renewal  ARIO Documentation
 
-Document Number: 35
+Document Number: 36
 Source: https://docs.ar.io/build/run-a-gateway/manage/ssl-certs
 Words: 883
 Quality Score: 0.492
@@ -2433,42 +2469,6 @@ Waiting 10 seconds for DNS changes to propagate
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Congratulations, all simulated renewals succeeded:
 /etc/letsencrypt/live/example.com/fullchain.pem (success) Verify Automatic Renewal Timer Check that the certbot timer is active:systemctl list-timers | grep certbot Expected output:Tue 2024-11-05 02:22:10 UTC 3h 21min Mon 2024-11-04 17:16:51 UTC 5h 43min ago certbot.timer certbot.service Post-Installation Steps After successfully setting up automatic SSL renewal:Update Gateway Configuration Configure your AR.IO Gateway to use the new certificates. Update your gateway's SSL configuration to point to:Certificate:/etc/letsencrypt/live/your-domain.com/fullchain.pem Private Key:/etc/letsencrypt/live/your-domain.com/privkey.pem Reload Web Server (Optional) If you're using nginx or another web server, reload it to apply the new certificates:systemctl reload nginx Monitor Renewal Process Certbot automatically sets up a systemd timer for renewal. Certificates will be renewed when they have 30 days or less remaining.To manually check renewal status:certbot certificates Troubleshooting Common Issues DNS propagation delays: Wait 5-10 minutes for DNS changes to propagate API rate limits: Check your DNS provider's API rate limits Permission errors: Ensure credential files have correct permissions (600) Logs and Debugging Check certbot logs for detailed error information:tail -f /var/log/letsencrypt/letsencrypt.log Next Steps With SSL certificates automated, consider:Setting up monitoring to track certificate expiration Configuring gateway filters for optimal performance Implementing content moderation policies How is this guide?Upgrading your Gateway Step-by-step guide to upgrading your AR.IO Gateway to the latest version safely without losing data or progress Gateway Filters Comprehensive guide to configuring AR.IO Gateway filters for efficient data processing and indexing
-
----
-
-# 36. Getting Started with Turbo  ARIO Documentation
-
-Document Number: 36
-Source: https://docs.ar.io/build/upload/bundling-services
-Words: 404
-Quality Score: 0.489
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Upload Data Upload data to Arweave using Turbo - the most reliable way to upload data to Arweave. Turbo provides enterprise-grade infrastructure with flexible payment options and optimized performance.Get Started Install the SDK npm install @ardrive/turbo-sdk Set Up Your Wallet Create a new wallet or use an existing one:# Create a new wallet (easy way)
-npx permaweb/wallet > key.json Then load it in your code:import { TurboFactory, ArweaveSigner } from "@ardrive/turbo-sdk";
-import fs from "fs";
-// Load your wallet
-const jwk = JSON.parse(fs.readFileSync("./key.json", "utf-8"));
-const signer = new ArweaveSigner(jwk);
-// Initialize Turbo
-const turbo = TurboFactory.authenticated({ signer });Get Turbo Credits Purchase Turbo Credits to pay for uploads. When you upload, credits are automatically used and Turbo handles the payment to Arweave.Option 1: Via the Web Interface Go to turbo-topup.com Pay with fiat currencies (credit cards) or crypto tokens (ARIO, USDC, SOL, MATIC, AR) Option 2: Via the SDK // Purchase credits programmatically
-const fundResult = await turbo.topUpWithTokens({
-tokenAmount: TOKEN_AMOUNT,
-tokenType: "solana", // or 'ethereum', 'matic', 'arweave'
-});Check Your Balance const balance = await turbo.getBalance();
-console.log(`Balance: ${balance.winc} Winston Credits`);Upload Your Data const fileData = fs.readFileSync("./myfile.jpg");
-const result = await turbo.upload({
-data: fileData,
-dataItemOpts: {
-tags: [
-{ name: "Content-Type", value: "image/jpeg" },
-{ name: "Title", value: "My Image" },
-],
-},
-});
-console.log("Upload ID:", result.id);
-console.log("Owner:", result.owner);Advanced Features Turbo Credits System Learn about our flexible payment system that supports multiple currencies and payment methods.→ Understanding Turbo Credits Data Organization Tagging - Organize your data with metadata Manifests - Create folder structures and bundles Encryption - Secure your sensitive data ArFS - File system protocol for structured storage Production Ready Turbo implements the ANS-104 bundling specification, providing enterprise-grade infrastructure for permanent data storage.Feature Turbo Bundling Alternative Options Payment Options Fiat, ARIO, USDC, SOL, MATIC, AR AR tokens only Implementation Simple SDK integration Manual transaction handling Performance Optimized bundling & retry logic Depends on implementation Reliability Built-in redundancy Manual error handling Cost Optimized for large uploads Higher per-transaction costs Setup Complexity Easy with SDK Complex protocol knowledge Ready to Get Started?Launch Turbo Start building with Turbo's powerful bundling service.Turbo SDK Documentation Explore the full SDK documentation and examples.Learn About Tagging Organize your data with metadata and tags.How is this guide?Upload Data Start uploading to Arweave's permanent storage network with our recommended tools and best practices Advanced Uploading with Turbo Learn how to upload data to Arweave using the Turbo SDK, including authentication, purchasing credits, and file uploads
 
 ---
 
