@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-09T12:16:47.788Z
-Total documents: 94
-Total words: 57921
+Generated on: 2025-10-10T12:16:00.976Z
+Total documents: 99
+Total words: 63151
 
 ## Table of Contents
 
@@ -16,92 +16,97 @@ Total words: 57921
 6. [ClickHouse Parquet ARIO Documentation](https://docs.ar.io/build/extensions/clickhouse)
 7. [Crossmint NFT Minting App ARIO Documentation](https://docs.ar.io/build/guides/crossmint-nft-minting-app)
 8. [Hosting Decentralized Websites ARIO Documentation](https://docs.ar.io/build/guides/hosting-decentralized-websites)
-9. [ArNS Undernames for Permasite Versioning ARIO Documentation](https://docs.ar.io/build/guides/arns-undernames-versioning)
-10. [Advanced Uploading with Turbo ARIO Documentation](https://docs.ar.io/build/upload/advanced-uploading-with-turbo)
-11. [Environment Variables ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/environment-variables)
-12. [AO Compute Unit (CU) ARIO Documentation](https://docs.ar.io/build/extensions/compute-unit)
-13. [Importing SQLite Database Snapshots ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/index-snapshots)
-14. [Index Querying ARIO Documentation](https://docs.ar.io/apis/ar-io-node/index-querying)
-15. [Wayfinder React ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-react)
-16. [Wayfinder ARIO Documentation](https://docs.ar.io/build/access/wayfinder)
-17. [Gateway Filters ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/filters)
-18. [Data Model ARIO Documentation](https://docs.ar.io/build/advanced/arfs/data-model)
-19. [ARIO SDK ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk)
-20. [Guides ARIO Documentation](https://docs.ar.io/build/guides)
-21. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/learn/arns)
-22. [Working With Primary Names ARIO Documentation](https://docs.ar.io/build/guides/arns-primary-names)
-23. [Find Data (via GraphQL) ARIO Documentation](https://docs.ar.io/build/access/find-data)
-24. [Creating Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/creating-drives)
-25. [Join the Network ARIO Documentation](https://docs.ar.io/build/run-a-gateway/join-the-network)
-26. [Access Data ARIO Documentation](https://docs.ar.io/build/access)
-27. [Arweave Name Tokens (ANTs) ARIO Documentation](https://docs.ar.io/learn/arns/ants)
-28. [Upgrading your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway)
-29. [Run a Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway)
-30. [Fetch Data (via REST API) ARIO Documentation](https://docs.ar.io/build/access/fetch-data)
-31. [Getting Started with Turbo ARIO Documentation](https://docs.ar.io/build/upload/bundling-services)
-32. [Payments ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/payments)
-33. [Logging ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/logging)
-34. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/build/access/arns)
-35. [Entity Types ARIO Documentation](https://docs.ar.io/build/advanced/arfs/entity-types)
-36. [Automating SSL Certificate Renewal ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/ssl-certs)
-37. [Reading Data ARIO Documentation](https://docs.ar.io/build/advanced/arfs/reading-data)
-38. [Pricing Model ARIO Documentation](https://docs.ar.io/learn/arns/pricing-model)
-39. [Wayfinder Protocol ARIO Documentation](https://docs.ar.io/learn/wayfinder)
-40. [Tagging ARIO Documentation](https://docs.ar.io/build/upload/tagging)
-41. [Get Started ARIO Documentation](https://docs.ar.io/build)
-42. [Gateway ARIO Documentation](https://docs.ar.io/apis/ar-io-node/gateway)
-43. [Events ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/events)
-44. [Privacy Encryption ARIO Documentation](https://docs.ar.io/build/advanced/arfs/privacy)
-45. [Upload Data ARIO Documentation](https://docs.ar.io/build/upload)
-46. [Pagination ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/pagination)
-47. [APIs Reference ARIO Documentation](https://docs.ar.io/apis)
-48. [Manifests ARIO Documentation](https://docs.ar.io/build/upload/manifests)
-49. [What is ARIO ARIO Documentation](https://docs.ar.io/learn/what-is-ario)
-50. [TurboAuthenticatedClient ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turboauthenticatedclient)
-51. [Data ARIO Documentation](https://docs.ar.io/apis/ar-io-node/data)
-52. [TurboFactory ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbofactory)
-53. [Introduction ARIO Documentation](https://docs.ar.io/sdks)
-54. [Staking ARIO Documentation](https://docs.ar.io/learn/token/staking)
-55. [Manage your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage)
-56. [Token Conversion ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/token-conversion)
-57. [Paying for Uploads ARIO Documentation](https://docs.ar.io/build/upload/turbo-credits)
-58. [What is Arweave ARIO Documentation](https://docs.ar.io/learn/what-is-arweave)
-59. [ArNS Marketplace ARIO Documentation](https://docs.ar.io/build/guides/arns-marketplace)
-60. [Static Methods ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/static-methods)
-61. [Turbo Credit Sharing ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing)
-62. [Glossary ARIO Documentation](https://docs.ar.io/glossary)
-63. [Logging ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/logging)
-64. [Upgrading Private Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/upgrading-drives)
-65. [Introduction ARIO Documentation](https://docs.ar.io/learn)
-66. [Normalized Addresses ARIO Documentation](https://docs.ar.io/build/advanced/normalized-addresses)
-67. [Observer Selection ARIO Documentation](https://docs.ar.io/learn/oip/observer-selection)
-68. [ARIO Gateway APIs ARIO Documentation](https://docs.ar.io/apis/ar-io-node)
-69. [Troubleshooting ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/troubleshooting)
-70. [Distributions ARIO Documentation](https://docs.ar.io/learn/oip/reward-distribution)
-71. [Balance ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/balance)
-72. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
-73. [Encryption ARIO Documentation](https://docs.ar.io/build/upload/encryption)
-74. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
-75. [Advanced ARIO Documentation](https://docs.ar.io/build/advanced)
-76. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns)
-77. [Data Retrieval ARIO Documentation](https://docs.ar.io/learn/gateways/data-retrieval)
-78. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
-79. [Extensions Sidecars ARIO Documentation](https://docs.ar.io/build/extensions)
-80. [Architecture ARIO Documentation](https://docs.ar.io/learn/gateways/architecture)
-81. [Name Registration ARIO Documentation](https://docs.ar.io/learn/arns/name-registration)
-82. [Add to Wander ARIO Documentation](https://docs.ar.io/learn/token/add-to-wander)
-83. [Use Cases ARIO Documentation](https://docs.ar.io/learn/wayfinder/use-cases)
-84. [Reporting ARIO Documentation](https://docs.ar.io/learn/oip/reporting)
-85. [Deploy a dApp with ArDrive Web ARIO Documentation](https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web)
-86. [What is the Permaweb ARIO Documentation](https://docs.ar.io/learn/permaweb)
-87. [Gateway Registry ARIO Documentation](https://docs.ar.io/learn/gateways/gateway-registry)
-88. [Architecture ARIO Documentation](https://docs.ar.io/learn/token/architecture)
-89. [Get the Token ARIO Documentation](https://docs.ar.io/learn/token/get-the-token)
-90. [Turbo APIs ARIO Documentation](https://docs.ar.io/apis/turbo)
-91. [Token ARIO Documentation](https://docs.ar.io/learn/token)
-92. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
-93. [What are Bundles ARIO Documentation](https://docs.ar.io/learn/ans-104-bundles)
-94. [ARIO Gateways ARIO Documentation](https://docs.ar.io/learn/gateways)
+9. [Using Turbo SDK with Vanilla HTML ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/html)
+10. [ArNS Undernames for Permasite Versioning ARIO Documentation](https://docs.ar.io/build/guides/arns-undernames-versioning)
+11. [Advanced Uploading with Turbo ARIO Documentation](https://docs.ar.io/build/upload/advanced-uploading-with-turbo)
+12. [Environment Variables ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/environment-variables)
+13. [AO Compute Unit (CU) ARIO Documentation](https://docs.ar.io/build/extensions/compute-unit)
+14. [Importing SQLite Database Snapshots ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/index-snapshots)
+15. [Index Querying ARIO Documentation](https://docs.ar.io/apis/ar-io-node/index-querying)
+16. [Wayfinder React ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-react)
+17. [Wayfinder ARIO Documentation](https://docs.ar.io/build/access/wayfinder)
+18. [Gateway Filters ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/filters)
+19. [Data Model ARIO Documentation](https://docs.ar.io/build/advanced/arfs/data-model)
+20. [ARIO SDK ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk)
+21. [Guides ARIO Documentation](https://docs.ar.io/build/guides)
+22. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/learn/arns)
+23. [Working With Primary Names ARIO Documentation](https://docs.ar.io/build/guides/arns-primary-names)
+24. [Find Data (via GraphQL) ARIO Documentation](https://docs.ar.io/build/access/find-data)
+25. [Creating Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/creating-drives)
+26. [Join the Network ARIO Documentation](https://docs.ar.io/build/run-a-gateway/join-the-network)
+27. [Access Data ARIO Documentation](https://docs.ar.io/build/access)
+28. [Arweave Name Tokens (ANTs) ARIO Documentation](https://docs.ar.io/learn/arns/ants)
+29. [Upgrading your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway)
+30. [Run a Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway)
+31. [Fetch Data (via REST API) ARIO Documentation](https://docs.ar.io/build/access/fetch-data)
+32. [Getting Started with Turbo ARIO Documentation](https://docs.ar.io/build/upload/bundling-services)
+33. [Payments ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/payments)
+34. [Logging ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/logging)
+35. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/build/access/arns)
+36. [Entity Types ARIO Documentation](https://docs.ar.io/build/advanced/arfs/entity-types)
+37. [Automating SSL Certificate Renewal ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/ssl-certs)
+38. [Reading Data ARIO Documentation](https://docs.ar.io/build/advanced/arfs/reading-data)
+39. [Pricing Model ARIO Documentation](https://docs.ar.io/learn/arns/pricing-model)
+40. [Wayfinder Protocol ARIO Documentation](https://docs.ar.io/learn/wayfinder)
+41. [Tagging ARIO Documentation](https://docs.ar.io/build/upload/tagging)
+42. [Get Started ARIO Documentation](https://docs.ar.io/build)
+43. [Gateway ARIO Documentation](https://docs.ar.io/apis/ar-io-node/gateway)
+44. [Events ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/events)
+45. [Privacy Encryption ARIO Documentation](https://docs.ar.io/build/advanced/arfs/privacy)
+46. [Upload Data ARIO Documentation](https://docs.ar.io/build/upload)
+47. [Using Turbo SDK with Vite ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/vite)
+48. [Pagination ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/pagination)
+49. [APIs Reference ARIO Documentation](https://docs.ar.io/apis)
+50. [Manifests ARIO Documentation](https://docs.ar.io/build/upload/manifests)
+51. [What is ARIO ARIO Documentation](https://docs.ar.io/learn/what-is-ario)
+52. [Advanced ARIO Documentation](https://docs.ar.io/build/advanced)
+53. [TurboAuthenticatedClient ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turboauthenticatedclient)
+54. [Data ARIO Documentation](https://docs.ar.io/apis/ar-io-node/data)
+55. [Using Turbo SDK with Nextjs ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/nextjs)
+56. [TurboFactory ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbofactory)
+57. [Introduction ARIO Documentation](https://docs.ar.io/sdks)
+58. [Using Turbo in a Browser ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser)
+59. [Staking ARIO Documentation](https://docs.ar.io/learn/token/staking)
+60. [Manage your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage)
+61. [Token Conversion ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/token-conversion)
+62. [Paying for Uploads ARIO Documentation](https://docs.ar.io/build/upload/turbo-credits)
+63. [What is Arweave ARIO Documentation](https://docs.ar.io/learn/what-is-arweave)
+64. [ArNS Marketplace ARIO Documentation](https://docs.ar.io/build/guides/arns-marketplace)
+65. [Static Methods ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/static-methods)
+66. [Turbo Credit Sharing ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing)
+67. [Glossary ARIO Documentation](https://docs.ar.io/glossary)
+68. [Logging ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/logging)
+69. [Upgrading Private Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/upgrading-drives)
+70. [Introduction ARIO Documentation](https://docs.ar.io/learn)
+71. [Normalized Addresses ARIO Documentation](https://docs.ar.io/build/advanced/normalized-addresses)
+72. [Observer Selection ARIO Documentation](https://docs.ar.io/learn/oip/observer-selection)
+73. [ARIO Gateway APIs ARIO Documentation](https://docs.ar.io/apis/ar-io-node)
+74. [Troubleshooting ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/troubleshooting)
+75. [Distributions ARIO Documentation](https://docs.ar.io/learn/oip/reward-distribution)
+76. [Balance ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/balance)
+77. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
+78. [Encryption ARIO Documentation](https://docs.ar.io/build/upload/encryption)
+79. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
+80. [EthAReum Protocol ARIO Documentation](https://docs.ar.io/build/advanced/ethareum)
+81. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns)
+82. [Data Retrieval ARIO Documentation](https://docs.ar.io/learn/gateways/data-retrieval)
+83. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
+84. [Extensions Sidecars ARIO Documentation](https://docs.ar.io/build/extensions)
+85. [Architecture ARIO Documentation](https://docs.ar.io/learn/gateways/architecture)
+86. [Name Registration ARIO Documentation](https://docs.ar.io/learn/arns/name-registration)
+87. [Add to Wander ARIO Documentation](https://docs.ar.io/learn/token/add-to-wander)
+88. [Use Cases ARIO Documentation](https://docs.ar.io/learn/wayfinder/use-cases)
+89. [Reporting ARIO Documentation](https://docs.ar.io/learn/oip/reporting)
+90. [Deploy a dApp with ArDrive Web ARIO Documentation](https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web)
+91. [What is the Permaweb ARIO Documentation](https://docs.ar.io/learn/permaweb)
+92. [Gateway Registry ARIO Documentation](https://docs.ar.io/learn/gateways/gateway-registry)
+93. [Architecture ARIO Documentation](https://docs.ar.io/learn/token/architecture)
+94. [Get the Token ARIO Documentation](https://docs.ar.io/learn/token/get-the-token)
+95. [Turbo APIs ARIO Documentation](https://docs.ar.io/apis/turbo)
+96. [Token ARIO Documentation](https://docs.ar.io/learn/token)
+97. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
+98. [What are Bundles ARIO Documentation](https://docs.ar.io/learn/ans-104-bundles)
+99. [ARIO Gateways ARIO Documentation](https://docs.ar.io/learn/gateways)
 
 ---
 
@@ -541,8 +546,8 @@ docker compose --profile clickhouse restart clickhouse Next Steps Now that you h
 
 Document Number: 7
 Source: https://docs.ar.io/build/guides/crossmint-nft-minting-app
-Words: 1060
-Quality Score: 0.658
+Words: 1066
+Quality Score: 0.654
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -643,7 +648,7 @@ success: false,
 error: error.message
 };
 }
-};Benefits of This Approach True Permanence: NFT images are stored permanently on Arweave Accessibility: Credit card payments make NFTs accessible to mainstream users Complete Decentralization: Both application and assets are stored on decentralized networks User-Friendly Experience: Seamless experience for both creators and collectors No Server Maintenance: No need to manage servers or renew domains Ready to Build?Clone the Example Get started with the complete example project Crossmint Documentation 's APIs and features ArFS Documentation Understand Arweave's file system for advanced storage How is this guide?ArNS Undernames for Permasite Versioning Use ArNS undernames to manage different versions and components of your permanent website Advanced Advanced topics and specialized guides for building on Arweave and AR.IO
+};Benefits of This Approach True Permanence: NFT images are stored permanently on Arweave Accessibility: Credit card payments make NFTs accessible to mainstream users Complete Decentralization: Both application and assets are stored on decentralized networks User-Friendly Experience: Seamless experience for both creators and collectors No Server Maintenance: No need to manage servers or renew domains Ready to Build?Clone the Example Get started with the complete example project Crossmint Documentation 's APIs and features ArFS Documentation Understand Arweave's file system for advanced storage How is this guide?ArNS Undernames for Permasite Versioning Use ArNS undernames to manage different versions and components of your permanent website Using Turbo in a Browser Learn how to integrate Turbo SDK with different web frameworks and vanilla HTML
 
 ---
 
@@ -684,9 +689,156 @@ npx permaweb-deploy --deploy-folder ./build --arns-name your-domain
 
 ---
 
-# 9. ArNS Undernames for Permasite Versioning  ARIO Documentation
+# 9. Using Turbo SDK with Vanilla HTML  ARIO Documentation
 
 Document Number: 9
+Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser/html
+Words: 997
+Quality Score: 0.638
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Guides Using Turbo in a Browser Using Turbo SDK with Vanilla HTML Overview This guide demonstrates how to integrate the @ardrive/turbo-sdk directly into vanilla HTML pages using CDN imports. No build tools, bundlers, or polyfills are required - just modern ES modules support in browsers.Prerequisites Modern browser with ES modules support (Chrome 61+, Firefox 60+, Safari 10.1+, Edge 16+) Basic understanding of HTML, CSS, and JavaScript HTTPS hosting for production (required for browser wallet integrations) Create a basic HTML file with Turbo SDK integration:
+
+
+
+Turbo SDK Example
+
+
+
+# Turbo SDK - Vanilla HTML Demo
+Current Rates
+Loading rates...
+Upload File
+
+
+
+Upload File
+
+
+Select the appropriate CDN import method for your needs:Latest Version (Recommended for Development) import { TurboFactory } from "https://esm.sh/@ardrive/turbo-sdk";Specific Version (Recommended for Production) import { TurboFactory } from "https://esm.sh/@ardrive/turbo-sdk@1.20.0";Alternative CDN Providers Connect your browser wallet to enable file uploads:Uploading with Wander Complete HTML page with Wander wallet integration:
+
+
+
+Turbo SDK - Wander Wallet
+
+
+
+⚡ Turbo SDK + Wander Wallet
+
+Wander Wallet Connection
+
+Connect your Wander wallet to upload files to Arweave using your AR
+balance.
+
+
+Connect Wander Wallet
+
+
+
+
+📁 File Upload
+
+
+Upload to Arweave
+
+
+Browser wallet integrations require HTTPS in production:Implement comprehensive error handling:// Network error handling
+async function robustApiCall(apiFunction, retries = 3) {
+for (let i = 0; i < retries; i++) {
+try {
+return await apiFunction();
+} catch (error) {
+console.error(`Attempt ${i + 1} failed:`, error);
+if (i === retries - 1) throw error;
+await new Promise((resolve) =>
+setTimeout(resolve, 1000 * Math.pow(2, i))
+);
+}
+}
+}
+// Usage example
+const rates = await robustApiCall(() => turbo.getFiatRates());Optimize for production environments:
+Best Practices 1. User Experience Loading States: Always show loading indicators during API calls Error Recovery: Provide clear error messages with recovery options Progress Tracking: Show upload progress for large files Wallet Detection: Guide users to install wallets if missing 2. Security Never expose private keys in browser applications Validate user inputs before API calls Use HTTPS for all production deployments Implement CSP headers to prevent XSS attacks 3. Performance Cache API responses where appropriate (rates, costs) Use specific CDN versions in production Implement retry logic for network failures Optimize file handling for large uploads 4. Development Use development endpoints during testing Test wallet integrations across different browsers Validate upload functionality with small files first Monitor API rate limits and implement backoff Troubleshooting Common Issues CDN Import Errors If you encounter errors like:The requested module does not provide an export named 'TurboFactory' Module resolution failures Solution: Use esm.sh instead of unpkg.com:// ❌ Problematic
+import { TurboFactory } from "https://unpkg.com/@ardrive/turbo-sdk";
+// ✅ Working
+import { TurboFactory } from "https://esm.sh/@ardrive/turbo-sdk";Function Scope Issues If onclick handlers throw ReferenceError: function is not defined:Solution: Use explicit global assignment:// ❌ Problematic
+window.myFunction = async function() { ... }
+// ✅ Working
+async function myFunction() { ... }
+window.myFunction = myFunction;Upload Result Properties If upload results have undefined properties:Solution: Use original file size for dis:// ❌ Problematic - these properties don't exist in result object
+const totalBytes = result.totalBytes || result.dataSizeBytes;
+// ✅ Correct - use original file size
+const disBytes = originalFile.size;
+// Available result properties: id, timestamp, winc, version,
+// deadlineHeight, dataCaches, fastFinalityIndexes, public, signature, owner Upload Cost Properties If cost calculations fail:Solution: Use correct cost object structure:// ❌ Problematic - adjustedBytes doesn't exist in cost objects
+const cost = costs[0];
+console.log(`Adjusted: ${cost.adjustedBytes.toLocaleString()}`);
+// ✅ Correct - use available properties
+const cost = costs[0];
+console.log(`Cost: ${cost.winc} winc);
+console.log(File size: ${originalFile.size.toLocaleString()} bytes`);
+// Available cost properties: winc (string), adjustments (array) Testing Your Implementation 1. Basic Functionality Test // Test CDN import
+console.log("Testing Turbo SDK import...");
+import { TurboFactory } from "https://esm.sh/@ardrive/turbo-sdk";
+const turbo = TurboFactory.unauthenticated();
+console.log("✅ SDK imported successfully");
+// Test rate fetching
+const rates = await turbo.getFiatRates();
+console.log("✅ Rates fetched:", rates);2. Wallet Integration Test Connect to MetaMask/Wander wallet Verify address dis Test small file upload (< 1MB) Check transaction ID and Arweave confirmation 3. Production Readiness Test with HTTPS hosting Verify CSP headers don't block resources Test error scenarios (network offline, wallet disconnected) Validate cross-browser compatibility API Object Structures Understanding the actual structure of API responses helps prevent common errors:Upload Cost Object const costs = await turbo.getUploadCosts({ bytes: [file.size] });
+const cost = costs[0];
+// Actual structure:
+{
+winc: "15763844", // string - cost in Winston credits
+adjustments: [] // array - currently empty
+}
+// Note: adjustedBytes property does NOT exist Upload Result Object const result = await turboClient.uploadFile({...});
+// Actual structure:
+{
+id: "K2wbyN85FlZMBYyfn4fnk5A-fp-pmnrQWpgfuKI4UCc",
+timestamp: 1752094894060,
+winc: "0",
+version: "0.2.0",
+deadlineHeight: 1708455,
+dataCaches: ["arweave.net"],
+fastFinalityIndexes: ["arweave.net"],
+public: "wZgP9Rpfh0nXb5EdzBUg7y2LFMkBp2ADX3gdZhLXHYbz...",
+signature: "k31SCZwxerhuEojUZ7rnLMr0T6CwgVp1_dKDZc7UdvV...",
+owner: "cF0H0SKdnaDTqWKY9iJKBktTpdEWgb3GnlndE7ABv0Q"
+}
+// Note: totalBytes and dataSizeBytes properties do NOT exist Fiat Rates Object const rates = await turbo.getFiatRates();
+// Actual structure:
+{
+winc: "2257047178957", // string - current winc rate
+fiat: { // object - fiat currency rates
+aud: 25.13395879439, // number - AUD per GiB
+brl: 91.578363344626, // number - BRL per GiB
+cad: 22.482075685955, // number - CAD per GiB
+eur: 13.996049738963, // number - EUR per GiB
+gbp: 12.080800827315, // number - GBP per GiB
+hkd: 129.06624536489, // number - HKD per GiB
+inr: 1409.435250458, // number - INR per GiB
+jpy: 2406.336355749, // number - JPY per GiB
+sgd: 21.058978043112, // number - SGD per GiB
+usd: 16.428221816529 // number - USD per GiB
+},
+adjustments: [] // array - currently empty
+} Progress Event Object events: {
+onProgress: (progressEvent) => {
+// Actual structure:
+{
+processedBytes: 4326, // number - bytes processed so far
+totalBytes: 8652, // number - total bytes to process
+step: "signing" // string - current step: "signing" or "upload"
+}
+}
+} Additional Resources Turbo SDK Documentation Browser Wallet Security Guide Arweave Developer Documentation CDN Import Best Practices For more advanced implementations, see the Next.js and Vite framework guides, or explore the Turbo SDK examples repository.How is this guide?Using Turbo in a Browser Learn how to integrate Turbo SDK with different web frameworks and vanilla HTML Using Turbo SDK with Next.js Configure Turbo SDK in a Next.js application with proper polyfills for client-side usage
+
+---
+
+# 10. ArNS Undernames for Permasite Versioning  ARIO Documentation
+
+Document Number: 10
 Source: https://docs.ar.io/build/guides/arns-undernames-versioning
 Words: 553
 Quality Score: 0.626
@@ -735,9 +887,9 @@ npx permaweb-deploy --arns-name myapp --undername v2 --deploy-folder ./v2-build 
 
 ---
 
-# 10. Advanced Uploading with Turbo  ARIO Documentation
+# 11. Advanced Uploading with Turbo  ARIO Documentation
 
-Document Number: 10
+Document Number: 11
 Source: https://docs.ar.io/build/upload/advanced-uploading-with-turbo
 Words: 1822
 Quality Score: 0.625
@@ -1112,9 +1264,9 @@ console.error("Upload error:", error);
 
 ---
 
-# 11. Environment Variables  ARIO Documentation
+# 12. Environment Variables  ARIO Documentation
 
-Document Number: 11
+Document Number: 12
 Source: https://docs.ar.io/build/run-a-gateway/manage/environment-variables
 Words: 1646
 Quality Score: 0.621
@@ -1161,9 +1313,9 @@ ARNS_CACHE_TYPE=redis This comprehensive reference should help you configure you
 
 ---
 
-# 12. AO Compute Unit (CU)  ARIO Documentation
+# 13. AO Compute Unit (CU)  ARIO Documentation
 
-Document Number: 12
+Document Number: 13
 Source: https://docs.ar.io/build/extensions/compute-unit
 Words: 1236
 Quality Score: 0.608
@@ -1207,9 +1359,9 @@ docker compose --env-file .env.ao -f docker-compose.ao.yaml up Next Steps Now th
 
 ---
 
-# 13. Importing SQLite Database Snapshots  ARIO Documentation
+# 14. Importing SQLite Database Snapshots  ARIO Documentation
 
-Document Number: 13
+Document Number: 14
 Source: https://docs.ar.io/build/run-a-gateway/manage/index-snapshots
 Words: 716
 Quality Score: 0.577
@@ -1241,9 +1393,9 @@ mv data/sqlite/* sqlite-backup/ Remove Old Database Delete the existing SQLite d
 
 ---
 
-# 14. Index Querying  ARIO Documentation
+# 15. Index Querying  ARIO Documentation
 
-Document Number: 14
+Document Number: 15
 Source: https://docs.ar.io/apis/ar-io-node/index-querying
 Words: 158
 Quality Score: 0.551
@@ -1274,9 +1426,9 @@ AR.IO Gateway Get data from the AR.IO Gateway index using GQL Query indexed data
 
 ---
 
-# 15. Wayfinder React  ARIO Documentation
+# 16. Wayfinder React  ARIO Documentation
 
-Document Number: 15
+Document Number: 16
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-react
 Words: 261
 Quality Score: 0.550
@@ -1320,9 +1472,9 @@ return (
 
 ---
 
-# 16. Wayfinder  ARIO Documentation
+# 17. Wayfinder  ARIO Documentation
 
-Document Number: 16
+Document Number: 17
 Source: https://docs.ar.io/build/access/wayfinder
 Words: 388
 Quality Score: 0.537
@@ -1369,9 +1521,9 @@ return {data && {data}}
 
 ---
 
-# 17. Gateway Filters  ARIO Documentation
+# 18. Gateway Filters  ARIO Documentation
 
-Document Number: 17
+Document Number: 18
 Source: https://docs.ar.io/build/run-a-gateway/manage/filters
 Words: 1442
 Quality Score: 0.537
@@ -1737,9 +1889,9 @@ been restarted after changes - System has sufficient resources Next Steps Now th
 
 ---
 
-# 18. Data Model  ARIO Documentation
+# 19. Data Model  ARIO Documentation
 
-Document Number: 18
+Document Number: 19
 Source: https://docs.ar.io/build/advanced/arfs/data-model
 Words: 599
 Quality Score: 0.531
@@ -1757,9 +1909,9 @@ Advanced ArFS Protocol Because of Arweave's permanent and immutable nature, trad
 
 ---
 
-# 19. ARIO SDK  ARIO Documentation
+# 20. ARIO SDK  ARIO Documentation
 
-Document Number: 19
+Document Number: 20
 Source: https://docs.ar.io/sdks/ar-io-sdk
 Words: 330
 Quality Score: 0.528
@@ -1802,9 +1954,9 @@ API Reference & Documentation API Reference Complete API documentation for all S
 
 ---
 
-# 20. Guides  ARIO Documentation
+# 21. Guides  ARIO Documentation
 
-Document Number: 20
+Document Number: 21
 Source: https://docs.ar.io/build/guides
 Words: 345
 Quality Score: 0.528
@@ -1815,9 +1967,9 @@ Explore real-world applications and use cases for Arweave and AR.IO infrastructu
 
 ---
 
-# 21. Arweave Name System (ArNS)  ARIO Documentation
+# 22. Arweave Name System (ArNS)  ARIO Documentation
 
-Document Number: 21
+Document Number: 22
 Source: https://docs.ar.io/learn/arns
 Words: 437
 Quality Score: 0.527
@@ -1828,9 +1980,9 @@ What is ArNS?Arweave URLs and transaction IDs are long, difficult to remember, a
 
 ---
 
-# 22. Working With Primary Names  ARIO Documentation
+# 23. Working With Primary Names  ARIO Documentation
 
-Document Number: 22
+Document Number: 23
 Source: https://docs.ar.io/build/guides/arns-primary-names
 Words: 554
 Quality Score: 0.518
@@ -1854,9 +2006,9 @@ console.log(nameData.name); // e.g., "jonniesparkles" How Apps Use Primary Names
 
 ---
 
-# 23. Find Data (via GraphQL)  ARIO Documentation
+# 24. Find Data (via GraphQL)  ARIO Documentation
 
-Document Number: 23
+Document Number: 24
 Source: https://docs.ar.io/build/access/find-data
 Words: 882
 Quality Score: 0.514
@@ -2044,9 +2196,9 @@ address
 
 ---
 
-# 24. Creating Drives  ARIO Documentation
+# 25. Creating Drives  ARIO Documentation
 
-Document Number: 24
+Document Number: 25
 Source: https://docs.ar.io/build/advanced/arfs/creating-drives
 Words: 710
 Quality Score: 0.510
@@ -2098,9 +2250,9 @@ Unix-Time: "" Implementation Example Here's a practical example of creating a co
 
 ---
 
-# 25. Join the Network  ARIO Documentation
+# 26. Join the Network  ARIO Documentation
 
-Document Number: 25
+Document Number: 26
 Source: https://docs.ar.io/build/run-a-gateway/join-the-network
 Words: 766
 Quality Score: 0.505
@@ -2111,9 +2263,9 @@ Run a Gateway Take control of the permanent web by running your own AR.IO Gatewa
 
 ---
 
-# 26. Access Data  ARIO Documentation
+# 27. Access Data  ARIO Documentation
 
-Document Number: 26
+Document Number: 27
 Source: https://docs.ar.io/build/access
 Words: 297
 Quality Score: 0.504
@@ -2135,9 +2287,9 @@ id
 
 ---
 
-# 27. Arweave Name Tokens (ANTs)  ARIO Documentation
+# 28. Arweave Name Tokens (ANTs)  ARIO Documentation
 
-Document Number: 27
+Document Number: 28
 Source: https://docs.ar.io/learn/arns/ants
 Words: 619
 Quality Score: 0.504
@@ -2148,9 +2300,9 @@ Arweave Name System (ArNS) To establish ownership of a record in the ArNS Regist
 
 ---
 
-# 28. Upgrading your Gateway  ARIO Documentation
+# 29. Upgrading your Gateway  ARIO Documentation
 
-Document Number: 28
+Document Number: 29
 Source: https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway
 Words: 603
 Quality Score: 0.504
@@ -2165,9 +2317,9 @@ NEW_CONFIG_VALUE=default_value Restart Gateway Restart your gateway to apply the
 
 ---
 
-# 29. Run a Gateway  ARIO Documentation
+# 30. Run a Gateway  ARIO Documentation
 
-Document Number: 29
+Document Number: 30
 Source: https://docs.ar.io/build/run-a-gateway
 Words: 332
 Quality Score: 0.502
@@ -2180,9 +2332,9 @@ curl localhost:4000/4jBV3ofWh41KhuTs2pFvj-KBZWUkbrbCYlJH0vLA6LM Your gateway is 
 
 ---
 
-# 30. Fetch Data (via REST API)  ARIO Documentation
+# 31. Fetch Data (via REST API)  ARIO Documentation
 
-Document Number: 30
+Document Number: 31
 Source: https://docs.ar.io/build/access/fetch-data
 Words: 360
 Quality Score: 0.501
@@ -2202,9 +2354,9 @@ Manifests For organized file collections, use manifests to create friendly path-
 
 ---
 
-# 31. Getting Started with Turbo  ARIO Documentation
+# 32. Getting Started with Turbo  ARIO Documentation
 
-Document Number: 31
+Document Number: 32
 Source: https://docs.ar.io/build/upload/bundling-services
 Words: 552
 Quality Score: 0.498
@@ -2238,9 +2390,9 @@ console.log("Owner:", result.owner);Advanced Features Turbo Credits System Learn
 
 ---
 
-# 32. Payments  ARIO Documentation
+# 33. Payments  ARIO Documentation
 
-Document Number: 32
+Document Number: 33
 Source: https://docs.ar.io/apis/turbo/payment-service/payments
 Words: 392
 Quality Score: 0.496
@@ -2324,9 +2476,9 @@ Turbo Payment Service Payment processing and top-up operations Get Top Up Quote 
 
 ---
 
-# 33. Logging  ARIO Documentation
+# 34. Logging  ARIO Documentation
 
-Document Number: 33
+Document Number: 34
 Source: https://docs.ar.io/sdks/turbo-sdk/logging
 Words: 52
 Quality Score: 0.494
@@ -2337,9 +2489,9 @@ Turbo SDK The SDK uses winston for logging. You can set the log level using the 
 
 ---
 
-# 34. Arweave Name System (ArNS)  ARIO Documentation
+# 35. Arweave Name System (ArNS)  ARIO Documentation
 
-Document Number: 34
+Document Number: 35
 Source: https://docs.ar.io/build/access/arns
 Words: 386
 Quality Score: 0.493
@@ -2364,9 +2516,9 @@ console.log(data);Why Use ArNS?ArNS provides significant advantages for accessin
 
 ---
 
-# 35. Entity Types  ARIO Documentation
+# 36. Entity Types  ARIO Documentation
 
-Document Number: 35
+Document Number: 36
 Source: https://docs.ar.io/build/advanced/arfs/entity-types
 Words: 1465
 Quality Score: 0.493
@@ -2430,9 +2582,9 @@ Data-Start: "" Snapshot Entity Data A JSON data object must also be uploaded wit
 
 ---
 
-# 36. Automating SSL Certificate Renewal  ARIO Documentation
+# 37. Automating SSL Certificate Renewal  ARIO Documentation
 
-Document Number: 36
+Document Number: 37
 Source: https://docs.ar.io/build/run-a-gateway/manage/ssl-certs
 Words: 883
 Quality Score: 0.492
@@ -2472,9 +2624,9 @@ Congratulations, all simulated renewals succeeded:
 
 ---
 
-# 37. Reading Data  ARIO Documentation
+# 38. Reading Data  ARIO Documentation
 
-Document Number: 37
+Document Number: 38
 Source: https://docs.ar.io/build/advanced/arfs/reading-data
 Words: 1020
 Quality Score: 0.488
@@ -2606,9 +2758,9 @@ value
 
 ---
 
-# 38. Pricing Model  ARIO Documentation
+# 39. Pricing Model  ARIO Documentation
 
-Document Number: 38
+Document Number: 39
 Source: https://docs.ar.io/learn/arns/pricing-model
 Words: 1071
 Quality Score: 0.486
@@ -2721,9 +2873,9 @@ View Live PricingSee current ArNS pricing in real-time with the live pricing cha
 
 ---
 
-# 39. Wayfinder Protocol  ARIO Documentation
+# 40. Wayfinder Protocol  ARIO Documentation
 
-Document Number: 39
+Document Number: 40
 Source: https://docs.ar.io/learn/wayfinder
 Words: 604
 Quality Score: 0.485
@@ -2734,9 +2886,9 @@ The Problem: Centralized Gateway Reliance Today, most Arweave content is accesse
 
 ---
 
-# 40. Tagging  ARIO Documentation
+# 41. Tagging  ARIO Documentation
 
-Document Number: 40
+Document Number: 41
 Source: https://docs.ar.io/build/upload/tagging
 Words: 387
 Quality Score: 0.484
@@ -2772,9 +2924,9 @@ tags: [
 
 ---
 
-# 41. Get Started  ARIO Documentation
+# 42. Get Started  ARIO Documentation
 
-Document Number: 41
+Document Number: 42
 Source: https://docs.ar.io/build
 Words: 258
 Quality Score: 0.483
@@ -2785,9 +2937,9 @@ Welcome to AR.IO Network's developer documentation.This section will guide you t
 
 ---
 
-# 42. Gateway  ARIO Documentation
+# 43. Gateway  ARIO Documentation
 
-Document Number: 42
+Document Number: 43
 Source: https://docs.ar.io/apis/ar-io-node/gateway
 Words: 327
 Quality Score: 0.480
@@ -2842,9 +2994,9 @@ These metrics include various counters, gauges, and histograms tracking:HTTP req
 
 ---
 
-# 43. Events  ARIO Documentation
+# 44. Events  ARIO Documentation
 
-Document Number: 43
+Document Number: 44
 Source: https://docs.ar.io/sdks/turbo-sdk/events
 Words: 338
 Quality Score: 0.479
@@ -2899,9 +3051,9 @@ console.log('Signing success!');
 
 ---
 
-# 44. Privacy  Encryption  ARIO Documentation
+# 45. Privacy  Encryption  ARIO Documentation
 
-Document Number: 44
+Document Number: 45
 Source: https://docs.ar.io/build/advanced/arfs/privacy
 Words: 968
 Quality Score: 0.476
@@ -2914,9 +3066,9 @@ Cipher-IV?: "<12 byte initialization vector as Base64>" Just like drives, privat
 
 ---
 
-# 45. Upload Data  ARIO Documentation
+# 46. Upload Data  ARIO Documentation
 
-Document Number: 45
+Document Number: 46
 Source: https://docs.ar.io/build/upload
 Words: 391
 Quality Score: 0.475
@@ -2932,9 +3084,353 @@ fileStreamFactory: () => fs.createReadStream("./my-file.pdf"),
 
 ---
 
-# 46. Pagination  ARIO Documentation
+# 47. Using Turbo SDK with Vite  ARIO Documentation
 
-Document Number: 46
+Document Number: 47
+Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser/vite
+Words: 1505
+Quality Score: 0.475
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Guides Using Turbo in a Browser Using Turbo SDK with Vite Overview This guide demonstrates how to configure the @ardrive/turbo-sdk in a Vite application with proper polyfills for client-side usage. Vite provides excellent support for modern JavaScript features and can be easily configured to work with the Turbo SDK through plugins.Prerequisites Vite 5+ Node.js 18+ React 18+ (or your preferred framework) Basic familiarity with Vite configuration Install the main Turbo SDK package:npm install @ardrive/turbo-sdk Add the Vite node polyfills plugin for browser compatibility:npm install --save-dev vite-plugin-node-polyfills Wallet Integration Dependencies: The Turbo SDK includes @dha-team/arbundles as a peer dependency, which provides the necessary
+signers for browser wallet integration (like InjectedEthereumSigner and ArconnectSigner). You can import these directly without additional
+installation.Add React and TypeScript dependencies (if using React):npm install react react-dom
+npm install --save-dev @vitejs/plugin-react @types/react @types/react-dom Create or update your vite.config.js file:import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
+export default defineConfig({
+base: "/",
+plugins: [
+react(),
+nodePolyfills({
+// Enable specific polyfills for Turbo SDK requirements
+include: ["crypto", "stream", "buffer", "process"],
+globals: {
+Buffer: true,
+global: true,
+process: true,
+},
+}),
+],
+define: {
+// Define globals for browser compatibility
+global: "globalThis",
+},
+});If you're using TypeScript, update your tsconfig.json:{
+"compilerOptions": {
+"target": "ESNext",
+"lib": ["DOM", "DOM.Iterable", "ESNext"],
+"allowJs": true,
+"skipLibCheck": true,
+"esModuleInterop": true,
+"allowSyntheticDefaultImports": true,
+"strict": true,
+"forceConsistentCasingInFileNames": true,
+"module": "ESNext",
+"moduleResolution": "Bundler",
+"isolatedModules": true,
+"jsx": "react-jsx",
+"paths": {
+"buffer/": ["./node_modules/vite-plugin-node-polyfills/shims/buffer"]
+}
+},
+"include": ["src"]
+} TypeScript Wallet Types Create a types/wallet.d.ts file to properly type wallet objects:// types/wallet.d.ts
+interface Window {
+ethereum?: {
+request: (args: { method: string; params?: any[] }) => Promise;
+on?: (event: string, handler: (...args: any[]) => void) => void;
+removeListener?: (event: string, handler: (...args: any[]) => void) => void;
+isMetaMask?: boolean;
+};
+arweaveWallet?: {
+connect: (permissions: string[]) => Promise;
+disconnect: () => Promise;
+getActiveAddress: () => Promise;
+getPermissions: () => Promise;
+sign: (transaction: any) => Promise;
+getPublicKey: () => Promise;
+};
+} Select between MetaMask or Wander wallet integration:Create a React component for MetaMask wallet integration:import { TurboFactory } from "@ardrive/turbo-sdk/web";
+import { InjectedEthereumSigner } from "@dha-team/arbundles";
+import { useState, useCallback } from "react";
+export default function MetaMaskUploader() {
+const [connected, setConnected] = useState(false);
+const [address, setAddress] = useState("");
+const [uploading, setUploading] = useState(false);
+const [uploadResult, setUploadResult] = useState(null);
+const connectMetaMask = useCallback(async () => {
+try {
+if (!window.ethereum) {
+alert("MetaMask is not installed!");
+return;
+}
+// Request account access
+await window.ethereum.request({
+method: "eth_requestAccounts",
+});
+// Get the current account
+const accounts = await window.ethereum.request({
+method: "eth_accounts",
+});
+if (accounts.length > 0) {
+setAddress(accounts[0]);
+setConnected(true);
+// Log current chain for debugging
+const chainId = await window.ethereum.request({
+method: "eth_chainId",
+});
+console.log("Connected to chain:", chainId);
+}
+} catch (error) {
+console.error("Failed to connect to MetaMask:", error);
+}
+}, []);
+const uploadWithMetaMask = async (event) => {
+const file = event.target.files?.[0];
+if (!file || !connected) return;
+setUploading(true);
+try {
+// Create a provider wrapper for InjectedEthereumSigner
+const providerWrapper = {
+getSigner: () => ({
+signMessage: async (message: string | Uint8Array) => {
+const accounts = await window.ethereum!.request({
+method: "eth_accounts",
+});
+if (accounts.length === 0) {
+throw new Error("No accounts available");
+}
+// Convert message to hex if it's Uint8Array
+const messageToSign =
+typeof message === "string"
+? message
+: "0x" +
+Array.from(message)
+.map((b) => b.toString(16).padStart(2, "0"))
+.join("");
+return await window.ethereum!.request({
+method: "personal_sign",
+params: [messageToSign, accounts[0]],
+});
+},
+}),
+};
+// Create the signer using InjectedEthereumSigner
+const signer = new InjectedEthereumSigner(providerWrapper);
+const turbo = TurboFactory.authenticated({
+signer,
+token: "ethereum", // Important: specify token type for Ethereum
+});
+// Upload file with progress tracking
+const result = await turbo.uploadFile({
+fileStreamFactory: () => file.stream(),
+fileSizeFactory: () => file.size,
+dataItemOpts: {
+tags: [
+{ name: "Content-Type", value: file.type },
+{ name: "App-Name", value: "My-Vite-App" },
+{ name: "Funded-By", value: "Ethereum" },
+],
+},
+events: {
+onProgress: ({ totalBytes, processedBytes, step }) => {
+console.log(
+`${step}: ${Math.round((processedBytes / totalBytes) * 100)}%`
+);
+},
+onError: ({ error, step }) => {
+console.error(`Error during ${step}:`, error);
+console.error("Error details:", JSON.stringify(error, null, 2));
+},
+},
+});
+setUploadResult(result);
+} catch (error) {
+console.error("Upload failed:", error);
+console.error("Error details:", JSON.stringify(error, null, 2));
+alert(`Upload failed: ${error.message}`);
+} finally {
+setUploading(false);
+}
+};
+return (
+MetaMask Upload
+{!connected ? (
+
+Connect MetaMask
+
+) : (
+
+
+✅ Connected: {address.slice(0, 6)}...{address.slice(-4)}
+
+
+
+Select File to Upload:
+
+
+
+{uploading && (
+
+🔄 Up Please confirm transaction in MetaMask
+
+)}
+{uploadResult && (
+
+
+✅ Upload Successful!
+
+
+Transaction ID: {uploadResult.id}
+
+
+Data Size: {uploadResult.totalBytes} bytes
+
+
+)}
+
+)}
+);
+} Create a React component for Wander wallet integration:import { TurboFactory, ArconnectSigner } from "@ardrive/turbo-sdk/web";
+import { useState, useCallback } from "react";
+export default function WanderWalletUploader() {
+const [connected, setConnected] = useState(false);
+const [address, setAddress] = useState("");
+const [uploading, setUploading] = useState(false);
+const [uploadResult, setUploadResult] = useState(null);
+const connectWanderWallet = useCallback(async () => {
+try {
+if (!window.arweaveWallet) {
+alert("Wander wallet is not installed!");
+return;
+}
+// Required permissions for Turbo SDK
+const permissions = [
+"ACCESS_ADDRESS",
+"ACCESS_PUBLIC_KEY",
+"SIGN_TRANSACTION",
+"SIGNATURE",
+];
+// Connect to wallet
+await window.arweaveWallet.connect(permissions);
+// Get wallet address
+const walletAddress = await window.arweaveWallet.getActiveAddress();
+setAddress(walletAddress);
+setConnected(true);
+} catch (error) {
+console.error("Failed to connect to Wander wallet:", error);
+}
+}, []);
+const uploadWithWanderWallet = async (event) => {
+const file = event.target.files?.[0];
+if (!file || !connected) return;
+setUploading(true);
+try {
+// Create ArConnect signer using Wander wallet
+const signer = new ArconnectSigner(window.arweaveWallet);
+const turbo = TurboFactory.authenticated({ signer });
+// Note: No need to specify token for Arweave as it's the default
+// Upload file with progress tracking
+const result = await turbo.uploadFile({
+fileStreamFactory: () => file.stream(),
+fileSizeFactory: () => file.size,
+dataItemOpts: {
+tags: [
+{ name: "Content-Type", value: file.type },
+{ name: "App-Name", value: "My-Vite-App" },
+{ name: "Funded-By", value: "Arweave" },
+],
+},
+events: {
+onProgress: ({ totalBytes, processedBytes, step }) => {
+console.log(
+`${step}: ${Math.round((processedBytes / totalBytes) * 100)}%`
+);
+},
+onError: ({ error, step }) => {
+console.error(`Error during ${step}:`, error);
+},
+},
+});
+setUploadResult(result);
+} catch (error) {
+console.error("Upload failed:", error);
+alert(`Upload failed: ${error.message}`);
+} finally {
+setUploading(false);
+}
+};
+return (
+Wander Wallet Upload
+{!connected ? (
+
+Connect Wander Wallet
+
+) : (
+
+
+✅ Connected: {address.slice(0, 6)}...{address.slice(-4)}
+
+
+
+Select File to Upload:
+
+
+
+{uploading && (
+
+🔄 Up Please confirm transaction in Wander wallet
+
+)}
+{uploadResult && (
+
+
+✅ Upload Successful!
+
+
+Transaction ID: {uploadResult.id}
+
+
+Data Size: {uploadResult.totalBytes} bytes
+
+
+)}
+
+)}
+);
+} Here's a complete package.json example for a Vite + React + Turbo SDK project:{
+"name": "vite-turbo-app",
+"version": "0.1.0",
+"private": true,
+"type": "module",
+"scripts": {
+"dev": "vite",
+"build": "vite build",
+"preview": "vite preview",
+"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+},
+"dependencies": {
+"@ardrive/turbo-sdk": "^1.20.0",
+"react": "^18.3.1",
+"react-dom": "^18.3.1"
+},
+"devDependencies": {
+"@types/react": "^18.3.1",
+"@types/react-dom": "^18.3.0",
+"@vitejs/plugin-react": "^4.2.1",
+"typescript": "^5.3.3",
+"vite": "^5.2.14",
+"vite-plugin-node-polyfills": "^0.17.0"
+}
+} Common Issues and Solutions Build Errors "global is not defined" Ensure you have global: 'globalThis' in your Vite config's define section Buffer polyfill issues Make sure vite-plugin-node-polyfills is properly configured with Buffer globals Add the buffer path mapping in your tsconfig.json Module resolution errors Use moduleResolution: "Bundler" in TypeScript configuration Ensure you're importing from @ardrive/turbo-sdk/web for browser usage Runtime Errors "process is not defined" Enable process globals in the node polyfills plugin configuration Wallet integration errors For MetaMask, use InjectedEthereumSigner from @dha-team/arbundles For Wander wallet, use ArconnectSigner from the Turbo SDK Always check wallet availability before attempting connection Development Experience Hot reload issues with wallet connections Wallet state may not persist across hot reloads Consider using localStorage to persist connection state Console warnings about dependencies Some peer dependency warnings are normal for wallet libraries Focus on runtime functionality rather than dependency warnings Best Practices Development vs Production Use debug logs during development: TurboFactory.setLogLevel('debug') Remove debug logs in production builds Error Handling Always wrap wallet operations in try-catch blocks Provide meaningful error messages to users Log detailed error information for debugging Performance Initialize Turbo clients once and reuse them Consider lazy loading wallet integration components Use loading states for better user experience Security Never expose private keys in browser applications Always validate wallet connections before operations Use secure wallet connection methods in production Production Deployment Checklist For production builds:Build optimization Vite automatically optimizes builds with tree shaking Polyfills are only included when needed Testing Test wallet connections across different browsers Verify polyfills work in production builds Test with actual wallet extensions Monitoring Monitor bundle sizes to ensure polyfills don't bloat your app Set up error tracking for wallet connection failures Implementation Verification To verify your Vite setup is working correctly:Check Development Server: Start your dev server and verify no polyfill errors Test Wallet Connections: Ensure both MetaMask and Wander wallet integrations work Build Verification: Run npm run build and check for any build errors Bundle Analysis: Use vite-bundle-analyzer to inspect your bundle size Additional Resources Vite Documentation vite-plugin-node-polyfills Turbo SDK Documentation Web Usage Examples ArDrive Examples Repository For more examples and advanced usage patterns, refer to the Turbo SDK examples directory or the main SDK documentation.How is this guide?Using Turbo SDK with Next.js Configure Turbo SDK in a Next.js application with proper polyfills for client-side usage Advanced Advanced topics and specialized guides for building on Arweave and AR.IO
+
+---
+
+# 48. Pagination  ARIO Documentation
+
+Document Number: 48
 Source: https://docs.ar.io/sdks/ar-io-sdk/pagination
 Words: 333
 Quality Score: 0.474
@@ -2961,9 +3457,9 @@ processId: [
 
 ---
 
-# 47. APIs Reference  ARIO Documentation
+# 49. APIs Reference  ARIO Documentation
 
-Document Number: 47
+Document Number: 49
 Source: https://docs.ar.io/apis
 Words: 347
 Quality Score: 0.473
@@ -2974,9 +3470,9 @@ Explore the REST APIs available in the AR.IO ecosystem. Our services are built w
 
 ---
 
-# 48. Manifests  ARIO Documentation
+# 50. Manifests  ARIO Documentation
 
-Document Number: 48
+Document Number: 50
 Source: https://docs.ar.io/build/upload/manifests
 Words: 647
 Quality Score: 0.473
@@ -3073,9 +3569,9 @@ tags: [
 
 ---
 
-# 49. What is ARIO  ARIO Documentation
+# 51. What is ARIO  ARIO Documentation
 
-Document Number: 49
+Document Number: 51
 Source: https://docs.ar.io/learn/what-is-ario
 Words: 633
 Quality Score: 0.473
@@ -3086,9 +3582,22 @@ Introduction The AR.IO Network is the first permanent cloud network.A decentrali
 
 ---
 
-# 50. TurboAuthenticatedClient  ARIO Documentation
+# 52. Advanced  ARIO Documentation
 
-Document Number: 50
+Document Number: 52
+Source: https://docs.ar.io/build/advanced
+Words: 131
+Quality Score: 0.470
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Overview Explore advanced topics and specialized guides for building on Arweave and AR.IO. These resources are designed for developers and operators who need deeper technical knowledge and advanced configuration options.Advanced Topics ArFS Protocol Advanced ArFS documentation for structured data storage Normalized Addresses Understanding wallet address normalization across different networks Browser Sandboxing Security mechanisms in AR.IO gateways Key topics: - Same-origin policy EthAReum Protocol Generate Arweave wallets from Ethereum or Solana wallets Ready to Go Advanced?New to Arweave? Start with our Getting Started guide to understand the basics.Building dApps? Check out ArFS Protocol for structured data storage solutions.How is this guide?Using Turbo SDK with Vite Configure Turbo SDK in a Vite application with proper polyfills for client-side usage ArFS Protocol A decentralized file system on Arweave for structured data storage and retrieval
+
+---
+
+# 53. TurboAuthenticatedClient  ARIO Documentation
+
+Document Number: 53
 Source: https://docs.ar.io/sdks/turbo-sdk/turboauthenticatedclient
 Words: 1522
 Quality Score: 0.469
@@ -3295,9 +3804,9 @@ userAddress: '2cor...VUa',
 
 ---
 
-# 51. Data  ARIO Documentation
+# 54. Data  ARIO Documentation
 
-Document Number: 51
+Document Number: 54
 Source: https://docs.ar.io/apis/ar-io-node/data
 Words: 169
 Quality Score: 0.468
@@ -3314,9 +3823,348 @@ Returns the same headers as the GET request.Path Parameters txId string Match ^[
 
 ---
 
-# 52. TurboFactory  ARIO Documentation
+# 55. Using Turbo SDK with Nextjs  ARIO Documentation
 
-Document Number: 52
+Document Number: 55
+Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser/nextjs
+Words: 1700
+Quality Score: 0.467
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Guides Using Turbo in a Browser Using Turbo SDK with Next.js Overview This guide demonstrates how to configure the @ardrive/turbo-sdk in a Next.js application with proper polyfills for client-side usage. Next.js uses webpack under the hood, which requires specific configuration to handle Node.js modules that the Turbo SDK depends on.Polyfills: Polyfills are required when using the Turbo SDK in Next.js
+applications. The SDK relies on Node.js modules like crypto, buffer,process, and stream that are not available in the browser by default.Prerequisites Next.js 13+ (with App Router or Pages Router) Node.js 18+ Basic familiarity with Next.js configuration Install the main Turbo SDK package:npm install @ardrive/turbo-sdk Add required polyfill packages for browser compatibility:npm install --save-dev crypto-browserify stream-browserify process buffer Wallet Integration Dependencies: The Turbo SDK includes @dha-team/arbundles as a peer dependency, which provides the necessary
+signers for browser wallet integration (like InjectedEthereumSigner and ArconnectSigner). You can import these directly without additional
+installation.Create or update your next.config.js file to include the necessary polyfills:/** @type {import('next').NextConfig} */
+const nextConfig = {
+webpack: (config, { isServer }) => {
+// Only configure polyfills for client-side bundles
+if (!isServer) {
+config.resolve.fallback = {
+...config.resolve.fallback,
+crypto: require.resolve("crypto-browserify"),
+stream: require.resolve("stream-browserify"),
+buffer: require.resolve("buffer"),
+process: require.resolve("process/browser"),
+fs: false,
+net: false,
+tls: false,
+};
+// Provide global process and Buffer
+config.plugins.push(
+new config.webpack.ProvidePlugin({
+process: "process/browser",
+Buffer: ["buffer", "Buffer"],
+})
+);
+}
+return config;
+},
+};
+module.exports = nextConfig;If you're using TypeScript, update your tsconfig.json to include proper module resolution:{
+"compilerOptions": {
+"moduleResolution": "bundler",
+"lib": ["es2015", "dom", "dom.iterable"]
+// ... other options
+}
+} TypeScript Wallet Types Create a types/wallet.d.ts file to properly type wallet objects:// types/wallet.d.ts
+interface Window {
+ethereum?: {
+request: (args: { method: string; params?: any[] }) => Promise;
+on?: (event: string, handler: (...args: any[]) => void) => void;
+removeListener?: (event: string, handler: (...args: any[]) => void) => void;
+isMetaMask?: boolean;
+};
+arweaveWallet?: {
+connect: (permissions: string[]) => Promise;
+disconnect: () => Promise;
+getActiveAddress: () => Promise;
+getPermissions: () => Promise;
+sign: (transaction: any) => Promise;
+getPublicKey: () => Promise;
+};
+} Select between MetaMask or Wander wallet integration:Create a React component for MetaMask wallet integration:"use client";
+import { TurboFactory } from "@ardrive/turbo-sdk/web";
+import { InjectedEthereumSigner } from "@dha-team/arbundles";
+import { useState, useCallback } from "react";
+export default function MetaMaskUploader() {
+const [connected, setConnected] = useState(false);
+const [address, setAddress] = useState("");
+const [uploading, setUploading] = useState(false);
+const [uploadResult, setUploadResult] = useState(null);
+const connectMetaMask = useCallback(async () => {
+try {
+if (!window.ethereum) {
+alert("MetaMask is not installed!");
+return;
+}
+// Request account access
+await window.ethereum.request({
+method: "eth_requestAccounts",
+});
+// Get the current account
+const accounts = await window.ethereum.request({
+method: "eth_accounts",
+});
+if (accounts.length > 0) {
+setAddress(accounts[0]);
+setConnected(true);
+// Log current chain for debugging
+const chainId = await window.ethereum.request({
+method: "eth_chainId",
+});
+console.log("Connected to chain:", chainId);
+}
+} catch (error) {
+console.error("Failed to connect to MetaMask:", error);
+}
+}, []);
+const uploadWithMetaMask = async (event) => {
+const file = event.target.files?.[0];
+if (!file || !connected) return;
+setUploading(true);
+try {
+// Create a provider wrapper for InjectedEthereumSigner
+const providerWrapper = {
+getSigner: () => ({
+signMessage: async (message: string | Uint8Array) => {
+const accounts = await window.ethereum!.request({
+method: "eth_accounts",
+});
+if (accounts.length === 0) {
+throw new Error("No accounts available");
+}
+// Convert message to hex if it's Uint8Array
+const messageToSign =
+typeof message === "string"
+? message
+: "0x" +
+Array.from(message)
+.map((b) => b.toString(16).padStart(2, "0"))
+.join("");
+return await window.ethereum!.request({
+method: "personal_sign",
+params: [messageToSign, accounts[0]],
+});
+},
+}),
+};
+// Create the signer using InjectedEthereumSigner
+const signer = new InjectedEthereumSigner(providerWrapper);
+const turbo = TurboFactory.authenticated({
+signer,
+token: "ethereum", // Important: specify token type for Ethereum
+});
+// Upload file with progress tracking
+const result = await turbo.uploadFile({
+fileStreamFactory: () => file.stream(),
+fileSizeFactory: () => file.size,
+dataItemOpts: {
+tags: [
+{ name: "Content-Type", value: file.type },
+{ name: "App-Name", value: "My-Next-App" },
+{ name: "Funded-By", value: "Ethereum" },
+],
+},
+events: {
+onProgress: ({ totalBytes, processedBytes, step }) => {
+console.log(
+`${step}: ${Math.round((processedBytes / totalBytes) * 100)}%`
+);
+},
+onError: ({ error, step }) => {
+console.error(`Error during ${step}:`, error);
+console.error("Error details:", JSON.stringify(error, null, 2));
+},
+},
+});
+setUploadResult(result);
+} catch (error) {
+console.error("Upload failed:", error);
+console.error("Error details:", JSON.stringify(error, null, 2));
+alert(`Upload failed: ${error.message}`);
+} finally {
+setUploading(false);
+}
+};
+return (
+MetaMask Upload
+{!connected ? (
+
+Connect MetaMask
+
+) : (
+
+
+✅ Connected: {address.slice(0, 6)}...{address.slice(-4)}
+
+
+
+Select File to Upload:
+
+
+
+{uploading && (
+
+🔄 Up Please confirm transaction in MetaMask
+
+)}
+{uploadResult && (
+
+
+✅ Upload Successful!
+
+
+Transaction ID: {uploadResult.id}
+
+
+Data Size: {uploadResult.totalBytes} bytes
+
+
+)}
+
+)}
+);
+} Create a React component for Wander wallet integration:"use client";
+import { TurboFactory, ArconnectSigner } from "@ardrive/turbo-sdk/web";
+import { useState, useCallback } from "react";
+export default function WanderWalletUploader() {
+const [connected, setConnected] = useState(false);
+const [address, setAddress] = useState("");
+const [uploading, setUploading] = useState(false);
+const [uploadResult, setUploadResult] = useState(null);
+const connectWanderWallet = useCallback(async () => {
+try {
+if (!window.arweaveWallet) {
+alert("Wander wallet is not installed!");
+return;
+}
+// Required permissions for Turbo SDK
+const permissions = [
+"ACCESS_ADDRESS",
+"ACCESS_PUBLIC_KEY",
+"SIGN_TRANSACTION",
+"SIGNATURE",
+];
+// Connect to wallet
+await window.arweaveWallet.connect(permissions);
+// Get wallet address
+const walletAddress = await window.arweaveWallet.getActiveAddress();
+setAddress(walletAddress);
+setConnected(true);
+} catch (error) {
+console.error("Failed to connect to Wander wallet:", error);
+}
+}, []);
+const uploadWithWanderWallet = async (event) => {
+const file = event.target.files?.[0];
+if (!file || !connected) return;
+setUploading(true);
+try {
+// Create ArConnect signer using Wander wallet
+const signer = new ArconnectSigner(window.arweaveWallet);
+const turbo = TurboFactory.authenticated({ signer });
+// Note: No need to specify token for Arweave as it's the default
+// Upload file with progress tracking
+const result = await turbo.uploadFile({
+fileStreamFactory: () => file.stream(),
+fileSizeFactory: () => file.size,
+dataItemOpts: {
+tags: [
+{ name: "Content-Type", value: file.type },
+{ name: "App-Name", value: "My-Next-App" },
+{ name: "Funded-By", value: "Arweave" },
+],
+},
+events: {
+onProgress: ({ totalBytes, processedBytes, step }) => {
+console.log(
+`${step}: ${Math.round((processedBytes / totalBytes) * 100)}%`
+);
+},
+onError: ({ error, step }) => {
+console.error(`Error during ${step}:`, error);
+},
+},
+});
+setUploadResult(result);
+} catch (error) {
+console.error("Upload failed:", error);
+alert(`Upload failed: ${error.message}`);
+} finally {
+setUploading(false);
+}
+};
+return (
+Wander Wallet Upload
+{!connected ? (
+
+Connect Wander Wallet
+
+) : (
+
+
+✅ Connected: {address.slice(0, 6)}...{address.slice(-4)}
+
+
+
+Select File to Upload:
+
+
+
+{uploading && (
+
+🔄 Up Please confirm transaction in Wander wallet
+
+)}
+{uploadResult && (
+
+
+✅ Upload Successful!
+
+
+Transaction ID: {uploadResult.id}
+
+
+Data Size: {uploadResult.totalBytes} bytes
+
+
+)}
+
+)}
+);
+} Common Issues and Solutions Build Errors If you encounter build errors related to missing modules:"Module not found: Can't resolve 'fs'" Ensure fs: false is set in your webpack fallback configuration "process is not defined" Make sure you have the ProvidePlugin configuration for process "Buffer is not defined" Verify the Buffer polyfill is properly configured in ProvidePlugin Runtime Errors "crypto.getRandomValues is not a function" This usually indicates the crypto polyfill isn't working. Double-check your webpack configuration."TypeError: e.startsWith is not a function" This indicates incorrect signer usage. For MetaMask integration, use InjectedEthereumSigner from @dha-team/arbundles, not EthereumSigner.EthereumSigner expects a private key string, while InjectedEthereumSigner expects a provider wrapper."No accounts available" during wallet operations Ensure the wallet is properly connected before attempting operations Add validation to check account availability after connection Message signing failures with wallets For InjectedEthereumSigner, ensure your provider wrapper correctly implements the getSigner() method Handle both string and Uint8Array message types in your signMessage implementation Use MetaMask's personal_sign method with proper parameter formatting Server-side rendering issues Always use 'use client' directive for components that use the Turbo SDK Consider dynamic imports with ssr: false for complex cases:import dynamic from "next/dynamic";
+const TurboUploader = dynamic(() => import("./TurboUploader"), {
+ssr: false,
+});Wallet Integration Issues Incorrect Signer Import // ❌ INCORRECT - For Node environments
+import { EthereumSigner } from "@ardrive/turbo-sdk/web";
+// ✅ CORRECT - For browser wallets
+import { InjectedEthereumSigner } from "@dha-team/arbundles";Provider Interface Mismatch // ❌ INCORRECT - window.ethereum doesn't have getSigner()
+const signer = new InjectedEthereumSigner(window.ethereum);
+// ✅ CORRECT - Use a provider wrapper
+const providerWrapper = {
+getSigner: () => ({
+signMessage: async (message: string | Uint8Array) => {
+// Implementation here
+},
+}),
+};
+const signer = new InjectedEthereumSigner(providerWrapper);Missing Dependencies If you encounter import errors for @dha-team/arbundles, note that it's available as a peer dependency through @ardrive/turbo-sdk. You may need to ensure it's properly resolved in your build process.Best Practices Use Client Components: Always mark components using the Turbo SDK with 'use client' Error Handling: Implement proper error handling for network requests and wallet interactions Environment Variables: Store sensitive configuration in environment variables:// next.config.js
+const nextConfig = {
+env: {
+TURBO_UPLOAD_URL: process.env.TURBO_UPLOAD_URL,
+TURBO_PAYMENT_URL: process.env.TURBO_PAYMENT_URL,
+},
+// ... webpack config
+};Bundle Size: Consider code splitting for large applications to reduce bundle size Wallet Security:Never expose private keys in client-side code Always use browser wallet integrations (MetaMask, Wander, etc.) Request only necessary permissions from wallets Validate wallet connections before use Handle wallet disconnection gracefully Production Deployment Checklist For production deployments:Verify polyfills work correctly in your build environment Test wallet connections with various providers (Wander, MetaMask, etc.) Monitor bundle sizes to ensure polyfills don't significantly increase your app size Use environment-specific configurations for different Turbo endpoints Implement proper error boundaries for wallet connection failures Add loading states for wallet operations to improve UX Test across different browsers to ensure wallet compatibility Implementation Verification To verify your MetaMask integration is working correctly:Check Console Logs: After connecting to MetaMask, you should see:Connected to chain: 0x1 (or appropriate chain ID) Test Balance Retrieval: Add this to verify your authenticated client works:// After creating authenticated turbo client
+const balance = await turbo.getBalance();
+console.log("Current balance:", balance);Verify Signer Setup: Your implementation should:Use InjectedEthereumSigner from @dha-team/arbundles Include a proper provider wrapper with getSigner() method Handle both string and Uint8Array message types Use MetaMask's personal_sign method Common Success Indicators:No TypeError: e.startsWith is not a function errors Successful wallet connection and address dis Ability to fetch balance without errors Upload operations work with proper MetaMask transaction prompts Additional Resources Turbo SDK Documentation Web Usage Examples Next.js Webpack Configuration ArDrive Examples Repository For more examples and advanced usage patterns, refer to the Turbo SDK examples directory or the main SDK documentation.How is this guide?Using Turbo SDK with Vanilla HTML Integrate Turbo SDK directly into vanilla HTML pages using CDN imports Using Turbo SDK with Vite Configure Turbo SDK in a Vite application with proper polyfills for client-side usage
+
+---
+
+# 56. TurboFactory  ARIO Documentation
+
+Document Number: 56
 Source: https://docs.ar.io/sdks/turbo-sdk/turbofactory
 Words: 195
 Quality Score: 0.465
@@ -3348,9 +4196,9 @@ token: 'kyve',
 
 ---
 
-# 53. Introduction  ARIO Documentation
+# 57. Introduction  ARIO Documentation
 
-Document Number: 53
+Document Number: 57
 Source: https://docs.ar.io/sdks
 Words: 220
 Quality Score: 0.464
@@ -3361,9 +4209,22 @@ Build powerful applications with our comprehensive suite of SDKs designed for th
 
 ---
 
-# 54. Staking  ARIO Documentation
+# 58. Using Turbo in a Browser  ARIO Documentation
 
-Document Number: 54
+Document Number: 58
+Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser
+Words: 252
+Quality Score: 0.463
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Guides Using Turbo in a Browser Integrate the Turbo SDK directly into your web applications for fast, reliable data uploads to Arweave. Choose the approach that best fits your development workflow and framework preferences.What You Can Build With Turbo SDK in browsers, you can:Upload files directly from web applications to Arweave Pay with different tokens (AR, Ethereum, and more) Integrate with popular wallets (MetaMask, Wander, ArConnect) Build permanent web apps that store data on Arweave Create data marketplaces and decentralized applications Getting Started Vanilla HTML Start with the simplest approach - no build tools required Key topics:CDN imports for instant setup Wallet integration examples Production deployment considerations Error handling and troubleshooting Next.js Full-stack React applications with server-side rendering Key topics:Webpack polyfill configuration Client-side component setup TypeScript integration Production optimization Vite Fast development with modern build tools Key topics:Vite plugin configuration React and TypeScript setup Hot module replacement Bundle optimization Why Use Turbo SDK?Fast uploads - Upload data to Arweave in seconds, not minutes Multiple payment options - Pay with AR, Ethereum, or other supported tokens Wallet integration - Seamlessly connect with popular browser wallets Reliable infrastructure - Built on Arweave's permanent storage network Developer-friendly - Simple APIs with comprehensive documentation How is this guide?Crossmint NFT Minting App Build a decentralized NFT minting app with Arweave and Crossmint Using Turbo SDK with Vanilla HTML Integrate Turbo SDK directly into vanilla HTML pages using CDN imports On this page Using Turbo in a Browser What You Can Build Getting Started Why Use Turbo SDK?
+
+---
+
+# 59. Staking  ARIO Documentation
+
+Document Number: 59
 Source: https://docs.ar.io/learn/token/staking
 Words: 853
 Quality Score: 0.463
@@ -3374,9 +4235,9 @@ Token Overview Staking tokens within the AR.IO Network serves a dual primary pur
 
 ---
 
-# 55. Manage your Gateway  ARIO Documentation
+# 60. Manage your Gateway  ARIO Documentation
 
-Document Number: 55
+Document Number: 60
 Source: https://docs.ar.io/build/run-a-gateway/manage
 Words: 228
 Quality Score: 0.462
@@ -3391,9 +4252,9 @@ failed epoch guidance, and frequently asked questions.How is this guide?Join the
 
 ---
 
-# 56. Token Conversion  ARIO Documentation
+# 61. Token Conversion  ARIO Documentation
 
-Document Number: 56
+Document Number: 61
 Source: https://docs.ar.io/sdks/ar-io-sdk/token-conversion
 Words: 115
 Quality Score: 0.456
@@ -3408,9 +4269,9 @@ const arioValue = new mARIOToken(mARIOValue).toARIO();How is this guide?Static M
 
 ---
 
-# 57. Paying for Uploads  ARIO Documentation
+# 62. Paying for Uploads  ARIO Documentation
 
-Document Number: 57
+Document Number: 62
 Source: https://docs.ar.io/build/upload/turbo-credits
 Words: 512
 Quality Score: 0.456
@@ -3428,9 +4289,9 @@ console.log(`Balance: ${balance.winc} Winston Credits`);Credit Sharing Turbo Cre
 
 ---
 
-# 58. What is Arweave  ARIO Documentation
+# 63. What is Arweave  ARIO Documentation
 
-Document Number: 58
+Document Number: 63
 Source: https://docs.ar.io/learn/what-is-arweave
 Words: 568
 Quality Score: 0.456
@@ -3441,9 +4302,9 @@ Introduction Arweave is a decentralized storage network that ensures data is per
 
 ---
 
-# 59. ArNS Marketplace  ARIO Documentation
+# 64. ArNS Marketplace  ARIO Documentation
 
-Document Number: 59
+Document Number: 64
 Source: https://docs.ar.io/build/guides/arns-marketplace
 Words: 550
 Quality Score: 0.455
@@ -3454,9 +4315,9 @@ Build Guides ArNS tokens have the potential to be traded and sold in decentraliz
 
 ---
 
-# 60. Static Methods  ARIO Documentation
+# 65. Static Methods  ARIO Documentation
 
-Document Number: 60
+Document Number: 65
 Source: https://docs.ar.io/sdks/ar-io-sdk/static-methods
 Words: 166
 Quality Score: 0.455
@@ -3493,9 +4354,9 @@ console.log(`Failed reassignments: ${Object.keys(result.failedReassignedNames)}`
 
 ---
 
-# 61. Turbo Credit Sharing  ARIO Documentation
+# 66. Turbo Credit Sharing  ARIO Documentation
 
-Document Number: 61
+Document Number: 66
 Source: https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing
 Words: 519
 Quality Score: 0.453
@@ -3506,9 +4367,9 @@ Turbo SDK Users can share their purchased Credits with other users' wallets by c
 
 ---
 
-# 62. Glossary  ARIO Documentation
+# 67. Glossary  ARIO Documentation
 
-Document Number: 62
+Document Number: 67
 Source: https://docs.ar.io/glossary
 Words: 170
 Quality Score: 0.450
@@ -3519,9 +4380,9 @@ AO Computer AO (Actor Oriented) is a hyper-parallel computing platform built on 
 
 ---
 
-# 63. Logging  ARIO Documentation
+# 68. Logging  ARIO Documentation
 
-Document Number: 63
+Document Number: 68
 Source: https://docs.ar.io/sdks/ar-io-sdk/logging
 Words: 359
 Quality Score: 0.449
@@ -3571,9 +4432,9 @@ Logger.default = adapter;How is this guide?Token Conversion TypeScript/JavaScrip
 
 ---
 
-# 64. Upgrading Private Drives  ARIO Documentation
+# 69. Upgrading Private Drives  ARIO Documentation
 
-Document Number: 64
+Document Number: 69
 Source: https://docs.ar.io/build/advanced/arfs/upgrading-drives
 Words: 947
 Quality Score: 0.449
@@ -3678,9 +4539,9 @@ console.error("Upgrade failed:", error);
 
 ---
 
-# 65. Introduction  ARIO Documentation
+# 70. Introduction  ARIO Documentation
 
-Document Number: 65
+Document Number: 70
 Source: https://docs.ar.io/learn
 Words: 177
 Quality Score: 0.448
@@ -3691,9 +4552,9 @@ AR.IO is the decentralized gateway protocol for Arweave. Deploy gateways, regist
 
 ---
 
-# 66. Normalized Addresses  ARIO Documentation
+# 71. Normalized Addresses  ARIO Documentation
 
-Document Number: 66
+Document Number: 71
 Source: https://docs.ar.io/build/advanced/normalized-addresses
 Words: 675
 Quality Score: 0.448
@@ -3707,9 +4568,9 @@ respectively.Arweave The public key for an Arweave wallet is the n field of the 
 
 ---
 
-# 67. Observer Selection  ARIO Documentation
+# 72. Observer Selection  ARIO Documentation
 
-Document Number: 67
+Document Number: 72
 Source: https://docs.ar.io/learn/oip/observer-selection
 Words: 548
 Quality Score: 0.448
@@ -3720,9 +4581,9 @@ Observation & Incentive Protocol Epochs and Selection Timeline The AR.IO network
 
 ---
 
-# 68. ARIO Gateway APIs  ARIO Documentation
+# 73. ARIO Gateway APIs  ARIO Documentation
 
-Document Number: 68
+Document Number: 73
 Source: https://docs.ar.io/apis/ar-io-node
 Words: 351
 Quality Score: 0.448
@@ -3733,9 +4594,9 @@ The AR.IO Gateway is the core software for the AR.IO network, serving the essent
 
 ---
 
-# 69. Troubleshooting  ARIO Documentation
+# 74. Troubleshooting  ARIO Documentation
 
-Document Number: 69
+Document Number: 74
 Source: https://docs.ar.io/build/run-a-gateway/manage/troubleshooting
 Words: 1871
 Quality Score: 0.447
@@ -3746,9 +4607,9 @@ Run a Gateway Manage your Gateway Welcome to the comprehensive troubleshooting a
 
 ---
 
-# 70. Distributions  ARIO Documentation
+# 75. Distributions  ARIO Documentation
 
-Document Number: 70
+Document Number: 75
 Source: https://docs.ar.io/learn/oip/reward-distribution
 Words: 799
 Quality Score: 0.444
@@ -3804,9 +4665,9 @@ How is this guide?GoodBadPerformance and WeightsLearn about how gateways are eva
 
 ---
 
-# 71. Balance  ARIO Documentation
+# 76. Balance  ARIO Documentation
 
-Document Number: 71
+Document Number: 76
 Source: https://docs.ar.io/apis/turbo/payment-service/balance
 Words: 87
 Quality Score: 0.444
@@ -3817,9 +4678,9 @@ Turbo Payment Service Account balance and credit management Get Current Balance 
 
 ---
 
-# 72. ArFS Protocol  ARIO Documentation
+# 77. ArFS Protocol  ARIO Documentation
 
-Document Number: 72
+Document Number: 77
 Source: https://docs.ar.io/build/advanced/arfs
 Words: 487
 Quality Score: 0.442
@@ -3830,9 +4691,9 @@ Advanced Arweave File System, or "ArFS" is a data modeling, storage, and retriev
 
 ---
 
-# 73. Encryption  ARIO Documentation
+# 78. Encryption  ARIO Documentation
 
-Document Number: 73
+Document Number: 78
 Source: https://docs.ar.io/build/upload/encryption
 Words: 512
 Quality Score: 0.440
@@ -3873,9 +4734,9 @@ separate "ArDrive Encryption Service." Getting Started For most users, the ArDri
 
 ---
 
-# 74. Data Verification  ARIO Documentation
+# 79. Data Verification  ARIO Documentation
 
-Document Number: 74
+Document Number: 79
 Source: https://docs.ar.io/learn/gateways/data-verification
 Words: 539
 Quality Score: 0.440
@@ -3886,24 +4747,56 @@ Gateways AR.IO gateways continuously verify that data chunks are correctly store
 
 ---
 
-# 75. Advanced  ARIO Documentation
+# 80. EthAReum Protocol  ARIO Documentation
 
-Document Number: 75
-Source: https://docs.ar.io/build/advanced
-Words: 125
-Quality Score: 0.433
+Document Number: 80
+Source: https://docs.ar.io/build/advanced/ethareum
+Words: 764
+Quality Score: 0.434
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Overview Explore advanced topics and specialized guides for building on Arweave and AR.IO. These resources are designed for developers and operators who need deeper technical knowledge and advanced configuration options.Advanced Topics ArFS Protocol Normalized Addresses Understanding wallet address normalization across different networks Key
-topics: - Address format standards - Cross-chain compatibility -
-Implementation details Browser Sandboxing Security mechanisms in AR.IO gateways Key topics:Same-origin policy Subdomain isolation Security best practices Ready to Go Advanced?New to Arweave? Start with our Getting Started guide to understand the basics.Building dApps? Check out ArFS Protocol for structured data storage solutions.How is this guide?Crossmint NFT Minting App Build a decentralized NFT minting app with Arweave and Crossmint ArFS Protocol A decentralized file system on Arweave for structured data storage and retrieval
+Advanced The EthAReum protocol enables the generation of private keys for an Arweave wallet using a signature from an Ethereum or Solana wallet. This allows users to create an Arweave wallet directly through popular wallet providers like MetaMask, providing seamless cross-chain wallet management.Generated private keys provide a fully functional Arweave wallet, equipped to perform all standard operations, including holding AR tokens and Turbo Credits, and uploading data to the Arweave network.How It Works EthAReum uses a deterministic key derivation process that combines:Ethereum/Solana wallet signature - Provides the cryptographic foundation User-generated password - Adds additional entropy and security Standardized derivation algorithm - Ensures reproducible results The protocol generates a unique Arweave wallet that is cryptographically linked to your Ethereum or Solana wallet but remains completely independent.Browser Compatibility Recommended Browser: For optimal performance, use Chrome when working
+with EthAReum and MetaMask. While EthAReum functions correctly in most
+browsers, there are ongoing efforts to resolve some edge case compatibility
+issues in other environments.Password Security The EthAReum protocol incorporates a user-generated password in the wallet derivation process. This password provides an extra layer of security by contributing additional entropy to the wallet's derivation and serves as a critical verification step for wallet access.Permanent Password: The password used during the derivation of private
+keys is permanent and cannot be changed or recovered by any administrator.
+ArDrive is a decentralized platform with no account administration. It is
+crucial to keep this password secure.Password Requirements Must be set during initial wallet creation Used for all subsequent logins Required for encrypting private uploads Cannot be recovered if forgotten Wallet Addresses The public address of the generated Arweave wallet is derived from its public key and will be different from the public address of the Ethereum or Solana wallet used to generate it.Viewing Your Address The exact steps to obtain your generated wallet's public address depend on the dApp interface:ArDrive: Click the user profile icon in the top right when logged in Other dApps: Check the wallet settings or profile section Key Management Keyfiles vs Seed Phrases The Arweave ecosystem primarily uses keyfiles rather than seed phrases for wallet access:Keyfile: JSON file containing a Json Web Key (JWK) that acts as private keys Seed Phrase: Supported but not universally implemented across all dApps Accessing Your Keys Both keyfile and seed phrase are available for download in most dApps:ArDrive: Click the user profile icon in the top right when logged in Other dApps: Check wallet settings or export options Security Considerations One-Way Control EthAReum generates Arweave wallet private keys using a signature from your Ethereum/Solana wallet, ensuring that control only extends in one direction:✅ EthAReum can generate Arweave wallets from Ethereum/Solana signatures ❌ EthAReum cannot access your Ethereum/Solana wallet or assets ✅ Your Ethereum/Solana assets remain completely secure and independent Signature Security Beware of Malicious dApps: Some malicious dApps or websites may disguise
+high-risk authorization transactions as simple signature requests. Always
+ensure that you only provide signatures to reputable and trusted dApps like
+ArDrive.Best Practices Verify dApp authenticity before providing signatures Use strong, unique passwords for wallet derivation Backup your keyfile in a secure location Never share your password or keyfile with anyone Test with small amounts before committing to large transactions Implementation Examples Basic Wallet Generation // Example: Generate Arweave wallet from Ethereum signature
+async function generateArweaveWallet(ethereumSignature, password) {
+// This is a conceptual example - actual implementation
+// would use the EthAReum protocol specification
+const derivedKey = await deriveKeyFromSignature(
+ethereumSignature,
+password,
+"arweave" // derivation context
+);
+return {
+address: getAddressFromKey(derivedKey),
+keyfile: createKeyfile(derivedKey),
+seedPhrase: generateSeedPhrase(derivedKey),
+};
+} Integration with MetaMask // Example: Request signature from MetaMask
+async function requestEthereumSignature() {
+const accounts = await ethereum.request({
+method: "eth_requestAccounts",
+});
+const message = "Sign this message to generate your Arweave wallet";
+const signature = await ethereum.request({
+method: "personal_sign",
+params: [message, accounts[0]],
+});
+return signature;
+} Use Cases Cross-Chain dApp Development Unified wallet experience across Ethereum and Arweave Simplified onboarding for users familiar with Ethereum Reduced friction in multi-chain applications Data Storage Solutions Decentralized file storage using existing Ethereum wallets NFT metadata storage on Arweave with Ethereum wallet access Cross-chain data management for DeFi applications Developer Benefits Familiar wallet interfaces for users Reduced development complexity for multi-chain apps Enhanced user experience with single wallet management Next Steps ArFS Protocol Learn about structured data storage on Arweave using your generated wallet.Turbo Upload Upload data efficiently using Turbo Credits with your EthAReum wallet.Data Retrieval Learn how to find and access data stored with your generated wallet.How is this guide?Browser Sandboxing Learn about browser sandboxing in AR.IO gateways - how security is enhanced through same-origin policy and subdomain redirection
 
 ---
 
-# 76. Arweave Name System (ArNS)  ARIO Documentation
+# 81. Arweave Name System (ArNS)  ARIO Documentation
 
-Document Number: 76
+Document Number: 81
 Source: https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns
 Words: 1061
 Quality Score: 0.425
@@ -4118,9 +5011,9 @@ const returnedName = await ario.getArNSReturnedName({ name: 'permalink' });Outpu
 
 ---
 
-# 77. Data Retrieval  ARIO Documentation
+# 82. Data Retrieval  ARIO Documentation
 
-Document Number: 77
+Document Number: 82
 Source: https://docs.ar.io/learn/gateways/data-retrieval
 Words: 564
 Quality Score: 0.424
@@ -4131,9 +5024,9 @@ Gateways AR.IO gateways use a sophisticated multi-tier architecture to retrieve 
 
 ---
 
-# 78. Observation  Incentive Protocol  ARIO Documentation
+# 83. Observation  Incentive Protocol  ARIO Documentation
 
-Document Number: 78
+Document Number: 83
 Source: https://docs.ar.io/learn/oip
 Words: 410
 Quality Score: 0.421
@@ -4144,9 +5037,9 @@ Overview The Observation and Incentive Protocol ensures network quality through 
 
 ---
 
-# 79. Extensions  Sidecars  ARIO Documentation
+# 84. Extensions  Sidecars  ARIO Documentation
 
-Document Number: 79
+Document Number: 84
 Source: https://docs.ar.io/build/extensions
 Words: 249
 Quality Score: 0.421
@@ -4159,9 +5052,9 @@ access control.AO Compute Unit Sidecar Execute AO processes locally with WASM mo
 
 ---
 
-# 80. Architecture  ARIO Documentation
+# 85. Architecture  ARIO Documentation
 
-Document Number: 80
+Document Number: 85
 Source: https://docs.ar.io/learn/gateways/architecture
 Words: 584
 Quality Score: 0.420
@@ -4172,9 +5065,9 @@ Gateways AR.IO gateways are sophisticated data access layers built on top of the
 
 ---
 
-# 81. Name Registration  ARIO Documentation
+# 86. Name Registration  ARIO Documentation
 
-Document Number: 81
+Document Number: 86
 Source: https://docs.ar.io/learn/arns/name-registration
 Words: 693
 Quality Score: 0.417
@@ -4185,9 +5078,9 @@ Arweave Name System (ArNS) There are two different types of name registrations t
 
 ---
 
-# 82. Add to Wander  ARIO Documentation
+# 87. Add to Wander  ARIO Documentation
 
-Document Number: 82
+Document Number: 87
 Source: https://docs.ar.io/learn/token/add-to-wander
 Words: 638
 Quality Score: 0.415
@@ -4198,9 +5091,9 @@ Token Adding ARIO Token to Wander Wander (formerly ArConnect) is the primary wal
 
 ---
 
-# 83. Use Cases  ARIO Documentation
+# 88. Use Cases  ARIO Documentation
 
-Document Number: 83
+Document Number: 88
 Source: https://docs.ar.io/learn/wayfinder/use-cases
 Words: 515
 Quality Score: 0.413
@@ -4211,9 +5104,9 @@ Wayfinder Decentralized Web Hosting with Flexible Access With Wayfinder, not onl
 
 ---
 
-# 84. Reporting  ARIO Documentation
+# 89. Reporting  ARIO Documentation
 
-Document Number: 84
+Document Number: 89
 Source: https://docs.ar.io/learn/oip/reporting
 Words: 448
 Quality Score: 0.412
@@ -4224,9 +5117,9 @@ Observation & Incentive Protocol Observer Responsibilities Selected observers ha
 
 ---
 
-# 85. Deploy a dApp with ArDrive Web  ARIO Documentation
+# 90. Deploy a dApp with ArDrive Web  ARIO Documentation
 
-Document Number: 85
+Document Number: 90
 Source: https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web
 Words: 654
 Quality Score: 0.411
@@ -4237,9 +5130,9 @@ Guides Create permanent dApps using the ArDrive web interface. This guide shows 
 
 ---
 
-# 86. What is the Permaweb  ARIO Documentation
+# 91. What is the Permaweb  ARIO Documentation
 
-Document Number: 86
+Document Number: 91
 Source: https://docs.ar.io/learn/permaweb
 Words: 682
 Quality Score: 0.405
@@ -4250,9 +5143,9 @@ Introduction The permaweb is a decentralized, permanent layer of the internet wh
 
 ---
 
-# 87. Gateway Registry  ARIO Documentation
+# 92. Gateway Registry  ARIO Documentation
 
-Document Number: 87
+Document Number: 92
 Source: https://docs.ar.io/learn/gateways/gateway-registry
 Words: 749
 Quality Score: 0.395
@@ -4263,9 +5156,9 @@ Gateways Overview The AR.IO Network consists of AR.IO gateway nodes, which are i
 
 ---
 
-# 88. Architecture  ARIO Documentation
+# 93. Architecture  ARIO Documentation
 
-Document Number: 88
+Document Number: 93
 Source: https://docs.ar.io/learn/token/architecture
 Words: 548
 Quality Score: 0.385
@@ -4276,9 +5169,9 @@ Token ARIO Contract Architecture The $ARIO token operates through a smart contra
 
 ---
 
-# 89. Get the Token  ARIO Documentation
+# 94. Get the Token  ARIO Documentation
 
-Document Number: 89
+Document Number: 94
 Source: https://docs.ar.io/learn/token/get-the-token
 Words: 316
 Quality Score: 0.385
@@ -4289,9 +5182,9 @@ Token Acquiring ARIO Tokens There are several ways to acquire ARIO tokens, depen
 
 ---
 
-# 90. Turbo APIs  ARIO Documentation
+# 95. Turbo APIs  ARIO Documentation
 
-Document Number: 90
+Document Number: 95
 Source: https://docs.ar.io/apis/turbo
 Words: 320
 Quality Score: 0.374
@@ -4302,9 +5195,9 @@ Turbo provides high-performance upload and payment services for the Arweave netw
 
 ---
 
-# 91. Token  ARIO Documentation
+# 96. Token  ARIO Documentation
 
-Document Number: 91
+Document Number: 96
 Source: https://docs.ar.io/learn/token
 Words: 591
 Quality Score: 0.369
@@ -4315,9 +5208,9 @@ Overview ARIO is the multifunction AO Computer based token that powers the AR.IO
 
 ---
 
-# 92. Performance and Weights  ARIO Documentation
+# 97. Performance and Weights  ARIO Documentation
 
-Document Number: 92
+Document Number: 97
 Source: https://docs.ar.io/learn/oip/performance-evaluation
 Words: 713
 Quality Score: 0.357
@@ -4400,9 +5293,9 @@ Ready to understand how rewards are distributed? Learn about Reward Distribution
 
 ---
 
-# 93. What are Bundles  ARIO Documentation
+# 98. What are Bundles  ARIO Documentation
 
-Document Number: 93
+Document Number: 98
 Source: https://docs.ar.io/learn/ans-104-bundles
 Words: 430
 Quality Score: 0.356
@@ -4413,9 +5306,9 @@ Introduction ANS-104 bundles are data packaging standards that efficiently bundl
 
 ---
 
-# 94. ARIO Gateways  ARIO Documentation
+# 99. ARIO Gateways  ARIO Documentation
 
-Document Number: 94
+Document Number: 99
 Source: https://docs.ar.io/learn/gateways
 Words: 511
 Quality Score: 0.306
