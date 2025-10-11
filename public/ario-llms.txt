@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-10T12:16:00.976Z
+Generated on: 2025-10-11T12:15:43.757Z
 Total documents: 99
-Total words: 63151
+Total words: 63774
 
 ## Table of Contents
 
@@ -79,32 +79,32 @@ Total words: 63151
 69. [Upgrading Private Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/upgrading-drives)
 70. [Introduction ARIO Documentation](https://docs.ar.io/learn)
 71. [Normalized Addresses ARIO Documentation](https://docs.ar.io/build/advanced/normalized-addresses)
-72. [Observer Selection ARIO Documentation](https://docs.ar.io/learn/oip/observer-selection)
-73. [ARIO Gateway APIs ARIO Documentation](https://docs.ar.io/apis/ar-io-node)
-74. [Troubleshooting ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/troubleshooting)
-75. [Distributions ARIO Documentation](https://docs.ar.io/learn/oip/reward-distribution)
-76. [Balance ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/balance)
-77. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
-78. [Encryption ARIO Documentation](https://docs.ar.io/build/upload/encryption)
-79. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
+72. [ARIO Gateway APIs ARIO Documentation](https://docs.ar.io/apis/ar-io-node)
+73. [Troubleshooting ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/troubleshooting)
+74. [Distributions ARIO Documentation](https://docs.ar.io/learn/oip/reward-distribution)
+75. [Balance ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/balance)
+76. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
+77. [Encryption ARIO Documentation](https://docs.ar.io/build/upload/encryption)
+78. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
+79. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
 80. [EthAReum Protocol ARIO Documentation](https://docs.ar.io/build/advanced/ethareum)
 81. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns)
 82. [Data Retrieval ARIO Documentation](https://docs.ar.io/learn/gateways/data-retrieval)
-83. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
-84. [Extensions Sidecars ARIO Documentation](https://docs.ar.io/build/extensions)
-85. [Architecture ARIO Documentation](https://docs.ar.io/learn/gateways/architecture)
-86. [Name Registration ARIO Documentation](https://docs.ar.io/learn/arns/name-registration)
-87. [Add to Wander ARIO Documentation](https://docs.ar.io/learn/token/add-to-wander)
-88. [Use Cases ARIO Documentation](https://docs.ar.io/learn/wayfinder/use-cases)
-89. [Reporting ARIO Documentation](https://docs.ar.io/learn/oip/reporting)
-90. [Deploy a dApp with ArDrive Web ARIO Documentation](https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web)
-91. [What is the Permaweb ARIO Documentation](https://docs.ar.io/learn/permaweb)
-92. [Gateway Registry ARIO Documentation](https://docs.ar.io/learn/gateways/gateway-registry)
-93. [Architecture ARIO Documentation](https://docs.ar.io/learn/token/architecture)
-94. [Get the Token ARIO Documentation](https://docs.ar.io/learn/token/get-the-token)
-95. [Turbo APIs ARIO Documentation](https://docs.ar.io/apis/turbo)
-96. [Token ARIO Documentation](https://docs.ar.io/learn/token)
-97. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
+83. [Extensions Sidecars ARIO Documentation](https://docs.ar.io/build/extensions)
+84. [Architecture ARIO Documentation](https://docs.ar.io/learn/gateways/architecture)
+85. [Name Registration ARIO Documentation](https://docs.ar.io/learn/arns/name-registration)
+86. [Add to Wander ARIO Documentation](https://docs.ar.io/learn/token/add-to-wander)
+87. [Use Cases ARIO Documentation](https://docs.ar.io/learn/wayfinder/use-cases)
+88. [Observer Selection ARIO Documentation](https://docs.ar.io/learn/oip/observer-selection)
+89. [Deploy a dApp with ArDrive Web ARIO Documentation](https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web)
+90. [What is the Permaweb ARIO Documentation](https://docs.ar.io/learn/permaweb)
+91. [Gateway Registry ARIO Documentation](https://docs.ar.io/learn/gateways/gateway-registry)
+92. [Architecture ARIO Documentation](https://docs.ar.io/learn/token/architecture)
+93. [Get the Token ARIO Documentation](https://docs.ar.io/learn/token/get-the-token)
+94. [Reporting ARIO Documentation](https://docs.ar.io/learn/oip/reporting)
+95. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
+96. [Turbo APIs ARIO Documentation](https://docs.ar.io/apis/turbo)
+97. [Token ARIO Documentation](https://docs.ar.io/learn/token)
 98. [What are Bundles ARIO Documentation](https://docs.ar.io/learn/ans-104-bundles)
 99. [ARIO Gateways ARIO Documentation](https://docs.ar.io/learn/gateways)
 
@@ -4568,22 +4568,9 @@ respectively.Arweave The public key for an Arweave wallet is the n field of the 
 
 ---
 
-# 72. Observer Selection  ARIO Documentation
+# 72. ARIO Gateway APIs  ARIO Documentation
 
 Document Number: 72
-Source: https://docs.ar.io/learn/oip/observer-selection
-Words: 548
-Quality Score: 0.448
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Observation & Incentive Protocol Epochs and Selection Timeline The AR.IO network operates on 24-hour epochs, during which the observer selection and evaluation process takes place. At the start of each epoch:50 observers are selected to monitor the network 2 prescribed ArNS names are chosen for all observers to test 8 additional names are selected by each observer individually This creates a consistent evaluation framework where all observers test the same baseline names while having flexibility to choose additional targets for comprehensive network monitoring.Selection Process Up to fifty (50) gateways are selected as observers per epoch using a sophisticated weighted random selection system. The selection uses hashchain entropy from previous AR.IO contract state messages to ensure unpredictable and tamper-resistant selection.The hashchain-based entropy provides cryptographic randomness for selecting:Observer Gateways: The 50 gateways chosen to perform observations Prescribed ArNS Names: The 2 common names all observers must evaluate This approach prevents manipulation while maintaining weighted probabilities based on gateway performance and commitment. gateways.ar.io/#/observers shows the current epoch prescribed observers and arns names, as well as their submission status Weighted Selection Criteria Observer selection is based on normalized composite weights that combine multiple performance and commitment factors. These weights determine each gateway's probability of being selected as an observer for the epoch.The selection considers four key factors that are multiplied together to create a composite weight (CW):Stake Weight (SW): Financial commitment to the network Tenure Weight (TW): Length of network participation Gateway Performance Ratio Weight (GPRW): Historical gateway performance Observer Performance Ratio Weight (OPRW): Historical observer performance These weights are then normalized across all eligible gateways to create selection probabilities. For detailed weight calculations and formulas, see Performance Evaluation.Hashchain Random Selection The selection process uses hashchain entropy from previous AR.IO contract state messages to achieve cryptographically secure randomness:How Hashchain Selection Works Entropy Source: Random numbers are generated from the hashchain of previous contract state messages Weighted Mapping: Each random number maps to normalized weight ranges of eligible gateways Observer Selection: The gateway whose weight range contains each random number is selected Prescribed Names: The same entropy selects 2 ArNS names that all observers must test This creates tamper-resistant selection where higher-weighted gateways have proportionally better chances of selection, while maintaining true randomness that cannot be predicted or manipulated.Fairness and Meritocracy This system ensures:Meritocratic Selection: Higher-performing gateways have better selection odds Fair Opportunity: All gateways maintain non-zero selection probability Tamper Resistance: Hashchain entropy prevents manipulation Consistent Standards: Prescribed names create common evaluation baseline The selection is saved in the contract state at epoch start to ensure that activities during the epoch do not affect selection or reward distribution. Next Steps Ready to understand how performance is evaluated? Learn about Performance Evaluation to see how gateways are scored, or explore Reward Distribution to understand how rewards are calculated and distributed.How is this guide?Observation & Incentive Protocol The Observation and Incentive Protocol is designed to maintain and enhance the operational integrity of gateways on the AR.IO Network through a combination of incentivizing gateways for good performance and tasking those gateways to fulfill the role of observers Reporting Learn about observer responsibilities for submitting reports to Arweave and the AR.IO Smart Contract On this page Epochs and Selection Timeline Selection Process Weighted Selection Criteria Hashchain Random Selection How Hashchain Selection Works Fairness and Meritocracy Next Steps
-
----
-
-# 73. ARIO Gateway APIs  ARIO Documentation
-
-Document Number: 73
 Source: https://docs.ar.io/apis/ar-io-node
 Words: 351
 Quality Score: 0.448
@@ -4594,9 +4581,9 @@ The AR.IO Gateway is the core software for the AR.IO network, serving the essent
 
 ---
 
-# 74. Troubleshooting  ARIO Documentation
+# 73. Troubleshooting  ARIO Documentation
 
-Document Number: 74
+Document Number: 73
 Source: https://docs.ar.io/build/run-a-gateway/manage/troubleshooting
 Words: 1871
 Quality Score: 0.447
@@ -4607,9 +4594,9 @@ Run a Gateway Manage your Gateway Welcome to the comprehensive troubleshooting a
 
 ---
 
-# 75. Distributions  ARIO Documentation
+# 74. Distributions  ARIO Documentation
 
-Document Number: 75
+Document Number: 74
 Source: https://docs.ar.io/learn/oip/reward-distribution
 Words: 799
 Quality Score: 0.444
@@ -4665,9 +4652,9 @@ How is this guide?GoodBadPerformance and WeightsLearn about how gateways are eva
 
 ---
 
-# 76. Balance  ARIO Documentation
+# 75. Balance  ARIO Documentation
 
-Document Number: 76
+Document Number: 75
 Source: https://docs.ar.io/apis/turbo/payment-service/balance
 Words: 87
 Quality Score: 0.444
@@ -4678,9 +4665,9 @@ Turbo Payment Service Account balance and credit management Get Current Balance 
 
 ---
 
-# 77. ArFS Protocol  ARIO Documentation
+# 76. ArFS Protocol  ARIO Documentation
 
-Document Number: 77
+Document Number: 76
 Source: https://docs.ar.io/build/advanced/arfs
 Words: 487
 Quality Score: 0.442
@@ -4691,9 +4678,9 @@ Advanced Arweave File System, or "ArFS" is a data modeling, storage, and retriev
 
 ---
 
-# 78. Encryption  ARIO Documentation
+# 77. Encryption  ARIO Documentation
 
-Document Number: 78
+Document Number: 77
 Source: https://docs.ar.io/build/upload/encryption
 Words: 512
 Quality Score: 0.440
@@ -4734,9 +4721,9 @@ separate "ArDrive Encryption Service." Getting Started For most users, the ArDri
 
 ---
 
-# 79. Data Verification  ARIO Documentation
+# 78. Data Verification  ARIO Documentation
 
-Document Number: 79
+Document Number: 78
 Source: https://docs.ar.io/learn/gateways/data-verification
 Words: 539
 Quality Score: 0.440
@@ -4744,6 +4731,19 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Gateways AR.IO gateways continuously verify that data chunks are correctly stored and retrievable from Arweave. This ensures users receive authentic, uncorrupted data with cryptographic proof of integrity. The verification system is what makes AR.IO gateways trustworthy data providers for the permaweb.How Gateways Verify Data Data verification is an ongoing process that uses Merkle tree cryptography to provide mathematical proof of data integrity. The process involves multiple specialized components working together to ensure cached data matches what's stored on Arweave:The Verification Workflow:Gateways achieve verification through a systematic five-phase process orchestrated by the DataVerificationWorker. This process ensures that every piece of cached data cryptographically matches its original form on Arweave, providing mathematical proof of integrity before serving data to users.1. Discovery Phase Periodically scan for unverified data items Priority-based queue management (higher priority items first) Track retry attempts for failed verifications 2. Data Retrieval Fetch data attributes from gateway storage Retrieve the complete data stream Gather metadata needed for verification 3. Cryptographic Computation Calculate Merkle data root from actual data stream Generate cryptographic proofs using the same algorithm as Arweave Create verifiable hash chains 4. Root Comparison Compare computed root against indexed root in database Verify data hasn't been corrupted or altered Validate chunk integrity against Merkle proofs 5. Action Based on Results Success: Mark data as verified with timestamp Failure: Trigger re-import from Arweave or unbundle from parent Error: Increment retry counter and requeue for later Verification Types AR.IO gateways handle different types of data verification based on the data's origin:Transaction Data Verification For individual Arweave transactions:Direct root validation against transaction data roots stored on-chain Complete data reconstruction from chunks to ensure availability Cryptographic proof that data matches what was originally stored Bundle Data Verification For ANS-104 data bundles (collections of data items):Bundle integrity checks to verify the container is valid Individual item verification within each bundle Recursive unbundling when verification fails to re-extract items Nested bundle support for bundles containing other bundles Chunk-Level Validation At the most granular level:Merkle proof validation for individual data chunks Sequential integrity ensuring chunks form complete data Parallel verification of multiple chunks for performance Why Verification Matters Cryptographic Trust Foundation Mathematical Proof: Merkle tree cryptography provides irrefutable proof of data integrity Independent Validation: Multiple gateways verify the same data independently Network Consensus: Distributed verification creates trust without central authority Data Integrity Guarantees Tamper Detection: Any alteration to data is immediately detectable Corruption Recovery: Automatic healing of corrupted data through re-import Permanent Storage Validation: Ensures Arweave's permanence promise is maintained Gateway Reliability Continuous Monitoring: Ongoing verification catches issues before users encounter them Self-Healing System: Automatic recovery mechanisms maintain data availability Transparent Operations: Verification status and timestamps provide audit trails Explore Gateway Systems Data Retrieval Learn how gateways fetch data from multiple sources with verification Gateway Architecture Understand the technical architecture behind verification systems Run Your Own Gateway Set up a gateway with built-in verification capabilities Gateway Configuration Configure verification settings and optimization options How is this guide?Data Retrieval How AR.IO gateways retrieve and share data from multiple sources including trusted peers and Arweave nodes Gateway Registry The AR.IO Network consists of AR.IO gateway nodes, which are identified by their registered Arweave wallet addresses and either their IP addresses or hostnames, as stored in the network
+
+---
+
+# 79. Observation  Incentive Protocol  ARIO Documentation
+
+Document Number: 79
+Source: https://docs.ar.io/learn/oip
+Words: 560
+Quality Score: 0.435
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Overview The Observation and Incentive Protocol ensures network quality through peer monitoring and performance-based rewards. Gateways are incentivized to maintain high performance while also serving as "observers" that evaluate their peers' ArNS resolution capabilities and data integrity verification.The protocol operates on 24-hour epochs where up to 50 gateways are selected as observers to test other gateways against ArNS name resolution criteria and chunk/offset validation. This creates a self-regulating ecosystem with transparent, consensus-based performance evaluation.Architecture Overview The Observer Protocol operates through a systematic process where selected gateways monitor their peers and report findings to maintain network quality:Epoch Cycle and Responsibilities Each 24-hour epoch follows a structured process with specific responsibilities for gateways and observers:Epoch Start Smart Contract: Selects up to 50 observers using weighted random selection Smart Contract: Generates 2 prescribed ArNS names for all observers to test Selected Observers: Receive notification of selection and prescribed names Observation Phase Observers: Choose 8 additional ArNS names to test (total of 10 names per gateway) Observers: Select subset of gateways for chunk/offset validation based on sampling rate Observers: Test assigned gateways for ArNS resolution, wallet ownership, content hashes, and response times Observers: Validate chunk/offset data integrity using cryptographic Merkle proofs Target Gateways: Respond to resolution requests, serve content, and provide chunk data with proofs Reporting Phase Observers: Upload detailed JSON reports to Arweave for transparency Observers: Submit failed gateway lists to the AR.IO Smart Contract for consensus voting Evaluation and Distribution Smart Contract: Tallies all observer votes (≥50% pass = functional gateway) Smart Contract: Distributes rewards at epoch end based on performance Functional Gateways/Observers: Receive ARIO token rewards automatically Key Features Decentralized Monitoring: Peer-to-peer evaluation ensures no single point of failure Consensus-Based Scoring: Majority rule (≥50% pass votes) determines gateway functionality Performance Incentives: Only functional gateways and observers receive ARIO token rewards Data Integrity Validation: Cryptographic verification of chunk/offset data using Merkle proofs Transparent Accountability: All reports permanently stored on Arweave and viewable at gateways.ar.io Sustainable Funding: Protocol balance funded by ArNS name purchases, aligning rewards with network usage Chunk/Offset Validation The protocol includes advanced data integrity verification through chunk/offset observation. Observers validate that gateways can correctly serve and verify Arweave data chunks using cryptographic proofs:Validation Process Sampling: A subset of gateways is selected for chunk validation each epoch Offset Testing: Random offsets within the stable weave range are tested Merkle Proof Verification: Cryptographic validation ensures chunk authenticity Binary Search Optimization: Efficient transaction lookup using cached metadata Technical Implementation Chunk Retrieval: GET /chunk/{offset} returns chunk data and Merkle proof Proof Validation: Uses Arweave's validatePath() function for cryptographic verification Performance Optimization: LRU caching for blocks, transactions, and metadata Early ping: Tests immediately upon first successful validation View Live Data: See current observers and performance metrics at gateways.ar.io Explore the Protocol Observer Selection Learn how gateways are chosen as observers using weighted criteria and entropy Performance Evaluation Understand vote tallying, consensus mechanisms, and weight calculations Reporting System Explore observer responsibilities for dual-channel submission to Arweave Reward Distribution Learn about reward formulas, funding mechanisms, and penalty structures How is this guide?Gateway Registry The AR.IO Network consists of AR.IO gateway nodes, which are identified by their registered Arweave wallet addresses and either their IP addresses or hostnames, as stored in the network Observer Selection Learn about how gateways are selected as observers each epoch and how ArNS names are chosen using weighted random selection and Hashchain entropy
 
 ---
 
@@ -5024,22 +5024,9 @@ Gateways AR.IO gateways use a sophisticated multi-tier architecture to retrieve 
 
 ---
 
-# 83. Observation  Incentive Protocol  ARIO Documentation
+# 83. Extensions  Sidecars  ARIO Documentation
 
 Document Number: 83
-Source: https://docs.ar.io/learn/oip
-Words: 410
-Quality Score: 0.421
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview The Observation and Incentive Protocol ensures network quality through peer monitoring and performance-based rewards. Gateways are incentivized to maintain high performance while also serving as "observers" that evaluate their peers' ArNS resolution capabilities.The protocol operates on 24-hour epochs where up to 50 gateways are selected as observers to test other gateways against ArNS name resolution criteria. This creates a self-regulating ecosystem with transparent, consensus-based performance evaluation.Architecture Overview The Observer Protocol operates through a systematic process where selected gateways monitor their peers and report findings to maintain network quality:Epoch Cycle and Responsibilities Each 24-hour epoch follows a structured process with specific responsibilities for gateways and observers:Epoch Start Smart Contract: Selects up to 50 observers using weighted random selection Smart Contract: Generates 2 prescribed ArNS names for all observers to test Selected Observers: Receive notification of selection and prescribed names Observation Phase Observers: Choose 8 additional ArNS names to test (total of 10 names per gateway) Observers: Test assigned gateways for ArNS resolution, wallet ownership, content hashes, and response times Target Gateways: Respond to resolution requests and serve content Reporting Phase Observers: Upload detailed JSON reports to Arweave for transparency Observers: Submit failed gateway lists to the AR.IO Smart Contract for consensus voting Evaluation and Distribution Smart Contract: Tallies all observer votes (≥50% pass = functional gateway) Smart Contract: Distributes rewards at epoch end based on performance Functional Gateways/Observers: Receive ARIO token rewards automatically Key Features Decentralized Monitoring: Peer-to-peer evaluation ensures no single point of failure Consensus-Based Scoring: Majority rule (≥50% pass votes) determines gateway functionality Performance Incentives: Only functional gateways and observers receive ARIO token rewards Transparent Accountability: All reports permanently stored on Arweave and viewable at gateways.ar.io Sustainable Funding: Protocol balance funded by ArNS name purchases, aligning rewards with network usage View Live Data: See current observers and performance metrics at gateways.ar.io Explore the Protocol Observer Selection Learn how gateways are chosen as observers using weighted criteria and entropy Performance Evaluation Understand vote tallying, consensus mechanisms, and weight calculations Reporting System Explore observer responsibilities for dual-channel submission to Arweave Reward Distribution Learn about reward formulas, funding mechanisms, and penalty structures How is this guide?Gateway Registry The AR.IO Network consists of AR.IO gateway nodes, which are identified by their registered Arweave wallet addresses and either their IP addresses or hostnames, as stored in the network Observer Selection Learn about how gateways are selected as observers each epoch and how ArNS names are chosen using weighted random selection and Hashchain entropy
-
----
-
-# 84. Extensions  Sidecars  ARIO Documentation
-
-Document Number: 84
 Source: https://docs.ar.io/build/extensions
 Words: 249
 Quality Score: 0.421
@@ -5052,9 +5039,9 @@ access control.AO Compute Unit Sidecar Execute AO processes locally with WASM mo
 
 ---
 
-# 85. Architecture  ARIO Documentation
+# 84. Architecture  ARIO Documentation
 
-Document Number: 85
+Document Number: 84
 Source: https://docs.ar.io/learn/gateways/architecture
 Words: 584
 Quality Score: 0.420
@@ -5065,9 +5052,9 @@ Gateways AR.IO gateways are sophisticated data access layers built on top of the
 
 ---
 
-# 86. Name Registration  ARIO Documentation
+# 85. Name Registration  ARIO Documentation
 
-Document Number: 86
+Document Number: 85
 Source: https://docs.ar.io/learn/arns/name-registration
 Words: 693
 Quality Score: 0.417
@@ -5078,9 +5065,9 @@ Arweave Name System (ArNS) There are two different types of name registrations t
 
 ---
 
-# 87. Add to Wander  ARIO Documentation
+# 86. Add to Wander  ARIO Documentation
 
-Document Number: 87
+Document Number: 86
 Source: https://docs.ar.io/learn/token/add-to-wander
 Words: 638
 Quality Score: 0.415
@@ -5091,9 +5078,9 @@ Token Adding ARIO Token to Wander Wander (formerly ArConnect) is the primary wal
 
 ---
 
-# 88. Use Cases  ARIO Documentation
+# 87. Use Cases  ARIO Documentation
 
-Document Number: 88
+Document Number: 87
 Source: https://docs.ar.io/learn/wayfinder/use-cases
 Words: 515
 Quality Score: 0.413
@@ -5104,22 +5091,26 @@ Wayfinder Decentralized Web Hosting with Flexible Access With Wayfinder, not onl
 
 ---
 
-# 89. Reporting  ARIO Documentation
+# 88. Observer Selection  ARIO Documentation
 
-Document Number: 89
-Source: https://docs.ar.io/learn/oip/reporting
-Words: 448
-Quality Score: 0.412
+Document Number: 88
+Source: https://docs.ar.io/learn/oip/observer-selection
+Words: 711
+Quality Score: 0.413
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Observation & Incentive Protocol Observer Responsibilities Selected observers have specific duties each epoch: test gateways, document results, and submit findings through two channels. Proper completion of these responsibilities determines observer rewards and future selection chances.Dual Submission Process Observers must submit their findings through both channels to fulfill their duties:1. Detailed Reports to Arweave Format: Comprehensive JSON reports with full evaluation data Purpose: Permanent audit trail and transparency Content: Complete test results, timing data, and failure details 2. Contract Interactions to AR.IO Smart Contract Format: List of failed gateways Purpose: Efficient vote tallying for consensus Content: Binary pass/fail determinations for each gateway tested Observer Evaluations Observers test assigned gateways against 10 ArNS names (2 prescribed + 8 chosen) and document their findings: Evaluation Results Passing Report: Gateway successfully resolves ArNS names with correct status codes (200), transaction IDs, and data hashes. Failing Report: Gateway fails ArNS resolution tests due to ownership issues, timeouts (5000ms), or missing content.Observers evaluate gateways based on:Gateway Wallet Ownership: Verifies correct wallet address ArNS Resolution: Tests successful name-to-transaction resolution Content Hash Verification: Ensures data integrity Response Times: Measures performance within limits Observer Rewards and Penalties Observer performance directly impacts rewards and future participation:Successful Observer Performance Observer Reward: Observers who submit both reports and contract interactions receive the Observer Reward Future Selection: Successful reporting improves Observer Performance Ratio Weight (OPRW) Increased Chances: Higher OPRW increases likelihood of future observer selection and more reward opportunities Failed Observer Performance No Observer Reward: Observers who fail to submit required reports forfeit their Observer Reward Gateway Penalty: If the deficient observer is also a functional gateway, their gateway reward is reduced by 25% Reduced Selection: Failed submissions decrease OPRW, diminishing future observer selection chances Lost Opportunities: Lower selection probability means fewer chances to earn Observer Rewards Observer Accountability The system tracks observer performance to ensure network quality:Submission Tracking: Both Arweave reports and contract interactions must be submitted Performance History: Observer submission record affects future selection probability Reward Impact: Consistent reporting builds credibility and increases earning potential Next Steps Ready to understand how these reports are processed? Learn about Performance Evaluation to see how reports become votes and determine gateway rewards, or explore Reward Distribution to understand the complete incentive structure.How is this guide?Observer Selection Learn about how gateways are selected as observers each epoch and how ArNS names are chosen using weighted random selection and Hashchain entropy Performance and Weights Learn about how gateways are evaluated and how weights impact observer selection On this page Observer Responsibilities Dual Submission Process 1. Detailed Reports to Arweave 2. Contract Interactions to AR.IO Smart Contract Observer Evaluations Evaluation Results Observer Rewards and Penalties Successful Observer Performance Failed Observer Performance Observer Accountability Next Steps
+Observation & Incentive Protocol Epochs and Selection Timeline The AR.IO network operates on 24-hour epochs, during which the observer selection and evaluation process takes place. At the start of each epoch:50 observers are selected to monitor the network 2 prescribed ArNS names are chosen for all observers to test 8 additional names are selected by each observer individually Gateway subset is selected for chunk/offset validation based on sampling rate This creates a consistent evaluation framework where all observers test the same baseline names while having flexibility to choose additional targets for comprehensive network monitoring, plus advanced data integrity verification.Selection Process Up to fifty (50) gateways are selected as observers per epoch using a sophisticated weighted random selection system. The selection uses hashchain entropy from previous AR.IO contract state messages to ensure unpredictable and tamper-resistant selection.The hashchain-based entropy provides cryptographic randomness for selecting:Observer Gateways: The 50 gateways chosen to perform observations Prescribed ArNS Names: The 2 common names all observers must evaluate This approach prevents manipulation while maintaining weighted probabilities based on gateway performance and commitment. gateways.ar.io/#/observers shows the current epoch prescribed observers and arns names, as well as their
+submission status Weighted Selection Criteria Observer selection is based on normalized composite weights that combine multiple performance and commitment factors. These weights determine each gateway's probability of being selected as an observer for the epoch.The selection considers four key factors that are multiplied together to create a composite weight (CW):Stake Weight (SW): Financial commitment to the network Tenure Weight (TW): Length of network participation Gateway Performance Ratio Weight (GPRW): Historical gateway performance Observer Performance Ratio Weight (OPRW): Historical observer performance These weights are then normalized across all eligible gateways to create selection probabilities. For detailed weight calculations and formulas, see Performance Evaluation.Hashchain Random Selection The selection process uses hashchain entropy from previous AR.IO contract state messages to achieve cryptographically secure randomness:How Hashchain Selection Works Entropy Source: Random numbers are generated from the hashchain of previous contract state messages Weighted Mapping: Each random number maps to normalized weight ranges of eligible gateways Observer Selection: The gateway whose weight range contains each random number is selected Prescribed Names: The same entropy selects 2 ArNS names that all observers must test This creates tamper-resistant selection where higher-weighted gateways have proportionally better chances of selection, while maintaining true randomness that cannot be predicted or manipulated.Chunk/Offset Sampling In addition to observer selection, the protocol includes a separate sampling process for chunk/offset validation:Gateway Selection for Chunk Validation Deterministic Selection: Uses PRNG seeded with observation entropy to select gateway subset Sampling Rate: Configurable percentage of gateways tested per observation (default: 1%) Minimum Guarantee: At least 1 gateway is always selected for testing Offset Selection: Random offsets within the stable weave range are chosen for each selected gateway Initial Implementation: During the initial rollout phase, only a very
+small portion of gateways will be checked for chunk/offset validation, and the
+current validation criteria are extremely lenient to ensure smooth network
+operation.Validation Process Chunk Retrieval: Observers request chunk data using GET /chunk/{offset} Merkle Proof Verification: Cryptographic validation ensures data integrity Early ping: Tests immediately upon first successful validation Performance Optimization: Uses LRU caching for efficient transaction lookup Fairness and Meritocracy This system ensures:Meritocratic Selection: Higher-performing gateways have better selection odds Fair Opportunity: All gateways maintain non-zero selection probability Tamper Resistance: Hashchain entropy prevents manipulation Consistent Standards: Prescribed names create common evaluation baseline The selection is saved in the contract state at epoch start to ensure that activities during the epoch do not affect selection or reward distribution. Next Steps Ready to understand how performance is evaluated? Learn about Performance Evaluation to see how gateways are scored, or explore Reward Distribution to understand how rewards are calculated and distributed.How is this guide?Observation & Incentive Protocol The Observation and Incentive Protocol is designed to maintain and enhance the operational integrity of gateways on the AR.IO Network through a combination of incentivizing gateways for good performance and tasking those gateways to fulfill the role of observers Reporting Learn about observer responsibilities for submitting reports to Arweave and the AR.IO Smart Contract On this page Epochs and Selection Timeline Selection Process Weighted Selection Criteria Hashchain Random Selection How Hashchain Selection Works Chunk/Offset Sampling Gateway Selection for Chunk Validation Validation Process Fairness and Meritocracy Next Steps
 
 ---
 
-# 90. Deploy a dApp with ArDrive Web  ARIO Documentation
+# 89. Deploy a dApp with ArDrive Web  ARIO Documentation
 
-Document Number: 90
+Document Number: 89
 Source: https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web
 Words: 654
 Quality Score: 0.411
@@ -5130,9 +5121,9 @@ Guides Create permanent dApps using the ArDrive web interface. This guide shows 
 
 ---
 
-# 91. What is the Permaweb  ARIO Documentation
+# 90. What is the Permaweb  ARIO Documentation
 
-Document Number: 91
+Document Number: 90
 Source: https://docs.ar.io/learn/permaweb
 Words: 682
 Quality Score: 0.405
@@ -5143,9 +5134,9 @@ Introduction The permaweb is a decentralized, permanent layer of the internet wh
 
 ---
 
-# 92. Gateway Registry  ARIO Documentation
+# 91. Gateway Registry  ARIO Documentation
 
-Document Number: 92
+Document Number: 91
 Source: https://docs.ar.io/learn/gateways/gateway-registry
 Words: 749
 Quality Score: 0.395
@@ -5156,9 +5147,9 @@ Gateways Overview The AR.IO Network consists of AR.IO gateway nodes, which are i
 
 ---
 
-# 93. Architecture  ARIO Documentation
+# 92. Architecture  ARIO Documentation
 
-Document Number: 93
+Document Number: 92
 Source: https://docs.ar.io/learn/token/architecture
 Words: 548
 Quality Score: 0.385
@@ -5169,9 +5160,9 @@ Token ARIO Contract Architecture The $ARIO token operates through a smart contra
 
 ---
 
-# 94. Get the Token  ARIO Documentation
+# 93. Get the Token  ARIO Documentation
 
-Document Number: 94
+Document Number: 93
 Source: https://docs.ar.io/learn/token/get-the-token
 Words: 316
 Quality Score: 0.385
@@ -5182,45 +5173,45 @@ Token Acquiring ARIO Tokens There are several ways to acquire ARIO tokens, depen
 
 ---
 
-# 95. Turbo APIs  ARIO Documentation
+# 94. Reporting  ARIO Documentation
+
+Document Number: 94
+Source: https://docs.ar.io/learn/oip/reporting
+Words: 615
+Quality Score: 0.381
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Observation & Incentive Protocol Observer Responsibilities Selected observers have specific duties each epoch: test gateways, document results, and submit findings through two channels. Proper completion of these responsibilities determines observer rewards and future selection chances.Dual Submission Process Observers must submit their findings through both channels to fulfill their duties:1. Detailed Reports to Arweave Format: Comprehensive JSON reports with full evaluation data Purpose: Permanent audit trail and transparency Content: Complete test results, timing data, and failure details 2. Contract Interactions to AR.IO Smart Contract Format: List of failed gateways Purpose: Efficient vote tallying for consensus Content: Binary pass/fail determinations for each gateway tested Observer Evaluations Observers test assigned gateways against 10 ArNS names (2 prescribed + 8 chosen) and document their findings: Evaluation Results Passing Report: Gateway successfully resolves ArNS names
+with correct status codes (200), transaction IDs, and data hashes. Failing Report: Gateway fails ArNS resolution tests due
+to ownership issues, timeouts (5000ms), or missing content.Observers evaluate gateways based on:Gateway Wallet Ownership: Verifies correct wallet address ArNS Resolution: Tests successful name-to-transaction resolution Content Hash Verification: Ensures data integrity Response Times: Measures performance within limits Chunk/Offset Validation: Cryptographic verification of data chunks (for selected gateways) Chunk/Offset Assessment Reporting For gateways selected for chunk/offset validation, observers perform additional testing and reporting:Validation Process Offset Selection: Random offsets within the stable weave range are chosen for testing Chunk Retrieval: Observers request chunk data using GET /chunk/{offset} endpoint Merkle Proof Verification: Cryptographic validation ensures chunk authenticity Binary Search: Efficient transaction lookup using cached metadata for proof validation Reporting Details Individual Assessments: Each offset test is tracked with pass/fail/skipped status Enforcement Status: Reports include whether chunk/offset failures affect gateway status Performance Metrics: Response times and validation results are documented Early ping: Tests immediately upon first successful validation Report Structure {
+"offsetAssessments": {
+"plannedOffsets": [12345, 67890, ...],
+"actualAssessments": [...],
+"validatedOffset": 12345,
+"pass": true,
+"enforcementEnabled": true
+}
+} Initial Implementation: During the initial rollout phase, only a very
+small portion of gateways will be checked for chunk/offset validation, and the
+current validation criteria are extremely lenient to ensure smooth network
+operation.Observer Rewards and Penalties Observer performance directly impacts rewards and future participation:Successful Observer Performance Observer Reward: Observers who submit both reports and contract interactions receive the Observer Reward Future Selection: Successful reporting improves Observer Performance Ratio Weight (OPRW) Increased Chances: Higher OPRW increases likelihood of future observer selection and more reward opportunities Failed Observer Performance No Observer Reward: Observers who fail to submit required reports forfeit their Observer Reward Gateway Penalty: If the deficient observer is also a functional gateway, their gateway reward is reduced by 25% Reduced Selection: Failed submissions decrease OPRW, diminishing future observer selection chances Lost Opportunities: Lower selection probability means fewer chances to earn Observer Rewards Observer Accountability The system tracks observer performance to ensure network quality:Submission Tracking: Both Arweave reports and contract interactions must be submitted Performance History: Observer submission record affects future selection probability Reward Impact: Consistent reporting builds credibility and increases earning potential Next Steps Ready to understand how these reports are processed? Learn about Performance Evaluation to see how reports become votes and determine gateway rewards, or explore Reward Distribution to understand the complete incentive structure.How is this guide?Observer Selection Learn about how gateways are selected as observers each epoch and how ArNS names are chosen using weighted random selection and Hashchain entropy Performance and Weights Learn about how gateways are evaluated and how weights impact observer selection On this page Observer Responsibilities Dual Submission Process 1. Detailed Reports to Arweave 2. Contract Interactions to AR.IO Smart Contract Observer Evaluations Evaluation Results Chunk/Offset Assessment Reporting Validation Process Reporting Details Report Structure Observer Rewards and Penalties Successful Observer Performance Failed Observer Performance Observer Accountability Next Steps
+
+---
+
+# 95. Performance and Weights  ARIO Documentation
 
 Document Number: 95
-Source: https://docs.ar.io/apis/turbo
-Words: 320
-Quality Score: 0.374
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Turbo provides high-performance upload and payment services for the Arweave network, offering fast, reliable data uploads with instant confirmation and transparent pricing.Services Upload Service Fast, reliable data uploads to Arweave with instant confirmation and metadata management Payment Service Transparent pricing, payment processing, and credit management for Turbo uploads Upload Service The Turbo Upload Service provides high-performance data uploads to the Arweave network with features including:Fast Uploads - Optimized upload processing for quick data submission Instant Confirmation - Immediate upload confirmations and transaction IDs Metadata Management - Comprehensive data tagging and organization Account Management - User account and upload history tracking Service Information - Real-time service status and capabilities Key endpoints include account management, upload processing, pricing information, and transaction data retrieval.Payment Service The Turbo Payment Service handles all financial aspects of data uploads with transparent and flexible payment options:Transparent Pricing - Clear, upfront costs for all upload operations Multiple Currencies - Support for various payment methods and currencies Credit Management - Prepaid credits and balance tracking Payment Processing - Secure payment handling and transaction management Approval Workflows - Payment authorization and confirmation flows Key endpoints include balance management, payment processing, pricing calculations, and credit redemption.Getting Started with Turbo Choose your service - Upload for data submission, Payment for financial operations Review the APIs documentation - Detailed endpoint specifications and examples Test with sample data - Try uploads and payment flows with test data Integrate into your application - Implement the APIs in your workflow Use the Turbo SDK For a more convenient integration experience, consider using the Turbo SDK instead of direct API calls:Interact with Turbo via the SDK Use the Turbo SDK for simplified integration with built-in error handling, retries, and TypeScript support The SDK provides a higher-level interface with built-in error handling, automatic retries, and full TypeScript support, making it easier to integrate Turbo services into your applications.How is this guide?Farcaster Frames Previous Page Account GET Next Page
-
----
-
-# 96. Token  ARIO Documentation
-
-Document Number: 96
-Source: https://docs.ar.io/learn/token
-Words: 591
-Quality Score: 0.369
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Overview ARIO is the multifunction AO Computer based token that powers the AR.IO Network and its suite of permanent cloud applications. Built on AO, ARIO leverages the computational power and permanence of the Arweave ecosystem to create a robust, decentralized infrastructure token.Key Features Native AO Token: ARIO is built directly on AO Computer, utilizing its decentralized compute capabilities for smart contract execution and network operations Staking-Based Infrastructure: The network operates on a staking-based incentive system where gateway operators secure infrastructure services through token commitment Multi-utility Design: ARIO serves multiple functions within the ecosystem, from network participation to governance and payments Incentive Mechanisms ARIO's design creates powerful incentives for network participants through multiple reward streams:Gateway Operator Incentives Staking Rewards: Gateway operators earn rewards for maintaining network infrastructure and providing reliable data services Performance Bonuses: Additional rewards for gateways that demonstrate high uptime and fast response times Network Growth Rewards: Operators benefit as the network scales and generates more activity Delegator Rewards Delegated Staking: Token holders can delegate their ARIO to trusted gateway operators to participate in network operations Increased Operator Stake: Delegation enhances gateway operator visibility and influence within the network Shared Risk and Rewards: Delegators participate in the risk and rewards of gateway operations Withdrawal Flexibility: Delegated tokens can be withdrawn following the same vault lock period rules Ecosystem Participation ArNS Revenue Sharing: Name registration fees flow back to network participants through the reward distribution mechanism Protocol Growth: As network usage increases, token utility and value proposition strengthen Community Incentives: Active participation in governance and ecosystem development is rewarded Staking Architecture The AR.IO Network implements a robust staking-based incentive system that ensures infrastructure reliability and network participation:Gateway Operator Requirements Gateway operators must stake a minimum amount of ARIO tokens to join the network Staking demonstrates commitment to network objectives and promotes infrastructure reliability Only gateways that pass Observation and Incentive Protocol evaluations receive rewards Staked tokens remain locked until withdrawal is initiated or vault period expires Network Quality Assurance Non-Inflationary Design: Fixed supply of 1 billion ARIO tokens with no minting mechanism Immutable Protocol: No governance control or special write access for upgrades Infrastructure Focus: Staking secures gateway infrastructure for permanent cloud services Peer Monitoring: Gateways serve as observers, testing and evaluating each other's performance Economic Incentives Gateway operators earn rewards only when they pass observation evaluations (≥50% consensus) Staking creates opportunity cost that aligns operator incentives with network health Observer gateways receive additional rewards for monitoring network quality Delegated staking allows broader community participation in successful gateway operations Built on AO Computer ARIO's foundation on AO Computer provides unique advantages:Computational Permanence All token operations and smart contracts benefit from Arweave's permanent storage Network history and token transactions are immutably recorded Computational results are verifiable and permanent Decentralized Execution Token logic runs across distributed AO processes, eliminating single points of failure Smart contract upgrades follow community governance processes Network operations scale with AO's computational capacity Ecosystem Integration Native compatibility with other AO-based applications and tokens Seamless interaction with Arweave's data storage layer Built-in interoperability with the broader permaweb ecosystem Explore the Token Token Architecture Learn about ARIO's technical implementation and AO Computer integration Get the Token Discover where and how to acquire ARIO tokens Staking & Delegation Understand how to stake ARIO and delegate to gateways Add to Wander Learn how to add ARIO to your Wander wallet How is this guide?Use Cases Explore practical applications of the Wayfinder Protocol across different industries and use cases Architecture Explore the technical architecture of the $ARIO contract and the AR.IO Network system components
-
----
-
-# 97. Performance and Weights  ARIO Documentation
-
-Document Number: 97
 Source: https://docs.ar.io/learn/oip/performance-evaluation
-Words: 713
-Quality Score: 0.357
+Words: 856
+Quality Score: 0.375
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Observation & Incentive ProtocolPerformance and WeightsCopy MarkdownOpenGateway Classifications
 Consider the following classifications:
-Functional or Passed Gateways: are gateways that meet or surpass the network's performance and quality standards.
-Deficient or Failed Gateways: are gateways that fall short of the network's performance expectations.
+Functional or Passed Gateways: are gateways that meet or surpass the network's performance and quality standards, including ArNS resolution and chunk/offset validation (if selected).
+Deficient or Failed Gateways: are gateways that fall short of the network's performance expectations, including failures in ArNS resolution or chunk/offset validation.
 Functional or Submitted Observers: are selected observers who diligently perform their duties and submit observation reports and contract interactions.
 Deficient or Failed Observers: are selected observers who do not fulfill their duty of submitting observation reports and contract interactions.
 Evaluation Process
@@ -5237,6 +5228,21 @@ Multiple observers evaluate each gateway independently, ensuring reliable assess
 The 50% threshold requires majority agreement for positive performance determination
 Binary scoring provides clear, unambiguous performance classification
 Vote tallying occurs after the 40-minute confirmation period to ensure all interactions are finalized
+Chunk/Offset Validation Criteria
+For gateways selected for chunk/offset validation, additional performance criteria are evaluated:
+Validation Requirements
+Chunk Retrieval: Gateway must successfully respond to GET /chunk/{offset} requests
+Data Integrity: Chunk data must be non-empty and within reasonable size limits (<1MB)
+Merkle Proof Validation: Cryptographic proof must decode correctly and validate against transaction data_root
+Performance Standards: Response times must meet network expectations
+Initial Implementation: During the initial rollout phase, only a very
+small portion of gateways will be checked for chunk/offset validation, and the
+current validation criteria are extremely lenient to ensure smooth network
+operation.
+Assessment Process
+Binary Scoring: Each offset test results in pass/fail determination
+Consensus Integration: Chunk/offset results are integrated into overall gateway assessment
+Performance Tracking: Individual offset assessments are tracked and reported
 Weight Impact on Gateway Performance
 Gateway performance directly affects multiple weighted factors that influence future observer selection and overall network participation:
 Gateway Performance Ratio Weight (GPRW)
@@ -5289,7 +5295,33 @@ Functional observers receive observer rewards
 Deficient observers forfeit observer rewards
 Deficient observers who are also functional gateways have their gateway reward reduced by 25%
 Next Steps
-Ready to understand how rewards are distributed? Learn about Reward Distribution to see the formulas and mechanics, or go back to Observer Selection to review the selection process.How is this guide?GoodBadReportingLearn about observer responsibilities for submitting reports to Arweave and the AR.IO Smart ContractDistributionsLearn about how rewards are calculated and distributed in the OIP systemOn this pageGateway ClassificationsEvaluation ProcessVote Tallying and Gateway ClassificationWeight Impact on Gateway PerformanceGateway Performance Ratio Weight (GPRW)Observer Performance Ratio Weight (OPRW)Composite Weight CalculationEvaluation TimelineKey FeaturesConsequences of PerformanceFunctional GatewaysDeficient GatewaysObserver PerformanceNext Steps
+Ready to understand how rewards are distributed? Learn about Reward Distribution to see the formulas and mechanics, or go back to Observer Selection to review the selection process.How is this guide?GoodBadReportingLearn about observer responsibilities for submitting reports to Arweave and the AR.IO Smart ContractDistributionsLearn about how rewards are calculated and distributed in the OIP systemOn this pageGateway ClassificationsEvaluation ProcessVote Tallying and Gateway ClassificationChunk/Offset Validation CriteriaValidation RequirementsAssessment ProcessWeight Impact on Gateway PerformanceGateway Performance Ratio Weight (GPRW)Observer Performance Ratio Weight (OPRW)Composite Weight CalculationEvaluation TimelineKey FeaturesConsequences of PerformanceFunctional GatewaysDeficient GatewaysObserver PerformanceNext Steps
+
+---
+
+# 96. Turbo APIs  ARIO Documentation
+
+Document Number: 96
+Source: https://docs.ar.io/apis/turbo
+Words: 320
+Quality Score: 0.374
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Turbo provides high-performance upload and payment services for the Arweave network, offering fast, reliable data uploads with instant confirmation and transparent pricing.Services Upload Service Fast, reliable data uploads to Arweave with instant confirmation and metadata management Payment Service Transparent pricing, payment processing, and credit management for Turbo uploads Upload Service The Turbo Upload Service provides high-performance data uploads to the Arweave network with features including:Fast Uploads - Optimized upload processing for quick data submission Instant Confirmation - Immediate upload confirmations and transaction IDs Metadata Management - Comprehensive data tagging and organization Account Management - User account and upload history tracking Service Information - Real-time service status and capabilities Key endpoints include account management, upload processing, pricing information, and transaction data retrieval.Payment Service The Turbo Payment Service handles all financial aspects of data uploads with transparent and flexible payment options:Transparent Pricing - Clear, upfront costs for all upload operations Multiple Currencies - Support for various payment methods and currencies Credit Management - Prepaid credits and balance tracking Payment Processing - Secure payment handling and transaction management Approval Workflows - Payment authorization and confirmation flows Key endpoints include balance management, payment processing, pricing calculations, and credit redemption.Getting Started with Turbo Choose your service - Upload for data submission, Payment for financial operations Review the APIs documentation - Detailed endpoint specifications and examples Test with sample data - Try uploads and payment flows with test data Integrate into your application - Implement the APIs in your workflow Use the Turbo SDK For a more convenient integration experience, consider using the Turbo SDK instead of direct API calls:Interact with Turbo via the SDK Use the Turbo SDK for simplified integration with built-in error handling, retries, and TypeScript support The SDK provides a higher-level interface with built-in error handling, automatic retries, and full TypeScript support, making it easier to integrate Turbo services into your applications.How is this guide?Farcaster Frames Previous Page Account GET Next Page
+
+---
+
+# 97. Token  ARIO Documentation
+
+Document Number: 97
+Source: https://docs.ar.io/learn/token
+Words: 591
+Quality Score: 0.369
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Overview ARIO is the multifunction AO Computer based token that powers the AR.IO Network and its suite of permanent cloud applications. Built on AO, ARIO leverages the computational power and permanence of the Arweave ecosystem to create a robust, decentralized infrastructure token.Key Features Native AO Token: ARIO is built directly on AO Computer, utilizing its decentralized compute capabilities for smart contract execution and network operations Staking-Based Infrastructure: The network operates on a staking-based incentive system where gateway operators secure infrastructure services through token commitment Multi-utility Design: ARIO serves multiple functions within the ecosystem, from network participation to governance and payments Incentive Mechanisms ARIO's design creates powerful incentives for network participants through multiple reward streams:Gateway Operator Incentives Staking Rewards: Gateway operators earn rewards for maintaining network infrastructure and providing reliable data services Performance Bonuses: Additional rewards for gateways that demonstrate high uptime and fast response times Network Growth Rewards: Operators benefit as the network scales and generates more activity Delegator Rewards Delegated Staking: Token holders can delegate their ARIO to trusted gateway operators to participate in network operations Increased Operator Stake: Delegation enhances gateway operator visibility and influence within the network Shared Risk and Rewards: Delegators participate in the risk and rewards of gateway operations Withdrawal Flexibility: Delegated tokens can be withdrawn following the same vault lock period rules Ecosystem Participation ArNS Revenue Sharing: Name registration fees flow back to network participants through the reward distribution mechanism Protocol Growth: As network usage increases, token utility and value proposition strengthen Community Incentives: Active participation in governance and ecosystem development is rewarded Staking Architecture The AR.IO Network implements a robust staking-based incentive system that ensures infrastructure reliability and network participation:Gateway Operator Requirements Gateway operators must stake a minimum amount of ARIO tokens to join the network Staking demonstrates commitment to network objectives and promotes infrastructure reliability Only gateways that pass Observation and Incentive Protocol evaluations receive rewards Staked tokens remain locked until withdrawal is initiated or vault period expires Network Quality Assurance Non-Inflationary Design: Fixed supply of 1 billion ARIO tokens with no minting mechanism Immutable Protocol: No governance control or special write access for upgrades Infrastructure Focus: Staking secures gateway infrastructure for permanent cloud services Peer Monitoring: Gateways serve as observers, testing and evaluating each other's performance Economic Incentives Gateway operators earn rewards only when they pass observation evaluations (≥50% consensus) Staking creates opportunity cost that aligns operator incentives with network health Observer gateways receive additional rewards for monitoring network quality Delegated staking allows broader community participation in successful gateway operations Built on AO Computer ARIO's foundation on AO Computer provides unique advantages:Computational Permanence All token operations and smart contracts benefit from Arweave's permanent storage Network history and token transactions are immutably recorded Computational results are verifiable and permanent Decentralized Execution Token logic runs across distributed AO processes, eliminating single points of failure Smart contract upgrades follow community governance processes Network operations scale with AO's computational capacity Ecosystem Integration Native compatibility with other AO-based applications and tokens Seamless interaction with Arweave's data storage layer Built-in interoperability with the broader permaweb ecosystem Explore the Token Token Architecture Learn about ARIO's technical implementation and AO Computer integration Get the Token Discover where and how to acquire ARIO tokens Staking & Delegation Understand how to stake ARIO and delegate to gateways Add to Wander Learn how to add ARIO to your Wander wallet How is this guide?Use Cases Explore practical applications of the Wayfinder Protocol across different industries and use cases Architecture Explore the technical architecture of the $ARIO contract and the AR.IO Network system components
 
 ---
 
