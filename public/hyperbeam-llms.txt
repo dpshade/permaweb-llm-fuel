@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-11T12:13:09.458Z
+Generated on: 2025-10-12T12:12:54.963Z
 Total documents: 29
-Total words: 13277
+Total words: 13237
 
 ## Table of Contents
 
@@ -15,23 +15,23 @@ Total words: 13277
 5. [JoiningRunning a Router](https://hyperbeam.arweave.net/run/joining-running-a-router.html)
 6. [Configuring Your Machine](https://hyperbeam.arweave.net/run/configuring-your-machine.html)
 7. [Core Capabilities](https://hyperbeam.arweave.net/build/getting-started/hyperbeam-capabilities.html)
-8. [Module dev_fafferl](https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html)
-9. [Core Devices](https://hyperbeam.arweave.net/build/devices/index.html)
-10. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/getting-started/pathing-in-hyperbeam.html)
-11. [Building Devices](https://hyperbeam.arweave.net/build/devices/building-devices.html)
-12. [Intro to HyperBEAM](https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html)
-13. [Building ao Processes](https://hyperbeam.arweave.net/build/getting-started/building-on-ao.html)
-14. [Fuel Your LLM](https://hyperbeam.arweave.net/llms.html)
-15. [FAQ](https://hyperbeam.arweave.net/run/reference/faq.html)
-16. [Module dev_p4erl](https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html)
-17. [Data Replication](https://hyperbeam.arweave.net/build/devices/application-features/data-replication-at-1-0.html)
-18. [Module dev_stackerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html)
-19. [meta10](https://hyperbeam.arweave.net/build/devices/foundational/meta-at-1-0.html)
-20. [Glossary](https://hyperbeam.arweave.net/run/reference/glossary.html)
-21. [FAQ](https://hyperbeam.arweave.net/build/reference/faq.html)
-22. [Authentication Ecosystem](https://hyperbeam.arweave.net/build/devices/application-features/auth-ecosystem-at-1-0.html)
-23. [Module dev_patcherl](https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html)
-24. [Home](https://hyperbeam.arweave.net/)
+8. [Core Devices](https://hyperbeam.arweave.net/build/devices/index.html)
+9. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/getting-started/pathing-in-hyperbeam.html)
+10. [Building Devices](https://hyperbeam.arweave.net/build/devices/building-devices.html)
+11. [Intro to HyperBEAM](https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html)
+12. [Building ao Processes](https://hyperbeam.arweave.net/build/getting-started/building-on-ao.html)
+13. [Fuel Your LLM](https://hyperbeam.arweave.net/llms.html)
+14. [FAQ](https://hyperbeam.arweave.net/run/reference/faq.html)
+15. [Module dev_p4erl](https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html)
+16. [Data Replication](https://hyperbeam.arweave.net/build/devices/application-features/data-replication-at-1-0.html)
+17. [Module dev_stackerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html)
+18. [meta10](https://hyperbeam.arweave.net/build/devices/foundational/meta-at-1-0.html)
+19. [Glossary](https://hyperbeam.arweave.net/run/reference/glossary.html)
+20. [FAQ](https://hyperbeam.arweave.net/build/reference/faq.html)
+21. [Authentication Ecosystem](https://hyperbeam.arweave.net/build/devices/application-features/auth-ecosystem-at-1-0.html)
+22. [Module dev_patcherl](https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html)
+23. [Home](https://hyperbeam.arweave.net/)
+24. [Dev Faff](https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html)
 25. [Glossary](https://hyperbeam.arweave.net/build/reference/glossary.html)
 26. [Module dev_cronerl](https://hyperbeam.arweave.net/build/devices/source-code/dev_cron.html)
 27. [Intro to AO-Core](https://hyperbeam.arweave.net/build/introduction/what-is-ao-core.html)
@@ -383,27 +383,9 @@ HyperBEAM: Your Decentralized Development Toolkit HyperBEAM is a versatile, mult
 
 ---
 
-# 8. Module dev_fafferl - HyperBEAM - Documentation
+# 8. Core Devices - HyperBEAM - Documentation
 
 Document Number: 8
-Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html
-Words: 180
-Quality Score: 0.540
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Module dev_faff.erl A module that implements a 'friends and family' pricing policy.Description It will allow users to process requests only if their addresses are
-in the allow-list for the node.Fundamentally against the spirit of permissionlessness, but it is useful if
-you are running a node for your own purposes and would not like to allow
-others to make use of it -- even for a fee. It also serves as a useful
-example of how to implement a custom pricing policy, as it implements stubs
-for both the pricing and ledger P4 APIs.Function Index charge/3 Charge the user's account if the request is allowed.estimate/3 Decide whether or not to service a request from a given address.is_admissible/2* Check whether all of the signers of the request are in the allow-list.Function Details charge/3 charge(X1, Req, NodeMsg) -> any() Charge the user's account if the request is allowed.estimate/3 estimate(X1, Msg, NodeMsg) -> any() Decide whether or not to service a request from a given address.is_admissible/2 * is_admissible(Msg, NodeMsg) -> any() Check whether all of the signers of the request are in the allow-list.
-
----
-
-# 9. Core Devices - HyperBEAM - Documentation
-
-Document Number: 9
 Source: https://hyperbeam.arweave.net/build/devices/index.html
 Words: 646
 Quality Score: 0.534
@@ -418,9 +400,9 @@ Auth Ecosystem Copycat Device Query Device Process Device Data Workflow Integrat
 
 ---
 
-# 10. Pathing in HyperBEAM - HyperBEAM - Documentation
+# 9. Pathing in HyperBEAM - HyperBEAM - Documentation
 
-Document Number: 10
+Document Number: 9
 Source: https://hyperbeam.arweave.net/build/getting-started/pathing-in-hyperbeam.html
 Words: 844
 Quality Score: 0.534
@@ -431,9 +413,9 @@ Pathing in HyperBEAM Overview Understanding how to construct and interpret paths
 
 ---
 
-# 11. Building Devices - HyperBEAM - Documentation
+# 10. Building Devices - HyperBEAM - Documentation
 
-Document Number: 11
+Document Number: 10
 Source: https://hyperbeam.arweave.net/build/devices/building-devices.html
 Words: 150
 Quality Score: 0.513
@@ -444,9 +426,9 @@ Extending HyperBEAM with Devices We encourage you to extend HyperBEAM with devic
 
 ---
 
-# 12. Intro to HyperBEAM - HyperBEAM - Documentation
+# 11. Intro to HyperBEAM - HyperBEAM - Documentation
 
-Document Number: 12
+Document Number: 11
 Source: https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html
 Words: 307
 Quality Score: 0.509
@@ -459,9 +441,9 @@ computations across a network of distributed nodes. Messages Modular Data Packet
 
 ---
 
-# 13. Building ao Processes - HyperBEAM - Documentation
+# 12. Building ao Processes - HyperBEAM - Documentation
 
-Document Number: 13
+Document Number: 12
 Source: https://hyperbeam.arweave.net/build/getting-started/building-on-ao.html
 Words: 92
 Quality Score: 0.508
@@ -472,9 +454,9 @@ Building on HyperBEAM with ao The guides for building applications on HyperBEAM 
 
 ---
 
-# 14. Fuel Your LLM - HyperBEAM - Documentation
+# 13. Fuel Your LLM - HyperBEAM - Documentation
 
-Document Number: 14
+Document Number: 13
 Source: https://hyperbeam.arweave.net/llms.html
 Words: 166
 Quality Score: 0.503
@@ -485,9 +467,9 @@ LLM Context Files This section provides access to specially formatted files inte
 
 ---
 
-# 15. FAQ - HyperBEAM - Documentation
+# 14. FAQ - HyperBEAM - Documentation
 
-Document Number: 15
+Document Number: 14
 Source: https://hyperbeam.arweave.net/run/reference/faq.html
 Words: 327
 Quality Score: 0.500
@@ -498,9 +480,9 @@ Node Operator FAQ This page answers common questions about running and maintaini
 
 ---
 
-# 16. Module dev_p4erl - HyperBEAM - Documentation
+# 15. Module dev_p4erl - HyperBEAM - Documentation
 
-Document Number: 16
+Document Number: 15
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html
 Words: 550
 Quality Score: 0.497
@@ -531,9 +513,9 @@ not set is to proceed, so it is important that a user initialize them.response/3
 
 ---
 
-# 17. Data Replication - HyperBEAM - Documentation
+# 16. Data Replication - HyperBEAM - Documentation
 
-Document Number: 17
+Document Number: 16
 Source: https://hyperbeam.arweave.net/build/devices/application-features/data-replication-at-1-0.html
 Words: 450
 Quality Score: 0.483
@@ -556,9 +538,9 @@ GET /~query@1.0/all
 
 ---
 
-# 18. Module dev_stackerl - HyperBEAM - Documentation
+# 17. Module dev_stackerl - HyperBEAM - Documentation
 
-Document Number: 18
+Document Number: 17
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_stack.html
 Words: 1145
 Quality Score: 0.475
@@ -624,9 +606,9 @@ keyInDevice executed on DeviceName against Msg1.
 
 ---
 
-# 19. meta10 - HyperBEAM - Documentation
+# 18. meta10 - HyperBEAM - Documentation
 
-Document Number: 19
+Document Number: 18
 Source: https://hyperbeam.arweave.net/build/devices/foundational/meta-at-1-0.html
 Words: 346
 Quality Score: 0.475
@@ -637,9 +619,9 @@ Device: ~meta@1.0 Overview The ~meta@1.0 device provides access to metadata and 
 
 ---
 
-# 20. Glossary - HyperBEAM - Documentation
+# 19. Glossary - HyperBEAM - Documentation
 
-Document Number: 20
+Document Number: 19
 Source: https://hyperbeam.arweave.net/run/reference/glossary.html
 Words: 286
 Quality Score: 0.473
@@ -651,9 +633,9 @@ Node Operator Glossary This glossary provides definitions for terms and concepts
 
 ---
 
-# 21. FAQ - HyperBEAM - Documentation
+# 20. FAQ - HyperBEAM - Documentation
 
-Document Number: 21
+Document Number: 20
 Source: https://hyperbeam.arweave.net/build/reference/faq.html
 Words: 275
 Quality Score: 0.472
@@ -664,9 +646,9 @@ Developer FAQ This page answers common questions about building applications and
 
 ---
 
-# 22. Authentication Ecosystem - HyperBEAM - Documentation
+# 21. Authentication Ecosystem - HyperBEAM - Documentation
 
-Document Number: 22
+Document Number: 21
 Source: https://hyperbeam.arweave.net/build/devices/application-features/auth-ecosystem-at-1-0.html
 Words: 461
 Quality Score: 0.468
@@ -680,9 +662,9 @@ Device: Authentication Ecosystem (~auth-hook@1.0, ~secret@1.0, ~cookie@1.0, ~htt
 
 ---
 
-# 23. Module dev_patcherl - HyperBEAM - Documentation
+# 22. Module dev_patcherl - HyperBEAM - Documentation
 
-Document Number: 23
+Document Number: 22
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_patch.html
 Words: 375
 Quality Score: 0.462
@@ -704,10 +686,35 @@ request.req_prefix_test/0 * req_prefix_test() -> any() snapshot/3 snapshot(Msg1,
 
 ---
 
+# 23. HyperBEAM - Documentation
+
+Document Number: 23
+Source: https://hyperbeam.arweave.net/
+Words: 140
+Quality Score: 0.458
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+A Decentralized Operating System.
+Built on AO.What is hyperBEAM? Hyperbeam. Powering the decentralized supercomputer: AO.Access, build, and lease hardware for applications and services at any scale.Your gateway to AO, a decentralized supercomputer network built on top of Arweave. AO and Arweave power a cyberspace which guarantees the rights of users, outside of the control of any individual or group. Communicate via asynchronous
+message passing for unheard
+of throughput.
+Get resilient compute in
+your terminal with one
+command.
+What Do I Do With Hyperbeam?01 Monetize Your Hardware.Access a shared economy for hardware in the new cyberspace.
+All while earning $AO Offer compute to AO processes and
+their users, earning fees in return.
+Run your own gateway. Empower builders to launch trust-minimized, serverless WASM functions using built-in TEE integrations.
+Coming Soon: Offer support for GPUs.
+Sorry, your browser doesn’t support embedded video.
+
+---
+
 # 24. HyperBEAM - Documentation
 
 Document Number: 24
-Source: https://hyperbeam.arweave.net/
+Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_faff.html
 Words: 140
 Quality Score: 0.458
 Extraction Method: defuddle_semantic
