@@ -858,6 +858,7 @@ export async function crawlSite(siteKey, options = {}) {
       pages.push({
         url: pageData.url,
         title: pageData.title,
+        content: pageData.content,
         estimatedWords: pageData.estimatedWords,
         lastModified: pageData.lastModified,
         breadcrumbs,

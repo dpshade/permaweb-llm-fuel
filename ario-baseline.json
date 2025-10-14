@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-10-14",
+  "crawlConfig": {
+    "selectors": {
+      "title": "h1, title",
+      "content": "article, main, .content, [role='main']"
+    }
+  },
+  "stats": {
+    "totalPages": 101,
+    "averageWords": 360,
+    "duration": 143450,
+    "requestCount": 148,
+    "averageResponseTime": 912.3,
+    "pagesPerSecond": 0.704
+  },
+  "samplePages": [
+    {"url": "https://docs.ar.io/learn", "words": 176},
+    {"url": "https://docs.ar.io/apis/turbo", "words": 321},
+    {"url": "https://docs.ar.io/apis/ar-io-node", "words": 338},
+    {"url": "https://docs.ar.io/sdks/ar-io-sdk", "words": 50},
+    {"url": "https://docs.ar.io/build/access/arns", "words": 57},
+    {"url": "https://docs.ar.io/apis/ar-io-node/data", "words": 77}
+  ],
+  "lowWordCountPages": 10,
+  "notes": [
+    "Many pages have very low word counts (50-95 words)",
+    "Suggests we may be missing sidebar content, navigation, or JavaScript-rendered content",
+    "Current selectors: article, main, .content, [role='main']",
+    "Site appears to be JavaScript-rendered (curl returns 0 bytes)"
+  ]
+}

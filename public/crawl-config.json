@@ -62,7 +62,7 @@
     "maxPages": 200,
     "selectors": {
       "title": "h1, title",
-      "content": "article, main, .content, [role='main']"
+      "content": "article, main"
     },
     "excludePatterns": [
       "/\\.(pdf|zip|tar|gz)$/",
@@ -81,19 +81,10 @@
       "maxCodeBlockLength": 1000
     },
     "seedUrls": [
-      "/introduction",
-      "/ar-io-sdk",
-      "/gateways/linux-setup",
-      "/guides/permaweb-deploy",
-      "/guides/testnet",
-      "/glossary",
-      "/wayfinder",
-      "/wayfinder/getting-started",
-      "/wayfinder/telemetry",
-      "/wayfinder/core",
-      "/wayfinder/react",
-      "/wayfinder/routing-strategies",
-      "/wayfinder/verification-strategies"
+      "/learn",
+      "/build",
+      "/sdks",
+      "/apis"
     ]
   },
   "arweave": {
