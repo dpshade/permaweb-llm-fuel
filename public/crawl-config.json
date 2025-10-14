@@ -77,7 +77,7 @@
       "removeStyles": true,
       "removeComments": true,
       "removeEmptyElements": true,
-      "minWordCount": 50,
+      "minWordCount": 30,
       "maxCodeBlockLength": 1000
     },
     "seedUrls": [
