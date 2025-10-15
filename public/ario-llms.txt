@@ -1,122 +1,158 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-15T00:11:20.862Z
-Total documents: 109
-Total words: 65491
+Generated on: 2025-10-15T12:17:38.544Z
+Total documents: 145
+Total words: 77673
 
 ## Table of Contents
 
 ### Included Documents
 
 1. [Setting Apex Domain Content ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/setting-apex-domain)
-2. [Content Moderation ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/content-moderation)
-3. [Bundler ARIO Documentation](https://docs.ar.io/build/extensions/bundler)
-4. [Storing DePIN Data on Arweave Using Turbo ARIO Documentation](https://docs.ar.io/build/guides/depin)
-5. [ClickHouse Parquet ARIO Documentation](https://docs.ar.io/build/extensions/clickhouse)
-6. [Crossmint NFT Minting App ARIO Documentation](https://docs.ar.io/build/guides/crossmint-nft-minting-app)
-7. [Hosting Decentralized Websites ARIO Documentation](https://docs.ar.io/build/guides/hosting-decentralized-websites)
-8. [ArNS Undernames for Permasite Versioning ARIO Documentation](https://docs.ar.io/build/guides/arns-undernames-versioning)
-9. [Environment Variables ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/environment-variables)
-10. [AO Compute Unit (CU) ARIO Documentation](https://docs.ar.io/build/extensions/compute-unit)
-11. [Advanced Uploading with Turbo ARIO Documentation](https://docs.ar.io/build/upload/advanced-uploading-with-turbo)
-12. [Importing SQLite Database Snapshots ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/index-snapshots)
-13. [Index Querying ARIO Documentation](https://docs.ar.io/apis/ar-io-node/index-querying)
-14. [Wayfinder ARIO Documentation](https://docs.ar.io/build/access/wayfinder)
-15. [Gateway Filters ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/filters)
-16. [Data Model ARIO Documentation](https://docs.ar.io/build/advanced/arfs/data-model)
-17. [Working With Primary Names ARIO Documentation](https://docs.ar.io/build/guides/arns-primary-names)
-18. [Direct Constructor Usage ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/direct-constructor-usage)
-19. [Wayfinder Core ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core)
-20. [Access Data ARIO Documentation](https://docs.ar.io/build/access)
-21. [Turbo SDK ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk)
-22. [Creating Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/creating-drives)
-23. [Run a Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway)
-24. [Getting Started with Turbo ARIO Documentation](https://docs.ar.io/build/upload/bundling-services)
-25. [Payments ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/payments)
-26. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/build/access/arns)
-27. [Entity Types ARIO Documentation](https://docs.ar.io/build/advanced/arfs/entity-types)
-28. [NetworkGatewaysProvider ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/networkgatewaysprovider)
-29. [Automating SSL Certificate Renewal ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/ssl-certs)
-30. [Wayfinder React ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-react)
-31. [Reading Data ARIO Documentation](https://docs.ar.io/build/advanced/arfs/reading-data)
-32. [Upgrading your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway)
-33. [Pricing Model ARIO Documentation](https://docs.ar.io/learn/arns/pricing-model)
-34. [Find Data (via GraphQL) ARIO Documentation](https://docs.ar.io/build/access/find-data)
-35. [Tagging ARIO Documentation](https://docs.ar.io/build/upload/tagging)
-36. [Gateway ARIO Documentation](https://docs.ar.io/apis/ar-io-node/gateway)
-37. [Events ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/events)
-38. [Privacy Encryption ARIO Documentation](https://docs.ar.io/build/advanced/arfs/privacy)
-39. [Upload Data ARIO Documentation](https://docs.ar.io/build/upload)
-40. [Fetch Data (via REST API) ARIO Documentation](https://docs.ar.io/build/access/fetch-data)
-41. [Guides ARIO Documentation](https://docs.ar.io/build/guides)
-42. [Using Turbo SDK with Vanilla HTML ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/html)
-43. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/learn/arns)
-44. [Wayfinder SDKs ARIO Documentation](https://docs.ar.io/sdks/wayfinder)
-45. [TurboFactory ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbofactory)
-46. [Token Conversion ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/token-conversion)
-47. [Paying for Uploads ARIO Documentation](https://docs.ar.io/build/upload/turbo-credits)
-48. [Static Methods ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/static-methods)
-49. [Dynamic Routing ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/dynamic-routing)
-50. [Join the Network ARIO Documentation](https://docs.ar.io/build/run-a-gateway/join-the-network)
-51. [Arweave Name Tokens (ANTs) ARIO Documentation](https://docs.ar.io/learn/arns/ants)
-52. [Distributions ARIO Documentation](https://docs.ar.io/learn/oip/reward-distribution)
-53. [Pagination ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/pagination)
-54. [Encryption ARIO Documentation](https://docs.ar.io/build/upload/encryption)
-55. [TurboAuthenticatedClient ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turboauthenticatedclient)
-56. [Telemetry ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/telemetry)
-57. [Logging ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/logging)
-58. [EthAReum Protocol ARIO Documentation](https://docs.ar.io/build/advanced/ethareum)
-59. [Global request events ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/global-request-events)
-60. [Manifests ARIO Documentation](https://docs.ar.io/build/upload/manifests)
-61. [Wayfinder Protocol ARIO Documentation](https://docs.ar.io/learn/wayfinder)
-62. [Get Started ARIO Documentation](https://docs.ar.io/build)
-63. [Logging ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/logging)
-64. [ARIO SDK ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk)
-65. [Upgrading Private Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/upgrading-drives)
-66. [Using Turbo SDK with Vite ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/vite)
-67. [Entity Types ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/entity-types)
-68. [APIs Reference ARIO Documentation](https://docs.ar.io/apis)
-69. [What is ARIO ARIO Documentation](https://docs.ar.io/learn/what-is-ario)
-70. [Introduction ARIO Documentation](https://docs.ar.io/sdks)
-71. [Advanced ARIO Documentation](https://docs.ar.io/build/advanced)
-72. [Data ARIO Documentation](https://docs.ar.io/apis/ar-io-node/data)
-73. [Using Turbo SDK with Nextjs ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/nextjs)
-74. [Request Flow ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow)
-75. [Using Turbo in a Browser ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser)
-76. [Staking ARIO Documentation](https://docs.ar.io/learn/token/staking)
-77. [Manage your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage)
-78. [What is Arweave ARIO Documentation](https://docs.ar.io/learn/what-is-arweave)
-79. [ArNS Marketplace ARIO Documentation](https://docs.ar.io/build/guides/arns-marketplace)
-80. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns)
-81. [Turbo Credit Sharing ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing)
-82. [Glossary ARIO Documentation](https://docs.ar.io/glossary)
-83. [Introduction ARIO Documentation](https://docs.ar.io/learn)
-84. [Normalized Addresses ARIO Documentation](https://docs.ar.io/build/advanced/normalized-addresses)
-85. [ARIO Gateway APIs ARIO Documentation](https://docs.ar.io/apis/ar-io-node)
-86. [Troubleshooting ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/troubleshooting)
-87. [Balance ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/balance)
-88. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
-89. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
-90. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
-91. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
-92. [Contributing ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/contributing)
-93. [Data Retrieval ARIO Documentation](https://docs.ar.io/learn/gateways/data-retrieval)
-94. [Extensions Sidecars ARIO Documentation](https://docs.ar.io/build/extensions)
-95. [Architecture ARIO Documentation](https://docs.ar.io/learn/gateways/architecture)
-96. [Name Registration ARIO Documentation](https://docs.ar.io/learn/arns/name-registration)
-97. [Add to Wander ARIO Documentation](https://docs.ar.io/learn/token/add-to-wander)
-98. [Use Cases ARIO Documentation](https://docs.ar.io/learn/wayfinder/use-cases)
-99. [Observer Selection ARIO Documentation](https://docs.ar.io/learn/oip/observer-selection)
-100. [Deploy a dApp with ArDrive Web ARIO Documentation](https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web)
-101. [Reporting ARIO Documentation](https://docs.ar.io/learn/oip/reporting)
-102. [What is the Permaweb ARIO Documentation](https://docs.ar.io/learn/permaweb)
-103. [Gateway Registry ARIO Documentation](https://docs.ar.io/learn/gateways/gateway-registry)
-104. [Architecture ARIO Documentation](https://docs.ar.io/learn/token/architecture)
-105. [Get the Token ARIO Documentation](https://docs.ar.io/learn/token/get-the-token)
-106. [Turbo APIs ARIO Documentation](https://docs.ar.io/apis/turbo)
-107. [Token ARIO Documentation](https://docs.ar.io/learn/token)
-108. [What are Bundles ARIO Documentation](https://docs.ar.io/learn/ans-104-bundles)
-109. [ARIO Gateways ARIO Documentation](https://docs.ar.io/learn/gateways)
+2. [Grafana ARIO Documentation](https://docs.ar.io/build/extensions/grafana)
+3. [Content Moderation ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/content-moderation)
+4. [Bundler ARIO Documentation](https://docs.ar.io/build/extensions/bundler)
+5. [Storing DePIN Data on Arweave Using Turbo ARIO Documentation](https://docs.ar.io/build/guides/depin)
+6. [ClickHouse Parquet ARIO Documentation](https://docs.ar.io/build/extensions/clickhouse)
+7. [Crossmint NFT Minting App ARIO Documentation](https://docs.ar.io/build/guides/crossmint-nft-minting-app)
+8. [Hosting Decentralized Websites ARIO Documentation](https://docs.ar.io/build/guides/hosting-decentralized-websites)
+9. [ArNS Undernames for Permasite Versioning ARIO Documentation](https://docs.ar.io/build/guides/arns-undernames-versioning)
+10. [Environment Variables ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/environment-variables)
+11. [AO Compute Unit (CU) ARIO Documentation](https://docs.ar.io/build/extensions/compute-unit)
+12. [Advanced Uploading with Turbo ARIO Documentation](https://docs.ar.io/build/upload/advanced-uploading-with-turbo)
+13. [Importing SQLite Database Snapshots ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/index-snapshots)
+14. [Index Querying ARIO Documentation](https://docs.ar.io/apis/ar-io-node/index-querying)
+15. [Wayfinder ARIO Documentation](https://docs.ar.io/build/access/wayfinder)
+16. [Gateway Filters ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/filters)
+17. [Data Model ARIO Documentation](https://docs.ar.io/build/advanced/arfs/data-model)
+18. [Working With Primary Names ARIO Documentation](https://docs.ar.io/build/guides/arns-primary-names)
+19. [Direct Constructor Usage ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/direct-constructor-usage)
+20. [PreferredWithFallbackRoutingStrategy ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/preferredwithfallbackroutingstrategy)
+21. [Configuration ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/configuration)
+22. [Wayfinder Core ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core)
+23. [Admin ARIO Documentation](https://docs.ar.io/apis/ar-io-node/admin)
+24. [Access Data ARIO Documentation](https://docs.ar.io/build/access)
+25. [Turbo SDK ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk)
+26. [Creating Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/creating-drives)
+27. [Run a Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway)
+28. [Getting Started with Turbo ARIO Documentation](https://docs.ar.io/build/upload/bundling-services)
+29. [Chunks ARIO Documentation](https://docs.ar.io/apis/ar-io-node/chunks)
+30. [Payments ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/payments)
+31. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/build/access/arns)
+32. [Entity Types ARIO Documentation](https://docs.ar.io/build/advanced/arfs/entity-types)
+33. [NetworkGatewaysProvider ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/networkgatewaysprovider)
+34. [Networks ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/networks)
+35. [Automating SSL Certificate Renewal ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/ssl-certs)
+36. [Redemption ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/redemption)
+37. [Wayfinder React ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-react)
+38. [Spawn ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/spawn)
+39. [Reading Data ARIO Documentation](https://docs.ar.io/build/advanced/arfs/reading-data)
+40. [Farcaster Frames ARIO Documentation](https://docs.ar.io/apis/ar-io-node/farcaster-frames)
+41. [Upgrading your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway)
+42. [Pricing Model ARIO Documentation](https://docs.ar.io/learn/arns/pricing-model)
+43. [Find Data (via GraphQL) ARIO Documentation](https://docs.ar.io/build/access/find-data)
+44. [Tagging ARIO Documentation](https://docs.ar.io/build/upload/tagging)
+45. [Initialize ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/initialize)
+46. [Gateway ARIO Documentation](https://docs.ar.io/apis/ar-io-node/gateway)
+47. [Events ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/events)
+48. [Privacy Encryption ARIO Documentation](https://docs.ar.io/build/advanced/arfs/privacy)
+49. [Upload Data ARIO Documentation](https://docs.ar.io/build/upload)
+50. [Browser Sandboxing ARIO Documentation](https://docs.ar.io/build/advanced/sandboxing)
+51. [Fetch Data (via REST API) ARIO Documentation](https://docs.ar.io/build/access/fetch-data)
+52. [Guides ARIO Documentation](https://docs.ar.io/build/guides)
+53. [Using Turbo SDK with Vanilla HTML ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/html)
+54. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/learn/arns)
+55. [Wayfinder SDKs ARIO Documentation](https://docs.ar.io/sdks/wayfinder)
+56. [useWayfinderRequest ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-react/usewayfinderrequest)
+57. [TurboFactory ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbofactory)
+58. [Integration ARIO Documentation](https://docs.ar.io/learn/wayfinder/integration)
+59. [Token Conversion ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/token-conversion)
+60. [Paying for Uploads ARIO Documentation](https://docs.ar.io/build/upload/turbo-credits)
+61. [Static Methods ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/static-methods)
+62. [Dynamic Routing ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/dynamic-routing)
+63. [Transfer ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/transfer)
+64. [Approvals ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/approvals)
+65. [Join the Network ARIO Documentation](https://docs.ar.io/build/run-a-gateway/join-the-network)
+66. [Arweave Name Tokens (ANTs) ARIO Documentation](https://docs.ar.io/learn/arns/ants)
+67. [Distributions ARIO Documentation](https://docs.ar.io/learn/oip/reward-distribution)
+68. [Pagination ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/pagination)
+69. [Encryption ARIO Documentation](https://docs.ar.io/build/upload/encryption)
+70. [General ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/general)
+71. [Primary Names ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/primary-names)
+72. [TurboAuthenticatedClient ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turboauthenticatedclient)
+73. [Balances ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/balances)
+74. [Telemetry ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/telemetry)
+75. [Logging ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/logging)
+76. [EthAReum Protocol ARIO Documentation](https://docs.ar.io/build/advanced/ethareum)
+77. [Controllers ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/controllers)
+78. [Global request events ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/global-request-events)
+79. [TurboUnauthenticatedClient ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbounauthenticatedclient)
+80. [Blocks ARIO Documentation](https://docs.ar.io/apis/ar-io-node/blocks)
+81. [Manifests ARIO Documentation](https://docs.ar.io/build/upload/manifests)
+82. [Wallets ARIO Documentation](https://docs.ar.io/apis/ar-io-node/wallets)
+83. [Wayfinder Protocol ARIO Documentation](https://docs.ar.io/learn/wayfinder)
+84. [Get Started ARIO Documentation](https://docs.ar.io/build)
+85. [ARIO Integrations ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/ario-integrations)
+86. [Upgrade ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/upgrade)
+87. [Logging ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/logging)
+88. [ARIO SDK ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk)
+89. [Versions ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/versions)
+90. [Upgrading Private Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/upgrading-drives)
+91. [Epochs ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/epochs)
+92. [State ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/state)
+93. [Gateways ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/gateways)
+94. [Using Turbo SDK with Vite ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/vite)
+95. [Pricing ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/pricing)
+96. [Entity Types ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/entity-types)
+97. [APIs Reference ARIO Documentation](https://docs.ar.io/apis)
+98. [What is ARIO ARIO Documentation](https://docs.ar.io/learn/what-is-ario)
+99. [Introduction ARIO Documentation](https://docs.ar.io/sdks)
+100. [Advanced ARIO Documentation](https://docs.ar.io/build/advanced)
+101. [Data ARIO Documentation](https://docs.ar.io/apis/ar-io-node/data)
+102. [Using Turbo SDK with Nextjs ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/nextjs)
+103. [Request Flow ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow)
+104. [Pricing ARIO Documentation](https://docs.ar.io/apis/ar-io-node/pricing)
+105. [Using Turbo in a Browser ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser)
+106. [Staking ARIO Documentation](https://docs.ar.io/learn/token/staking)
+107. [Manage your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage)
+108. [What is Arweave ARIO Documentation](https://docs.ar.io/learn/what-is-arweave)
+109. [Undername Ownership ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/undername-ownership)
+110. [ArNS Marketplace ARIO Documentation](https://docs.ar.io/build/guides/arns-marketplace)
+111. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns)
+112. [Turbo Credit Sharing ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing)
+113. [Glossary ARIO Documentation](https://docs.ar.io/glossary)
+114. [Introduction ARIO Documentation](https://docs.ar.io/learn)
+115. [Normalized Addresses ARIO Documentation](https://docs.ar.io/build/advanced/normalized-addresses)
+116. [ARIO Gateway APIs ARIO Documentation](https://docs.ar.io/apis/ar-io-node)
+117. [Troubleshooting ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/troubleshooting)
+118. [Balance ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/balance)
+119. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
+120. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
+121. [Metadata ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/metadata)
+122. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
+123. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
+124. [Vaults ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/vaults)
+125. [Contributing ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/contributing)
+126. [Support ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/support)
+127. [Data Retrieval ARIO Documentation](https://docs.ar.io/learn/gateways/data-retrieval)
+128. [Extensions Sidecars ARIO Documentation](https://docs.ar.io/build/extensions)
+129. [Pricing ARIO Documentation](https://docs.ar.io/apis/turbo/upload-service/pricing)
+130. [Architecture ARIO Documentation](https://docs.ar.io/learn/gateways/architecture)
+131. [Name Registration ARIO Documentation](https://docs.ar.io/learn/arns/name-registration)
+132. [Add to Wander ARIO Documentation](https://docs.ar.io/learn/token/add-to-wander)
+133. [Use Cases ARIO Documentation](https://docs.ar.io/learn/wayfinder/use-cases)
+134. [Observer Selection ARIO Documentation](https://docs.ar.io/learn/oip/observer-selection)
+135. [Deploy a dApp with ArDrive Web ARIO Documentation](https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web)
+136. [Reporting ARIO Documentation](https://docs.ar.io/learn/oip/reporting)
+137. [Records ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/records)
+138. [What is the Permaweb ARIO Documentation](https://docs.ar.io/learn/permaweb)
+139. [Gateway Registry ARIO Documentation](https://docs.ar.io/learn/gateways/gateway-registry)
+140. [Architecture ARIO Documentation](https://docs.ar.io/learn/token/architecture)
+141. [Get the Token ARIO Documentation](https://docs.ar.io/learn/token/get-the-token)
+142. [Turbo APIs ARIO Documentation](https://docs.ar.io/apis/turbo)
+143. [Token ARIO Documentation](https://docs.ar.io/learn/token)
+144. [What are Bundles ARIO Documentation](https://docs.ar.io/learn/ans-104-bundles)
+145. [ARIO Gateways ARIO Documentation](https://docs.ar.io/learn/gateways)
 
 ---
 
@@ -201,9 +237,132 @@ curl -s https://your-arns-name.arweave.net | head -10 Update ArNS Record If ArNS
 
 ---
 
-# 2. Content Moderation  ARIO Documentation
+# 2. Grafana  ARIO Documentation
 
 Document Number: 2
+Source: https://docs.ar.io/build/extensions/grafana
+Words: 643
+Quality Score: 0.765
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Extensions & Sidecars Overview AR.IO gateways track extensive performance and operational metrics using Prometheus. A Grafana sidecar can be deployed to visualize these metrics, providing an easy way to monitor gateway health and performance.The Grafana sidecar is deployed as a separate Docker container that uses the same network as the gateway, making it simple to integrate with your existing setup. Quick Start Deploy Grafana Deploy the Grafana sidecar using the provided Docker Compose file:docker compose -f docker-compose.grafana.yaml up -d Verify Deployment Check that Grafana is running properly:docker compose -f docker-compose.grafana.yaml logs -f --tail=25 Press Ctrl+C to exit the logs. Look for any error messages or permission issues.Access Grafana Navigate to http://localhost:1024 in your browser to access Grafana.Default credentials:Username: admin Password: admin Credential Reset Updated credentials may be lost if the Grafana sidecar is restarted. Be sure
+to log into Grafana immediately after every startup to ensure Grafana cannot
+be accessed with the default credentials.Exposing Dashboard Publicly To expose your Grafana dashboard externally through your domain, you'll need to configure nginx as a reverse proxy. This requires DNS setup and SSL certificates as covered in the gateway installation guide.Deploy Grafana Sidecar First, ensure your Grafana container is running:docker compose -f docker-compose.grafana.yaml up -d Verify it's accessible locally at http://localhost:1024.Update Nginx Configuration Edit your existing nginx configuration file (/etc/nginx/sites-available/default) to add the Grafana location block: Your complete nginx configuration should look like this:# Force redirects from HTTP to HTTPS
+
+server {
+
+listen 80;
+
+listen [::]:80;
+
+server_name .com *. .com;
+
+location / {
+
+return 301 https://$host$request_uri;
+
+}
+
+}
+
+# Forward traffic to your node and provide SSL certificates
+
+server {
+
+listen 443 ssl;
+
+listen [::]:443 ssl;
+
+server_name .com *. .com;
+
+ssl_certificate /etc/letsencrypt/live/ .com/fullchain.pem;
+
+ssl_certificate_key /etc/letsencrypt/live/ .com/privkey.pem;
+
+location / {
+
+proxy_pass http://localhost:3000;
+
+proxy_set_header Host $host;
+
+proxy_set_header X-Real-IP $remote_addr;
+
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+proxy_http_version 1.1;
+
+# Forward AR.IO headers if present in the request
+
+proxy_set_header X-AR-IO-Origin $http_x_ar_io_origin;
+
+proxy_set_header X-AR-IO-Origin-Node-Release $http_x_ar_io_origin_node_release;
+
+proxy_set_header X-AR-IO-Hops $http_x_ar_io_hops;
+
+}
+
+# Grafana dashboard access
+
+location /grafana/ {
+
+proxy_pass http://localhost:1024/grafana/;
+
+proxy_set_header Host $host;
+
+proxy_set_header X-Real-IP $remote_addr;
+
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+proxy_set_header X-Forwarded-Proto $scheme;
+
+}
+
+} Test and Reload Nginx Validate your nginx configuration:sudo nginx -t If the configuration is valid, reload nginx:sudo systemctl reload nginx Troubleshooting Security Considerations Best Practices Change Default Password - Use a strong, unique password Enable HTTPS - Use SSL certificates for external access Restrict Access - Use firewall rules to limit access Regular Updates - Keep Grafana updated to latest version Backup Configuration - Export and backup dashboard configurations Documentation & Support Grafana Documentation - Official Grafana docs Prometheus Metrics - Understanding gateway metrics Community Support - Join the AR.IO Discord for help Useful Docker Commands Monitor and manage your Grafana sidecar with these commands:# View all running services
+
+docker ps
+
+# Start Grafana sidecar
+
+docker compose -f docker-compose.grafana.yaml up -d
+
+# Grafana sidecar
+
+docker compose -f docker-compose.grafana.yaml down
+
+# Pull latest Grafana images
+
+docker compose -f docker-compose.grafana.yaml pull
+
+# Follow Grafana logs
+
+docker compose -f docker-compose.grafana.yaml logs -f --tail=25
+
+# Check Grafana container status
+
+docker compose -f docker-compose.grafana.yaml ps
+
+# Restart Grafana sidecar
+
+docker compose -f docker-compose.grafana.yaml restart
+
+# View Grafana logs without following
+
+docker compose -f docker-compose.grafana.yaml logs --tail=50
+
+# Start Grafana in foreground (for debugging)
+
+docker compose -f docker-compose.grafana.yaml up
+
+# Check port availability
+
+netstat -tulpn | grep :1024 Next Steps Now that you have monitoring set up, continue building your gateway infrastructure:Optimize Performance Learn advanced gateway optimization techniques for better performance Add ClickHouse Improve query performance with ClickHouse and Parquet integration Deploy Bundler Accept data uploads directly through your gateway Run Compute Unit Execute AO processes locally for maximum efficiency How is this guide?Extensions & Sidecars Modular tools that can be run alongside an AR.IO gateway to expand its capabilities or enhance the operator experience ClickHouse & Parquet Learn how to use Parquet files and ClickHouse to improve performance and scalability of your AR.IO gateway for large datasets.
+
+---
+
+# 3. Content Moderation  ARIO Documentation
+
+Document Number: 3
 Source: https://docs.ar.io/build/run-a-gateway/manage/content-moderation
 Words: 811
 Quality Score: 0.760
@@ -296,9 +455,9 @@ Sqlite3 is able to interact with a hexadecimal representation of the BLOB, by us
 
 ---
 
-# 3. Bundler  ARIO Documentation
+# 4. Bundler  ARIO Documentation
 
-Document Number: 3
+Document Number: 4
 Source: https://docs.ar.io/build/extensions/bundler
 Words: 1099
 Quality Score: 0.740
@@ -340,9 +499,9 @@ docker compose --file docker-compose.bundler.yaml restart Next Steps Now that yo
 
 ---
 
-# 4. Storing DePIN Data on Arweave Using Turbo  ARIO Documentation
+# 5. Storing DePIN Data on Arweave Using Turbo  ARIO Documentation
 
-Document Number: 4
+Document Number: 5
 Source: https://docs.ar.io/build/guides/depin
 Words: 914
 Quality Score: 0.730
@@ -697,9 +856,9 @@ return results
 
 ---
 
-# 5. ClickHouse  Parquet  ARIO Documentation
+# 6. ClickHouse  Parquet  ARIO Documentation
 
-Document Number: 5
+Document Number: 6
 Source: https://docs.ar.io/build/extensions/clickhouse
 Words: 2041
 Quality Score: 0.718
@@ -762,9 +921,9 @@ docker compose --profile clickhouse restart clickhouse Next Steps Now that you h
 
 ---
 
-# 6. Crossmint NFT Minting App  ARIO Documentation
+# 7. Crossmint NFT Minting App  ARIO Documentation
 
-Document Number: 6
+Document Number: 7
 Source: https://docs.ar.io/build/guides/crossmint-nft-minting-app
 Words: 1066
 Quality Score: 0.714
@@ -965,9 +1124,9 @@ error: error.message
 
 ---
 
-# 7. Hosting Decentralized Websites  ARIO Documentation
+# 8. Hosting Decentralized Websites  ARIO Documentation
 
-Document Number: 7
+Document Number: 8
 Source: https://docs.ar.io/build/guides/hosting-decentralized-websites
 Words: 419
 Quality Score: 0.714
@@ -1026,9 +1185,9 @@ npx permaweb-deploy --deploy-folder ./build --arns-name your-domain
 
 ---
 
-# 8. ArNS Undernames for Permasite Versioning  ARIO Documentation
+# 9. ArNS Undernames for Permasite Versioning  ARIO Documentation
 
-Document Number: 8
+Document Number: 9
 Source: https://docs.ar.io/build/guides/arns-undernames-versioning
 Words: 553
 Quality Score: 0.686
@@ -1115,9 +1274,9 @@ npx permaweb-deploy --arns-name myapp --undername v2 --deploy-folder ./v2-build 
 
 ---
 
-# 9. Environment Variables  ARIO Documentation
+# 10. Environment Variables  ARIO Documentation
 
-Document Number: 9
+Document Number: 10
 Source: https://docs.ar.io/build/run-a-gateway/manage/environment-variables
 Words: 1646
 Quality Score: 0.681
@@ -1200,9 +1359,9 @@ ARNS_CACHE_TYPE=redis This comprehensive reference should help you configure you
 
 ---
 
-# 10. AO Compute Unit (CU)  ARIO Documentation
+# 11. AO Compute Unit (CU)  ARIO Documentation
 
-Document Number: 10
+Document Number: 11
 Source: https://docs.ar.io/build/extensions/compute-unit
 Words: 1237
 Quality Score: 0.668
@@ -1270,9 +1429,9 @@ docker compose --env-file .env.ao -f docker-compose.ao.yaml up Next Steps Now th
 
 ---
 
-# 11. Advanced Uploading with Turbo  ARIO Documentation
+# 12. Advanced Uploading with Turbo  ARIO Documentation
 
-Document Number: 11
+Document Number: 12
 Source: https://docs.ar.io/build/upload/advanced-uploading-with-turbo
 Words: 1822
 Quality Score: 0.655
@@ -1991,9 +2150,9 @@ console.error("Upload error:", error);
 
 ---
 
-# 12. Importing SQLite Database Snapshots  ARIO Documentation
+# 13. Importing SQLite Database Snapshots  ARIO Documentation
 
-Document Number: 12
+Document Number: 13
 Source: https://docs.ar.io/build/run-a-gateway/manage/index-snapshots
 Words: 716
 Quality Score: 0.637
@@ -2043,9 +2202,9 @@ mv data/sqlite/* sqlite-backup/ Remove Old Database Delete the existing SQLite d
 
 ---
 
-# 13. Index Querying  ARIO Documentation
+# 14. Index Querying  ARIO Documentation
 
-Document Number: 13
+Document Number: 14
 Source: https://docs.ar.io/apis/ar-io-node/index-querying
 Words: 158
 Quality Score: 0.611
@@ -2092,9 +2251,9 @@ AR.IO Gateway Get data from the AR.IO Gateway index using GQL Query indexed data
 
 ---
 
-# 14. Wayfinder  ARIO Documentation
+# 15. Wayfinder  ARIO Documentation
 
-Document Number: 14
+Document Number: 15
 Source: https://docs.ar.io/build/access/wayfinder
 Words: 388
 Quality Score: 0.597
@@ -2171,9 +2330,9 @@ return {data && {data}} ;
 
 ---
 
-# 15. Gateway Filters  ARIO Documentation
+# 16. Gateway Filters  ARIO Documentation
 
-Document Number: 15
+Document Number: 16
 Source: https://docs.ar.io/build/run-a-gateway/manage/filters
 Words: 1442
 Quality Score: 0.597
@@ -2892,9 +3051,9 @@ been restarted after changes - System has sufficient resources Next Steps Now th
 
 ---
 
-# 16. Data Model  ARIO Documentation
+# 17. Data Model  ARIO Documentation
 
-Document Number: 16
+Document Number: 17
 Source: https://docs.ar.io/build/advanced/arfs/data-model
 Words: 599
 Quality Score: 0.591
@@ -2919,9 +3078,9 @@ Advanced ArFS Protocol Because of Arweave's permanent and immutable nature, trad
 
 ---
 
-# 17. Working With Primary Names  ARIO Documentation
+# 18. Working With Primary Names  ARIO Documentation
 
-Document Number: 17
+Document Number: 18
 Source: https://docs.ar.io/build/guides/arns-primary-names
 Words: 554
 Quality Score: 0.578
@@ -2958,9 +3117,9 @@ console.log(nameData.name); // e.g., "jonniesparkles" How Apps Use Primary Names
 
 ---
 
-# 18. Direct Constructor Usage  ARIO Documentation
+# 19. Direct Constructor Usage  ARIO Documentation
 
-Document Number: 18
+Document Number: 19
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/direct-constructor-usage
 Words: 294
 Quality Score: 0.578
@@ -3081,9 +3240,75 @@ console.log('Verification failed!', event);
 
 ---
 
-# 19. Wayfinder Core  ARIO Documentation
+# 20. PreferredWithFallbackRoutingStrategy  ARIO Documentation
 
-Document Number: 19
+Document Number: 20
+Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/preferredwithfallbackroutingstrategy
+Words: 135
+Quality Score: 0.575
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Wayfinder SDK's Wayfinder Core Routing Strategies Uses a preferred gateway, with a fallback strategy if the preferred gateway is not available. This is useful for builders who run their own gateways and want to use their own gateway as the preferred gateway, but also want to have a fallback strategy in case their gateway is not available.This strategy is built using CompositeRoutingStrategy internally. It first attempts to ping the preferred gateway (using PingRoutingStrategy with StaticRoutingStrategy), and if that fails, it falls back to the specified fallback strategy.import { PreferredWithFallbackRoutingStrategy, FastestPingRoutingStrategy } from '@ar.io/wayfinder-core';
+
+const routingStrategy = new PreferredWithFallbackRoutingStrategy({
+
+preferredGateway: 'https://permagate.io',
+
+fallbackStrategy: new FastestPingRoutingStrategy({
+
+timeoutMs: 500,
+
+}),
+
+});How is this guide?FastestPingRoutingStrategy JavaScript/TypeScript SDK for accessing Arweave data with built-in verification and gateway routing CompositeRoutingStrategy JavaScript/TypeScript SDK for accessing Arweave data with built-in verification and gateway routing
+
+---
+
+# 21. Configuration  ARIO Documentation
+
+Document Number: 21
+Source: https://docs.ar.io/sdks/ar-io-sdk/configuration
+Words: 128
+Quality Score: 0.574
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ARIO Contract The ARIO client class exposes APIs relevant to the ar.io process. It can be configured to use any AO Process ID that adheres to the [ARIO Network Spec]. By default, it will use the current [ARIO Testnet Process]. Refer to [AO Connect] for more information on how to configure an ARIO process to use specific AO infrastructure.import { ARIO , AOProcess } from '@ar.io/sdk';
+
+import { connect } from '@permaweb/aoconnect';
+
+// provide a custom ao infrastructure and process id
+
+const ario = ARIO.mainnet({
+
+process: new AOProcess({
+
+processId: 'ARIO_PROCESS_ID'
+
+ao: connect({
+
+MODE: 'legacy',
+
+MU_URL: 'https://mu-testnet.xyz',
+
+CU_URL: 'https://cu-testnet.xyz',
+
+GRAPHQL_URL: 'https://arweave.net/graphql',
+
+GATEWAY_URL: 'https://arweave.net',
+
+})
+
+})
+
+});How is this guide?Primary Names TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Initialize TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 22. Wayfinder Core  ARIO Documentation
+
+Document Number: 22
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core
 Words: 146
 Quality Score: 0.571
@@ -3118,9 +3343,138 @@ verification: 'hash',
 
 ---
 
-# 20. Access Data  ARIO Documentation
+# 23. Admin  ARIO Documentation
 
-Document Number: 20
+Document Number: 23
+Source: https://docs.ar.io/apis/ar-io-node/admin
+Words: 682
+Quality Score: 0.567
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO Gateway Access several password protected features and functions specific to your AR.IO Gateway.curl -X GET "https://ardrive.net/ar-io/admin/debug" Empty Empty Prioritize a transaction or bundle in the queue.Stage a specific TX ID as priority for your Gateway to locate and index. This will trigger and queue bundle processing if the transaction is a bundle, and your Gateway is configured to unbundle and index.Request Body id?Base64Url43 TX ID of the transaction you would like to prioritize.Match ^[0-9a-zA-Z_-]{43}$ Response Body curl -X POST "https://ardrive.net/ar-io/admin/queue-tx" \
+-H "Content-Type: application/json" \
+-d '{
+"id": "3lyxgbgEvqNSvJrTX2J7CfRychUD5KClFhhVLyTPNCQ"
+}' {
+
+"message": "TX queued"
+
+} "Must provide 'id'" "Unauthorized" "Internal Server Error" Queue a bundle for indexing, bypassing any filter settings by default.Queue a bundle for indexing, bypassing any filter settings by default.Request Body id?Base64Url43 TX ID of the transaction you would like to prioritize.Match ^[0-9a-zA-Z_-]{43}$ Response Body curl -X POST "https://ardrive.net/ar-io/admin/queue-bundle" \
+-H "Content-Type: application/json" \
+-d '{
+"id": "3lyxgbgEvqNSvJrTX2J7CfRychUD5KClFhhVLyTPNCQ"
+}' {
+
+"message": "TX queued"
+
+} "Unauthorized" "Internal Server Error" Queue data items for indexing Queue one or more data items for indexing. This endpoint
+accepts an array of data item headers and prioritizes them for processing.Request Body Response Body Get bundle processing status Returns detailed status information about a bundle's processing state, including counts of data items,
+processing timestamps, and retry attempts. This endpoint helps monitor the progress and state of bundle
+processing through the gateway's pipeline.Path Parameters id string Bundle ID Match ^[0-9a-zA-Z_-]{43}$ Response Body curl -X GET "https://ardrive.net/ar-io/admin/bundle-status/string" {
+
+"id": "string",
+
+"formatId": 0,
+
+"unbundleFilterId": 0,
+
+"indexFilterId": 0,
+
+"dataItemCount": 0,
+
+"matchedDataItemCount": 0,
+
+"firstQueuedAt": 0,
+
+"lastQueuedAt": 0,
+
+"firstSkippedAt": 0,
+
+"lastSkippedAt": 0,
+
+"firstUnbundledAt": 0,
+
+"lastUnbundledAt": 0,
+
+"firstFullyIndexedAt": 0,
+
+"lastFullyIndexedAt": 0,
+
+"rootTransactionId": "string",
+
+"importAttemptCount": 0,
+
+"duplicatedDataItemCount": 0,
+
+"previousUnbundleFilterId": 0,
+
+"previousIndexFilterId": 0,
+
+"retryAttemptCount": 0,
+
+"firstRetriedAt": 0,
+
+"lastRetriedAt": 0
+
+} "Must provide a valid bundle id" "Unauthorized" "Bundle not found" "Internal Server Error" Blocks transactions or data-items so your AR.IO Gateway will not serve them.Submits a TX ID/data-item ID or sha-256 content hash for content you do not want your AR.IO Gateway to serve. Once submitted, your Gateway will not respond to requests for these transactions or data-items.WARNING - Testing a TX ID here WILL result in that data being blocked by your Gateway.Request Body id?string TX ID for a transaction you want to block.source?string The source from which the block data was obtained. Documentation purposes only.Response Body curl -X PUT "https://ardrive.net/ar-io/admin/block-data" \
+-H "Content-Type: application/json" \
+-d '{
+"id": "3lyxgbgEvqNSvJrTX2J7CfRychUD5KClFhhVLyTPNCQ",
+"notes": "This content is offensive",
+"source": "Public Block list"
+}' Empty Empty Blocks an ARNS name so your AR.IO Gateway will not serve it.Blocks an ARNS name so your AR.IO Gateway will not serve it.Request Body Response Body curl -X PUT "https://ardrive.net/ar-io/admin/block-name" \
+-H "Content-Type: application/json" \
+-d '{}' Empty Empty curl -X PUT "https://ardrive.net/ar-io/admin/unblock-name" \
+-H "Content-Type: application/json" \
+-d '{}' Empty Empty Export data to Parquet format Initiates an export of data to Parquet format files. This process runs in the background
+and exports data for the specified block height range.Request Body outputDir string Directory in the server where Parquet files will be saved startHeight integer Starting block height for the export endHeight integer Ending block height for the export maxFileRows integer Maximum number of rows per Parquet file Response Body curl -X POST "https://ardrive.net/ar-io/admin/export-parquet" \
+-H "Content-Type: application/json" \
+-d '{
+"outputDir": "string",
+"startHeight": 0,
+"endHeight": 0,
+"maxFileRows": 0
+}' {
+
+"message": "Parquet export started"
+
+} Empty "Unauthorized" "Internal Server Error" curl -X GET "https://ardrive.net/ar-io/admin/export-parquet/status" {
+
+"status": "not_started",
+
+"outputDir": "string",
+
+"startHeight": 0,
+
+"endHeight": 0,
+
+"maxFileRows": 0,
+
+"durationInSeconds": 0,
+
+"endTime": "2019-08-24T14:15:22Z",
+
+"endTimestamp": 0,
+
+"error": "string"
+
+} "Unauthorized" "Internal Server Error" Prune stable data items Removes stable data items from the database that were indexed before the specified timestamp.
+This helps manage database size by removing older, stable data items.Request Body indexedAtThreshold integer Unix timestamp - data items indexed before this time will be pruned Response Body curl -X POST "https://ardrive.net/ar-io/admin/prune-stable-data-items" \
+-H "Content-Type: application/json" \
+-d '{
+"indexedAtThreshold": 1677721600
+}' {
+
+"message": "Stable data items pruned successfully"
+
+} "Invalid indexedAtThreshold - must be a positive integer" "Unauthorized" "Internal Server Error" How is this guide?Pricing Previous Page Farcaster Frames Next Page
+
+---
+
+# 24. Access Data  ARIO Documentation
+
+Document Number: 24
 Source: https://docs.ar.io/build/access
 Words: 297
 Quality Score: 0.564
@@ -3153,9 +3507,9 @@ id
 
 ---
 
-# 21. Turbo SDK  ARIO Documentation
+# 25. Turbo SDK  ARIO Documentation
 
-Document Number: 21
+Document Number: 25
 Source: https://docs.ar.io/sdks/turbo-sdk
 Words: 347
 Quality Score: 0.564
@@ -3232,9 +3586,9 @@ Private Key (JWK): Select File: Upload to Arweave API Reference & Documentation 
 
 ---
 
-# 22. Creating Drives  ARIO Documentation
+# 26. Creating Drives  ARIO Documentation
 
-Document Number: 22
+Document Number: 26
 Source: https://docs.ar.io/build/advanced/arfs/creating-drives
 Words: 734
 Quality Score: 0.564
@@ -3327,9 +3681,9 @@ Unix-Time: " " Implementation Example Here's a practical example of creating a c
 
 ---
 
-# 23. Run a Gateway  ARIO Documentation
+# 27. Run a Gateway  ARIO Documentation
 
-Document Number: 23
+Document Number: 27
 Source: https://docs.ar.io/build/run-a-gateway
 Words: 332
 Quality Score: 0.562
@@ -3344,9 +3698,9 @@ curl localhost:4000/4jBV3ofWh41KhuTs2pFvj-KBZWUkbrbCYlJH0vLA6LM Your gateway is 
 
 ---
 
-# 24. Getting Started with Turbo  ARIO Documentation
+# 28. Getting Started with Turbo  ARIO Documentation
 
-Document Number: 24
+Document Number: 28
 Source: https://docs.ar.io/build/upload/bundling-services
 Words: 552
 Quality Score: 0.558
@@ -3403,9 +3757,34 @@ console.log("Owner:", result.owner);Advanced Features Turbo Credits System Learn
 
 ---
 
-# 25. Payments  ARIO Documentation
+# 29. Chunks  ARIO Documentation
 
-Document Number: 25
+Document Number: 29
+Source: https://docs.ar.io/apis/ar-io-node/chunks
+Words: 89
+Quality Score: 0.558
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO Gateway Upload Arweave data chunks or get existing chunk offset information curl -X GET "https://ardrive.net/chunk/0" \
+-H "If-None-Match: string" {
+
+"tx_path": "string",
+
+"packing": "string",
+
+"data_path": "string",
+
+"chunk": "string"
+
+} Empty Empty Empty Get chunk metadata without body.Returns the same headers as GET but without the response body. Useful for checking chunk existence and metadata.Path Parameters offset integer Header Parameters If-None-Match?string ETag value for conditional request. Returns 304 if chunk hash matches.Response Body curl -X HEAD "https://ardrive.net/chunk/0" \
+-H "If-None-Match: string" Empty Empty Empty Empty How is this guide?
+
+---
+
+# 30. Payments  ARIO Documentation
+
+Document Number: 30
 Source: https://docs.ar.io/apis/turbo/payment-service/payments
 Words: 392
 Quality Score: 0.556
@@ -3560,9 +3939,9 @@ Turbo Payment Service Payment processing and top-up operations Get Top Up Quote 
 
 ---
 
-# 26. Arweave Name System (ArNS)  ARIO Documentation
+# 31. Arweave Name System (ArNS)  ARIO Documentation
 
-Document Number: 26
+Document Number: 31
 Source: https://docs.ar.io/build/access/arns
 Words: 386
 Quality Score: 0.553
@@ -3601,9 +3980,9 @@ console.log(data);Why Use ArNS?ArNS provides significant advantages for accessin
 
 ---
 
-# 27. Entity Types  ARIO Documentation
+# 32. Entity Types  ARIO Documentation
 
-Document Number: 27
+Document Number: 32
 Source: https://docs.ar.io/build/advanced/arfs/entity-types
 Words: 1492
 Quality Score: 0.553
@@ -3720,9 +4099,9 @@ Data-Start: " " Snapshot Entity Data A JSON data object must also be uploaded wi
 
 ---
 
-# 28. NetworkGatewaysProvider  ARIO Documentation
+# 33. NetworkGatewaysProvider  ARIO Documentation
 
-Document Number: 28
+Document Number: 33
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/networkgatewaysprovider
 Words: 156
 Quality Score: 0.553
@@ -3753,9 +4132,122 @@ return gateway.status === 'joined' && gateway.stats.failedConsecutiveEpochs === 
 
 ---
 
-# 29. Automating SSL Certificate Renewal  ARIO Documentation
+# 34. Networks  ARIO Documentation
 
-Document Number: 29
+Document Number: 34
+Source: https://docs.ar.io/sdks/ar-io-sdk/networks
+Words: 511
+Quality Score: 0.552
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ARIO Contract The SDK provides the following process IDs for the mainnet and testnet environments:ARIO_MAINNET_PROCESS_ID - Mainnet ARIO process ID (production) ARIO_TESTNET_PROCESS_ID - Testnet ARIO process ID (testing and development) ARIO_DEVNET_PROCESS_ID - Devnet ARIO process ID (development) As of v3.8.1 the SDK defaults all API interactions to mainnet. To use the testnet or devnet provide the appropriate ARIO_TESTNET_PROCESS_ID or ARIO_DEVNET_PROCESS_ID when initializing the client.As of v3.8.1 the SDK defaults all API interactions to mainnet. To use the testnet or devnet provide the appropriate ARIO_TESTNET_PROCESS_ID or ARIO_DEVNET_PROCESS_ID when initializing the client.import { ARIO } from '@ar.io/sdk';
+
+const ario = ARIO.mainnet(); // or ARIO.init() Testnet import { ARIO } from '@ar.io/sdk';
+
+const testnet = ARIO.testnet(); // or ARIO.init({ processId: ARIO_TESTNET_PROCESS_ID }) Faucet The SDK provides APIs for claiming tokens via a faucet on the AR.IO Testnet process (tARIO) via the [ar-io-testnet-faucet] service. All token requests require a captcha to be solved, and the faucet is rate limited to prevent abuse.To claim testnet tokens from the testnet token faucet, you can use one of the following methods:Visit faucet.ar.io - the easiest way to quickly get tokens for testing for a single address.Programmatically via the SDK - useful if you need to claim tokens for multiple addresses or dynamically within your application.ARIO.testnet().faucet.captchaUrl() - returns the captcha URL for the testnet faucet. Open this URL in a new browser window and listen for the ario-jwt-success event to be emitted.ARIO.testnet().faucet.claimWithAuthToken({ authToken, recipient, quantity }) - claims tokens for the specified recipient address using the provided auth token.ARIO.testnet().faucet.verifyAuthToken({ authToken }) - verifies if the provided auth token is still valid.Example client-side code for claiming tokens import { ARIO } from '@ar.io/sdk';
+
+const testnet = ARIO.testnet();
+
+const captchaUrl = await ario.faucet.captchaUrl();
+
+// open the captcha URL in the browser, and listen for the auth token event
+
+const captchaWindow = window.open(
+
+captchaUrl.captchaUrl,
+
+'_blank',
+
+'width=600,height=600',
+
+);
+
+/**
+
+* The captcha URL includes a window.parent.postMessage event that is used to send the auth token to the parent window.
+
+* You can store the auth token in localStorage and use it to claim tokens for the duration of the auth token's expiration (default 1 hour).
+
+*/
+
+window.parent.addEventListener('message', async (event) => {
+
+if (event.data.type === 'ario-jwt-success') {
+
+localStorage.setItem('ario-jwt', event.data.token);
+
+localStorage.setItem('ario-jwt-expires-at', event.data.expiresAt);
+
+// close our captcha window
+
+captchaWindow?.close();
+
+// claim the tokens using the JWT token
+
+const res = await testnet.faucet
+
+.claimWithAuthToken({
+
+authToken: event.data.token,
+
+recipient: await window.arweaveWallet.getActiveAddress(),
+
+quantity: new ARIOToken(100).toMARIO().valueOf(), // 100 ARIO
+
+})
+
+.then((res) => {
+
+alert(
+
+'Successfully claimed 100 ARIO tokens! Transaction ID: ' + res.id,
+
+);
+
+})
+
+.catch((err) => {
+
+alert(`Failed to claim tokens: ${err}`);
+
+});
+
+}
+
+});
+
+/**
+
+* Once you have a valid JWT, you can check if it is still valid and use it for subsequent requests without having to open the captcha again.
+
+*/
+
+if (
+
+localStorage.getItem('ario-jwt-expires-at') &&
+
+Date.now() < parseInt(localStorage.getItem('ario-jwt-expires-at') ?? '0')
+
+) {
+
+const res = await testnet.faucet.claimWithAuthToken({
+
+authToken: localStorage.getItem('ario-jwt') ?? '',
+
+recipient: await window.arweaveWallet.getActiveAddress(),
+
+quantity: new ARIOToken(100).toMARIO().valueOf(), // 100 ARIO
+
+});
+
+} How is this guide?General TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Vaults TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 35. Automating SSL Certificate Renewal  ARIO Documentation
+
+Document Number: 35
 Source: https://docs.ar.io/build/run-a-gateway/manage/ssl-certs
 Words: 883
 Quality Score: 0.552
@@ -3824,9 +4316,32 @@ Congratulations, all simulated renewals succeeded:
 
 ---
 
-# 30. Wayfinder React  ARIO Documentation
+# 36. Redemption  ARIO Documentation
 
-Document Number: 30
+Document Number: 36
+Source: https://docs.ar.io/apis/turbo/payment-service/redemption
+Words: 100
+Quality Score: 0.550
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Turbo Payment Service Credit redemption and gift processing Redeem credits gifted via email Redeem credits gifted via email by providing the destination wallet address for the credits, the redemption ID, and recipient email address Query Parameters destinationAddress string Destination wallet address id string ID for the redemption email string Recipient email address for the redemption Response Body curl -X GET "https://loading/v1/redeem?destinationAddress=string&id=string&email=string" {
+
+"message": "Payment receipt redeemed for 1000 winc!",
+
+"userBalance": 1000,
+
+"userAddress": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"userCreationDate": "2023-05-17T21:46:38.404Z"
+
+} "Failure to redeem payment receipt!" "Error while redeeming payment receipt. Unable to reach Database!" How is this guide?Approvals Previous Page Info GET Next Page
+
+---
+
+# 37. Wayfinder React  ARIO Documentation
+
+Document Number: 37
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-react
 Words: 261
 Quality Score: 0.550
@@ -3895,9 +4410,62 @@ return ( );
 
 ---
 
-# 31. Reading Data  ARIO Documentation
+# 38. Spawn  ARIO Documentation
 
-Document Number: 31
+Document Number: 38
+Source: https://docs.ar.io/sdks/ar-io-sdk/spawn
+Words: 243
+Quality Score: 0.549
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts spawn() Spawns a new ANT (Arweave Name Token) process. This static function creates a new ANT process on the AO network and returns the process ID.Note: Requires signer to be provided to sign the spawn transaction.import { ANT } from '@ar.io/sdk';
+
+import { ArweaveSigner } from '@ar.io/sdk/node';
+
+const processId = await ANT.spawn({
+
+signer: new ArweaveSigner(jwk),
+
+state: {
+
+name: 'My ANT',
+
+ticker: 'MYANT',
+
+description: 'My custom ANT token',
+
+},
+
+});
+
+// Using a custom module ID
+
+const processId = await ANT.spawn({
+
+signer: new ArweaveSigner(jwk),
+
+module: 'FKtQtOOtlcWCW2pXrwWFiCSlnuewMZOHCzhulVkyqBE', // Custom module ID
+
+state: {
+
+name: 'My Custom Module ANT',
+
+ticker: 'CUSTOM',
+
+description: 'ANT using a specific module version',
+
+},
+
+});CLI Usage:ar.io spawn-ant --wallet-file wallet.json --name "My ANT" --ticker "MYANT"
+
+ar.io spawn-ant --wallet-file wallet.json --module FKtQtOOtlcWCW2pXrwWFiCSlnuewMZOHCzhulVkyqBE --name "My Custom ANT" --ticker "CUSTOM" Parameters:signer: AoSigner - The signer used to authenticate the spawn transaction module?: string - Optional module ID to use; if not provided, gets latest from ANT registry ao?: AoClient - Optional AO client instance (defaults to legacy mode connection) scheduler?: string - Optional scheduler ID state?: SpawnANTState - Optional initial state for the ANT including name, ticker, description, etc.antRegistryId?: string - Optional ANT registry ID logger?: Logger - Optional logger instance authority?: string - Optional authority Returns:Promise\ - The process ID of the newly spawned ANT How is this guide?Initialize TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Versions TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem On this page spawn()
+
+---
+
+# 39. Reading Data  ARIO Documentation
+
+Document Number: 39
 Source: https://docs.ar.io/build/advanced/arfs/reading-data
 Words: 1020
 Quality Score: 0.548
@@ -4150,9 +4718,102 @@ value
 
 ---
 
-# 32. Upgrading your Gateway  ARIO Documentation
+# 40. Farcaster Frames  ARIO Documentation
 
-Document Number: 32
+Document Number: 40
+Source: https://docs.ar.io/apis/ar-io-node/farcaster-frames
+Words: 171
+Quality Score: 0.548
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO Gateway Retrieve and interact with Farcaster Frames using Arweave transactions.Handle a Farcaster initial Frame request.Responds to a Farcaster initial Frame GET request by returning the content of a specified Arweave transaction or data item.Path Parameters txId string Match ^[0-9a-zA-Z_-]{43}$ Response Body curl -X GET "https://ardrive.net/local/farcaster/frame/string" {
+
+"format": 0,
+
+"id": "string",
+
+"last_tx": "string",
+
+"owner": "string",
+
+"tags": [
+
+{
+
+"name": "string",
+
+"value": "string"
+
+}
+
+],
+
+"target": "string",
+
+"quantity": "string",
+
+"data": "string",
+
+"data_tree": [
+
+"string"
+
+],
+
+"data_root": "string",
+
+"reward": "string",
+
+"signature": "string"
+
+} Handle a Farcaster response Frame request.Responds to a Farcaster response Frame POST request by returning the content of a specified Arweave transaction or data item.Path Parameters txId string Match ^[0-9a-zA-Z_-]{43}$ Response Body curl -X POST "https://ardrive.net/local/farcaster/frame/string" {
+
+"format": 0,
+
+"id": "string",
+
+"last_tx": "string",
+
+"owner": "string",
+
+"tags": [
+
+{
+
+"name": "string",
+
+"value": "string"
+
+}
+
+],
+
+"target": "string",
+
+"quantity": "string",
+
+"data": "string",
+
+"data_tree": [
+
+"string"
+
+],
+
+"data_root": "string",
+
+"reward": "string",
+
+"signature": "string"
+
+} How is this guide?Admin Previous Page Turbo APIs Upload and payment services for fast, reliable data uploads to Arweave
+
+---
+
+# 41. Upgrading your Gateway  ARIO Documentation
+
+Document Number: 41
 Source: https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway
 Words: 604
 Quality Score: 0.548
@@ -4169,9 +4830,9 @@ NEW_CONFIG_VALUE=default_value Restart Gateway Restart your gateway to apply the
 
 ---
 
-# 33. Pricing Model  ARIO Documentation
+# 42. Pricing Model  ARIO Documentation
 
-Document Number: 33
+Document Number: 42
 Source: https://docs.ar.io/learn/arns/pricing-model
 Words: 1071
 Quality Score: 0.546
@@ -4316,9 +4977,9 @@ View Live PricingSee current ArNS pricing in real-time with the live pricing cha
 
 ---
 
-# 34. Find Data (via GraphQL)  ARIO Documentation
+# 43. Find Data (via GraphQL)  ARIO Documentation
 
-Document Number: 34
+Document Number: 43
 Source: https://docs.ar.io/build/access/find-data
 Words: 882
 Quality Score: 0.544
@@ -4677,9 +5338,9 @@ address
 
 ---
 
-# 35. Tagging  ARIO Documentation
+# 44. Tagging  ARIO Documentation
 
-Document Number: 35
+Document Number: 44
 Source: https://docs.ar.io/build/upload/tagging
 Words: 387
 Quality Score: 0.544
@@ -4740,9 +5401,40 @@ tags: [
 
 ---
 
-# 36. Gateway  ARIO Documentation
+# 45. Initialize  ARIO Documentation
 
-Document Number: 36
+Document Number: 45
+Source: https://docs.ar.io/sdks/ar-io-sdk/initialize
+Words: 100
+Quality Score: 0.543
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts init() Factory function to that creates a read-only or writeable client. By providing a signer additional write APIs that require signing, like setRecord and transfer are available. By default, a read-only client is returned and no write APIs are available.// in a browser environment with ArConnect
+
+const ant = ANT.init({
+
+signer: new ArConnectSigner(window.arweaveWallet, Arweave.init({})),
+
+processId: 'bh9l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM'
+
+});
+
+// in a node environment
+
+const ant = ANT.init({
+
+signer: new ArweaveSigner(JWK),
+
+processId: 'bh9l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM'
+
+});How is this guide?Configuration TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Spawn TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem On this page init()
+
+---
+
+# 46. Gateway  ARIO Documentation
+
+Document Number: 46
 Source: https://docs.ar.io/apis/ar-io-node/gateway
 Words: 327
 Quality Score: 0.540
@@ -4838,9 +5530,9 @@ These metrics include various counters, gauges, and histograms tracking:HTTP req
 
 ---
 
-# 37. Events  ARIO Documentation
+# 47. Events  ARIO Documentation
 
-Document Number: 37
+Document Number: 47
 Source: https://docs.ar.io/sdks/turbo-sdk/events
 Words: 338
 Quality Score: 0.539
@@ -4939,9 +5631,9 @@ console.log('Signing success!');
 
 ---
 
-# 38. Privacy  Encryption  ARIO Documentation
+# 48. Privacy  Encryption  ARIO Documentation
 
-Document Number: 38
+Document Number: 48
 Source: https://docs.ar.io/build/advanced/arfs/privacy
 Words: 968
 Quality Score: 0.536
@@ -4956,9 +5648,9 @@ Cipher-IV?: "<12 byte initialization vector as Base64>" Just like drives, privat
 
 ---
 
-# 39. Upload Data  ARIO Documentation
+# 49. Upload Data  ARIO Documentation
 
-Document Number: 39
+Document Number: 49
 Source: https://docs.ar.io/build/upload
 Words: 391
 Quality Score: 0.535
@@ -4979,9 +5671,34 @@ fileStreamFactory: () => fs.createReadStream("./my-file.pdf"),
 
 ---
 
-# 40. Fetch Data (via REST API)  ARIO Documentation
+# 50. Browser Sandboxing  ARIO Documentation
 
-Document Number: 40
+Document Number: 50
+Source: https://docs.ar.io/build/advanced/sandboxing
+Words: 590
+Quality Score: 0.533
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Advanced Overview Browser sandboxing allows data requests to a gateway node to benefit from the security advantages of using a browser's same-origin policy by redirecting the requests to a pseudo-unique subdomain of the gateway's apex domain. For example, an attempt to access https://arweave.net/gnWKBqFXMJrrksEWrXLQRUQQQeFhv4uVxesHBcT8i6o would redirect to https://qj2yubvbk4yjv24syelk24wqivcbaqpbmg7yxfof5mdqlrh4rova.arweave.net/gnWKBqFXMJrrksEWrXLQRUQQQeFhv4uVxesHBcT8i6o Two DNS records are required to link a domain to an Arweave transaction on a gateway node. For example, www.mycustomsite.com would need the following records to link it to www.arweave-gateway.net:A DNS CNAME record pointing to an Arweave gateway: www CNAME arweave-gateway.net,A DNS TXT record linking the domain with a specific transaction ID: arweavetx TXT kTv4OkVtmc0NAsqIcnHfudKjykJeQ83qXXrxf8hrh0S When a browser requests www.mycustomsite.com the user's machine will (through the usual DNS processes) resolve this to the IP address for the gateway node arweave-gateway.net. When the gateway receives an HTTP request with a non-default hostname, e.g. www.mycustomsite.com instead of www.arweave-gateway.net, the gateway will query the DNS records for www.mycustomsite.com and the 'arweavetx' TXT record will tell the node which transaction to serve.TLS and its Role in Browser Sandboxing Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network. In the context of Arweave applications and browser sandboxing, TLS s a critical role in ensuring secure data transmission and enabling the effective use of browser security features.When Arweave applications are accessed without TLS, most browsers restrict the use of native cryptographic functions. These functions, which include hashing, signing, and verification, are essential for the secure operation of Arweave permaweb apps. Without TLS, not only are these functions unavailable, but the applications also become susceptible to various security threats, notably man-in-the-middle (MITM) attacks. Although Arweave transactions are signed, making direct MITM attacks challenging, the absence of encryption can expose other vulnerabilities. For instance, attackers could intercept and alter the /price endpoint, potentially causing transaction failures or leading to overcharging.To address these concerns, gateway operators are responsible for generating and maintaining TLS certificates for their gateways. This can be achieved through various systems, such as ACME for Let's Encrypt. An important step in setting up a gateway is obtaining a wildcard TLS certificate for the gateway's domain. This certificate secures traffic on both the apex domain and its single-level subdomains (e.g., gateway.com and subdomain.gateway.com).The integration of TLS is crucial for the implementation of browser sandboxing. When a browser requests a transaction from a gateway, the gateway issues a 301 redirect to a subdomain of the gateway, using a Base32 pseudo-unique address derived from the transaction ID. This redirection, secured by TLS, invokes the browser's same-origin policy. As a result, the requested web page is confined within a secure sandbox environment, isolated from other domains. This isolation is vital for maintaining the integrity and security of transactions and interactions within Arweave's permaweb applications.Deriving Sandbox Value AR.IO nodes generate browser sandbox values deterministically. Because of this, it is possible to calculate ahead of time what that value will be for a particular transaction id.Sandbox values are a Base32 encoding of the transaction ID. AR.IO gateways use the following code snippet to accomplish the encoding:const expectedTxSandbox = (id: string): string => {
+
+return toB32(fromB64Url(id))
+
+} Example:const id = 'gnWKBqFXMJrrksEWrXLQRUQQQeFhv4uVxesHBcT8i6o'
+
+const expectedTxSandbox = (id): string => {
+
+return toB32(fromB64Url(id))
+
+}
+
+console.log(expectedTxSandbox) Example Output:qj2yubvbk4yjv24syelk24wqivcbaqpbmg7yxfof5mdqlrh4rova View the full code for generating browser sandbox values here.How is this guide?Normalized Addresses Learn about normalized addresses - how different blockchain wallet addresses are standardized into Arweave-compatible format EthAReum Protocol Generate Arweave wallets deterministically from Ethereum or Solana wallets On this page Overview TLS and its Role in Browser Sandboxing Deriving Sandbox Value
+
+---
+
+# 51. Fetch Data (via REST API)  ARIO Documentation
+
+Document Number: 51
 Source: https://docs.ar.io/build/access/fetch-data
 Words: 363
 Quality Score: 0.531
@@ -5008,9 +5725,9 @@ console.log(data);HTML Example: Manifests For organized file collections, use ma
 
 ---
 
-# 41. Guides  ARIO Documentation
+# 52. Guides  ARIO Documentation
 
-Document Number: 41
+Document Number: 52
 Source: https://docs.ar.io/build/guides
 Words: 345
 Quality Score: 0.528
@@ -5021,9 +5738,9 @@ Explore real-world applications and use cases for Arweave and AR.IO infrastructu
 
 ---
 
-# 42. Using Turbo SDK with Vanilla HTML  ARIO Documentation
+# 53. Using Turbo SDK with Vanilla HTML  ARIO Documentation
 
-Document Number: 42
+Document Number: 53
 Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser/html
 Words: 997
 Quality Score: 0.528
@@ -5254,9 +5971,9 @@ step: "signing" // string - current step: "signing" or "upload"
 
 ---
 
-# 43. Arweave Name System (ArNS)  ARIO Documentation
+# 54. Arweave Name System (ArNS)  ARIO Documentation
 
-Document Number: 43
+Document Number: 54
 Source: https://docs.ar.io/learn/arns
 Words: 437
 Quality Score: 0.527
@@ -5267,9 +5984,9 @@ What is ArNS?Arweave URLs and transaction IDs are long, difficult to remember, a
 
 ---
 
-# 44. Wayfinder SDKs  ARIO Documentation
+# 55. Wayfinder SDKs  ARIO Documentation
 
-Document Number: 44
+Document Number: 55
 Source: https://docs.ar.io/sdks/wayfinder
 Words: 309
 Quality Score: 0.527
@@ -5330,9 +6047,102 @@ return ( );
 
 ---
 
-# 45. TurboFactory  ARIO Documentation
+# 56. useWayfinderRequest  ARIO Documentation
 
-Document Number: 45
+Document Number: 56
+Source: https://docs.ar.io/sdks/wayfinder/wayfinder-react/usewayfinderrequest
+Words: 173
+Quality Score: 0.523
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Fetch the data via wayfinder, and optionally verify the data.import { useWayfinderRequest } from '@ar.io/wayfinder-react';
+
+function WayfinderData({ txId }: { txId: string }) {
+
+const request = useWayfinderRequest();
+
+const [data, setData] = useState\ (null);
+
+const [dataLoading, setDataLoading] = useState(false);
+
+const [dataError, setDataError] = useState\ (null);
+
+useEffect(() => {
+
+(async () => {
+
+try {
+
+setDataLoading(true);
+
+setDataError(null);
+
+// fetch the data for the txId using wayfinder
+
+const response = await request(`ar://${txId}`, {
+
+verificationSettings: {
+
+enabled: true, // enable verification on the request
+
+strict: true, // don't use the data if it's not verified
+
+},
+
+});
+
+const data = await response.arrayBuffer(); // or response.json() if you want to parse the data as JSON
+
+setData(data);
+
+} catch (error) {
+
+setDataError(error as Error);
+
+} finally {
+
+setDataLoading(false);
+
+}
+
+})();
+
+}, [request, txId]);
+
+if (dataError) {
+
+return Error loading data: {dataError.message}
+
+;
+
+}
+
+if (dataLoading) {
+
+return Loading data...
+
+;
+
+}
+
+if (!data) {
+
+return No data
+
+;
+
+}
+
+return ( {data} );
+
+} How is this guide?useWayfinderUrl React hooks and components for integrating Wayfinder into React applications
+
+---
+
+# 57. TurboFactory  ARIO Documentation
+
+Document Number: 57
 Source: https://docs.ar.io/sdks/turbo-sdk/turbofactory
 Words: 207
 Quality Score: 0.523
@@ -5391,9 +6201,130 @@ token: 'kyve',
 
 ---
 
-# 46. Token Conversion  ARIO Documentation
+# 58. Integration  ARIO Documentation
 
-Document Number: 46
+Document Number: 58
+Source: https://docs.ar.io/learn/wayfinder/integration
+Words: 571
+Quality Score: 0.518
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Wayfinder Getting Started Wayfinder Extension The wayfinder-extension is a simple Chrome extension that supports the ar:// routing protocol and allows you to:Navigate ar:// URLs directly in your browser Configure routing strategies - Choose how requests are routed to gateways Set verification preferences - Control content verification levels Monitor gateway performance - See which gateways are serving your requests No coding required - just install the extension and start browsing ar:// URLs!Developer Integration Options For developers who want to integrate Wayfinder into their applications:Wayfinder Core The wayfinder-core library is the core protocol implementation that accepts various configuration options for setting up Wayfinder. It provides:Gateway selection strategies - Choose how to route requests Content verification - Optionally verify content authenticity Telemetry collection - Understand performance vs arweave.net Custom configurations - Fine-tune behavior for your use case Wayfinder React Web developers will likely be interested in wayfinder-react, which provides:React Context Provider - Easy integration with React apps Custom hooks - Simplified data fetching and state management Component library - Pre-built UI components for common patterns TypeScript support - Full type safety out of the box Common Integration Pattern: Preferred with Fallback For most builds, teams use the "preferred with fallback" pattern. This routing strategy prioritizes your preferred gateway but automatically falls back to other gateways in the network if needed:import { createWayfinderClient } from '@ar-io/wayfinder-core';
+
+import { ARIO } from '@ar.io/sdk';
+
+const wayfinder = new createWayfinderClient({
+
+ario: ARIO.mainnet(),
+
+verification: 'hash',
+
+routing: 'preferred',
+
+preferredGateway: 'arweave.net',
+
+});This pattern ensures:Primary traffic goes to your preferred gateway (one you run or are delegated to) Automatic failover if your gateway can't serve the data Network resilience by finding another gateway that can serve the content For detailed routing strategy options, see the routing strategies documentation.Verification: Optional but Encouraged While verification is optional, it's strongly encouraged when fetching from gateways:import { createWayfinderClient } from '@ar-io/wayfinder-core';
+
+const wayfinder = createWayfinderClient({
+
+//...other settings,
+
+verification: 'hash', // hash based verification
+
+});Verification ensures you're receiving authentic content regardless of which gateway serves it.Telemetry for Performance Insights Enable telemetry to understand how Wayfinder performs relative to arweave.net:import { createWayfinderClient } from '@ar-io/wayfinder-core';
+
+const wayfinder = createWayfinderClient({
+
+//...other settings,
+
+telemetry: {
+
+enabled: true,
+
+sampleRate: 0.1, // sample 10% of requests
+
+apiKey: 'your-api-key', // optional
+
+clientName: 'my-app',
+
+clientVersion: '1.0.0'
+
+}
+
+});This helps teams make data-driven decisions about gateway selection and optimization.React Integration Example Here's a complete example using wayfinder-react:import { WayfinderProvider, FastestPingRoutingStrategy } from '@ar-io/wayfinder-react';
+
+import { ARIO } from '@ar.io/sdk;
+
+// Configure Wayfinder
+
+const wayfinderConfig = {
+
+gatewaysProvider: new NetworkGatewaysProvider({
+
+ario: ARIO.mainnet(),
+
+}),
+
+routingSettings: {
+
+// use the fastest pinging strategy to select the fastest gateway for requests
+
+strategy: new FastestPingRoutingStrategy({
+
+timeoutMs: 1000,
+
+}),
+
+}
+
+verificationSettings: {
+
+enabled: false
+
+}
+
+};
+
+// Wrap your app
+
+function App() {
+
+return ( );
+
+}
+
+// Use in components
+
+function WayfinderImage({ txId }: { txId: string }) {
+
+const { resolvedUrl, isLoading, error } = useWayfinderUrl({ txId });
+
+if (error) {
+
+return Error resolving URL: {error.message}
+
+;
+
+}
+
+if (isLoading) {
+
+return Resolving URL...
+
+;
+
+}
+
+return ( );
+
+} How is this guide?Wayfinder Protocol Learn about the Wayfinder Protocol - a URI scheme for translating Arweave content requests into user-friendly ar:// URLs Use Cases Explore practical applications of the Wayfinder Protocol across different industries and use cases On this page Getting Started Wayfinder Extension Developer Integration Options Wayfinder Core Wayfinder React Common Integration Pattern: Preferred with Fallback Verification: Optional but Encouraged Telemetry for Performance Insights React Integration Example
+
+---
+
+# 59. Token Conversion  ARIO Documentation
+
+Document Number: 59
 Source: https://docs.ar.io/sdks/ar-io-sdk/token-conversion
 Words: 115
 Quality Score: 0.516
@@ -5412,9 +6343,9 @@ const arioValue = new mARIOToken(mARIOValue).toARIO();How is this guide?Static M
 
 ---
 
-# 47. Paying for Uploads  ARIO Documentation
+# 60. Paying for Uploads  ARIO Documentation
 
-Document Number: 47
+Document Number: 60
 Source: https://docs.ar.io/build/upload/turbo-credits
 Words: 512
 Quality Score: 0.516
@@ -5439,9 +6370,9 @@ console.log(`Balance: ${balance.winc} Winston Credits`);Credit Sharing Turbo Cre
 
 ---
 
-# 48. Static Methods  ARIO Documentation
+# 61. Static Methods  ARIO Documentation
 
-Document Number: 48
+Document Number: 61
 Source: https://docs.ar.io/sdks/ar-io-sdk/static-methods
 Words: 166
 Quality Score: 0.515
@@ -5504,9 +6435,9 @@ console.log(`Failed reassignments: ${Object.keys(result.failedReassignedNames)}`
 
 ---
 
-# 49. Dynamic Routing  ARIO Documentation
+# 62. Dynamic Routing  ARIO Documentation
 
-Document Number: 49
+Document Number: 62
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/dynamic-routing
 Words: 244
 Quality Score: 0.512
@@ -5541,9 +6472,117 @@ originalUrl: 'ar://example-name/subpath?query=value',
 
 ---
 
-# 50. Join the Network  ARIO Documentation
+# 63. Transfer  ARIO Documentation
 
-Document Number: 50
+Document Number: 63
+Source: https://docs.ar.io/sdks/ar-io-sdk/transfer
+Words: 81
+Quality Score: 0.508
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts transfer() Transfers ownership of the ANT to a new target address. Target MUST be an Arweave address.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.transfer(
+
+{ target: 'aGzM_yjralacHIUo8_nQXMbh9l1cy0aksiL_x9M359f' },
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);How is this guide?Balances TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Controllers TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem On this page transfer()
+
+---
+
+# 64. Approvals  ARIO Documentation
+
+Document Number: 64
+Source: https://docs.ar.io/apis/turbo/payment-service/approvals
+Words: 103
+Quality Score: 0.506
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Turbo Payment Service Credit sharing and approval management curl -X GET "https://loading/v1/account/approvals?payingAddress=string&approvedAddress=string" {
+
+"approvals": [
+
+{
+
+"approvalDataItemId": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"approvedAddress": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"payingAddress": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"approvedWincAmount": "332824926",
+
+"usedWincAmount": "332824926",
+
+"creationDate": "2023-05-17T21:46:38.404Z",
+
+"expirationDate": "2023-05-17T21:46:38.404Z"
+
+}
+
+],
+
+"amount": "332824926",
+
+"expiresBy": 123456789
+
+} "Invalid paying address!" "Internal server error" curl -X GET "https://loading/v1/account/approvals/get?userAddress=string" {
+
+"givenApprovals": [
+
+{
+
+"approvalDataItemId": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"approvedAddress": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"payingAddress": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"approvedWincAmount": "332824926",
+
+"usedWincAmount": "332824926",
+
+"creationDate": "2023-05-17T21:46:38.404Z",
+
+"expirationDate": "2023-05-17T21:46:38.404Z"
+
+}
+
+],
+
+"receivedApprovals": [
+
+{
+
+"approvalDataItemId": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"approvedAddress": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"payingAddress": "abcdefghijklmnopqrxtuvwxyz123456789ABCDEFGH",
+
+"approvedWincAmount": "332824926",
+
+"usedWincAmount": "332824926",
+
+"creationDate": "2023-05-17T21:46:38.404Z",
+
+"expirationDate": "2023-05-17T21:46:38.404Z"
+
+}
+
+]
+
+} "Invalid paying address!" "Internal server error" How is this guide?Currencies Previous Page Redemption GET Next Page
+
+---
+
+# 65. Join the Network  ARIO Documentation
+
+Document Number: 65
 Source: https://docs.ar.io/build/run-a-gateway/join-the-network
 Words: 766
 Quality Score: 0.505
@@ -5554,9 +6593,9 @@ Run a Gateway Take control of the permanent web by running your own AR.IO Gatewa
 
 ---
 
-# 51. Arweave Name Tokens (ANTs)  ARIO Documentation
+# 66. Arweave Name Tokens (ANTs)  ARIO Documentation
 
-Document Number: 51
+Document Number: 66
 Source: https://docs.ar.io/learn/arns/ants
 Words: 619
 Quality Score: 0.504
@@ -5567,9 +6606,9 @@ Arweave Name System (ArNS) To establish ownership of a record in the ArNS Regist
 
 ---
 
-# 52. Distributions  ARIO Documentation
+# 67. Distributions  ARIO Documentation
 
-Document Number: 52
+Document Number: 67
 Source: https://docs.ar.io/learn/oip/reward-distribution
 Words: 799
 Quality Score: 0.504
@@ -5631,9 +6670,9 @@ How is this guide?GoodBadPerformance and WeightsLearn about how gateways are eva
 
 ---
 
-# 53. Pagination  ARIO Documentation
+# 68. Pagination  ARIO Documentation
 
-Document Number: 53
+Document Number: 68
 Source: https://docs.ar.io/sdks/ar-io-sdk/pagination
 Words: 333
 Quality Score: 0.504
@@ -5676,9 +6715,9 @@ processId: [
 
 ---
 
-# 54. Encryption  ARIO Documentation
+# 69. Encryption  ARIO Documentation
 
-Document Number: 54
+Document Number: 69
 Source: https://docs.ar.io/build/upload/encryption
 Words: 512
 Quality Score: 0.500
@@ -5746,9 +6785,247 @@ separate "ArDrive Encryption Service." Getting Started For most users, the ArDri
 
 ---
 
-# 55. TurboAuthenticatedClient  ARIO Documentation
+# 70. General  ARIO Documentation
 
-Document Number: 55
+Document Number: 70
+Source: https://docs.ar.io/sdks/ar-io-sdk/general
+Words: 472
+Quality Score: 0.500
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ARIO Contract init() Factory function to that creates a read-only or writeable client. By providing a signer additional write APIs that require signing, like joinNetwork and delegateStake are available. By default, a read-only client is returned and no write APIs are available.// read-only client
+
+const ario = ARIO.init();
+
+// read-write client for browser environments
+
+const ario = ARIO.init({ signer: new ArConnectSigner(window.arweaveWallet, Arweave.init({}))});
+
+// read-write client for node environments
+
+const ario = ARIO.init({ signer: new ArweaveSigner(JWK) });getInfo() Retrieves the information of the ARIO process.const ario = ARIO.mainnet();
+
+const info = await ario.getInfo();Output:{
+
+"Name": "ARIO",
+
+"Ticker": "ARIO",
+
+"Owner": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",
+
+"Denomination": 6,
+
+"Handlers": ["eval", "_default"], // full list of handlers, useful for debugging
+
+"LastCreatedEpochIndex": 31, // epoch index of the last tick
+
+"LastDistributedEpochIndex": 31 // epoch index of the last distribution
+
+} getTokenSupply() Retrieves the total supply of tokens, returned in mARIO. The total supply includes the following:total - the total supply of all tokens circulating - the total supply minus locked, withdrawn, delegated, and staked locked - tokens that are locked in the protocol (a.k.a. vaulted) withdrawn - tokens that have been withdrawn from the protocol by operators and delegators delegated - tokens that have been delegated to gateways staked - tokens that are staked in the protocol by gateway operators protocolBalance - tokens that are held in the protocol's treasury. This is included in the circulating supply.const ario = ARIO.mainnet();
+
+const supply = await ario.getTokenSupply();Output:{
+
+"total": 1000000000000000000,
+
+"circulating": 998094653842520,
+
+"locked": 0,
+
+"withdrawn": 560563387278,
+
+"delegated": 1750000000,
+
+"staked": 1343032770199,
+
+"protocolBalance": 46317263683761
+
+} getBalance() Retrieves the balance of the specified wallet address.const ario = ARIO.mainnet();
+
+// the balance will be returned in mARIO as a value
+
+const balance = await ario
+
+.getBalance({
+
+address: 'QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ',
+
+})
+
+.then((balance: number) => new mARIOToken(balance).toARIO()); // convert it to ARIO for readability Output:100000 getBalances() Retrieves the balances of the ARIO process in mARIO, paginated and sorted by the specified criteria. The cursor used for pagination is the last wallet address from the previous request.const ario = ARIO.mainnet();
+
+const balances = await ario.getBalances({
+
+cursor: '-4xgjroXENKYhTWqrBo57HQwvDL51mMdfsdsxJy6Y2Z_sA',
+
+limit: 100,
+
+sortBy: 'balance',
+
+sortOrder: 'desc',
+
+});Output:{
+
+"items": [
+
+{
+
+"address": "-4xgjroXENKYhTWqrBo57HQwvDL51mMvSxJy6Y2Z_sA",
+
+"balance": 1000000
+
+},
+
+{
+
+"address": "-7vXsQZQDk8TMDlpiSLy3CnLi5PDPlAaN2DaynORpck",
+
+"balance": 1000000
+
+}
+
+// ...98 other balances
+
+],
+
+"hasMore": true,
+
+"nextCursor": "-7vXsQZQDk8TMDlpiSLy3CnLi5PDPlAaN2DaynORpck",
+
+"totalItems": 1789,
+
+"sortBy": "balance",
+
+"sortOrder": "desc"
+
+} transfer() Transfers mARIO to the designated target recipient address. Requires signer to be provided on ARIO.init to sign the transaction.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({
+
+signer: new ArweaveSigner(jwk),
+
+});
+
+const { id: txId } = await ario.transfer(
+
+{
+
+target: '-5dV7nk7waR8v4STuwPnTck1zFVkQqJh5K9q9Zik4Y5',
+
+qty: new ARIOToken(1000).toMARIO(),
+
+},
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);How is this guide?AR.IO SDK JavaScript/TypeScript SDK for interacting with the AR.IO Network, including ArNS name management, gateway interactions, and AO contract operations Networks TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 71. Primary Names  ARIO Documentation
+
+Document Number: 71
+Source: https://docs.ar.io/sdks/ar-io-sdk/primary-names
+Words: 313
+Quality Score: 0.499
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ARIO Contract getPrimaryNames() Retrieves all primary names paginated and sorted by the specified criteria. The cursor used for pagination is the last name from the previous request.const ario = ARIO.mainnet();
+
+const names = await ario.getPrimaryNames({
+
+cursor: 'ao', // this is the last name from the previous request
+
+limit: 1,
+
+sortBy: 'startTimestamp',
+
+sortOrder: 'desc',
+
+});Output:{
+
+"sortOrder": "desc",
+
+"hasMore": true,
+
+"totalItems": 100,
+
+"limit": 1,
+
+"sortBy": "startTimestamp",
+
+"cursor": "arns",
+
+"items": [
+
+{
+
+"owner": "HwFceQaMQnOBgKDpnFqCqgwKwEU5LBme1oXRuQOWSRA",
+
+"startTimestamp": 1719356032297,
+
+"name": "arns"
+
+}
+
+]
+
+} getPrimaryName() Retrieves the primary name for a given name or address.const ario = ARIO.mainnet();
+
+const name = await ario.getPrimaryName({
+
+name: 'arns',
+
+});
+
+// or
+
+const name = await ario.getPrimaryName({
+
+address: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+});Output:{
+
+"owner": "HwFceQaMQnOBgKDpnFqCqgwKwEU5LBme1oXRuQOWSRA",
+
+"startTimestamp": 1719356032297,
+
+"name": "arns"
+
+} setPrimaryName() Sets an ArNS name already owned by the signer as their primary name. Note: signer must be the owner of the processId that is assigned to the name. If not, the transaction will fail.Note: Requires signer to be provided on ARIO.init to sign the transaction.const signer = new ArweaveSigner(jwk);
+
+const ario = ARIO.mainnet({ signer });
+
+await ario.setPrimaryName({ name: 'my-arns-name' }); // the caller must already have purchased the name my-arns-name and be assigned as the owner of the processId that is assigned to the name requestPrimaryName() Requests a primary name for the signer 's address. The request must be approved by the new owner of the requested name via the approvePrimaryNameRequest [#approveprimarynamerequest-name-address-] API.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.requestPrimaryName({
+
+name: 'arns',
+
+});getPrimaryNameRequest() Retrieves the primary name request for a a wallet address.const ario = ARIO.mainnet();
+
+const request = await ario.getPrimaryNameRequest({
+
+initiator: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+});Output:{
+
+"initiator": "t4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3",
+
+"name": "arns",
+
+"startTimestamp": 1728067635857,
+
+"endTimestamp": 1735843635857
+
+} How is this guide?Epochs TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Configuration TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 72. TurboAuthenticatedClient  ARIO Documentation
+
+Document Number: 72
 Source: https://docs.ar.io/sdks/turbo-sdk/turboauthenticatedclient
 Words: 1522
 Quality Score: 0.499
@@ -5970,9 +7247,32 @@ userAddress: '2cor...VUa',
 
 ---
 
-# 56. Telemetry  ARIO Documentation
+# 73. Balances  ARIO Documentation
 
-Document Number: 56
+Document Number: 73
+Source: https://docs.ar.io/sdks/ar-io-sdk/balances
+Words: 57
+Quality Score: 0.498
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts getBalances() Returns all token balances for the ANT.const balances = await ant.getBalances();Output:{
+
+"ccp3blG__gKUvG3hsGC2u06aDmqv4CuhuDJGOIg0jw4": 1,
+
+"aGzM_yjralacHIUo8_nQXMbh9l1cy0aksiL_x9M359f": 0
+
+} getBalance() Returns the balance of a specific address.const balance = await ant.getBalance({
+
+address: 'ccp3blG__gKUvG3hsGC2u06aDmqv4CuhuDJGOIg0jw4',
+
+});Output:1 How is this guide?State TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Transfer TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 74. Telemetry  ARIO Documentation
+
+Document Number: 74
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/telemetry
 Words: 117
 Quality Score: 0.498
@@ -6007,9 +7307,9 @@ clientVersion: '1.0.0', // optional, defaults to empty
 
 ---
 
-# 57. Logging  ARIO Documentation
+# 75. Logging  ARIO Documentation
 
-Document Number: 57
+Document Number: 75
 Source: https://docs.ar.io/sdks/turbo-sdk/logging
 Words: 52
 Quality Score: 0.494
@@ -6020,9 +7320,9 @@ Turbo SDK The SDK uses winston for logging. You can set the log level using the 
 
 ---
 
-# 58. EthAReum Protocol  ARIO Documentation
+# 76. EthAReum Protocol  ARIO Documentation
 
-Document Number: 58
+Document Number: 76
 Source: https://docs.ar.io/build/advanced/ethareum
 Words: 764
 Quality Score: 0.494
@@ -6092,9 +7392,38 @@ return signature;
 
 ---
 
-# 59. Global request events  ARIO Documentation
+# 77. Controllers  ARIO Documentation
 
-Document Number: 59
+Document Number: 77
+Source: https://docs.ar.io/sdks/ar-io-sdk/controllers
+Words: 136
+Quality Score: 0.493
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts addController() Adds a new controller to the list of approved controllers on the ANT. Controllers can set records and change the ticker and name of the ANT process.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.addController(
+
+{ controller: 'aGzM_yjralacHIUo8_nQXMbh9l1cy0aksiL_x9M359f' },
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);removeController() Removes a controller from the list of approved controllers on the ANT.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.removeController(
+
+{ controller: 'aGzM_yjralacHIUo8_nQXMbh9l1cy0aksiL_x9M359f' },
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);How is this guide?Transfer TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Records TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 78. Global request events  ARIO Documentation
+
+Document Number: 78
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/global-request-events
 Words: 216
 Quality Score: 0.490
@@ -6205,9 +7534,501 @@ console.error(`Verification failed: ${event.error.message}`);
 
 ---
 
-# 60. Manifests  ARIO Documentation
+# 79. TurboUnauthenticatedClient  ARIO Documentation
 
-Document Number: 60
+Document Number: 79
+Source: https://docs.ar.io/sdks/turbo-sdk/turbounauthenticatedclient
+Words: 767
+Quality Score: 0.487
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Turbo SDK APIs getSupportedCurrencies() Returns the list of currencies supported by the Turbo Payment Service for topping up a user balance of AR Credits (measured in Winston Credits, or winc).const currencies = await turbo.getSupportedCurrencies();getSupportedCountries() Returns the list of countries supported by the Turbo Payment Service's top up workflow.const countries = await turbo.getSupportedCountries();getFiatToAR() Returns the current raw fiat to AR conversion rate for a specific currency as reported by third-party pricing oracles.const fiatToAR = await turbo.getFiatToAR({ currency: 'USD' });getFiatRates() Returns the current fiat rates for 1 GiB of data for supported currencies, including all top-up adjustments and fees.const rates = await turbo.getFiatRates();getWincForFiat() Returns the current amount of Winston Credits including all adjustments for the provided fiat currency.const { winc, actualPaymentAmount, quotedPaymentAmount, adjustments } =
+
+await turbo.getWincForFiat({
+
+amount: USD(100),
+
+});getWincForToken() Returns the current amount of Winston Credits including all adjustments for the provided token amount.const { winc, actualTokenAmount, equivalentWincTokenAmount } =
+
+await turbo.getWincForToken({
+
+tokenAmount: WinstonToTokenAmount(100_000_000),
+
+});getFiatEstimateForBytes() Get the current price from the Turbo Payment Service, denominated in the specified fiat currency, for uploading a specified number of bytes to Turbo.const turbo = TurboFactory.unauthenticated();
+
+const { amount } = await turbo.getFiatEstimateForBytes({
+
+byteCount: 1024 * 1024 * 1024,
+
+currency: 'usd', // specify the currency for the price
+
+});
+
+console.log(amount); // Estimated usd price for 1 GiB Output:{
+
+"byteCount": 1073741824,
+
+"amount": 20.58,
+
+"currency": "usd",
+
+"winc": "2402378997310"
+
+} getTokenPriceForBytes() Get the current price from the Turbo Payment Service, denominated in the specified token, for uploading a specified number of bytes to Turbo.const turbo = TurboFactory.unauthenticated({ token: 'solana' });
+
+const { tokenPrice } = await turbo.getTokenPriceForBytes({
+
+byteCount: 1024 * 1024 * 100,
+
+});
+
+console.log(tokenPrice); // Estimated SOL Price for 100 MiB getUploadCosts() Returns the estimated cost in Winston Credits for the provided file sizes, including all upload adjustments and fees.const [uploadCostForFile] = await turbo.getUploadCosts({ bytes: [1024] });
+
+const { winc, adjustments } = uploadCostForFile;uploadSignedDataItem() Uploads a signed data item. The provided dataItemStreamFactory should produce a NEW signed data item stream each time is it invoked. The dataItemSizeFactory is a function that returns the size of the file. The signal is an optional [AbortSignal] that can be used to cancel the upload or timeout the request. The events parameter is an optional object that can be used to listen to upload progress, errors, and success (refer to the [Events] section for more details).const filePath = path.join(__dirname, './my-signed-data-item');
+
+const dataItemSize = fs.statSync(filePath).size;
+
+const uploadResponse = await turbo.uploadSignedDataItem({
+
+dataItemStreamFactory: () => fs.createReadStream(filePath),
+
+dataItemSizeFactory: () => dataItemSize,
+
+signal: AbortSignal.timeout(10_000), // cancel the upload after 10 seconds
+
+events: {
+
+// track upload events only
+
+onUploadProgress: ({ totalBytes, processedBytes }) => {
+
+console.log('Upload progress:', { totalBytes, processedBytes });
+
+},
+
+onUploadError: (error) => {
+
+console.log('Upload error:', { error });
+
+},
+
+onUploadSuccess: () => {
+
+console.log('Upload success!');
+
+},
+
+},
+
+});createCheckoutSession() Creates a Stripe checkout session for a Turbo Top Up with the provided amount, currency, owner. The returned URL can be opened in the browser, all payments are processed by Stripe. To leverage promo codes, see [TurboAuthenticatedClient].Arweave (AR) Fiat Top Up const { url, winc, paymentAmount, quotedPaymentAmount, adjustments } =
+
+await turbo.createCheckoutSession({
+
+amount: USD(10.0), // $10.00 USD
+
+owner: publicArweaveAddress,
+
+// promo codes require an authenticated client
+
+});
+
+// Open checkout session in a browser
+
+window.open(url, '_blank');Ethereum (ETH) Fiat Top Up const turbo = TurboFactory.unauthenticated({ token: 'ethereum' });
+
+const { url, winc, paymentAmount } = await turbo.createCheckoutSession({
+
+amount: USD(10.0), // $10.00 USD
+
+owner: publicEthereumAddress,
+
+});Solana (SOL) Fiat Top Up const turbo = TurboFactory.unauthenticated({ token: 'solana' });
+
+const { url, winc, paymentAmount } = await turbo.createCheckoutSession({
+
+amount: USD(10.0), // $10.00 USD
+
+owner: publicSolanaAddress,
+
+});Polygon (POL / MATIC) Fiat Top Up const turbo = TurboFactory.unauthenticated({ token: 'pol' });
+
+const { url, winc, paymentAmount } = await turbo.createCheckoutSession({
+
+amount: USD(10.0), // $10.00 USD
+
+owner: publicPolygonAddress,
+
+});KYVE Fiat Top Up const turbo = TurboFactory.unauthenticated({ token: 'kyve' });
+
+const { url, winc, paymentAmount } = await turbo.createCheckoutSession({
+
+amount: USD(10.0), // $10.00 USD
+
+owner: publicKyveAddress,
+
+});submitFundTransaction() Submits the transaction ID of a funding transaction to Turbo Payment Service for top up processing. The txId is the transaction ID of the transaction to be submitted.Use this API if you've already executed your token transfer to the Turbo wallet. Otherwise, consider using topUpWithTokens to execute a new token transfer to the Turbo wallet and submit its resulting transaction ID for top up processing all in one go const turbo = TurboFactory.unauthenticated(); // defaults to arweave token type
+
+const { status, id, ...fundResult } = await turbo.submitFundTransaction({
+
+txId: 'my-valid-arweave-fund-transaction-id',
+
+});How is this guide?TurboFactory SDK for interacting with Turbo, a fast and efficient data upload service for Arweave TurboAuthenticatedClient SDK for interacting with Turbo, a fast and efficient data upload service for Arweave
+
+---
+
+# 80. Blocks  ARIO Documentation
+
+Document Number: 80
+Source: https://docs.ar.io/apis/ar-io-node/blocks
+Words: 385
+Quality Score: 0.487
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO Gateway Get current or historical Arweave block information Get information about the current block.Get detailed information about the current block on the Arweave network.Response Body curl -X GET "https://ardrive.net/current_block" {
+
+"usd_to_ar_rate": [
+
+"string",
+
+"string"
+
+],
+
+"scheduled_usd_to_ar_rate": [
+
+"string",
+
+"string"
+
+],
+
+"packing_2_5_threshold": "string",
+
+"strict_data_split_threshold": "string",
+
+"nonce": "string",
+
+"previous_block": "string",
+
+"timestamp": 0,
+
+"last_retarget": 0,
+
+"diff": 0,
+
+"height": 0,
+
+"hash": "string",
+
+"txs": [
+
+"string"
+
+],
+
+"tx_root": "string",
+
+"tx_tree": [],
+
+"wallet_list": "string",
+
+"reward_addr": "string",
+
+"tags": [
+
+{
+
+"name": "string",
+
+"value": "string"
+
+}
+
+],
+
+"reward_pool": 0,
+
+"weave_size": 0,
+
+"block_size": 0,
+
+"cumulative_diff": "string",
+
+"hash_list_merkle": "string",
+
+"poa": {
+
+"option": "string",
+
+"tx_path": "string",
+
+"data_path": "string",
+
+"chunk": "string"
+
+}
+
+} Get current block height.Gets the current block height of the Arweave network.Path Parameters height string Match ^[0-9]+$ Response Body curl -X GET "https://ardrive.net/block/height/string" {
+
+"usd_to_ar_rate": [
+
+"string",
+
+"string"
+
+],
+
+"scheduled_usd_to_ar_rate": [
+
+"string",
+
+"string"
+
+],
+
+"packing_2_5_threshold": "string",
+
+"strict_data_split_threshold": "string",
+
+"nonce": "string",
+
+"previous_block": "string",
+
+"timestamp": 0,
+
+"last_retarget": 0,
+
+"diff": 0,
+
+"height": 0,
+
+"hash": "string",
+
+"txs": [
+
+"string"
+
+],
+
+"tx_root": "string",
+
+"tx_tree": [],
+
+"wallet_list": "string",
+
+"reward_addr": "string",
+
+"tags": [
+
+{
+
+"name": "string",
+
+"value": "string"
+
+}
+
+],
+
+"reward_pool": 0,
+
+"weave_size": 0,
+
+"block_size": 0,
+
+"cumulative_diff": "string",
+
+"hash_list_merkle": "string",
+
+"poa": {
+
+"option": "string",
+
+"tx_path": "string",
+
+"data_path": "string",
+
+"chunk": "string"
+
+}
+
+} Get block by hash.Get block information based on a block's hash.Path Parameters hash string Match ^[0-9a-zA-Z_-]{64}$ Response Body curl -X GET "https://ardrive.net/block/hash/string" {
+
+"usd_to_ar_rate": [
+
+"string",
+
+"string"
+
+],
+
+"scheduled_usd_to_ar_rate": [
+
+"string",
+
+"string"
+
+],
+
+"packing_2_5_threshold": "string",
+
+"strict_data_split_threshold": "string",
+
+"nonce": "string",
+
+"previous_block": "string",
+
+"timestamp": 0,
+
+"last_retarget": 0,
+
+"diff": 0,
+
+"height": 0,
+
+"hash": "string",
+
+"txs": [
+
+"string"
+
+],
+
+"tx_root": "string",
+
+"tx_tree": [],
+
+"wallet_list": "string",
+
+"reward_addr": "string",
+
+"tags": [
+
+{
+
+"name": "string",
+
+"value": "string"
+
+}
+
+],
+
+"reward_pool": 0,
+
+"weave_size": 0,
+
+"block_size": 0,
+
+"cumulative_diff": "string",
+
+"hash_list_merkle": "string",
+
+"poa": {
+
+"option": "string",
+
+"tx_path": "string",
+
+"data_path": "string",
+
+"chunk": "string"
+
+}
+
+} Alternative endpoint to get current block.Alternative endpoint to /current_block, gets current block information.Response Body curl -X GET "https://ardrive.net/block/current" {
+
+"usd_to_ar_rate": [
+
+"string",
+
+"string"
+
+],
+
+"scheduled_usd_to_ar_rate": [
+
+"string",
+
+"string"
+
+],
+
+"packing_2_5_threshold": "string",
+
+"strict_data_split_threshold": "string",
+
+"nonce": "string",
+
+"previous_block": "string",
+
+"timestamp": 0,
+
+"last_retarget": 0,
+
+"diff": 0,
+
+"height": 0,
+
+"hash": "string",
+
+"txs": [
+
+"string"
+
+],
+
+"tx_root": "string",
+
+"tx_tree": [],
+
+"wallet_list": "string",
+
+"reward_addr": "string",
+
+"tags": [
+
+{
+
+"name": "string",
+
+"value": "string"
+
+}
+
+],
+
+"reward_pool": 0,
+
+"weave_size": 0,
+
+"block_size": 0,
+
+"cumulative_diff": "string",
+
+"hash_list_merkle": "string",
+
+"poa": {
+
+"option": "string",
+
+"tx_path": "string",
+
+"data_path": "string",
+
+"chunk": "string"
+
+}
+
+} How is this guide?
+
+---
+
+# 81. Manifests  ARIO Documentation
+
+Document Number: 81
 Source: https://docs.ar.io/build/upload/manifests
 Words: 658
 Quality Score: 0.487
@@ -6390,9 +8211,22 @@ tags: [
 
 ---
 
-# 61. Wayfinder Protocol  ARIO Documentation
+# 82. Wallets  ARIO Documentation
 
-Document Number: 61
+Document Number: 82
+Source: https://docs.ar.io/apis/ar-io-node/wallets
+Words: 76
+Quality Score: 0.487
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO Gateway Get Arweave wallet balance and last transaction information Get the current balance of a wallet.Get the current balance of AR, in Winston, of a specified wallet address.Path Parameters address string Match ^[0-9a-zA-Z_-]{43}$ Response Body curl -X GET "https://ardrive.net/wallet/string/balance" 0 Get the last transaction of a wallet.Get the TX ID from the most recent transaction a specified wallet completed.Path Parameters address string Match ^[0-9a-zA-Z_-]{43}$ Response Body curl -X GET "https://ardrive.net/wallet/string/last_tx" "string" How is this guide?
+
+---
+
+# 83. Wayfinder Protocol  ARIO Documentation
+
+Document Number: 83
 Source: https://docs.ar.io/learn/wayfinder
 Words: 604
 Quality Score: 0.485
@@ -6403,9 +8237,9 @@ The Problem: Centralized Gateway Reliance Today, most Arweave content is accesse
 
 ---
 
-# 62. Get Started  ARIO Documentation
+# 84. Get Started  ARIO Documentation
 
-Document Number: 62
+Document Number: 84
 Source: https://docs.ar.io/build
 Words: 258
 Quality Score: 0.483
@@ -6416,9 +8250,121 @@ Welcome to AR.IO Network's developer documentation.This section will guide you t
 
 ---
 
-# 63. Logging  ARIO Documentation
+# 85. ARIO Integrations  ARIO Documentation
 
-Document Number: 63
+Document Number: 85
+Source: https://docs.ar.io/sdks/ar-io-sdk/ario-integrations
+Words: 321
+Quality Score: 0.483
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts releaseName() Releases a name from the current owner and makes it available for purchase on the ARIO contract. The name must be permanently owned by the releasing wallet. If purchased within the recently returned name period (14 epochs), 50% of the purchase amount will be distributed to the ANT owner at the time of release. If no purchases in the recently returned name period, the name can be reregistered by anyone for the normal fee.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.releaseName({
+
+name: 'permalink',
+
+arioProcessId: ARIO_MAINNET_PROCESS_ID, // releases the name owned by the ANT and sends it to recently returned names on the ARIO contract
+
+});reassignName() Reassigns a name to a new ANT. This can only be done by the current owner of the ANT.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.reassignName({
+
+name: 'ardrive',
+
+arioProcessId: ARIO_MAINNET_PROCESS_ID,
+
+antProcessId: NEW_ANT_PROCESS_ID, // the new ANT process id that will take over ownership of the name
+
+});approvePrimaryNameRequest() Approves a primary name request for a given name or address.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.approvePrimaryNameRequest({
+
+name: 'arns',
+
+address: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3', // must match the request initiator address
+
+arioProcessId: ARIO_MAINNET_PROCESS_ID, // the ARIO process id to use for the request
+
+});removePrimaryNames() Removes primary names from the ANT process.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.removePrimaryNames({
+
+names: ['arns', 'test_arns'], // any primary names associated with a base name controlled by this ANT will be removed
+
+arioProcessId: ARIO_MAINNET_PROCESS_ID,
+
+notifyOwners: true, // if true, the owners of the removed names will be send AO messages to notify them of the removal
+
+});How is this guide?Metadata TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Upgrade TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 86. Upgrade  ARIO Documentation
+
+Document Number: 86
+Source: https://docs.ar.io/sdks/ar-io-sdk/upgrade
+Words: 324
+Quality Score: 0.481
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts upgrade() Upgrades an ANT by forking it to the latest version from the ANT registry and optionally reassigning ArNS names to the new process. This function first checks the version of the existing ANT, creates a new ANT using .fork() to the latest version, and then reassigns the ArNS names affiliated with this process to the new process.Note: Requires signer to be provided on ANT.init to sign the transaction.// Upgrade ANT and reassign all affiliated ArNS names to the new process
+
+const result = await ant.upgrade();
+
+// Upgrade ANT and reassign specific ArNS names to the new process
+
+const result = await ant.upgrade({
+
+names: ['ardrive', 'example'],
+
+});
+
+// with callbacks
+
+const result = await ant.upgrade({
+
+names: ['ardrive', 'example'],
+
+onSigningProgress: (event, payload) => {
+
+console.log(`${event}:`, payload);
+
+if (event === 'checking-version') {
+
+console.log(`Checking version: ${payload.antProcessId}`);
+
+}
+
+if (event === 'fetching-affiliated-names') {
+
+console.log(`Fetching affiliated names: ${payload.arioProcessId}`);
+
+}
+
+if (event === 'reassigning-name') {
+
+console.log(`Reassigning name: ${payload.name}`);
+
+}
+
+if (event === 'validating-names') {
+
+console.log(`Validating names: ${payload.names}`);
+
+}
+
+// other callback events...
+
+},
+
+});
+
+console.log(`Upgraded to process: ${result.forkedProcessId}`);
+
+console.log(`Successfully reassigned names: ${result.reassignedNames}`);
+
+console.log(`Failed to reassign names: ${result.failedReassignedNames}`);Parameters:reassignAffiliatedNames?: boolean - If true, reassigns all names associated with this process to the new forked process (defaults to true when names is empty) names?: string[] - Optional array of specific names to reassign (cannot be used with reassignAffiliatedNames: true). These names must be affiliated with this ANT on the provided ARIO process.arioProcessId?: string - Optional ARIO process ID (defaults to mainnet) antRegistryId?: string - Optional ANT registry process ID used to resolve the latest version (defaults to mainnet registry) skipVersionCheck?: boolean - Skip checking if ANT is already latest version (defaults to false) onSigningProgress?: Function - Optional progress callback for tracking upgrade steps Returns:Promise<{ forkedProcessId: string, reassignedNames: Record , failedReassignedNames: Record }> How is this guide?ARIO Integrations TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Undername Ownership TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem On this page upgrade()
+
+---
+
+# 87. Logging  ARIO Documentation
+
+Document Number: 87
 Source: https://docs.ar.io/sdks/ar-io-sdk/logging
 Words: 359
 Quality Score: 0.479
@@ -6507,9 +8453,9 @@ Logger.default = adapter;How is this guide?Token Conversion TypeScript/JavaScrip
 
 ---
 
-# 64. ARIO SDK  ARIO Documentation
+# 88. ARIO SDK  ARIO Documentation
 
-Document Number: 64
+Document Number: 88
 Source: https://docs.ar.io/sdks/ar-io-sdk
 Words: 329
 Quality Score: 0.479
@@ -6576,9 +8522,98 @@ Loading AR.IO data... API Reference & Documentation API Reference Complete API d
 
 ---
 
-# 65. Upgrading Private Drives  ARIO Documentation
+# 89. Versions  ARIO Documentation
 
-Document Number: 65
+Document Number: 89
+Source: https://docs.ar.io/sdks/ar-io-sdk/versions
+Words: 275
+Quality Score: 0.479
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts getModuleId() Gets the module ID of the current ANT process by querying its spawn transaction tags. Results are cached after the first successful fetch.const moduleId = await ant.getModuleId();
+
+console.log(`ANT was spawned with module: ${moduleId}`);
+
+// With custom GraphQL URL and retries
+
+const moduleId = await ant.getModuleId({
+
+graphqlUrl: 'https://arweave.net/graphql',
+
+retries: 5
+
+});Output:"FKtQtOOtlcWCW2pXrwWFiCSlnuewMZOHCzhulVkyqBE" getVersion() Gets the version string of the current ANT by matching its module ID with versions from the ANT registry.const version = await ant.getVersion();
+
+console.log(`ANT is running version: ${version}`);
+
+// With custom ANT registry
+
+const version = await ant.getVersion({
+
+antRegistryId: 'custom-ant-registry-id'
+
+});Output:"23" isLatestVersion() Checks if the current ANT version is the latest according to the ANT registry.const isLatest = await ant.isLatestVersion();
+
+if (!isLatest) {
+
+console.log('ANT can be upgraded to the latest version');
+
+} Output:true getANTVersions Static method that returns the full array of available ANT versions and the latest version from the ANT registry.import { ANT } from '@ar.io/sdk';
+
+// Get all available ANT versions
+
+const antVersions = ANT.versions;
+
+const versions = await antVersions.getANTVersions();Result:{
+
+[
+
+{
+
+"moduleId": "FKtQtOOtlcWCW2pXrwWFiCSlnuewMZOHCzhulVkyqBE",
+
+"version": "23",
+
+"releaseNotes": "Initial release of the ANT module.",
+
+"releaseDate": 1700000000000
+
+}
+
+// ...other versions
+
+],
+
+} getLatestANTVersion() Static method that returns the latest ANT version from the ANT registry.import { ANT } from '@ar.io/sdk';
+
+// Get the latest ANT version
+
+import { ANT } from '@ar.io/sdk';
+
+// Get all available ANT versions
+
+const antVersions = ANT.versions;
+
+const versions = await antVersions.getANTVersions();
+
+const latestVersion = await antVersions.getLatestANTVersion();Result:{
+
+"moduleId": "FKtQtOOtlcWCW2pXrwWFiCSlnuewMZOHCzhulVkyqBE",
+
+"version": "23",
+
+"releaseNotes": "Initial release of the ANT module.",
+
+"releaseDate": 1700000000000
+
+} How is this guide?Spawn TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem State TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 90. Upgrading Private Drives  ARIO Documentation
+
+Document Number: 90
 Source: https://docs.ar.io/build/advanced/arfs/upgrading-drives
 Words: 947
 Quality Score: 0.479
@@ -6777,9 +8812,1228 @@ console.error("Upgrade failed:", error);
 
 ---
 
-# 66. Using Turbo SDK with Vite  ARIO Documentation
+# 91. Epochs  ARIO Documentation
 
-Document Number: 66
+Document Number: 91
+Source: https://docs.ar.io/sdks/ar-io-sdk/epochs
+Words: 520
+Quality Score: 0.477
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ARIO Contract getCurrentEpoch() Returns the current epoch data.const ario = ARIO.mainnet();
+
+const epoch = await ario.getCurrentEpoch();Output:{
+
+"epochIndex": 0,
+
+"startTimestamp": 1720720621424,
+
+"endTimestamp": 1752256702026,
+
+"startHeight": 1350700,
+
+"distributionTimestamp": 1711122739,
+
+"observations": {
+
+"failureSummaries": {
+
+"-Tk2DDk8k4zkwtppp_XFKKI5oUgh6IEHygAoN7mD-w8": [
+
+"Ie2wEEUDKoU26c7IuckHNn3vMFdNQnMvfPBrFzAb3NA"
+
+]
+
+},
+
+"reports": {
+
+"IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs": "B6UUjKWjjEWDBvDSMXWNmymfwvgR9EN27z5FTkEVlX4"
+
+}
+
+},
+
+"prescribedNames": ["ardrive", "ar-io", "arweave", "fwd", "ao"],
+
+"prescribedObservers": [
+
+{
+
+"gatewayAddress": "2Fk8lCmDegPg6jjprl57-UCpKmNgYiKwyhkU4vMNDnE",
+
+"observerAddress": "2Fk8lCmDegPg6jjprl57-UCpKmNgYiKwyhkU4vMNDnE",
+
+"stake": 10000000000,
+
+"start": 1292450,
+
+"stakeWeight": 1,
+
+"tenureWeight": 0.4494598765432099,
+
+"gatewayPerformanceRatio": 1,
+
+"observerRewardRatioWeight": 1,
+
+"compositeWeight": 0.4494598765432099,
+
+"normalizedCompositeWeight": 0.002057032496835938
+
+}
+
+],
+
+"distributions": {
+
+"distributedTimestamp": 1711122739,
+
+"totalEligibleRewards": 100000000,
+
+"rewards": {
+
+"IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs": 100000000
+
+}
+
+}
+
+} getEpoch() Returns the epoch data for the specified block height. If no epoch index is provided, the current epoch is used.const ario = ARIO.mainnet();
+
+const epoch = await ario.getEpoch({ epochIndex: 0 });Output:{
+
+"epochIndex": 0,
+
+"startTimestamp": 1720720620813,
+
+"endTimestamp": 1752256702026,
+
+"startHeight": 1350700,
+
+"distributionTimestamp": 1752256702026,
+
+"observations": {
+
+"failureSummaries": {
+
+"-Tk2DDk8k4zkwtppp_XFKKI5oUgh6IEHygAoN7mD-w8": [
+
+"Ie2wEEUDKoU26c7IuckHNn3vMFdNQnMvfPBrFzAb3NA"
+
+]
+
+},
+
+"reports": {
+
+"IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs": "B6UUjKWjjEWDBvDSMXWNmymfwvgR9EN27z5FTkEVlX4"
+
+}
+
+},
+
+"prescribedNames": ["ardrive", "ar-io", "arweave", "fwd", "ao"],
+
+"prescribedObservers": [
+
+{
+
+"gatewayAddress": "2Fk8lCmDegPg6jjprl57-UCpKmNgYiKwyhkU4vMNDnE",
+
+"observerAddress": "2Fk8lCmDegPg6jjprl57-UCpKmNgYiKwyhkU4vMNDnE",
+
+"stake": 10000000000, // value in mARIO
+
+"startTimestamp": 1720720620813,
+
+"stakeWeight": 1,
+
+"tenureWeight": 0.4494598765432099,
+
+"gatewayPerformanceRatio": 1,
+
+"observerRewardRatioWeight": 1,
+
+"compositeWeight": 0.4494598765432099,
+
+"normalizedCompositeWeight": 0.002057032496835938
+
+}
+
+],
+
+"distributions": {
+
+"totalEligibleGateways": 1,
+
+"totalEligibleRewards": 100000000,
+
+"totalEligibleObserverReward": 100000000,
+
+"totalEligibleGatewayReward": 100000000,
+
+"totalDistributedRewards": 100000000,
+
+"distributedTimestamp": 1720720621424,
+
+"rewards": {
+
+"distributed": {
+
+"IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs": 100000000
+
+}
+
+}
+
+}
+
+} getEligibleEpochRewards() Returns the eligible epoch rewards for the specified block height. If no epoch index is provided, the current epoch is used.const ario = ARIO.mainnet();
+
+const rewards = await ario.getEligibleEpochRewards({ epochIndex: 0 });Output:{
+
+"sortOrder": "desc",
+
+"hasMore": true,
+
+"totalItems": 37,
+
+"limit": 1,
+
+"sortBy": "cursorId",
+
+"items": [
+
+{
+
+"cursorId": "xN_aVln30LmoCffwmk5_kRkcyQZyZWy1o_TNtM_CTm0_xN_aVln30LmoCffwmk5_kRkcyQZyZWy1o_TNtM_CTm0",
+
+"recipient": "xN_aVln30LmoCffwmk5_kRkcyQZyZWy1o_TNtM_CTm0",
+
+"gatewayAddress": "xN_aVln30LmoCffwmk5_kRkcyQZyZWy1o_TNtM_CTm0",
+
+"eligibleReward": 2627618704,
+
+"type": "operatorReward"
+
+}
+
+],
+
+"nextCursor": "xN_aVln30LmoCffwmk5_kRkcyQZyZWy1o_TNtM_CTm0_xN_aVln30LmoCffwmk5_kRkcyQZyZWy1o_TNtM_CTm0"
+
+} getObservations() Returns the epoch-indexed observation list. If no epoch index is provided, the current epoch is used.const ario = ARIO.mainnet();
+
+const observations = await ario.getObservations();Output:{
+
+"0": {
+
+"failureSummaries": {
+
+"-Tk2DDk8k4zkwtppp_XFKKI5oUgh6IEHygAoN7mD-w8": [
+
+"Ie2wEEUDKoU26c7IuckHNn3vMFdNQnMvfPBrFzAb3NA",
+
+"Ie2wEEUDKoU26c7IuckHNn3vMFdNQnMvfPBrFzAb3NA"
+
+]
+
+},
+
+"reports": {
+
+"IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs": "B6UUjKWjjEWDBvDSMXWNmymfwvgR9EN27z5FTkEVlX4",
+
+"Ie2wEEUDKoU26c7IuckHNn3vMFdNQnMvfPBrFzAb3NA": "7tKsiQ2fxv0D8ZVN_QEv29fZ8hwFIgHoEDrpeEG0DIs",
+
+"osZP4D9cqeDvbVFBaEfjIxwc1QLIvRxUBRAxDIX9je8": "aatgznEvC_UPcxp1v0uw_RqydhIfKm4wtt1KCpONBB0",
+
+"qZ90I67XG68BYIAFVNfm9PUdM7v1XtFTn7u-EOZFAtk": "Bd8SmFK9-ktJRmwIungS8ur6JM-JtpxrvMtjt5JkB1M"
+
+}
+
+}
+
+} getDistributions() Returns the current rewards distribution information. If no epoch index is provided, the current epoch is used.const ario = ARIO.mainnet();
+
+const distributions = await ario.getDistributions({ epochIndex: 0 });Output:{
+
+"totalEligibleGateways": 1,
+
+"totalEligibleRewards": 100000000,
+
+"totalEligibleObserverReward": 100000000,
+
+"totalEligibleGatewayReward": 100000000,
+
+"totalDistributedRewards": 100000000,
+
+"distributedTimestamp": 1720720621424,
+
+"rewards": {
+
+"eligible": {
+
+"IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs": {
+
+"operatorReward": 100000000,
+
+"delegateRewards": {}
+
+}
+
+},
+
+"distributed": {
+
+"IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs": 100000000
+
+}
+
+}
+
+} saveObservations() Saves the observations of the current epoch. Requires signer to be provided on ARIO.init to sign the transaction.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.saveObservations(
+
+{
+
+reportTxId: 'fDrr0_J4Iurt7caNST02cMotaz2FIbWQ4Kcj616RHl3',
+
+failedGateways: ['t4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3'],
+
+},
+
+{
+
+tags: [{ name: 'App-Name', value: 'My-Awesome-App' }],
+
+},
+
+);getPrescribedObservers() Retrieves the prescribed observers of the ARIO process. To fetch prescribed observers for a previous epoch set the epochIndex to the desired epoch index.const ario = ARIO.mainnet();
+
+const observers = await ario.getPrescribedObservers({ epochIndex: 0 });Output:[
+
+{
+
+"gatewayAddress": "BpQlyhREz4lNGS-y3rSS1WxADfxPpAuing9Lgfdrj2U",
+
+"observerAddress": "2Fk8lCmDegPg6jjprl57-UCpKmNgYiKwyhkU4vMNDnE",
+
+"stake": 10000000000, // value in mARIO
+
+"start": 1296976,
+
+"stakeWeight": 1,
+
+"tenureWeight": 0.41453703703703704,
+
+"gatewayPerformanceRatio": 1,
+
+"observerRewardRatioWeight": 1,
+
+"compositeWeight": 0.41453703703703704,
+
+"normalizedCompositeWeight": 0.0018972019546783507
+
+}
+
+] How is this guide?Arweave Name System (ArNS) TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Primary Names TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 92. State  ARIO Documentation
+
+Document Number: 92
+Source: https://docs.ar.io/sdks/ar-io-sdk/state
+Words: 343
+Quality Score: 0.476
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts getInfo() Retrieves the information of the ANT process.const info = await ant.getInfo();Output:{
+
+"name": "ArDrive",
+
+"ticker": "ANT-ARDRIVE",
+
+"description": "This is the ANT for the ArDrive decentralized web app.",
+
+"keywords": ["File-sharing", "Publishing", "dApp"],
+
+"owner": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ"
+
+} getHandlers() Retrieves the handlers supported on the ANT const handlers = await ant.getHandlers();Output:[
+
+"_eval",
+
+"_default",
+
+"transfer",
+
+"balance",
+
+"balances",
+
+"totalSupply",
+
+"info",
+
+"addController",
+
+"removeController",
+
+"controllers",
+
+"setRecord",
+
+"removeRecord",
+
+"record",
+
+"records",
+
+"setName",
+
+"setTicker",
+
+"initializeState",
+
+"state"
+
+] getState() Retrieves the state of the ANT process.const state = await ant.getState();Output:{
+
+"TotalSupply": 1,
+
+"Balances": {
+
+"98O1_xqDLrBKRfQPWjF5p7xZ4Jx6GM8P5PeJn26xwUY": 1
+
+},
+
+"Controllers": [],
+
+"Records": {
+
+"v1-0-0_whitepaper": {
+
+"transactionId": "lNjWn3LpyhKC95Kqe-x8X2qgju0j98MhucdDKK85vc4",
+
+"ttlSeconds": 900
+
+},
+
+"@": {
+
+"transactionId": "2rMLb2uHAyEt7jSu6bXtKx8e-jOfIf7E-DOgQnm8EtU",
+
+"ttlSeconds": 3600
+
+},
+
+"alice": {
+
+"transactionId": "kMk95k_3R8x_7d3wB9tEOiL5v6n8QhR_VnFCh3aeE3f",
+
+"ttlSeconds": 900,
+
+"owner": "alice-wallet-address-123...",
+
+"disName": "Alice's Portfolio",
+
+"logo": "avatar-tx-id-456...",
+
+"description": "Personal portfolio and blog",
+
+"keywords": ["portfolio", "personal", "blog"]
+
+},
+
+"whitepaper": {
+
+"transactionId": "lNjWn3LpyhKC95Kqe-x8X2qgju0j98MhucdDKK85vc4",
+
+"ttlSeconds": 900
+
+}
+
+},
+
+"Initialized": true,
+
+"Ticker": "ANT-AR-IO",
+
+"Description": "A friendly description for this ANT.",
+
+"Keywords": ["keyword1", "keyword2", "keyword3"],
+
+"Logo": "Sie_26dvgyok0PZD_-iQAFOhOd5YxDTkczOLoqTTL_A",
+
+"Denomination": 0,
+
+"Name": "AR.IO Foundation",
+
+"Owner": "98O1_xqDLrBKRfQPWjF5p7xZ4Jx6GM8P5PeJn26xwUY"
+
+} getOwner() Returns the owner of the configured ANT process.const owner = await ant.getOwner();Output:"ccp3blGgKUvG3hsGC2u06aDmqv4CuhuDJGOIg0jw4" getName() Returns the name of the ANT (not the same as ArNS name).const name = await ant.getName();Output:"ArDrive" getTicker() Returns the ticker symbol of the ANT.const ticker = await ant.getTicker();Output:"ANT-ARDRIVE" getControllers() Returns the controllers of the configured ANT process.const controllers = await ant.getControllers();Output:["ccp3blGgKUvG3hsGC2u06aDmqv4CuhuDJGOIg0jw4"] getRecords() Returns all records on the configured ANT process, including the required @ record that resolve connected ArNS names.const records = await ant.getRecords();Output:{
+
+"@": {
+
+"transactionId": "UyC5P5qKPZaltMmmZAWdakhlDXsBF6qmyrbWYFchRTk",
+
+"ttlSeconds": 3600
+
+},
+
+"alice": {
+
+"transactionId": "kMk95k_3R8x_7d3wB9tEOiL5v6n8QhR_VnFCh3aeE3f",
+
+"ttlSeconds": 900,
+
+"owner": "alice-wallet-address-123...",
+
+"disName": "Alice's Portfolio",
+
+"logo": "avatar-tx-id-456...",
+
+"description": "Personal portfolio and blog",
+
+"keywords": ["portfolio", "personal", "blog"]
+
+},
+
+"zed": {
+
+"transactionId": "-k7t8xMoB8hW482609Z9F4bTFMC3MnuW8bTvTyT8pFI",
+
+"ttlSeconds": 900
+
+},
+
+"ardrive": {
+
+"transactionId": "-cucucachoodwedwedoiwepodiwpodiwpoidpwoiedp",
+
+"ttlSeconds": 900
+
+}
+
+} getRecord() Returns a specific record by its undername.const record = await ant.getRecord({ undername: 'dapp' });Output:{
+
+"transactionId": "432l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM",
+
+"ttlSeconds": 900,
+
+"owner": "alice-wallet-address-123...",
+
+"disName": "Alice's Site",
+
+"logo": "avatar-tx-id-456...",
+
+"description": "Personal portfolio and blog",
+
+"keywords": ["portfolio", "personal", "blog"]
+
+} How is this guide?Versions TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Balances TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 93. Gateways  ARIO Documentation
+
+Document Number: 93
+Source: https://docs.ar.io/sdks/ar-io-sdk/gateways
+Words: 1745
+Quality Score: 0.476
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ARIO Contract getGateway() Retrieves a gateway's info by its staking wallet address.const ario = ARIO.mainnet();
+
+const gateway = await ario.getGateway({
+
+address: '-7vXsQZQDk8TMDlpiSLy3CnLi5PDPlAaN2DaynORpck',
+
+});Output:{
+
+"observerAddress": "IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs",
+
+"operatorStake": 250000000000,
+
+"settings": {
+
+"fqdn": "ar-io.dev",
+
+"label": "AR.IO Test",
+
+"note": "Test Gateway operated by PDS for the AR.IO ecosystem.",
+
+"port": 443,
+
+"properties": "raJgvbFU-YAnku-WsupIdbTsqqGLQiYpGzoqk9SCVgY",
+
+"protocol": "https"
+
+},
+
+"startTimestamp": 1720720620813,
+
+"stats": {
+
+"failedConsecutiveEpochs": 0,
+
+"passedEpochCount": 30,
+
+"submittedEpochCount": 30,
+
+"totalEpochCount": 31,
+
+"totalEpochsPrescribedCount": 31
+
+},
+
+"status": "joined",
+
+"vaults": {},
+
+"weights": {
+
+"compositeWeight": 0.97688888893556,
+
+"gatewayPerformanceRatio": 1,
+
+"tenureWeight": 0.19444444444444,
+
+"observerRewardRatioWeight": 1,
+
+"normalizedCompositeWeight": 0.19247316211083,
+
+"stakeWeight": 5.02400000024
+
+}
+
+} getGateways() Retrieves registered gateways of the ARIO process, using pagination and sorting by the specified criteria. The cursor used for pagination is the last gateway address from the previous request.const ario = ARIO.mainnet();
+
+const gateways = await ario.getGateways({
+
+limit: 100,
+
+sortOrder: 'desc',
+
+sortBy: 'operatorStake',
+
+});Available sortBy options are any of the keys on the gateway object, e.g. operatorStake, start, status, settings.fqdn, settings.label, settings.note, settings.port, settings.protocol, stats.failedConsecutiveEpochs, stats.passedConsecutiveEpochs, etc.Output:{
+
+"items": [
+
+{
+
+"gatewayAddress": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",
+
+"observerAddress": "IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs",
+
+"operatorStake": 250000000000,
+
+"settings": {
+
+"fqdn": "ar-io.dev",
+
+"label": "AR.IO Test",
+
+"note": "Test Gateway operated by PDS for the AR.IO ecosystem.",
+
+"port": 443,
+
+"properties": "raJgvbFU-YAnku-WsupIdbTsqqGLQiYpGzoqk9SCVgY",
+
+"protocol": "https"
+
+},
+
+"startTimestamp": 1720720620813,
+
+"stats": {
+
+"failedConsecutiveEpochs": 0,
+
+"passedEpochCount": 30,
+
+"submittedEpochCount": 30,
+
+"totalEpochCount": 31,
+
+"totalEpochsPrescribedCount": 31
+
+},
+
+"status": "joined",
+
+"vaults": {},
+
+"weights": {
+
+"compositeWeight": 0.97688888893556,
+
+"gatewayPerformanceRatio": 1,
+
+"tenureWeight": 0.19444444444444,
+
+"observerRewardRatioWeight": 1,
+
+"normalizedCompositeWeight": 0.19247316211083,
+
+"stakeWeight": 5.02400000024
+
+}
+
+}
+
+],
+
+"hasMore": true,
+
+"nextCursor": "-4xgjroXENKYhTWqrBo57HQwvDL51mMdfsdsxJy6Y2Z_sA",
+
+"totalItems": 316,
+
+"sortBy": "operatorStake",
+
+"sortOrder": "desc"
+
+} getGatewayDelegates() Retrieves all delegates for a specific gateway, paginated and sorted by the specified criteria. The cursor used for pagination is the last delegate address from the previous request.const ario = ARIO.mainnet();
+
+const delegates = await ario.getGatewayDelegates({
+
+address: 'QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ',
+
+limit: 3,
+
+sortBy: 'startTimestamp',
+
+sortOrder: 'desc',
+
+});Output:{
+
+"nextCursor": "ScEtph9-vfY7lgqlUWwUwOmm99ySeZGQhOX0MFAyFEs",
+
+"limit": 3,
+
+"sortBy": "startTimestamp",
+
+"totalItems": 32,
+
+"sortOrder": "desc",
+
+"hasMore": true,
+
+"items": [
+
+{
+
+"delegatedStake": 600000000,
+
+"address": "qD5VLaMYyIHlT6vH59TgYIs6g3EFlVjlPqljo6kqVxk",
+
+"startTimestamp": 1732716956301
+
+},
+
+{
+
+"delegatedStake": 508999038,
+
+"address": "KG8TlcWk-8pvroCjiLD2J5zkG9rqC6yYaBuZNqHEyY4",
+
+"startTimestamp": 1731828123742
+
+},
+
+{
+
+"delegatedStake": 510926479,
+
+"address": "ScEtph9-vfY7lgqlUWwUwOmm99ySeZGQhOX0MFAyFEs",
+
+"startTimestamp": 1731689356040
+
+}
+
+]
+
+} joinNetwork() Joins a gateway to the ar.io network via its associated wallet.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.joinNetwork(
+
+{
+
+qty: new ARIOToken(10_000).toMARIO(), // minimum operator stake allowed
+
+autoStake: true, // auto-stake operator rewards to the gateway
+
+allowDelegatedStaking: true, // allows delegated staking
+
+minDelegatedStake: new ARIOToken(100).toMARIO(), // minimum delegated stake allowed
+
+delegateRewardShareRatio: 10, // percentage of rewards to share with delegates (e.g. 10%)
+
+label: 'john smith', // min 1, max 64 characters
+
+note: 'The example gateway', // max 256 characters
+
+properties: 'FH1aVetOoulPGqgYukj0VE0wIhDy90WiQoV3U2PeY44', // Arweave transaction ID containing additional properties of the Gateway
+
+observerWallet: '0VE0wIhDy90WiQoV3U2PeY44FH1aVetOoulPGqgYukj', // wallet address of the observer, must match OBSERVER_WALLET on the observer
+
+fqdn: 'example.com', // fully qualified domain name - note: you must own the domain and set the OBSERVER_WALLET on your gateway to match `observerWallet`
+
+port: 443, // port number
+
+protocol: 'https', // only 'https' is supported
+
+},
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);leaveNetwork() Sets the gateway as leaving on the ar.io network. Requires signer to be provided on ARIO.init to sign the transaction. The gateways operator and delegate stakes are vaulted and will be returned after leave periods. The gateway will be removed from the network after the leave period.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.leaveNetwork(
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);updateGatewaySettings() Writes new gateway settings to the callers gateway configuration.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.updateGatewaySettings(
+
+{
+
+// any other settings you want to update
+
+minDelegatedStake: new ARIOToken(100).toMARIO(),
+
+},
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);increaseDelegateStake() Increases the callers stake on the target gateway.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.increaseDelegateStake(
+
+{
+
+target: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+qty: new ARIOToken(100).toMARIO(),
+
+},
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);decreaseDelegateStake() Decreases the callers stake on the target gateway. Can instantly decrease stake by setting instant to true.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.decreaseDelegateStake(
+
+{
+
+target: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+qty: new ARIOToken(100).toMARIO(),
+
+},
+
+{
+
+tags: [{ name: 'App-Name', value: 'My-Awesome-App' }],
+
+},
+
+);Pay the early withdrawal fee and withdraw instantly.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.decreaseDelegateStake({
+
+target: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+qty: new ARIOToken(100).toMARIO(),
+
+instant: true, // Immediately withdraw this stake and pay the instant withdrawal fee
+
+});getDelegations() Retrieves all active and vaulted stakes across all gateways for a specific address, paginated and sorted by the specified criteria. The cursor used for pagination is the last delegationId (concatenated gateway and startTimestamp of the delgation) from the previous request.const ario = ARIO.mainnet();
+
+const vaults = await ario.getDelegations({
+
+address: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+cursor: 'QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ_123456789',
+
+limit: 2,
+
+sortBy: 'startTimestamp',
+
+sortOrder: 'asc',
+
+});Output:{
+
+"sortOrder": "asc",
+
+"hasMore": true,
+
+"totalItems": 95,
+
+"limit": 2,
+
+"sortBy": "startTimestamp",
+
+"items": [
+
+{
+
+"type": "stake",
+
+"startTimestamp": 1727815440632,
+
+"gatewayAddress": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",
+
+"delegationId": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ_1727815440632",
+
+"balance": 1383212512
+
+},
+
+{
+
+"type": "vault",
+
+"startTimestamp": 1730996691117,
+
+"gatewayAddress": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",
+
+"delegationId": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ_1730996691117",
+
+"vaultId": "_sGDS7X1hyLCVpfe40GWioH9BSOb7f0XWbhHBa1q4-g",
+
+"balance": 50000000,
+
+"endTimestamp": 1733588691117
+
+}
+
+],
+
+"nextCursor": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ_1730996691117"
+
+} instantWithdrawal() Instantly withdraws an existing vault on a gateway. If no gatewayAddress is provided, the signer's address will be used.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+// removes a delegated vault from a gateway
+
+const { id: txId } = await ario.instantWithdrawal(
+
+{
+
+// gateway address where delegate vault exists
+
+gatewayAddress: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+// delegated vault id to cancel
+
+vaultId: 'fDrr0_J4Iurt7caNST02cMotaz2FIbWQ4Kcj616RHl3',
+
+},
+
+// optional additional tags
+
+{
+
+tags: [{ name: 'App-Name', value: 'My-Awesome-App' }],
+
+},
+
+);
+
+// removes an operator vault from a gateway
+
+const { id: txId } = await ario.instantWithdrawal(
+
+{
+
+vaultId: 'fDrr0_J4Iurt7caNST02cMotaz2FIbWQ4Kcj616RHl3',
+
+},
+
+);cancelWithdrawal() Cancels an existing vault on a gateway. The vaulted stake will be returned to the callers stake. If no gatewayAddress is provided, the signer's address will be used.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+// cancels a delegated vault from a gateway
+
+const { id: txId } = await ario.cancelWithdrawal(
+
+{
+
+// gateway address where vault exists
+
+gatewayAddress: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+// vault id to cancel
+
+vaultId: 'fDrr0_J4Iurt7caNST02cMotaz2FIbWQ4Kcj616RHl3',
+
+},
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);
+
+// cancels an operator vault from a gateway
+
+const { id: txId } = await ario.cancelWithdrawal(
+
+{
+
+// operator vault id to cancel
+
+vaultId: 'fDrr0_J4Iurt7caNST02cMotaz2FIbWQ4Kcj616RHl3',
+
+},
+
+);getAllowedDelegates() Retrieves all allowed delegates for a specific address. The cursor used for pagination is the last address from the previous request.const ario = ARIO.mainnet();
+
+const allowedDelegates = await ario.getAllowedDelegates({
+
+address: 'QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ',
+
+});Output:{
+
+"sortOrder": "desc",
+
+"hasMore": false,
+
+"totalItems": 4,
+
+"limit": 100,
+
+"items": [
+
+"PZ5vIhHf8VY969TxBPQN-rYY9CNFP9ggNsMBqlWUzWM",
+
+"N4h8M9A9hasa3tF47qQyNvcKjm4APBKuFs7vqUVm-SI",
+
+"JcC4ZLUY76vmWha5y6RwKsFqYTrMZhbockl8iM9p5lQ",
+
+"31LPFYoow2G7j-eSSsrIh8OlNaARZ84-80J-8ba68d8"
+
+]
+
+} getGatewayVaults() Retrieves all vaults across all gateways for a specific address, paginated and sorted by the specified criteria. The cursor used for pagination is the last vaultId from the previous request.const ario = ARIO.mainnet();
+
+const vaults = await ario.getGatewayVaults({
+
+address: '"PZ5vIhHf8VY969TxBPQN-rYY9CNFP9ggNsMBqlWUzWM',
+
+});Output:{
+
+"sortOrder": "desc",
+
+"hasMore": false,
+
+"totalItems": 1,
+
+"limit": 100,
+
+"sortBy": "endTimestamp",
+
+"items": [
+
+{
+
+"cursorId": "PZ5vIhHf8VY969TxBPQN-rYY9CNFP9ggNsMBqlWUzWM_1728067635857",
+
+"startTimestamp": 1728067635857,
+
+"balance": 50000000000,
+
+"vaultId": "PZ5vIhHf8VY969TxBPQN-rYY9CNFP9ggNsMBqlWUzWM",
+
+"endTimestamp": 1735843635857
+
+}
+
+]
+
+} getAllGatewayVaults() Retrieves all vaults across all gateways, paginated and sorted by the specified criteria. The cursor used for pagination is the last vaultId from the previous request.const ario = ARIO.mainnet();
+
+const vaults = await ario.getAllGatewayVaults({
+
+limit: 1,
+
+sortBy: 'endTimestamp',
+
+sortOrder: 'desc',
+
+});Output:{
+
+"sortOrder": "desc",
+
+"hasMore": true,
+
+"totalItems": 95,
+
+"limit": 1,
+
+"sortBy": "endTimestamp",
+
+"items": [
+
+{
+
+"cursorId": "PZ5vIhHf8VY969TxBPQN-rYY9CNFP9ggNsMBqlWUzWM_E-QVU3dta36Wia2uQw6tQLjQk7Qw5uN0Z6fUzsoqzUc",
+
+"gatewayAddress": "PZ5vIhHf8VY969TxBPQN-rYY9CNFP9ggNsMBqlWUzWM",
+
+"startTimestamp": 1728067635857,
+
+"balance": 50000000000,
+
+"vaultId": "E-QVU3dta36Wia2uQw6tQLjQk7Qw5uN0Z6fUzsoqzUc",
+
+"endTimestamp": 1735843635857
+
+}
+
+],
+
+"nextCursor": "PZ5vIhHf8VY969TxBPQN-rYY9CNFP9ggNsMBqlWUzWM_E-QVU3dta36Wia2uQw6tQLjQk7Qw5uN0Z6fUzsoqzUc"
+
+} increaseOperatorStake() Increases the callers operator stake. Must be executed with a wallet registered as a gateway operator.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.increaseOperatorStake(
+
+{
+
+qty: new ARIOToken(100).toMARIO(),
+
+},
+
+{
+
+tags: [{ name: 'App-Name', value: 'My-Awesome-App' }],
+
+},
+
+);decreaseOperatorStake() Decreases the callers operator stake. Must be executed with a wallet registered as a gateway operator. Requires signer to be provided on ARIO.init to sign the transaction.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.decreaseOperatorStake(
+
+{
+
+qty: new ARIOToken(100).toMARIO(),
+
+},
+
+{
+
+tags: [{ name: 'App-Name', value: 'My-Awesome-App' }],
+
+},
+
+);redelegateStake() Redelegates the stake of a specific address to a new gateway. Vault ID may be optionally included in order to redelegate from an existing withdrawal vault. The redelegation fee is calculated based on the fee rate and the stake amount. Users are allowed one free redelegation every seven epochs. Each additional redelegation beyond the free redelegation will increase the fee by 10%, capping at a 60% redelegation fee.e.g: If 1000 mARIO is redelegated and the fee rate is 10%, the fee will be 100 mARIO. Resulting in 900 mARIO being redelegated to the new gateway and 100 mARIO being deducted back to the protocol balance.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.redelegateStake({
+
+target: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+source: 'HwFceQaMQnOBgKDpnFqCqgwKwEU5LBme1oXRuQOWSRA',
+
+stakeQty: new ARIOToken(1000).toMARIO(),
+
+vaultId: 'fDrr0_J4Iurt7caNST02cMotaz2FIbWQ4Kcj616RHl3',
+
+});getRedelegationFee() Retrieves the fee rate as percentage required to redelegate the stake of a specific address. Fee rate ranges from 0% to 60% based on the number of redelegations since the last fee reset.const ario = ARIO.mainnet();
+
+const fee = await ario.getRedelegationFee({
+
+address: 't4Xr0_J4Iurt7caNST02cMotaz2FIbWQ4Kbj616RHl3',
+
+});Output:{
+
+"redelegationFeeRate": 10,
+
+"feeResetTimestamp": 1730996691117
+
+} getAllDelegates() Retrieves all delegates across all gateways, paginated and sorted by the specified criteria. The cursor used for pagination is a cursorId derived from delegate address and the gatewayAddress from the previous request. e.g address_gatewayAddress.const ario = ARIO.mainnet();
+
+const delegates = await ario.getAllDelegates({
+
+limit: 2,
+
+sortBy: 'startTimestamp',
+
+sortOrder: 'desc',
+
+});Output:{
+
+"sortOrder": "desc",
+
+"hasMore": true,
+
+"totalItems": 95,
+
+"limit": 2,
+
+"sortBy": "startTimestamp",
+
+"items": [
+
+{
+
+"startTimestamp": 1734709397622,
+
+"cursorId": "9jfM0uzGNc9Mkhjo1ixGoqM7ygSem9wx_EokiVgi0Bs_E-QVU3dta36Wia2uQw6tQLjQk7Qw5uN0Z6fUzsoqzUc",
+
+"gatewayAddress": "E-QVU3dta36Wia2uQw6tQLjQk7Qw5uN0Z6fUzsoqzUc",
+
+"address": "9jfM0uzGNc9Mkhjo1ixGoqM7ygSem9wx_EokiVgi0Bs",
+
+"delegatedStake": 2521349108,
+
+"vaultedStake": 0
+
+},
+
+{
+
+"startTimestamp": 1734593229454,
+
+"cursorId": "LtV0aSqgK3YI7c5FmfvZd-wG95TJ9sezj_a4syaLMS8_M0WP8KSzCvKpzC-HPF1WcddLgGaL9J4DGi76iMnhrN4",
+
+"gatewayAddress": "M0WP8KSzCvKpzC-HPF1WcddLgGaL9J4DGi76iMnhrN4",
+
+"address": "LtV0aSqgK3YI7c5FmfvZd-wG95TJ9sezj_a4syaLMS8",
+
+"delegatedStake": 1685148110,
+
+"vaultedStake": 10000000
+
+}
+
+],
+
+"nextCursor": "PZ5vIhHf8VY969TxBPQN-rYY9CNFP9ggNsMBqlWUzWM_QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ"
+
+} How is this guide?Vaults TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Arweave Name System (ArNS) TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 94. Using Turbo SDK with Vite  ARIO Documentation
+
+Document Number: 94
 Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser/vite
 Words: 1512
 Quality Score: 0.475
@@ -7442,9 +10696,22 @@ Data Size: {uploadResult.totalBytes} bytes
 
 ---
 
-# 67. Entity Types  ARIO Documentation
+# 95. Pricing  ARIO Documentation
 
-Document Number: 67
+Document Number: 95
+Source: https://docs.ar.io/apis/turbo/payment-service/pricing
+Words: 164
+Quality Score: 0.474
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Turbo Payment Service Pricing and cost calculation endpoints Get Amount of Credits in winc for Byte Count Returns the current amount of winc it will cost to upload a given byte count worth of data items Path Parameters byteCount integer A positive integer representing a byte count of data items Match ^[0-9]+$ Response Body Get winc for Payment Type and Amount Returns the current amount of winc this service will quote for a given payment type and amount Path Parameters type string Type for a given price request. Either "fiat" type or "token" type amount integer Payment amount in a given currency's smallest unit value. For example, $10 USD is 1000. 1 AR is 1000000000000 Query Parameters Header Parameters x-signature?string The signature value derived from signing the request's data concatenated with the provided nonce using the private key from the provided public key x-nonce?string The nonce value concatenated with the request's data when deriving the provided the signature Response Body How is this guide?
+
+---
+
+# 96. Entity Types  ARIO Documentation
+
+Document Number: 96
 Source: https://docs.ar.io/sdks/ardrive-core-js/entity-types
 Words: 62
 Quality Score: 0.474
@@ -7455,9 +10722,9 @@ ArDrive Core JS Core Concepts ArDrive uses a hierarchical structure:Drives: Top-
 
 ---
 
-# 68. APIs Reference  ARIO Documentation
+# 97. APIs Reference  ARIO Documentation
 
-Document Number: 68
+Document Number: 97
 Source: https://docs.ar.io/apis
 Words: 347
 Quality Score: 0.473
@@ -7468,9 +10735,9 @@ Explore the REST APIs available in the AR.IO ecosystem. Our services are built w
 
 ---
 
-# 69. What is ARIO  ARIO Documentation
+# 98. What is ARIO  ARIO Documentation
 
-Document Number: 69
+Document Number: 98
 Source: https://docs.ar.io/learn/what-is-ario
 Words: 633
 Quality Score: 0.473
@@ -7481,9 +10748,9 @@ Introduction The AR.IO Network is the first permanent cloud network.A decentrali
 
 ---
 
-# 70. Introduction  ARIO Documentation
+# 99. Introduction  ARIO Documentation
 
-Document Number: 70
+Document Number: 99
 Source: https://docs.ar.io/sdks
 Words: 208
 Quality Score: 0.470
@@ -7494,9 +10761,9 @@ Build powerful applications with our comprehensive suite of SDKs designed for th
 
 ---
 
-# 71. Advanced  ARIO Documentation
+# 100. Advanced  ARIO Documentation
 
-Document Number: 71
+Document Number: 100
 Source: https://docs.ar.io/build/advanced
 Words: 131
 Quality Score: 0.470
@@ -7507,9 +10774,9 @@ Overview Explore advanced topics and specialized guides for building on Arweave 
 
 ---
 
-# 72. Data  ARIO Documentation
+# 101. Data  ARIO Documentation
 
-Document Number: 72
+Document Number: 101
 Source: https://docs.ar.io/apis/ar-io-node/data
 Words: 169
 Quality Score: 0.468
@@ -7526,9 +10793,9 @@ Returns the same headers as the GET request.Path Parameters txId string Match ^[
 
 ---
 
-# 73. Using Turbo SDK with Nextjs  ARIO Documentation
+# 102. Using Turbo SDK with Nextjs  ARIO Documentation
 
-Document Number: 73
+Document Number: 102
 Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser/nextjs
 Words: 1707
 Quality Score: 0.467
@@ -8180,9 +11447,9 @@ console.log("Current balance:", balance);Verify Signer Setup: Your implementatio
 
 ---
 
-# 74. Request Flow  ARIO Documentation
+# 103. Request Flow  ARIO Documentation
 
-Document Number: 74
+Document Number: 103
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow
 Words: 36
 Quality Score: 0.465
@@ -8193,9 +11460,22 @@ The following sequence diagram illustrates how Wayfinder processes requests:How 
 
 ---
 
-# 75. Using Turbo in a Browser  ARIO Documentation
+# 104. Pricing  ARIO Documentation
 
-Document Number: 75
+Document Number: 104
+Source: https://docs.ar.io/apis/ar-io-node/pricing
+Words: 112
+Quality Score: 0.464
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO Gateway Get the price (in winston) for an amount of bytes Get price to store an amount of data.Get the price, in Winston, required to store a specified amount of data, in bytes, on the Arweave network.Path Parameters size string Match ^[0-9]+$ Response Body curl -X GET "https://ardrive.net/price/string" 0 Get price to transfer AR into a wallet and store an amount of data Get the price, in Winston, required to transfer AR into a wallet and store a specified amount of data, in bytes, on the Arweave network.Path Parameters size string Match ^[0-9]+$ Response Body curl -X GET "https://ardrive.net/price/string/target" 0 How is this guide?Index Querying POST Previous Page Admin Next Page
+
+---
+
+# 105. Using Turbo in a Browser  ARIO Documentation
+
+Document Number: 105
 Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser
 Words: 252
 Quality Score: 0.463
@@ -8206,9 +11486,9 @@ Guides Using Turbo in a Browser Integrate the Turbo SDK directly into your web a
 
 ---
 
-# 76. Staking  ARIO Documentation
+# 106. Staking  ARIO Documentation
 
-Document Number: 76
+Document Number: 106
 Source: https://docs.ar.io/learn/token/staking
 Words: 853
 Quality Score: 0.463
@@ -8219,9 +11499,9 @@ Token Overview Staking tokens within the AR.IO Network serves a dual primary pur
 
 ---
 
-# 77. Manage your Gateway  ARIO Documentation
+# 107. Manage your Gateway  ARIO Documentation
 
-Document Number: 77
+Document Number: 107
 Source: https://docs.ar.io/build/run-a-gateway/manage
 Words: 228
 Quality Score: 0.462
@@ -8236,9 +11516,9 @@ failed epoch guidance, and frequently asked questions.How is this guide?Join the
 
 ---
 
-# 78. What is Arweave  ARIO Documentation
+# 108. What is Arweave  ARIO Documentation
 
-Document Number: 78
+Document Number: 108
 Source: https://docs.ar.io/learn/what-is-arweave
 Words: 568
 Quality Score: 0.456
@@ -8249,9 +11529,122 @@ Introduction Arweave is a decentralized storage network that ensures data is per
 
 ---
 
-# 79. ArNS Marketplace  ARIO Documentation
+# 109. Undername Ownership  ARIO Documentation
 
-Document Number: 79
+Document Number: 109
+Source: https://docs.ar.io/sdks/ar-io-sdk/undername-ownership
+Words: 458
+Quality Score: 0.455
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts NTs support ownership of undernames:ANT Owner - Has full control over the ANT and all records Controllers - Can manage records but cannot transfer ANT ownership Record Owners - Can only update their specific delegated records When a record owner updates their own record, they MUST include their own address in the owner field. If the owner field is omitted or set to a different address, the record ownership will be transferred or renounced.transferRecord() Transfers ownership of a specific record (undername) to another address. This enables delegation of control for individual records within an ANT while maintaining the ANT owner's ultimate authority. The current record owner or ANT owner/controllers can transfer ownership.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.transferRecord({
+
+undername: 'alice', // the subdomain/record to transfer
+
+recipient: 'new-owner-address-123...', // address of the new owner
+
+});
+
+// alice_ardrive.ar.io is now owned by the new owner address
+
+// The new owner can update the record but not other records in the ANT CLI Usage:ar.io transfer-record \
+
+--process-id "ANT_PROCESS_ID" \
+
+--undername "alice" \
+
+--recipient "new-owner-address-123..." \
+
+--wallet-file "path/to/wallet.json" Record Owner Workflow Examples Checking Record Ownership:const record = await ant.getRecord({ undername: 'alice' });
+
+console.log(`Record owner: ${record.owner}`);
+
+console.log(`Transaction ID: ${record.transactionId}`);Record Owner Updating Their Own Record:// Alice (record owner) updating her own record
+
+const aliceAnt = ANT.init({
+
+processId: 'ANT_PROCESS_ID',
+
+signer: new ArweaveSigner(aliceJwk), // Alice's wallet
+
+});
+
+// ✅ CORRECT: Alice includes her own address as owner
+
+const { id: txId } = await aliceAnt.setUndernameRecord({
+
+undername: 'alice',
+
+transactionId: 'new-content-tx-id-456...',
+
+ttlSeconds: 1800,
+
+owner: 'alice-wallet-address-123...', // MUST be Alice's own address
+
+disName: 'Alice Updated Portfolio',
+
+description: 'Updated personal portfolio and blog',
+
+});
+
+// ❌ WRONG: Omitting owner field will renounce ownership
+
+const badUpdate = await aliceAnt.setUndernameRecord({
+
+undername: 'alice',
+
+transactionId: 'new-content-tx-id-456...',
+
+ttlSeconds: 1800,
+
+// Missing owner field - this will renounce ownership!
+
+});
+
+// ❌ WRONG: Setting different owner will transfer ownership
+
+const badTransfer = await aliceAnt.setUndernameRecord({
+
+undername: 'alice',
+
+transactionId: 'new-content-tx-id-456...',
+
+ttlSeconds: 1800,
+
+owner: 'someone-else-address-789...', // This transfers ownership to someone else!
+
+});What Happens When Record Ownership is Renounced:If a record owner updates their record without including the owner field, the record becomes owned by the ANT owner/controllers again:// Before: alice record is owned by alice-wallet-address-123...
+
+const recordBefore = await ant.getRecord({ undername: 'alice' });
+
+console.log(recordBefore.owner); // "alice-wallet-address-123..."
+
+// Alice updates without owner field
+
+await aliceAnt.setUndernameRecord({
+
+undername: 'alice',
+
+transactionId: 'new-tx-id...',
+
+ttlSeconds: 900,
+
+// No owner field = renounces ownership
+
+});
+
+// After: record ownership reverts to ANT owner
+
+const recordAfter = await ant.getRecord({ undername: 'alice' });
+
+console.log(recordAfter.owner); // undefined (controlled by ANT owner again) How is this guide?Upgrade TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Static Methods TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem On this page transferRecord() Record Owner Workflow Examples
+
+---
+
+# 110. ArNS Marketplace  ARIO Documentation
+
+Document Number: 110
 Source: https://docs.ar.io/build/guides/arns-marketplace
 Words: 550
 Quality Score: 0.455
@@ -8262,9 +11655,9 @@ Build Guides ArNS tokens have the potential to be traded and sold in decentraliz
 
 ---
 
-# 80. Arweave Name System (ArNS)  ARIO Documentation
+# 111. Arweave Name System (ArNS)  ARIO Documentation
 
-Document Number: 80
+Document Number: 111
 Source: https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns
 Words: 1061
 Quality Score: 0.455
@@ -8683,9 +12076,9 @@ const returnedName = await ario.getArNSReturnedName({ name: 'permalink' });Outpu
 
 ---
 
-# 81. Turbo Credit Sharing  ARIO Documentation
+# 112. Turbo Credit Sharing  ARIO Documentation
 
-Document Number: 81
+Document Number: 112
 Source: https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing
 Words: 519
 Quality Score: 0.453
@@ -8696,9 +12089,9 @@ Turbo SDK Users can share their purchased Credits with other users' wallets by c
 
 ---
 
-# 82. Glossary  ARIO Documentation
+# 113. Glossary  ARIO Documentation
 
-Document Number: 82
+Document Number: 113
 Source: https://docs.ar.io/glossary
 Words: 170
 Quality Score: 0.450
@@ -8709,9 +12102,9 @@ AO Computer AO (Actor Oriented) is a hyper-parallel computing platform built on 
 
 ---
 
-# 83. Introduction  ARIO Documentation
+# 114. Introduction  ARIO Documentation
 
-Document Number: 83
+Document Number: 114
 Source: https://docs.ar.io/learn
 Words: 177
 Quality Score: 0.448
@@ -8722,9 +12115,9 @@ AR.IO is the decentralized gateway protocol for Arweave. Deploy gateways, regist
 
 ---
 
-# 84. Normalized Addresses  ARIO Documentation
+# 115. Normalized Addresses  ARIO Documentation
 
-Document Number: 84
+Document Number: 115
 Source: https://docs.ar.io/build/advanced/normalized-addresses
 Words: 675
 Quality Score: 0.448
@@ -8738,9 +12131,9 @@ respectively.Arweave The public key for an Arweave wallet is the n field of the 
 
 ---
 
-# 85. ARIO Gateway APIs  ARIO Documentation
+# 116. ARIO Gateway APIs  ARIO Documentation
 
-Document Number: 85
+Document Number: 116
 Source: https://docs.ar.io/apis/ar-io-node
 Words: 351
 Quality Score: 0.448
@@ -8751,9 +12144,9 @@ The AR.IO Gateway is the core software for the AR.IO network, serving the essent
 
 ---
 
-# 86. Troubleshooting  ARIO Documentation
+# 117. Troubleshooting  ARIO Documentation
 
-Document Number: 86
+Document Number: 117
 Source: https://docs.ar.io/build/run-a-gateway/manage/troubleshooting
 Words: 1873
 Quality Score: 0.447
@@ -8764,9 +12157,9 @@ Run a Gateway Manage your Gateway Welcome to the comprehensive troubleshooting a
 
 ---
 
-# 87. Balance  ARIO Documentation
+# 118. Balance  ARIO Documentation
 
-Document Number: 87
+Document Number: 118
 Source: https://docs.ar.io/apis/turbo/payment-service/balance
 Words: 87
 Quality Score: 0.444
@@ -8777,9 +12170,9 @@ Turbo Payment Service Account balance and credit management Get Current Balance 
 
 ---
 
-# 88. ArFS Protocol  ARIO Documentation
+# 119. ArFS Protocol  ARIO Documentation
 
-Document Number: 88
+Document Number: 119
 Source: https://docs.ar.io/build/advanced/arfs
 Words: 487
 Quality Score: 0.442
@@ -8790,9 +12183,9 @@ Advanced Arweave File System, or "ArFS" is a data modeling, storage, and retriev
 
 ---
 
-# 89. Data Verification  ARIO Documentation
+# 120. Data Verification  ARIO Documentation
 
-Document Number: 89
+Document Number: 120
 Source: https://docs.ar.io/learn/gateways/data-verification
 Words: 539
 Quality Score: 0.440
@@ -8803,9 +12196,62 @@ Gateways AR.IO gateways continuously verify that data chunks are correctly store
 
 ---
 
-# 90. Observation  Incentive Protocol  ARIO Documentation
+# 121. Metadata  ARIO Documentation
 
-Document Number: 90
+Document Number: 121
+Source: https://docs.ar.io/sdks/ar-io-sdk/metadata
+Words: 267
+Quality Score: 0.437
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts setName() Sets the name of the ANT process.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.setName(
+
+{ name: 'My ANT' },
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);setTicker() Sets the ticker of the ANT process.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.setTicker(
+
+{ ticker: 'ANT-NEW-TICKER' },
+
+// optional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);setDescription() Sets the description of the ANT process.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.setDescription(
+
+{ description: 'A friendly description of this ANT' },
+
+// optional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);setKeywords() Sets the keywords of the ANT process.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.setKeywords(
+
+{ keywords: ['Game', 'FPS', 'AO'] },
+
+// optional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);getLogo() Returns the TX ID of the logo set for the ANT.const logoTxId = await ant.getLogo();setLogo() Sets the Logo of the ANT - logo should be an Arweave transaction ID.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.setLogo(
+
+{ txId: 'U7RXcpaVShG4u9nIcPVmm2FJSM5Gru9gQCIiRaIPV7f' },
+
+// optional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);How is this guide?Records TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem ARIO Integrations TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 122. Observation  Incentive Protocol  ARIO Documentation
+
+Document Number: 122
 Source: https://docs.ar.io/learn/oip
 Words: 560
 Quality Score: 0.435
@@ -8816,9 +12262,9 @@ Overview The Observation and Incentive Protocol ensures network quality through 
 
 ---
 
-# 91. Performance and Weights  ARIO Documentation
+# 123. Performance and Weights  ARIO Documentation
 
-Document Number: 91
+Document Number: 123
 Source: https://docs.ar.io/learn/oip/performance-evaluation
 Words: 856
 Quality Score: 0.435
@@ -8942,9 +12388,148 @@ Ready to understand how rewards are distributed? Learn about Reward Distribution
 
 ---
 
-# 92. Contributing  ARIO Documentation
+# 124. Vaults  ARIO Documentation
 
-Document Number: 92
+Document Number: 124
+Source: https://docs.ar.io/sdks/ar-io-sdk/vaults
+Words: 430
+Quality Score: 0.432
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ARIO Contract getVault() Retrieves the locked-balance user vault of the ARIO process by the specified wallet address and vault ID.const ario = ARIO.mainnet();
+
+const vault = await ario.getVault({
+
+address: 'QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ',
+
+vaultId: 'vaultIdOne',
+
+});Output:{
+
+"balance": 1000000,
+
+"startTimestamp": 123,
+
+"endTimestamp": 4567
+
+} getVaults() Retrieves all locked-balance user vaults of the ARIO process, paginated and sorted by the specified criteria. The cursor used for pagination is the last wallet address from the previous request.const ario = ARIO.mainnet();
+
+const vaults = await ario.getVaults({
+
+cursor: '0',
+
+limit: 100,
+
+sortBy: 'balance',
+
+sortOrder: 'desc',
+
+});Output:{
+
+"items": [
+
+{
+
+"address": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",
+
+"vaultId": "vaultIdOne",
+
+"balance": 1000000,
+
+"startTimestamp": 123,
+
+"endTimestamp": 4567
+
+},
+
+{
+
+"address": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",
+
+"vaultId": "vaultIdTwo",
+
+"balance": 1000000,
+
+"startTimestamp": 123,
+
+"endTimestamp": 4567
+
+}
+
+// ...98 other addresses with vaults
+
+],
+
+"hasMore": true,
+
+"nextCursor": "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",
+
+"totalItems": 1789,
+
+"sortBy": "balance",
+
+"sortOrder": "desc"
+
+} vaultedTransfer() Transfers mARIO to the designated recipient address and locks the balance for the specified lockLengthMs milliseconds. The revokable flag determines if the vaulted transfer can be revoked by the sender.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.vaultedTransfer(
+
+{
+
+recipient: '-5dV7nk7waR8v4STuwPnTck1zFVkQqJh5K9q9Zik4Y5',
+
+quantity: new ARIOToken(1000).toMARIO(),
+
+lockLengthMs: 1000 * 60 * 60 * 24 * 365, // 1 year
+
+revokable: true,
+
+},
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);revokeVault() Revokes a vaulted transfer by the recipient address and vault ID. Only the sender of the vaulted transfer can revoke it.Note: Requires signer to be provided on ARIO.init to sign the transaction.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.revokeVault({
+
+recipient: '-5dV7nk7waR8v4STuwPnTck1zFVkQqJh5K9q9Zik4Y5',
+
+vaultId: 'IPdwa3Mb_9pDD8c2IaJx6aad51Ss-_TfStVwBuhtXMs',
+
+});createVault() Creates a vault for the specified quantity of mARIO from the signer's balance and locks it for the specified lockLengthMs milliseconds.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.createVault({
+
+lockLengthMs: 1000 * 60 * 60 * 24 * 365, // 1 year
+
+quantity: new ARIOToken(1000).toMARIO(),
+
+});extendVault() Extends the lock length of a signer's vault by the specified extendLengthMs milliseconds.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.extendVault({
+
+vaultId: 'vaultIdOne',
+
+extendLengthMs: 1000 * 60 * 60 * 24 * 365, // 1 year
+
+});increaseVault() Increases the balance of a signer's vault by the specified quantity of mARIO.const ario = ARIO.mainnet({ signer: new ArweaveSigner(jwk) });
+
+const { id: txId } = await ario.increaseVault({
+
+vaultId: 'vaultIdOne',
+
+quantity: new ARIOToken(1000).toMARIO(),
+
+});How is this guide?Networks TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Gateways TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 125. Contributing  ARIO Documentation
+
+Document Number: 125
 Source: https://docs.ar.io/sdks/ardrive-core-js/contributing
 Words: 54
 Quality Score: 0.431
@@ -8955,9 +12540,22 @@ ArDrive Core JS Fork the repository Create your feature branch (git checkout -b 
 
 ---
 
-# 93. Data Retrieval  ARIO Documentation
+# 126. Support  ARIO Documentation
 
-Document Number: 93
+Document Number: 126
+Source: https://docs.ar.io/sdks/ardrive-core-js/support
+Words: 39
+Quality Score: 0.424
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+ArDrive Core JS Discord Community GitHub Issues ArDrive Website How is this guide?License JavaScript/TypeScript SDK for interacting with ArDrive AR.IO SDK JavaScript/TypeScript SDK for interacting with the AR.IO Network, including ArNS name management, gateway interactions, and AO contract operations
+
+---
+
+# 127. Data Retrieval  ARIO Documentation
+
+Document Number: 127
 Source: https://docs.ar.io/learn/gateways/data-retrieval
 Words: 564
 Quality Score: 0.424
@@ -8968,9 +12566,9 @@ Gateways AR.IO gateways use a sophisticated multi-tier architecture to retrieve 
 
 ---
 
-# 94. Extensions  Sidecars  ARIO Documentation
+# 128. Extensions  Sidecars  ARIO Documentation
 
-Document Number: 94
+Document Number: 128
 Source: https://docs.ar.io/build/extensions
 Words: 249
 Quality Score: 0.421
@@ -8983,9 +12581,22 @@ access control.AO Compute Unit Sidecar Execute AO processes locally with WASM mo
 
 ---
 
-# 95. Architecture  ARIO Documentation
+# 129. Pricing  ARIO Documentation
 
-Document Number: 95
+Document Number: 129
+Source: https://docs.ar.io/apis/turbo/upload-service/pricing
+Words: 79
+Quality Score: 0.421
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Turbo Upload Service Pricing calculation endpoints Gets the price in winc to upload a data item Path Parameters token string The token to use for validating the transaction.byteCount integer The byte count of the data item.Response Body curl -X GET "https://upload.ardrive.io/price/:token/:byteCount" Gets the price in winc to upload a data item Path Parameters token string The token to use for validating the transaction.Response Body curl -X GET "https://upload.ardrive.io/price/:token" How is this guide?Transaction Data Previous Page Service Info Next Page
+
+---
+
+# 130. Architecture  ARIO Documentation
+
+Document Number: 130
 Source: https://docs.ar.io/learn/gateways/architecture
 Words: 584
 Quality Score: 0.420
@@ -8996,9 +12607,9 @@ Gateways AR.IO gateways are sophisticated data access layers built on top of the
 
 ---
 
-# 96. Name Registration  ARIO Documentation
+# 131. Name Registration  ARIO Documentation
 
-Document Number: 96
+Document Number: 131
 Source: https://docs.ar.io/learn/arns/name-registration
 Words: 693
 Quality Score: 0.417
@@ -9009,9 +12620,9 @@ Arweave Name System (ArNS) There are two different types of name registrations t
 
 ---
 
-# 97. Add to Wander  ARIO Documentation
+# 132. Add to Wander  ARIO Documentation
 
-Document Number: 97
+Document Number: 132
 Source: https://docs.ar.io/learn/token/add-to-wander
 Words: 638
 Quality Score: 0.415
@@ -9022,9 +12633,9 @@ Token Adding ARIO Token to Wander Wander (formerly ArConnect) is the primary wal
 
 ---
 
-# 98. Use Cases  ARIO Documentation
+# 133. Use Cases  ARIO Documentation
 
-Document Number: 98
+Document Number: 133
 Source: https://docs.ar.io/learn/wayfinder/use-cases
 Words: 515
 Quality Score: 0.413
@@ -9035,9 +12646,9 @@ Wayfinder Decentralized Web Hosting with Flexible Access With Wayfinder, not onl
 
 ---
 
-# 99. Observer Selection  ARIO Documentation
+# 134. Observer Selection  ARIO Documentation
 
-Document Number: 99
+Document Number: 134
 Source: https://docs.ar.io/learn/oip/observer-selection
 Words: 711
 Quality Score: 0.413
@@ -9052,9 +12663,9 @@ operation.Validation Process Chunk Retrieval: Observers request chunk data using
 
 ---
 
-# 100. Deploy a dApp with ArDrive Web  ARIO Documentation
+# 135. Deploy a dApp with ArDrive Web  ARIO Documentation
 
-Document Number: 100
+Document Number: 135
 Source: https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web
 Words: 654
 Quality Score: 0.411
@@ -9065,9 +12676,9 @@ Guides Create permanent dApps using the ArDrive web interface. This guide shows 
 
 ---
 
-# 101. Reporting  ARIO Documentation
+# 136. Reporting  ARIO Documentation
 
-Document Number: 101
+Document Number: 136
 Source: https://docs.ar.io/learn/oip/reporting
 Words: 615
 Quality Score: 0.411
@@ -9099,9 +12710,152 @@ operation.Observer Rewards and Penalties Observer performance directly impacts r
 
 ---
 
-# 102. What is the Permaweb  ARIO Documentation
+# 137. Records  ARIO Documentation
 
-Document Number: 102
+Document Number: 137
+Source: https://docs.ar.io/sdks/ar-io-sdk/records
+Words: 579
+Quality Score: 0.410
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK ANT Contracts setBaseNameRecord() Adds or updates the base name record for the ANT. This is the top level name of the ANT (e.g. ardrive.ar.io). Supports undername ownership delegation and metadata.Note: Requires signer to be provided on ANT.init to sign the transaction.// get the ant for the base name
+
+const arnsRecord = await ario.getArNSRecord({ name: 'ardrive' });
+
+const ant = await ANT.init({ processId: arnsName.processId });
+
+// Basic usage
+
+const { id: txId } = await ant.setBaseNameRecord({
+
+transactionId: '432l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM',
+
+ttlSeconds: 3600,
+
+});
+
+// With ownership delegation and metadata
+
+const { id: txId } = await ant.setBaseNameRecord({
+
+transactionId: '432l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM',
+
+ttlSeconds: 3600,
+
+owner: 'user-wallet-address-123...', // delegate ownership to another address
+
+disName: 'ArDrive', // dis name
+
+logo: 'logo-tx-id-123...', // logo transaction ID
+
+description: 'Decentralized storage application',
+
+keywords: ['storage', 'decentralized', 'web3'],
+
+});
+
+// ardrive.ar.io will now resolve to the provided transaction id and include metadata setUndernameRecord() Adds or updates an undername record for the ANT. An undername is appended to the base name of the ANT (e.g. dapp_ardrive.ar.io). Supports undername ownership delegation and metadata.Note: Requires signer to be provided on ANT.init to sign the transaction.Records, or undernames are configured with the transactionId - the arweave transaction id the record resolves - and ttlSeconds, the Time To Live in the cache of client applications.const arnsRecord = await ario.getArNSRecord({ name: 'ardrive' });
+
+const ant = await ANT.init({ processId: arnsName.processId });
+
+// Basic usage
+
+const { id: txId } = await ant.setUndernameRecord(
+
+{
+
+undername: 'dapp',
+
+transactionId: '432l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM',
+
+ttlSeconds: 900,
+
+},
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);
+
+// With ownership delegation and metadata
+
+const { id: txId } = await ant.setUndernameRecord(
+
+{
+
+undername: 'alice',
+
+transactionId: '432l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM',
+
+ttlSeconds: 900,
+
+owner: 'alice-wallet-address-123...', // delegate ownership to Alice
+
+disName: "Alice's Site", // dis name
+
+logo: 'avatar-tx-id-123...', // avatar/logo transaction ID
+
+description: 'Personal portfolio and blog',
+
+keywords: ['portfolio', 'personal', 'blog'],
+
+},
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);
+
+// dapp_ardrive.ar.io will now resolve to the provided transaction id
+
+// alice_ardrive.ar.io will be owned by Alice and include metadata removeUndernameRecord() Removes an undername record from the ANT process.Note: Requires signer to be provided on ANT.init to sign the transaction.const { id: txId } = await ant.removeUndernameRecord(
+
+{ undername: 'dapp' },
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);
+
+// dapp_ardrive.ar.io will no longer resolve to the provided transaction id setRecord() Adds or updates a record for the ANT process. The undername parameter is used to specify the record name. Use @ for the base name record.Note: Requires signer to be provided on ANT.init to sign the transaction.Records, or undernames are configured with the transactionId - the arweave transaction id the record resolves - and ttlSeconds, the Time To Live in the cache of client applications.const { id: txId } = await ant.setRecord(
+
+{
+
+undername: '@',
+
+transactionId: '432l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM'
+
+ttlSeconds: 3600
+
+},
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);removeRecord() Removes a record from the ANT process.Note: Requires signer to be provided on ANT.init to sign the transaction.const arnsRecord = await ario.getArNSRecord({ name: 'ardrive' });
+
+const ant = await ANT.init({ processId: arnsName.processId });
+
+const { id: txId } = await ant.removeRecord(
+
+{ undername: 'dapp' },
+
+// optional additional tags
+
+{ tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
+
+);
+
+// dapp_ardrive.ar.io will no longer resolve to the provided transaction id How is this guide?Controllers TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Metadata TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 138. What is the Permaweb  ARIO Documentation
+
+Document Number: 138
 Source: https://docs.ar.io/learn/permaweb
 Words: 682
 Quality Score: 0.405
@@ -9112,9 +12866,9 @@ Introduction The permaweb is a decentralized, permanent layer of the internet wh
 
 ---
 
-# 103. Gateway Registry  ARIO Documentation
+# 139. Gateway Registry  ARIO Documentation
 
-Document Number: 103
+Document Number: 139
 Source: https://docs.ar.io/learn/gateways/gateway-registry
 Words: 749
 Quality Score: 0.395
@@ -9125,9 +12879,9 @@ Gateways Overview The AR.IO Network consists of AR.IO gateway nodes, which are i
 
 ---
 
-# 104. Architecture  ARIO Documentation
+# 140. Architecture  ARIO Documentation
 
-Document Number: 104
+Document Number: 140
 Source: https://docs.ar.io/learn/token/architecture
 Words: 548
 Quality Score: 0.385
@@ -9138,9 +12892,9 @@ Token ARIO Contract Architecture The $ARIO token operates through a smart contra
 
 ---
 
-# 105. Get the Token  ARIO Documentation
+# 141. Get the Token  ARIO Documentation
 
-Document Number: 105
+Document Number: 141
 Source: https://docs.ar.io/learn/token/get-the-token
 Words: 316
 Quality Score: 0.385
@@ -9151,9 +12905,9 @@ Token Acquiring ARIO Tokens There are several ways to acquire ARIO tokens, depen
 
 ---
 
-# 106. Turbo APIs  ARIO Documentation
+# 142. Turbo APIs  ARIO Documentation
 
-Document Number: 106
+Document Number: 142
 Source: https://docs.ar.io/apis/turbo
 Words: 320
 Quality Score: 0.374
@@ -9164,9 +12918,9 @@ Turbo provides high-performance upload and payment services for the Arweave netw
 
 ---
 
-# 107. Token  ARIO Documentation
+# 143. Token  ARIO Documentation
 
-Document Number: 107
+Document Number: 143
 Source: https://docs.ar.io/learn/token
 Words: 591
 Quality Score: 0.369
@@ -9177,9 +12931,9 @@ Overview ARIO is the multifunction AO Computer based token that powers the AR.IO
 
 ---
 
-# 108. What are Bundles  ARIO Documentation
+# 144. What are Bundles  ARIO Documentation
 
-Document Number: 108
+Document Number: 144
 Source: https://docs.ar.io/learn/ans-104-bundles
 Words: 430
 Quality Score: 0.356
@@ -9190,9 +12944,9 @@ Introduction ANS-104 bundles are data packaging standards that efficiently bundl
 
 ---
 
-# 109. ARIO Gateways  ARIO Documentation
+# 145. ARIO Gateways  ARIO Documentation
 
-Document Number: 109
+Document Number: 145
 Source: https://docs.ar.io/learn/gateways
 Words: 511
 Quality Score: 0.306
