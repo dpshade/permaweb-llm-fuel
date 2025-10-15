@@ -3,7 +3,7 @@
 
 Site: WAO Documentation
 Base URL: https://docs.wao.eco
-Generated: 2025-07-31T17:30:45.234Z
+Generated: 2025-10-15T00:06:07.645Z
 
 📈 EXTRACTION STATISTICS
 ------------------------------
@@ -11,10 +11,10 @@ Total pages: 31
 Successful: 31
 Failed: 0
 Quality filtered: 0
-Total words: 21865
+Total words: 21869
 Average words per page: 705
 
-Average quality score: 0.498
+Average quality score: 0.488
 
 🔧 EXTRACTION METHODS
 -------------------------

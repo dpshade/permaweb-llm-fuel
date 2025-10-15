@@ -160,8 +160,23 @@ function normalizeUnicode(text) {
   return normalized;
 }
 
-function normalizeWhitespace(text) {
+function normalizeWhitespace(text, preserveStructure = true) {
   if (!text) return '';
+
+  if (preserveStructure) {
+    // Preserve paragraph breaks and section spacing
+    return text
+      .replace(/¶/g, '')
+      .replace(/&para;/gi, '')
+      .replace(/[ \t]+/g, ' ')           // Collapse multiple spaces/tabs to single space
+      .replace(/\n{4,}/g, '\n\n\n')      // Limit excessive newlines to max 3
+      .replace(/\n{3}/g, '\n\n')         // Reduce 3 newlines to 2 (paragraph break)
+      // Keep double newlines as-is for paragraph breaks
+      .split('\n').map(line => line.trim()).join('\n')
+      .trim();
+  }
+
+  // Original behavior for non-structured content
   return text
     .replace(/¶/g, '')
     .replace(/&para;/gi, '')
@@ -232,9 +247,28 @@ function removeVideoContent(text) {
   return cleaned;
 }
 
-function removeMarkdownFormatting(text) {
+function removeMarkdownFormatting(text, preserveStructure = true) {
   if (!text) return '';
   let cleaned = text;
+
+  if (preserveStructure) {
+    // Only remove emphasis formatting, preserve headings, code blocks, and lists
+    cleaned = cleaned.replace(/\*\*\*(.*?)\*\*\*/g, '$1');
+    cleaned = cleaned.replace(/\*\*_(.*?)_\*\*/g, '$1');
+    cleaned = cleaned.replace(/_\*\*(.*?)\*\*_/g, '$1');
+    cleaned = cleaned.replace(/\*\*(.*?)\*\*/g, '$1');
+    cleaned = cleaned.replace(/__(.*?)__/g, '$1');
+    cleaned = cleaned.replace(/\b\*(.*?)\*\b/g, '$1');
+    cleaned = cleaned.replace(/\b_(.*?)_\b/g, '$1');
+    cleaned = cleaned.replace(/~~(.*?)~~/g, '$1');
+    // Remove link syntax but preserve text
+    cleaned = cleaned.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+    cleaned = cleaned.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1');
+    // Keep headings, code blocks, and lists intact
+    return cleaned;
+  }
+
+  // Original behavior if not preserving structure
   cleaned = cleaned.replace(/\*\*\*(.*?)\*\*\*/g, '$1');
   cleaned = cleaned.replace(/\*\*_(.*?)_\*\*/g, '$1');
   cleaned = cleaned.replace(/_\*\*(.*?)\*\*_/g, '$1');
@@ -811,60 +845,96 @@ function cleanHtmlWithDOM(html) {
 function convertHtmlToStructuredText(element) {
   if (!element) return '';
   let result = '';
+
   // Handle text nodes
   if (element.nodeType === 3) { // Node.TEXT_NODE
-    return element.textContent || '';
+    const text = (element.textContent || '').trim();
+    return text ? text + ' ' : ''; // Add space after text nodes
   }
+
   // Handle element nodes
   if (element.nodeType === 1) { // Node.ELEMENT_NODE
     const tagName = element.tagName.toLowerCase();
-    const textContent = element.textContent.trim();
-    if (!textContent) return '';
+
+    // Special handling for code blocks (use textContent to preserve formatting)
+    if (tagName === 'pre') {
+      const textContent = element.textContent.trim();
+      if (textContent) {
+        result += '```\n' + textContent + '\n```\n\n';
+      }
+      return result;
+    }
+
+    // Special handling for inline code (use textContent)
+    if (tagName === 'code' && element.parentElement && element.parentElement.tagName.toLowerCase() === 'pre') {
+      return element.textContent || '';
+    }
+
+    if (tagName === 'code') {
+      const textContent = element.textContent.trim();
+      if (textContent) {
+        result += '`' + textContent + '` ';
+      }
+      return result;
+    }
+
+    // Handle line breaks and horizontal rules
+    if (tagName === 'br') return '\n';
+    if (tagName === 'hr') return '\n---\n\n';
+
+    // Process all children recursively first
+    let childrenText = '';
+    for (const child of element.childNodes) {
+      childrenText += convertHtmlToStructuredText(child);
+    }
+
+    // Trim and check if we have content
+    childrenText = childrenText.trim();
+    if (!childrenText) return '';
+
+    // Apply structural formatting based on tag
     if (CLEANING_CONFIG.structuralTags[tagName]) {
       const prefix = CLEANING_CONFIG.structuralTags[tagName];
       switch (tagName) {
-        case 'pre':
-          result += '```\n' + textContent + '\n```\n\n';
+        case 'h1':
+        case 'h2':
+        case 'h3':
+        case 'h4':
+        case 'h5':
+        case 'h6':
+          result += prefix + childrenText + '\n\n';
           break;
-        case 'code':
-          if (element.parentElement && element.parentElement.tagName.toLowerCase() === 'pre') {
-            result += textContent;
-          } else {
-            result += '`' + textContent + '`';
-          }
+        case 'p':
+          result += childrenText + '\n\n';
+          break;
+        case 'div':
+          result += childrenText + '\n';
           break;
         case 'li':
-          result += '- ' + textContent + '\n';
+          result += '- ' + childrenText + '\n';
           break;
         case 'blockquote':
-          const lines = textContent.split('\n');
+          const lines = childrenText.split('\n');
           lines.forEach(line => {
             if (line.trim()) result += '> ' + line.trim() + '\n';
           });
-          break;
-        case 'p':
-        case 'div':
-          if (textContent) {
-            result += textContent + '\n';
-          }
-          break;
-        case 'br':
           result += '\n';
           break;
-        case 'hr':
-          result += '\n---\n\n';
+        case 'dt':
+          result += '**' + childrenText + '**\n';
+          break;
+        case 'dd':
+          result += ': ' + childrenText + '\n';
           break;
         default:
-          result += prefix + textContent + '\n';
+          result += childrenText + ' ';
       }
-    } else if (CLEANING_CONFIG.codeTags.includes(tagName)) {
-      result += '`' + textContent + '`';
     } else {
-      for (const child of element.childNodes) {
-        result += convertHtmlToStructuredText(child);
-      }
+      // For non-structural tags, just return the children's text
+      result += childrenText + ' ';
     }
   }
+
   return result;
 }
 

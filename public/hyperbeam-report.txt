@@ -3,20 +3,20 @@
 
 Site: Hyperbeam
 Base URL: https://hyperbeam.arweave.net
-Generated: 2025-07-31T17:29:14.652Z
+Generated: 2025-10-15T00:04:33.193Z
 
 📈 EXTRACTION STATISTICS
 ------------------------------
-Total pages: 39
-Successful: 39
+Total pages: 29
+Successful: 29
 Failed: 0
 Quality filtered: 0
-Total words: 19629
-Average words per page: 503
+Total words: 13256
+Average words per page: 457
 
-Average quality score: 0.502
+Average quality score: 0.513
 
 🔧 EXTRACTION METHODS
 -------------------------
-defuddle_semantic: 39 (100.0%)
+defuddle_semantic: 29 (100.0%)
 

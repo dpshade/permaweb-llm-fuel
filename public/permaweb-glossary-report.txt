@@ -3,7 +3,7 @@
 
 Site: Permaweb Glossary
 Base URL: https://glossary.arweave.net
-Generated: 2025-07-31T17:30:37.550Z
+Generated: 2025-10-15T00:06:07.924Z
 
 📈 EXTRACTION STATISTICS
 ------------------------------
@@ -11,8 +11,8 @@ Total pages: 1
 Successful: 1
 Failed: 0
 Quality filtered: 0
-Total words: 9868
-Average words per page: 9868
+Total words: 5
+Average words per page: 5
 
 Average quality score: 1.000
 

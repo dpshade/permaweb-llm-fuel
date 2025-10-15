@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-14T23:47:02.332Z
+Generated on: 2025-10-15T00:05:58.303Z
 Total documents: 62
-Total words: 27974
+Total words: 28023
 
 ## Table of Contents
 
@@ -10,56 +10,56 @@ Total words: 27974
 
 1. [Github Action](https://cookbook.arweave.net/tooling/deployment/github-action.html)
 2. [HyperBEAM Introduction](https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html)
-3. [Exposing Process State to HyperBEAM](https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html)
-4. [HyperBEAM Devices](https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html)
+3. [HyperBEAM Devices](https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html)
+4. [Exposing Process State to HyperBEAM](https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html)
 5. [Lua Serverless Functions](https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/lua-serverless.html)
-6. [Hello World (Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-code.html)
-7. [What are AO Processes](https://cookbook.arweave.net/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html)
-8. [SvelteVite Starter Kit](https://cookbook.arweave.net/kits/svelte/vite.html)
-9. [Hello World (CLI)](https://cookbook.arweave.net/getting-started/quick-starts/hw-cli.html)
-10. [Minimal Svelte Starter Kit](https://cookbook.arweave.net/kits/svelte/minimal.html)
+6. [What are AO Processes](https://cookbook.arweave.net/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html)
+7. [Hello World (CLI)](https://cookbook.arweave.net/getting-started/quick-starts/hw-cli.html)
+8. [Create React App Starter Kit](https://cookbook.arweave.net/kits/react/create-react-app.html)
+9. [Create Vue Starter Kit](https://cookbook.arweave.net/kits/vue/create-vue.html)
+10. [ar-gql](https://cookbook.arweave.net/tooling/graphql/ar-gql.html)
 11. [Data Model](https://cookbook.arweave.net/tooling/specs/arfs/data-model.html)
 12. [React Starter Kit wvite ArDrive](https://cookbook.arweave.net/kits/react/turbo.html)
-13. [Permaweb Deploy](https://cookbook.arweave.net/tooling/deployment/permaweb-deploy.html)
-14. [ANS-109 Vouch-For (Assertion of Identity)](https://cookbook.arweave.net/tooling/specs/ans/ANS-109.html)
-15. [GraphQL Queries](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/graphql.html)
-16. [Create React App Starter Kit](https://cookbook.arweave.net/kits/react/create-react-app.html)
-17. [Create Vue Starter Kit](https://cookbook.arweave.net/kits/vue/create-vue.html)
-18. [Posting Transactions](https://cookbook.arweave.net/fundamentals/transactions/post-transactions.html)
-19. [ar-gql](https://cookbook.arweave.net/tooling/graphql/ar-gql.html)
-20. [Svelte Starter Kits](https://cookbook.arweave.net/kits/svelte/index.html)
-21. [Transaction Metadata (Tags)](https://cookbook.arweave.net/fundamentals/transactions/tags.html)
-22. [Vue Starter Kits](https://cookbook.arweave.net/kits/vue/index.html)
-23. [ANS-103 Succinct Proofs of Random Access](https://cookbook.arweave.net/tooling/specs/ans/ANS-103.html)
-24. [ANS-106 Do-Not-Store Request](https://cookbook.arweave.net/tooling/specs/ans/ANS-106.html)
-25. [ANS-110 Asset Discoverability](https://cookbook.arweave.net/tooling/specs/ans/ANS-110.html)
-26. [Querying Arweave with GraphQL](https://cookbook.arweave.net/tooling/querying-arweave.html)
+13. [SvelteVite Starter Kit](https://cookbook.arweave.net/kits/svelte/vite.html)
+14. [Entity Types](https://cookbook.arweave.net/tooling/specs/arfs/entity-types.html)
+15. [Permaweb Deploy](https://cookbook.arweave.net/tooling/deployment/permaweb-deploy.html)
+16. [ANS-109 Vouch-For (Assertion of Identity)](https://cookbook.arweave.net/tooling/specs/ans/ANS-109.html)
+17. [GraphQL Queries](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/graphql.html)
+18. [Querying Arweave with GraphQL](https://cookbook.arweave.net/tooling/querying-arweave.html)
+19. [Posting Transactions](https://cookbook.arweave.net/fundamentals/transactions/post-transactions.html)
+20. [Hello World (Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-code.html)
+21. [Svelte Starter Kits](https://cookbook.arweave.net/kits/svelte/index.html)
+22. [Transaction Metadata (Tags)](https://cookbook.arweave.net/fundamentals/transactions/tags.html)
+23. [Vue Starter Kits](https://cookbook.arweave.net/kits/vue/index.html)
+24. [ANS-103 Succinct Proofs of Random Access](https://cookbook.arweave.net/tooling/specs/ans/ANS-103.html)
+25. [ANS-106 Do-Not-Store Request](https://cookbook.arweave.net/tooling/specs/ans/ANS-106.html)
+26. [ANS-110 Asset Discoverability](https://cookbook.arweave.net/tooling/specs/ans/ANS-110.html)
 27. [React Starter Kits](https://cookbook.arweave.net/kits/react/index.html)
-28. [arkb](https://cookbook.arweave.net/tooling/deployment/arkb.html)
-29. [Entity Types](https://cookbook.arweave.net/tooling/specs/arfs/entity-types.html)
+28. [Minimal Svelte Starter Kit](https://cookbook.arweave.net/kits/svelte/minimal.html)
+29. [arkb](https://cookbook.arweave.net/tooling/deployment/arkb.html)
 30. [Accessing Arweave Data](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/index.html)
 31. [Community](https://cookbook.arweave.net/community/index.html)
 32. [Cooking with the Permaweb](https://cookbook.arweave.net/index.html)
 33. [ArNS - Arweave Name System](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/arns.html)
 34. [ANS-105 License Tags](https://cookbook.arweave.net/tooling/specs/ans/ANS-105.html)
-35. [Gateways in the Arweave Network](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/gateways.html)
-36. [Creating A Wallet](https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/creating-a-wallet.html)
-37. [Index](https://cookbook.arweave.net/getting-started/index.html)
-38. [Privacy](https://cookbook.arweave.net/tooling/specs/arfs/privacy.html)
-39. [ANS-102 Bundled Data - JSON Serialization](https://cookbook.arweave.net/tooling/specs/ans/ANS-102.html)
-40. [Developing on the Permaweb](https://cookbook.arweave.net/getting-started/welcome.html)
-41. [Wallets and Keys](https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/index.html)
-42. [Path Manifests](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/manifests.html)
-43. [ANS-101 Gateway Capabilities Endpoint](https://cookbook.arweave.net/tooling/specs/ans/ANS-101.html)
-44. [ANS-104 Bundled Data v20 - Binary Serialization](https://cookbook.arweave.net/tooling/specs/ans/ANS-104.html)
-45. [References](https://cookbook.arweave.net/references/index.html)
-46. [ArFS Protocol A Decentralized File System on Arweave](https://cookbook.arweave.net/tooling/specs/arfs/arfs.html)
-47. [Contributing Workflow](https://cookbook.arweave.net/getting-started/contributing.html)
+35. [Creating A Wallet](https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/creating-a-wallet.html)
+36. [Index](https://cookbook.arweave.net/getting-started/index.html)
+37. [Privacy](https://cookbook.arweave.net/tooling/specs/arfs/privacy.html)
+38. [ANS-102 Bundled Data - JSON Serialization](https://cookbook.arweave.net/tooling/specs/ans/ANS-102.html)
+39. [Developing on the Permaweb](https://cookbook.arweave.net/getting-started/welcome.html)
+40. [Wallets and Keys](https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/index.html)
+41. [Path Manifests](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/manifests.html)
+42. [ANS-101 Gateway Capabilities Endpoint](https://cookbook.arweave.net/tooling/specs/ans/ANS-101.html)
+43. [ANS-104 Bundled Data v20 - Binary Serialization](https://cookbook.arweave.net/tooling/specs/ans/ANS-104.html)
+44. [References](https://cookbook.arweave.net/references/index.html)
+45. [ArFS Protocol A Decentralized File System on Arweave](https://cookbook.arweave.net/tooling/specs/arfs/arfs.html)
+46. [Contributing Workflow](https://cookbook.arweave.net/getting-started/contributing.html)
+47. [Gateways in the Arweave Network](https://cookbook.arweave.net/fundamentals/accessing-arweave-data/gateways.html)
 48. [GraphQL Tools](https://cookbook.arweave.net/tooling/graphql/index.html)
 49. [Decentralized Computing](https://cookbook.arweave.net/fundamentals/decentralized-computing/index.html)
-50. [Content Types](https://cookbook.arweave.net/tooling/specs/arfs/content-types.html)
-51. [Guides](https://cookbook.arweave.net/guides/index.html)
-52. [Hello World (No Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html)
+50. [Guides](https://cookbook.arweave.net/guides/index.html)
+51. [Hello World (No Code)](https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html)
+52. [Content Types](https://cookbook.arweave.net/tooling/specs/arfs/content-types.html)
 53. [Transactions](https://cookbook.arweave.net/fundamentals/transactions/transaction-types.html)
 54. [Schema Diagrams](https://cookbook.arweave.net/tooling/specs/arfs/schema-diagrams.html)
 55. [LLMstxt](https://cookbook.arweave.net/references/llms-txt.html)
@@ -78,7 +78,7 @@ Total words: 27974
 Document Number: 1
 Source: https://cookbook.arweave.net/tooling/deployment/github-action.html
 Words: 618
-Quality Score: 0.745
+Quality Score: 0.805
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -93,10 +93,12 @@ Github Action WARNING This guide is for educational purposes only, and you shoul
 "deploy": "npm run build && permaweb-deploy --arns-name my-app --deploy-folder ./dist --undername @"
 }
 } Available options:--arns-name (required): Your ArNS name --deploy-folder: Folder to deploy (default: ./dist) --undername: ANT undername to update (default: @) --ario-process: ARIO process (default: mainnet) Create GitHub Action Create a .github/workflows/deploy.yml file in your repository:name: Deploy to Permaweb
+
 on:
 push:
 branches:
 - "main"
+
 jobs:
 deploy:
 runs-on: ubuntu-latest
@@ -110,6 +112,7 @@ node-version: 20.x
 env:
 DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }} Setup GitHub Secrets 1. Prepare Your Wallet First, encode your Arweave wallet as base64:base64 -i wallet.json Copy the output (it will be a long base64 string).2. Add Secret to GitHub Go to your repository on GitHub Navigate to Settings → Secrets and variables → Actions Click New repository secret Name: DEPLOY_KEY Value: Paste the base64 encoded wallet string Click Add secret Fund Your Wallet Ensure your deployment wallet has sufficient Turbo Credits. You can fund it using:# Check current balance
 npx @ardrive/turbo-cli balance --wallet-file wallet.json
+
 # Add credits (amount in Winston - 1 AR = 1,000,000,000,000 Winston)
 npx @ardrive/turbo-cli top-up --value 500000000000 --wallet-file wallet.json Security Best Practices Use a dedicated wallet solely for deployments Keep minimal funds in the deployment wallet Never commit wallet files to your repository Regularly rotate deployment keys Test Your Deployment Local Testing Test your deployment locally before pushing:DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy Verify Deployment After a successful GitHub Action run:Check the action logs for the deployment transaction ID Wait 10-20 minutes for ArNS propagation Visit your ArNS name: https://YOUR_ARNS_NAME.arweave.net Troubleshooting Common Issues:Insufficient Credits: Ensure your wallet has enough Turbo Credits ArNS Propagation: Wait 10-20 minutes after deployment for changes to appear Build Failures: Ensure your build command works locally first Secret Issues: Verify the DEPLOY_KEY secret is properly set and base64 encoded Check Deployment Status:Monitor your deployments through:GitHub Actions logs ArNS resolver: https://arns.arweave.net/resolve/YOUR_ARNS_NAME 🎉 You now have automated permaweb deployment with GitHub Actions!Your application will automatically deploy to the permaweb whenever you push to the main branch, and your ArNS name will point to the latest version.
 
@@ -120,7 +123,7 @@ npx @ardrive/turbo-cli top-up --value 500000000000 --wallet-file wallet.json Sec
 Document Number: 2
 Source: https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html
 Words: 1473
-Quality Score: 0.709
+Quality Score: 0.769
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -137,10 +140,12 @@ Tags: [
 };HyperBEAM nodes are responsible for routing and processing these messages according to the rules of the AO-Core protocol, ensuring reliable delivery and execution.Devices: Extensible Execution Engines HyperBEAM introduces a uniquely modular architecture centered around Devices. These pluggable components are Erlang modules that define specific computational logic—like running WASM, managing state, or relaying data—allowing for unprecedented flexibility.Common HyperBEAM Devices:~process@1.0: Manages persistent, shared computational states (like smart contracts) ~lua@5.3a: Executes Lua scripts for serverless functions ~wasm64@1.0: Executes WebAssembly code for high-performance computing ~json@1.0: Provides JSON data structure manipulation ~relay@1.0: Forwards messages between nodes or external HTTP endpoints ~scheduler@1.0: Handles message ordering and execution timing For a complete list of devices and their latest specifications, see the HyperBEAM Devices documentation.# Using the Lua device to execute a calculation
 GET /~lua@5.3a&script=return 2 + 2/result
 # Response: 4
+
 # Using the process device to query state
 GET /PROCESS_ID~process@1.0/now/balance
 # Response: Current process balance Paths: Composable Pipelines HyperBEAM exposes a powerful HTTP API that uses structured URL patterns to interact with processes and data. This pathing mechanism allows developers to create verifiable data pipelines, composing functionality from multiple devices into a single, atomic request.The URL bar becomes a command-line interface for AO's trustless compute environment.# Complex pipeline example: Calculate token supply and format as JSON
 GET /TOKEN_PROCESS~process@1.0/now/cache/~lua@5.3a&module=CALC_MODULE/sum/serialize~json@1.0
+
 # This path:
 # 1. Reads latest state of TOKEN_PROCESS on the cache variable
 # 2. Pipes state to Lua script
@@ -148,20 +153,24 @@ GET /TOKEN_PROCESS~process@1.0/now/cache/~lua@5.3a&module=CALC_MODULE/sum/serial
 # 4. Formats result as JSON Four Key Principles of HyperBEAM Building with HyperBEAM can be simplified to four core principles:1. Everything is a Message You can compute on any message by calling its keys by name. The device specified in the message determines how these keys are resolved.# Direct message access
 GET /~message@1.0&greeting="Hello"&count+integer=42/count
 # Response: 42
+
 # Process message
 GET /PROCESS_ID~process@1.0/compute/userCount
 # Response: Number of users in the process 2. Paths are Pipelines of Messages A path defines a sequence of 'request' messages to be executed. You can set a key in a message directly within the path using the &key=value syntax.# Pipeline: Get process data → Transform with Lua → Format as JSON
 GET /PROCESS~process@1.0/now/~lua@5.3a&script=transform_data/result~json@1.0 3. Device-Specific Requests with ~x@y The ~device@version syntax allows you to apply a request as if the base message had a different device, providing powerful compute and storage logic.# Execute Lua on process state
 GET /PROCESS~process@1.0/now/~lua@5.3a&func=calculateMetrics/metrics
+
 # Execute WASM for high-performance computing
 GET /DATA~message@1.0/~wasm64@1.0&module=WASM_MODULE/compute 4. Signed Responses over HTTP The final message in a pipeline is returned as an HTTP response. This response is signed against the hashpath that generated it, ensuring integrity and verifiability of the computation.# Every response includes cryptographic proof
 HTTP/1.1 200 OK
 X-HyperBEAM-Signature: 0x123abc...
 X-HyperBEAM-HashPath: path_to_computation_verification
 Content-Type: application/json
+
 {"result": 42, "verified": true} HyperBEAM Architecture Built on Erlang/OTP Framework HyperBEAM leverages the battle-tested Erlang/OTP platform, providing:Exceptional Concurrency Handle millions of lightweight processes simultaneously Actor model naturally maps to AO processes Message passing between isolated processes Fault Tolerance "Let it crash" philosophy with supervised restarts System continues operating even if individual components fail Automatic recovery and error isolation Hot Code Swapping Update running code without ping the system Zero-downtime deployments and upgrades Live system maintenance and improvements Distributed Systems Built-in clustering and node discovery Network partitioning tolerance Transparent inter-node communication %% Example of HyperBEAM device implementation
 -module(my_custom_device).
 -export([handle_message/2]).
+
 handle_message(Message, State) ->
 case maps:get(<<"action">>, Message, null) of
 <<"calculate">> ->
@@ -173,6 +182,7 @@ end.Hardware Abstraction HyperBEAM abstracts away underlying hardware difference
 exports.handler = async (event) => {
 return { statusCode: 200, body: "Hello World" };
 };
+
 // HyperBEAM equivalent - permanently available on AO
 // Accessible via: /PROCESS~process@1.0/hello
 Handlers.add(
@@ -186,8 +196,10 @@ Data = "Hello from the permanent web!"
 }
 ) Hybrid Smart Contract + Serverless Applications Combine persistent state management with on-demand compute:# Smart contract state management
 GET /TOKEN_CONTRACT~process@1.0/now/balance
+
 # + Serverless data processing
 GET /DATA_PROCESSOR~lua@5.3a&module=ANALYTICS/process/result
+
 # + External API integration
 GET /~relay@1.0/call?method=GET&path=https://api.external.com/data Custom Execution Environments Build specialized computational environments through custom devices:AI/ML Inference: Custom devices for model serving and GPU acceleration Scientific Computing: Devices for mathematical libraries and simulations Cryptographic Applications: Specialized devices for zero-knowledge proofs Cross-chain Bridges: Devices for interacting with other blockchain networks Composable Data Pipelines Create complex, verifiable data processing workflows:# Data pipeline: Fetch → Validate → Transform → Store → Notify
 GET /DATA_SOURCE/fetch/
@@ -201,18 +213,22 @@ const EXAMPLE_NODES = [
 // Additional nodes can be found in the AO ecosystem
 // Use official node directories for current endpoints
 ];
+
 // Example: Query process state from a HyperBEAM node
 const processId = 'YOUR_PROCESS_ID';
 const nodeUrl = 'YOUR_HYPERBEAM_NODE_URL'; // Replace with verified node URL
 const response = await fetch(`${nodeUrl}/${processId}~process@1.0/now`);
 const state = await response.json();Basic Operations Query Process State:GET /PROCESS_ID~process@1.0/compute
 # Returns the latest known state (faster)
+
 GET /PROCESS_ID~process@1.0/now
 # Returns real-time state (slower, more accurate) Execute Lua Code:GET /~lua@5.3a&script=return os.time()/result
 # Returns current timestamp Send Messages to Processes:import { connect, createDataItemSigner } from "@permaweb/aoconnect";
+
 const ao = connect({
 MU_URL: "YOUR_HYPERBEAM_NODE_URL" // Replace with verified HyperBEAM node
 });
+
 await ao.message({
 process: "PROCESS_ID",
 tags: [
@@ -227,71 +243,12 @@ GET /~snp@1.0/attestation
 
 ---
 
-# 3. Exposing Process State to HyperBEAM  Cooking with the Permaweb
+# 3. HyperBEAM Devices  Cooking with the Permaweb
 
 Document Number: 3
-Source: https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html
-Words: 447
-Quality Score: 0.692
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Exposing Process State to HyperBEAM HyperBEAM introduces a powerful feature for exposing parts of a process's state for immediate reading over HTTP. This improves performance for web frontends and data services by replacing the need for dryrun calls.The Patch Device The ~patch@1.0 device is the mechanism that allows AO processes to make parts of their internal state readable via direct HTTP GET requests.How it Works Exposing state is a four-step process:Process Logic: Send an outbound message to the ~patch@1.0 device from your process.Patch Message Format: The message must include device and cache tags.Send({ Target = ao.id, device = 'patch@1.0', cache = { mydatakey = MyValue } }) HyperBEAM Execution: HyperBEAM's dev_patch module processes this message, mapping the key-value pairs from the cache table to a URL path.HTTP Access: The exposed data is then immediately available via a standard HTTP GET request:GET /~process@1.0/now/cache/ Initial State Sync (Optional) To make data available immediately on process creation:-- Place this logic at the top level of your process script
-Balances = { token1 = 100, token2 = 200 } -- A table of balances
-TotalSupply = 1984 -- A single total supply value
--- 1. Initialize Flag:
-InitialSync = InitialSync or 'INCOMPLETE'
--- 2. Check Flag:
-if InitialSync == 'INCOMPLETE' then
--- 3. Patch State:
-Send({ device = 'patch@1.0', cache = { balances = Balances, totalsupply = TotalSupply } })
-
--- 4. Update Flag:
-InitialSync = 'COMPLETE'
-end Practical Example Here's a complete example of a token contract that exposes its balance state:-- Token Process with State Exposure
-Balances = Balances or { [ao.id] = 1000000 }
-TotalSupply = TotalSupply or 1000000
--- Initial state sync
-InitialSync = InitialSync or 'INCOMPLETE'
-if InitialSync == 'INCOMPLETE' then
-Send({ device = 'patch@1.0', cache = {
-balances = Balances,
-totalsupply = TotalSupply
-}})
-InitialSync = 'COMPLETE'
-end
--- Transfer handler
-Handlers.add("transfer", "Transfer", function(msg)
-local from = msg.From
-local to = msg.Tags.Recipient or msg.Recipient
-local amount = tonumber(msg.Tags.Quantity or msg.Quantity)
-
-if Balances[from] and Balances[from] >= amount then
-Balances[from] = Balances[from] - amount
-Balances[to] = (Balances[to] or 0) + amount
-
--- Update exposed state after transfer
-Send({ device = 'patch@1.0', cache = {
-balances = Balances
-}})
-
-ao.send({ Target = from, Data = "Transfer successful" })
-else
-ao.send({ Target = from, Data = "Insufficient balance" })
-end
-end) Accessing Exposed Data Once state is exposed via the patch device, you can query it directly over HTTP:# Get all balances
-curl https://hyperbeam-node.arweave.net/~process@1.0/compute/cache/balances
-# Get total supply
-curl https://hyperbeam-node.arweave.net/~process@1.0/compute/cache/totalsupply Benefits Performance: Direct HTTP access is significantly faster than traditional dryrun calls.Simplicity: Standard REST-like patterns instead of complex message handling.Real-time Updates: State changes are immediately reflected in HTTP responses.Caching: HyperBEAM can cache frequently accessed data for even better performance.
-
----
-
-# 4. HyperBEAM Devices  Cooking with the Permaweb
-
-Document Number: 4
 Source: https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html
 Words: 1713
-Quality Score: 0.691
+Quality Score: 0.751
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -312,6 +269,7 @@ Device Selection
 Processing Results
 ↓
 HTTP Response
+
 Device Ecosystem:
 ┌─────────────────────────────────────────┐
 │ • Security Devices (authentication) │
@@ -321,23 +279,30 @@ Device Ecosystem:
 │ • Storage Devices (state management) │
 └─────────────────────────────────────────┘ This modular architecture allows HyperBEAM to handle diverse computational tasks by routing requests to specialized devices, each optimized for specific types of processing.Device Naming and Versioning Devices follow a consistent naming convention that makes them easy to identify and use:Format:~name@version or dev_name (for internal devices) Examples:~process@1.0 - Primary process management device ~lua@5.3a - Lua 5.3 execution device ~wasm64@1.0 - WebAssembly 64-bit execution device dev_router - Internal routing device (development prefix) The tilde (~) indicates a primary, user-facing device, while the dev_ prefix is used for internal or utility devices in the source code.Versioning Strategy Versioning indicates the specific interface and behavior of the device:Semantic versioning - Major.minor.patch format Backward compatibility - Breaking changes increment major version Feature additions - New features increment minor version Bug fixes - Patches increment patch version Core HyperBEAM Devices Process Management Devices ~process@1.0 - Process State Manager The process device manages persistent, shared computational states similar to traditional smart contracts, but with greater flexibility.# Access current process state
 GET /PROCESS_ID~process@1.0/now
+
 # Get cached state (faster)
 GET /PROCESS_ID~process@1.0/compute
+
 # Access specific state fields
 GET /PROCESS_ID~process@1.0/now/balance
 GET /PROCESS_ID~process@1.0/compute/users/USER_ADDRESS Key Functions:now - Calculates real-time process state by processing all messages compute - Returns the latest known state without checking for new messages State persistence - Automatic state snapshots to Arweave Message ordering - Ensures deterministic state transitions Use Cases:Token contracts and DeFi applications Voting and governance systems Game state management Decentralized databases ~scheduler@1.0 - Message Scheduling Handles the ordering and execution timing of messages within processes.# Query scheduler status
 GET /PROCESS_ID~scheduler@1.0/status
+
 # Get message queue information
 GET /PROCESS_ID~scheduler@1.0/queue/pending Responsibilities:Message ordering and consensus Execution timing coordination Load balancing across compute units Fault tolerance and recovery Execution Devices ~lua@5.3a - Lua Script Execution Executes Lua scripts for serverless functions and data processing.# Simple calculation
 GET /~lua@5.3a&script=return 2 + 3 * 4/result
+
 # With parameters
 GET /~lua@5.3a&script=return Args.name .. " is " .. Args.age .. " years old"&name="Alice"&age+integer=25/result
+
 # Using modules
 GET /~lua@5.3a&module=MODULE_TX_ID&script=return math_utils.factorial(Args.n)&n+integer=5/result Capabilities:Full Lua 5.3 language support Module loading from Arweave transactions JSON processing and manipulation String processing and regex Mathematical computations HTTP client functionality (via libraries) Performance Characteristics:Lightweight execution overhead Fast startup time (no cold starts) Memory efficient for small to medium computations Excellent for data transformation and business logic ~wasm64@1.0 - WebAssembly Execution Executes WebAssembly code for high-performance computations written in languages like Rust, C++, Go, and others.# Execute WASM module
 GET /~wasm64@1.0&module=WASM_MODULE_TX_ID/function_name
+
 # With parameters
 GET /~wasm64@1.0&module=WASM_MODULE_TX_ID&arg1+integer=100&arg2="test"/compute Advantages:High performance - Near-native execution speed Multiple languages - Support for Rust, C++, Go, AssemblyScript Sandboxed execution - Secure isolated environment Predictable performance - No garbage collection s Use Cases:Cryptographic operations (hashing, signatures, ZK proofs) Image and video processing Machine learning inference Scientific computing Game engines and simulations Example WASM Module (Rust):// Compile to WASM and deploy to Arweave
 use wasm_bindgen::prelude::*;
+
 #[wasm_bindgen]
 pub fn fibonacci(n: u32) -> u32 {
 match n {
@@ -345,6 +310,7 @@ match n {
 _ => fibonacci(n - 1) + fibonacci(n - 2),
 }
 }
+
 #[wasm_bindgen]
 pub fn hash_data(data: &str) -> String {
 use sha2::{Sha256, Digest};
@@ -353,31 +319,41 @@ hasher.update(data);
 format!("{:x}", hasher.finalize())
 } Data Processing Devices ~json@1.0 - JSON Manipulation Provides JSON data structure access and manipulation capabilities.# Format process state as JSON
 GET /PROCESS_ID~process@1.0/now~json@1.0
+
 # Pretty-print JSON
 GET /PROCESS_ID~process@1.0/compute~json@1.0&pretty=true
+
 # Extract specific JSON fields
 GET /~json@1.0&data={"users":{"alice":{"balance":100}}}/users/alice/balance Features:JSON serialization and deserialization Path-based field access Pretty printing and formatting Schema validation (when configured) Type conversion and casting ~message@1.0 - Message Processing The default device that resolves keys to their literal values within messages.# Create temporary message with data
 GET /~message@1.0&greeting="Hello"&count+integer=42/count
 # Response: 42
+
 # Complex data structures
 GET /~message@1.0&config+map=host="localhost";port+integer=3000&items+list="a","b","c"/config/port
 # Response: 3000 Type Casting Support:+integer - Convert to integer +float - Convert to floating point +boolean - Convert to boolean +list - Parse comma-separated values +map - Parse key-value pairs +binary - Treat as binary string (default) Communication Devices ~relay@1.0 - Message Relay Forwards messages between AO nodes or to external HTTP endpoints.# Relay GET request to external API
 GET /~relay@1.0/call?method=GET&path=https://api.example.com/data
+
 # Relay POST with data
 POST /~relay@1.0/call?method=POST&path=https://webhook.site/your-webhook
 Content-Type: application/json
+
 {"message": "Hello from AO"}
+
 # Relay to another AO process
 GET /~relay@1.0/process/TARGET_PROCESS_ID?action=GetBalance&user=ALICE Use Cases:Cross-chain bridges - Connect to other blockchain networks External API integration - Fetch data from Web2 services Inter-process communication - Route messages between AO processes Webhook delivery - Send notifications to external services Security and Verification Devices ~snp@1.0 - Secure Enclave Verification Handles Trusted Execution Environment (TEE) attestation and verification.# Get TEE attestation report
 GET /~snp@1.0/attestation
+
 # Verify node is running in genuine TEE
 GET /~snp@1.0/verify Security Features:AMD SEV-SNP attestation Intel TXT support Hardware security verification Remote attestation protocols Cryptographic proof generation dev_codec_httpsig - HTTP Signature Processing Manages HTTP message signing and verification for authentication.Capabilities:HTTP signature generation and verification Multiple signature algorithms (RSA, ECDSA, EdDSA) Request/response integrity verification Authentication and authorization Utility and System Devices ~meta@1.0 - Node Configuration Configures the HyperBEAM node itself including hardware specs, supported devices, and payment information.# Get node capabilities
 GET /~meta@1.0/capabilities
+
 # Get supported devices
 GET /~meta@1.0/devices
+
 # Get node status
 GET /~meta@1.0/status Configuration Options:Hardware specifications Available compute resources Supported device list Payment and billing information Network connectivity options dev_cron - Task Scheduling Coordinates scheduled task execution and workflow management.Features:Cron-like task scheduling Recurring job management Event-driven automation Workflow orchestration dev_monitor - System Monitoring Monitors process activity, performance metrics, and system health.Monitoring Capabilities:Process execution metrics Resource utilization tracking Error rate monitoring Performance benchmarking Alert generation Financial and Access Control Devices ~p4@1.0 - Payment Processing Manages metering, billing, and micropayments for node services.# Check payment status
 GET /~p4@1.0/balance/USER_ADDRESS
+
 # Get pricing information
 GET /~p4@1.0/pricing/compute Payment Features:Micropayment processing Usage-based billing Multi-token support Payment channel management Revenue sharing protocols ~faff@1.0 - Access Control Handles authorization and access control for protected resources.Access Control Features:Role-based access control (RBAC) Attribute-based access control (ABAC) Token-based authentication Multi-signature authorization Temporary access grants Data Storage and Management ~patch@1.0 - State Management Applies state updates directly to processes, often used for data migration and management.# Apply state patch to process
 POST /PROCESS_ID~patch@1.0/apply
@@ -387,6 +363,7 @@ Content-Type: application/json
 "path": "/users/alice/balance",
 "value": 1500
 }
+
 # Get patch history
 GET /PROCESS_ID~patch@1.0/history Patch Operations:State updates and migrations Data consistency maintenance Version control for process state Rollback and recovery operations Advanced Device Concepts Device Composition and Pipelines Devices can be chained together to create sophisticated processing pipelines:# Multi-device pipeline:
 # 1. Get process state
@@ -395,8 +372,75 @@ GET /PROCESS_ID~patch@1.0/history Patch Operations:State updates and migrations 
 # 4. Apply template
 GET /TOKEN_PROCESS~process@1.0/now/~lua@5.3a&module=ANALYTICS_MODULE/calculateMetrics/~json@1.0/format~template@1.0&type=dashboard Device Specialization Nodes can choose which devices to support, allowing for specialization:Compute-Optimized Nodes:Focus on ~wasm64@1.0 and ~lua@5.3a devices High-performance processors and memory Optimized for CPU-intensive workloads Storage-Optimized Nodes:Specialize in ~process@1.0 and ~patch@1.0 devices Large storage capacity and fast I/O Optimized for state management and data persistence Security-Focused Nodes:Run ~snp@1.0 and security-related devices Hardware security modules (HSMs) Trusted Execution Environments (TEEs) Custom Device Development While HyperBEAM comes with a comprehensive set of built-in devices, you can create custom devices in Erlang to extend functionality for specialized use cases. This is an advanced topic that allows you to build domain-specific functionality tailored to your exact needs.For detailed guidance on building custom devices, see the HyperBEAM Device Development Guide.Device Discovery and Routing HyperBEAM automatically routes requests to the appropriate devices based on the URL path. You can discover available devices on any node:# List all available devices
 GET /~meta@1.0/devices
+
 # Get information about a specific device
 GET /~meta@1.0/device/~lua@5.3a Devices are automatically load-balanced across available instances, with HyperBEAM handling routing optimization internally.Performance Considerations Different devices have varying performance characteristics:~lua@5.3a - Fast startup, low resource usage, ideal for simple logic ~wasm64@1.0 - Higher performance for complex computations ~process@1.0 - Use /compute for cached state, /now for real-time updates ~json@1.0 - Very lightweight for data serialization Optimization Tips:Use device pipelines to chain operations in a single request Cache frequently accessed data at the application level Choose the right device for your workload (Lua for simple logic, WASM for computation) Extensible Device Ecosystem The modular nature of HyperBEAM devices enables endless possibilities for expansion. The community and ecosystem are continuously developing new devices for:Specialized Hardware - GPU computing, AI/ML acceleration, quantum computing Domain-Specific Logic - DeFi protocols, scientific computing, media processing Cross-Chain Integration - Bridges to other blockchain networks Industry Solutions - Custom devices for specific business needs This extensibility ensures HyperBEAM can adapt to new technologies and use cases without requiring changes to the core protocol.Security Considerations HyperBEAM devices run in isolated environments with built-in security features:Sandboxing - Each device operates in its own isolated environment Resource Limits - Automatic memory and execution time constraints Verification - Device signatures and integrity checking Access Control - Permission-based device access Best Practices:Always specify device versions (e.g., ~lua@5.3a not just ~lua) Validate inputs when building applications that use devices Use TEE-enabled nodes (~snp@1.0) for sensitive computations Explore the broader HyperBEAM ecosystem:Build Custom Devices: Device Development Guide Lua Programming: Lua Serverless Functions Process Integration: AO Process Development Production Deployment: Builder's Journey Resources HyperBEAM Device Documentation: Official Device Docs Erlang/OTP Documentation: Erlang Reference
+
+---
+
+# 4. Exposing Process State to HyperBEAM  Cooking with the Permaweb
+
+Document Number: 4
+Source: https://cookbook.arweave.net/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html
+Words: 450
+Quality Score: 0.693
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Exposing Process State to HyperBEAM HyperBEAM introduces a powerful feature for exposing parts of a process's state for immediate reading over HTTP. This improves performance for web frontends and data services by replacing the need for dryrun calls.The Patch Device The ~patch@1.0 device is the mechanism that allows AO processes to make parts of their internal state readable via direct HTTP GET requests.How it Works Exposing state is a four-step process:Process Logic: Send an outbound message to the ~patch@1.0 device from your process.Patch Message Format: The message must include device and cache tags.Send({ Target = ao.id, device = 'patch@1.0', cache = { mydatakey = MyValue } }) HyperBEAM Execution: HyperBEAM's dev_patch module processes this message, mapping the key-value pairs from the cache table to a URL path.HTTP Access: The exposed data is then immediately available via a standard HTTP GET request:GET / ~process@1.0/now/cache/ Initial State Sync (Optional) To make data available immediately on process creation:-- Place this logic at the top level of your process script
+
+Balances = { token1 = 100, token2 = 200 } -- A table of balances
+TotalSupply = 1984 -- A single total supply value
+
+-- 1. Initialize Flag:
+InitialSync = InitialSync or 'INCOMPLETE'
+
+-- 2. Check Flag:
+if InitialSync == 'INCOMPLETE' then
+-- 3. Patch State:
+Send({ device = 'patch@1.0', cache = { balances = Balances, totalsupply = TotalSupply } })
+
+-- 4. Update Flag:
+InitialSync = 'COMPLETE'
+end Practical Example Here's a complete example of a token contract that exposes its balance state:-- Token Process with State Exposure
+
+Balances = Balances or { [ao.id] = 1000000 }
+TotalSupply = TotalSupply or 1000000
+
+-- Initial state sync
+InitialSync = InitialSync or 'INCOMPLETE'
+if InitialSync == 'INCOMPLETE' then
+Send({ device = 'patch@1.0', cache = {
+balances = Balances,
+totalsupply = TotalSupply
+}})
+InitialSync = 'COMPLETE'
+end
+
+-- Transfer handler
+Handlers.add("transfer", "Transfer", function(msg)
+local from = msg.From
+local to = msg.Tags.Recipient or msg.Recipient
+local amount = tonumber(msg.Tags.Quantity or msg.Quantity)
+
+if Balances[from] and Balances[from] >= amount then
+Balances[from] = Balances[from] - amount
+Balances[to] = (Balances[to] or 0) + amount
+
+-- Update exposed state after transfer
+Send({ device = 'patch@1.0', cache = {
+balances = Balances
+}})
+
+ao.send({ Target = from, Data = "Transfer successful" })
+else
+ao.send({ Target = from, Data = "Insufficient balance" })
+end
+end) Accessing Exposed Data Once state is exposed via the patch device, you can query it directly over HTTP:# Get all balances
+curl https://hyperbeam-node.arweave.net/ ~process@1.0/compute/cache/balances
+
+# Get total supply
+curl https://hyperbeam-node.arweave.net/ ~process@1.0/compute/cache/totalsupply Benefits Performance: Direct HTTP access is significantly faster than traditional dryrun calls.Simplicity: Standard REST-like patterns instead of complex message handling.Real-time Updates: State changes are immediately reflected in HTTP responses.Caching: HyperBEAM can cache frequently accessed data for even better performance.
 
 ---
 
@@ -486,8 +530,10 @@ base.numbers = numbers
 return base
 end Deployment 1. Deploy to Arweave Propagation Delay After deployment, it can take up to 20 minutes for your Lua module to fully propagate across the Arweave network. You may not be able to access it via HyperBEAM until propagation is complete.2. Execute Your Function # Simple addition
 curl 'https://forward.computer/~lua@5.3a/add/~json@1.0/serialize?a+integer=10&b+integer=20&module=YOUR_MODULE_ID'
+
 # Text analysis
 curl 'https://forward.computer/~lua@5.3a/analyze_text/~json@1.0/serialize?text=Hello%20world%20example&module=YOUR_MODULE_ID'
+
 # Number processing
 curl 'https://forward.computer/~lua@5.3a/process_numbers/~json@1.0/serialize?numbers=1,2,3,4,5&module=YOUR_MODULE_ID' Type Casting Parameters Use type casting to convert parameters from strings:Available Type Casts:+integer - Convert to integer +float - Convert to floating point number +boolean - Convert to boolean +list - Convert comma-separated values to array Example:curl 'https://forward.computer/~lua@5.3a/add/~json@1.0/serialize?a+integer=10&b+integer=20&module=YOUR_MODULE_ID' JavaScript Integration async function callLuaFunction(moduleId, functionName, params = {}) {
 const queryParams = new URLSearchParams();
@@ -510,51 +556,16 @@ throw new Error(`HTTP ${response.status}: ${response.statusText}`);
 
 return await response.json();
 }
+
 // Usage
 const result = await callLuaFunction('YOUR_MODULE_ID', 'add', { a: 10, b: 20 });
 console.log(result); // { a: 10, b: 20, result: 30, operation: "addition" }
 
 ---
 
-# 6. Hello World (Code)  Cooking with the Permaweb
+# 6. What are AO Processes  Cooking with the Permaweb
 
 Document Number: 6
-Source: https://cookbook.arweave.net/getting-started/quick-starts/hw-code.html
-Words: 300
-Quality Score: 0.654
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Hello World (Code) This guide walks you through a quick way to get a static HTML, CSS and JavaScript webpage onto the Permaweb using a few lines of code and a command-line interface (CLI).Requirements NodeJS LTS or greater Basic knowledge of HTML, CSS and JavaScript A text editor (VS Code, Sublime, or similar) Description Using a terminal/console window create a new folder called hello-world.Setup cd hello-world
-npm init -y
-mkdir src && cd src
-touch index.js index.html style.css Next open your text editor and import the hello-world directory.Generate a wallet node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json The wallet.json file must be in the root of the hello-world folder and not inside of your src folder.Create a webpage This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using permaweb-deploy and our previously generated wallet to deploy a fully functioning, static and permanent webpage to Arweave.Paste the code from the following code blocks into their files:index.html Click to view HTML
-
-
-
-
-
-
-Cookbook Hello World!
-
-
-Click Me!
-# Hello World!
-
-style.css Click to view CSS.button {
-padding: "10px";
-background-color: #4caf50;
-} index.js Click to view JS Now that there is a static site to deploy, it can be checked to ensure it all functions properly by typing open src/index.html in your console/terminal. If everything is working as expected it is time to deploy to Arweave!Upload using permaweb-deploy Install and configure permaweb-deploy for deployment:npm install --save-dev permaweb-deploy Add a deployment script to your package.json:{
-"scripts": {
-"deploy": "permaweb-deploy --arns-name my-hello-world --deploy-folder src"
-}
-} Deploy your application:DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy For detailed deployment instructions, see Permaweb Deploy.Congrats!!You just published a static site on Arweave using a few commands and a few lines of code!
-
----
-
-# 7. What are AO Processes  Cooking with the Permaweb
-
-Document Number: 7
 Source: https://cookbook.arweave.net/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html
 Words: 1399
 Quality Score: 0.638
@@ -568,7 +579,9 @@ AO Process ←→ Another Process
 State Update/Read
 ↓ ↑
 Arweave Storage This architecture demonstrates how AO processes communicate through asynchronous message passing while maintaining persistent state on Arweave. Each process operates independently while being able to interact with other processes in the network.Key Components Process Instance Unique process ID (43-character string) Lua-based execution environment Persistent state storage on Arweave Message inbox for receiving communications Message System Asynchronous message passing Tagged messages for routing and filtering Cryptographic signatures for authentication Permanent message history on Arweave State Management Deterministic state transitions Immutable state snapshots Conflict-free replicated data types (CRDTs) Rollback and re capabilities Process Lifecycle 1. Process Creation Creating an AO process involves deploying Lua code to the network:import { connect } from "@permaweb/aoconnect";
+
 const ao = connect();
+
 // Deploy a new process
 const processId = await ao.spawn({
 module: "MODULE_TX_ID", // Pre-compiled Lua module
@@ -579,6 +592,7 @@ tags: [
 { name: "App-Version", value: "1.0.0" }
 ]
 });
+
 console.log("Process created:", processId);2. Process Initialization Once spawned, the process can be initialized with initial state:// Send initialization message
 await ao.message({
 process: processId,
@@ -609,6 +623,7 @@ end
 ) State Management Patterns Deterministic State Updates AO processes maintain deterministic state through ordered message processing:-- State variables
 Balance = Balance or 0
 Transactions = Transactions or {}
+
 -- Handler for balance updates
 Handlers.add(
 "UpdateBalance",
@@ -675,6 +690,7 @@ Ticker = "MTK"
 Denomination = 12
 TotalSupply = 1000000 * 10^Denomination
 Balances = { [Owner] = TotalSupply }
+
 Handlers.add(
 "Transfer",
 Handlers.utils.hasMatchingTag("Action", "Transfer"),
@@ -696,6 +712,7 @@ end
 ) 2. Decentralized Applications Build complex dApps with multiple interacting processes:-- DAO voting process
 Proposals = Proposals or {}
 Votes = Votes or {}
+
 Handlers.add(
 "CreateProposal",
 Handlers.utils.hasMatchingTag("Action", "CreateProposal"),
@@ -745,6 +762,7 @@ tags: [
 ],
 signer: createDataItemSigner(wallet)
 });
+
 // Receive response
 const result = await ao.result({
 message: messageId,
@@ -785,9 +803,11 @@ Roles = {
 [Owner] = "admin",
 -- Add other role assignments
 }
+
 local function hasRole(address, requiredRole)
 return Roles[address] == requiredRole
 end
+
 Handlers.add(
 "AdminOnly",
 Handlers.utils.hasMatchingTag("Action", "AdminOnly"),
@@ -804,10 +824,13 @@ end
 end
 ) Testing Strategies Use AOS (AO Studio) for local development and testing:# Install AOS for local testing
 npm install -g https://get_ao.g8way.io
+
 # Start AOS REPL
 aos
+
 # Load your process code
 .load process.lua
+
 # Test message handling
 Send({ Action = "Test", Data = "test data" }) Performance Considerations Message Optimization Structure messages for efficient processing:-- Batch operations for efficiency
 Handlers.add(
@@ -835,6 +858,7 @@ end
 ) State Management Optimization Keep state lean and efficient:-- Use efficient data structures
 -- Instead of storing full transaction history:
 -- Transactions = {} -- Can grow very large
+
 -- Use rolling window or summary data:
 RecentTransactions = {} -- Last 100 transactions
 TransactionSummary = {
@@ -859,12 +883,15 @@ end
 
 return true, "Valid"
 end Reentrancy Protection Protect against message re attacks:ProcessedMessages = ProcessedMessages or {}
+
 local function isProcessed(messageId)
 return ProcessedMessages[messageId] ~= nil
 end
+
 local function markProcessed(messageId)
 ProcessedMessages[messageId] = true
 end
+
 Handlers.add(
 "IdempotentHandler",
 Handlers.utils.hasMatchingTag("Action", "IdempotentHandler"),
@@ -897,6 +924,7 @@ Data = json.encode(health)
 end
 ) Debugging Tools Use logging for debugging:-- Debug logging handler
 local DEBUG_MODE = true
+
 local function debugLog(message, data)
 if DEBUG_MODE then
 print("DEBUG [" .. os.date() .. "]: " .. message)
@@ -905,6 +933,7 @@ print("Data: " .. json.encode(data))
 end
 end
 end
+
 Handlers.add(
 "DebugHandler",
 function() return DEBUG_MODE end,
@@ -919,54 +948,19 @@ end
 
 ---
 
-# 8. SvelteVite Starter Kit  Cooking with the Permaweb
+# 7. Hello World (CLI)  Cooking with the Permaweb
 
-Document Number: 8
-Source: https://cookbook.arweave.net/kits/svelte/vite.html
-Words: 549
-Quality Score: 0.610
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Svelte/Vite Starter Kit Svelte is the framework that compiles out of the way, that results is small packages, which is perfect for the permaweb. As developers, we value Dev Experience as much as we value User Experience. This kit uses the vite bundle system to give developers a great DX experience.Installing vite with svelte and typescript npm create vite@latest my-perma-app --template svelte-ts npm create vite@latest my-perma-app -- --template svelte-ts yarn create vite my-perma-app --template svelte-ts pnpm create vite my-perma-app --template svelte-ts Project Info The vite build system places your index.html file in the root directory, this is where you would include any css or global script dependencies if needed. For more information about the vite project layout check out the vite documentation Setup hash-router To setup the hash-router we will use tinro. tinro is a tiny declarative routing library, that is similar to React Router.npm install --save-dev tinro yarn add -D tinro Telling Svelte to use hash routing In the src/App.svelte file, you want to configure the router to use the hash routing mode.The router.mode.hash function turns on hash router mode. The router.subscribe callback is nice to reset the page to the top on page transfers Adding some transition components These component will manage the transition between one page to another page when routing.Create a directory under the src directory called components and add these two files:announcer.svelte This component is for screen readers announcing when a page changes transition.svelte
-{#key $router.path}
-
-{/key} This component adds a fade to the page transition Adding Routes to the app
-Adding the Announcer and Transition components to our routing system will handle announcing page transitions as well as animating the transition.Create some pages home.svelte
-# Hello Permaweb
-Inc
-Count: {count}
-About about.svelte # About Page
-Svelte/Vite About Page
-Home Modify App.svelte
-...Deploy Permanently Generate Wallet We need the arweave package to generate a wallet npm install --save arweave yarn add arweave -D then run this command in the terminal node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json Fund Wallet You will need to fund your wallet with ArDrive Turbo credits. To do this, enter ArDrive and import your wallet. Then, you can purchase turbo credits for your wallet.Setup Permaweb-Deploy npm install --global permaweb-deploy yarn global add permaweb-deploy Update vite.config.ts import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-export default defineConfig({
-plugins: [svelte()],
-base: './'
-}) Update package.json Update package.json {
-...
-"scripts": {
-...
-"deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
-}
-...
-} Replace << ANT-PROCESS >> with your ANT process id.Run build Now it is time to generate a build, run npm run build yarn build Run deploy Finally we are good to deploy our first Permaweb Application npm run deploy yarn deploy ERROR If you receive an error Insufficient funds, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.Response You should see a response similar to the following:Deployed TxId [<>] to ANT [<>] using undername [<>] Your Svelte app can be found at https://arweave.net/<< tx-id >>.SUCCESS You should now have a Svelte Application on the Permaweb! Great Job!Summary This is a minimal version of publishing a Svelte application on the permaweb, but you may want more features, like hot-reloading and tailwind, etc. Check out hypar for a turnkey starter kit. HypAR
-
----
-
-# 9. Hello World (CLI)  Cooking with the Permaweb
-
-Document Number: 9
+Document Number: 7
 Source: https://cookbook.arweave.net/getting-started/quick-starts/hw-cli.html
-Words: 142
+Words: 143
 Quality Score: 0.609
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Hello World (CLI) This guide walks you through the most simple way to get data on to the Permaweb using a command-line interface (CLI).Requirements NodeJS open in new window LTS or greater Description Using a terminal/console window create a new folder called hw-permaweb-1.Setup cd hw-permaweb-1
 npm init -y
-npm install arweave ardrive-cli Generate a wallet npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json Create a web page echo "# Hello Permaweb
+npm install arweave ardrive-cli Generate a wallet npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json Create a web page echo " # Hello Permaweb
+
 " > index.html Upload using Ardrive CLI # Create a Drive
 FOLDER_ID=$(npx ardrive create-drive -n public -w ~/.demo-arweave-wallet.json --turbo | jq -r '.created[] | select(.type == "folder") | .entityId')
 # Upload file
@@ -977,93 +971,136 @@ open https://arweave.net/${TX_ID} Built with ❤️ by the Arweave community. Le
 
 ---
 
-# 10. Minimal Svelte Starter Kit  Cooking with the Permaweb
+# 8. Create React App Starter Kit  Cooking with the Permaweb
 
-Document Number: 10
-Source: https://cookbook.arweave.net/kits/svelte/minimal.html
-Words: 525
-Quality Score: 0.575
+Document Number: 8
+Source: https://cookbook.arweave.net/kits/react/create-react-app.html
+Words: 696
+Quality Score: 0.584
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Minimal Svelte Starter Kit This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb application.Prerequisites Know typescript NodeJS v18 or greater Know Svelte - https://svelte.dev Know git and common terminal commands Development Dependencies TypeScript esbuild w3 Steps Create Project mkdir myproject
-cd myproject
-npm init -y
-npm install -D svelte esbuild typescript esbuild-svelte tinro svelte-preprocess mkdir myproject
-cd myproject
-yarn init -y
-yarn add -D svelte esbuild typescript esbuild-svelte tinro svelte-preprocess Create buildscript.js import fs from "fs";
-import esbuild from "esbuild";
-import esbuildSvelte from "esbuild-svelte";
-import sveltePreprocess from "svelte-preprocess";
-//make sure the directoy exists before stuff gets put into it
-if (!fs.existsSync("./dist/")) {
-fs.mkdirSync("./dist/");
+Create React App Starter Kit This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb react application.Prerequisites Basic Typescript Knowledge (Not Mandatory) - https://www.typescriptlang.org/docs/ NodeJS v16.15.0 or greater - https://nodejs.org/en/download/ Knowledge of ReactJS - https://reactjs.org/ Know git and common terminal commands Development Dependencies TypeScript NPM or Yarn Package Manager Steps Create Project If you are not familiar with typescript you can exclude the extra check --template typescript npx create-react-app permaweb-create-react-app --template typescript yarn create react-app permaweb-create-react-app --template typescript Change into the Project Directory cd permaweb-create-react-app Install react-router-dom You have to install this package to manage routing between different pages npm install react-router-dom --save yarn add react-router-dom -D Run the App Now we need to check if everything is working before jumping into next step, run npm start yarn start This will start a new development server locally on your machine. By default it uses `PORT 3000`, if this PORT is already in use it may ask you to switch to another available PORT in Terminal Modify the package.json to contain the following config Setup Routing Now modify the application and add a new route such as an about page, first create 2 more.tsx files. (if you have exluceded the extra check --template typescript, then your component file extension should be .jsx or .js) HomePage.tsx About.tsx import { Link } from "react-router-dom";
+
+function About() {
+return ( Welcome to the About page!
+
+Home );
 }
-esbuild
-.build({
-entryPoints: [`./src/main.ts`],
-bundle: true,
-outdir: `./dist,
-mainFields: ["svelte", "browser", "module", "main"],
-// logLevel: info,
-splitting: true,
-write: true,
-format: esm,
-plugins: [
-esbuildSvelte({
-preprocess: sveltePreprocess(),
-}),
-],
-})
-.catch((error, location) => {
-console.warn(Errors: `, error, location);
-process.exit(1);
-});
-//use a basic html file to test with
-fs.copyFileSync("./index.html", "./dist/index.html");Modify package.json Set type to module, add a build script {
-"type": "module"
+
+export default About;Modify App.tsx We need to update the App.tsx to manage the different pages Hash Routing Note that we are wrapping the routes in a HashRouter and using the react-router-dom Link component to build links. This is important on the permaweb in its current state, it will ensure the routes work properly because applications are served on a path like https://[gateway]/[TX] Deploy Permanently Generate Wallet Existing Wallet This step will generate a new, empty, Arweave wallet. If you already have an existing Arweave wallet you may provide its keyfile and skip this step.We need the arweave package to generate a wallet npm install --save arweave yarn add arweave -D then run this command in the terminal node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json It is very important to make sure that your wallet file is not included in any folder you want uploaded to Arweave.Setup Turbo We need Turbo to deploy our app to the Permaweb.Fund Wallet You will need to fund your wallet with ArDrive Turbo credits. To do this, enter ArDrive and import your wallet. Then, you can purchase turbo credits for your wallet.Setup Permaweb-Deploy npm install --global permaweb-deploy yarn global add permaweb-deploy Fund Your Wallet Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.npm install @ardrive/turbo-sdk
+turbo top-up --wallet-file wallet.json --currency USD --value 10 Be sure to replace wallet.json with the path to your Arweave wallet.Update package.json {
 ...
 "scripts": {
-"build": "node buildscript.js"
+...
+"deploy": "turbo upload-folder --folder-path ./build --wallet-file wallet.json > latest-manifest.json"
 }
-} Create src directory and some src files mkdir src
-touch src/main.ts
-touch src/app.svelte
-touch src/counter.svelte
-touch src/about.svelte Main.ts import App from "./app.svelte";
-new App({
-target: document.body,
-});app.svelte Hash Routing You will notice the router.mode.hash() setting in the script session, this is important to configure your application to use hash based routing, which will enable url support when running that application on a path, like https://[gateway]/[TX] counter.svelte
-# Hello Permaweb
-Inc
-Count: {count}
-about.svelte # About Page
-Minimal About Page
-Home Add index.html
+...
+} This will upload your build folder to the permaweb, and save all of the details of the upload to a file named "latest-manifest.json". That way, you'll have a reference for the manifest TxId to use later.Run build Now it is time to generate a build, run npm run build yarn build Run deploy Finally we are good to deploy our first Permaweb Application npm run deploy yarn deploy ERROR If you receive an error Insufficient funds, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.Response You should see a response similar to the following:Deployed TxId [< >] to ANT [< >] using undername [< >] Your React app can be found at https://arweave.net/<< tx-id >>.SUCCESS You should now have a React Application on the Permaweb! Great Job!Summary This is a Create React App version of publishing a React app on the permaweb. You may discover new ways to deploy an app on the permaweb or checkout other starter kits in this guide!
 
+---
 
+# 9. Create Vue Starter Kit  Cooking with the Permaweb
 
+Document Number: 9
+Source: https://cookbook.arweave.net/kits/vue/create-vue.html
+Words: 708
+Quality Score: 0.582
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Vite + Svelte + TS
+Create Vue Starter Kit This guide will provide step-by-step instructions to configure your development environment and build a permaweb Vue application.Prerequisites Basic Typescript Knowledge (Not Mandatory) - Learn Typescript NodeJS v16.15.0 or greater - Download NodeJS Knowledge of Vue.js (preferably Vue 3) - Learn Vue.js Know git and common terminal commands Development Dependencies TypeScript (Optional) NPM or Yarn Package Manager Steps Create Project The following command installs and launches create-vue, the official scaffolding tool for Vue projects.npm init vue@latest yarn create vue During the process, you'll be prompted to select optional features such as TypeScript and testing support. I recommend selecting the Vue Router with yes, the rest can be selected as per your preference.✔ Project name: … ✔ Add TypeScript? … No / Yes
+✔ Add JSX Support? … No / Yes
+✔ Add Vue Router for Single Page Application development? … No / *Yes*
+✔ Add Pinia for state management? … No / Yes
+✔ Add Vitest for Unit testing? … No / Yes
+✔ Add Cypress for both Unit and End-to-End testing? … No / Yes
+✔ Add ESLint for code quality? … No / Yes
+✔ Add Prettier for code formatting? … No / Yes Change into the Project Directory cd Install Dependencies npm install yarn Setup Router Vue Router is the official router for Vue.js and seamlessly integrates with Vue. To make it work with Permaweb, switch from a browser history router to a hash router as the URL cannot be sent to the server. Change createWebHistory to createWebHashHistory in your src/router/index.ts or src/router/index.js file.import { createRouter, createWebHashHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
+const router = createRouter({
+history: createWebHashHistory(import.meta.env.BASE_URL),
+routes: [
+{
+path: "/",
+name: "home",
+component: HomeView,
+},
+{
+path: "/about",
+name: "about",
+component: () => import("../views/AboutView.vue"),
+},
+],
+});
 
-
-
-
-Deploy Permanently Generate Wallet We need the arweave package to generate a wallet npm install --save arweave yarn add arweave -D then run this command in the terminal node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json Fund Wallet You will need to fund your wallet with ArDrive Turbo credits. To do this, enter ArDrive and import your wallet. Then, you can purchase turbo credits for your wallet.Setup Permaweb-Deploy npm install --global permaweb-deploy yarn global add permaweb-deploy Update vite.config.ts import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-export default defineConfig({
-plugins: [svelte()],
-base: './'
-}) Update package.json {
+export default router;Setup Build Configure the build process in the vite.config.ts or vite.config.js file. To serve Permaweb apps from a sub-path (https://[gateway]/[TX_ID]), update the base property to./ in the config file.export default defineConfig({
+base: './',
+...
+}) Run the App Before moving forward, it is crucial to verify that everything is working correctly. Run a check to ensure smooth progress.npm run dev yarn dev it will start a new development server locally on your machine by default it uses `PORT 5173`. If this PORT is already in use it may increase the PORT number by 1 (`PORT 5174`) and try again. Deploy Permanently Generate Wallet We need the arweave package to generate a wallet npm install --save arweave yarn add arweave -D then run this command in the terminal node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json Fund Wallet You will need to fund your wallet with ArDrive Turbo credits. To do this, enter ArDrive and import your wallet. Then, you can purchase turbo credits for your wallet.Setup Permaweb-Deploy npm install --global permaweb-deploy yarn global add permaweb-deploy Fund Your Wallet Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.npm install @ardrive/turbo-sdk
+turbo top-up --wallet-file wallet.json --currency USD --value 10 Be sure to replace wallet.json with the path to your Arweave wallet.Update package.json {
 ...
 "scripts": {
 ...
 "deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
 }
 ...
-} Replace << ANT-PROCESS >> with your ANT process id.Run build Now it is time to generate a build, run npm run build yarn build Run deploy Finally we are good to deploy our first Permaweb Application npm run deploy yarn deploy ERROR If you receive an error Insufficient funds, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.Response You should see a response similar to the following:Deployed TxId [<>] to ANT [<>] using undername [<>] Your Svelte app can be found at https://arweave.net/<< tx-id >>.SUCCESS You should now have a Svelte Application on the Permaweb! Great Job!Summary This is a minimal version of publishing a Svelte application on the permaweb, but you may want more features, like hot-reloading and tailwind, etc. Check out hypar for a turnkey starter kit. HypAR
+} Replace << ANT-PROCESS >> with your ANT process id.Run build Now it is time to generate a build, run npm run build yarn build Run deploy Finally we are good to deploy our first Permaweb Application npm run deploy yarn deploy ERROR If you receive an error Insufficient funds, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.Response You should see a response similar to the following:Deployed TxId [< >] to ANT [< >] using undername [< >] Your Vue app can be found at https://arweave.net/<< tx-id >>.SUCCESS You should now have a Vue Application on the Permaweb! Great Job!Summary This guide provides a simple step-by-step method to publish a Vue.js app on the Permaweb using Create Vue. If you need additional features Tailwind, consider exploring alternative starter kits listed in the guide to find a suitable solution for your requirements.
+
+---
+
+# 10. ar-gql  Cooking with the Permaweb
+
+Document Number: 10
+Source: https://cookbook.arweave.net/tooling/graphql/ar-gql.html
+Words: 127
+Quality Score: 0.575
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+ar-gql This package is a minimal layer on top of GraphQL, it supports parameterized queries with query variables. It also implements management of paged results.Installation To install `ar-gql run npm i ar-gql yarn add ar-gql Example import { arGql } from "ar-gql"
+
+const argql = arGql()
+
+(async () => {
+let results = await argql.run(`query( $count: Int ){
+transactions(
+first: $count,
+tags: [
+{
+name: "App-Name",
+values: ["PublicSquare"]
+},
+{
+name: "Content-Type",
+values: ["text/plain"]
+},
+]
+) {
+edges {
+node {
+id
+owner {
+address
+}
+data {
+size
+}
+block {
+height
+timestamp
+}
+tags {
+name,
+value
+}
+}
+}
+}
+}`, {count: 1});
+console.log(results);
+})();Resources ar-gql github page open in new window Built with ❤️ by the Arweave community. Learn more at Arweave.org
 
 ---
 
@@ -1101,35 +1138,31 @@ cd my-arweave-app
 npm install yarn create vite my-arweave-app --template react-ts
 cd my-arweave-app
 yarn Add React Router DOM npm install react-router-dom yarn add react-router-dom We need to use the hash-router to create a working app on arweave.Page Components touch src/Home.tsx src/About.tsx src/Home.tsx import { Link } from "react-router-dom";
+
 function Home() {
-return (
-Welcome to the Permaweb!
+return ( Welcome to the Permaweb!
 
-About
-);
+About );
 }
+
 export default Home;src/About.tsx import { Link } from "react-router-dom";
-function About() {
-return (
-Welcome to the About page!
 
-Home
-);
+function About() {
+return ( Welcome to the About page!
+
+Home );
 }
+
 export default About;Modify App.tsx We need to update the App.tsx to manage different pages import { HashRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
+
 import Home from "./Home";
 import About from "./About";
+
 function App() {
-return (
-
-
-} />
-} />
-
-
-);
+return ( } /> } /> );
 }
+
 export default App;Modify index.css Alter the body selector body {
 margin: 0;
 padding-top: 200px;
@@ -1140,6 +1173,7 @@ min-width: 100%;
 min-height: 100vh;
 } Run the project npm run dev yarn dev Building React App Modify vite.config.ts import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+
 // https://vitejs.dev/config/
 export default defineConfig({
 base: "",
@@ -1163,9 +1197,104 @@ Deployed TxId [abc123def456ghi789jkl012mno345pqr678stu901v] to name [my-react-ap
 
 ---
 
-# 13. Permaweb Deploy  Cooking with the Permaweb
+# 13. SvelteVite Starter Kit  Cooking with the Permaweb
 
 Document Number: 13
+Source: https://cookbook.arweave.net/kits/svelte/vite.html
+Words: 552
+Quality Score: 0.561
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Svelte/Vite Starter Kit Svelte is the framework that compiles out of the way, that results is small packages, which is perfect for the permaweb. As developers, we value Dev Experience as much as we value User Experience. This kit uses the vite bundle system to give developers a great DX experience.Installing vite with svelte and typescript npm create vite@latest my-perma-app --template svelte-ts npm create vite@latest my-perma-app -- --template svelte-ts yarn create vite my-perma-app --template svelte-ts pnpm create vite my-perma-app --template svelte-ts Project Info The vite build system places your index.html file in the root directory, this is where you would include any css or global script dependencies if needed. For more information about the vite project layout check out the vite documentation Setup hash-router To setup the hash-router we will use tinro. tinro is a tiny declarative routing library, that is similar to React Router.npm install --save-dev tinro yarn add -D tinro Telling Svelte to use hash routing In the src/App.svelte file, you want to configure the router to use the hash routing mode.The router.mode.hash function turns on hash router mode. The router.subscribe callback is nice to reset the page to the top on page transfers Adding some transition components These component will manage the transition between one page to another page when routing.Create a directory under the src directory called components and add these two files:announcer.svelte This component is for screen readers announcing when a page changes transition.svelte {#key $router.path} {/key} This component adds a fade to the page transition Adding Routes to the app Adding the Announcer and Transition components to our routing system will handle announcing page transitions as well as animating the transition.Create some pages home.svelte # Hello Permaweb
+
+Inc Count: {count}
+
+About about.svelte # About Page
+
+Svelte/Vite About Page
+
+Home Modify App.svelte ...Deploy Permanently Generate Wallet We need the arweave package to generate a wallet npm install --save arweave yarn add arweave -D then run this command in the terminal node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json Fund Wallet You will need to fund your wallet with ArDrive Turbo credits. To do this, enter ArDrive and import your wallet. Then, you can purchase turbo credits for your wallet.Setup Permaweb-Deploy npm install --global permaweb-deploy yarn global add permaweb-deploy Update vite.config.ts import { defineConfig } from 'vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
+
+export default defineConfig({
+plugins: [svelte()],
+base: './'
+}) Update package.json Update package.json {
+...
+"scripts": {
+...
+"deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
+}
+...
+} Replace << ANT-PROCESS >> with your ANT process id.Run build Now it is time to generate a build, run npm run build yarn build Run deploy Finally we are good to deploy our first Permaweb Application npm run deploy yarn deploy ERROR If you receive an error Insufficient funds, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.Response You should see a response similar to the following:Deployed TxId [< >] to ANT [< >] using undername [< >] Your Svelte app can be found at https://arweave.net/<< tx-id >>.SUCCESS You should now have a Svelte Application on the Permaweb! Great Job!Summary This is a minimal version of publishing a Svelte application on the permaweb, but you may want more features, like hot-reloading and tailwind, etc. Check out hypar for a turnkey starter kit. HypAR
+
+---
+
+# 14. Entity Types  Cooking with the Permaweb
+
+Document Number: 14
+Source: https://cookbook.arweave.net/tooling/specs/arfs/entity-types.html
+Words: 1197
+Quality Score: 0.552
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Entity Types Overview Arweave transactions are composed of transaction headers and data payloads.ArFS entities, therefore, have their data split between being stored as tags on their transaction header and encoded as JSON and stored as the data of a transaction. In the case of private entities, JSON data and file data payloads are always encrypted according to the protocol processes defined below.Drive entities require a single metadata transaction, with standard Drive tags and encoded JSON with secondary metadata.Folder entities require a single metadata transaction, with standard Folder tags and an encoded JSON with secondary metadata.File entities require a metadata transaction, with standard File tags and an encoded Data JSON with secondary metadata relating to the file.File entities also require a second data transaction, which includes a limited set of File tags and the actual file data itself.Snapshot entities require a single transaction. which contains a Data JSON with all of the Drive’s rolled up ArFS metadata and standard Snapshot GQL tags that identify the Snapshot.Drive A drive is the highest level logical grouping of folders and files. All folders and files must be part of a drive, and reference the Drive ID of that drive.When creating a Drive, a corresponding folder must be created as well. This will act as the root folder of the drive. This separation of drive and folder entity enables features such as folder view queries, renaming, and linking.Drive Entity Transaction Example Folder A folder is a logical grouping of other folders and files. Folder entity metadata transactions without a parent folder id are considered the Drive Root Folder of their corresponding Drives. All other Folder entities must have a parent folder id. Since folders do not have underlying data, there is no Folder data transaction required.ArFS: "0.13"
+Cipher?: "AES256-GCM"
+Cipher-IV?: "<12 byte initialization vector as Base64>"
+Content-Type: " "
+Drive-Id: " "
+Entity-Type: "folder"
+Folder-Id: " "
+Parent-Folder-Id?: " "
+Unix-Time: " "
+
+Data JSON {
+"name": " "
+} Folder Entity Transaction Example File A File contains uploaded data, like a photo, document, or movie.In the Arweave File System, a single file is broken into 2 parts - its metadata and its data.In the Arweave File System, a single file is broken into 2 parts - its metadata and its data.A File entity metadata transaction does not include the actual File data. Instead, the File data must be uploaded as a separate transaction, called the File Data Transaction. The File JSON metadata transaction contains a reference to the File Data Transaction ID so that it can retrieve the actual data. This separation allows for file metadata to be updated without requiring the file itself to be reuploaded. It also ensures that private files can have their JSON Metadata Transaction encrypted as well, ensuring that no one without authorization can see either the file or its metadata.ArFS: "0.13"
+Cipher?: "AES256-GCM"
+Cipher-IV?: "<12 byte initialization vector as Base64>"
+Content-Type: " "
+Drive-Id: " "
+Entity-Type: "file"
+File-Id: " "
+Parent-Folder-Id: " "
+Unix-Time: " "
+
+Data JSON {
+"name": " ",
+"size": " ",
+"lastModifiedDate": " ",
+"dataTxId": " ",
+"dataContentType": " ",
+"pinnedDataOwner": " " # Optional
+} Pin Files Since the version v0.13, ArFS suports Pins. Pins are files whose data may be any transaction uploaded to Arweave, that may or may not be owned by the wallet that created the pin.When a new File Pin is created, the only created transaction is the Metadata Transaction. The dataTxId field will point it to any transaction in Arweave, and the optional pinnedDataOwner field is gonna hold the address of the wallet that owns the original copy of the data transaction.File Data Transaction Example The File Data Transaction contains limited information about the file, such as the information required to decrypt it, or the Content-Type (mime-type) needed to view in the browser.Cipher?: "AES256-GCM"
+Cipher-IV?: "<12 byte initialization vector as Base64>"
+Content-Type: " "
+{ File Data - Encrypted if private } File Metadata Transaction Example The the File Metadata Transaction contains the GQL Tags necessary to identify the file within a drive and folder.Its data contains the JSON metadata for the file. This includes the file name, size, last modified date, data transaction id, and data content type.ArFS: "0.13"
+Cipher?: "AES256-GCM"
+Cipher-IV?: "<12 byte initialization vector as Base64>"
+Content-Type: " "
+Drive-Id: " "
+Entity-Type: "file"
+File-Id: " "
+Parent-Folder-Id: " "
+Unix-Time: " "
+{ File JSON Metadata - Encrypted if private } Snapshot ArFS applications generate the latest state of a drive by querying for all ArFS transactions made relating to a user's particular Drive-Id. This includes both paged queries for indexed ArFS data via GQL, as well as the ArFS JSON metadata entries for each ArFS transaction.For small drives (less than 1000 files), a few thousand requests for very small s of data can be achieved relatively quickly and reliably. For larger drives, however, this results in long sync times to pull every piece of ArFS metadata when the local database cache is empty. This can also potentially trigger rate-limiting related ArWeave Gateway delays.Once a drive state has been completely, and accurately generated, in can be rolled up into a single snapshot and uploaded as an Arweave transaction. ArFS clients can use GQL to find and retrieve this snapshot in order to rapidly reconstitute the total state of the drive, or a large portion of it. They can then query individual transactions performed after the snapshot.This optional method offers convenience and resource efficiency when building the drive state, at the cost of paying for uploading the snapshot data. Using this method means a client will only have to iterate through a few snapshots instead of every transaction performed on the drive.Snapshot Entity Tags Snapshot entities require the following tags. These are queried by ArFS clients to find drive snapshots, organize them together with any other transactions not included within them, and build the latest state of the drive.ArFS: "0.13"
+Drive-Id: " "
+Entity-Type: "snapshot"
+Snapshot-Id: " "
+Content-Type: " "
+Block-Start: " "
+Block-End: " "
+Data-Start: " " Snapshot Transaction GQL tags example Snapshot Entity Data A JSON data object must also be uploaded with every ArFS Snapshot entity. THis data contains all ArFS Drive, Folder, and File metadata changes within the associated drive, as well as any previous Snapshots. The Snapshot Data contains an array txSnapshots. Each item includes both the GQL and ArFS metadata details of each transaction made for the associated drive, within the snapshot's start and end period.A tsSnapshot contains a gqlNode object which uses the same GQL tags interface returned by the Arweave Gateway. It includes all of the important block, owner, tags, and bundledIn information needed by ArFS clients. It also contains a dataJson object which stores the correlated Data JSON for that ArFS entity.For private drives, the dataJson object contains the JSON-string-escaped encrypted text of the associated file or folder. This encrypted text uses the file's existing Cipher and Cipher-IV. This ensures clients can decrypt this information quickly using the existing ArFS privacy protocols.Snapshot Transaction JSON data example Schema Diagrams The following diagrams show complete examples of Drive, Folder, and File entity Schemas.Public Drive Public Drive Schema Private Drive Private Drive Schema
+
+---
+
+# 15. Permaweb Deploy  Cooking with the Permaweb
+
+Document Number: 15
 Source: https://cookbook.arweave.net/tooling/deployment/permaweb-deploy.html
 Words: 707
 Quality Score: 0.548
@@ -1217,9 +1346,9 @@ Deployed TxId [abc123def456ghi789jkl012mno345pqr678stu901v] to name [my-app] for
 
 ---
 
-# 14. ANS-109 Vouch-For (Assertion of Identity)  Cooking with the Permaweb
+# 16. ANS-109 Vouch-For (Assertion of Identity)  Cooking with the Permaweb
 
-Document Number: 14
+Document Number: 16
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-109.html
 Words: 303
 Quality Score: 0.543
@@ -1244,9 +1373,9 @@ value
 
 ---
 
-# 15. GraphQL Queries  Cooking with the Permaweb
+# 17. GraphQL Queries  Cooking with the Permaweb
 
-Document Number: 15
+Document Number: 17
 Source: https://cookbook.arweave.net/fundamentals/accessing-arweave-data/graphql.html
 Words: 248
 Quality Score: 0.540
@@ -1277,285 +1406,12 @@ const results = await arweave.api.post('/graphql', queryObject);Public Indexing 
 
 ---
 
-# 16. Create React App Starter Kit  Cooking with the Permaweb
-
-Document Number: 16
-Source: https://cookbook.arweave.net/kits/react/create-react-app.html
-Words: 693
-Quality Score: 0.524
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Create React App Starter Kit This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb react application.Prerequisites Basic Typescript Knowledge (Not Mandatory) - https://www.typescriptlang.org/docs/ NodeJS v16.15.0 or greater - https://nodejs.org/en/download/ Knowledge of ReactJS - https://reactjs.org/ Know git and common terminal commands Development Dependencies TypeScript NPM or Yarn Package Manager Steps Create Project If you are not familiar with typescript you can exclude the extra check --template typescript npx create-react-app permaweb-create-react-app --template typescript yarn create react-app permaweb-create-react-app --template typescript Change into the Project Directory cd permaweb-create-react-app Install react-router-dom You have to install this package to manage routing between different pages npm install react-router-dom --save yarn add react-router-dom -D Run the App Now we need to check if everything is working before jumping into next step, run npm start yarn start This will start a new development server locally on your machine. By default it uses `PORT 3000`, if this PORT is already in use it may ask you to switch to another available PORT in Terminal Modify the package.json to contain the following config Setup Routing Now modify the application and add a new route such as an about page, first create 2 more.tsx files. (if you have exluceded the extra check --template typescript, then your component file extension should be .jsx or .js) HomePage.tsx About.tsx import { Link } from "react-router-dom";
-function About() {
-return (
-Welcome to the About page!
-
-Home
-);
-}
-export default About;Modify App.tsx We need to update the App.tsx to manage the different pages Hash Routing Note that we are wrapping the routes in a HashRouter and using the react-router-dom Link component to build links. This is important on the permaweb in its current state, it will ensure the routes work properly because applications are served on a path like https://[gateway]/[TX] Deploy Permanently Generate Wallet Existing Wallet This step will generate a new, empty, Arweave wallet. If you already have an existing Arweave wallet you may provide its keyfile and skip this step.We need the arweave package to generate a wallet npm install --save arweave yarn add arweave -D then run this command in the terminal node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json It is very important to make sure that your wallet file is not included in any folder you want uploaded to Arweave.Setup Turbo We need Turbo to deploy our app to the Permaweb.Fund Wallet You will need to fund your wallet with ArDrive Turbo credits. To do this, enter ArDrive and import your wallet. Then, you can purchase turbo credits for your wallet.Setup Permaweb-Deploy npm install --global permaweb-deploy yarn global add permaweb-deploy Fund Your Wallet Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.npm install @ardrive/turbo-sdk
-turbo top-up --wallet-file wallet.json --currency USD --value 10 Be sure to replace wallet.json with the path to your Arweave wallet.Update package.json {
-...
-"scripts": {
-...
-"deploy": "turbo upload-folder --folder-path ./build --wallet-file wallet.json > latest-manifest.json"
-}
-...
-} This will upload your build folder to the permaweb, and save all of the details of the upload to a file named "latest-manifest.json". That way, you'll have a reference for the manifest TxId to use later.Run build Now it is time to generate a build, run npm run build yarn build Run deploy Finally we are good to deploy our first Permaweb Application npm run deploy yarn deploy ERROR If you receive an error Insufficient funds, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.Response You should see a response similar to the following:Deployed TxId [<>] to ANT [<>] using undername [<>] Your React app can be found at https://arweave.net/<< tx-id >>.SUCCESS You should now have a React Application on the Permaweb! Great Job!Summary This is a Create React App version of publishing a React app on the permaweb. You may discover new ways to deploy an app on the permaweb or checkout other starter kits in this guide!
-
----
-
-# 17. Create Vue Starter Kit  Cooking with the Permaweb
-
-Document Number: 17
-Source: https://cookbook.arweave.net/kits/vue/create-vue.html
-Words: 705
-Quality Score: 0.522
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Create Vue Starter Kit This guide will provide step-by-step instructions to configure your development environment and build a permaweb Vue application.Prerequisites Basic Typescript Knowledge (Not Mandatory) - Learn Typescript NodeJS v16.15.0 or greater - Download NodeJS Knowledge of Vue.js (preferably Vue 3) - Learn Vue.js Know git and common terminal commands Development Dependencies TypeScript (Optional) NPM or Yarn Package Manager Steps Create Project The following command installs and launches create-vue, the official scaffolding tool for Vue projects.npm init vue@latest yarn create vue During the process, you'll be prompted to select optional features such as TypeScript and testing support. I recommend selecting the Vue Router with yes, the rest can be selected as per your preference.✔ Project name: …
-✔ Add TypeScript? … No / Yes
-✔ Add JSX Support? … No / Yes
-✔ Add Vue Router for Single Page Application development? … No / *Yes*
-✔ Add Pinia for state management? … No / Yes
-✔ Add Vitest for Unit testing? … No / Yes
-✔ Add Cypress for both Unit and End-to-End testing? … No / Yes
-✔ Add ESLint for code quality? … No / Yes
-✔ Add Prettier for code formatting? … No / Yes Change into the Project Directory cd Install Dependencies npm install yarn Setup Router Vue Router is the official router for Vue.js and seamlessly integrates with Vue. To make it work with Permaweb, switch from a browser history router to a hash router as the URL cannot be sent to the server. Change createWebHistory to createWebHashHistory in your src/router/index.ts or src/router/index.js file.import { createRouter, createWebHashHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-const router = createRouter({
-history: createWebHashHistory(import.meta.env.BASE_URL),
-routes: [
-{
-path: "/",
-name: "home",
-component: HomeView,
-},
-{
-path: "/about",
-name: "about",
-component: () => import("../views/AboutView.vue"),
-},
-],
-});
-export default router;Setup Build Configure the build process in the vite.config.ts or vite.config.js file. To serve Permaweb apps from a sub-path (https://[gateway]/[TX_ID]), update the base property to./ in the config file.export default defineConfig({
-base: './',
-...
-}) Run the App Before moving forward, it is crucial to verify that everything is working correctly. Run a check to ensure smooth progress.npm run dev yarn dev it will start a new development server locally on your machine by default it uses `PORT 5173. If this PORT is already in use it may increase the PORT number by 1 (PORT 5174`) and try again. Deploy Permanently Generate Wallet We need the arweave package to generate a wallet npm install --save arweave yarn add arweave -D then run this command in the terminal node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json Fund Wallet You will need to fund your wallet with ArDrive Turbo credits. To do this, enter ArDrive and import your wallet. Then, you can purchase turbo credits for your wallet.Setup Permaweb-Deploy npm install --global permaweb-deploy yarn global add permaweb-deploy Fund Your Wallet Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.npm install @ardrive/turbo-sdk
-turbo top-up --wallet-file wallet.json --currency USD --value 10 Be sure to replace wallet.json with the path to your Arweave wallet.Update package.json {
-...
-"scripts": {
-...
-"deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
-}
-...
-} Replace << ANT-PROCESS >> with your ANT process id.Run build Now it is time to generate a build, run npm run build yarn build Run deploy Finally we are good to deploy our first Permaweb Application npm run deploy yarn deploy ERROR If you receive an error Insufficient funds, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.Response You should see a response similar to the following:Deployed TxId [<>] to ANT [<>] using undername [<>] Your Vue app can be found at https://arweave.net/<< tx-id >>.SUCCESS You should now have a Vue Application on the Permaweb! Great Job!Summary This guide provides a simple step-by-step method to publish a Vue.js app on the Permaweb using Create Vue. If you need additional features Tailwind, consider exploring alternative starter kits listed in the guide to find a suitable solution for your requirements.
-
----
-
-# 18. Posting Transactions  Cooking with the Permaweb
+# 18. Querying Arweave with GraphQL  Cooking with the Permaweb
 
 Document Number: 18
-Source: https://cookbook.arweave.net/fundamentals/transactions/post-transactions.html
-Words: 635
-Quality Score: 0.519
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Posting Transactions There are several ways to post transactions to Arweave. Each has its own unique affordances and constraints. The diagram below illustrates the four main approaches to posting transactions.Direct to Peer,Direct to Gateway, Bundled, and Dispatched. Guaranteed Transactions When posting a large quantity of transactions or when fast settlement time is desireable consider using a bundling service. Bundlers settle large s of transactions immediately and make the transaction data available within milliseconds. The bundling service holds onto posted transactions until they are confirmed on-chain. If the transactions are not included in the most recent block the bundling service re-posts them with each new block until they are recorded on chain with a sufficient number of confirmations.Direct Transactions Transactions posted directly to Arweave come in two varieties wallet-to-wallet transactions and data transactions. The first transfers AR tokens between wallet addresses. The second posts data to Arweave and pays the associated storage costs.Interestingly, data transactions may also transfer AR tokens to a wallet address while paying storage costs at the same time.All transactions allow the user to specify up to 2KB worth of metadata in the form of custom tags.Direct to Peer Transactions may be posted directly to an Arweave peer (mining node). This is perhaps the most decentralized means of posting a transaction as clients can choose what peer they wish to post to.This approach is not without drawbacks. Peers may come and go making it difficult to reliably post transactions from an app. While it's possible to query a list of active peers and choose one before posting it adds overhead and friction to the process. Additionally, transactions posted to peers are only queryable at the gateway after being mined in a block. This introduces a 1-2 minute delay between posting the transaction to a peer and it being available to read in a browser from a gateway.For the above reasons, developers tend to configure arweave-js to point to a gateway when posting direct transactions as the optimistic cache at the gateway makes the transaction available almost immediately.Direct to Gateway Gateways sit between clients and Arweave's network of peers. One of the primary functions of the gateway is to index transactions and optimistically cache the data posted to the network while waiting for it to be included in a block. This makes the transaction queryable in a "Pending" state almost instantly which allows applications built on top of a gateway to be more responsive. There is still a risk of transactions dropping out of the optimistic cache if they are not mined in a block by the peers.An example of how to post a direct transaction using arweave-js can be found in this guide.Bundled Transactions Services built on top of Arweave that provide additional utility for Permaweb builders are sometimes called Permaweb Services. A bundler is one such service. Bundlers take multiple individual transactions and bundle them together into a single transaction that is posted directly to Arweave. In this way a single transaction at the protocol level can contain tens of thousands of bundled transactions. There is one restriction, however, only data transactions can be included in a bundle. Wallet-to-wallet transactions (that transfer AR tokens between wallet addresses) must be done as individual transactions posted directly to Arweave.Dispatched Transactions Another way to post bundled transactions is from the browser. While browsers enforce some constraints around the size of data that can be uploaded, browser based wallets are able to post transactions to bundlers. Arweave browser wallets implement a dispatch() API method. If you are posting small transactions (100KB or less) you can use the wallets dispatch() method to take advantage of bundled transactions.An example of how to post a 100KB or less bundled transaction with an Arweave wallets dispatch() method can be found in this guide.Resources arweave-js example dispatch example Turbo SDK example
-
----
-
-# 19. ar-gql  Cooking with the Permaweb
-
-Document Number: 19
-Source: https://cookbook.arweave.net/tooling/graphql/ar-gql.html
-Words: 127
-Quality Score: 0.515
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-ar-gql This package is a minimal layer on top of GraphQL, it supports parameterized queries with query variables. It also implements management of paged results.Installation To install `ar-gql run npm i ar-gql yarn add ar-gql Example import { arGql } from "ar-gql"
-const argql = arGql()
-(async () => {
-let results = await argql.run(`query( $count: Int ){
-transactions(
-first: $count,
-tags: [
-{
-name: "App-Name",
-values: ["PublicSquare"]
-},
-{
-name: "Content-Type",
-values: ["text/plain"]
-},
-]
-) {
-edges {
-node {
-id
-owner {
-address
-}
-data {
-size
-}
-block {
-height
-timestamp
-}
-tags {
-name,
-value
-}
-}
-}
-}
-}`, {count: 1});
-console.log(results);
-})();Resources ar-gql github page open in new window Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 20. Svelte Starter Kits  Cooking with the Permaweb
-
-Document Number: 20
-Source: https://cookbook.arweave.net/kits/svelte/index.html
-Words: 115
-Quality Score: 0.512
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Svelte Starter Kits Svelte is a framework that compiles to a JavaScript bundle and in the process removes the framework from the distribution of the app. This results in a much smaller footprint than other frameworks. Svelte is the perfect framework for Permaweb Applications. A Permaweb Application is built on the principles of a Single Page Application, but lives on the Arweave network and is distributed by Permaweb gateways.Svelte Starter Kit Guides:Minimal - the minimum required to build a svelte permaweb app Vite - Svelte, Typescript and Vite Permaweb Application Constraints 100% Front-end application (No Server-Side Backend) Applications are served from a sub-path (https://[gateway]/[TX_ID]) Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 21. Transaction Metadata (Tags)  Cooking with the Permaweb
-
-Document Number: 21
-Source: https://cookbook.arweave.net/fundamentals/transactions/tags.html
-Words: 559
-Quality Score: 0.510
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Arweave can be thought of as a permanent append-only hard drive where each entry on the drive is its own unique transaction. Transactions have a unique ID, signature, and owner address for the address that signed and paid for the transaction to be posted. Along with those header values, the Arweave protocol allows users to tag transactions with custom tags. These are specified as a collection name value pairs appended to the transaction. These tags make it possible to query Arweave and find all the Transactions that include a particular tag or tags. The ability to query and filter transactions is critical to supporting apps built on Arweave.What are Transaction Tags?Transaction tags are key-value pairs, where the combination of base64URL keys and values must be less than the maximum of 2048 bytes for an arweave native transaction.Some common examples of transaction tags include:Content-Type: Used to specify the MIME type of content for render on the permaweb.App-Name: This tag describes the app that is writing the data App-Version: This tag is the version of the app, paired with App-Name Unix-Time: This tag is the a unix timestamp, seconds since epoch.Title: Used to give a name or brief description of the content stored in the transaction.Description: Used to provide a longer description of the content.Transaction tags can be used for a variety of purposes, such as indexing transactions for search, organizing transactions into categories, or providing metadata about the content stored in a transaction.Some good things to know about Transaction Tags Transaction tags are encoded as Base64URL encoded strings for both the key and value. This makes it possible to post arrays of bytes as keys or values and transfer them safely over http. While it's not human readable without decoding, it shouldn't be considered encryption.The max total size of Transaction tags for transaction posted directly to Arweave is 2048 bytes. This size is determined by the concatenation of all keys and all values of the transaction tags.Transaction tags can be used in GraphQL queries to return a filtered set of transaction items.Common Tags used in the community Tag Name Description Use Cases App-Name Most commonly used to identify applications using Arweave Common uses are the project's name, sometimes also used in specific ANS transactions App-Version The version of this data, it may represent the app consuming this information E.g. 0.3.0 Content-Type MIME Type to identify the data contained in the transaction text/html, application/json, image/png Unix-Time This tag is the a unix timestamp, seconds since epoch The time the transaction is submitted Title ANS-110 Standard for describing content Providing a name for an Atomic Asset Type ANS-110 Standard for categorization of data a type can classify a permaweb asset Examples const tx = await arweave.createTransaction({ data: mydata });
-tx.addTag("Content-Type", "text/html");
-tx.addTag("Title", "My incredible post about Transaction Tags");
-tx.addTag("Description", "This is one post you do not want to miss!");
-tx.addTag("Topic:Amazing", "Amazing");
-tx.addTag("Type", "blog-post");
-await arweave.transactions.sign(tx, jwk);
-await arweave.transactions.post(tx);Summary Understanding how Transaction Tags factor into the Arweave tech stack can provide context on how to solve problems using the Permaweb as an application platform. Tags provide a tool to consume and create common data standards and patterns to encourage a non-rivalous data experience on the Permaweb. The result gives users of the ecosystem the choice of applications to consume and create content as their data is always with the user not the application.
-
----
-
-# 22. Vue Starter Kits  Cooking with the Permaweb
-
-Document Number: 22
-Source: https://cookbook.arweave.net/kits/vue/index.html
-Words: 117
-Quality Score: 0.509
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Vue Starter Kits Vue.js is a progressive JavaScript framework that allows building user interfaces. Unlike other frameworks, it compiles the template into JavaScript during runtime, resulting in a smaller file size and faster performance. Vue is ideal for building performant and scalable single-page applications, making it a popular choice among front-end developers.Vue Starter Kit Guides:Note: - Since npm init vue@latest alredy uses vite, we have not included a vite guide for Vue.Create Vue App - Use Create Vue to efficiently build a Vue.js-based with TypeScript and Vite modern permaweb application Permaweb Application Constraints 100% Front-end application (No Server-Side Backend) Applications are served from a sub-path (https://[gateway]/[TX_ID]) Built with ❤️ by the Arweave community. Learn more at Arweave.org
-
----
-
-# 23. ANS-103 Succinct Proofs of Random Access  Cooking with the Permaweb
-
-Document Number: 23
-Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-103.html
-Words: 1126
-Quality Score: 0.503
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-ANS-103: Succinct Proofs of Random Access Status: Draft Authors: Sam Williams sam@arweave.org, Lev Berman ldmberman@protonmail.com Abstract This document describes the new consensus mechanism for the Arweave network based on the competition to find a chunk of the past data in a set of historical chunks inferred from the latest agreed-upon blockweave state.Motivation At the time when this specification is written, the consensus mechanism employed by the Arweave network is a classical Proof of Work with an additional requirement of including a chunk (up to 256 KiB) of the past data into the hash preimage where the chunk is deterministically determined by the latest state of the blockweave.While this approach incentivizes the network to keep historical data, it does not impose any significant restrictions on the speed of access to data a miner needs to be competitive. Specifically, miners can benefit from using a remote storage pool. Moreover, combined with a computation pool, it can serve Proof of Work preimages to millions of clients per second via a Gbit Internet link. A storage and computation pool has been evidenced in the Arweave network by a decreased number of public nodes and a simultaneous increase of the network hashpower and people claiming to be part of the pool.Therefore, the new consensus algorithm's first goal is to make the mining advantage grow sharply with the growing speed of access to data, promoting replication more aggressively.The second but not less important goal is to reduce the energy consumed by the network. Proof of Work networks are known for their energy-intensity. Reduced energy consumption reduces the carbon footprint, widely believed to be very harmful to the planet. We believe the environment-friendliness of the consensus mechanism is crucial for the long-term sustainability of the Arweave platform.To sum up, the consensus algorithm described here aims at two major goals.Disincentivize miners from retrieving data on demand from the network. In other words, incentivize miners to store data as close to the mining machine as possible.Reduce network's energy consumption.Reference Implementation Link.Specification Prerequsites Indexed Dataset The core of the new mechanism - continuous retrieval of chunks of the past data. Every chunk is identified by a global offset, as we want to make the possession of any byte equally incentivized. Therefore, the whole weave has to be indexed so that every chunk is quickly accessible by its global offset.Starting from the release 2.1, the Arweave Erlang client maintains such an index.Slow Hash The consensus mechanism needs a deterministic but unpredictable way to choose candidate chunks, to make the miners continuously access storage. However, choosing candidate chunks cannot be too easy as it would allow miners to reduce the number of chunks they ever work with. There are two threats associated with that. One threat is the lower cost of the computation expenditure, as compared to the cost of storing extra data required for the same probability of a reward. The second threat is the existing computation technology that, although being more expensive than storing the entire weave, is so efficient that it outperforms even the most efficient data retrieval based client.Starting from release 1.7, the Arweave protocol relies on RandomX, a proof-of-work algorithm optimized for general-purpose CPUs.Algorithm Description Every block uniquely determines a Search Space - a set of offsets (Recall Bytes) on the [0, weave size at a certain block (Search Space Upper Bound)] interval.Miner Steps Generate a random nonce and generate a slow hash (H0) of the hash of a Merkle tree containing the current state, the candidate block, and the nonce.Compute the unique recall byte from H0, the hash of the previous block (PrevH), and Search Space Upper Bound.Search the local storage for the chunk containing the computed Recall Byte. If not found, repeat from the first step.Compute a fast hash of the hash of the Merkle tree containing the slow hash computed at the first step and the located chunk.Check whether the computed hash is bigger than the current mining difficulty (the number computed from its binary digit big-endian representation is bigger). If not, repeat from the first step. If yes, pack and distribute the block (the block contains the nonce and the chunk).The solution chunk together with the Merkle proofs of its inclusion in the blockweave we call Succinct Proof of Random Access (or SPoRA) and use as a name for the new consensus mechanism.Verifier Steps Perform one iteration over the miner steps where the nonce and the chunk are found in the verified block.Rationale Search Space Constraints Search Space needs to be big enough for two reasons:make it prohibitively expensive to download the entire search space on demand; note that the prior consensus mechanism can be viewed as an edge case of SPoRA where the search space consists of a single chunk; the efficiency of serving data to the computing agents on demand depends on the network bandwidth, which grows over time.make it prohibitively expensive to compensate for the lack of data by hashing.On the other hand, Search Space needs to be small enough to incentivize miners to replicate the rarer parts of the weave, which would give them and advantage over miners who replicated less of the corresponding area at the corresponding blocks.We choose the Search Space size to be 10% of the weave. In this case, 10% of the miners storing unique 10% of the weave in the network where everybody stores 90% of the weave are roughly 1.2 times more efficient than the rest of the miners. It holds for various ratios of the time it takes to compute a RandomX hash and the time it takes to look up a chunk.Pseudocode The ar_deep_hash definition.mine(Nonce, BlockPreimage, PrevH, SearchSpaceUpperBound):
-// Compute a slow hash.
-H0 := randomx_hash(concat(Nonce, BlockPreimage))
-RecallByte := pick_recall_byte(H0, PrevH, SearchSpaceUpperBound)
-// Search the local storage for the chunk containing Recall Byte.
-SPoA := get_spoa_by_byte(RecallByte)
-if SPoA == not_found
-mine(random_nonce(), BlockPreimage, PrevH, SearchSpaceUpperBound)
-Chunk := get_chunk(SPoA)
-SolutionHash := randomx_hash(concat(H0, PrevH, Timestamp, Chunk))
-if validate(Candidate, Diff)
-return
-mine(random_nonce(), BlockPreimage, PrevH, SearchSpaceUpperBound)
-pick_recall_byte(H0, PrevH, SearchSpaceUpperBound):
-SubspaceNumber := remainder(hash_to_number(H0), SUBSPACES_COUNT)
-SearchSpaceSize := integer_division(SearchSpaceUpperBound, 10)
-EvenSubspaceSize := integer_division(SearchSpaceUpperBound, SUBSPACES_COUNT)
-SearchSubspaceSize := integer_division(SearchSpaceSize, SUBSPACES_COUNT)
-SubspaceStart := SubspaceNumber * EvenSubspaceSize
-SubspaceSize := min(SearchSpaceUpperBound - SubspaceStart, EvenSubspaceSize)
-EncodedSubspaceNumber := number_to_binary(SubspaceNumber)
-SearchSubspaceSeed := hash_to_number(sha256(concat(PrevH, EncodedSubspaceNumber)))
-SearchSubspaceStart := remainder(SearchSubspaceSeed, SubspaceSize)
-SearchSubspaceByteSeed := hash_to_number(sha256(H))
-SearchSubspaceByte := remainder(SearchSubspaceByteSeed, SearchSubspaceSize)
-return AbsoluteSubspaceStart + remainder(SearchSubspaceStart + SearchSubspaceByte, SubspaceSize) The work was heavily inspired by Permacoin: Repurposing Bitcoin Work for Data Preservation by Andrew Miller, Ari Juels, Elaine Shi, Bryan Parno, and Jonathan Katz from Microsoft Research.We suggest to use the existing, growing, and always accessible Arweave dataset instead of one pre-generated by a trusted dealer. We use a slow specialized hardware-resistant hash to make it prohibitively expensive to compensate for the lack of local data with computation. Finally, we provide the network with the incentive to replicate data uniformly.
-
----
-
-# 24. ANS-106 Do-Not-Store Request  Cooking with the Permaweb
-
-Document Number: 24
-Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-106.html
-Words: 324
-Quality Score: 0.503
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-ANS-106: Do-Not-Store Request Status: Draft-1 Authors: Abhav Kedia abhav@arweave.org, Sam Williams sam@arweave.org Abstract This document describes a transaction format that users of the Arweave network can use to request miners to not store certain kinds of data, for various reasons. In order to request non-storage, upload a transaction with the transaction ID of the data in question, along with tags as specified here. Upon receiving this data, nodes in the network will independently decide whether or not to accept the request.Motivation The Arweave permanent storage protocol enables a truly permanent digital store of media and documents.There might be various reasons why persons or entities might wish to remove some data from the network. These include privacy, government regulation and copyright violations. By uploading a transaction that adheres to this standard, users of the network can ensure that their request is broadcast to all relevant storage node operators.Specification Transaction Format A Do-Not-Store Request transaction MUST be a transaction with the following tags:Tag Name Optional?Tag Value App-Name False Do-Not-Store Do-Not-Store False Arweave Txn ID of the data in question Category True Category-Tag Geography True If requesting removal in particular countries, include the 2 letter Country-Code (Alpha-2, ISO 3166) Content-Type True A guide to the type of content included in the body of the transaction, in order to aid rendering.The body of the transaction must then include a text description of the reason for the case describing why the data should not be stored. Multiple Do-Not-Store tags may be added to request non-storage of multiple data items at once.Category-Tags Category tags are a short-hand way of specifying the reason for removal. Common tags include Private, Regulation, Copyright. Custom category tags may be used as appropriate. Custom tags must not exceed 50 characters.Future work There may be a need to request removal based on various properties of data or tags associated with them. This standard may be extended to allow for lists of transactions and/or associated filtering criteria.
-
----
-
-# 25. ANS-110 Asset Discoverability  Cooking with the Permaweb
-
-Document Number: 25
-Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-110.html
-Words: 379
-Quality Score: 0.503
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-ANS-110: Asset Discoverability Status: Draft Authors: Tom Wilson (tom@hyper.io), Sam Williams (sam@arweave.org), Abhav Kedia (abhav@arweave.org) Abstract This document specifies a data protocol that allows assets to be discovered and uniformly dised on the permaweb.Motivation The permaweb is a rich collection of various kinds of data -- media, content, functions, and applications. A standard protocol for identifying assets enables discoverability for dashboards, exchanges, and higher-level permaweb services. By providing an extensible data protocol for transactions, creators and publishers can harness the power of permaweb-wide content discoverability -- making it easily appear in various applications and contexts across the permaweb.This protocol would enable, for example, a marketplace or exchange where users trade media assets to render them in a user-friendly way. By extending asset transactions using these identifiers, creators provide a clear and composable set of identifiers that marketplaces or exchanges can use to give a detailed description of the asset. Another example would be a search engine service that may want to index specific types of assets.Specfication Transaction Format To utilize Asset Discoverability, a creator or publisher can dispatch or post an Arweave transaction specifying the following tags.Tag Name Optional?Tag Value Title False A maximum of 150 characters used to identify the content, this title can provide a quick eye catching description of the asset Type* False Type of asset. One or more of: meme, image, video, podcast, blog-post, social-post, music, token, web-page, profile Topic* True Zero to many topics that can be used to locate assets of a given type by a specific topic. For example: an asset of type meme might have the following two topics, Funny, Sports.Description True A longer description of 300 characters that can provide a set of details further describing the asset Usage The primary purpose of these tags is to allow content devs to leverage GraphQL to find asset transactions of a specific type or topic for use in their applications.query {
-transactions(
-first: 100,
-tags: [
-{ name: "Type", values: ["meme", "blog-post"] },
-{ name: "Topic:Funny", values: ["Funny"] },
-{ name: "Topic:Jokes", values: ["Jokes"] }
-]) {
-edges {
-node {
-id
-owner {
-address
-}
-tags {
-name
-value
-}
-}}
-}
-} This GraphQL query filters based on Type and Topic tags to filter Assets for an aggregate list dis.
-
----
-
-# 26. Querying Arweave with GraphQL  Cooking with the Permaweb
-
-Document Number: 26
 Source: https://cookbook.arweave.net/tooling/querying-arweave.html
 Words: 812
-Quality Score: 0.498
+Quality Score: 0.528
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -1576,8 +1432,10 @@ value
 }
 }
 } If you’re not familiar with GraphQL it can seem a little overwhelming at first but once you know the structure, it’s fairly easy to read and understand.query { ( ) { } } In the example query we pasted our is transactions but we could also query for blocks. A full description of Arweave's GraphQL schema is written up in the Arweave GraphQL Guide. The guide refers to the filter criteria as “Query Structures” and the complete data structure definition of transactions and blocks as “Data Structures”.When it comes to the , the thing to note is that you can specify a subset of the complete data structure you’re interested in. For example, the complete data structure for a transactions schema is listed here.In our case we’re interested in the id and complete list of tags for any transaction matching our filter criteria.Hit the big “” button in the middle of the ground to run the query. You’ll notice we get back a list of transactions in the results data structure we specified in our original query.If you’re new to blockchains this is unexpected, we haven’t built anything, why do these results exist? It turns out, the “PublicSquare”: “App-Name” tag we’ve filtered for has been in use for a while.Arweave protocol's founder, Sam Williams, proposed the transaction format a few years ago in a github code snippet. Since then builders in the ecosystem have been building on and around it, experimenting, posting transactions with those tags.Back to querying Arweave. You’ll notice in the GraphQL results that there are no readable post messages, just tags and information about posts.This is because the GraphQL indexing service is concerned with indexing and retrieving header data for transactions and blocks but not their associated data.To get the data of a transaction we need to look it up using another HTTP endpoint.https://arweave.net/ Copy and paste one of the id’s in your query results and modify the above link, appending the id. It should look something like this… https://arweave.net/eaUAvulzZPrdh6_cHwUYV473OhvCumqT3K7eWI8tArk The result of navigating to that URL in the browser (HTTP GET) would be retrieving the content of the post (stored in the transactions data). In this example it’s… Woah that's pretty cool 😎 (For a complete listing arweave HTTP endpoints visit the HTTP API documentation.) Posting a Query From JavaScript Posting a GraphQL query from javascript isn't much different than posting it in the ground.First install the arweave-js package for easy access to a GraphQL endpoint.npm install --save arweave Then enter a slightly more advanced version of the example query from above and await the results of posting it.import Arweave from 'arweave';
+
 // initialize an arweave instance
 const arweave = Arweave.init({});
+
 // create a query that selects tx data the first 100 tx with specific tags
 const queryObject = {
 query:
@@ -1655,6 +1513,176 @@ address
 
 ---
 
+# 19. Posting Transactions  Cooking with the Permaweb
+
+Document Number: 19
+Source: https://cookbook.arweave.net/fundamentals/transactions/post-transactions.html
+Words: 635
+Quality Score: 0.519
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Posting Transactions There are several ways to post transactions to Arweave. Each has its own unique affordances and constraints. The diagram below illustrates the four main approaches to posting transactions.Direct to Peer,Direct to Gateway, Bundled, and Dispatched. Guaranteed Transactions When posting a large quantity of transactions or when fast settlement time is desireable consider using a bundling service. Bundlers settle large s of transactions immediately and make the transaction data available within milliseconds. The bundling service holds onto posted transactions until they are confirmed on-chain. If the transactions are not included in the most recent block the bundling service re-posts them with each new block until they are recorded on chain with a sufficient number of confirmations.Direct Transactions Transactions posted directly to Arweave come in two varieties wallet-to-wallet transactions and data transactions. The first transfers AR tokens between wallet addresses. The second posts data to Arweave and pays the associated storage costs.Interestingly, data transactions may also transfer AR tokens to a wallet address while paying storage costs at the same time.All transactions allow the user to specify up to 2KB worth of metadata in the form of custom tags.Direct to Peer Transactions may be posted directly to an Arweave peer (mining node). This is perhaps the most decentralized means of posting a transaction as clients can choose what peer they wish to post to.This approach is not without drawbacks. Peers may come and go making it difficult to reliably post transactions from an app. While it's possible to query a list of active peers and choose one before posting it adds overhead and friction to the process. Additionally, transactions posted to peers are only queryable at the gateway after being mined in a block. This introduces a 1-2 minute delay between posting the transaction to a peer and it being available to read in a browser from a gateway.For the above reasons, developers tend to configure arweave-js to point to a gateway when posting direct transactions as the optimistic cache at the gateway makes the transaction available almost immediately.Direct to Gateway Gateways sit between clients and Arweave's network of peers. One of the primary functions of the gateway is to index transactions and optimistically cache the data posted to the network while waiting for it to be included in a block. This makes the transaction queryable in a "Pending" state almost instantly which allows applications built on top of a gateway to be more responsive. There is still a risk of transactions dropping out of the optimistic cache if they are not mined in a block by the peers.An example of how to post a direct transaction using arweave-js can be found in this guide.Bundled Transactions Services built on top of Arweave that provide additional utility for Permaweb builders are sometimes called Permaweb Services. A bundler is one such service. Bundlers take multiple individual transactions and bundle them together into a single transaction that is posted directly to Arweave. In this way a single transaction at the protocol level can contain tens of thousands of bundled transactions. There is one restriction, however, only data transactions can be included in a bundle. Wallet-to-wallet transactions (that transfer AR tokens between wallet addresses) must be done as individual transactions posted directly to Arweave.Dispatched Transactions Another way to post bundled transactions is from the browser. While browsers enforce some constraints around the size of data that can be uploaded, browser based wallets are able to post transactions to bundlers. Arweave browser wallets implement a dispatch() API method. If you are posting small transactions (100KB or less) you can use the wallets dispatch() method to take advantage of bundled transactions.An example of how to post a 100KB or less bundled transaction with an Arweave wallets dispatch() method can be found in this guide.Resources arweave-js example dispatch example Turbo SDK example
+
+---
+
+# 20. Hello World (Code)  Cooking with the Permaweb
+
+Document Number: 20
+Source: https://cookbook.arweave.net/getting-started/quick-starts/hw-code.html
+Words: 300
+Quality Score: 0.514
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Hello World (Code) This guide walks you through a quick way to get a static HTML, CSS and JavaScript webpage onto the Permaweb using a few lines of code and a command-line interface (CLI).Requirements NodeJS LTS or greater Basic knowledge of HTML, CSS and JavaScript A text editor (VS Code, Sublime, or similar) Description Using a terminal/console window create a new folder called hello-world.Setup cd hello-world
+npm init -y
+mkdir src && cd src
+touch index.js index.html style.css Next open your text editor and import the hello-world directory.Generate a wallet node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json The wallet.json file must be in the root of the hello-world folder and not inside of your src folder.Create a webpage This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using permaweb-deploy and our previously generated wallet to deploy a fully functioning, static and permanent webpage to Arweave.Paste the code from the following code blocks into their files:index.html Click to view HTML Cookbook Hello World! Click Me! # Hello World!
+
+style.css Click to view CSS.button {
+padding: "10px";
+background-color: #4caf50;
+} index.js Click to view JS Now that there is a static site to deploy, it can be checked to ensure it all functions properly by typing open src/index.html in your console/terminal. If everything is working as expected it is time to deploy to Arweave!Upload using permaweb-deploy Install and configure permaweb-deploy for deployment:npm install --save-dev permaweb-deploy Add a deployment script to your package.json:{
+"scripts": {
+"deploy": "permaweb-deploy --arns-name my-hello-world --deploy-folder src"
+}
+} Deploy your application:DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy For detailed deployment instructions, see Permaweb Deploy.Congrats!!You just published a static site on Arweave using a few commands and a few lines of code!
+
+---
+
+# 21. Svelte Starter Kits  Cooking with the Permaweb
+
+Document Number: 21
+Source: https://cookbook.arweave.net/kits/svelte/index.html
+Words: 115
+Quality Score: 0.512
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Svelte Starter Kits Svelte is a framework that compiles to a JavaScript bundle and in the process removes the framework from the distribution of the app. This results in a much smaller footprint than other frameworks. Svelte is the perfect framework for Permaweb Applications. A Permaweb Application is built on the principles of a Single Page Application, but lives on the Arweave network and is distributed by Permaweb gateways.Svelte Starter Kit Guides:Minimal - the minimum required to build a svelte permaweb app Vite - Svelte, Typescript and Vite Permaweb Application Constraints 100% Front-end application (No Server-Side Backend) Applications are served from a sub-path (https://[gateway]/[TX_ID]) Built with ❤️ by the Arweave community. Learn more at Arweave.org
+
+---
+
+# 22. Transaction Metadata (Tags)  Cooking with the Permaweb
+
+Document Number: 22
+Source: https://cookbook.arweave.net/fundamentals/transactions/tags.html
+Words: 559
+Quality Score: 0.510
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Arweave can be thought of as a permanent append-only hard drive where each entry on the drive is its own unique transaction. Transactions have a unique ID, signature, and owner address for the address that signed and paid for the transaction to be posted. Along with those header values, the Arweave protocol allows users to tag transactions with custom tags. These are specified as a collection name value pairs appended to the transaction. These tags make it possible to query Arweave and find all the Transactions that include a particular tag or tags. The ability to query and filter transactions is critical to supporting apps built on Arweave.What are Transaction Tags?Transaction tags are key-value pairs, where the combination of base64URL keys and values must be less than the maximum of 2048 bytes for an arweave native transaction.Some common examples of transaction tags include:Content-Type: Used to specify the MIME type of content for render on the permaweb.App-Name: This tag describes the app that is writing the data App-Version: This tag is the version of the app, paired with App-Name Unix-Time: This tag is the a unix timestamp, seconds since epoch.Title: Used to give a name or brief description of the content stored in the transaction.Description: Used to provide a longer description of the content.Transaction tags can be used for a variety of purposes, such as indexing transactions for search, organizing transactions into categories, or providing metadata about the content stored in a transaction.Some good things to know about Transaction Tags Transaction tags are encoded as Base64URL encoded strings for both the key and value. This makes it possible to post arrays of bytes as keys or values and transfer them safely over http. While it's not human readable without decoding, it shouldn't be considered encryption.The max total size of Transaction tags for transaction posted directly to Arweave is 2048 bytes. This size is determined by the concatenation of all keys and all values of the transaction tags.Transaction tags can be used in GraphQL queries to return a filtered set of transaction items.Common Tags used in the community Tag Name Description Use Cases App-Name Most commonly used to identify applications using Arweave Common uses are the project's name, sometimes also used in specific ANS transactions App-Version The version of this data, it may represent the app consuming this information E.g. 0.3.0 Content-Type MIME Type to identify the data contained in the transaction text/html, application/json, image/png Unix-Time This tag is the a unix timestamp, seconds since epoch The time the transaction is submitted Title ANS-110 Standard for describing content Providing a name for an Atomic Asset Type ANS-110 Standard for categorization of data a type can classify a permaweb asset Examples const tx = await arweave.createTransaction({ data: mydata });
+tx.addTag("Content-Type", "text/html");
+tx.addTag("Title", "My incredible post about Transaction Tags");
+tx.addTag("Description", "This is one post you do not want to miss!");
+tx.addTag("Topic:Amazing", "Amazing");
+tx.addTag("Type", "blog-post");
+
+await arweave.transactions.sign(tx, jwk);
+await arweave.transactions.post(tx);Summary Understanding how Transaction Tags factor into the Arweave tech stack can provide context on how to solve problems using the Permaweb as an application platform. Tags provide a tool to consume and create common data standards and patterns to encourage a non-rivalous data experience on the Permaweb. The result gives users of the ecosystem the choice of applications to consume and create content as their data is always with the user not the application.
+
+---
+
+# 23. Vue Starter Kits  Cooking with the Permaweb
+
+Document Number: 23
+Source: https://cookbook.arweave.net/kits/vue/index.html
+Words: 117
+Quality Score: 0.509
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Vue Starter Kits Vue.js is a progressive JavaScript framework that allows building user interfaces. Unlike other frameworks, it compiles the template into JavaScript during runtime, resulting in a smaller file size and faster performance. Vue is ideal for building performant and scalable single-page applications, making it a popular choice among front-end developers.Vue Starter Kit Guides:Note: - Since npm init vue@latest alredy uses vite, we have not included a vite guide for Vue.Create Vue App - Use Create Vue to efficiently build a Vue.js-based with TypeScript and Vite modern permaweb application Permaweb Application Constraints 100% Front-end application (No Server-Side Backend) Applications are served from a sub-path (https://[gateway]/[TX_ID]) Built with ❤️ by the Arweave community. Learn more at Arweave.org
+
+---
+
+# 24. ANS-103 Succinct Proofs of Random Access  Cooking with the Permaweb
+
+Document Number: 24
+Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-103.html
+Words: 1126
+Quality Score: 0.503
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+ANS-103: Succinct Proofs of Random Access Status: Draft Authors: Sam Williams sam@arweave.org, Lev Berman ldmberman@protonmail.com Abstract This document describes the new consensus mechanism for the Arweave network based on the competition to find a chunk of the past data in a set of historical chunks inferred from the latest agreed-upon blockweave state.Motivation At the time when this specification is written, the consensus mechanism employed by the Arweave network is a classical Proof of Work with an additional requirement of including a chunk (up to 256 KiB) of the past data into the hash preimage where the chunk is deterministically determined by the latest state of the blockweave.While this approach incentivizes the network to keep historical data, it does not impose any significant restrictions on the speed of access to data a miner needs to be competitive. Specifically, miners can benefit from using a remote storage pool. Moreover, combined with a computation pool, it can serve Proof of Work preimages to millions of clients per second via a Gbit Internet link. A storage and computation pool has been evidenced in the Arweave network by a decreased number of public nodes and a simultaneous increase of the network hashpower and people claiming to be part of the pool.Therefore, the new consensus algorithm's first goal is to make the mining advantage grow sharply with the growing speed of access to data, promoting replication more aggressively.The second but not less important goal is to reduce the energy consumed by the network. Proof of Work networks are known for their energy-intensity. Reduced energy consumption reduces the carbon footprint, widely believed to be very harmful to the planet. We believe the environment-friendliness of the consensus mechanism is crucial for the long-term sustainability of the Arweave platform.To sum up, the consensus algorithm described here aims at two major goals.Disincentivize miners from retrieving data on demand from the network. In other words, incentivize miners to store data as close to the mining machine as possible.Reduce network's energy consumption.Reference Implementation Link.Specification Prerequsites Indexed Dataset The core of the new mechanism - continuous retrieval of chunks of the past data. Every chunk is identified by a global offset, as we want to make the possession of any byte equally incentivized. Therefore, the whole weave has to be indexed so that every chunk is quickly accessible by its global offset.Starting from the release 2.1, the Arweave Erlang client maintains such an index.Slow Hash The consensus mechanism needs a deterministic but unpredictable way to choose candidate chunks, to make the miners continuously access storage. However, choosing candidate chunks cannot be too easy as it would allow miners to reduce the number of chunks they ever work with. There are two threats associated with that. One threat is the lower cost of the computation expenditure, as compared to the cost of storing extra data required for the same probability of a reward. The second threat is the existing computation technology that, although being more expensive than storing the entire weave, is so efficient that it outperforms even the most efficient data retrieval based client.Starting from release 1.7, the Arweave protocol relies on RandomX, a proof-of-work algorithm optimized for general-purpose CPUs.Algorithm Description Every block uniquely determines a Search Space - a set of offsets (Recall Bytes) on the [0, weave size at a certain block (Search Space Upper Bound)] interval.Miner Steps Generate a random nonce and generate a slow hash (H0) of the hash of a Merkle tree containing the current state, the candidate block, and the nonce.Compute the unique recall byte from H0, the hash of the previous block (PrevH), and Search Space Upper Bound.Search the local storage for the chunk containing the computed Recall Byte. If not found, repeat from the first step.Compute a fast hash of the hash of the Merkle tree containing the slow hash computed at the first step and the located chunk.Check whether the computed hash is bigger than the current mining difficulty (the number computed from its binary digit big-endian representation is bigger). If not, repeat from the first step. If yes, pack and distribute the block (the block contains the nonce and the chunk).The solution chunk together with the Merkle proofs of its inclusion in the blockweave we call Succinct Proof of Random Access (or SPoRA) and use as a name for the new consensus mechanism.Verifier Steps Perform one iteration over the miner steps where the nonce and the chunk are found in the verified block.Rationale Search Space Constraints Search Space needs to be big enough for two reasons:make it prohibitively expensive to download the entire search space on demand; note that the prior consensus mechanism can be viewed as an edge case of SPoRA where the search space consists of a single chunk; the efficiency of serving data to the computing agents on demand depends on the network bandwidth, which grows over time.make it prohibitively expensive to compensate for the lack of data by hashing.On the other hand, Search Space needs to be small enough to incentivize miners to replicate the rarer parts of the weave, which would give them and advantage over miners who replicated less of the corresponding area at the corresponding blocks.We choose the Search Space size to be 10% of the weave. In this case, 10% of the miners storing unique 10% of the weave in the network where everybody stores 90% of the weave are roughly 1.2 times more efficient than the rest of the miners. It holds for various ratios of the time it takes to compute a RandomX hash and the time it takes to look up a chunk.Pseudocode The ar_deep_hash definition.mine(Nonce, BlockPreimage, PrevH, SearchSpaceUpperBound):
+// Compute a slow hash.
+H0 := randomx_hash(concat(Nonce, BlockPreimage))
+RecallByte := pick_recall_byte(H0, PrevH, SearchSpaceUpperBound)
+// Search the local storage for the chunk containing Recall Byte.
+SPoA := get_spoa_by_byte(RecallByte)
+if SPoA == not_found
+mine(random_nonce(), BlockPreimage, PrevH, SearchSpaceUpperBound)
+Chunk := get_chunk(SPoA)
+SolutionHash := randomx_hash(concat(H0, PrevH, Timestamp, Chunk))
+if validate(Candidate, Diff)
+return
+mine(random_nonce(), BlockPreimage, PrevH, SearchSpaceUpperBound)
+
+pick_recall_byte(H0, PrevH, SearchSpaceUpperBound):
+SubspaceNumber := remainder(hash_to_number(H0), SUBSPACES_COUNT)
+SearchSpaceSize := integer_division(SearchSpaceUpperBound, 10)
+EvenSubspaceSize := integer_division(SearchSpaceUpperBound, SUBSPACES_COUNT)
+SearchSubspaceSize := integer_division(SearchSpaceSize, SUBSPACES_COUNT)
+SubspaceStart := SubspaceNumber * EvenSubspaceSize
+SubspaceSize := min(SearchSpaceUpperBound - SubspaceStart, EvenSubspaceSize)
+EncodedSubspaceNumber := number_to_binary(SubspaceNumber)
+SearchSubspaceSeed := hash_to_number(sha256(concat(PrevH, EncodedSubspaceNumber)))
+SearchSubspaceStart := remainder(SearchSubspaceSeed, SubspaceSize)
+SearchSubspaceByteSeed := hash_to_number(sha256(H))
+SearchSubspaceByte := remainder(SearchSubspaceByteSeed, SearchSubspaceSize)
+return AbsoluteSubspaceStart + remainder(SearchSubspaceStart + SearchSubspaceByte, SubspaceSize) The work was heavily inspired by Permacoin: Repurposing Bitcoin Work for Data Preservation by Andrew Miller, Ari Juels, Elaine Shi, Bryan Parno, and Jonathan Katz from Microsoft Research.We suggest to use the existing, growing, and always accessible Arweave dataset instead of one pre-generated by a trusted dealer. We use a slow specialized hardware-resistant hash to make it prohibitively expensive to compensate for the lack of local data with computation. Finally, we provide the network with the incentive to replicate data uniformly.
+
+---
+
+# 25. ANS-106 Do-Not-Store Request  Cooking with the Permaweb
+
+Document Number: 25
+Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-106.html
+Words: 324
+Quality Score: 0.503
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+ANS-106: Do-Not-Store Request Status: Draft-1 Authors: Abhav Kedia abhav@arweave.org, Sam Williams sam@arweave.org Abstract This document describes a transaction format that users of the Arweave network can use to request miners to not store certain kinds of data, for various reasons. In order to request non-storage, upload a transaction with the transaction ID of the data in question, along with tags as specified here. Upon receiving this data, nodes in the network will independently decide whether or not to accept the request.Motivation The Arweave permanent storage protocol enables a truly permanent digital store of media and documents.There might be various reasons why persons or entities might wish to remove some data from the network. These include privacy, government regulation and copyright violations. By uploading a transaction that adheres to this standard, users of the network can ensure that their request is broadcast to all relevant storage node operators.Specification Transaction Format A Do-Not-Store Request transaction MUST be a transaction with the following tags:Tag Name Optional?Tag Value App-Name False Do-Not-Store Do-Not-Store False Arweave Txn ID of the data in question Category True Category-Tag Geography True If requesting removal in particular countries, include the 2 letter Country-Code (Alpha-2, ISO 3166) Content-Type True A guide to the type of content included in the body of the transaction, in order to aid rendering.The body of the transaction must then include a text description of the reason for the case describing why the data should not be stored. Multiple Do-Not-Store tags may be added to request non-storage of multiple data items at once.Category-Tags Category tags are a short-hand way of specifying the reason for removal. Common tags include Private, Regulation, Copyright. Custom category tags may be used as appropriate. Custom tags must not exceed 50 characters.Future work There may be a need to request removal based on various properties of data or tags associated with them. This standard may be extended to allow for lists of transactions and/or associated filtering criteria.
+
+---
+
+# 26. ANS-110 Asset Discoverability  Cooking with the Permaweb
+
+Document Number: 26
+Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-110.html
+Words: 379
+Quality Score: 0.503
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+ANS-110: Asset Discoverability Status: Draft Authors: Tom Wilson (tom@hyper.io), Sam Williams (sam@arweave.org), Abhav Kedia (abhav@arweave.org) Abstract This document specifies a data protocol that allows assets to be discovered and uniformly dised on the permaweb.Motivation The permaweb is a rich collection of various kinds of data -- media, content, functions, and applications. A standard protocol for identifying assets enables discoverability for dashboards, exchanges, and higher-level permaweb services. By providing an extensible data protocol for transactions, creators and publishers can harness the power of permaweb-wide content discoverability -- making it easily appear in various applications and contexts across the permaweb.This protocol would enable, for example, a marketplace or exchange where users trade media assets to render them in a user-friendly way. By extending asset transactions using these identifiers, creators provide a clear and composable set of identifiers that marketplaces or exchanges can use to give a detailed description of the asset. Another example would be a search engine service that may want to index specific types of assets.Specfication Transaction Format To utilize Asset Discoverability, a creator or publisher can dispatch or post an Arweave transaction specifying the following tags.Tag Name Optional?Tag Value Title False A maximum of 150 characters used to identify the content, this title can provide a quick eye catching description of the asset Type* False Type of asset. One or more of: meme, image, video, podcast, blog-post, social-post, music, token, web-page, profile Topic* True Zero to many topics that can be used to locate assets of a given type by a specific topic. For example: an asset of type meme might have the following two topics, Funny, Sports.Description True A longer description of 300 characters that can provide a set of details further describing the asset Usage The primary purpose of these tags is to allow content devs to leverage GraphQL to find asset transactions of a specific type or topic for use in their applications.query {
+transactions(
+first: 100,
+tags: [
+{ name: "Type", values: ["meme", "blog-post"] },
+{ name: "Topic:Funny", values: ["Funny"] },
+{ name: "Topic:Jokes", values: ["Jokes"] }
+]) {
+edges {
+node {
+id
+owner {
+address
+}
+tags {
+name
+value
+}
+}}
+}
+} This GraphQL query filters based on Type and Topic tags to filter Assets for an aggregate list dis.
+
+---
+
 # 27. React Starter Kits  Cooking with the Permaweb
 
 Document Number: 27
@@ -1668,9 +1696,94 @@ React Starter Kits React is a popular library used for building user interfaces.
 
 ---
 
-# 28. arkb  Cooking with the Permaweb
+# 28. Minimal Svelte Starter Kit  Cooking with the Permaweb
 
 Document Number: 28
+Source: https://cookbook.arweave.net/kits/svelte/minimal.html
+Words: 528
+Quality Score: 0.496
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Minimal Svelte Starter Kit This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb application.Prerequisites Know typescript NodeJS v18 or greater Know Svelte - https://svelte.dev Know git and common terminal commands Development Dependencies TypeScript esbuild w3 Steps Create Project mkdir myproject
+cd myproject
+npm init -y
+npm install -D svelte esbuild typescript esbuild-svelte tinro svelte-preprocess mkdir myproject
+cd myproject
+yarn init -y
+yarn add -D svelte esbuild typescript esbuild-svelte tinro svelte-preprocess Create buildscript.js import fs from "fs";
+import esbuild from "esbuild";
+import esbuildSvelte from "esbuild-svelte";
+import sveltePreprocess from "svelte-preprocess";
+
+//make sure the directoy exists before stuff gets put into it
+if (!fs.existsSync("./dist/")) {
+fs.mkdirSync("./dist/");
+}
+esbuild
+.build({
+entryPoints: [`./src/main.ts`],
+bundle: true,
+outdir: `./dist`,
+mainFields: ["svelte", "browser", "module", "main"],
+// logLevel: `info`,
+splitting: true,
+write: true,
+format: `esm`,
+plugins: [
+esbuildSvelte({
+preprocess: sveltePreprocess(),
+}),
+],
+})
+.catch((error, location) => {
+console.warn(`Errors: `, error, location);
+process.exit(1);
+});
+
+//use a basic html file to test with
+fs.copyFileSync("./index.html", "./dist/index.html");Modify package.json Set type to module, add a build script {
+"type": "module"
+...
+"scripts": {
+"build": "node buildscript.js"
+}
+} Create src directory and some src files mkdir src
+touch src/main.ts
+touch src/app.svelte
+touch src/counter.svelte
+touch src/about.svelte Main.ts import App from "./app.svelte";
+
+new App({
+target: document.body,
+});app.svelte Hash Routing You will notice the router.mode.hash() setting in the script session, this is important to configure your application to use hash based routing, which will enable url support when running that application on a path, like https://[gateway]/[TX] counter.svelte # Hello Permaweb
+
+Inc Count: {count}
+
+about.svelte # About Page
+
+Minimal About Page
+
+Home Add index.html Vite + Svelte + TS Deploy Permanently Generate Wallet We need the arweave package to generate a wallet npm install --save arweave yarn add arweave -D then run this command in the terminal node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json Fund Wallet You will need to fund your wallet with ArDrive Turbo credits. To do this, enter ArDrive and import your wallet. Then, you can purchase turbo credits for your wallet.Setup Permaweb-Deploy npm install --global permaweb-deploy yarn global add permaweb-deploy Update vite.config.ts import { defineConfig } from 'vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
+
+export default defineConfig({
+plugins: [svelte()],
+base: './'
+}) Update package.json {
+...
+"scripts": {
+...
+"deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
+}
+...
+} Replace << ANT-PROCESS >> with your ANT process id.Run build Now it is time to generate a build, run npm run build yarn build Run deploy Finally we are good to deploy our first Permaweb Application npm run deploy yarn deploy ERROR If you receive an error Insufficient funds, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.Response You should see a response similar to the following:Deployed TxId [< >] to ANT [< >] using undername [< >] Your Svelte app can be found at https://arweave.net/<< tx-id >>.SUCCESS You should now have a Svelte Application on the Permaweb! Great Job!Summary This is a minimal version of publishing a Svelte application on the permaweb, but you may want more features, like hot-reloading and tailwind, etc. Check out hypar for a turnkey starter kit. HypAR
+
+---
+
+# 29. arkb  Cooking with the Permaweb
+
+Document Number: 29
 Source: https://cookbook.arweave.net/tooling/deployment/arkb.html
 Words: 243
 Quality Score: 0.495
@@ -1681,65 +1794,6 @@ arkb Requirements An Arweave wallet is required to deploy using arkb for coverin
 |- index.html
 |- styles.css
 |- index.js Default Deployment Deploying as an L1 transaction can take longer to confirm as it is directly uploaded to the Arweave network.arkb deploy [folder] --wallet [path to wallet] Bundled Deployment To deploy using Bundlr you will need to fund a Bundlr node.Bundlr node2 allows free transactions under 100kb.You can add custom identifiable tags to the deployment using tag-name/tag-value syntax.arkb deploy [folder] --use-bundler [bundlr node] --wallet [path to wallet] --tag-name [tag name] --tag-value [tag value] Other Commands Fund Bundlr arkb fund-bundler [amount] --use-bundler [bundlr node] * Funding a Bundlr instance can take up to 30 minutes to process Saving Keyfile arkb wallet-save [path to wallet] After saving your key you can now run commands without the --wallet-file option, like this arkb deploy [path to directory] Check Wallet Balance arkb balance
-
----
-
-# 29. Entity Types  Cooking with the Permaweb
-
-Document Number: 29
-Source: https://cookbook.arweave.net/tooling/specs/arfs/entity-types.html
-Words: 1168
-Quality Score: 0.491
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Entity Types Overview Arweave transactions are composed of transaction headers and data payloads.ArFS entities, therefore, have their data split between being stored as tags on their transaction header and encoded as JSON and stored as the data of a transaction. In the case of private entities, JSON data and file data payloads are always encrypted according to the protocol processes defined below.Drive entities require a single metadata transaction, with standard Drive tags and encoded JSON with secondary metadata.Folder entities require a single metadata transaction, with standard Folder tags and an encoded JSON with secondary metadata.File entities require a metadata transaction, with standard File tags and an encoded Data JSON with secondary metadata relating to the file.File entities also require a second data transaction, which includes a limited set of File tags and the actual file data itself.Snapshot entities require a single transaction. which contains a Data JSON with all of the Drive’s rolled up ArFS metadata and standard Snapshot GQL tags that identify the Snapshot.Drive A drive is the highest level logical grouping of folders and files. All folders and files must be part of a drive, and reference the Drive ID of that drive.When creating a Drive, a corresponding folder must be created as well. This will act as the root folder of the drive. This separation of drive and folder entity enables features such as folder view queries, renaming, and linking.Drive Entity Transaction Example Folder A folder is a logical grouping of other folders and files. Folder entity metadata transactions without a parent folder id are considered the Drive Root Folder of their corresponding Drives. All other Folder entities must have a parent folder id. Since folders do not have underlying data, there is no Folder data transaction required.ArFS: "0.13"
-Cipher?: "AES256-GCM"
-Cipher-IV?: "<12 byte initialization vector as Base64>"
-Content-Type: ""
-Drive-Id: ""
-Entity-Type: "folder"
-Folder-Id: ""
-Parent-Folder-Id?: ""
-Unix-Time: ""
-Data JSON {
-"name": ""
-} Folder Entity Transaction Example File A File contains uploaded data, like a photo, document, or movie.In the Arweave File System, a single file is broken into 2 parts - its metadata and its data.In the Arweave File System, a single file is broken into 2 parts - its metadata and its data.A File entity metadata transaction does not include the actual File data. Instead, the File data must be uploaded as a separate transaction, called the File Data Transaction. The File JSON metadata transaction contains a reference to the File Data Transaction ID so that it can retrieve the actual data. This separation allows for file metadata to be updated without requiring the file itself to be reuploaded. It also ensures that private files can have their JSON Metadata Transaction encrypted as well, ensuring that no one without authorization can see either the file or its metadata.ArFS: "0.13"
-Cipher?: "AES256-GCM"
-Cipher-IV?: "<12 byte initialization vector as Base64>"
-Content-Type: ""
-Drive-Id: ""
-Entity-Type: "file"
-File-Id: ""
-Parent-Folder-Id: ""
-Unix-Time: ""
-Data JSON {
-"name": "",
-"size": "",
-"lastModifiedDate": "",
-"dataTxId": "",
-"dataContentType": "",
-"pinnedDataOwner": "" # Optional
-} Pin Files Since the version v0.13, ArFS suports Pins. Pins are files whose data may be any transaction uploaded to Arweave, that may or may not be owned by the wallet that created the pin.When a new File Pin is created, the only created transaction is the Metadata Transaction. The dataTxId field will point it to any transaction in Arweave, and the optional pinnedDataOwner field is gonna hold the address of the wallet that owns the original copy of the data transaction.File Data Transaction Example The File Data Transaction contains limited information about the file, such as the information required to decrypt it, or the Content-Type (mime-type) needed to view in the browser.Cipher?: "AES256-GCM"
-Cipher-IV?: "<12 byte initialization vector as Base64>"
-Content-Type: ""
-{ File Data - Encrypted if private } File Metadata Transaction Example The the File Metadata Transaction contains the GQL Tags necessary to identify the file within a drive and folder.Its data contains the JSON metadata for the file. This includes the file name, size, last modified date, data transaction id, and data content type.ArFS: "0.13"
-Cipher?: "AES256-GCM"
-Cipher-IV?: "<12 byte initialization vector as Base64>"
-Content-Type: ""
-Drive-Id: ""
-Entity-Type: "file"
-File-Id: ""
-Parent-Folder-Id: ""
-Unix-Time: ""
-{ File JSON Metadata - Encrypted if private } Snapshot ArFS applications generate the latest state of a drive by querying for all ArFS transactions made relating to a user's particular Drive-Id. This includes both paged queries for indexed ArFS data via GQL, as well as the ArFS JSON metadata entries for each ArFS transaction.For small drives (less than 1000 files), a few thousand requests for very small s of data can be achieved relatively quickly and reliably. For larger drives, however, this results in long sync times to pull every piece of ArFS metadata when the local database cache is empty. This can also potentially trigger rate-limiting related ArWeave Gateway delays.Once a drive state has been completely, and accurately generated, in can be rolled up into a single snapshot and uploaded as an Arweave transaction. ArFS clients can use GQL to find and retrieve this snapshot in order to rapidly reconstitute the total state of the drive, or a large portion of it. They can then query individual transactions performed after the snapshot.This optional method offers convenience and resource efficiency when building the drive state, at the cost of paying for uploading the snapshot data. Using this method means a client will only have to iterate through a few snapshots instead of every transaction performed on the drive.Snapshot Entity Tags Snapshot entities require the following tags. These are queried by ArFS clients to find drive snapshots, organize them together with any other transactions not included within them, and build the latest state of the drive.ArFS: "0.13"
-Drive-Id: ""
-Entity-Type: "snapshot"
-Snapshot-Id: ""
-Content-Type: ""
-Block-Start: ""
-Block-End: ""
-Data-Start: "" Snapshot Transaction GQL tags example Snapshot Entity Data A JSON data object must also be uploaded with every ArFS Snapshot entity. THis data contains all ArFS Drive, Folder, and File metadata changes within the associated drive, as well as any previous Snapshots. The Snapshot Data contains an array txSnapshots. Each item includes both the GQL and ArFS metadata details of each transaction made for the associated drive, within the snapshot's start and end period.A tsSnapshot contains a gqlNode object which uses the same GQL tags interface returned by the Arweave Gateway. It includes all of the important block, owner, tags, and bundledIn information needed by ArFS clients. It also contains a dataJson object which stores the correlated Data JSON for that ArFS entity.For private drives, the dataJson object contains the JSON-string-escaped encrypted text of the associated file or folder. This encrypted text uses the file's existing Cipher and Cipher-IV. This ensures clients can decrypt this information quickly using the existing ArFS privacy protocols.Snapshot Transaction JSON data example Schema Diagrams The following diagrams show complete examples of Drive, Folder, and File entity Schemas.Public Drive Public Drive Schema Private Drive Private Drive Schema
 
 ---
 
@@ -1819,22 +1873,9 @@ Authors: Sam Williams sam@arweave.org, Abhav Kedia abhav@arweave.org Abstract Th
 
 ---
 
-# 35. Gateways in the Arweave Network  Cooking with the Permaweb
+# 35. Cooking with the Permaweb
 
 Document Number: 35
-Source: https://cookbook.arweave.net/fundamentals/accessing-arweave-data/gateways.html
-Words: 275
-Quality Score: 0.473
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Gateways in the Arweave Network Gateways serve as the interface between the Arweave network and end-users, making permaweb data easily accessible through standard web browsers. Often described as the "front door to the permaweb," these services allow users to interact with blockchain-stored content in a familiar web-like experience.When you access content on Arweave, you typically use a URL structure like:https:/// This allows HTML files to render as web pages, images to dis properly, and other data types to be served appropriately—creating an experience similar to the traditional web despite the content being stored on a decentralized network.Key Functions of Gateways Gateways provide several critical services beyond basic content delivery:Content Caching: Store frequently accessed transactions to improve performance Data Indexing: Provide GraphQL interfaces for querying transactions by tags and metadata Network Seeding: Help distribute transactions throughout the Arweave network Content Moderation: Apply content policies to determine which data is served Relationship to Core Protocol It's important to understand that gateways are not part of the core Arweave protocol. This distinction has several implications:Operating a gateway is separate from running a node that secures the network There is no built-in protocol-level incentive structure for gateway operators Gateway services can implement their own economic models and incentives Applications can operate their own gateways for improved performance This separation allows for a more flexible and decentralized ecosystem where different gateway operators can experiment with various service models.Several gateway services currently serve the Arweave ecosystem:arweave.net - Operated by the Arweave team arweave.world arweave.asia arweave.live g8way.io The AR.IO project is working to make gateway operation more accessible, potentially increasing the decentralization of access points to the network.ArWiki Gateway Documentation AR.IO Project
-
----
-
-# 36. Cooking with the Permaweb
-
-Document Number: 36
 Source: https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/creating-a-wallet.html
 Words: 167
 Quality Score: 0.471
@@ -1854,9 +1895,9 @@ ardrive generate-wallet > /path/to/wallet/file.json Built with ❤️ by the Arw
 
 ---
 
-# 37. Getting Started  Cooking with the Permaweb
+# 36. Getting Started  Cooking with the Permaweb
 
-Document Number: 37
+Document Number: 36
 Source: https://cookbook.arweave.net/getting-started/index.html
 Words: 160
 Quality Score: 0.471
@@ -1867,9 +1908,9 @@ Getting Started Welcome to the Permaweb Cookbook! This guide will help you get s
 
 ---
 
-# 38. Privacy  Cooking with the Permaweb
+# 37. Privacy  Cooking with the Permaweb
 
-Document Number: 38
+Document Number: 37
 Source: https://cookbook.arweave.net/tooling/specs/arfs/privacy.html
 Words: 700
 Quality Score: 0.467
@@ -1882,9 +1923,9 @@ Cipher-IV?: "<12 byte initialization vector as Base64>" Just like drives, privat
 
 ---
 
-# 39. ANS-102 Bundled Data - JSON Serialization  Cooking with the Permaweb
+# 38. ANS-102 Bundled Data - JSON Serialization  Cooking with the Permaweb
 
-Document Number: 39
+Document Number: 38
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-102.html
 Words: 708
 Quality Score: 0.467
@@ -1912,9 +1953,9 @@ data
 
 ---
 
-# 40. Developing on the Permaweb  Cooking with the Permaweb
+# 39. Developing on the Permaweb  Cooking with the Permaweb
 
-Document Number: 40
+Document Number: 39
 Source: https://cookbook.arweave.net/getting-started/welcome.html
 Words: 203
 Quality Score: 0.465
@@ -1925,9 +1966,9 @@ Developing on the Permaweb Welcome to the Permaweb Creating applications on the 
 
 ---
 
-# 41. Wallets and Keys  Cooking with the Permaweb
+# 40. Wallets and Keys  Cooking with the Permaweb
 
-Document Number: 41
+Document Number: 40
 Source: https://cookbook.arweave.net/fundamentals/wallets-and-keyfiles/index.html
 Words: 515
 Quality Score: 0.459
@@ -1949,9 +1990,9 @@ Wallets and Keys Arweave wallets serve as the gateway to interact with the Arwea
 
 ---
 
-# 42. Path Manifests  Cooking with the Permaweb
+# 41. Path Manifests  Cooking with the Permaweb
 
-Document Number: 42
+Document Number: 41
 Source: https://cookbook.arweave.net/fundamentals/accessing-arweave-data/manifests.html
 Words: 370
 Quality Score: 0.456
@@ -1991,9 +2032,9 @@ Path Manifests Overview When uploading files to Arweave each file is assigned it
 
 ---
 
-# 43. ANS-101 Gateway Capabilities Endpoint  Cooking with the Permaweb
+# 42. ANS-101 Gateway Capabilities Endpoint  Cooking with the Permaweb
 
-Document Number: 43
+Document Number: 42
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-101.html
 Words: 248
 Quality Score: 0.454
@@ -2013,9 +2054,9 @@ ANS-101: Gateway Capabilities Endpoint Status: Draft Version: - Abstract This do
 
 ---
 
-# 44. ANS-104 Bundled Data v20 - Binary Serialization  Cooking with the Permaweb
+# 43. ANS-104 Bundled Data v20 - Binary Serialization  Cooking with the Permaweb
 
-Document Number: 44
+Document Number: 43
 Source: https://cookbook.arweave.net/tooling/specs/ans/ANS-104.html
 Words: 1589
 Quality Score: 0.454
@@ -2067,9 +2108,9 @@ data
 
 ---
 
-# 45. References  Cooking with the Permaweb
+# 44. References  Cooking with the Permaweb
 
-Document Number: 45
+Document Number: 44
 Source: https://cookbook.arweave.net/references/index.html
 Words: 85
 Quality Score: 0.449
@@ -2080,9 +2121,9 @@ References Reference documentation, specifications, and resources for Permaweb d
 
 ---
 
-# 46. ArFS Protocol A Decentralized File System on Arweave  Cooking with the Permaweb
+# 45. ArFS Protocol A Decentralized File System on Arweave  Cooking with the Permaweb
 
-Document Number: 46
+Document Number: 45
 Source: https://cookbook.arweave.net/tooling/specs/arfs/arfs.html
 Words: 404
 Quality Score: 0.446
@@ -2093,9 +2134,9 @@ ArFS Protocol: A Decentralized File System on Arweave Arweave File System, or �
 
 ---
 
-# 47. Contributing Workflow  Cooking with the Permaweb
+# 46. Contributing Workflow  Cooking with the Permaweb
 
-Document Number: 47
+Document Number: 46
 Source: https://cookbook.arweave.net/getting-started/contributing.html
 Words: 315
 Quality Score: 0.443
@@ -2103,6 +2144,19 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Contributing Workflow Anyone in the community is welcome to contribute to the Permaweb Cookbook, as community members we want a high quality reference guide of little snack bite sized nuggets of information. Below is a step by step workflow of how anyone can contribute to this project.What do you need to know?Git and Github - publishes content to github.com.Markdown - Markdown is a text based markup language that can be transformed into HTML Arweave and the Permaweb - Have some knowledge about the Permaweb that should be shared Steps to Contribute Commiting work We are using conventional commits for this repository.General flow for making a contribution:Fork the repo on GitHub Clone the project to your own machine Commit changes to your own branch Push your work back up to your fork Submit a Pull request so that we can review your changes NOTE: Be sure to merge the latest from "upstream" before making a pull request!Style Here are some suggestions on tone and style from some contributors:TIP In writing them, I'm getting a feeling for the tone that's appropriate for each. CoreConcepts should be rather textbook like, neutral voice, objective. "This is how Arweave works" For Guides, I think it's ok to have a more personal voice. Refer to the reader as "you" and speak in the collaborative voice "next we'll take a look at..." This may just be personal preference, but in general I feel this tone much more supportive and accessible when following a longer form guide. Indeed, its the voice that most popular tutorials from other ecosystems are written in. For Resources, I think it shares the same voice as core concepts, with a preference for brevity.dmac TIP Conceptual and referencial data should have a more cold scientific tone and guides should be a supportive or even humorous tone. Longer form content needs to pull readers in without them zoning out.Arch_Druid CONTRIBUTING
+
+---
+
+# 47. Gateways in the Arweave Network  Cooking with the Permaweb
+
+Document Number: 47
+Source: https://cookbook.arweave.net/fundamentals/accessing-arweave-data/gateways.html
+Words: 276
+Quality Score: 0.428
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Gateways in the Arweave Network Gateways serve as the interface between the Arweave network and end-users, making permaweb data easily accessible through standard web browsers. Often described as the "front door to the permaweb," these services allow users to interact with blockchain-stored content in a familiar web-like experience.When you access content on Arweave, you typically use a URL structure like:https:// / This allows HTML files to render as web pages, images to dis properly, and other data types to be served appropriately—creating an experience similar to the traditional web despite the content being stored on a decentralized network.Key Functions of Gateways Gateways provide several critical services beyond basic content delivery:Content Caching: Store frequently accessed transactions to improve performance Data Indexing: Provide GraphQL interfaces for querying transactions by tags and metadata Network Seeding: Help distribute transactions throughout the Arweave network Content Moderation: Apply content policies to determine which data is served Relationship to Core Protocol It's important to understand that gateways are not part of the core Arweave protocol. This distinction has several implications:Operating a gateway is separate from running a node that secures the network There is no built-in protocol-level incentive structure for gateway operators Gateway services can implement their own economic models and incentives Applications can operate their own gateways for improved performance This separation allows for a more flexible and decentralized ecosystem where different gateway operators can experiment with various service models.Several gateway services currently serve the Arweave ecosystem:arweave.net - Operated by the Arweave team arweave.world arweave.asia arweave.live g8way.io The AR.IO project is working to make gateway operation more accessible, potentially increasing the decentralization of access points to the network.ArWiki Gateway Documentation AR.IO Project
 
 ---
 
@@ -2116,6 +2170,7 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 GraphQL Tools This section covers the tools and libraries available for querying Arweave data using GraphQL. GraphQL provides a powerful and flexible way to retrieve exactly the data you need from the Arweave network.Core GraphQL Tools ar-gql - JavaScript Library Lightweight GraphQL client for Arweave TypeScript support Easy integration with web applications Comprehensive query building Querying Arweave - Comprehensive Guide Complete overview of Arweave querying methods GraphQL query examples and patterns Best practices for data retrieval Advanced Querying Goldsky Search Gateway - Search & Indexing Advanced search capabilities Full-text search across Arweave data Indexing and aggregation features High-performance querying Getting Started Basic GraphQL Query import { gql } from 'ar-gql'
+
 const query = gql`
 query {
 transactions(
@@ -2158,6 +2213,7 @@ AO Process ←──────→ Other AO Process
 Lua/WASM Runtime
 ↓ (Update State)
 Arweave Storage
+
 Decentralized Computing Network:
 ┌─────────────────────────────────────┐
 │ Node 1 Node 2 Node 3 ... Node N │
@@ -2169,22 +2225,9 @@ Decentralized Computing Network:
 
 ---
 
-# 50. Content Types  Cooking with the Permaweb
+# 50. Guides  Cooking with the Permaweb
 
 Document Number: 50
-Source: https://cookbook.arweave.net/tooling/specs/arfs/content-types.html
-Words: 159
-Quality Score: 0.417
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Content Types All transaction types in ArFS leverage a specific metadata tag for the Content-Type (also known as mime-type) of the data that is included in the transaction. ArFS clients must determine what the mime-type of the data is, in order for Arweave gateways and browswers to render this content appropriately.All public drive, folder, and file (metadata only) entity transactions all use a JSON standard, therefore they must have the following content type tag:Content-Type: '' However, a file's data transaction must have its mime-type determined. This is stored in the file's corresponding metadata transaction JSON's dataContentType as well as the content type tag in the data transaction itself.Content-Type: "" All private drive, folder, and file entity transactions must have the following content type, since they are encrypted:Content-Type: '' ArDrive-Core open in new window includes methods to determine a file's content type.Other Tags ArFS enabled clients should include the following tags on their transactions to identify their application App-Name: "
-
----
-
-# 51. Guides  Cooking with the Permaweb
-
-Document Number: 51
 Source: https://cookbook.arweave.net/guides/index.html
 Words: 142
 Quality Score: 0.416
@@ -2195,9 +2238,9 @@ Guides Step-by-step tutorials and practical guides for building on the Permaweb.
 
 ---
 
-# 52. Hello World (No Code)  Cooking with the Permaweb
+# 51. Hello World (No Code)  Cooking with the Permaweb
 
-Document Number: 52
+Document Number: 51
 Source: https://cookbook.arweave.net/getting-started/quick-starts/hw-no-code.html
 Words: 90
 Quality Score: 0.415
@@ -2205,6 +2248,19 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 Hello World (No Code) In this quick start we are going to upload an image to the Permaweb with no code.Requirements Computer Internet Modern web browser Create a wallet https://arweave.app/add open in new window or https://wander.app open in new window Send some data to Arweave Go to https://hello_cookbook.arweave.net open in new window Enter some data and click publish, connect your wallet and "BAM" Congratulations!You just published some data on Arweave using zero code.To check out the project -> https://github.com/twilson63/pw-no-code-hello Built with ❤️ by the Arweave community. Learn more at Arweave.org
+
+---
+
+# 52. Content Types  Cooking with the Permaweb
+
+Document Number: 52
+Source: https://cookbook.arweave.net/tooling/specs/arfs/content-types.html
+Words: 162
+Quality Score: 0.414
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Content Types All transaction types in ArFS leverage a specific metadata tag for the Content-Type (also known as mime-type) of the data that is included in the transaction. ArFS clients must determine what the mime-type of the data is, in order for Arweave gateways and browswers to render this content appropriately.All public drive, folder, and file (metadata only) entity transactions all use a JSON standard, therefore they must have the following content type tag:Content-Type: ' ' However, a file's data transaction must have its mime-type determined. This is stored in the file's corresponding metadata transaction JSON's dataContentType as well as the content type tag in the data transaction itself.Content-Type: " " All private drive, folder, and file entity transactions must have the following content type, since they are encrypted:Content-Type: ' ' ArDrive-Core open in new window includes methods to determine a file's content type.Other Tags ArFS enabled clients should include the following tags on their transactions to identify their application App-Name: "
 
 ---
 

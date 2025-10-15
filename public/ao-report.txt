@@ -3,21 +3,21 @@
 
 Site: AO Cookbook
 Base URL: https://cookbook_ao.arweave.net
-Generated: 2025-07-31T17:29:37.800Z
+Generated: 2025-10-15T00:05:00.323Z
 
 📈 EXTRACTION STATISTICS
 ------------------------------
-Total pages: 90
-Successful: 90
+Total pages: 92
+Successful: 92
 Failed: 0
 Quality filtered: 0
-Total words: 36805
-Average words per page: 409
+Total words: 38018
+Average words per page: 413
 
-Average quality score: 0.469
+Average quality score: 0.481
 
 🔧 EXTRACTION METHODS
 -------------------------
-defuddle_semantic: 89 (98.9%)
+defuddle_semantic: 91 (98.9%)
 semantic_dom: 1 (1.1%)
 

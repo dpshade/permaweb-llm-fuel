@@ -3,21 +3,20 @@
 
 Site: AR-IO Network
 Base URL: https://docs.ar.io
-Generated: 2025-07-31T17:29:59.347Z
+Generated: 2025-10-15T00:05:34.336Z
 
 📈 EXTRACTION STATISTICS
 ------------------------------
-Total pages: 125
-Successful: 125
+Total pages: 109
+Successful: 109
 Failed: 0
 Quality filtered: 0
-Total words: 70927
-Average words per page: 567
+Total words: 65491
+Average words per page: 601
 
-Average quality score: 0.450
+Average quality score: 0.511
 
 🔧 EXTRACTION METHODS
 -------------------------
-defuddle_semantic: 124 (99.2%)
-semantic_dom: 1 (0.8%)
+defuddle_semantic: 109 (100.0%)
 

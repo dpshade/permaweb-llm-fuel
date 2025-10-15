@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-14T23:43:15.029Z
+Generated on: 2025-10-15T00:04:33.193Z
 Total documents: 29
-Total words: 13237
+Total words: 13256
 
 ## Table of Contents
 
@@ -11,12 +11,12 @@ Total words: 13237
 1. [Running a HyperBEAM Node](https://hyperbeam.arweave.net/run/running-a-hyperbeam-node.html)
 2. [Overview](https://hyperbeam.arweave.net/build/devices/hyperbeam-devices.html)
 3. [TEE Nodes](https://hyperbeam.arweave.net/run/tee-nodes.html)
-4. [Module dev_snperl](https://hyperbeam.arweave.net/build/devices/source-code/dev_snp.html)
-5. [JoiningRunning a Router](https://hyperbeam.arweave.net/run/joining-running-a-router.html)
-6. [Configuring Your Machine](https://hyperbeam.arweave.net/run/configuring-your-machine.html)
+4. [JoiningRunning a Router](https://hyperbeam.arweave.net/run/joining-running-a-router.html)
+5. [Configuring Your Machine](https://hyperbeam.arweave.net/run/configuring-your-machine.html)
+6. [Module dev_snperl](https://hyperbeam.arweave.net/build/devices/source-code/dev_snp.html)
 7. [Core Capabilities](https://hyperbeam.arweave.net/build/getting-started/hyperbeam-capabilities.html)
-8. [Core Devices](https://hyperbeam.arweave.net/build/devices/index.html)
-9. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/getting-started/pathing-in-hyperbeam.html)
+8. [Pathing in HyperBEAM](https://hyperbeam.arweave.net/build/getting-started/pathing-in-hyperbeam.html)
+9. [Core Devices](https://hyperbeam.arweave.net/build/devices/index.html)
 10. [Building Devices](https://hyperbeam.arweave.net/build/devices/building-devices.html)
 11. [Intro to HyperBEAM](https://hyperbeam.arweave.net/build/introduction/what-is-hyperbeam.html)
 12. [Building ao Processes](https://hyperbeam.arweave.net/build/getting-started/building-on-ao.html)
@@ -45,7 +45,7 @@ Total words: 13237
 Document Number: 1
 Source: https://hyperbeam.arweave.net/run/running-a-hyperbeam-node.html
 Words: 838
-Quality Score: 0.691
+Quality Score: 0.751
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -61,17 +61,22 @@ curl \
 ca-certificates Erlang/OTP HyperBEAM is built on Erlang/OTP. You need version OTP 27 installed (check the rebar.config or project documentation for specific version requirements, typically OTP 27).Installation methods:brew install erlang@27 sudo apt install erlang=1:27.* Download from erlang.org and follow the build instructions for your platform.Rebar3 Rebar3 is the build tool for Erlang projects.Installation methods:brew install rebar3 Get the rebar3 binary from the official website. Place the downloaded rebar3 file in your system's PATH (e.g., /usr/local/bin) and make it executable (chmod +x rebar3).Node.js Node.js might be required for certain JavaScript-related tools or dependencies. Node version 22+ is required.Installation methods:brew install node Rust Rust is needed if you intend to work with or build components involving WebAssembly (WASM) or certain Native Implemented Functions (NIFs) used by some devices (like ~snp@1.0).The recommended way to install Rust on all platforms is via rustup:curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env" # Or follow the instructions provided by rustup Prerequisites for Running Before starting a node, ensure you have:Installed the system dependencies mentioned above.Cloned the HyperBEAM repository (git clone ...).Compiled the source code (rebar3 compile in the repo directory).An Arweave wallet keyfile (e.g., generated via Wander). The path to this file is typically set via the hb_key configuration option (see Configuring Your HyperBEAM Node).Starting a Basic Node The simplest way to start a HyperBEAM node for development or testing is using rebar3 from the repository's root directory:rebar3 shell This command:Starts the Erlang Virtual Machine (BEAM) with all HyperBEAM modules loaded.Initializes the node with default settings (from hb_opts.erl).Starts the default HTTP server (typically on port 8734), making the node accessible.Drops you into an interactive Erlang shell where you can interact with the running node.This basic setup is suitable for local development and exploring HyperBEAM's functionalities.HyperBEAM uses build profiles to enable optional features, often requiring extra dependencies. To run a node with specific profiles enabled, use rebar3 as ... shell:Available Profiles (Examples):genesis_wasm: Enables Genesis WebAssembly support.rocksdb: Enables the RocksDB storage backend.http3: Enables HTTP/3 support.Example Usage:# Start with RocksDB profile
 rebar3 as rocksdb shell
+
 # Start with RocksDB and Genesis WASM profiles
 rebar3 as rocksdb, genesis_wasm shell Note: Choose profiles before starting the shell, as they affect compile-time options.Node Configuration HyperBEAM offers various configuration options (port, key file, data storage, logging, etc.). These are primarily set using a config.flat file and can be overridden by environment variables or command-line arguments.See the dedicated Configuring Your HyperBEAM Node guide for detailed information on all configuration methods and options.Verify Installation To quickly check if your node is running and accessible, you can send a request to its ~meta@1.0 device (assuming default port 8734):curl http://localhost:8734/~meta@1.0/info A JSON response containing node information indicates success.Running for Production (Mainnet) While you can connect to the main AO network using the rebar3 shell for testing purposes (potentially using specific configurations or helper functions like hb:start_mainnet/1 if available and applicable), the standard and recommended method for a stable production deployment (like running on the mainnet) is to build and run a release.1. Build the Release:From the root of the HyperBEAM repository, build the release package. You might include specific profiles needed for your mainnet setup (e.g., rocksdb if you intend to use it):# Build release with default profile
 rebar3 release
+
 # Or, build with specific profiles (example)
 # rebar3 as rocksdb release This command compiles the project and packages it along with the Erlang Runtime System (ERTS) and all dependencies into a directory, typically _build/default/rel/hb.2. Configure the Release:Navigate into the release directory (e.g., cd _build/default/rel/hb). Ensure you have a correctly configured config.flat file here. See the configuration guide for details on setting mainnet parameters (port, key file location, store path, specific peers, etc.). Environment variables can also be used to override settings in the release's config.flat when starting the node.3. Start the Node:Use the generated start script (bin/hb) to run the node:# Start the node in the foreground (logs to console)
 ./bin/hb console
+
 # Start the node as a background daemon
 ./bin/hb start
+
 # Check the status
 ./bin/hb ping
 ./bin/hb status
+
 # the node
 ./bin/hb Consult the generated bin/hb script or Erlang/OTP documentation for more advanced start-up options (e.g., attaching a remote shell).Running as a release provides a more robust, isolated, and manageable way to operate a node compared to running directly from the rebar3 shell.ping the Node (rebar3 shell) To the node running within the rebar3 shell, press Ctrl+C twice or use the Erlang command q()..Configure Your Node: Deep dive into configuration options.TEE Nodes: Learn about running nodes in Trusted Execution Environments for enhanced security.Routers: Understand how to configure and run a router node.
 
@@ -81,13 +86,14 @@ rebar3 release
 
 Document Number: 2
 Source: https://hyperbeam.arweave.net/build/devices/hyperbeam-devices.html
-Words: 744
+Words: 746
 Quality Score: 0.648
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-HyperBEAM Devices In AO-Core and its implementation HyperBEAM, Devices are modular components responsible for processing and interpreting Messages. They define the specific logic for how computations are performed, data is handled, or interactions occur within the AO ecosystem.Think of Devices as specialized engines or services that can be plugged into the AO framework. This modularity is key to AO's flexibility and extensibility.Purpose of Devices Define Computation: Devices dictate how a message's instructions are executed. One device might run WASM code, another might manage process state, and yet another might simply relay data.Enable Specialization: Nodes running HyperBEAM can choose which Devices to support, allowing them to specialize in certain tasks (e.g., high-compute tasks, storage-focused tasks, secure TEE operations).Promote Modularity: New functionalities can be added to AO by creating new Devices, without altering the core protocol.Distribute Workload: Different Devices can handle different parts of a complex task, enabling parallel processing and efficient resource utilization across the network.Device Naming and Versioning Devices are typically referenced using a name and version, like ~@ (e.g., ~process@1.0). The tilde (~) often indicates a primary, user-facing device, while internal or utility devices might use a dev_ prefix in the source code (e.g., dev_router).Versioning indicates the specific interface and behavior of the device. Changes to a device that break backward compatibility usually result in a version increment.Familiar Examples HyperBEAM includes many preloaded devices that provide core functionality. Some key examples include:~meta@1.0: Configures the node itself (hardware specs, supported devices, payment info).~process@1.0: Manages persistent, shared computational states (like traditional smart contracts, but more flexible).~scheduler@1.0: Handles the ordering and execution of messages within a process.~wasm64@1.0: Executes WebAssembly (WASM) code, allowing for complex computations written in languages like Rust, C++, etc.~lua@5.3a: Executes Lua scripts.~relay@1.0: Forwards messages between AO nodes or to external HTTP endpoints.~json@1.0: Provides access to JSON data structures.~message@1.0: Manages message state and processing.Authentication Ecosystem: Comprehensive wallet-less authentication (~auth-hook@1.0, ~secret@1.0, ~cookie@1.0, ~http-auth@1.0).Data Discovery Engine: Advanced message search and query capabilities (~query@1.0).Data Replication Engine: External data ingestion and synchronization (~copycat@1.0).~patch@1.0: Applies state updates directly to a process, often used for migrating or managing process data.Beyond the Basics Devices aren't limited to just computation or state management. They can represent more abstract concepts:Security & Authentication Devices (~snp@1.0, dev_codec_httpsig, Authentication Ecosystem): Handle tasks related to Trusted Execution Environments (TEEs), message signing, wallet-less authentication, and session management, adding layers of security and verification.Data Management Devices (Data Discovery Engine, Data Replication Engine): Provide comprehensive data ingestion, search, and discovery capabilities for building data-rich applications with external source integration.Payment/Access Control Devices (~p4@1.0, ~faff@1.0): Manage metering, billing, or access control for node services.Workflow/Utility Devices (dev_cron, dev_stack, dev_monitor): Coordinate complex execution flows, schedule tasks, or monitor process activity.Using Devices Devices are typically invoked via GET requests. The path specifies which Device should interpret the subsequent parts of the path or the request body.# Example: Execute the 'now' key on the process device for a specific process
-/~process@1.0/now
+HyperBEAM Devices In AO-Core and its implementation HyperBEAM, Devices are modular components responsible for processing and interpreting Messages. They define the specific logic for how computations are performed, data is handled, or interactions occur within the AO ecosystem.Think of Devices as specialized engines or services that can be plugged into the AO framework. This modularity is key to AO's flexibility and extensibility.Purpose of Devices Define Computation: Devices dictate how a message's instructions are executed. One device might run WASM code, another might manage process state, and yet another might simply relay data.Enable Specialization: Nodes running HyperBEAM can choose which Devices to support, allowing them to specialize in certain tasks (e.g., high-compute tasks, storage-focused tasks, secure TEE operations).Promote Modularity: New functionalities can be added to AO by creating new Devices, without altering the core protocol.Distribute Workload: Different Devices can handle different parts of a complex task, enabling parallel processing and efficient resource utilization across the network.Device Naming and Versioning Devices are typically referenced using a name and version, like ~ @ (e.g., ~process@1.0). The tilde (~) often indicates a primary, user-facing device, while internal or utility devices might use a dev_ prefix in the source code (e.g., dev_router).Versioning indicates the specific interface and behavior of the device. Changes to a device that break backward compatibility usually result in a version increment.Familiar Examples HyperBEAM includes many preloaded devices that provide core functionality. Some key examples include:~meta@1.0: Configures the node itself (hardware specs, supported devices, payment info).~process@1.0: Manages persistent, shared computational states (like traditional smart contracts, but more flexible).~scheduler@1.0: Handles the ordering and execution of messages within a process.~wasm64@1.0: Executes WebAssembly (WASM) code, allowing for complex computations written in languages like Rust, C++, etc.~lua@5.3a: Executes Lua scripts.~relay@1.0: Forwards messages between AO nodes or to external HTTP endpoints.~json@1.0: Provides access to JSON data structures.~message@1.0: Manages message state and processing.Authentication Ecosystem: Comprehensive wallet-less authentication (~auth-hook@1.0, ~secret@1.0, ~cookie@1.0, ~http-auth@1.0).Data Discovery Engine: Advanced message search and query capabilities (~query@1.0).Data Replication Engine: External data ingestion and synchronization (~copycat@1.0).~patch@1.0: Applies state updates directly to a process, often used for migrating or managing process data.Beyond the Basics Devices aren't limited to just computation or state management. They can represent more abstract concepts:Security & Authentication Devices (~snp@1.0, dev_codec_httpsig, Authentication Ecosystem): Handle tasks related to Trusted Execution Environments (TEEs), message signing, wallet-less authentication, and session management, adding layers of security and verification.Data Management Devices (Data Discovery Engine, Data Replication Engine): Provide comprehensive data ingestion, search, and discovery capabilities for building data-rich applications with external source integration.Payment/Access Control Devices (~p4@1.0, ~faff@1.0): Manage metering, billing, or access control for node services.Workflow/Utility Devices (dev_cron, dev_stack, dev_monitor): Coordinate complex execution flows, schedule tasks, or monitor process activity.Using Devices Devices are typically invoked via GET requests. The path specifies which Device should interpret the subsequent parts of the path or the request body.# Example: Execute the 'now' key on the process device for a specific process
+/ ~process@1.0/now
+
 # Example: Relay a GET request via the relay device
 /~relay@1.0/call?method=GET&path=https://example.com The specific functions or 'keys' available for each Device are documented individually. See the Devices section for details on specific built-in devices. The Potential of Devices The modular nature of AO Devices opens up vast possibilities for future expansion and innovation. The current set of preloaded and community devices is just the beginning. As the AO ecosystem evolves, we can anticipate the development of new devices catering to increasingly specialized needs:Specialized Hardware Integration: Devices could be created to interface directly with specialized hardware accelerators like GPUs (for AI/ML tasks such as running large language models), TPUs, or FPGAs, allowing AO processes to leverage high-performance computing resources securely and verifiably.Advanced Cryptography: New devices could implement cutting-edge cryptographic techniques, such as zero-knowledge proofs (ZKPs) or fully homomorphic encryption (FHE), enabling enhanced privacy and complex computations on encrypted data.Cross-Chain & Off-Chain Bridges: Devices could act as secure bridges to other blockchain networks or traditional Web2 APIs, facilitating seamless interoperability and data exchange between AO and the wider digital world.AI/ML Specific Devices: Beyond raw GPU access, specialized devices could offer higher-level AI/ML functionalities, like optimized model inference engines or distributed training frameworks.Domain-Specific Logic: Communities or organizations could develop devices tailored to specific industries or use cases, such as decentralized finance (DeFi) primitives, scientific computing libraries, or decentralized identity management systems.The Device framework ensures that AO can adapt and grow, incorporating new technologies and computational paradigms without requiring fundamental changes to the core protocol. This extensibility is key to AO's long-term vision of becoming a truly global, decentralized computer.
 
@@ -106,6 +112,7 @@ Trusted Execution Environment (TEE) Recommended Setup Use HyperBEAM OS for the e
 # (Only needed for TEE nodes if you choose HB-OS)
 git clone https://github.com/permaweb/hb-os.git && cd hb-os
 ./run init && ./run setup_host && ./run build_base_image && ./run build_guest_image
+
 # Launch TEE-protected node
 ./run start The VM boots with dm-verity protection, measured boot, and automatic attestation report generation.Using the SNP Device Generate Attestation Report Request an attestation report from a TEE node:curl https://your-tee-node.com/~snp@1.0/generate Returns a signed attestation report containing:
 - Nonce: Unique identifier preventing re attacks
@@ -173,9 +180,184 @@ git clone https://github.com/permaweb/hb-os.git && cd hb-os
 
 ---
 
-# 4. Module dev_snperl - HyperBEAM - Documentation
+# 4. JoiningRunning a Router - HyperBEAM - Documentation
 
 Document Number: 4
+Source: https://hyperbeam.arweave.net/run/joining-running-a-router.html
+Words: 906
+Quality Score: 0.622
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Router Networks: Joining vs Running Router networks in HyperBEAM have two distinct roles that are often confused:Two Different Concepts Joining a router = Registering your worker node with an existing router to receive work Running a router = Operating a router that manages and distributes work to other nodes When to use HB-OS Operation Use HB-OS?Purpose TEE Node (SNP) Recommended Secure, attested computation (hardware isolation) Router Registration Optional Registering/joining a router (TEE not required) You can join or run a router without HB-OS.If you want to run a TEE node, HB-OS or an equivalent TEE setup is recommended for convenience and security.Configuration Files: config.json vs config.flat Configuration can be set in either config.json (JSON syntax) or config.flat (flat syntax). The examples below use JSON for clarity, but you can use either format depending on your deployment. The syntax differs:config.json uses standard JSON structure (see examples below) config.flat uses key-value pairs Joining a Router Network (Worker Node) Most users want to join an existing router to offer computational services. This does NOT require HB-OS or TEE unless you specifically want TEE security.1. Prepare Your Configuration (config.json example) Use the following configuration as a template for your worker node:{
+// ─── Initial Configuration ─────────────────────────────────────────────────
+// Lock this configuration so it cannot be changed again
+"operator": "trustless",
+"initialized": "permanent",
+
+// ─── SNP-Based TEE Attestation Parameters ──────────────────────────────────
+// These values let the TEE verify its own environment—and any other VM
+// instantiated from the same image—before granting access.
+"snp_trusted": [],
+
+// ─── Request/Response Processing Configuration ─────────────────────────────
+// Defines how requests and responses are processed through the p4 device
+"on": {
+"request": {
+"device": "p4@1.0",
+"ledger-device": "lua@5.3a",
+"pricing-device": "simple-pay@1.0",
+"ledger-path": "/ledger~node-process@1.0",
+"module": "" // Automatically injected
+},
+"response": {
+"device": "p4@1.0",
+"ledger-device": "lua@5.3a",
+"pricing-device": "simple-pay@1.0",
+"ledger-path": "/ledger~node-process@1.0",
+"module": "" // Automatically injected
+}
+},
+
+// ─── Non-Chargeable Routes Configuration ──────────────────────────────────
+// Routes that should not incur charges when accessed through p4
+"p4_non_chargable_routes": [
+{ "template": "/.*~node-process@1.0/.*" },
+{ "template": "/.*~greenzone@1.0/.*" },
+{ "template": "/.*~router@1.0/.*" },
+{ "template": "/.*~meta@1.0/.*" },
+{ "template": "/schedule" },
+{ "template": "/push" },
+{ "template": "/~hyperbuddy@1.0/.*" }
+],
+
+// ─── Node Process Spawn Configuration ─────────────────────────────────────
+// Codec used for spawning new node processes
+"node_process_spawn_codec": "ans104@1.0",
+
+// ─── Node Process Definitions ─────────────────────────────────────────────
+// Configuration for individual node processes
+"node_processes": {
+"ledger": {
+"device": "process@1.0",
+"execution-device": "lua@5.3a",
+"scheduler-device": "scheduler@1.0",
+"authority-match": 1,
+"admin": "", // Automatically injected
+"token": "", // Automatically injected
+"module": "", // Automatically injected
+"authority": "" // Automatically injected
+}
+},
+
+// ─── Router Registration Options ──────────────────────────────────────────
+// Configuration for how processes register with the router
+"router_opts": {
+"offered": [
+// {
+// "registration-peer": {}, // Automatically injected
+// "template": "/*~process@1.0/*", // The routes that the node will register with
+// "prefix": "", // Automatically injected
+// "price": 4500000 // Registration fee in smallest units
+// }
+]
+},
+
+// ─── Greenzone Registration Options ────────────────────────────────────────
+// Configuration for how processes register with the greenzone
+"green_zone_peer_location": "", // Automatically injected
+"green_zone_peer_id": "", // Automatically injected
+
+// ─── P4 Recipient ──────────────────────────────────────────────────────────
+// The Address of the node that will receive the P4 messages
+"p4_recipient": "" // Automatically injected
+} Perform the following API calls in order:Meta Info Post:Endpoint: ~meta@1.0/info POST Example:
+Join Green Zone:Endpoint: ~greenzone@1.0/join GET Become Green Zone Member:Endpoint: ~greenzone@1.0/become GET Register as Router:Endpoint: ~router@1.0/register GET 3. Verify Registration Check your node's status in the network Confirm green zone membership Test routing functionality 4. Troubleshooting If registration fails:
+1. Verify all configuration parameters are correct
+2. Check network connectivity to the node URL
+3. Ensure proper headers are set in API requests
+4. Review logs for specific error messages
+5. Confirm green zone availability and accessibility Running Your Own Router (Advanced) If you want to operate a router that manages other worker nodes:Deploy the dynamic router Lua process to handle registrations Configure trusted software hashes for TEE validation (if using TEE) Set up load balancing and performance monitoring Manage worker node admissibility policies Example Router Configuration (config.json example) {
+// ─── Router Node Preprocessing Settings ───────────────────────────────────
+// Defines the router process and how it preprocesses incoming requests
+"on": {
+"request": {
+"device": "router@1.0",
+"path": "preprocess",
+"commit-request": true // Enable request commitment for routing
+}
+},
+
+// ─── Route Provider Configuration ─────────────────────────────────────────
+// Specifies where to get routing information from the router node process
+"router_opts": {
+"provider": {
+"path": "/router~node-process@1.0/compute/routes~message@1.0"
+},
+"registrar": {
+"path": "/router~node-process@1.0"
+},
+"registrar-path": "schedule"
+},
+
+// ─── Relay Configuration ──────────────────────────────────────────────────
+// Allow the relay to commit requests when forwarding
+"relay_allow_commit_request": true,
+
+// ─── Router Node Process Configuration ────────────────────────────────────
+// Specifies the Lua-based router logic, weights for scoring, and admission check
+"node_processes": {
+"router": {
+"type": "Process",
+"device": "process@1.0",
+"execution-device": "lua@5.3a",
+"scheduler-device": "scheduler@1.0",
+"pricing-weight": 9, // Weight for pricing in routing decisions
+"performance-weight": 1, // Weight for performance in routing decisions
+"score-preference": 4, // Preference scoring for route selection
+"performance-period": 2, // Period for performance measurement
+"initial-performance": 1000, // Initial performance score
+// Default admission policy (currently set to false)
+"is-admissible": {
+"path": "default",
+"default": "false"
+},
+"module": "", // Automatically injected
+"trusted-peer": "", // Automatically injected
+"trusted": "" // Automatically injected
+}
+}
+} Advanced Configuration Running a production router requires careful consideration of security, performance, and economic incentives. Most users should join existing routers rather than run their own.Further Exploration Examine the dev_router.erl source code for detailed implementation.Review the scripts/dynamic-router.lua for router-side logic.Review the available configuration options in hb_opts.erl related to routing (routes, strategies, etc.).Consult community channels for best practices on deploying production routers.
+
+---
+
+# 5. Configuring Your Machine - HyperBEAM - Documentation
+
+Document Number: 5
+Source: https://hyperbeam.arweave.net/run/configuring-your-machine.html
+Words: 806
+Quality Score: 0.622
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Configuring Your HyperBEAM Node This guide details the various ways to configure your HyperBEAM node's behavior, including ports, storage, keys, and logging.Configuration (config.flat) The primary way to configure your HyperBEAM node is through a config.flat file located in the node's working directory or specified by the HB_CONFIG_LOCATION environment variable.This file uses a simple Key = Value. format (note the period at the end of each line).Example config.flat:% Set the HTTP port
+port = 8080.
+
+% Specify the Arweave key file
+priv_key_location = "/path/to/your/wallet.json".
+
+% Set the data store directory
+% Note: Storage configuration can be complex. See below.
+% store = [{local, [{root, <<"./node_data_mainnet">>}]}]. % Example of complex config, not for config.flat
+
+% Enable verbose logging for specific modules
+% debug_print = [hb_http, dev_router]. % Example of complex config, not for config.flat Below is a reference of commonly used configuration keys. Remember that config.flat only supports simple key-value pairs (Atoms, Strings, Integers, Booleans). For complex configurations (Lists, Maps), you must use environment variables or hb:start_mainnet/1.Core Configuration These options control fundamental HyperBEAM behavior.Option Type Default Description port Integer 8734 HTTP API port hb_config_location String "config.flat" Path to configuration file priv_key_location String "hyperbeam-key.json" Path to operator wallet key file mode Atom debug Execution mode (debug, prod) Server & Network Configuration These options control networking behavior and HTTP settings.Option Type Default Description host String "localhost" Choice of remote node for non-local tasks gateway String "https://arweave.net" Default gateway bundler_ans104 String "https://up.arweave.net:443" Location of ANS-104 bundler protocol Atom http2 Protocol for HTTP requests (http1, http2, http3) http_client Atom gun HTTP client to use (gun, httpc) http_connect_timeout Integer 5000 HTTP connection timeout in milliseconds http_keepalive Integer 120000 HTTP keepalive time in milliseconds http_request_send_timeout Integer 60000 HTTP request send timeout in milliseconds relay_http_client Atom httpc HTTP client for the relay device Security & Identity These options control identity and security settings.Option Type Default Description scheduler_location_ttl Integer 604800000 TTL for scheduler registration (7 days in ms) Caching & Storage These options control caching behavior. Note: Detailed storage configuration (store option) involves complex data structures and cannot be set via config.flat.Option Type Default Description cache_lookup_heuristics Boolean false Whether to use caching heuristics or always consult the local data store access_remote_cache_for_client Boolean false Whether to access data from remote caches for client requests store_all_signed Boolean true Whether the node should store all signed messages await_inprogress Atom/Boolean named Whether to await in-progress executions (false, named, true) Execution & Processing These options control how HyperBEAM executes messages and processes.Option Type Default Description scheduling_mode Atom local_confirmation When to inform recipients about scheduled assignments (aggressive, local_confirmation, remote_confirmation) compute_mode Atom lazy Whether to execute more messages after returning a result (aggressive, lazy) process_workers Boolean true Whether the node should use persistent processes client_error_strategy Atom throw What to do if a client error occurs wasm_allow_aot Boolean false Allow ahead-of-time compilation for WASM Device Management These options control how HyperBEAM manages devices.Option Type Default Description load_remote_devices Boolean false Whether to load devices from remote signers Debug & Development These options control debugging and development features.Option Type Default Description debug_stack_depth Integer 40 Maximum stack depth for debug printing debug_print_map_line_threshold Integer 30 Maximum lines for map printing debug_print_binary_max Integer 60 Maximum binary size for debug printing debug_print_indent Integer 2 Indentation for debug printing debug_print_trace Atom short Trace mode (short, false) short_trace_len Integer 5 Length of short traces debug_hide_metadata Boolean true Whether to hide metadata in debug output debug_ids Boolean false Whether to print IDs in debug output debug_hide_priv Boolean true Whether to hide private data in debug output Note: For the absolute complete and most up-to-date list, including complex options not suitable for config.flat, refer to the default_message/0 function in the hb_opts module source code.Overrides (Environment Variables & Args) You can override settings from config.flat or provide values if the file is missing using environment variables or command-line arguments.Using Environment Variables:Environment variables typically use an HB_ prefix followed by the configuration key in uppercase.HB_PORT= : Overrides hb_port.Example: HB_PORT=8080 rebar3 shell HB_KEY= : Overrides hb_key.Example: HB_KEY=~/.keys/arweave_key.json rebar3 shell HB_STORE= : Overrides hb_store.Example: HB_STORE=./node_data_1 rebar3 shell HB_PRINT= : Overrides hb_print. can be true (or 1), or a comma-separated list of modules/topics (e.g., hb_path,hb_ao,ao_result).Example: HB_PRINT=hb_http,dev_router rebar3 shell HB_CONFIG_LOCATION= : Specifies a custom location for the configuration file.Using erl_opts (Direct Erlang VM Arguments):You can also pass arguments directly to the Erlang VM using the - format within erl_opts. This is generally less common for application configuration than config.flat or environment variables.rebar3 shell --erl_opts "-hb_port 8080 -hb_key path/to/key.json" Order of Precedence:Command-line arguments (erl_opts).Settings in config.flat.Environment variables (HB_*).Default values from hb_opts.erl.Configuration in Releases When running a release build (see Running a HyperBEAM Node), configuration works similarly:A config.flat file will be present in the release directory (e.g., build/default/rel/hb/config.flat). Edit this file to set your desired parameters for the release environment.Environment variables (HB*) can still be used to override the settings in the release's config.flat when starting the node using the bin/hb script.
+
+---
+
+# 6. Module dev_snperl - HyperBEAM - Documentation
+
+Document Number: 6
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_snp.html
 Words: 426
 Quality Score: 0.584
@@ -209,167 +391,6 @@ measurement, are trusted.
 
 ---
 
-# 5. JoiningRunning a Router - HyperBEAM - Documentation
-
-Document Number: 5
-Source: https://hyperbeam.arweave.net/run/joining-running-a-router.html
-Words: 906
-Quality Score: 0.562
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Router Networks: Joining vs Running Router networks in HyperBEAM have two distinct roles that are often confused:Two Different Concepts Joining a router = Registering your worker node with an existing router to receive work Running a router = Operating a router that manages and distributes work to other nodes When to use HB-OS Operation Use HB-OS?Purpose TEE Node (SNP) Recommended Secure, attested computation (hardware isolation) Router Registration Optional Registering/joining a router (TEE not required) You can join or run a router without HB-OS.If you want to run a TEE node, HB-OS or an equivalent TEE setup is recommended for convenience and security.Configuration Files: config.json vs config.flat Configuration can be set in either config.json (JSON syntax) or config.flat (flat syntax). The examples below use JSON for clarity, but you can use either format depending on your deployment. The syntax differs:config.json uses standard JSON structure (see examples below) config.flat uses key-value pairs Joining a Router Network (Worker Node) Most users want to join an existing router to offer computational services. This does NOT require HB-OS or TEE unless you specifically want TEE security.1. Prepare Your Configuration (config.json example) Use the following configuration as a template for your worker node:{
-// ─── Initial Configuration ─────────────────────────────────────────────────
-// Lock this configuration so it cannot be changed again
-"operator": "trustless",
-"initialized": "permanent",
-// ─── SNP-Based TEE Attestation Parameters ──────────────────────────────────
-// These values let the TEE verify its own environment—and any other VM
-// instantiated from the same image—before granting access.
-"snp_trusted": [],
-// ─── Request/Response Processing Configuration ─────────────────────────────
-// Defines how requests and responses are processed through the p4 device
-"on": {
-"request": {
-"device": "p4@1.0",
-"ledger-device": "lua@5.3a",
-"pricing-device": "simple-pay@1.0",
-"ledger-path": "/ledger~node-process@1.0",
-"module": "" // Automatically injected
-},
-"response": {
-"device": "p4@1.0",
-"ledger-device": "lua@5.3a",
-"pricing-device": "simple-pay@1.0",
-"ledger-path": "/ledger~node-process@1.0",
-"module": "" // Automatically injected
-}
-},
-// ─── Non-Chargeable Routes Configuration ──────────────────────────────────
-// Routes that should not incur charges when accessed through p4
-"p4_non_chargable_routes": [
-{ "template": "/.*~node-process@1.0/.*" },
-{ "template": "/.*~greenzone@1.0/.*" },
-{ "template": "/.*~router@1.0/.*" },
-{ "template": "/.*~meta@1.0/.*" },
-{ "template": "/schedule" },
-{ "template": "/push" },
-{ "template": "/~hyperbuddy@1.0/.*" }
-],
-// ─── Node Process Spawn Configuration ─────────────────────────────────────
-// Codec used for spawning new node processes
-"node_process_spawn_codec": "ans104@1.0",
-// ─── Node Process Definitions ─────────────────────────────────────────────
-// Configuration for individual node processes
-"node_processes": {
-"ledger": {
-"device": "process@1.0",
-"execution-device": "lua@5.3a",
-"scheduler-device": "scheduler@1.0",
-"authority-match": 1,
-"admin": "", // Automatically injected
-"token": "", // Automatically injected
-"module": "", // Automatically injected
-"authority": "" // Automatically injected
-}
-},
-// ─── Router Registration Options ──────────────────────────────────────────
-// Configuration for how processes register with the router
-"router_opts": {
-"offered": [
-// {
-// "registration-peer": {}, // Automatically injected
-// "template": "/*~process@1.0/*", // The routes that the node will register with
-// "prefix": "", // Automatically injected
-// "price": 4500000 // Registration fee in smallest units
-// }
-]
-},
-// ─── Greenzone Registration Options ────────────────────────────────────────
-// Configuration for how processes register with the greenzone
-"green_zone_peer_location": "", // Automatically injected
-"green_zone_peer_id": "", // Automatically injected
-// ─── P4 Recipient ──────────────────────────────────────────────────────────
-// The Address of the node that will receive the P4 messages
-"p4_recipient": "" // Automatically injected
-} Perform the following API calls in order:Meta Info Post:Endpoint: ~meta@1.0/info POST Example:
-Join Green Zone:Endpoint: ~greenzone@1.0/join GET Become Green Zone Member:Endpoint: ~greenzone@1.0/become GET Register as Router:Endpoint: ~router@1.0/register GET 3. Verify Registration Check your node's status in the network Confirm green zone membership Test routing functionality 4. Troubleshooting If registration fails:
-1. Verify all configuration parameters are correct
-2. Check network connectivity to the node URL
-3. Ensure proper headers are set in API requests
-4. Review logs for specific error messages
-5. Confirm green zone availability and accessibility Running Your Own Router (Advanced) If you want to operate a router that manages other worker nodes:Deploy the dynamic router Lua process to handle registrations Configure trusted software hashes for TEE validation (if using TEE) Set up load balancing and performance monitoring Manage worker node admissibility policies Example Router Configuration (config.json example) {
-// ─── Router Node Preprocessing Settings ───────────────────────────────────
-// Defines the router process and how it preprocesses incoming requests
-"on": {
-"request": {
-"device": "router@1.0",
-"path": "preprocess",
-"commit-request": true // Enable request commitment for routing
-}
-},
-// ─── Route Provider Configuration ─────────────────────────────────────────
-// Specifies where to get routing information from the router node process
-"router_opts": {
-"provider": {
-"path": "/router~node-process@1.0/compute/routes~message@1.0"
-},
-"registrar": {
-"path": "/router~node-process@1.0"
-},
-"registrar-path": "schedule"
-},
-// ─── Relay Configuration ──────────────────────────────────────────────────
-// Allow the relay to commit requests when forwarding
-"relay_allow_commit_request": true,
-// ─── Router Node Process Configuration ────────────────────────────────────
-// Specifies the Lua-based router logic, weights for scoring, and admission check
-"node_processes": {
-"router": {
-"type": "Process",
-"device": "process@1.0",
-"execution-device": "lua@5.3a",
-"scheduler-device": "scheduler@1.0",
-"pricing-weight": 9, // Weight for pricing in routing decisions
-"performance-weight": 1, // Weight for performance in routing decisions
-"score-preference": 4, // Preference scoring for route selection
-"performance-period": 2, // Period for performance measurement
-"initial-performance": 1000, // Initial performance score
-// Default admission policy (currently set to false)
-"is-admissible": {
-"path": "default",
-"default": "false"
-},
-"module": "", // Automatically injected
-"trusted-peer": "", // Automatically injected
-"trusted": "" // Automatically injected
-}
-}
-} Advanced Configuration Running a production router requires careful consideration of security, performance, and economic incentives. Most users should join existing routers rather than run their own.Further Exploration Examine the dev_router.erl source code for detailed implementation.Review the scripts/dynamic-router.lua for router-side logic.Review the available configuration options in hb_opts.erl related to routing (routes, strategies, etc.).Consult community channels for best practices on deploying production routers.
-
----
-
-# 6. Configuring Your Machine - HyperBEAM - Documentation
-
-Document Number: 6
-Source: https://hyperbeam.arweave.net/run/configuring-your-machine.html
-Words: 801
-Quality Score: 0.561
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Configuring Your HyperBEAM Node This guide details the various ways to configure your HyperBEAM node's behavior, including ports, storage, keys, and logging.Configuration (config.flat) The primary way to configure your HyperBEAM node is through a config.flat file located in the node's working directory or specified by the HB_CONFIG_LOCATION environment variable.This file uses a simple Key = Value. format (note the period at the end of each line).Example config.flat:% Set the HTTP port
-port = 8080.
-% Specify the Arweave key file
-priv_key_location = "/path/to/your/wallet.json".
-% Set the data store directory
-% Note: Storage configuration can be complex. See below.
-% store = [{local, [{root, <<"./node_data_mainnet">>}]}]. % Example of complex config, not for config.flat
-% Enable verbose logging for specific modules
-% debug_print = [hb_http, dev_router]. % Example of complex config, not for config.flat Below is a reference of commonly used configuration keys. Remember that config.flat only supports simple key-value pairs (Atoms, Strings, Integers, Booleans). For complex configurations (Lists, Maps), you must use environment variables or hb:start_mainnet/1.Core Configuration These options control fundamental HyperBEAM behavior.Option Type Default Description port Integer 8734 HTTP API port hb_config_location String "config.flat" Path to configuration file priv_key_location String "hyperbeam-key.json" Path to operator wallet key file mode Atom debug Execution mode (debug, prod) Server & Network Configuration These options control networking behavior and HTTP settings.Option Type Default Description host String "localhost" Choice of remote node for non-local tasks gateway String "https://arweave.net" Default gateway bundler_ans104 String "https://up.arweave.net:443" Location of ANS-104 bundler protocol Atom http2 Protocol for HTTP requests (http1, http2, http3) http_client Atom gun HTTP client to use (gun, httpc) http_connect_timeout Integer 5000 HTTP connection timeout in milliseconds http_keepalive Integer 120000 HTTP keepalive time in milliseconds http_request_send_timeout Integer 60000 HTTP request send timeout in milliseconds relay_http_client Atom httpc HTTP client for the relay device Security & Identity These options control identity and security settings.Option Type Default Description scheduler_location_ttl Integer 604800000 TTL for scheduler registration (7 days in ms) Caching & Storage These options control caching behavior. Note: Detailed storage configuration (store option) involves complex data structures and cannot be set via config.flat.Option Type Default Description cache_lookup_heuristics Boolean false Whether to use caching heuristics or always consult the local data store access_remote_cache_for_client Boolean false Whether to access data from remote caches for client requests store_all_signed Boolean true Whether the node should store all signed messages await_inprogress Atom/Boolean named Whether to await in-progress executions (false, named, true) Execution & Processing These options control how HyperBEAM executes messages and processes.Option Type Default Description scheduling_mode Atom local_confirmation When to inform recipients about scheduled assignments (aggressive, local_confirmation, remote_confirmation) compute_mode Atom lazy Whether to execute more messages after returning a result (aggressive, lazy) process_workers Boolean true Whether the node should use persistent processes client_error_strategy Atom throw What to do if a client error occurs wasm_allow_aot Boolean false Allow ahead-of-time compilation for WASM Device Management These options control how HyperBEAM manages devices.Option Type Default Description load_remote_devices Boolean false Whether to load devices from remote signers Debug & Development These options control debugging and development features.Option Type Default Description debug_stack_depth Integer 40 Maximum stack depth for debug printing debug_print_map_line_threshold Integer 30 Maximum lines for map printing debug_print_binary_max Integer 60 Maximum binary size for debug printing debug_print_indent Integer 2 Indentation for debug printing debug_print_trace Atom short Trace mode (short, false) short_trace_len Integer 5 Length of short traces debug_hide_metadata Boolean true Whether to hide metadata in debug output debug_ids Boolean false Whether to print IDs in debug output debug_hide_priv Boolean true Whether to hide private data in debug output Note: For the absolute complete and most up-to-date list, including complex options not suitable for config.flat, refer to the default_message/0 function in the hb_opts module source code.Overrides (Environment Variables & Args) You can override settings from config.flat or provide values if the file is missing using environment variables or command-line arguments.Using Environment Variables:Environment variables typically use an HB_ prefix followed by the configuration key in uppercase.HB_PORT=: Overrides hb_port.Example: HB_PORT=8080 rebar3 shell HB_KEY=: Overrides hb_key.Example: HB_KEY=~/.keys/arweave_key.json rebar3 shell HB_STORE=: Overrides hb_store.Example: HB_STORE=./node_data_1 rebar3 shell HB_PRINT=: Overrides hb_print. can be true (or 1), or a comma-separated list of modules/topics (e.g., hb_path,hb_ao,ao_result).Example: HB_PRINT=hb_http,dev_router rebar3 shell HB_CONFIG_LOCATION=: Specifies a custom location for the configuration file.Using erl_opts (Direct Erlang VM Arguments):You can also pass arguments directly to the Erlang VM using the - format within erl_opts. This is generally less common for application configuration than config.flat or environment variables.rebar3 shell --erl_opts "-hb_port 8080 -hb_key path/to/key.json" Order of Precedence:Command-line arguments (erl_opts).Settings in config.flat.Environment variables (HB_*).Default values from hb_opts.erl.Configuration in Releases When running a release build (see Running a HyperBEAM Node), configuration works similarly:A config.flat file will be present in the release directory (e.g., build/default/rel/hb/config.flat). Edit this file to set your desired parameters for the release environment.Environment variables (HB*) can still be used to override the settings in the release's config.flat when starting the node using the bin/hb script.
-
----
-
 # 7. Core Capabilities - HyperBEAM - Documentation
 
 Document Number: 7
@@ -383,9 +404,22 @@ HyperBEAM: Your Decentralized Development Toolkit HyperBEAM is a versatile, mult
 
 ---
 
-# 8. Core Devices - HyperBEAM - Documentation
+# 8. Pathing in HyperBEAM - HyperBEAM - Documentation
 
 Document Number: 8
+Source: https://hyperbeam.arweave.net/build/getting-started/pathing-in-hyperbeam.html
+Words: 850
+Quality Score: 0.534
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Pathing in HyperBEAM Overview Understanding how to construct and interpret paths in AO-Core is fundamental to working with HyperBEAM. This guide explains the structure and components of AO-Core paths, enabling you to effectively interact with processes and access their data.HyperBEAM Path Structure Let's examine a typical HyperBEAM endpoint piece-by-piece:https://forward.computer/ ~process@1.0/now Node URL (forward.computer) The HTTP response from this node includes a signature from the host's key. By accessing the ~snp@1.0 device, you can verify that the node is running in a genuine Trusted Execution Environment (TEE), ensuring computation integrity. You can replace forward.computer with any HyperBEAM TEE node operated by any party while maintaining trustless guarantees.Process Path (/ ~process@1.0) Every path in AO-Core represents a program. Think of the URL bar as a Unix-style command-line interface, providing access to AO's trustless and verifiable compute. Each path component (between / characters) represents a step in the computation. In this example, we instruct the AO-Core node to:Load a specific message from its caches (local, another node, or Arweave) Interpret it with the ~process@1.0 device The process device implements a shared computing environment with consistent state between users State Access (/now or /compute) Devices in AO-Core expose keys accessible via path components. Each key executes a function on the device:now: Calculates real-time process state compute: Serves the latest known state (faster than checking for new messages) Under the surface, these keys represent AO-Core messages. As we progress through the path, AO-Core applies each message to the existing state. You can access the full process state by visiting:/ ~process@1.0/now State Navigation You can browse through sub-messages and data fields by accessing them as keys. For example, if a process stores its interaction count in a field named cache, you can access it like this:/ ~process@1.0/compute/cache This shows the 'cache' of your process. Each response is:A message with a signature attesting to its correctness A hashpath describing its generation Transferable to other AO-Core nodes for uninterrupted execution Query Parameters and Type Casting Beyond path segments, HyperBEAM URLs can include query parameters that utilize a special type casting syntax. This allows specifying the desired data type for a parameter directly within the URL using the format key+type=value.Syntax: A + symbol separates the parameter key from its intended type (e.g., count+integer=42, items+list="apple",7).Mechanism: The HyperBEAM node identifies the +type suffix (e.g., +integer, +list, +map, +float, +atom, +resolve). It then uses internal functions (hb_singleton:maybe_typed and dev_codec_structured:decode_value) to decode and cast the provided value string into the corresponding Erlang data type before incorporating it into the message.Supported Types: Common types include integer, float, list, map, atom, binary (often implicit), and resolve (for path resolution). List values often follow the HTTP Structured Fields format (RFC 8941).This powerful feature enables the expression of complex data structures directly in URLs.Examples The following examples illustrate using HTTP paths with various AO-Core processes and devices. While these cover a few specific use cases, HyperBEAM's extensible nature allows interaction with any device or process via HTTP paths. For a deeper understanding, we encourage exploring the source code and experimenting with different paths.Example 1: Accessing Full Process State To get the complete, real-time state of a process identified by , use the /now path component with the ~process@1.0 device:GET / ~process@1.0/now This instructs the AO-Core node to load the process and execute the now function on the ~process@1.0 device.Example 2: Navigating to Specific Process Data If a process maintains its state in a map and you want to access a specific field, like at-slot, using the faster /compute endpoint:GET / ~process@1.0/compute/cache This accesses the compute key on the ~process@1.0 device and then navigates to the cache key within the resulting state map. Using this path, you will see the latest 'cache' of your process (the number of interactions it has received). Every piece of relevant information about your process can be accessed similarly, effectively providing a native API.(Note: This represents direct navigation within the process state structure. For accessing data specifically published via the ~patch@1.0 device, see the documentation on Exposing Process State, which typically uses the /cache/ path.) Example 3: Basic ~message@1.0 Usage Here's a simple example of using ~message@1.0 to create a message and retrieve a value:GET /~message@1.0&greeting="Hello"&count+integer=42/count Base:/ - The base URL of the HyperBEAM node.Root Device:~message@1.0 Query Params:greeting="Hello" (binary) and count+integer=42 (integer), forming the message #{ <<"greeting">> => <<"Hello">>, <<"count">> => 42 }.Path:/count tells ~message@1.0 to retrieve the value associated with the key count.Response: The integer 42.Example 4: Using the ~message@1.0 Device with Type Casting The ~message@1.0 device can be used to construct and query transient messages, utilizing type casting in query parameters.Consider the following URL:GET /~message@1.0&name="Alice"&age+integer=30&items+list="apple",1,"banana"&config+map=key1="val1";key2=true/[PATH] HyperBEAM processes this as follows:Base:/ - The base URL of the HyperBEAM node.Root Device:~message@1.0 Query Parameters (with type casting):name="Alice" -> #{ <<"name">> => <<"Alice">> } (binary) age+integer=30 -> #{ <<"age">> => 30 } (integer) items+list="apple",1,"banana" -> #{ <<"items">> => [<<"apple">>, 1, <<"banana">>] } (list) config+map=key1="val1";key2=true -> #{ <<"config">> => #{<<"key1">> => <<"val1">>, <<"key2">> => true} } (map) Initial Message Map: A combination of the above key-value pairs.Path Evaluation:If [PATH] is /items/1, the response is the integer 1.If [PATH] is /config/key1, the response is the binary <<"val1">>.
+
+---
+
+# 9. Core Devices - HyperBEAM - Documentation
+
+Document Number: 9
 Source: https://hyperbeam.arweave.net/build/devices/index.html
 Words: 646
 Quality Score: 0.534
@@ -397,19 +431,6 @@ Core Devices HyperBEAM provides a comprehensive suite of devices that handle dif
 Auth Ecosystem Copycat Device Query Device Process Device Data Workflow Integration Ingestion: Copycat replicates external data into local cache Discovery: Query provides search and filtering over cached data Authentication: Auth ecosystem controls access to data operations Processing: Process devices utilize data for computation Security Integration Authentication ecosystem provides transparent user authentication TEE devices enable secure computation environments Access control devices manage permissions and resource usage HTTP signature devices ensure message integrity Getting Started For Authentication:Start with the Authentication Ecosystem to enable wallet-less blockchain applications.For Data Management:Begin with Data Replication to import external data, then use Data Discovery for search and analysis.For Process Development:Review ~process@1.0 for state management and ~scheduler@1.0 for message ordering.For Custom Devices:See Building Devices for guidance on creating your own devices. Next Steps:- Building Devices - Learn to create custom devices
 - HyperBEAM Overview - Understand the device architecture
 - Source Code Reference - Detailed technical documentation
-
----
-
-# 9. Pathing in HyperBEAM - HyperBEAM - Documentation
-
-Document Number: 9
-Source: https://hyperbeam.arweave.net/build/getting-started/pathing-in-hyperbeam.html
-Words: 844
-Quality Score: 0.534
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Pathing in HyperBEAM Overview Understanding how to construct and interpret paths in AO-Core is fundamental to working with HyperBEAM. This guide explains the structure and components of AO-Core paths, enabling you to effectively interact with processes and access their data.HyperBEAM Path Structure Let's examine a typical HyperBEAM endpoint piece-by-piece:https://forward.computer/~process@1.0/now Node URL (forward.computer) The HTTP response from this node includes a signature from the host's key. By accessing the ~snp@1.0 device, you can verify that the node is running in a genuine Trusted Execution Environment (TEE), ensuring computation integrity. You can replace forward.computer with any HyperBEAM TEE node operated by any party while maintaining trustless guarantees.Process Path (/~process@1.0) Every path in AO-Core represents a program. Think of the URL bar as a Unix-style command-line interface, providing access to AO's trustless and verifiable compute. Each path component (between / characters) represents a step in the computation. In this example, we instruct the AO-Core node to:Load a specific message from its caches (local, another node, or Arweave) Interpret it with the ~process@1.0 device The process device implements a shared computing environment with consistent state between users State Access (/now or /compute) Devices in AO-Core expose keys accessible via path components. Each key executes a function on the device:now: Calculates real-time process state compute: Serves the latest known state (faster than checking for new messages) Under the surface, these keys represent AO-Core messages. As we progress through the path, AO-Core applies each message to the existing state. You can access the full process state by visiting:/~process@1.0/now State Navigation You can browse through sub-messages and data fields by accessing them as keys. For example, if a process stores its interaction count in a field named cache, you can access it like this:/~process@1.0/compute/cache This shows the 'cache' of your process. Each response is:A message with a signature attesting to its correctness A hashpath describing its generation Transferable to other AO-Core nodes for uninterrupted execution Query Parameters and Type Casting Beyond path segments, HyperBEAM URLs can include query parameters that utilize a special type casting syntax. This allows specifying the desired data type for a parameter directly within the URL using the format key+type=value.Syntax: A + symbol separates the parameter key from its intended type (e.g., count+integer=42, items+list="apple",7).Mechanism: The HyperBEAM node identifies the +type suffix (e.g., +integer, +list, +map, +float, +atom, +resolve). It then uses internal functions (hb_singleton:maybe_typed and dev_codec_structured:decode_value) to decode and cast the provided value string into the corresponding Erlang data type before incorporating it into the message.Supported Types: Common types include integer, float, list, map, atom, binary (often implicit), and resolve (for path resolution). List values often follow the HTTP Structured Fields format (RFC 8941).This powerful feature enables the expression of complex data structures directly in URLs.Examples The following examples illustrate using HTTP paths with various AO-Core processes and devices. While these cover a few specific use cases, HyperBEAM's extensible nature allows interaction with any device or process via HTTP paths. For a deeper understanding, we encourage exploring the source code and experimenting with different paths.Example 1: Accessing Full Process State To get the complete, real-time state of a process identified by , use the /now path component with the ~process@1.0 device:GET /~process@1.0/now This instructs the AO-Core node to load the process and execute the now function on the ~process@1.0 device.Example 2: Navigating to Specific Process Data If a process maintains its state in a map and you want to access a specific field, like at-slot, using the faster /compute endpoint:GET /~process@1.0/compute/cache This accesses the compute key on the ~process@1.0 device and then navigates to the cache key within the resulting state map. Using this path, you will see the latest 'cache' of your process (the number of interactions it has received). Every piece of relevant information about your process can be accessed similarly, effectively providing a native API.(Note: This represents direct navigation within the process state structure. For accessing data specifically published via the ~patch@1.0 device, see the documentation on Exposing Process State, which typically uses the /cache/ path.) Example 3: Basic ~message@1.0 Usage Here's a simple example of using ~message@1.0 to create a message and retrieve a value:GET /~message@1.0&greeting="Hello"&count+integer=42/count Base:/ - The base URL of the HyperBEAM node.Root Device:~message@1.0 Query Params:greeting="Hello" (binary) and count+integer=42 (integer), forming the message #{ <<"greeting">> => <<"Hello">>, <<"count">> => 42 }.Path:/count tells ~message@1.0 to retrieve the value associated with the key count.Response: The integer 42.Example 4: Using the ~message@1.0 Device with Type Casting The ~message@1.0 device can be used to construct and query transient messages, utilizing type casting in query parameters.Consider the following URL:GET /~message@1.0&name="Alice"&age+integer=30&items+list="apple",1,"banana"&config+map=key1="val1";key2=true/[PATH] HyperBEAM processes this as follows:Base:/ - The base URL of the HyperBEAM node.Root Device:~message@1.0 Query Parameters (with type casting):name="Alice" -> #{ <<"name">> => <<"Alice">> } (binary) age+integer=30 -> #{ <<"age">> => 30 } (integer) items+list="apple",1,"banana" -> #{ <<"items">> => [<<"apple">>, 1, <<"banana">>] } (list) config+map=key1="val1";key2=true -> #{ <<"config">> => #{<<"key1">> => <<"val1">>, <<"key2">> => true} } (map) Initial Message Map: A combination of the above key-value pairs.Path Evaluation:If [PATH] is /items/1, the response is the integer 1.If [PATH] is /config/key1, the response is the binary <<"val1">>.
 
 ---
 
@@ -484,7 +505,7 @@ Node Operator FAQ This page answers common questions about running and maintaini
 
 Document Number: 15
 Source: https://hyperbeam.arweave.net/build/devices/source-code/dev_p4.html
-Words: 550
+Words: 555
 Quality Score: 0.497
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
@@ -492,12 +513,12 @@ Extraction Reason: defuddle_returned_html_semantic_extracted
 Module dev_p4.erl The HyperBEAM core payment ledger.Description This module allows the operator to
 specify another device that can act as a pricing mechanism for transactions
 on the node, as well as orchestrating a payment ledger to calculate whether
-the node should fulfil services for users.The device requires the following node message settings in order to function:p4_pricing-device: The device that will estimate the cost of a request.p4_ledger-device: The device that will act as a payment ledger.The pricing device should implement the following keys:`GET /estimate?type=pre|post&body=[...]&request=RequestMessage``GET /price?type=pre|post&body=[...]&request=RequestMessage The body key is used to pass either the request or response messages to the
+the node should fulfil services for users.The device requires the following node message settings in order to function:p4_pricing-device: The device that will estimate the cost of a request.p4_ledger-device: The device that will act as a payment ledger.The pricing device should implement the following keys: `GET /estimate?type=pre|post&body=[...]&request=RequestMessage` `GET /price?type=pre|post&body=[...]&request=RequestMessage` The body key is used to pass either the request or response messages to the
 device. The type key is used to specify whether the inquiry is for a request
 (pre) or a response (post) object. Requests carry lists of messages that will
 be executed, while responses carry the results of the execution. The price key may return infinity if the node will not serve a user under any
 circumstances. Else, the value returned by the price key will be passed to
-the ledger device as the amount key.A ledger device should implement the following keys:POST /credit?message=PaymentMessage&request=RequestMessage``POST /charge?amount=PriceMessage&request=RequestMessage``GET /balance?request=RequestMessage` The type key is optional and defaults to pre. If type is set to post,
+the ledger device as the amount key.A ledger device should implement the following keys: `POST /credit?message=PaymentMessage&request=RequestMessage` `POST /charge?amount=PriceMessage&request=RequestMessage` `GET /balance?request=RequestMessage` The type key is optional and defaults to pre. If type is set to post,
 the charge must be applied to the ledger, whereas the pre type is used to
 check whether the charge would succeed before execution.Function Index balance/3 Get the balance of a user in the ledger.faff_test/0* Simple test of p4's capabilities with the faff@1.0 device.hyper_token_ledger/0* hyper_token_ledger_test_/0* Ensure that Lua scripts can be used as pricing and ledger devices.is_chargable_req/2* The node operator may elect to make certain routes non-chargable, using
 the routes syntax also used to declare routes in router@1.0.non_chargable_route_test/0* Test that a non-chargable route is not charged for.request/3 Estimate the cost of a transaction and decide whether to proceed with
@@ -529,6 +550,7 @@ POST /~copycat@1.0/graphql
 "value": "MyApp",
 "node": "https://arweave.net/graphql"
 }
+
 // Phase 2: Query replicated data locally
 GET /~query@1.0/all
 {
@@ -610,12 +632,12 @@ keyInDevice executed on DeviceName against Msg1.
 
 Document Number: 18
 Source: https://hyperbeam.arweave.net/build/devices/foundational/meta-at-1-0.html
-Words: 346
+Words: 347
 Quality Score: 0.475
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Device: ~meta@1.0 Overview The ~meta@1.0 device provides access to metadata and configuration information about the local HyperBEAM node and the broader AO network.This device is essential for:Core Functions (Keys) info Retrieves or modifies the node's configuration message (often referred to as NodeMsg internally).GET /~meta@1.0/info Action: Returns the current node configuration message.Response: A message map containing the node's settings. Sensitive keys (like private wallets) are filtered out. Dynamically generated keys like the node's public address are added if a wallet is configured.POST /~meta@1.0/info Action: Updates the node's configuration message. Requires the request to be signed by the node's configured operator key/address.Request Body: A message map containing the configuration keys and values to update.Response: Confirmation message indicating success or failure.Note: Once a node's configuration is marked as initialized = permanent, it cannot be changed via this method.Key Configuration Parameters Managed by ~meta While the info key is the primary interaction point, the NodeMsg managed by ~meta holds crucial configuration parameters affecting the entire node's behavior, including (but not limited to):port: HTTP server port.priv_wallet / key_location: Path to the node's Arweave key file.operator: The address designated as the node operator (defaults to the address derived from priv_wallet).initialized: Status indicating if the node setup is temporary or permanent.preprocessor / postprocessor: Optional messages defining pre/post-processing logic for requests.routes: Routing table used by dev_router.store: Configuration for data storage.trace: Debug tracing options.p4_*: Payment configuration.faff_*: Access control lists.(Refer to hb_opts.erl for a comprehensive list of options.) Utility Functions (Internal/Module Level) The dev_meta.erl module also contains helper functions used internally or callable from other Erlang modules:is_operator(, ) -> boolean(): Checks if the signer of RequestMsg matches the configured operator in NodeMsg.Pre/Post-Processing Hooks The ~meta device applies the node's configured preprocessor message before resolving the main request and the postprocessor message after obtaining the result, allowing for global interception and modification of requests/responses.Initialization Before a node can process general requests, it usually needs to be initialized. Attempts to access devices other than ~meta@1.0/info before initialization typically result in an error. Initialization often involves setting essential parameters like the operator key via a POST to info.meta module
+Device: ~meta@1.0 Overview The ~meta@1.0 device provides access to metadata and configuration information about the local HyperBEAM node and the broader AO network.This device is essential for:Core Functions (Keys) info Retrieves or modifies the node's configuration message (often referred to as NodeMsg internally).GET /~meta@1.0/info Action: Returns the current node configuration message.Response: A message map containing the node's settings. Sensitive keys (like private wallets) are filtered out. Dynamically generated keys like the node's public address are added if a wallet is configured.POST /~meta@1.0/info Action: Updates the node's configuration message. Requires the request to be signed by the node's configured operator key/address.Request Body: A message map containing the configuration keys and values to update.Response: Confirmation message indicating success or failure.Note: Once a node's configuration is marked as initialized = permanent, it cannot be changed via this method.Key Configuration Parameters Managed by ~meta While the info key is the primary interaction point, the NodeMsg managed by ~meta holds crucial configuration parameters affecting the entire node's behavior, including (but not limited to):port: HTTP server port.priv_wallet / key_location: Path to the node's Arweave key file.operator: The address designated as the node operator (defaults to the address derived from priv_wallet).initialized: Status indicating if the node setup is temporary or permanent.preprocessor / postprocessor: Optional messages defining pre/post-processing logic for requests.routes: Routing table used by dev_router.store: Configuration for data storage.trace: Debug tracing options.p4_*: Payment configuration.faff_*: Access control lists.(Refer to hb_opts.erl for a comprehensive list of options.) Utility Functions (Internal/Module Level) The dev_meta.erl module also contains helper functions used internally or callable from other Erlang modules:is_operator( , ) -> boolean(): Checks if the signer of RequestMsg matches the configured operator in NodeMsg.Pre/Post-Processing Hooks The ~meta device applies the node's configured preprocessor message before resolving the main request and the postprocessor message after obtaining the result, allowing for global interception and modification of requests/responses.Initialization Before a node can process general requests, it usually needs to be initialized. Attempts to access devices other than ~meta@1.0/info before initialization typically result in an error. Initialization often involves setting essential parameters like the operator key via a POST to info.meta module
 
 ---
 
