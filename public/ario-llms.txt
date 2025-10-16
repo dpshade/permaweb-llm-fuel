@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-16T12:17:57.972Z
+Generated on: 2025-10-16T16:29:03.578Z
 Total documents: 144
-Total words: 77609
+Total words: 77564
 
 ## Table of Contents
 
@@ -32,8 +32,8 @@ Total words: 77609
 22. [Wayfinder Core ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core)
 23. [Admin ARIO Documentation](https://docs.ar.io/apis/ar-io-node/admin)
 24. [Access Data ARIO Documentation](https://docs.ar.io/build/access)
-25. [Turbo SDK ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk)
-26. [Creating Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/creating-drives)
+25. [Creating Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/creating-drives)
+26. [Turbo SDK ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk)
 27. [Run a Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway)
 28. [Getting Started with Turbo ARIO Documentation](https://docs.ar.io/build/upload/bundling-services)
 29. [Chunks ARIO Documentation](https://docs.ar.io/apis/ar-io-node/chunks)
@@ -44,11 +44,11 @@ Total words: 77609
 34. [Networks ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/networks)
 35. [Automating SSL Certificate Renewal ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/ssl-certs)
 36. [Redemption ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/redemption)
-37. [Wayfinder React ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-react)
-38. [Spawn ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/spawn)
-39. [Reading Data ARIO Documentation](https://docs.ar.io/build/advanced/arfs/reading-data)
-40. [Farcaster Frames ARIO Documentation](https://docs.ar.io/apis/ar-io-node/farcaster-frames)
-41. [Upgrading your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway)
+37. [Spawn ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/spawn)
+38. [Reading Data ARIO Documentation](https://docs.ar.io/build/advanced/arfs/reading-data)
+39. [Farcaster Frames ARIO Documentation](https://docs.ar.io/apis/ar-io-node/farcaster-frames)
+40. [Upgrading your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway)
+41. [Wayfinder React ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-react)
 42. [Pricing Model ARIO Documentation](https://docs.ar.io/learn/arns/pricing-model)
 43. [Find Data (via GraphQL) ARIO Documentation](https://docs.ar.io/build/access/find-data)
 44. [Tagging ARIO Documentation](https://docs.ar.io/build/upload/tagging)
@@ -75,9 +75,9 @@ Total words: 77609
 65. [Join the Network ARIO Documentation](https://docs.ar.io/build/run-a-gateway/join-the-network)
 66. [Arweave Name Tokens (ANTs) ARIO Documentation](https://docs.ar.io/learn/arns/ants)
 67. [Distributions ARIO Documentation](https://docs.ar.io/learn/oip/reward-distribution)
-68. [Pagination ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/pagination)
-69. [Encryption ARIO Documentation](https://docs.ar.io/build/upload/encryption)
-70. [General ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/general)
+68. [Encryption ARIO Documentation](https://docs.ar.io/build/upload/encryption)
+69. [General ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/general)
+70. [Pagination ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/pagination)
 71. [Primary Names ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/primary-names)
 72. [TurboAuthenticatedClient ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turboauthenticatedclient)
 73. [Balances ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/balances)
@@ -94,8 +94,8 @@ Total words: 77609
 84. [Get Started ARIO Documentation](https://docs.ar.io/build)
 85. [ARIO Integrations ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/ario-integrations)
 86. [Upgrade ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/upgrade)
-87. [Logging ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/logging)
-88. [ARIO SDK ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk)
+87. [ARIO SDK ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk)
+88. [Logging ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/logging)
 89. [Versions ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/versions)
 90. [Upgrading Private Drives ARIO Documentation](https://docs.ar.io/build/advanced/arfs/upgrading-drives)
 91. [Epochs ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/epochs)
@@ -109,11 +109,11 @@ Total words: 77609
 99. [Data ARIO Documentation](https://docs.ar.io/apis/ar-io-node/data)
 100. [Using Turbo SDK with Nextjs ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/nextjs)
 101. [Introduction ARIO Documentation](https://docs.ar.io/sdks)
-102. [Request Flow ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow)
-103. [Pricing ARIO Documentation](https://docs.ar.io/apis/ar-io-node/pricing)
-104. [Using Turbo in a Browser ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser)
-105. [Staking ARIO Documentation](https://docs.ar.io/learn/token/staking)
-106. [Manage your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage)
+102. [Pricing ARIO Documentation](https://docs.ar.io/apis/ar-io-node/pricing)
+103. [Using Turbo in a Browser ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser)
+104. [Staking ARIO Documentation](https://docs.ar.io/learn/token/staking)
+105. [Manage your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage)
+106. [Request Flow ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow)
 107. [What is Arweave ARIO Documentation](https://docs.ar.io/learn/what-is-arweave)
 108. [Undername Ownership ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/undername-ownership)
 109. [ArNS Marketplace ARIO Documentation](https://docs.ar.io/build/guides/arns-marketplace)
@@ -125,14 +125,14 @@ Total words: 77609
 115. [ARIO Gateway APIs ARIO Documentation](https://docs.ar.io/apis/ar-io-node)
 116. [Troubleshooting ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/troubleshooting)
 117. [Balance ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/balance)
-118. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
-119. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
-120. [Metadata ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/metadata)
-121. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
-122. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
-123. [Vaults ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/vaults)
-124. [Contributing ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/contributing)
-125. [Support ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/support)
+118. [Support ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/support)
+119. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
+120. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
+121. [Metadata ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/metadata)
+122. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
+123. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
+124. [Vaults ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/vaults)
+125. [Contributing ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/contributing)
 126. [Data Retrieval ARIO Documentation](https://docs.ar.io/learn/gateways/data-retrieval)
 127. [Extensions Sidecars ARIO Documentation](https://docs.ar.io/build/extensions)
 128. [Pricing ARIO Documentation](https://docs.ar.io/apis/turbo/upload-service/pricing)
@@ -3506,88 +3506,9 @@ id
 
 ---
 
-# 25. Turbo SDK  ARIO Documentation
+# 25. Creating Drives  ARIO Documentation
 
 Document Number: 25
-Source: https://docs.ar.io/sdks/turbo-sdk
-Words: 347
-Quality Score: 0.564
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-The Turbo SDK provides a high-level interface for uploading data to Arweave through Turbo's optimized infrastructure. Built with TypeScript, it offers seamless integration with built-in error handling, automatic retries, and transparent pricing.Quick Start Install the SDK npm install @ardrive/turbo-sdk Use the SDK import { TurboFactory, USD } from '@ardrive/turbo-sdk';
-
-import fs from 'fs';
-
-// Create an authenticated client
-
-const turbo = TurboFactory.authenticated({ privateKey: yourPrivateKey });
-
-// Upload data with automatic payment
-
-const result = await turbo.uploadFile({
-
-fileStreamFactory: () => fs.createReadStream('./my-file.pdf'),
-
-fileSizeFactory: () => fs.statSync('./my-file.pdf').size,
-
-});
-
-console.log('Upload successful:', result);Install the SDK npm install @ardrive/turbo-sdk Install polyfills (required for web environments) npm install --save-dev vite-plugin-node-polyfills // vite.config.js
-
-import { defineConfig } from 'vite';
-
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
-
-export default defineConfig({
-
-plugins: [
-
-nodePolyfills({
-
-globals: {
-
-Buffer: true,
-
-global: true,
-
-process: true,
-
-},
-
-}),
-
-],
-
-});Configure your bundler (Webpack, Vite, Rollup, etc.) to provide polyfills for crypto, process, and buffer. Refer to your bundler's documentation for polyfill configuration.Use the SDK import { TurboFactory, USD } from '@ardrive/turbo-sdk';
-
-// Create an authenticated client
-
-const turbo = TurboFactory.authenticated({ privateKey: yourPrivateKey });
-
-// Upload data with automatic payment
-
-const fileInput = document.querySelector('input[type="file"]');
-
-const file = fileInput.files[0];
-
-const result = await turbo.uploadFile({
-
-fileStreamFactory: () => file.stream(),
-
-fileSizeFactory: () => file.size,
-
-});
-
-console.log('Upload successful:', result); Turbo SDK Upload Example # Turbo SDK Upload Example
-
-Private Key (JWK): Select File: Upload to Arweave API Reference & Documentation API Reference Complete API documentation for all Turbo client methods SDK Details Advanced features, events, logging, and credit sharing Core Features Upload Management Authenticated and unauthenticated upload clients with retry logic Events & Monitoring Monitor upload progress and handle events in real-time Credit Sharing Manage shared credit pools for streamlined billing Logging & Configuration Configure logging for debugging and monitoring uploads How is this guide?Pagination TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem TurboFactory SDK for interacting with Turbo, a fast and efficient data upload service for Arweave On this page Quick Start Install the SDK Use the SDK Install the SDK Install polyfills (required for web environments) Use the SDK API Reference & Documentation Core Features
-
----
-
-# 26. Creating Drives  ARIO Documentation
-
-Document Number: 26
 Source: https://docs.ar.io/build/advanced/arfs/creating-drives
 Words: 734
 Quality Score: 0.564
@@ -3677,6 +3598,85 @@ Data-Start: " ",
 Data-End: " ",
 
 Unix-Time: " " Implementation Example Here's a practical example of creating a complete drive structure:Best Practices Naming Conventions Use descriptive names for drives, folders, and files Avoid special characters that might cause issues Keep names under 255 characters Use consistent casing Organization Create logical folder structures Use meaningful folder names Implement proper versioning Document your structure Performance Batch operations when possible Use efficient queries Implement caching Consider file sizes Security Use strong passwords for private drives Implement proper key management Follow encryption best practices Regular security audits Error Handling When creating ArFS entities, handle these common scenarios:Transaction Failures Implement retry logic for failed uploads Validate data before uploading Check transaction confirmation status Validation Errors Verify required tags are present Check data format compliance Validate UUID formats Network Issues Implement timeout handling Provide user feedback Graceful degradation Next Steps Now that you know how to create ArFS entities, learn how to work with them:Reading Data - Query and retrieve your ArFS data Privacy & Encryption - Secure your data with private drives Upgrading Private Drives - Update legacy drives to v0.15 How is this guide?
+
+---
+
+# 26. Turbo SDK  ARIO Documentation
+
+Document Number: 26
+Source: https://docs.ar.io/sdks/turbo-sdk
+Words: 346
+Quality Score: 0.564
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+The Turbo SDK provides a high-level interface for uploading data to Arweave through Turbo's optimized infrastructure. Built with TypeScript, it offers seamless integration with built-in error handling, automatic retries, and transparent pricing.Quick Start Install the SDK npm install @ardrive/turbo-sdk Use the SDK import { TurboFactory, USD } from '@ardrive/turbo-sdk';
+
+import fs from 'fs';
+
+// Create an authenticated client
+
+const turbo = TurboFactory.authenticated({ privateKey: yourPrivateKey });
+
+// Upload data with automatic payment
+
+const result = await turbo.uploadFile({
+
+fileStreamFactory: () => fs.createReadStream('./my-file.pdf'),
+
+fileSizeFactory: () => fs.statSync('./my-file.pdf').size,
+
+});
+
+console.log('Upload successful:', result);Install the SDK npm install @ardrive/turbo-sdk Install polyfills (required for web environments) npm install --save-dev vite-plugin-node-polyfills // vite.config.js
+
+import { defineConfig } from 'vite';
+
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
+
+export default defineConfig({
+
+plugins: [
+
+nodePolyfills({
+
+globals: {
+
+Buffer: true,
+
+global: true,
+
+process: true,
+
+},
+
+}),
+
+],
+
+});Configure your bundler (Webpack, Vite, Rollup, etc.) to provide polyfills for crypto, process, and buffer. Refer to your bundler's documentation for polyfill configuration.Use the SDK import { TurboFactory, USD } from '@ardrive/turbo-sdk';
+
+// Create an authenticated client
+
+const turbo = TurboFactory.authenticated({ privateKey: yourPrivateKey });
+
+// Upload data with automatic payment
+
+const fileInput = document.querySelector('input[type="file"]');
+
+const file = fileInput.files[0];
+
+const result = await turbo.uploadFile({
+
+fileStreamFactory: () => file.stream(),
+
+fileSizeFactory: () => file.size,
+
+});
+
+console.log('Upload successful:', result); Turbo SDK Upload Example # Turbo SDK Upload Example
+
+Private Key (JWK): Select File: Upload to Arweave API Reference & Documentation API Reference Complete API documentation for all Turbo client methods SDK Details Advanced features, events, logging, and credit sharing Core Features Upload Management Authenticated and unauthenticated upload clients with retry logic Events & Monitoring Monitor upload progress and handle events in real-time Credit Sharing Manage shared credit pools for streamlined billing Logging & Configuration Configure logging for debugging and monitoring uploads How is this guide?LLM Text Complete LLM-friendly text for AR.IO SDK TurboFactory SDK for interacting with Turbo, a fast and efficient data upload service for Arweave On this page Quick Start Install the SDK Use the SDK Install the SDK Install polyfills (required for web environments) Use the SDK API Reference & Documentation Core Features
 
 ---
 
@@ -4338,80 +4338,9 @@ Turbo Payment Service Credit redemption and gift processing Redeem credits gifte
 
 ---
 
-# 37. Wayfinder React  ARIO Documentation
+# 37. Spawn  ARIO Documentation
 
 Document Number: 37
-Source: https://docs.ar.io/sdks/wayfinder/wayfinder-react
-Words: 261
-Quality Score: 0.550
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Wayfinder SDK's A set of React hooks and components for integrating Wayfinder, the decentralized data access system for Arweave.Wayfinder-react wraps the functionality of wayfinder-core in user-friendly React components and hooks, making it easy to integrate AR.IO network functionality into your React applications with built-in loading states, error handling, and caching.Quick Start Install Wayfinder React npm install @ar.io/wayfinder-react @ar.io/wayfinder-core @ar.io/sdk Install polyfills (required for web environments) npm install --save-dev vite-plugin-node-polyfills // vite.config.js
-
-import { defineConfig } from 'vite';
-
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
-
-export default defineConfig({
-
-plugins: [
-
-nodePolyfills({
-
-globals: {
-
-Buffer: true,
-
-global: true,
-
-process: true,
-
-},
-
-}),
-
-],
-
-});Configure your bundler (Webpack, Vite, Rollup, etc.) to provide polyfills for crypto, process, and buffer. Refer to your bundler's documentation for polyfill configuration.Setup the provider // App.tsx
-
-import { WayfinderProvider } from '@ar.io/wayfinder-react';
-
-function App() {
-
-return ( );
-
-} Use the available hooks import { useWayfinderUrl } from '@ar.io/wayfinder-react';
-
-function WayfinderImage({ txId }: { txId: string }) {
-
-const { resolvedUrl, isLoading, error } = useWayfinderUrl({ txId });
-
-if (error) {
-
-return Error resolving URL: {error.message}
-
-;
-
-}
-
-if (isLoading) {
-
-return Resolving URL...
-
-;
-
-}
-
-return ( );
-
-} Next Steps Hooks Reference Comprehensive guide to all available React hooks Wayfinder Core Learn about the underlying core library How is this guide?Request Flow JavaScript/TypeScript SDK for accessing Arweave data with built-in verification and gateway routing useWayfinderUrl React hooks and components for integrating Wayfinder into React applications On this page Quick Start Install Wayfinder React Install polyfills (required for web environments) Setup the provider Use the available hooks Next Steps
-
----
-
-# 38. Spawn  ARIO Documentation
-
-Document Number: 38
 Source: https://docs.ar.io/sdks/ar-io-sdk/spawn
 Words: 243
 Quality Score: 0.549
@@ -4462,9 +4391,9 @@ ar.io spawn-ant --wallet-file wallet.json --module FKtQtOOtlcWCW2pXrwWFiCSlnuewM
 
 ---
 
-# 39. Reading Data  ARIO Documentation
+# 38. Reading Data  ARIO Documentation
 
-Document Number: 39
+Document Number: 38
 Source: https://docs.ar.io/build/advanced/arfs/reading-data
 Words: 1020
 Quality Score: 0.548
@@ -4717,9 +4646,9 @@ value
 
 ---
 
-# 40. Farcaster Frames  ARIO Documentation
+# 39. Farcaster Frames  ARIO Documentation
 
-Document Number: 40
+Document Number: 39
 Source: https://docs.ar.io/apis/ar-io-node/farcaster-frames
 Words: 171
 Quality Score: 0.548
@@ -4810,9 +4739,9 @@ AR.IO Gateway Retrieve and interact with Farcaster Frames using Arweave transact
 
 ---
 
-# 41. Upgrading your Gateway  ARIO Documentation
+# 40. Upgrading your Gateway  ARIO Documentation
 
-Document Number: 41
+Document Number: 40
 Source: https://docs.ar.io/build/run-a-gateway/manage/upgrading-a-gateway
 Words: 604
 Quality Score: 0.548
@@ -4826,6 +4755,77 @@ image specified in the docker-compose.yaml file.Docker Pruning (Optional) It's a
 NEW_FEATURE_ENABLED=true
 
 NEW_CONFIG_VALUE=default_value Restart Gateway Restart your gateway to apply the new environment variables:sudo docker compose up -d docker compose up -d That's it! Your AR.IO Gateway is now upgraded to the latest version. Ensure to test and verify that everything is functioning as expected. If you encounter any issues, reach out to the AR.IO community for assistance.How is this guide?Manage your Gateway Comprehensive guides for advanced AR.IO Gateway operations including monitoring, optimization, content moderation, and specialized configurations Automating SSL Certificate Renewal Step-by-step guide to configure Certbot with automatic SSL certificate renewal using DNS API for AR.IO Gateway On this page Prerequisites Checking your Release Number Quick Start Pull Latest Changes Shut Down Docker Restart Gateway Detailed Upgrade Process Full Upgrade Process Pull Latest Changes Shut Down Docker Check for New Environment Variables Restart the Gateway Docker Pruning (Optional) Shut Down Gateway Prune Docker System Restart Gateway Checking for New Environment Variables Review Release Notes Update Your.env File Restart Gateway
+
+---
+
+# 41. Wayfinder React  ARIO Documentation
+
+Document Number: 41
+Source: https://docs.ar.io/sdks/wayfinder/wayfinder-react
+Words: 255
+Quality Score: 0.548
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Wayfinder SDK's A set of React hooks and components for integrating Wayfinder, the decentralized data access system for Arweave.Wayfinder-react wraps the functionality of wayfinder-core in user-friendly React components and hooks, making it easy to integrate AR.IO network functionality into your React applications with built-in loading states, error handling, and caching.Quick Start Install Wayfinder React npm install @ar.io/wayfinder-react @ar.io/wayfinder-core @ar.io/sdk Install polyfills (required for web environments) npm install --save-dev vite-plugin-node-polyfills // vite.config.js
+
+import { defineConfig } from 'vite';
+
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
+
+export default defineConfig({
+
+plugins: [
+
+nodePolyfills({
+
+globals: {
+
+Buffer: true,
+
+global: true,
+
+process: true,
+
+},
+
+}),
+
+],
+
+});Configure your bundler (Webpack, Vite, Rollup, etc.) to provide polyfills for crypto, process, and buffer. Refer to your bundler's documentation for polyfill configuration.Setup the provider // App.tsx
+
+import { WayfinderProvider } from '@ar.io/wayfinder-react';
+
+function App() {
+
+return ( );
+
+} Use the available hooks import { useWayfinderUrl } from '@ar.io/wayfinder-react';
+
+function WayfinderImage({ txId }: { txId: string }) {
+
+const { resolvedUrl, isLoading, error } = useWayfinderUrl({ txId });
+
+if (error) {
+
+return Error resolving URL: {error.message}
+
+;
+
+}
+
+if (isLoading) {
+
+return Resolving URL...
+
+;
+
+}
+
+return ( );
+
+} Next Steps Hooks Reference Comprehensive guide to all available React hooks Wayfinder Core Learn about the underlying core library How is this guide?LLM Text Complete LLM-friendly text for Wayfinder Core useWayfinderUrl React hooks and components for integrating Wayfinder into React applications On this page Quick Start Install Wayfinder React Install polyfills (required for web environments) Setup the provider Use the available hooks Next Steps
 
 ---
 
@@ -5987,8 +5987,8 @@ What is ArNS?Arweave URLs and transaction IDs are long, difficult to remember, a
 
 Document Number: 55
 Source: https://docs.ar.io/sdks/wayfinder
-Words: 309
-Quality Score: 0.527
+Words: 300
+Quality Score: 0.525
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -6042,7 +6042,7 @@ return Resolving URL...
 
 return ( );
 
-} Next Steps Learn about the AR.IO Network Understanding the AR.IO decentralized infrastructure Decentralized Access Learn how to access Arweave data in a decentralized way Run a Gateway Join the network by operating your own AR.IO gateway Integrate Wayfinder into your App Advanced integration patterns and best practices How is this guide?Turbo Credit Sharing SDK for interacting with Turbo, a fast and efficient data upload service for Arweave Wayfinder Core JavaScript/TypeScript SDK for accessing Arweave data with built-in verification and gateway routing
+} Next Steps Learn about the AR.IO Network Understanding the AR.IO decentralized infrastructure Decentralized Access Learn how to access Arweave data in a decentralized way Run a Gateway Join the network by operating your own AR.IO gateway Integrate Wayfinder into your App Advanced integration patterns and best practices How is this guide?LLM Text Complete LLM-friendly text for Turbo SDK Wayfinder Core JavaScript/TypeScript SDK for accessing Arweave data with built-in verification and gateway routing
 
 ---
 
@@ -6111,8 +6111,8 @@ token: 'kyve',
 
 Document Number: 57
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-react/usewayfinderrequest
-Words: 179
-Quality Score: 0.520
+Words: 181
+Quality Score: 0.518
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -6196,7 +6196,7 @@ return No data
 
 return ( {data} );
 
-} How is this guide?useWayfinderUrl React hooks and components for integrating Wayfinder into React applications ArFS Command line interface for ArDrive
+} How is this guide?useWayfinderUrl React hooks and components for integrating Wayfinder into React applications LLM Text Complete LLM-friendly text for Wayfinder React
 
 ---
 
@@ -6669,54 +6669,9 @@ How is this guide?GoodBadPerformance and WeightsLearn about how gateways are eva
 
 ---
 
-# 68. Pagination  ARIO Documentation
+# 68. Encryption  ARIO Documentation
 
 Document Number: 68
-Source: https://docs.ar.io/sdks/ar-io-sdk/pagination
-Words: 333
-Quality Score: 0.504
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-AR.IO SDK Overview Certain APIs that could return a large amount of data are paginated using cursors. The SDK uses the cursor pattern (as opposed to pages) to better protect against changing data while paginating through a list of items. For more information on pagination strategies refer to this article.Paginated results include the following properties:items: the list of items on the current request, defaulted to 100 items.nextCursor: the cursor to use for the next batch of items. This is undefined if there are no more items to fetch.hasMore: a boolean indicating if there are more items to fetch. This is false if there are no more items to fetch.totalItems: the total number of items available. This may change as new items are added to the list, only use this for informational purposes.sortBy: the field used to sort the items, by default this is startTimestamp.sortOrder: the order used to sort the items, by default this is desc.To request all the items in a list, you can iterate through the list using the nextCursor until hasMore is false.let hasMore = true;
-
-let cursor: string | undefined;
-
-const gateaways = [];
-
-while (hasMore) {
-
-const page = await ario.getGateways({ limit: 100, cursor });
-
-gateaways.push(...items);
-
-cursor = page.nextCursor;
-
-hasMore = page.hasMore;
-
-} Filtering Paginated APIs also support filtering by providing a filters parameter. Filters can be applied to any field in the response. When multiple keys are provided, they are treated as AND conditions (all conditions must match). When multiple values are provided for a single key (as an array), they are treated as OR conditions (any value can match).Example:const records = await ario.getArNSRecords({
-
-filters: {
-
-type: 'lease',
-
-processId: [
-
-'ZkgLfyHALs5koxzojpcsEFAKA8fbpzP7l-tbM7wmQNM',
-
-'r61rbOjyXx3u644nGl9bkwLWlWmArMEzQgxBo2R-Vu0',
-
-],
-
-},
-
-});In the example above, the query will return ArNS records where:The type is "lease" AND The processId is EITHER "ZkgLfyHALs5koxzojpcsEFAKA8fbpzP7l-tbM7wmQNM" OR "r61rbOjyXx3u644nGl9bkwLWlWmArMEzQgxBo2R-Vu0" How is this guide?Logging TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Turbo SDK JavaScript/TypeScript SDK for uploading data to Arweave via Turbo services with built-in payment handling and optimized performance
-
----
-
-# 69. Encryption  ARIO Documentation
-
-Document Number: 69
 Source: https://docs.ar.io/build/upload/encryption
 Words: 512
 Quality Score: 0.500
@@ -6784,9 +6739,9 @@ separate "ArDrive Encryption Service." Getting Started For most users, the ArDri
 
 ---
 
-# 70. General  ARIO Documentation
+# 69. General  ARIO Documentation
 
-Document Number: 70
+Document Number: 69
 Source: https://docs.ar.io/sdks/ar-io-sdk/general
 Words: 472
 Quality Score: 0.500
@@ -6918,6 +6873,51 @@ qty: new ARIOToken(1000).toMARIO(),
 { tags: [{ name: 'App-Name', value: 'My-Awesome-App' }] },
 
 );How is this guide?AR.IO SDK JavaScript/TypeScript SDK for interacting with the AR.IO Network, including ArNS name management, gateway interactions, and AO contract operations Networks TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
+
+---
+
+# 70. Pagination  ARIO Documentation
+
+Document Number: 70
+Source: https://docs.ar.io/sdks/ar-io-sdk/pagination
+Words: 322
+Quality Score: 0.499
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+AR.IO SDK Overview Certain APIs that could return a large amount of data are paginated using cursors. The SDK uses the cursor pattern (as opposed to pages) to better protect against changing data while paginating through a list of items. For more information on pagination strategies refer to this article.Paginated results include the following properties:items: the list of items on the current request, defaulted to 100 items.nextCursor: the cursor to use for the next batch of items. This is undefined if there are no more items to fetch.hasMore: a boolean indicating if there are more items to fetch. This is false if there are no more items to fetch.totalItems: the total number of items available. This may change as new items are added to the list, only use this for informational purposes.sortBy: the field used to sort the items, by default this is startTimestamp.sortOrder: the order used to sort the items, by default this is desc.To request all the items in a list, you can iterate through the list using the nextCursor until hasMore is false.let hasMore = true;
+
+let cursor: string | undefined;
+
+const gateaways = [];
+
+while (hasMore) {
+
+const page = await ario.getGateways({ limit: 100, cursor });
+
+gateaways.push(...items);
+
+cursor = page.nextCursor;
+
+hasMore = page.hasMore;
+
+} Filtering Paginated APIs also support filtering by providing a filters parameter. Filters can be applied to any field in the response. When multiple keys are provided, they are treated as AND conditions (all conditions must match). When multiple values are provided for a single key (as an array), they are treated as OR conditions (any value can match).Example:const records = await ario.getArNSRecords({
+
+filters: {
+
+type: 'lease',
+
+processId: [
+
+'ZkgLfyHALs5koxzojpcsEFAKA8fbpzP7l-tbM7wmQNM',
+
+'r61rbOjyXx3u644nGl9bkwLWlWmArMEzQgxBo2R-Vu0',
+
+],
+
+},
+
+});In the example above, the query will return ArNS records where:The type is "lease" AND The processId is EITHER "ZkgLfyHALs5koxzojpcsEFAKA8fbpzP7l-tbM7wmQNM" OR "r61rbOjyXx3u644nGl9bkwLWlWmArMEzQgxBo2R-Vu0" How is this guide?Logging TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem LLM Text Complete LLM-friendly text for AR.IO SDK
 
 ---
 
@@ -8361,9 +8361,78 @@ console.log(`Failed to reassign names: ${result.failedReassignedNames}`);Paramet
 
 ---
 
-# 87. Logging  ARIO Documentation
+# 87. ARIO SDK  ARIO Documentation
 
 Document Number: 87
+Source: https://docs.ar.io/sdks/ar-io-sdk
+Words: 331
+Quality Score: 0.480
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+The AR.IO SDK provides comprehensive tools for interacting with the AR.IO Network and Arweave ecosystem. Built with TypeScript, it offers type-safe interfaces for ArNS name management, gateway operations, and AO contract interactions.Quick Start Install the SDK npm install @ar.io/sdk Use the SDK import { ARIO } from '@ar.io/sdk/node';
+
+// Connect to mainnet
+
+const ario = ARIO.mainnet();
+
+// Get paginated gateway registry
+
+const { items: gateways } = await ario.getGateways();
+
+// Get paginated ArNS registry
+
+const { items: records } = await ario.getArNSRecords();
+
+console.log('Network data:', { gateways, records });Install the SDK npm install @ar.io/sdk Install polyfills (required for web environments) npm install --save-dev vite-plugin-node-polyfills // vite.config.js
+
+import { defineConfig } from 'vite';
+
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
+
+export default defineConfig({
+
+plugins: [
+
+nodePolyfills({
+
+globals: {
+
+Buffer: true,
+
+global: true,
+
+process: true,
+
+},
+
+}),
+
+],
+
+});Configure your bundler (Webpack, Vite, Rollup, etc.) to provide polyfills for crypto, process, and buffer. Refer to your bundler's documentation for polyfill configuration.Use the SDK import { ARIO } from '@ar.io/sdk/web';
+
+// Connect to mainnet
+
+const ario = ARIO.mainnet();
+
+// Get paginated gateway registry
+
+const { items: gateways } = await ario.getGateways();
+
+// Get paginated ArNS registry
+
+const { items: records } = await ario.getArNSRecords();
+
+console.log('Network data:', { gateways, records }); AR.IO SDK Example # AR.IO SDK Example
+
+Loading AR.IO data... API Reference & Documentation API Reference Complete API documentation for all SDK methods and classes SDK Details Detailed guides for ARIO contracts, ANT operations, and utilities Core Features ARIO Contract Operations ArNS management, gateway discovery, and network configuration ANT Contract Integration Initialize, manage records, and transfer ANT ownership Pagination & Utilities Handle large datasets and token conversions efficiently Token Operations ARIO token conversions and management utilities How is this guide?LLM Text Complete LLM-friendly text for ArDrive Core JS General TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem On this page Quick Start Install the SDK Use the SDK Install the SDK Install polyfills (required for web environments) Use the SDK API Reference & Documentation Core Features
+
+---
+
+# 88. Logging  ARIO Documentation
+
+Document Number: 88
 Source: https://docs.ar.io/sdks/ar-io-sdk/logging
 Words: 359
 Quality Score: 0.479
@@ -8449,75 +8518,6 @@ const ario = ARIO.mainnet({ logger: adapter });
 // or set it as the default logger in the entire SDK
 
 Logger.default = adapter;How is this guide?Token Conversion TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem Pagination TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem
-
----
-
-# 88. ARIO SDK  ARIO Documentation
-
-Document Number: 88
-Source: https://docs.ar.io/sdks/ar-io-sdk
-Words: 329
-Quality Score: 0.479
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-The AR.IO SDK provides comprehensive tools for interacting with the AR.IO Network and Arweave ecosystem. Built with TypeScript, it offers type-safe interfaces for ArNS name management, gateway operations, and AO contract interactions.Quick Start Install the SDK npm install @ar.io/sdk Use the SDK import { ARIO } from '@ar.io/sdk/node';
-
-// Connect to mainnet
-
-const ario = ARIO.mainnet();
-
-// Get paginated gateway registry
-
-const { items: gateways } = await ario.getGateways();
-
-// Get paginated ArNS registry
-
-const { items: records } = await ario.getArNSRecords();
-
-console.log('Network data:', { gateways, records });Install the SDK npm install @ar.io/sdk Install polyfills (required for web environments) npm install --save-dev vite-plugin-node-polyfills // vite.config.js
-
-import { defineConfig } from 'vite';
-
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
-
-export default defineConfig({
-
-plugins: [
-
-nodePolyfills({
-
-globals: {
-
-Buffer: true,
-
-global: true,
-
-process: true,
-
-},
-
-}),
-
-],
-
-});Configure your bundler (Webpack, Vite, Rollup, etc.) to provide polyfills for crypto, process, and buffer. Refer to your bundler's documentation for polyfill configuration.Use the SDK import { ARIO } from '@ar.io/sdk/web';
-
-// Connect to mainnet
-
-const ario = ARIO.mainnet();
-
-// Get paginated gateway registry
-
-const { items: gateways } = await ario.getGateways();
-
-// Get paginated ArNS registry
-
-const { items: records } = await ario.getArNSRecords();
-
-console.log('Network data:', { gateways, records }); AR.IO SDK Example # AR.IO SDK Example
-
-Loading AR.IO data... API Reference & Documentation API Reference Complete API documentation for all SDK methods and classes SDK Details Detailed guides for ARIO contracts, ANT operations, and utilities Core Features ARIO Contract Operations ArNS management, gateway discovery, and network configuration ANT Contract Integration Initialize, manage records, and transfer ANT ownership Pagination & Utilities Handle large datasets and token conversions efficiently Token Operations ARIO token conversions and management utilities How is this guide?Support JavaScript/TypeScript SDK for interacting with ArDrive General TypeScript/JavaScript SDK for interacting with the AR.IO ecosystem On this page Quick Start Install the SDK Use the SDK Install the SDK Install polyfills (required for web environments) Use the SDK API Reference & Documentation Core Features
 
 ---
 
@@ -11433,22 +11433,9 @@ Build powerful applications with our comprehensive suite of SDKs designed for th
 
 ---
 
-# 102. Request Flow  ARIO Documentation
+# 102. Pricing  ARIO Documentation
 
 Document Number: 102
-Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow
-Words: 36
-Quality Score: 0.465
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-The following sequence diagram illustrates how Wayfinder processes requests:How is this guide?Telemetry JavaScript/TypeScript SDK for accessing Arweave data with built-in verification and gateway routing Wayfinder React React hooks and components for integrating Wayfinder into React applications
-
----
-
-# 103. Pricing  ARIO Documentation
-
-Document Number: 103
 Source: https://docs.ar.io/apis/ar-io-node/pricing
 Words: 112
 Quality Score: 0.464
@@ -11459,9 +11446,9 @@ AR.IO Gateway Get the price (in winston) for an amount of bytes Get price to sto
 
 ---
 
-# 104. Using Turbo in a Browser  ARIO Documentation
+# 103. Using Turbo in a Browser  ARIO Documentation
 
-Document Number: 104
+Document Number: 103
 Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser
 Words: 252
 Quality Score: 0.463
@@ -11472,9 +11459,9 @@ Guides Using Turbo in a Browser Integrate the Turbo SDK directly into your web a
 
 ---
 
-# 105. Staking  ARIO Documentation
+# 104. Staking  ARIO Documentation
 
-Document Number: 105
+Document Number: 104
 Source: https://docs.ar.io/learn/token/staking
 Words: 853
 Quality Score: 0.463
@@ -11485,9 +11472,9 @@ Token Overview Staking tokens within the AR.IO Network serves a dual primary pur
 
 ---
 
-# 106. Manage your Gateway  ARIO Documentation
+# 105. Manage your Gateway  ARIO Documentation
 
-Document Number: 106
+Document Number: 105
 Source: https://docs.ar.io/build/run-a-gateway/manage
 Words: 228
 Quality Score: 0.462
@@ -11499,6 +11486,19 @@ performance analytics, and operational insights.Performance Optimization Gateway
 control what content your gateway serves.Configuration Reference Environment Variables Reference Comprehensive reference for all AR.IO Gateway environment variables
 organized by service component.Support & Troubleshooting Gateway Troubleshooting & FAQ Comprehensive troubleshooting guide and FAQ for common gateway issues,
 failed epoch guidance, and frequently asked questions.How is this guide?Join the Network Register your AR.IO Gateway with the network to start earning rewards Upgrading your Gateway Step-by-step guide to upgrading your AR.IO Gateway to the latest version safely without losing data or progress
+
+---
+
+# 106. Request Flow  ARIO Documentation
+
+Document Number: 106
+Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow
+Words: 32
+Quality Score: 0.460
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+The following sequence diagram illustrates how Wayfinder processes requests:How is this guide?Telemetry JavaScript/TypeScript SDK for accessing Arweave data with built-in verification and gateway routing LLM Text Complete LLM-friendly text for Wayfinder Core
 
 ---
 
@@ -12066,12 +12066,12 @@ const returnedName = await ario.getArNSReturnedName({ name: 'permalink' });Outpu
 
 Document Number: 111
 Source: https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing
-Words: 519
+Words: 514
 Quality Score: 0.453
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
-Turbo SDK Users can share their purchased Credits with other users' wallets by creating Credit Share Approvals. These approvals are created by uploading a signed data item with tags indicating the recipient's wallet address, the amount of Credits to share, and an optional amount of seconds that the approval will expire in. The recipient can then use the shared Credits to pay for their own uploads to Turbo.Shared Credits cannot be re-shared by the recipient to other recipients. Only the original owner of the Credits can share or revoke Credit Share Approvals. Credits that are shared to other wallets may not be used by the original owner of the Credits for sharing or uploading unless the Credit Share Approval is revoked or expired.Approvals can be revoked at any time by similarly uploading a signed data item with tags indicating the recipient's wallet address. This will remove all approvals and prevent the recipient from using the shared Credits. All unused Credits from expired or revoked approvals are returned to the original owner of the Credits.To use the shared Credits, recipient users must provide the wallet address of the user who shared the Credits with them in the x-paid-by HTTP header when uploading data. This tells Turbo services to look for and use Credit Share Approvals to pay for the upload before using the signer's balance.For user convenience, during upload the Turbo CLI will use any available Credit Share Approvals found for the connected wallet before using the signing wallet's balance. To instead ignore all Credit shares and only use the signer's balance, use the --ignore-approvals flag. To use the signer's balance first before using Credit shares, use the --use-signer-balance-first flag. In contrast, the Turbo SDK layer does not provide this functionality and will only use approvals when paidBy is provided.The Turbo SDK provides the following methods to manage Credit Share Approvals:shareCredits: Creates a Credit Share Approval for the specified wallet address and amount of Credits.revokeCredits: Revokes all Credit Share Approvals for the specified wallet address.listShares: Lists all Credit Share Approvals for the specified wallet address or connected wallet.dataItemOpts: { ...opts, paidBy: string[] }: Upload methods now accept 'paidBy', an array of wallet addresses that have provided credit share approvals to the user from which to pay, in the order provided and as necessary, for the upload.The Turbo CLI provides the following commands to manage Credit Share Approvals:share-credits: Creates a Credit Share Approval for the specified wallet address and amount of Credits.revoke-credits: Revokes all Credit Share Approvals for the specified wallet address.list-shares: Lists all Credit Share Approvals for the specified wallet address or connected wallet.paidBy: --paid-by : Upload commands now accept '--paid-by', an array of wallet addresses that have provided credit share approvals to the user from which to pay, in the order provided and as necessary, for the upload.--ignore-approvals: Ignore all Credit Share Approvals and only use the signer's balance.--use-signer-balance-first: Use the signer's balance first before using Credit Share Approvals.How is this guide?Logging SDK for interacting with Turbo, a fast and efficient data upload service for Arweave Wayfinder SDK's Decentralized access to Arweave data with built-in verification and gateway routing
+Turbo SDK Users can share their purchased Credits with other users' wallets by creating Credit Share Approvals. These approvals are created by uploading a signed data item with tags indicating the recipient's wallet address, the amount of Credits to share, and an optional amount of seconds that the approval will expire in. The recipient can then use the shared Credits to pay for their own uploads to Turbo.Shared Credits cannot be re-shared by the recipient to other recipients. Only the original owner of the Credits can share or revoke Credit Share Approvals. Credits that are shared to other wallets may not be used by the original owner of the Credits for sharing or uploading unless the Credit Share Approval is revoked or expired.Approvals can be revoked at any time by similarly uploading a signed data item with tags indicating the recipient's wallet address. This will remove all approvals and prevent the recipient from using the shared Credits. All unused Credits from expired or revoked approvals are returned to the original owner of the Credits.To use the shared Credits, recipient users must provide the wallet address of the user who shared the Credits with them in the x-paid-by HTTP header when uploading data. This tells Turbo services to look for and use Credit Share Approvals to pay for the upload before using the signer's balance.For user convenience, during upload the Turbo CLI will use any available Credit Share Approvals found for the connected wallet before using the signing wallet's balance. To instead ignore all Credit shares and only use the signer's balance, use the --ignore-approvals flag. To use the signer's balance first before using Credit shares, use the --use-signer-balance-first flag. In contrast, the Turbo SDK layer does not provide this functionality and will only use approvals when paidBy is provided.The Turbo SDK provides the following methods to manage Credit Share Approvals:shareCredits: Creates a Credit Share Approval for the specified wallet address and amount of Credits.revokeCredits: Revokes all Credit Share Approvals for the specified wallet address.listShares: Lists all Credit Share Approvals for the specified wallet address or connected wallet.dataItemOpts: { ...opts, paidBy: string[] }: Upload methods now accept 'paidBy', an array of wallet addresses that have provided credit share approvals to the user from which to pay, in the order provided and as necessary, for the upload.The Turbo CLI provides the following commands to manage Credit Share Approvals:share-credits: Creates a Credit Share Approval for the specified wallet address and amount of Credits.revoke-credits: Revokes all Credit Share Approvals for the specified wallet address.list-shares: Lists all Credit Share Approvals for the specified wallet address or connected wallet.paidBy: --paid-by : Upload commands now accept '--paid-by', an array of wallet addresses that have provided credit share approvals to the user from which to pay, in the order provided and as necessary, for the upload.--ignore-approvals: Ignore all Credit Share Approvals and only use the signer's balance.--use-signer-balance-first: Use the signer's balance first before using Credit Share Approvals.How is this guide?Logging SDK for interacting with Turbo, a fast and efficient data upload service for Arweave LLM Text Complete LLM-friendly text for Turbo SDK
 
 ---
 
@@ -12156,9 +12156,26 @@ Turbo Payment Service Account balance and credit management Get Current Balance 
 
 ---
 
-# 118. ArFS Protocol  ARIO Documentation
+# 118. Support  ARIO Documentation
 
 Document Number: 118
+Source: https://docs.ar.io/sdks/ardrive-core-js/support
+Words: 26
+Quality Score: 0.443
+Extraction Method: semantic_dom
+Extraction Reason: found_content_in_main
+
+ArDrive Core JSSupportCopy MarkdownOpen
+Discord Community
+GitHub Issues
+ArDrive Website
+How is this guide?GoodBadLicenseJavaScript/TypeScript SDK for interacting with ArDriveLLM TextComplete LLM-friendly text for ArDrive Core JS
+
+---
+
+# 119. ArFS Protocol  ARIO Documentation
+
+Document Number: 119
 Source: https://docs.ar.io/build/advanced/arfs
 Words: 487
 Quality Score: 0.442
@@ -12169,9 +12186,9 @@ Advanced Arweave File System, or "ArFS" is a data modeling, storage, and retriev
 
 ---
 
-# 119. Data Verification  ARIO Documentation
+# 120. Data Verification  ARIO Documentation
 
-Document Number: 119
+Document Number: 120
 Source: https://docs.ar.io/learn/gateways/data-verification
 Words: 539
 Quality Score: 0.440
@@ -12182,9 +12199,9 @@ Gateways AR.IO gateways continuously verify that data chunks are correctly store
 
 ---
 
-# 120. Metadata  ARIO Documentation
+# 121. Metadata  ARIO Documentation
 
-Document Number: 120
+Document Number: 121
 Source: https://docs.ar.io/sdks/ar-io-sdk/metadata
 Words: 267
 Quality Score: 0.437
@@ -12235,9 +12252,9 @@ AR.IO SDK ANT Contracts setName() Sets the name of the ANT process.Note: Require
 
 ---
 
-# 121. Observation  Incentive Protocol  ARIO Documentation
+# 122. Observation  Incentive Protocol  ARIO Documentation
 
-Document Number: 121
+Document Number: 122
 Source: https://docs.ar.io/learn/oip
 Words: 560
 Quality Score: 0.435
@@ -12248,9 +12265,9 @@ Overview The Observation and Incentive Protocol ensures network quality through 
 
 ---
 
-# 122. Performance and Weights  ARIO Documentation
+# 123. Performance and Weights  ARIO Documentation
 
-Document Number: 122
+Document Number: 123
 Source: https://docs.ar.io/learn/oip/performance-evaluation
 Words: 856
 Quality Score: 0.435
@@ -12374,9 +12391,9 @@ Ready to understand how rewards are distributed? Learn about Reward Distribution
 
 ---
 
-# 123. Vaults  ARIO Documentation
+# 124. Vaults  ARIO Documentation
 
-Document Number: 123
+Document Number: 124
 Source: https://docs.ar.io/sdks/ar-io-sdk/vaults
 Words: 430
 Quality Score: 0.432
@@ -12513,9 +12530,9 @@ quantity: new ARIOToken(1000).toMARIO(),
 
 ---
 
-# 124. Contributing  ARIO Documentation
+# 125. Contributing  ARIO Documentation
 
-Document Number: 124
+Document Number: 125
 Source: https://docs.ar.io/sdks/ardrive-core-js/contributing
 Words: 54
 Quality Score: 0.431
@@ -12523,19 +12540,6 @@ Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
 ArDrive Core JS Fork the repository Create your feature branch (git checkout -b feature/amazing-feature) Commit your changes (git commit -m 'Add some amazing feature') Push to the branch (git push origin feature/amazing-feature) Open a Pull Request How is this guide?ArLocal Testing JavaScript/TypeScript SDK for interacting with ArDrive License JavaScript/TypeScript SDK for interacting with ArDrive
-
----
-
-# 125. Support  ARIO Documentation
-
-Document Number: 125
-Source: https://docs.ar.io/sdks/ardrive-core-js/support
-Words: 39
-Quality Score: 0.424
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-ArDrive Core JS Discord Community GitHub Issues ArDrive Website How is this guide?License JavaScript/TypeScript SDK for interacting with ArDrive AR.IO SDK JavaScript/TypeScript SDK for interacting with the AR.IO Network, including ArNS name management, gateway interactions, and AO contract operations
 
 ---
 
