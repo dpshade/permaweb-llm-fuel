@@ -1,8 +1,8 @@
 # Permaweb Documentation Collection
 
-Generated on: 2025-10-15T12:17:38.544Z
-Total documents: 145
-Total words: 77673
+Generated on: 2025-10-16T12:17:57.972Z
+Total documents: 144
+Total words: 77609
 
 ## Table of Contents
 
@@ -63,8 +63,8 @@ Total words: 77673
 53. [Using Turbo SDK with Vanilla HTML ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/html)
 54. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/learn/arns)
 55. [Wayfinder SDKs ARIO Documentation](https://docs.ar.io/sdks/wayfinder)
-56. [useWayfinderRequest ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-react/usewayfinderrequest)
-57. [TurboFactory ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbofactory)
+56. [TurboFactory ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbofactory)
+57. [useWayfinderRequest ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-react/usewayfinderrequest)
 58. [Integration ARIO Documentation](https://docs.ar.io/learn/wayfinder/integration)
 59. [Token Conversion ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/token-conversion)
 60. [Paying for Uploads ARIO Documentation](https://docs.ar.io/build/upload/turbo-credits)
@@ -103,56 +103,55 @@ Total words: 77673
 93. [Gateways ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/gateways)
 94. [Using Turbo SDK with Vite ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/vite)
 95. [Pricing ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/pricing)
-96. [Entity Types ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/entity-types)
-97. [APIs Reference ARIO Documentation](https://docs.ar.io/apis)
-98. [What is ARIO ARIO Documentation](https://docs.ar.io/learn/what-is-ario)
-99. [Introduction ARIO Documentation](https://docs.ar.io/sdks)
-100. [Advanced ARIO Documentation](https://docs.ar.io/build/advanced)
-101. [Data ARIO Documentation](https://docs.ar.io/apis/ar-io-node/data)
-102. [Using Turbo SDK with Nextjs ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/nextjs)
-103. [Request Flow ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow)
-104. [Pricing ARIO Documentation](https://docs.ar.io/apis/ar-io-node/pricing)
-105. [Using Turbo in a Browser ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser)
-106. [Staking ARIO Documentation](https://docs.ar.io/learn/token/staking)
-107. [Manage your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage)
-108. [What is Arweave ARIO Documentation](https://docs.ar.io/learn/what-is-arweave)
-109. [Undername Ownership ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/undername-ownership)
-110. [ArNS Marketplace ARIO Documentation](https://docs.ar.io/build/guides/arns-marketplace)
-111. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns)
-112. [Turbo Credit Sharing ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing)
-113. [Glossary ARIO Documentation](https://docs.ar.io/glossary)
-114. [Introduction ARIO Documentation](https://docs.ar.io/learn)
-115. [Normalized Addresses ARIO Documentation](https://docs.ar.io/build/advanced/normalized-addresses)
-116. [ARIO Gateway APIs ARIO Documentation](https://docs.ar.io/apis/ar-io-node)
-117. [Troubleshooting ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/troubleshooting)
-118. [Balance ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/balance)
-119. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
-120. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
-121. [Metadata ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/metadata)
-122. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
-123. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
-124. [Vaults ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/vaults)
-125. [Contributing ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/contributing)
-126. [Support ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/support)
-127. [Data Retrieval ARIO Documentation](https://docs.ar.io/learn/gateways/data-retrieval)
-128. [Extensions Sidecars ARIO Documentation](https://docs.ar.io/build/extensions)
-129. [Pricing ARIO Documentation](https://docs.ar.io/apis/turbo/upload-service/pricing)
-130. [Architecture ARIO Documentation](https://docs.ar.io/learn/gateways/architecture)
-131. [Name Registration ARIO Documentation](https://docs.ar.io/learn/arns/name-registration)
-132. [Add to Wander ARIO Documentation](https://docs.ar.io/learn/token/add-to-wander)
-133. [Use Cases ARIO Documentation](https://docs.ar.io/learn/wayfinder/use-cases)
-134. [Observer Selection ARIO Documentation](https://docs.ar.io/learn/oip/observer-selection)
-135. [Deploy a dApp with ArDrive Web ARIO Documentation](https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web)
-136. [Reporting ARIO Documentation](https://docs.ar.io/learn/oip/reporting)
-137. [Records ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/records)
-138. [What is the Permaweb ARIO Documentation](https://docs.ar.io/learn/permaweb)
-139. [Gateway Registry ARIO Documentation](https://docs.ar.io/learn/gateways/gateway-registry)
-140. [Architecture ARIO Documentation](https://docs.ar.io/learn/token/architecture)
-141. [Get the Token ARIO Documentation](https://docs.ar.io/learn/token/get-the-token)
-142. [Turbo APIs ARIO Documentation](https://docs.ar.io/apis/turbo)
-143. [Token ARIO Documentation](https://docs.ar.io/learn/token)
-144. [What are Bundles ARIO Documentation](https://docs.ar.io/learn/ans-104-bundles)
-145. [ARIO Gateways ARIO Documentation](https://docs.ar.io/learn/gateways)
+96. [APIs Reference ARIO Documentation](https://docs.ar.io/apis)
+97. [What is ARIO ARIO Documentation](https://docs.ar.io/learn/what-is-ario)
+98. [Advanced ARIO Documentation](https://docs.ar.io/build/advanced)
+99. [Data ARIO Documentation](https://docs.ar.io/apis/ar-io-node/data)
+100. [Using Turbo SDK with Nextjs ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser/nextjs)
+101. [Introduction ARIO Documentation](https://docs.ar.io/sdks)
+102. [Request Flow ARIO Documentation](https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow)
+103. [Pricing ARIO Documentation](https://docs.ar.io/apis/ar-io-node/pricing)
+104. [Using Turbo in a Browser ARIO Documentation](https://docs.ar.io/build/guides/using-turbo-in-a-browser)
+105. [Staking ARIO Documentation](https://docs.ar.io/learn/token/staking)
+106. [Manage your Gateway ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage)
+107. [What is Arweave ARIO Documentation](https://docs.ar.io/learn/what-is-arweave)
+108. [Undername Ownership ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/undername-ownership)
+109. [ArNS Marketplace ARIO Documentation](https://docs.ar.io/build/guides/arns-marketplace)
+110. [Arweave Name System (ArNS) ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns)
+111. [Turbo Credit Sharing ARIO Documentation](https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing)
+112. [Glossary ARIO Documentation](https://docs.ar.io/glossary)
+113. [Introduction ARIO Documentation](https://docs.ar.io/learn)
+114. [Normalized Addresses ARIO Documentation](https://docs.ar.io/build/advanced/normalized-addresses)
+115. [ARIO Gateway APIs ARIO Documentation](https://docs.ar.io/apis/ar-io-node)
+116. [Troubleshooting ARIO Documentation](https://docs.ar.io/build/run-a-gateway/manage/troubleshooting)
+117. [Balance ARIO Documentation](https://docs.ar.io/apis/turbo/payment-service/balance)
+118. [ArFS Protocol ARIO Documentation](https://docs.ar.io/build/advanced/arfs)
+119. [Data Verification ARIO Documentation](https://docs.ar.io/learn/gateways/data-verification)
+120. [Metadata ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/metadata)
+121. [Observation Incentive Protocol ARIO Documentation](https://docs.ar.io/learn/oip)
+122. [Performance and Weights ARIO Documentation](https://docs.ar.io/learn/oip/performance-evaluation)
+123. [Vaults ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/vaults)
+124. [Contributing ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/contributing)
+125. [Support ARIO Documentation](https://docs.ar.io/sdks/ardrive-core-js/support)
+126. [Data Retrieval ARIO Documentation](https://docs.ar.io/learn/gateways/data-retrieval)
+127. [Extensions Sidecars ARIO Documentation](https://docs.ar.io/build/extensions)
+128. [Pricing ARIO Documentation](https://docs.ar.io/apis/turbo/upload-service/pricing)
+129. [Architecture ARIO Documentation](https://docs.ar.io/learn/gateways/architecture)
+130. [Name Registration ARIO Documentation](https://docs.ar.io/learn/arns/name-registration)
+131. [Add to Wander ARIO Documentation](https://docs.ar.io/learn/token/add-to-wander)
+132. [Use Cases ARIO Documentation](https://docs.ar.io/learn/wayfinder/use-cases)
+133. [Observer Selection ARIO Documentation](https://docs.ar.io/learn/oip/observer-selection)
+134. [Deploy a dApp with ArDrive Web ARIO Documentation](https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web)
+135. [Reporting ARIO Documentation](https://docs.ar.io/learn/oip/reporting)
+136. [Records ARIO Documentation](https://docs.ar.io/sdks/ar-io-sdk/records)
+137. [What is the Permaweb ARIO Documentation](https://docs.ar.io/learn/permaweb)
+138. [Gateway Registry ARIO Documentation](https://docs.ar.io/learn/gateways/gateway-registry)
+139. [Architecture ARIO Documentation](https://docs.ar.io/learn/token/architecture)
+140. [Get the Token ARIO Documentation](https://docs.ar.io/learn/token/get-the-token)
+141. [Turbo APIs ARIO Documentation](https://docs.ar.io/apis/turbo)
+142. [Token ARIO Documentation](https://docs.ar.io/learn/token)
+143. [What are Bundles ARIO Documentation](https://docs.ar.io/learn/ans-104-bundles)
+144. [ARIO Gateways ARIO Documentation](https://docs.ar.io/learn/gateways)
 
 ---
 
@@ -6047,12 +6046,73 @@ return ( );
 
 ---
 
-# 56. useWayfinderRequest  ARIO Documentation
+# 56. TurboFactory  ARIO Documentation
 
 Document Number: 56
-Source: https://docs.ar.io/sdks/wayfinder/wayfinder-react/usewayfinderrequest
-Words: 173
+Source: https://docs.ar.io/sdks/turbo-sdk/turbofactory
+Words: 207
 Quality Score: 0.523
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Turbo SDK APIs unauthenticated() Creates an instance of a client that accesses Turbo's unauthenticated services.const turbo = TurboFactory.unauthenticated();authenticated() Creates an instance of a client that accesses Turbo's authenticated and unauthenticated services. Requires either a signer, or private key to be provided.Arweave JWK const jwk = await arweave.crypto.generateJWK();
+
+const turbo = TurboFactory.authenticated({ privateKey: jwk });ArweaveSigner const signer = new ArweaveSigner(jwk);
+
+const turbo = TurboFactory.authenticated({ signer });ArconnectSigner const signer = new ArconnectSigner(window.arweaveWallet);
+
+const turbo = TurboFactory.authenticated({ signer });EthereumSigner const signer = new EthereumSigner(privateKey);
+
+const turbo = TurboFactory.authenticated({ signer });Ethereum Private Key const turbo = TurboFactory.authenticated({
+
+privateKey: ethHexadecimalPrivateKey,
+
+token: 'ethereum',
+
+});POL (MATIC) Private Key const turbo = TurboFactory.authenticated({
+
+privateKey: ethHexadecimalPrivateKey,
+
+token: 'pol',
+
+});HexSolanaSigner const signer = new HexSolanaSigner(bs58.encode(secretKey));
+
+const turbo = TurboFactory.authenticated({ signer });Solana Web Wallet Adapter const turbo = TurboFactory.authenticated({
+
+walletAdapter: window.solana,
+
+token: 'solana',
+
+});Solana Secret Key const turbo = TurboFactory.authenticated({
+
+privateKey: bs58.encode(secretKey),
+
+token: 'solana',
+
+});KYVE Private Key const turbo = TurboFactory.authenticated({
+
+privateKey: kyveHexadecimalPrivateKey,
+
+token: 'kyve',
+
+});KYVE Mnemonic import { privateKeyFromKyveMnemonic } from '@ardrive/turbo-sdk';
+
+const turbo = TurboFactory.authenticated({
+
+privateKey: privateKeyFromKyveMnemonic(mnemonic),
+
+token: 'kyve',
+
+});How is this guide?Turbo SDK JavaScript/TypeScript SDK for uploading data to Arweave via Turbo services with built-in payment handling and optimized performance TurboUnauthenticatedClient SDK for interacting with Turbo, a fast and efficient data upload service for Arweave
+
+---
+
+# 57. useWayfinderRequest  ARIO Documentation
+
+Document Number: 57
+Source: https://docs.ar.io/sdks/wayfinder/wayfinder-react/usewayfinderrequest
+Words: 179
+Quality Score: 0.520
 Extraction Method: defuddle_semantic
 Extraction Reason: defuddle_returned_html_semantic_extracted
 
@@ -6136,68 +6196,7 @@ return No data
 
 return ( {data} );
 
-} How is this guide?useWayfinderUrl React hooks and components for integrating Wayfinder into React applications
-
----
-
-# 57. TurboFactory  ARIO Documentation
-
-Document Number: 57
-Source: https://docs.ar.io/sdks/turbo-sdk/turbofactory
-Words: 207
-Quality Score: 0.523
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Turbo SDK APIs unauthenticated() Creates an instance of a client that accesses Turbo's unauthenticated services.const turbo = TurboFactory.unauthenticated();authenticated() Creates an instance of a client that accesses Turbo's authenticated and unauthenticated services. Requires either a signer, or private key to be provided.Arweave JWK const jwk = await arweave.crypto.generateJWK();
-
-const turbo = TurboFactory.authenticated({ privateKey: jwk });ArweaveSigner const signer = new ArweaveSigner(jwk);
-
-const turbo = TurboFactory.authenticated({ signer });ArconnectSigner const signer = new ArconnectSigner(window.arweaveWallet);
-
-const turbo = TurboFactory.authenticated({ signer });EthereumSigner const signer = new EthereumSigner(privateKey);
-
-const turbo = TurboFactory.authenticated({ signer });Ethereum Private Key const turbo = TurboFactory.authenticated({
-
-privateKey: ethHexadecimalPrivateKey,
-
-token: 'ethereum',
-
-});POL (MATIC) Private Key const turbo = TurboFactory.authenticated({
-
-privateKey: ethHexadecimalPrivateKey,
-
-token: 'pol',
-
-});HexSolanaSigner const signer = new HexSolanaSigner(bs58.encode(secretKey));
-
-const turbo = TurboFactory.authenticated({ signer });Solana Web Wallet Adapter const turbo = TurboFactory.authenticated({
-
-walletAdapter: window.solana,
-
-token: 'solana',
-
-});Solana Secret Key const turbo = TurboFactory.authenticated({
-
-privateKey: bs58.encode(secretKey),
-
-token: 'solana',
-
-});KYVE Private Key const turbo = TurboFactory.authenticated({
-
-privateKey: kyveHexadecimalPrivateKey,
-
-token: 'kyve',
-
-});KYVE Mnemonic import { privateKeyFromKyveMnemonic } from '@ardrive/turbo-sdk';
-
-const turbo = TurboFactory.authenticated({
-
-privateKey: privateKeyFromKyveMnemonic(mnemonic),
-
-token: 'kyve',
-
-});How is this guide?Turbo SDK JavaScript/TypeScript SDK for uploading data to Arweave via Turbo services with built-in payment handling and optimized performance TurboUnauthenticatedClient SDK for interacting with Turbo, a fast and efficient data upload service for Arweave
+} How is this guide?useWayfinderUrl React hooks and components for integrating Wayfinder into React applications ArFS Command line interface for ArDrive
 
 ---
 
@@ -10709,22 +10708,9 @@ Turbo Payment Service Pricing and cost calculation endpoints Get Amount of Credi
 
 ---
 
-# 96. Entity Types  ARIO Documentation
+# 96. APIs Reference  ARIO Documentation
 
 Document Number: 96
-Source: https://docs.ar.io/sdks/ardrive-core-js/entity-types
-Words: 62
-Quality Score: 0.474
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-ArDrive Core JS Core Concepts ArDrive uses a hierarchical structure:Drives: Top-level containers (public or private) Folders: Organize files within drives Files: Individual files stored on Arweave Each entity has a unique ID (DriveID, FolderID, FileID) and can be either public (unencrypted) or private (encrypted).How is this guide?Introduction Software Development Kits for building on AR.IO Wallet Management JavaScript/TypeScript SDK for interacting with ArDrive
-
----
-
-# 97. APIs Reference  ARIO Documentation
-
-Document Number: 97
 Source: https://docs.ar.io/apis
 Words: 347
 Quality Score: 0.473
@@ -10735,9 +10721,9 @@ Explore the REST APIs available in the AR.IO ecosystem. Our services are built w
 
 ---
 
-# 98. What is ARIO  ARIO Documentation
+# 97. What is ARIO  ARIO Documentation
 
-Document Number: 98
+Document Number: 97
 Source: https://docs.ar.io/learn/what-is-ario
 Words: 633
 Quality Score: 0.473
@@ -10748,22 +10734,9 @@ Introduction The AR.IO Network is the first permanent cloud network.A decentrali
 
 ---
 
-# 99. Introduction  ARIO Documentation
+# 98. Advanced  ARIO Documentation
 
-Document Number: 99
-Source: https://docs.ar.io/sdks
-Words: 208
-Quality Score: 0.470
-Extraction Method: defuddle_semantic
-Extraction Reason: defuddle_returned_html_semantic_extracted
-
-Build powerful applications with our comprehensive suite of SDKs designed for the AR.IO ecosystem.Upload data with the Turbo SDK High-performance data upload service for Arweave with instant confirmation and transparent pricing Interact with the AR.IO Network using the AR.IO SDK Access AR.IO Network protocols, manage ArNS names, interact with ANTs, and integrate gateway services Decentralized access with Wayfinder SDK Robust, censorship-resistant access to Arweave data through the distributed AR.IO gateway network Choose Your SDK Each SDK serves a specific purpose in the AR.IO ecosystem:Turbo SDK - For applications that need fast, reliable data uploads to Arweave AR.IO SDK - For interacting with AR.IO Network smart contracts and services Wayfinder SDK - For decentralized data access with built-in verification and gateway routing All SDKs are available for both Node.js and browser environments, with TypeScript support included.Next Steps Quick Start - Upload Data Get started quickly by uploading your first file using the Turbo SDK Quick Start - Access Data Learn how to retrieve and query data using our access tools API Reference Explore detailed API documentation for all available endpoints Join the Community Connect with other developers building on AR.IO How is this guide?Entity Types JavaScript/TypeScript SDK for interacting with ArDrive On this page Choose Your SDK Next Steps
-
----
-
-# 100. Advanced  ARIO Documentation
-
-Document Number: 100
+Document Number: 98
 Source: https://docs.ar.io/build/advanced
 Words: 131
 Quality Score: 0.470
@@ -10774,9 +10747,9 @@ Overview Explore advanced topics and specialized guides for building on Arweave 
 
 ---
 
-# 101. Data  ARIO Documentation
+# 99. Data  ARIO Documentation
 
-Document Number: 101
+Document Number: 99
 Source: https://docs.ar.io/apis/ar-io-node/data
 Words: 169
 Quality Score: 0.468
@@ -10793,9 +10766,9 @@ Returns the same headers as the GET request.Path Parameters txId string Match ^[
 
 ---
 
-# 102. Using Turbo SDK with Nextjs  ARIO Documentation
+# 100. Using Turbo SDK with Nextjs  ARIO Documentation
 
-Document Number: 102
+Document Number: 100
 Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser/nextjs
 Words: 1707
 Quality Score: 0.467
@@ -11447,9 +11420,22 @@ console.log("Current balance:", balance);Verify Signer Setup: Your implementatio
 
 ---
 
-# 103. Request Flow  ARIO Documentation
+# 101. Introduction  ARIO Documentation
 
-Document Number: 103
+Document Number: 101
+Source: https://docs.ar.io/sdks
+Words: 200
+Quality Score: 0.467
+Extraction Method: defuddle_semantic
+Extraction Reason: defuddle_returned_html_semantic_extracted
+
+Build powerful applications with our comprehensive suite of SDKs designed for the AR.IO ecosystem.Upload data with the Turbo SDK High-performance data upload service for Arweave with instant confirmation and transparent pricing Interact with the AR.IO Network using the AR.IO SDK Access AR.IO Network protocols, manage ArNS names, interact with ANTs, and integrate gateway services Decentralized access with Wayfinder SDK Robust, censorship-resistant access to Arweave data through the distributed AR.IO gateway network Choose Your SDK Each SDK serves a specific purpose in the AR.IO ecosystem:Turbo SDK - For applications that need fast, reliable data uploads to Arweave AR.IO SDK - For interacting with AR.IO Network smart contracts and services Wayfinder SDK - For decentralized data access with built-in verification and gateway routing All SDKs are available for both Node.js and browser environments, with TypeScript support included.Next Steps Quick Start - Upload Data Get started quickly by uploading your first file using the Turbo SDK Quick Start - Access Data Learn how to retrieve and query data using our access tools API Reference Explore detailed API documentation for all available endpoints Join the Community Connect with other developers building on AR.IO How is this guide?On this page Choose Your SDK Next Steps
+
+---
+
+# 102. Request Flow  ARIO Documentation
+
+Document Number: 102
 Source: https://docs.ar.io/sdks/wayfinder/wayfinder-core/request-flow
 Words: 36
 Quality Score: 0.465
@@ -11460,9 +11446,9 @@ The following sequence diagram illustrates how Wayfinder processes requests:How 
 
 ---
 
-# 104. Pricing  ARIO Documentation
+# 103. Pricing  ARIO Documentation
 
-Document Number: 104
+Document Number: 103
 Source: https://docs.ar.io/apis/ar-io-node/pricing
 Words: 112
 Quality Score: 0.464
@@ -11473,9 +11459,9 @@ AR.IO Gateway Get the price (in winston) for an amount of bytes Get price to sto
 
 ---
 
-# 105. Using Turbo in a Browser  ARIO Documentation
+# 104. Using Turbo in a Browser  ARIO Documentation
 
-Document Number: 105
+Document Number: 104
 Source: https://docs.ar.io/build/guides/using-turbo-in-a-browser
 Words: 252
 Quality Score: 0.463
@@ -11486,9 +11472,9 @@ Guides Using Turbo in a Browser Integrate the Turbo SDK directly into your web a
 
 ---
 
-# 106. Staking  ARIO Documentation
+# 105. Staking  ARIO Documentation
 
-Document Number: 106
+Document Number: 105
 Source: https://docs.ar.io/learn/token/staking
 Words: 853
 Quality Score: 0.463
@@ -11499,9 +11485,9 @@ Token Overview Staking tokens within the AR.IO Network serves a dual primary pur
 
 ---
 
-# 107. Manage your Gateway  ARIO Documentation
+# 106. Manage your Gateway  ARIO Documentation
 
-Document Number: 107
+Document Number: 106
 Source: https://docs.ar.io/build/run-a-gateway/manage
 Words: 228
 Quality Score: 0.462
@@ -11516,9 +11502,9 @@ failed epoch guidance, and frequently asked questions.How is this guide?Join the
 
 ---
 
-# 108. What is Arweave  ARIO Documentation
+# 107. What is Arweave  ARIO Documentation
 
-Document Number: 108
+Document Number: 107
 Source: https://docs.ar.io/learn/what-is-arweave
 Words: 568
 Quality Score: 0.456
@@ -11529,9 +11515,9 @@ Introduction Arweave is a decentralized storage network that ensures data is per
 
 ---
 
-# 109. Undername Ownership  ARIO Documentation
+# 108. Undername Ownership  ARIO Documentation
 
-Document Number: 109
+Document Number: 108
 Source: https://docs.ar.io/sdks/ar-io-sdk/undername-ownership
 Words: 458
 Quality Score: 0.455
@@ -11642,9 +11628,9 @@ console.log(recordAfter.owner); // undefined (controlled by ANT owner again) How
 
 ---
 
-# 110. ArNS Marketplace  ARIO Documentation
+# 109. ArNS Marketplace  ARIO Documentation
 
-Document Number: 110
+Document Number: 109
 Source: https://docs.ar.io/build/guides/arns-marketplace
 Words: 550
 Quality Score: 0.455
@@ -11655,9 +11641,9 @@ Build Guides ArNS tokens have the potential to be traded and sold in decentraliz
 
 ---
 
-# 111. Arweave Name System (ArNS)  ARIO Documentation
+# 110. Arweave Name System (ArNS)  ARIO Documentation
 
-Document Number: 111
+Document Number: 110
 Source: https://docs.ar.io/sdks/ar-io-sdk/arweave-name-system-arns
 Words: 1061
 Quality Score: 0.455
@@ -12076,9 +12062,9 @@ const returnedName = await ario.getArNSReturnedName({ name: 'permalink' });Outpu
 
 ---
 
-# 112. Turbo Credit Sharing  ARIO Documentation
+# 111. Turbo Credit Sharing  ARIO Documentation
 
-Document Number: 112
+Document Number: 111
 Source: https://docs.ar.io/sdks/turbo-sdk/turbo-credit-sharing
 Words: 519
 Quality Score: 0.453
@@ -12089,9 +12075,9 @@ Turbo SDK Users can share their purchased Credits with other users' wallets by c
 
 ---
 
-# 113. Glossary  ARIO Documentation
+# 112. Glossary  ARIO Documentation
 
-Document Number: 113
+Document Number: 112
 Source: https://docs.ar.io/glossary
 Words: 170
 Quality Score: 0.450
@@ -12102,9 +12088,9 @@ AO Computer AO (Actor Oriented) is a hyper-parallel computing platform built on 
 
 ---
 
-# 114. Introduction  ARIO Documentation
+# 113. Introduction  ARIO Documentation
 
-Document Number: 114
+Document Number: 113
 Source: https://docs.ar.io/learn
 Words: 177
 Quality Score: 0.448
@@ -12115,9 +12101,9 @@ AR.IO is the decentralized gateway protocol for Arweave. Deploy gateways, regist
 
 ---
 
-# 115. Normalized Addresses  ARIO Documentation
+# 114. Normalized Addresses  ARIO Documentation
 
-Document Number: 115
+Document Number: 114
 Source: https://docs.ar.io/build/advanced/normalized-addresses
 Words: 675
 Quality Score: 0.448
@@ -12131,9 +12117,9 @@ respectively.Arweave The public key for an Arweave wallet is the n field of the 
 
 ---
 
-# 116. ARIO Gateway APIs  ARIO Documentation
+# 115. ARIO Gateway APIs  ARIO Documentation
 
-Document Number: 116
+Document Number: 115
 Source: https://docs.ar.io/apis/ar-io-node
 Words: 351
 Quality Score: 0.448
@@ -12144,9 +12130,9 @@ The AR.IO Gateway is the core software for the AR.IO network, serving the essent
 
 ---
 
-# 117. Troubleshooting  ARIO Documentation
+# 116. Troubleshooting  ARIO Documentation
 
-Document Number: 117
+Document Number: 116
 Source: https://docs.ar.io/build/run-a-gateway/manage/troubleshooting
 Words: 1873
 Quality Score: 0.447
@@ -12157,9 +12143,9 @@ Run a Gateway Manage your Gateway Welcome to the comprehensive troubleshooting a
 
 ---
 
-# 118. Balance  ARIO Documentation
+# 117. Balance  ARIO Documentation
 
-Document Number: 118
+Document Number: 117
 Source: https://docs.ar.io/apis/turbo/payment-service/balance
 Words: 87
 Quality Score: 0.444
@@ -12170,9 +12156,9 @@ Turbo Payment Service Account balance and credit management Get Current Balance 
 
 ---
 
-# 119. ArFS Protocol  ARIO Documentation
+# 118. ArFS Protocol  ARIO Documentation
 
-Document Number: 119
+Document Number: 118
 Source: https://docs.ar.io/build/advanced/arfs
 Words: 487
 Quality Score: 0.442
@@ -12183,9 +12169,9 @@ Advanced Arweave File System, or "ArFS" is a data modeling, storage, and retriev
 
 ---
 
-# 120. Data Verification  ARIO Documentation
+# 119. Data Verification  ARIO Documentation
 
-Document Number: 120
+Document Number: 119
 Source: https://docs.ar.io/learn/gateways/data-verification
 Words: 539
 Quality Score: 0.440
@@ -12196,9 +12182,9 @@ Gateways AR.IO gateways continuously verify that data chunks are correctly store
 
 ---
 
-# 121. Metadata  ARIO Documentation
+# 120. Metadata  ARIO Documentation
 
-Document Number: 121
+Document Number: 120
 Source: https://docs.ar.io/sdks/ar-io-sdk/metadata
 Words: 267
 Quality Score: 0.437
@@ -12249,9 +12235,9 @@ AR.IO SDK ANT Contracts setName() Sets the name of the ANT process.Note: Require
 
 ---
 
-# 122. Observation  Incentive Protocol  ARIO Documentation
+# 121. Observation  Incentive Protocol  ARIO Documentation
 
-Document Number: 122
+Document Number: 121
 Source: https://docs.ar.io/learn/oip
 Words: 560
 Quality Score: 0.435
@@ -12262,9 +12248,9 @@ Overview The Observation and Incentive Protocol ensures network quality through 
 
 ---
 
-# 123. Performance and Weights  ARIO Documentation
+# 122. Performance and Weights  ARIO Documentation
 
-Document Number: 123
+Document Number: 122
 Source: https://docs.ar.io/learn/oip/performance-evaluation
 Words: 856
 Quality Score: 0.435
@@ -12388,9 +12374,9 @@ Ready to understand how rewards are distributed? Learn about Reward Distribution
 
 ---
 
-# 124. Vaults  ARIO Documentation
+# 123. Vaults  ARIO Documentation
 
-Document Number: 124
+Document Number: 123
 Source: https://docs.ar.io/sdks/ar-io-sdk/vaults
 Words: 430
 Quality Score: 0.432
@@ -12527,9 +12513,9 @@ quantity: new ARIOToken(1000).toMARIO(),
 
 ---
 
-# 125. Contributing  ARIO Documentation
+# 124. Contributing  ARIO Documentation
 
-Document Number: 125
+Document Number: 124
 Source: https://docs.ar.io/sdks/ardrive-core-js/contributing
 Words: 54
 Quality Score: 0.431
@@ -12540,9 +12526,9 @@ ArDrive Core JS Fork the repository Create your feature branch (git checkout -b 
 
 ---
 
-# 126. Support  ARIO Documentation
+# 125. Support  ARIO Documentation
 
-Document Number: 126
+Document Number: 125
 Source: https://docs.ar.io/sdks/ardrive-core-js/support
 Words: 39
 Quality Score: 0.424
@@ -12553,9 +12539,9 @@ ArDrive Core JS Discord Community GitHub Issues ArDrive Website How is this guid
 
 ---
 
-# 127. Data Retrieval  ARIO Documentation
+# 126. Data Retrieval  ARIO Documentation
 
-Document Number: 127
+Document Number: 126
 Source: https://docs.ar.io/learn/gateways/data-retrieval
 Words: 564
 Quality Score: 0.424
@@ -12566,9 +12552,9 @@ Gateways AR.IO gateways use a sophisticated multi-tier architecture to retrieve 
 
 ---
 
-# 128. Extensions  Sidecars  ARIO Documentation
+# 127. Extensions  Sidecars  ARIO Documentation
 
-Document Number: 128
+Document Number: 127
 Source: https://docs.ar.io/build/extensions
 Words: 249
 Quality Score: 0.421
@@ -12581,9 +12567,9 @@ access control.AO Compute Unit Sidecar Execute AO processes locally with WASM mo
 
 ---
 
-# 129. Pricing  ARIO Documentation
+# 128. Pricing  ARIO Documentation
 
-Document Number: 129
+Document Number: 128
 Source: https://docs.ar.io/apis/turbo/upload-service/pricing
 Words: 79
 Quality Score: 0.421
@@ -12594,9 +12580,9 @@ Turbo Upload Service Pricing calculation endpoints Gets the price in winc to upl
 
 ---
 
-# 130. Architecture  ARIO Documentation
+# 129. Architecture  ARIO Documentation
 
-Document Number: 130
+Document Number: 129
 Source: https://docs.ar.io/learn/gateways/architecture
 Words: 584
 Quality Score: 0.420
@@ -12607,9 +12593,9 @@ Gateways AR.IO gateways are sophisticated data access layers built on top of the
 
 ---
 
-# 131. Name Registration  ARIO Documentation
+# 130. Name Registration  ARIO Documentation
 
-Document Number: 131
+Document Number: 130
 Source: https://docs.ar.io/learn/arns/name-registration
 Words: 693
 Quality Score: 0.417
@@ -12620,9 +12606,9 @@ Arweave Name System (ArNS) There are two different types of name registrations t
 
 ---
 
-# 132. Add to Wander  ARIO Documentation
+# 131. Add to Wander  ARIO Documentation
 
-Document Number: 132
+Document Number: 131
 Source: https://docs.ar.io/learn/token/add-to-wander
 Words: 638
 Quality Score: 0.415
@@ -12633,9 +12619,9 @@ Token Adding ARIO Token to Wander Wander (formerly ArConnect) is the primary wal
 
 ---
 
-# 133. Use Cases  ARIO Documentation
+# 132. Use Cases  ARIO Documentation
 
-Document Number: 133
+Document Number: 132
 Source: https://docs.ar.io/learn/wayfinder/use-cases
 Words: 515
 Quality Score: 0.413
@@ -12646,9 +12632,9 @@ Wayfinder Decentralized Web Hosting with Flexible Access With Wayfinder, not onl
 
 ---
 
-# 134. Observer Selection  ARIO Documentation
+# 133. Observer Selection  ARIO Documentation
 
-Document Number: 134
+Document Number: 133
 Source: https://docs.ar.io/learn/oip/observer-selection
 Words: 711
 Quality Score: 0.413
@@ -12663,9 +12649,9 @@ operation.Validation Process Chunk Retrieval: Observers request chunk data using
 
 ---
 
-# 135. Deploy a dApp with ArDrive Web  ARIO Documentation
+# 134. Deploy a dApp with ArDrive Web  ARIO Documentation
 
-Document Number: 135
+Document Number: 134
 Source: https://docs.ar.io/build/guides/deploy-dapp-with-ardrive-web
 Words: 654
 Quality Score: 0.411
@@ -12676,9 +12662,9 @@ Guides Create permanent dApps using the ArDrive web interface. This guide shows 
 
 ---
 
-# 136. Reporting  ARIO Documentation
+# 135. Reporting  ARIO Documentation
 
-Document Number: 136
+Document Number: 135
 Source: https://docs.ar.io/learn/oip/reporting
 Words: 615
 Quality Score: 0.411
@@ -12710,9 +12696,9 @@ operation.Observer Rewards and Penalties Observer performance directly impacts r
 
 ---
 
-# 137. Records  ARIO Documentation
+# 136. Records  ARIO Documentation
 
-Document Number: 137
+Document Number: 136
 Source: https://docs.ar.io/sdks/ar-io-sdk/records
 Words: 579
 Quality Score: 0.410
@@ -12853,9 +12839,9 @@ const { id: txId } = await ant.removeRecord(
 
 ---
 
-# 138. What is the Permaweb  ARIO Documentation
+# 137. What is the Permaweb  ARIO Documentation
 
-Document Number: 138
+Document Number: 137
 Source: https://docs.ar.io/learn/permaweb
 Words: 682
 Quality Score: 0.405
@@ -12866,9 +12852,9 @@ Introduction The permaweb is a decentralized, permanent layer of the internet wh
 
 ---
 
-# 139. Gateway Registry  ARIO Documentation
+# 138. Gateway Registry  ARIO Documentation
 
-Document Number: 139
+Document Number: 138
 Source: https://docs.ar.io/learn/gateways/gateway-registry
 Words: 749
 Quality Score: 0.395
@@ -12879,9 +12865,9 @@ Gateways Overview The AR.IO Network consists of AR.IO gateway nodes, which are i
 
 ---
 
-# 140. Architecture  ARIO Documentation
+# 139. Architecture  ARIO Documentation
 
-Document Number: 140
+Document Number: 139
 Source: https://docs.ar.io/learn/token/architecture
 Words: 548
 Quality Score: 0.385
@@ -12892,9 +12878,9 @@ Token ARIO Contract Architecture The $ARIO token operates through a smart contra
 
 ---
 
-# 141. Get the Token  ARIO Documentation
+# 140. Get the Token  ARIO Documentation
 
-Document Number: 141
+Document Number: 140
 Source: https://docs.ar.io/learn/token/get-the-token
 Words: 316
 Quality Score: 0.385
@@ -12905,9 +12891,9 @@ Token Acquiring ARIO Tokens There are several ways to acquire ARIO tokens, depen
 
 ---
 
-# 142. Turbo APIs  ARIO Documentation
+# 141. Turbo APIs  ARIO Documentation
 
-Document Number: 142
+Document Number: 141
 Source: https://docs.ar.io/apis/turbo
 Words: 320
 Quality Score: 0.374
@@ -12918,9 +12904,9 @@ Turbo provides high-performance upload and payment services for the Arweave netw
 
 ---
 
-# 143. Token  ARIO Documentation
+# 142. Token  ARIO Documentation
 
-Document Number: 143
+Document Number: 142
 Source: https://docs.ar.io/learn/token
 Words: 591
 Quality Score: 0.369
@@ -12931,9 +12917,9 @@ Overview ARIO is the multifunction AO Computer based token that powers the AR.IO
 
 ---
 
-# 144. What are Bundles  ARIO Documentation
+# 143. What are Bundles  ARIO Documentation
 
-Document Number: 144
+Document Number: 143
 Source: https://docs.ar.io/learn/ans-104-bundles
 Words: 430
 Quality Score: 0.356
@@ -12944,9 +12930,9 @@ Introduction ANS-104 bundles are data packaging standards that efficiently bundl
 
 ---
 
-# 145. ARIO Gateways  ARIO Documentation
+# 144. ARIO Gateways  ARIO Documentation
 
-Document Number: 145
+Document Number: 144
 Source: https://docs.ar.io/learn/gateways
 Words: 511
 Quality Score: 0.306
