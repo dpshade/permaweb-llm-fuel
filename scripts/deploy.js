@@ -125,14 +125,14 @@ class DeploymentManager {
   }
 
   async deployArweave() {
-    if (!process.env.DEPLOY_KEY || !process.env.ANT_PROCESS) {
+    if (!process.env.DEPLOY_KEY) {
       throw new Error('Arweave deployment credentials not set');
     }
     await this.deployVercel();
 
     console.log('🚀 Deploying to Arweave...');
-    
-    execSync(`npx permaweb-deploy --ant-process="${process.env.ANT_PROCESS}" --arns-name="permawebllms" --undername="fuel" --deploy-folder="${CONFIG.vercelOutputDir}" --verbose`, 
+
+    execSync(`npx permaweb-deploy deploy --arns-name="permawebllms" --undername="fuel" --deploy-folder="${CONFIG.vercelOutputDir}"`,
       { stdio: 'inherit' });
   }
 }
