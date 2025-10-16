@@ -46,17 +46,18 @@ class DeploymentManager {
 
   optimize() {
     console.log('⚡ Optimizing build...');
-    
+
     [CONFIG.buildDir, CONFIG.vercelOutputDir].forEach(dir => {
       try {
         execSync(`find ${dir} -name ".DS_Store" -delete`, { stdio: 'ignore' });
+        execSync(`find ${dir} -name ".gitignore" -delete`, { stdio: 'ignore' });
       } catch {}
     });
-    
+
     fs.writeFileSync(path.join(CONFIG.vercelOutputDir, '.nojekyll'), '');
-    
+
     this.compressAssets(CONFIG.vercelOutputDir);
-    
+
     console.log(`✅ Optimized: ${this.stats.compressed} files compressed`);
   }
 
